@@ -46,8 +46,8 @@ public class TestGetAttributes {
 	 */
 	@Test
 	public void testGetAttributes() {
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\"").size()); // return text verbatim without markup		
-		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size()); // return text verbatim without markup		
+		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\"").size());		
+		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size());		
 	}
 
 }
