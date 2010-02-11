@@ -37,6 +37,7 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
+import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
 import cfml.parsing.cfmentat.antlr.script.CFStatementResult;
 
 public abstract class CFExpression extends CFParsedStatement implements java.io.Serializable

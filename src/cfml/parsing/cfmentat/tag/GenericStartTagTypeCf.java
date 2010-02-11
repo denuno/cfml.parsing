@@ -137,7 +137,7 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 			default:
 				break;
 			}
-			if((nextChar == '&' || nextChar == '&'|| nextChar == ' ') && !isInApos && !isInQuotes && isDone) {
+			if((nextChar == '&' || c == '&' && nextChar == ' ') && !isInApos && !isInQuotes && isDone) {
 				isDone=false;
 				isStartedAttribute = true;
 			}

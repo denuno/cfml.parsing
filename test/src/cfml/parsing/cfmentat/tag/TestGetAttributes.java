@@ -56,7 +56,7 @@ public class TestGetAttributes {
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\" & \"wee\"").size());		
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' apos test\"").size());		
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' apos' test\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this='a simple\" apos' test\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this='a simple\" apos' test=\"\"").size());		
 		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size());		
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"\"").size());		
 	}
