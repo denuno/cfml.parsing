@@ -38,7 +38,6 @@ package cfml.parsing.cfmentat.antlr;
 import java.util.Map;
 import java.util.Stack;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import cfml.parsing.cfmentat.antlr.script.userDefinedFunction;
 
 public class CFContext extends cfData implements java.io.Serializable {

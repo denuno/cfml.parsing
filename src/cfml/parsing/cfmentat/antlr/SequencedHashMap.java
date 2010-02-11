@@ -15,7 +15,6 @@
  */
 package cfml.parsing.cfmentat.antlr;
 
-import com.nary.util.FastMap;
 
 import java.io.Externalizable;
 import java.io.ObjectInput;

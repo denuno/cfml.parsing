@@ -29,7 +29,6 @@
 
 package cfml.parsing.cfmentat.antlr;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import org.antlr.runtime.Token;
 
 public class CFIdentifier extends CFVarExpression implements java.io.Serializable {
@@ -60,20 +59,6 @@ public class CFIdentifier extends CFVarExpression implements java.io.Serializabl
 	
 	public Token getToken(){
 		return token;
-	}
-
-	public cfData Eval( CFContext context ) throws cfmRunTimeException {
-		setLineCol(context);
-		context._lastExpr = context.get(name);
-		if ( indirect && (context._lastExpr.getDataType() == cfData.CFLDATA) ) {
-			context._lastExpr = ((cfLData) context._lastExpr).Get(context);
-		}
-		return context._lastExpr;
-	}
-
-	public cfData Eval( CFContext _context, boolean _doquerysearch ) throws cfmRunTimeException {
-		setLineCol(_context);
-		return _context._lastExpr = _context.get(name, _doquerysearch);
 	}
 
 	public String Decompile( int indent ) {

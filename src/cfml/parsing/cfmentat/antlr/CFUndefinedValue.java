@@ -31,7 +31,6 @@ package cfml.parsing.cfmentat.antlr;
 
 import java.util.List;
 
-import com.naryx.tagfusion.cfm.engine.*;
 
 public class CFUndefinedValue extends cfData implements java.io.Serializable {
 	

@@ -47,10 +47,10 @@ tokens {
   POSTMINUSMINUS; // '--' post-expression
   POSTPLUSPLUS; // '++' post-expression
 }
-
+ 
 @parser::header { package cfml.parsing.cfmentat.antlr; }
 @lexer::header { package cfml.parsing.cfmentat.antlr; }
- 
+
 @members { public boolean scriptMode = true; 
 
 protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {

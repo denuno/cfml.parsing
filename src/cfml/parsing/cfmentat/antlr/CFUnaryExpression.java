@@ -33,11 +33,6 @@ package cfml.parsing.cfmentat.antlr;
  * Definition of expression tree for a unary expression.
  */
 
-import com.naryx.tagfusion.cfm.engine.cfBooleanData;
-import com.naryx.tagfusion.cfm.engine.cfData;
-import com.naryx.tagfusion.cfm.engine.cfNumberData;
-import com.naryx.tagfusion.cfm.engine.cfmRunTimeException;
-import com.naryx.tagfusion.cfm.parser.CFMLLexer;
 
 public class CFUnaryExpression extends CFExpression implements
     java.io.Serializable {
@@ -54,100 +49,6 @@ public class CFUnaryExpression extends CFExpression implements
 
 	public byte getType() {
 		return CFExpression.UNARY;
-	}
-
-	public cfData Eval( CFContext context ) throws cfmRunTimeException {
-		cfData subVal;
-		cfData val = null;
-		cfLData ldata = null;
-
-		setLineCol(context);
-		subVal = sub.Eval(context);
-		if ( subVal.getDataType() == cfData.CFLDATA ) {
-			ldata = (cfLData) subVal;
-			subVal = ((cfLData) subVal).Get(context);
-		}
-		setLineCol(context);
-
-		switch (kind) {
-			case CFMLLexer.MINUS:
-				// if subVal is a numeric then we know it's safe to apply the MINUS
-				if ( subVal.getDataType() == cfData.CFNUMBERDATA ) {
-					if ( ((cfNumberData) subVal).isInt() ) {
-						val = new cfNumberData(subVal.getInt() * -1);
-					} else {
-						val = new cfNumberData(subVal.getDouble() * -1.0);
-					}
-	
-					// else just try creating the number
-				} else {
-					try {
-						val = cfData.createNumber_Validate("-" + subVal.getString(), false);
-					} catch (Exception e) {
-						throw new CFException(
-						    "Invalid expression. The '-' operator cannot be applied to a value of this type.",
-						    context);
-					}
-				}
-				break;
-			case CFMLLexer.NOT:
-			case CFMLLexer.NOTOP:
-				try {
-					val = cfBooleanData.getcfBooleanData(!subVal.getBoolean());
-				} catch (Exception e) {
-					throw new CFException(
-					    "Invalid expression. The NOT operator cannot be applied to a value of this type.",
-					    context);
-				}
-				break;
-			case CFMLLexer.PLUS:
-				val = sub.Eval(context);
-				break;
-			case CFMLLexer.PLUSPLUS:
-				val = update(context, subVal, ldata, 1, false);
-				break;
-			case CFMLLexer.MINUSMINUS:
-				val = update(context, subVal, ldata, -1, false);
-				break;
-			case CFMLLexer.POSTPLUSPLUS:
-				val = update(context, subVal, ldata, 1, true);
-				break;
-			case CFMLLexer.POSTMINUSMINUS:
-				val = update(context, subVal, ldata, -1, true);
-				break;
-	
-			default:
-				throw new CFException("Unknown unary operator (" + String.valueOf(kind)
-				    + ").", context);
-		}
-		return context._lastExpr = val;
-	}
-
-	private cfData update( CFContext _context, cfData _currentVal,
-	    cfLData _sourceLData, int _additive, boolean _post )
-	    throws cfmRunTimeException {
-		cfNumberData numVal = _currentVal.getNumber();
-		cfData returnVal;
-		cfNumberData newValue;
-		if ( numVal.isInt() ) {
-			newValue = new cfNumberData(numVal.getInt() + _additive);
-		} else {
-			newValue = new cfNumberData(numVal.getDouble() + (double) _additive);
-		}
-
-		if ( _post ) {
-			returnVal = numVal;
-			if ( _sourceLData != null ) {
-				_sourceLData.Set(newValue, _context);
-			}
-		} else {
-			returnVal = newValue;
-			if ( _sourceLData != null ) {
-				_sourceLData.Set(newValue, _context);
-			}
-		}
-
-		return returnVal;
 	}
 
 	public String Decompile( int indent ) {

@@ -43,37 +43,6 @@ public class CFStructElementExpression implements java.io.Serializable{
 		value = _value;
 	}
 
-	public void evaluate( CFContext _context, cfStructData _struct ) throws cfmRunTimeException {
-		// in the majority of cases, the key should only be a single key
-		if ( key.size() == 1 ){
-			String nextKey = ( (CFIdentifier) key.get( 0 ) ).getName();
-			_struct.setData( nextKey, value.Eval( _context ) );		
-		}else{
-			// in the case where there's multiple parts to the key, create the appropriate new structs
-			// required
-			cfStructData struct = _struct;
-			for ( int i = 0; i < key.size()-1; i++ ){
-				struct = getNextStruct( _context, struct, ( (CFIdentifier) key.get( i ) ).getName() );
-			}
-			struct.setData( ( (CFIdentifier) key.get( key.size() - 1 ) ).getName(), value.Eval( _context ) );
-		}
-	}
-
-	private cfStructData getNextStruct( CFContext _context, cfStructData _parent, String _key ) throws CFException{
-		if ( _parent.containsKey( _key ) ){
-			cfData nextData = _parent.getData( _key );
-			if ( nextData.getDataType() != cfData.CFSTRUCTDATA ){
-				throw new CFException( "Struct key '" + _key + "' already exists and is not a struct", _context );
-			}
-			return (cfStructData) nextData;
-			
-		}else{
-			cfStructData struct = new cfStructData();
-			_parent.setData( _key, struct );
-			return struct;
-		}
-	}
-	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append( ( (CFIdentifier) key.get( 0 ) ).getName() );

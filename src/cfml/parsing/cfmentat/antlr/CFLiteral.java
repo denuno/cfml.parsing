@@ -29,15 +29,15 @@
 
 package cfml.parsing.cfmentat.antlr;
 
+import java.util.Map;
+
 import org.antlr.runtime.Token;
 
-import com.naryx.tagfusion.cfm.engine.*;
-import com.naryx.tagfusion.cfm.parser.CFMLLexer;
 
 public class CFLiteral extends CFExpression implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private cfData val;
+	private String val;
 	private int kind;
 
 	public CFLiteral( Token _t ) {
@@ -46,7 +46,7 @@ public class CFLiteral extends CFExpression implements java.io.Serializable {
 		switch (kind) {
 			case CFMLLexer.FLOATING_POINT_LITERAL:
 			case CFMLLexer.INTEGER_LITERAL:
-				val = cfData.createNumber(_t.getText(), false);
+				val = _t.getText();
 				break;
 			case CFMLLexer.STRING_LITERAL:
 				// create a String, stripping off the surrounding quotes and
@@ -54,13 +54,13 @@ public class CFLiteral extends CFExpression implements java.io.Serializable {
 				String quote = _t.getText().substring(0, 1);
 				String str = _t.getText().substring(1, _t.getText().length() - 1);
 				str = str.replaceAll(quote + quote, quote);
-				val = new cfStringData(str);
+				val = str;
 				break;
 			case CFMLLexer.BOOLEAN_LITERAL:
-				val = cfBooleanData.getcfBooleanData(_t.getText());
+				val = _t.getText();
 				break;
 			case CFMLLexer.NULL:
-				val = cfNullData.NULL;
+				val = "";
 				break;
 			default:
 				break;
@@ -71,13 +71,9 @@ public class CFLiteral extends CFExpression implements java.io.Serializable {
 		return CFExpression.LITERAL;
 	}
 
-	public cfData Eval( CFContext context ) {
-		return context._lastExpr = val;
-	}
-
 	public String Decompile( int indent ) {
 		try {
-			return val.getString();
+			return val;
 		} catch (Exception e) {
 			return "Couldn't get literal value";
 		}

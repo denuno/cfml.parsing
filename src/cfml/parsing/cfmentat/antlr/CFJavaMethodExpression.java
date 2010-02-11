@@ -35,8 +35,6 @@ package cfml.parsing.cfmentat.antlr;
  * (i.e. method name, and arguments being passed to it)
  */
 
-import com.naryx.tagfusion.cfm.engine.*;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -44,7 +42,7 @@ import java.util.Vector;
 
 import org.antlr.runtime.Token;
 
-public class CFJavaMethodExpression extends CFExpression implements javaMethodDataInterface {
+public class CFJavaMethodExpression extends CFExpression  {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -77,49 +75,6 @@ public class CFJavaMethodExpression extends CFExpression implements javaMethodDa
 
 	public void setOnMethodMissing() {
 		_onMissingMethod = true;
-	}
-
-	public List<cfData> getEvaluatedArguments( CFContext _context,
-	    boolean cfcMethod ) throws cfmRunTimeException {
-		List<cfData> evaluatedArgs = new ArrayList<cfData>();
-		int noArgs = args.size();
-		for (int i = 0; i < noArgs; i++) {
-			evaluatedArgs.add( CFFunctionExpression.evaluateArgument( _context,
-			    args.elementAt(i), cfcMethod ) );
-		}
-		return evaluatedArgs;
-	}// getArguments()
-
-	public cfData Eval( CFContext context ) throws cfmRunTimeException {
-		if ( args instanceof ArgumentsVector ) { // named arguments for CFC method
-			cfArgStructData argStruct = new cfArgStructData();
-			ArgumentsVector argsVtr = (ArgumentsVector) args;
-			Iterator<String> keys = argsVtr.keys().iterator();
-			while (keys.hasNext()) {
-				String nextKey = keys.next();
-				CFExpression nextArgExpression = argsVtr.getNamedArg(nextKey);
-				cfData nextEvaluatedArg = CFFunctionExpression.evaluateArgument(
-				    context, nextArgExpression);
-				if ( nextKey.equalsIgnoreCase( "argumentcollection") ) {
-					if ( nextEvaluatedArg.isStruct() ) {
-						cfStructData argCollection = (cfStructData) nextEvaluatedArg;
-						Object[] argKeys = argCollection.keys();
-						for (int i = 0; i < argKeys.length; i++) {
-							String key = (String) argKeys[i];
-							argStruct.setData(key, argCollection.getData(key));
-						}
-					} else {
-						throw new CFException("argumentCollection must be a struct",
-						    context);
-					}
-				} else {
-					argStruct.setData(nextKey, nextEvaluatedArg);
-				}
-			}
-			return argStruct;
-		} else { // Java object method or CFC method with unnamed arguments
-			return null;
-		}
 	}
 
 	public String Decompile( int indent ) {
