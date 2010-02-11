@@ -30,7 +30,6 @@
 package cfml.parsing.cfmentat.antlr.script;
 
 
-import com.naryx.tagfusion.cfm.engine.dataNotSupportedException;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFException;
 import cfml.parsing.cfmentat.antlr.CFExpression;
@@ -58,27 +57,6 @@ public class CFIfStatement extends CFParsedStatement implements
 		}
 	}
 
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		setLineCol(context);
-		boolean condValue = false;
-
-		try {
-			condValue = fullyEvaluate(cond, context).getBoolean();
-		} catch (dataNotSupportedException e) {
-			throw new CFException(
-			    "Invalid condition in IF statement. The condition cannot be evaluated to true/false.",
-			    context);
-		}
-
-		CFStatementResult result = null;
-		if ( condValue ) {
-			result = thenStatement.Exec(context);
-		} else if ( elseStatement != null ) {
-			result = elseStatement.Exec(context);
-		}
-
-		return result;
-	}
 
 	public String Decompile( int indent ) {
 		StringBuilder s = new StringBuilder();

@@ -77,6 +77,7 @@ public abstract class CFExpression extends CFParsedStatement implements java.io.
 		}catch( Exception e ){
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	

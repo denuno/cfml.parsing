@@ -31,11 +31,9 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFException;
 import cfml.parsing.cfmentat.antlr.CFExpression;
-import cfml.parsing.cfmentat.antlr.cfLData;
 
 public class CFForInStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
@@ -54,43 +52,6 @@ public class CFForInStatement extends CFParsedStatement implements java.io.Seria
 
 	public void checkIndirectAssignments( String[] scriptSource ) {
 		body.checkIndirectAssignments(scriptSource);
-	}
-
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		cfStructData struct;
-
-		setLineCol(context);
-
-		cfData temp = structure.Eval(context);
-		if ( temp.getDataType() == cfData.CFLDATA ) {
-			temp = ((cfLData) temp).Get(context);
-		}
-
-		if ( temp == null || !temp.isStruct() ) {
-			throw new CFException("Only structs may be used in a for...in.", context);
-		} else {
-			struct = (cfStructData) temp;
-		}
-
-		cfData temp2 = variable.Eval(context);
-		cfLData var = (cfLData) temp2;
-
-		Object[] keys = struct.keys();
-		for (int i = 0; i < keys.length; i++) {
-			String nextStr = (String) keys[i];
-			var.Set(new cfStringData(nextStr), context);
-
-			CFStatementResult result = body.Exec(context);
-			if ( result != null ) {
-				if ( result.isBreak() ) {
-					break;
-				} else if ( result.isContinue() ) {
-					continue;
-				}
-				return result;
-			}
-		}
-		return null;
 	}
 
 	public String Decompile( int indent ) {

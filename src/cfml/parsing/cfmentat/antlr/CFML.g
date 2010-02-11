@@ -47,7 +47,7 @@ tokens {
   POSTMINUSMINUS; // '--' post-expression
   POSTPLUSPLUS; // '++' post-expression
 }
- 
+
 @parser::header { package cfml.parsing.cfmentat.antlr; }
 @lexer::header { package cfml.parsing.cfmentat.antlr; }
 

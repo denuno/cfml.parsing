@@ -76,17 +76,6 @@ public class CFCompoundStatement extends CFParsedStatement implements CFScriptSt
 		}
 	}
 
-	public cfml.parsing.cfmentat.antlr.script.CFStatementResult Exec(CFContext context) throws cfmRunTimeException {
-		setLineCol(context);
-		for ( int i = 0; i < _v.size(); i++ ) {
-			cfml.parsing.cfmentat.antlr.script.CFStatementResult statementResult = _v.get(i).Exec( context );
-			if ( statementResult != null ) {
-				return statementResult;
-			}
-		}
-		return null;
-	}
-
 	public String Decompile(int indent) {
 		StringBuilder s = new StringBuilder();
 		s.append( Indent(indent) );

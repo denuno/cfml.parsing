@@ -39,7 +39,6 @@ import org.antlr.runtime.Token;
 
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
-import cfml.parsing.cfmentat.antlr.cfLData;
 
 abstract public class CFParsedStatement implements CFScriptStatement, java.io.Serializable {
 

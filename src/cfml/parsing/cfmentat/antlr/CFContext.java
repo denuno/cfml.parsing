@@ -44,7 +44,6 @@ public class CFContext extends cfData implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private CFGlobalScopeInterface _globalScope;
 	private CFCallStack _callStack;
 
 	private Stack<CFCallStack> callStackStack;
@@ -52,15 +51,12 @@ public class CFContext extends cfData implements java.io.Serializable {
 	private int _line;
 	private int _col;
 
-	private cfSession cfsession;
 
 	// This is set by every expression evaluation routine - we need it for the
 	// "eval()" builtin
 	public cfData _lastExpr;
 
-	public CFContext(CFGlobalScopeInterface globalScope,
-	    com.naryx.tagfusion.cfm.engine.cfSession _session) {
-		_globalScope = globalScope;
+	public CFContext() {
 		_callStack = new CFCallStack();
 		callStackStack = new Stack<CFCallStack>();
 
@@ -68,7 +64,6 @@ public class CFContext extends cfData implements java.io.Serializable {
 		_col = 0;
 
 		_lastExpr = CFUndefinedValue.UNDEFINED;
-		cfsession = _session;
 	}
 
 	public CFCallStack getCallStack() {
@@ -77,14 +72,6 @@ public class CFContext extends cfData implements java.io.Serializable {
 
 	public Stack<CFCallStack> getCallStackStack() {
 		return callStackStack;
-	}
-
-	public cfSession getSession() {
-		return cfsession;
-	}
-
-	public void setSession( cfSession _session ) {
-		cfsession = _session;
 	}
 
 	public void enterCustomTag() {
@@ -100,6 +87,11 @@ public class CFContext extends cfData implements java.io.Serializable {
 
 	public boolean containsFunction( String _function ) {
 		return ( getUDF( _function ) != null );
+	}
+
+	private Object getUDF(String function) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public void pushCall( CFCall call ) {
@@ -131,8 +123,5 @@ public class CFContext extends cfData implements java.io.Serializable {
 		return ""; // might want to put scope print out here
 	}
 
-	public void dump( cfSession Session ) {
-		Session.write( "&nbsp;" );
-	}
 
 }

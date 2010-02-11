@@ -37,10 +37,8 @@ import java.util.List;
 
 import org.antlr.runtime.Token;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
-import cfml.parsing.cfmentat.antlr.cfLData;
 
 public class CFSwitchStatement extends CFParsedStatement implements java.io.Serializable {
 
@@ -60,87 +58,6 @@ public class CFSwitchStatement extends CFParsedStatement implements java.io.Seri
 		for (int i = 0; i < cases.size(); i++) {
 			cases.get(i).checkIndirectAssignments(scriptSource);
 		}
-	}
-
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		// this method probably could be more efficient
-		cfData value = variable.Eval(context);
-		if ( value.getDataType() == cfData.CFLDATA )
-			value = ((cfLData) value).Get(context);
-
-		boolean isBooleanCase = false;
-		boolean isNumberCase = false;
-
-		if ( value.getDataType() == cfData.CFBOOLEANDATA ) {
-			isBooleanCase = true;
-		} else if ( value.getDataType() == cfData.CFNUMBERDATA ) {
-			isNumberCase = true;
-		}
-
-		boolean execute = false; // set to true when the first case is matched
-		// it means that the following cases will be executed while there is no
-		// "break;"
-		CFStatementResult result = null;
-
-		int defaultIndex = -1; // hold the index of the defaultIndex
-
-		CFCase nextCase;
-		for (int i = 0; i < cases.size(); i++) {
-			nextCase = cases.get(i);
-			if ( !execute ) {
-				if ( nextCase.isDefault() )
-					defaultIndex = i;
-				else {
-					if ( isBooleanCase ) {
-						boolean boolVal = false;
-						try {
-							boolVal = nextCase.getConstant(context).getBoolean();
-						} catch (dataNotSupportedException ignored) { /* go with default */
-						}
-						if ( ((cfBooleanData) value).getBoolean() == boolVal )
-							execute = true;
-					} else if ( isNumberCase ) {
-						double doubleVal;
-						try {
-							doubleVal = nextCase.getConstant(context).getDouble();
-							if ( ((cfNumberData) value).getDouble() == doubleVal )
-								execute = true;
-						} catch (dataNotSupportedException ignored) {
-						}
-					} else {
-						String strVal = "";
-						try {
-							strVal = nextCase.getConstant(context).getString();
-							if ( value.getString().equalsIgnoreCase(strVal) )
-								execute = true;
-						} catch (dataNotSupportedException ignored) {
-						}
-					}
-
-				}
-			}
-
-			if ( execute ) {
-				result = nextCase.Exec(context);
-				if ( result != null ) {
-					return (result.isReturn() ? result : null);
-				}
-			}
-		}
-
-		// if a value wasn't found then execute from the default case if one
-		// exists.
-		if ( !execute && defaultIndex != -1 ) {
-			for (int i = defaultIndex; i < cases.size(); i++) {
-				nextCase = cases.get(i);
-				result = nextCase.Exec(context);
-				if ( result != null ) {
-					return (result.isReturn() ? result : null);
-				}
-			}
-		}
-
-		return result;
 	}
 
 	public String Decompile( int _indent ) {

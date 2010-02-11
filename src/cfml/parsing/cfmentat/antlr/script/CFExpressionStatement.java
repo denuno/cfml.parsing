@@ -47,10 +47,6 @@ public class CFExpressionStatement extends CFParsedStatement implements java.io.
 		return expression.Decompile(indent);
 	}
 
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		expression.Exec(context);
-		return null;
-	}
 
 	public void checkIndirectAssignments( String[] scriptSource ) {
 		expression.checkIndirectAssignments(scriptSource);

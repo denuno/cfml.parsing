@@ -33,7 +33,6 @@ import java.lang.String;
 
 import org.antlr.runtime.Token;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
@@ -53,22 +52,6 @@ public class CFDoWhileStatement extends CFParsedStatement implements java.io.Ser
 		body.checkIndirectAssignments(scriptSource);
 	}
 
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		setLineCol(context);
-
-		do {
-			CFStatementResult result = body.Exec(context);
-			if ( result != null ) {
-				if ( result.isReturn() ) {
-					return result;
-				} else if ( result.isBreak() ) {
-					break;
-				}
-			}
-		} while (fullyEvaluate(condition, context).getBoolean());
-
-		return null;
-	}
 
 	public String Decompile( int indent ) {
 		StringBuilder sb = new StringBuilder();

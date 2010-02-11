@@ -51,7 +51,8 @@ public class CFFuncDeclStatement extends CFParsedStatement
 		formals = _formals;
 		body = _body;
 
-		if ( com.naryx.tagfusion.expression.compile.expressionEngine.isFunction( name ) )
+//		if ( com.naryx.tagfusion.expression.compile.expressionEngine.isFunction( name ) )
+		if ( false )
 			throw new ParseException( _name, "Invalid function name. The name \"" + name + "\" is the name of a predefined function." );
 
 	}

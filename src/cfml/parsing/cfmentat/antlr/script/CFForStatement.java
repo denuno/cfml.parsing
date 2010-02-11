@@ -31,7 +31,6 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-import com.naryx.tagfusion.cfm.engine.*;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
@@ -54,26 +53,6 @@ public class CFForStatement extends CFParsedStatement implements java.io.Seriali
 
 	public void checkIndirectAssignments( String[] scriptSource ) {
 		body.checkIndirectAssignments(scriptSource);
-	}
-
-	public CFStatementResult Exec( CFContext context ) throws cfmRunTimeException {
-		setLineCol(context);
-
-		cfData dummy; // to keep compiler happy
-		for (dummy = (init != null ? fullyEvaluate(init, context) : null); cond != null ? fullyEvaluate(
-		    cond, context).getBoolean()
-		    : true; dummy = (next != null ? fullyEvaluate(next, context) : null)) {
-			CFStatementResult result = body.Exec(context);
-			if ( result != null ) {
-				if ( result.isBreak() ) {
-					break;
-				} else if ( result.isContinue() ) {
-					continue;
-				}
-				return result;
-			}
-		}
-		return null;
 	}
 
 	public String Decompile( int indent ) {
