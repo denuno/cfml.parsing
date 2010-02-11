@@ -1,0 +1,5 @@
+<attributetests>
+	<test name="simpletest">
+	this="is a rather" simple="test"
+	</test>
+</attributetests>
