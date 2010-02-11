@@ -18,7 +18,7 @@
 // WITHOUT WARRANTY OF ANY KIND, either express or implied.
 // See the individual licence texts for more details.
 
-package cfml.parsing.cfmentat.tag;
+package cfml.parsing.util;
 
 import java.util.ArrayList;
 
@@ -29,54 +29,14 @@ import net.htmlparser.jericho.StartTag;
 import net.htmlparser.jericho.StartTagTypeGenericImplementation;
 import net.htmlparser.jericho.Tag;
 
-public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
+public class ParseUtil {
 
-	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag) {
-		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,false,false);
-	}
-
-
-	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag, final boolean hasAttributes, final boolean isNameAfterPrefixRequired) {
-		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,hasAttributes,isNameAfterPrefixRequired);
-	}
-
-
-	protected int getEnd(final Source source, final int pos) {
-		final ParseText text = source.getParseText();
-		int endStartTagEnd = pos;
-		boolean isInQuotes = false;
-		boolean isInApos = false;
-		for (int x = pos; x < text.length(); x++) {
-			char c = text.charAt(x);
-			switch (c) {
-			case '>':
-				if (!isInQuotes && !isInApos) {
-					endStartTagEnd = x;
-				}
-				break;
-			case '"':
-				if(!isInApos) {					
-					isInQuotes = (!isInQuotes);
-				}
-				break;
-			case '\'':
-				if(!isInQuotes) {
-					isInApos = (!isInApos);
-				}
-				break;
-
-			default:
-				break;
-			}
-			if (endStartTagEnd > pos) {
-				return endStartTagEnd + 1;
-			}
-		}
-		return endStartTagEnd;
+	protected ParseUtil() {
 	}
 
 	protected ArrayList getAttributes(String inData) {
 		ArrayList attributes = new ArrayList();
+		boolean isStartedString = false;
 		boolean isStartedAttribute = false;
 		boolean isDone = false;
 		boolean isInQuotes = false;
@@ -101,47 +61,28 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 			case '"':
 				if(!isInApos && nextChar !='"') {					
 					isInQuotes = (!isInQuotes);
-					if(!isInQuotes)
-						isDone=true;
-				} else if (!isInApos && nextChar == '"'){
-					isDone=true;
+					if(isStartedString) {
+						isDone = true;
+					} else {
+						isStartedString = !isStartedString;						
+					}
 				}
 				break;
 			case '\'':
 				if(!isInQuotes  && nextChar !='\'') {
 					isInApos = (!isInApos);
-					if(!isInApos)
-						isDone=true;
-				} else if (!isInQuotes && nextChar == '\''){
-					isDone=true;
-				}
-				break;
-			case '=':
-				if(!isInQuotes  && !isInApos) {
-					isStartedAttribute = !isStartedAttribute;
-					continue;
-				}
-				break;
-			case ' ':
-				if(!isInQuotes  && !isInApos) {
-					continue;
-				}
-				break;
-
-			case '&':
-				if(!isInQuotes  && !isInApos) {
-					isDone=false;
+					if(isStartedString) {
+						isDone = true;
+					} else {
+						isStartedString = !isStartedString;						
+					}
 				}
 				break;
 
 			default:
 				break;
 			}
-			if((nextChar == '&' || nextChar == '&'|| nextChar == ' ') && !isInApos && !isInQuotes && isDone) {
-				isDone=false;
-				isStartedAttribute = true;
-			}
-			if(isStartedAttribute) {
+			if(isInQuotes || isInApos) {
 				attributeValue = attributeValue + c;
 			} else {
 				attributeName = attributeName + c;				
@@ -153,7 +94,6 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 				attributes.add(attribute);
 				attributeValue = "";
 				attributeName = "";
-				isStartedAttribute = false;
 				isDone = false;
 			}
 		}

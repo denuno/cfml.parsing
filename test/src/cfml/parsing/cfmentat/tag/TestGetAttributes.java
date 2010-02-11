@@ -46,8 +46,19 @@ public class TestGetAttributes {
 	 */
 	@Test
 	public void testGetAttributes() {
+		assertEquals(1,fGenericStartTag.getAttributes("a=\"a\" & \"wee\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("a=\"a\" & \"wee\" & 'farts'").size());		
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this='a simple'").size());
+		assertEquals(1,fGenericStartTag.getAttributes("this= 'a simple'").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this = 'a simple'").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this ='a simple'").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\" & \"wee\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' apos test\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' apos' test\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this='a simple\" apos' test\"").size());		
 		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size());		
+		assertEquals(1,fGenericStartTag.getAttributes("this=\"\"").size());		
 	}
 
 }
