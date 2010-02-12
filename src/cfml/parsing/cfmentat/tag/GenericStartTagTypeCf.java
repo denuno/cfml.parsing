@@ -73,11 +73,11 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 			default:
 				break;
 			}
-			if (endStartTagEnd > pos) {
+			if (endStartTagEnd >= pos) {
 				return endStartTagEnd + 1;
 			}
 		}
-		return endStartTagEnd;
+		return endStartTagEnd+1;
 	}
 
 	protected ArrayList getAttributes(String inData)

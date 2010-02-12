@@ -1,23 +1,3 @@
-// Jericho HTML Parser - Java based library for analysing and manipulating HTML
-// Version 3.1
-// Copyright (C) 2004-2009 Martin Jericho
-// http://jericho.htmlparser.net/
-//
-// This library is free software; you can redistribute it and/or
-// modify it under the terms of either one of the following licences:
-//
-// 1. The Eclipse Public License (EPL) version 1.0,
-// included in this distribution in the file licence-epl-1.0.html
-// or available at http://www.eclipse.org/legal/epl-v10.html
-//
-// 2. The GNU Lesser General Public License (LGPL) version 2.1 or later,
-// included in this distribution in the file licence-lgpl-2.1.txt
-// or available at http://www.gnu.org/licenses/lgpl.txt
-//
-// This library is distributed on an "AS IS" basis,
-// WITHOUT WARRANTY OF ANY KIND, either express or implied.
-// See the individual licence texts for more details.
-
 package cfml.parsing.cfmentat.tag;
 
 import net.htmlparser.jericho.StartTagType;
@@ -141,11 +121,13 @@ public final class CFMLTagTypes {
 	public static final StartTagType CFML_INPUT=StartTagTypeCfInput.INSTANCE;
 	public static final StartTagType CFML_FUNCTION=StartTagTypeCfFunction.INSTANCE;
 	public static final StartTagType CFML_SAVECONTENT=StartTagTypeCfSaveContent.INSTANCE;
+	public static final StartTagType CFML_CONTENT=StartTagTypeCfContent.INSTANCE;
 	public static final StartTagType CFML_MAIL=StartTagTypeCfMail.INSTANCE;
 
 	private static final TagType[] TAG_TYPES={
 		CFML_STANDARD,
 		CFML_SAVECONTENT,
+		CFML_CONTENT,
 		CFML_COMMENT,
 		CFML_SET,
 		CFML_IF,
