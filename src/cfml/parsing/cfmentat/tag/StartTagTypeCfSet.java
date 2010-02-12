@@ -20,15 +20,11 @@
 
 package cfml.parsing.cfmentat.tag;
 
-import net.htmlparser.jericho.EndTagType;
-import net.htmlparser.jericho.StartTagTypeGenericImplementation;
-
- final class StartTagTypeCfSet extends GenericStartTagTypeCf {
-	protected static final StartTagTypeCfSet INSTANCE=new StartTagTypeCfSet();
+final class StartTagTypeCfSet extends GenericStartTagTypeCf {
+	protected static final StartTagTypeCfSet INSTANCE = new StartTagTypeCfSet();
 
 	private StartTagTypeCfSet() {
-		//super("CFSET","<cfset",">",null,true,false,false);
-		super("CFML short tag","<cfset",">",null,false,false,false);
+		// super("CFSET","<cfset",">",null,true,false,false);
+		super("CFML short tag", "<cfset", ">", null, false, false, false);
 	}
 }
-

@@ -25,21 +25,26 @@ import java.util.ArrayList;
 import net.htmlparser.jericho.EndTagType;
 import net.htmlparser.jericho.ParseText;
 import net.htmlparser.jericho.Source;
-import net.htmlparser.jericho.StartTag;
 import net.htmlparser.jericho.StartTagTypeGenericImplementation;
-import net.htmlparser.jericho.Tag;
 
 public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 
-	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag) {
-		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,false,false);
+	protected GenericStartTagTypeCf(final String description,
+			final String startDelimiter, final String closingDelimiter,
+			final EndTagType correspondingEndTagType, final boolean isServerTag) {
+		super(description, startDelimiter, closingDelimiter,
+				correspondingEndTagType, isServerTag, false, false);
 	}
 
-
-	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag, final boolean hasAttributes, final boolean isNameAfterPrefixRequired) {
-		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,hasAttributes,isNameAfterPrefixRequired);
+	protected GenericStartTagTypeCf(final String description,
+			final String startDelimiter, final String closingDelimiter,
+			final EndTagType correspondingEndTagType,
+			final boolean isServerTag, final boolean hasAttributes,
+			final boolean isNameAfterPrefixRequired) {
+		super(description, startDelimiter, closingDelimiter,
+				correspondingEndTagType, isServerTag, hasAttributes,
+				isNameAfterPrefixRequired);
 	}
-
 
 	protected int getEnd(final Source source, final int pos) {
 		final ParseText text = source.getParseText();
@@ -55,19 +60,19 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 				}
 				break;
 			case '"':
-				if(!isInApos) {					
+				if (!isInApos) {
 					isInQuotes = (!isInQuotes);
 				}
 				break;
 			case '\'':
-				if(!isInQuotes) {
+				if (!isInQuotes) {
 					isInApos = (!isInApos);
 				}
 				break;
-
 			default:
 				break;
 			}
+
 			if (endStartTagEnd > pos) {
 				return endStartTagEnd + 1;
 			}
@@ -85,37 +90,42 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 		String attributeName = "";
 		String attributeValue = "";
 		int pos = 0;
+
 		for (int x = pos; x < inData.length(); x++) {
 			char c = inData.charAt(x);
 			char nextChar;
-			if(inData.length() > x+1) {
-				nextChar = inData.charAt(x+1);
+
+			if (inData.length() > x + 1) {
+				nextChar = inData.charAt(x + 1);
 			} else {
 				nextChar = '>';
 			}
+
 			switch (c) {
 			case '>':
 				if (!isInQuotes && !isInApos) {
 					isDone = true;
 				}
 				break;
+
 			case '"':
-				if(!isInApos && nextChar !='"') {					
+				if (!isInApos && nextChar != '"') {
 					isInQuotes = (!isInQuotes);
-					if(isStartedString) {
+					if (isStartedString) {
 						isDone = true;
 					} else {
-						isStartedString = !isStartedString;						
+						isStartedString = !isStartedString;
 					}
 				}
 				break;
+
 			case '\'':
-				if(!isInQuotes  && nextChar !='\'') {
+				if (!isInQuotes && nextChar != '\'') {
 					isInApos = (!isInApos);
-					if(isStartedString) {
+					if (isStartedString) {
 						isDone = true;
 					} else {
-						isStartedString = !isStartedString;						
+						isStartedString = !isStartedString;
 					}
 				}
 				break;
@@ -123,12 +133,14 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 			default:
 				break;
 			}
-			if(isInQuotes || isInApos) {
+
+			if (isInQuotes || isInApos) {
 				attributeValue = attributeValue + c;
 			} else {
-				attributeName = attributeName + c;				
+				attributeName = attributeName + c;
 			}
-			if(isDone) {
+
+			if (isDone) {
 				String[] attribute = new String[2];
 				attribute[0] = attributeName;
 				attribute[1] = attributeValue;
