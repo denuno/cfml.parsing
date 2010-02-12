@@ -141,6 +141,7 @@ public final class CFMLTagTypes {
 	public static final StartTagType CFML_INPUT=StartTagTypeCfInput.INSTANCE;
 	public static final StartTagType CFML_FUNCTION=StartTagTypeCfFunction.INSTANCE;
 	public static final StartTagType CFML_SAVECONTENT=StartTagTypeCfSaveContent.INSTANCE;
+	public static final StartTagType CFML_MAIL=StartTagTypeCfMail.INSTANCE;
 
 	private static final TagType[] TAG_TYPES={
 		CFML_STANDARD,
@@ -155,7 +156,8 @@ public final class CFMLTagTypes {
 		CFML_INCLUDE,
 		CFML_INPUT,
 		HTML_SCRIPT,
-		CFML_SCRIPT
+		CFML_SCRIPT,
+		CFML_MAIL
 	};
 
 	private CFMLTagTypes() {}

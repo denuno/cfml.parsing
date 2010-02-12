@@ -21,6 +21,8 @@
 package cfml.parsing.cfmentat.tag;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import net.htmlparser.jericho.EndTagType;
 import net.htmlparser.jericho.ParseText;
@@ -30,6 +32,7 @@ import net.htmlparser.jericho.StartTagTypeGenericImplementation;
 import net.htmlparser.jericho.Tag;
 
 public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
+	static protected final String REG_ATTRIBUTES = "(\\w+)[\\s=]+(((\\x22|\\x27|#)((?!\\4).|\\4{2})*\\4))";
 
 	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag) {
 		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,false,false);
@@ -51,11 +54,13 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 			switch (c) {
 			case '>':
 				if (!isInQuotes && !isInApos) {
-					endStartTagEnd = x;
+					if(!text.subSequence(x-3, x).equals("---")) {						
+						endStartTagEnd = x;
+					}
 				}
 				break;
 			case '"':
-				if(!isInApos) {					
+				if(!isInApos) {
 					isInQuotes = (!isInQuotes);
 				}
 				break;
@@ -75,89 +80,49 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 		return endStartTagEnd;
 	}
 
-	protected ArrayList getAttributes(String inData) {
+	protected ArrayList getAttributes(String inData)
+	{
 		ArrayList attributes = new ArrayList();
-		boolean isStartedAttribute = false;
-		boolean isDone = false;
-		boolean isInQuotes = false;
-		boolean isInApos = false;
-		String attributeName = "";
-		String attributeValue = "";
-		int pos = 0;
-		for (int x = pos; x < inData.length(); x++) {
-			char c = inData.charAt(x);
-			char nextChar;
-			if(inData.length() > x+1) {
-				nextChar = inData.charAt(x+1);
-			} else {
-				nextChar = '>';
-			}
-			switch (c) {
-			case '>':
-				if (!isInQuotes && !isInApos) {
-					isDone = true;
-				}
-				break;
-			case '"':
-				if(!isInApos && nextChar !='"') {					
-					isInQuotes = (!isInQuotes);
-					if(!isInQuotes)
-						isDone=true;
-				} else if (!isInApos && nextChar == '"'){
-					isDone=true;
-				}
-				break;
-			case '\'':
-				if(!isInQuotes  && nextChar !='\'') {
-					isInApos = (!isInApos);
-					if(!isInApos)
-						isDone=true;
-				} else if (!isInQuotes && nextChar == '\''){
-					isDone=true;
-				}
-				break;
-			case '=':
-				if(!isInQuotes  && !isInApos) {
-					isStartedAttribute = !isStartedAttribute;
-					continue;
-				}
-				break;
-			case ' ':
-				if(!isInQuotes  && !isInApos) {
-					continue;
-				}
-				break;
+		Matcher matcher;
+		Pattern pattern;
+		String attributeName,attributeValue;
+		pattern = Pattern.compile(REG_ATTRIBUTES,Pattern.CASE_INSENSITIVE);
+		matcher = pattern.matcher(inData);
+		if(inData.trim().endsWith("&")){
+			userMessage(0, 
+					"stripAttributes", "Last attribute cannot be an ampersand", 
+					"ERR", null);			
+		}
 
-			case '&':
-				if(!isInQuotes  && !isInApos) {
-					isDone=false;
-				}
-				break;
-
-			default:
-				break;
-			}
-			if((nextChar == '&' || c == '&' && nextChar == ' ') && !isInApos && !isInQuotes && isDone) {
-				isDone=false;
-				isStartedAttribute = true;
-			}
-			if(isStartedAttribute) {
-				attributeValue = attributeValue + c;
-			} else {
-				attributeName = attributeName + c;				
-			}
-			if(isDone) {
+		while(matcher.find())
+		{
+			
+		    if (matcher.group(1) != null && matcher.group(2) != null) {
 				String[] attribute = new String[2];
+		    	
+			    attributeName = matcher.group(1).trim();
+			    attributeValue = matcher.group(2).trim();
+			    attributeValue = attributeValue.substring(1,attributeValue.length()-1);
 				attribute[0] = attributeName;
 				attribute[1] = attributeValue;
 				attributes.add(attribute);
-				attributeValue = "";
-				attributeName = "";
-				isStartedAttribute = false;
-				isDone = false;
-			}
+			    //System.out.println(attributeName + " = " +attributeValue);
+		    }
+		    else {
+		        System.out.println("CFParser::stripAttributes() - failed on |" + inData + "| with " + matcher.groupCount() + " matches");
+//		        for (int i = 0; i<=matcher.groupCount(); i++) {
+//		        	System.out.println("Match " + i + " : " + matcher.group(i));
+//		        }
+		    }
 		}
+		
 		return attributes;
+	}
+
+
+	private void userMessage(int i, String string, String string2, String string3, Object object) {
+		// TODO Auto-generated method stub
+		System.out.println(string+string2);
 	}
 
 }

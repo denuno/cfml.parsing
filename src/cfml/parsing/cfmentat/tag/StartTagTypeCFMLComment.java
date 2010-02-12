@@ -27,7 +27,7 @@ import net.htmlparser.jericho.StartTagTypeGenericImplementation;
 	protected static final StartTagTypeCFMLComment INSTANCE=new StartTagTypeCFMLComment();
 
 	private StartTagTypeCFMLComment() {
-		super("comment","<!---","--->",null,false,false,false);
+		super("comment","<!---","--->",null,true,false,false);
 	}
 }
 
