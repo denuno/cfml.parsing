@@ -33,13 +33,6 @@ public class TestGetAttributes {
 		fSource=new Source(new URL(sourceUrlString));
 	}
 
-	/**
-	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getEnd(net.htmlparser.jericho.Source, int)}.
-	 */
-	@Test
-	public void testGetEndSourceInt() {
-		fail("Not yet implemented");
-	}
 
 	/**
 	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getAttributes(java.lang.String)}.
@@ -61,6 +54,23 @@ public class TestGetAttributes {
 		assertEquals(2,fGenericStartTag.getAttributes("this='a simple\" apos' test=\"\"").size());		
 		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size());		
 		assertEquals(1,fGenericStartTag.getAttributes("this=\"\"").size());		
+
+		
+		assertEquals(2,fGenericStartTag.parseAttr("a=\"a\" b=\"wee\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("a=\"a\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this=\"fun='wee'\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this='fun=\"wee\"'").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this = ' fun = \"wee\" '").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this='a simple'").size());
+		assertEquals(1,fGenericStartTag.parseAttr("this= 'a simple'").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this = 'a simple'").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this ='a simple'").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple' apos test\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple' dub apos' test\"").size());		
+		assertEquals(2,fGenericStartTag.parseAttr("this='a simple\" apos' test=\"\"").size());		
+		assertEquals(2,fGenericStartTag.parseAttr("this=\"a simple\" test=\"a simple\"").size());		
+		assertEquals(1,fGenericStartTag.parseAttr("this=\"\"").size());		
 	}
 
 }

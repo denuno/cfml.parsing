@@ -61,9 +61,9 @@ public class TestGetStartTagEnd {
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
 		assertEquals(tagSrc.length()-17,cfset.getEnd());
 
-		tagSrc = "<cfset blah='foo>'><more blah='wee'>";
+		tagSrc = "<cfset blah=\"foo\">";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length()-17,cfset.getEnd());
+		assertEquals(tagSrc.length(),cfset.getEnd());
 		
 		
 	}
