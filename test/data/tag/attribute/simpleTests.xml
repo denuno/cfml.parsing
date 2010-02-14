@@ -74,7 +74,7 @@
 	<test name="simpletest24" numattributes="1">
 	this='#hash#'
 	</test>
-	<test name="simpletest24" numattributes="1">
+	<test name="simpletest25" numattributes="1">
 	this='#hash# foo="blah"'
 	</test>
 </attributetests>
