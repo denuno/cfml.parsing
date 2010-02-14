@@ -11,7 +11,7 @@ final class StartTagTypeCfSaveContent extends StartTagTypeGenericImplementation 
 	protected static final StartTagTypeCfSaveContent INSTANCE = new StartTagTypeCfSaveContent();
 
 	private StartTagTypeCfSaveContent() {
-		super("CFML if tag", "<cfsavecontent", ">", EndTagType.NORMAL, false, true, false);
+		super("CFML if tag", "<cfsavecontent", ">", EndTagType.NORMAL, false, false, false);
 	}
 
 }

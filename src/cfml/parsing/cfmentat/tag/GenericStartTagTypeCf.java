@@ -460,8 +460,9 @@ protected ArrayList stripAttributes(String inData, int lineNum, int offset, Pars
 }
 
 
-public ArrayList parseAttr(String string) {
-	return parseAttr(string,0,0);
+public ArrayList parseAttr(String attributes) {
+	// TODO Auto-generated method stub
+	return parseAttr(attributes,0,0);
 }
 	
 	
