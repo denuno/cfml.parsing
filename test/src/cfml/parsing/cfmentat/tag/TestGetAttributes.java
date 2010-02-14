@@ -2,8 +2,10 @@ package cfml.parsing.cfmentat.tag;
 import static org.junit.Assert.*;
 
 import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 
+import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.EndTagType;
 import net.htmlparser.jericho.Source;
 import net.htmlparser.jericho.StartTagType;
@@ -39,38 +41,21 @@ public class TestGetAttributes {
 	 */
 	@Test
 	public void testGetAttributes() {
-		assertEquals(2,fGenericStartTag.getAttributes("a=\"a\" b=\"wee\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("a=\"a\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"fun='wee'\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this='fun=\"wee\"'").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this = ' fun = \"wee\" '").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this='a simple'").size());
-		assertEquals(1,fGenericStartTag.getAttributes("this= 'a simple'").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this = 'a simple'").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this ='a simple'").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' apos test\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"a simple' dub apos' test\"").size());		
-		assertEquals(2,fGenericStartTag.getAttributes("this='a simple\" apos' test=\"\"").size());		
-		assertEquals(2,fGenericStartTag.getAttributes("this=\"a simple\" test=\"a simple\"").size());		
-		assertEquals(1,fGenericStartTag.getAttributes("this=\"\"").size());		
-
-		
-		assertEquals(2,fGenericStartTag.parseAttr("a=\"a\" b=\"wee\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("a=\"a\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this=\"fun='wee'\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this='fun=\"wee\"'").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this = ' fun = \"wee\" '").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this='a simple'").size());
-		assertEquals(1,fGenericStartTag.parseAttr("this= 'a simple'").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this = 'a simple'").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this ='a simple'").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple' apos test\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this=\"a simple' dub apos' test\"").size());		
-		assertEquals(2,fGenericStartTag.parseAttr("this='a simple\" apos' test=\"\"").size());		
-		assertEquals(2,fGenericStartTag.parseAttr("this=\"a simple\" test=\"a simple\"").size());		
-		assertEquals(1,fGenericStartTag.parseAttr("this=\"\"").size());		
+		Iterator<Element> tests = fSource.getFirstElement().getChildElements().iterator();
+		String attributes, numattributes, testname;
+		int i = 0;
+		while (tests.hasNext()) {
+			Element type = (Element) tests.next();
+			attributes = type.getTextExtractor().toString();
+			numattributes = type.getAttributeValue("numattributes");
+			testname = type.getAttributeValue("name");
+			assertEquals(testname + " ("+i+") failed - getAttributes",Integer.parseInt(numattributes),fGenericStartTag.getAttributes(attributes).size());
+			assertEquals(testname + " ("+i+") failed - parseAttr",Integer.parseInt(numattributes),fGenericStartTag.parseAttr(attributes).size());
+			System.out.println(type.getTextExtractor().toString());
+			System.out.println(type.getAttributeValue("numattributes"));
+			i++;
+		}
+	
 	}
 
 }
