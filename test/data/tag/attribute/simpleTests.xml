@@ -68,4 +68,13 @@
 	<test name="simpletest22" numattributes="1">
 	this="a simple"" #hash# escaped quote"
 	</test>
+	<test name="simpletest23" numattributes="2">
+	this="a simple"" #hash# escaped quote" fun="#woo#"
+	</test>
+	<test name="simpletest24" numattributes="1">
+	this='#hash#'
+	</test>
+	<test name="simpletest24" numattributes="1">
+	this='#hash# foo="blah"'
+	</test>
 </attributetests>
