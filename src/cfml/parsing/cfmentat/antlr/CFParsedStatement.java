@@ -40,45 +40,45 @@ import java.lang.String;
 import org.antlr.runtime.Token;
 
 public abstract class CFParsedStatement implements CFStatement, java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private int line;
 	private int col;
-
-	public CFParsedStatement( int _line, int _col ) {
+	
+	public CFParsedStatement(int _line, int _col) {
 		line = _line;
 		col = _col + 1;
 	}
-
-	public CFParsedStatement( Token t ) {
+	
+	public CFParsedStatement(Token t) {
 		this(t.getLine(), t.getCharPositionInLine());
 	}
-
-	public abstract String Decompile( int indent );
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public abstract String Decompile(int indent);
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		// default behavior: do nothing
 	}
-
-	protected void setLineCol( CFContext context ) {
+	
+	protected void setLineCol(CFContext context) {
 		context.setLineCol(line, col);
 	}
-
+	
 	public int getLine() {
 		return line;
 	}
-
+	
 	public int getColumn() {
 		return col;
 	}
-
-	public String Indent( int indent ) {
+	
+	public String Indent(int indent) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < indent; i++) {
-			sb.append( " " );
+			sb.append(" ");
 		}
 		return sb.toString();
 	}
-
+	
 }

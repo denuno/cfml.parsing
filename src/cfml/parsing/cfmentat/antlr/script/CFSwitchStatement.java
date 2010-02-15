@@ -41,35 +41,34 @@ import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFSwitchStatement extends CFParsedStatement implements java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private List<CFCase> cases;
 	private CFExpression variable;
-
-	public CFSwitchStatement( Token _token, CFExpression _variable,
-	    List<CFCase> _cases ) {
+	
+	public CFSwitchStatement(Token _token, CFExpression _variable, List<CFCase> _cases) {
 		super(_token);
 		cases = _cases;
 		variable = _variable;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		for (int i = 0; i < cases.size(); i++) {
 			cases.get(i).checkIndirectAssignments(scriptSource);
 		}
 	}
-
-	public String Decompile( int _indent ) {
+	
+	public String Decompile(int _indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( "switch (" );
-		sb.append( variable.Decompile( 0 ) );
-		sb.append( "){\n" );
-		for ( int i = 0; i < cases.size(); i++ ){
-			sb.append( ((CFCase) cases.get(i) ).Decompile( 0 ) );
+		sb.append("switch (");
+		sb.append(variable.Decompile(0));
+		sb.append("){\n");
+		for (int i = 0; i < cases.size(); i++) {
+			sb.append(((CFCase) cases.get(i)).Decompile(0));
 		}
-		sb.append( "\n}" );
+		sb.append("\n}");
 		return sb.toString();
 	}
-
+	
 }

@@ -38,30 +38,29 @@ import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFDoWhileStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression condition;
 	private CFScriptStatement body;
-
-	public CFDoWhileStatement( Token t, CFExpression _cond, CFScriptStatement _body ) {
+	
+	public CFDoWhileStatement(Token t, CFExpression _cond, CFScriptStatement _body) {
 		super(t);
 		condition = _cond;
 		body = _body;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		body.checkIndirectAssignments(scriptSource);
 	}
-
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( Indent(indent) );
-		sb.append( "do" );
-		sb.append( body.Decompile(indent + 2) );
-		sb.append( "while(" );
-		sb.append( condition.Decompile(indent) );
-		sb.append( " ) " );
+		sb.append(Indent(indent));
+		sb.append("do");
+		sb.append(body.Decompile(indent + 2));
+		sb.append("while(");
+		sb.append(condition.Decompile(indent));
+		sb.append(" ) ");
 		return sb.toString();
 	}
-
+	
 }

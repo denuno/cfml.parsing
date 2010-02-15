@@ -8,12 +8,11 @@ import net.htmlparser.jericho.Tag;
 
 final class StartTagTypeCFMLScript extends StartTagTypeGenericImplementation {
 	protected static final StartTagTypeCFMLScript INSTANCE = new StartTagTypeCFMLScript();
-
+	
 	private StartTagTypeCFMLScript() {
-		super("CFML script", "<cfscript", ">", EndTagType.NORMAL, true, false,
-				false);
+		super("CFML script", "<cfscript", ">", EndTagType.NORMAL, true, false, false);
 	}
-
+	
 	protected Tag constructTagAt(final Source source, final int pos) {
 		final StartTag startTag = (StartTag) super.constructTagAt(source, pos);
 		if (startTag == null)

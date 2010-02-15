@@ -36,48 +36,47 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-public class CFFunctionExpression extends CFExpression
-{
+public class CFFunctionExpression extends CFExpression {
 	private static final long serialVersionUID = 1L;
 	
 	private String name;
-	private Vector<CFExpression> args;              // Vector of CFExpression's
+	private Vector<CFExpression> args; // Vector of CFExpression's
 	private boolean isUDF = true;
 	private boolean isParamExists;
-
-
-	public CFFunctionExpression( CFIdentifier _name, Vector<CFExpression> _args )
-	    throws ParseException {
+	
+	public CFFunctionExpression(CFIdentifier _name, Vector<CFExpression> _args) throws ParseException {
 		super(_name.getToken());
 		name = _name.getName().toLowerCase();
 		args = _args;
 		isParamExists = name.equals("parameterexists");
-		//isUDF = !expressionEngine.isFunction(name);
+		// isUDF = !expressionEngine.isFunction(name);
 		isUDF = false;
-
+		
 		// if it's a predefined function, check the number of params is legal
-		if ( !isUDF ) {
-//			try {
-//				com.naryx.tagfusion.expression.function.functionBase f = com.naryx.tagfusion.expression.compile.expressionEngine
-//				    .getFunction(name);
-//				if ( _args.size() < f.getMin() )
-//					throw new ParseException(_name.getToken(), "The function " + name
-//					    + " requires at least " + f.getMin() + " argument(s).");
-//				if ( _args.size() > f.getMax() )
-//					throw new ParseException(_name.getToken(), "The function " + name
-//					    + " requires at most " + f.getMax() + " argument(s).");
-//
-//			} catch (com.naryx.tagfusion.cfm.engine.cfmRunTimeException ee) { // shouldn't happen
-//			}
+		if (!isUDF) {
+			// try {
+			// com.naryx.tagfusion.expression.function.functionBase f =
+			// com.naryx.tagfusion.expression.compile.expressionEngine
+			// .getFunction(name);
+			// if ( _args.size() < f.getMin() )
+			// throw new ParseException(_name.getToken(), "The function " + name
+			// + " requires at least " + f.getMin() + " argument(s).");
+			// if ( _args.size() > f.getMax() )
+			// throw new ParseException(_name.getToken(), "The function " + name
+			// + " requires at most " + f.getMax() + " argument(s).");
+			//
+			// } catch (com.naryx.tagfusion.cfm.engine.cfmRunTimeException ee) {
+			// // shouldn't happen
+			// }
 		}
-
+		
 	}
-
+	
 	public byte getType() {
 		return CFExpression.FUNCTION;
 	}
-
-	public String getFunctionName(){
+	
+	public String getFunctionName() {
 		return name;
 	}
 	
@@ -85,19 +84,19 @@ public class CFFunctionExpression extends CFExpression
 		return isUDF;
 	}
 	
-  public String Decompile(int indent) {
-  	String s = name + "(";
-
-    for(int i=0; i < args.size(); i++) {
-    	s += args.elementAt(i).Decompile(indent);
-      if( i < args.size()-1) {
-      	s += ", ";
-      }
-    }
-
-    s += ")";
-
-    return s;
-  }
-
+	public String Decompile(int indent) {
+		String s = name + "(";
+		
+		for (int i = 0; i < args.size(); i++) {
+			s += args.elementAt(i).Decompile(indent);
+			if (i < args.size() - 1) {
+				s += ", ";
+			}
+		}
+		
+		s += ")";
+		
+		return s;
+	}
+	
 }

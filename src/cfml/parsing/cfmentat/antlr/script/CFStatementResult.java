@@ -29,32 +29,30 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-
 public class CFStatementResult {
 	
 	private static final int RETURN_TYPE = 0;
 	private static final int BREAK_TYPE = 1;
 	private static final int CONTINUE_TYPE = 2;
 	
-	public static final CFStatementResult BREAK = new CFStatementResult( BREAK_TYPE );
-	public static final CFStatementResult CONTINUE = new CFStatementResult( CONTINUE_TYPE );
+	public static final CFStatementResult BREAK = new CFStatementResult(BREAK_TYPE);
+	public static final CFStatementResult CONTINUE = new CFStatementResult(CONTINUE_TYPE);
 	
 	private int resultType;
-
-	private CFStatementResult( int type ) {
+	
+	private CFStatementResult(int type) {
 		resultType = type;
 	}
 	
-	
 	public boolean isReturn() {
-		return ( resultType == RETURN_TYPE );
+		return (resultType == RETURN_TYPE);
 	}
 	
 	public boolean isBreak() {
-		return ( resultType == BREAK_TYPE );
+		return (resultType == BREAK_TYPE);
 	}
 	
 	public boolean isContinue() {
-		return ( resultType == CONTINUE_TYPE );
+		return (resultType == CONTINUE_TYPE);
 	}
 }

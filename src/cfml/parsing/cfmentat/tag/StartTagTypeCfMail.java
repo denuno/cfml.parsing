@@ -9,9 +9,9 @@ import net.htmlparser.jericho.Tag;
 
 final class StartTagTypeCfMail extends StartTagTypeGenericImplementation {
 	protected static final StartTagTypeCfMail INSTANCE = new StartTagTypeCfMail();
-
+	
 	private StartTagTypeCfMail() {
 		super("CFML mail tag", "<cfmail", ">", EndTagType.NORMAL, false, true, false);
 	}
-
+	
 }

@@ -29,27 +29,25 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFExpressionStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression expression;
-
-	public CFExpressionStatement( CFExpression _e ) {
+	
+	public CFExpressionStatement(CFExpression _e) {
 		super(_e.getLine(), _e.getColumn());
 		expression = _e;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		return expression.Decompile(indent);
 	}
-
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		expression.checkIndirectAssignments(scriptSource);
 	}
-
+	
 }

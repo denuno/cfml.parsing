@@ -34,32 +34,29 @@
 
 package cfml.parsing.cfmentat.antlr;
 
-public class CFException extends Throwable implements 
-    java.io.Serializable {
-
+public class CFException extends Throwable implements java.io.Serializable {
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	public int line;
 	public int col;
-
+	
 	public CFException(String mess, CFContext context) {
 		super();
-
+		
 		int line = context.getLine();
 		int col = context.getCol();
-
-		init( mess, line, col );
+		
+		init(mess, line, col);
 	}
-
-	private void init( String mess, int lineInit, int colInit ) {
+	
+	private void init(String mess, int lineInit, int colInit) {
 		line = lineInit;
 		col = colInit;
 	}
-
+	
 	public String toString() {
-		return "[line " + String.valueOf( line ) + ", column "
-		    + String.valueOf( col ) + "] " + super.toString();
+		return "[line " + String.valueOf(line) + ", column " + String.valueOf(col) + "] " + super.toString();
 	}
-
+	
 }
-

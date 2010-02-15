@@ -30,52 +30,48 @@ package cfml.parsing.cfmentat.antlr;
 
 import org.antlr.runtime.Token;
 
-
-
 public class CFBinaryExpression extends CFExpression implements java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	static private final int _ERR = 0;
 	static private final int _NUM = 1;
 	static private final int _STR = 2;
 	static private final int _BOOL = 3;
 	static private final int _REF = 4; // cfStructs, cfArrays
 	static private final int _DATE = 5; // date ops
-
+	
 	// instance vars
 	private int _kind;
 	private CFExpression _left;
 	private CFExpression _right;
 	private String operatorImage;
-
-	public CFBinaryExpression( Token t, CFExpression left, CFExpression right ) {
+	
+	public CFBinaryExpression(Token t, CFExpression left, CFExpression right) {
 		super(t);
 		_kind = t.getType();
 		operatorImage = t.getText();
-		if ( _kind == CFMLLexer.ANDOPERATOR ) {
+		if (_kind == CFMLLexer.ANDOPERATOR) {
 			_kind = CFMLLexer.AND;
-		} else if ( _kind == CFMLLexer.OROPERATOR ) {
+		} else if (_kind == CFMLLexer.OROPERATOR) {
 			_kind = CFMLLexer.OR;
-		} else if ( _kind == CFMLLexer.MODOPERATOR ) {
+		} else if (_kind == CFMLLexer.MODOPERATOR) {
 			_kind = CFMLLexer.MOD;
 		}
 		_left = left;
 		_right = right;
 	}
-
+	
 	public byte getType() {
 		return CFExpression.BINARY;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		String endChar = "";
-		if ( _kind == CFMLLexer.LEFTBRACKET ) {
+		if (_kind == CFMLLexer.LEFTBRACKET) {
 			endChar = "]";
 		}
-		return "" + _left.Decompile(indent) + operatorImage
-		    + _right.Decompile(indent) + endChar;
+		return "" + _left.Decompile(indent) + operatorImage + _right.Decompile(indent) + endChar;
 	}
-
+	
 }
-

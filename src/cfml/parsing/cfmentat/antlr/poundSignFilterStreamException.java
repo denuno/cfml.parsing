@@ -30,8 +30,8 @@
 package cfml.parsing.cfmentat.antlr;
 
 public class poundSignFilterStreamException extends RuntimeException {
-
-	public poundSignFilterStreamException( String _msg ){
-		super( _msg );
+	
+	public poundSignFilterStreamException(String _msg) {
+		super(_msg);
 	}
 }

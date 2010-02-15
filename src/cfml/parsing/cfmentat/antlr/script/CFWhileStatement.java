@@ -34,29 +34,29 @@ import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFWhileStatement extends CFParsedStatement implements java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
 	private CFExpression cond;
 	private CFScriptStatement body;
-
-	public CFWhileStatement( Token t, CFExpression _cond, CFScriptStatement _body ) {
+	
+	public CFWhileStatement(Token t, CFExpression _cond, CFScriptStatement _body) {
 		super(t);
 		cond = _cond;
 		body = _body;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		body.checkIndirectAssignments(scriptSource);
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( Indent( indent ) );
-		sb.append( "while(" );
-		sb.append( cond.Decompile( indent ) );
-		sb.append( " ) " );
-		sb.append( body.Decompile(indent + 2) );
+		sb.append(Indent(indent));
+		sb.append("while(");
+		sb.append(cond.Decompile(indent));
+		sb.append(" ) ");
+		sb.append(body.Decompile(indent + 2));
 		return sb.toString();
 	}
-
+	
 }

@@ -1,4 +1,5 @@
 package cfml.parsing.cfmentat.tag;
+
 import static org.junit.Assert.*;
 
 import java.net.URL;
@@ -19,24 +20,24 @@ import org.junit.Test;
 
 /**
  * @author denny
- *
+ * 
  */
 public class TestGetStartTagEnd {
-	private static final String sourceUrlString="file:test/data/tag/attribute/simpleTests.xml";
+	private static final String sourceUrlString = "file:test/data/tag/attribute/simpleTests.xml";
 	private Source fSource;
 	private GenericStartTagTypeCf fGenericStartTag;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
 		CFMLTagTypes.register();
-		fSource=new Source(new URL(sourceUrlString));
+		fSource = new Source(new URL(sourceUrlString));
 	}
-
-
+	
 	/**
-	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getAttributes(java.lang.String)}.
+	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getAttributes(java.lang.String)} .
 	 */
 	@Test
 	public void testGetAttributes() {
@@ -47,25 +48,24 @@ public class TestGetStartTagEnd {
 		
 		tagSrc = "<cfset blah='foo'/>";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length(),cfset.getEnd());
-
+		assertEquals(tagSrc.length(), cfset.getEnd());
+		
 		tagSrc = "<cfset blah='foo>'/>";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length(),cfset.getEnd());
-
+		assertEquals(tagSrc.length(), cfset.getEnd());
+		
 		tagSrc = "<cfset <!--- fun='eeep' ---> blah='foo>'/>";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length(),cfset.getEnd());
+		assertEquals(tagSrc.length(), cfset.getEnd());
 		
 		tagSrc = "<cfset blah='foo>'/><more blah='wee'>";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length()-17,cfset.getEnd());
-
+		assertEquals(tagSrc.length() - 17, cfset.getEnd());
+		
 		tagSrc = "<cfset blah=\"foo\">";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
-		assertEquals(tagSrc.length(),cfset.getEnd());
-		
+		assertEquals(tagSrc.length(), cfset.getEnd());
 		
 	}
-
+	
 }

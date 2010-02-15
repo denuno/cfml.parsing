@@ -30,10 +30,10 @@ import net.htmlparser.jericho.StartTagTypeGenericImplementation;
 import net.htmlparser.jericho.Tag;
 
 public class ParseUtil {
-
+	
 	protected ParseUtil() {
 	}
-
+	
 	protected ArrayList getAttributes(String inData) {
 		ArrayList attributes = new ArrayList();
 		boolean isStartedString = false;
@@ -47,8 +47,8 @@ public class ParseUtil {
 		for (int x = pos; x < inData.length(); x++) {
 			char c = inData.charAt(x);
 			char nextChar;
-			if(inData.length() > x+1) {
-				nextChar = inData.charAt(x+1);
+			if (inData.length() > x + 1) {
+				nextChar = inData.charAt(x + 1);
 			} else {
 				nextChar = '>';
 			}
@@ -59,35 +59,35 @@ public class ParseUtil {
 				}
 				break;
 			case '"':
-				if(!isInApos && nextChar !='"') {					
+				if (!isInApos && nextChar != '"') {
 					isInQuotes = (!isInQuotes);
-					if(isStartedString) {
+					if (isStartedString) {
 						isDone = true;
 					} else {
-						isStartedString = !isStartedString;						
+						isStartedString = !isStartedString;
 					}
 				}
 				break;
 			case '\'':
-				if(!isInQuotes  && nextChar !='\'') {
+				if (!isInQuotes && nextChar != '\'') {
 					isInApos = (!isInApos);
-					if(isStartedString) {
+					if (isStartedString) {
 						isDone = true;
 					} else {
-						isStartedString = !isStartedString;						
+						isStartedString = !isStartedString;
 					}
 				}
 				break;
-
+			
 			default:
 				break;
 			}
-			if(isInQuotes || isInApos) {
+			if (isInQuotes || isInApos) {
 				attributeValue = attributeValue + c;
 			} else {
-				attributeName = attributeName + c;				
+				attributeName = attributeName + c;
 			}
-			if(isDone) {
+			if (isDone) {
 				String[] attribute = new String[2];
 				attribute[0] = attributeName;
 				attribute[1] = attributeValue;
@@ -99,5 +99,5 @@ public class ParseUtil {
 		}
 		return attributes;
 	}
-
+	
 }

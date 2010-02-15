@@ -31,22 +31,21 @@ package cfml.parsing.cfmentat.antlr;
 
 import org.antlr.runtime.Token;
 
-abstract class CFVarExpression extends CFExpression implements
-    java.io.Serializable {
+abstract class CFVarExpression extends CFExpression implements java.io.Serializable {
 	private static final long serialVersionUID = 1;
-
+	
 	protected boolean indirect;
-
-	protected CFVarExpression( Token t ) {
+	
+	protected CFVarExpression(Token t) {
 		super(t);
 	}
-
-	public void setIndirect( boolean _indirect ) {
+	
+	public void setIndirect(boolean _indirect) {
 		indirect = _indirect;
 	}
-
+	
 	public byte getType() {
 		return CFExpression.VARIABLE;
 	}
-
+	
 }

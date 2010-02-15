@@ -33,50 +33,49 @@ import java.util.Map;
 
 import org.antlr.runtime.Token;
 
-
 public class CFLiteral extends CFExpression implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private String val;
 	private int kind;
-
-	public CFLiteral( Token _t ) {
+	
+	public CFLiteral(Token _t) {
 		super(_t);
 		kind = _t.getType();
 		switch (kind) {
-			case CFMLLexer.FLOATING_POINT_LITERAL:
-			case CFMLLexer.INTEGER_LITERAL:
-				val = _t.getText();
-				break;
-			case CFMLLexer.STRING_LITERAL:
-				// create a String, stripping off the surrounding quotes and
-				// replacing any escaped quotes with a single quote
-				String quote = _t.getText().substring(0, 1);
-				String str = _t.getText().substring(1, _t.getText().length() - 1);
-				str = str.replaceAll(quote + quote, quote);
-				val = str;
-				break;
-			case CFMLLexer.BOOLEAN_LITERAL:
-				val = _t.getText();
-				break;
-			case CFMLLexer.NULL:
-				val = "";
-				break;
-			default:
-				break;
+		case CFMLLexer.FLOATING_POINT_LITERAL:
+		case CFMLLexer.INTEGER_LITERAL:
+			val = _t.getText();
+			break;
+		case CFMLLexer.STRING_LITERAL:
+			// create a String, stripping off the surrounding quotes and
+			// replacing any escaped quotes with a single quote
+			String quote = _t.getText().substring(0, 1);
+			String str = _t.getText().substring(1, _t.getText().length() - 1);
+			str = str.replaceAll(quote + quote, quote);
+			val = str;
+			break;
+		case CFMLLexer.BOOLEAN_LITERAL:
+			val = _t.getText();
+			break;
+		case CFMLLexer.NULL:
+			val = "";
+			break;
+		default:
+			break;
 		}
 	}
-
+	
 	public byte getType() {
 		return CFExpression.LITERAL;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		try {
 			return val;
 		} catch (Exception e) {
 			return "Couldn't get literal value";
 		}
-
+		
 	}
 }

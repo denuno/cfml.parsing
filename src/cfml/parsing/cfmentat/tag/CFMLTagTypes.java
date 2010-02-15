@@ -4,18 +4,19 @@ import net.htmlparser.jericho.StartTagType;
 import net.htmlparser.jericho.TagType;
 
 /**
- * Contains {@linkplain TagType tag types} related to the <a target="_blank" href="http://www.php.net">CFML</a> server platform.
+ * Contains {@linkplain TagType tag types} related to the <a target="_blank" href="http://www.php.net">CFML</a> server
+ * platform.
  * <p>
- * There is no specific tag type defined for the
- * <a target="_blank" href="http://www.php.net/manual/en/ini.core.php#ini.asp-tags">ASP-style CFML tag</a>
- * as it is recognised using the {@linkplain StartTagType#SERVER_COMMON common server tag type}.
+ * There is no specific tag type defined for the <a target="_blank"
+ * href="http://www.php.net/manual/en/ini.core.php#ini.asp-tags">ASP-style CFML tag</a> as it is recognised using the
+ * {@linkplain StartTagType#SERVER_COMMON common server tag type}.
  * <p>
- * The tag types defined in this class are not {@linkplain TagType#register() registered} by default.
- * The {@link #register()} method is provided as a convenient way to register them all at once.
+ * The tag types defined in this class are not {@linkplain TagType#register() registered} by default. The
+ * {@link #register()} method is provided as a convenient way to register them all at once.
  */
 public final class CFMLTagTypes {
-
-	/**
+	
+/**
 	 * The tag type given to a 
 	 * <a target="_blank" href="http://www.php.net/manual/en/language.basic-syntax.php#language.basic-syntax.phpmode">standard CFML tag</a>
 	 * (<code>&lt;&#63;php<var> &#46;&#46;&#46; </var>&#63;&gt;</code>).
@@ -54,9 +55,9 @@ public final class CFMLTagTypes {
 	 *   <dd><code>&lt;?php echo '&lt;p&gt;Hello World&lt;/p&gt;'; ?&gt;</code></dd>
 	 * </dl>
 	 */
-	public static final StartTagType CFML_STANDARD=StartTagTypeCFMLStandard.INSTANCE;
-
-	/**
+	public static final StartTagType CFML_STANDARD = StartTagTypeCFMLStandard.INSTANCE;
+	
+/**
 	 * The tag type given to a 
 	 * <a target="_blank" href="http://www.php.net/manual/en/ini.core.php#ini.short-open-tag">short-form CFML tag</a>
 	 * (<code>&lt;&#63;<var> &#46;&#46;&#46; </var>&#63;&gt;</code>).
@@ -85,8 +86,8 @@ public final class CFMLTagTypes {
 	 *   <dd><code>&lt;? echo '&lt;p&gt;Hello World&lt;/p&gt;'; ?&gt;</code></dd>
 	 * </dl>
 	 */
-
-	/**
+	
+/**
 	 * The tag type given to a 
 	 * <a target="_blank" href="http://www.php.net/manual/en/language.basic-syntax.php#language.basic-syntax.phpmode">script-style CFML start tag</a>
 	 * (<code>&lt;script language="php"&gt;<var> &#46;&#46;&#46; </var>&lt;/script&gt;</code>).
@@ -109,71 +110,65 @@ public final class CFMLTagTypes {
 	 *   <dd><code>&lt;script language="php"&gt; echo '&lt;p&gt;Hello World&lt;/p&gt;'; &lt;/script&gt;</code></dd>
 	 * </dl>
 	 */
-	public static final StartTagType CFML_SCRIPT=StartTagTypeCFMLScript.INSTANCE;
-	public static final StartTagType HTML_SCRIPT=StartTagTypeHTMLScript.INSTANCE;
-	public static final StartTagType CFML_COMMENT=StartTagTypeCFMLComment.INSTANCE;
-	public static final StartTagType CFML_SET=StartTagTypeCfSet.INSTANCE;
-	public static final StartTagType CFML_IF=StartTagTypeCfIf.INSTANCE;
-	public static final StartTagType CFML_ELSE=StartTagTypeCfElse.INSTANCE;
-	public static final StartTagType CFML_ELSEIF=StartTagTypeCfElseIf.INSTANCE;
-	public static final StartTagType CFML_ARGUMENT=StartTagTypeCfArgument.INSTANCE;
-	public static final StartTagType CFML_INCLUDE=StartTagTypeCfInclude.INSTANCE;
-	public static final StartTagType CFML_INPUT=StartTagTypeCfInput.INSTANCE;
-	public static final StartTagType CFML_FUNCTION=StartTagTypeCfFunction.INSTANCE;
-	public static final StartTagType CFML_SAVECONTENT=StartTagTypeCfSaveContent.INSTANCE;
-	public static final StartTagType CFML_CONTENT=StartTagTypeCfContent.INSTANCE;
-	public static final StartTagType CFML_MAIL=StartTagTypeCfMail.INSTANCE;
-
-	private static final TagType[] TAG_TYPES={
-		CFML_STANDARD,
-		CFML_SAVECONTENT,
-		CFML_CONTENT,
-		CFML_COMMENT,
-		CFML_SET,
-		CFML_IF,
-		CFML_ELSE,
-		CFML_ELSEIF,
-		CFML_FUNCTION,
-		CFML_ARGUMENT,
-		CFML_INCLUDE,
-		CFML_INPUT,
-		HTML_SCRIPT,
-		CFML_SCRIPT,
-		CFML_MAIL
-	};
-
-	private CFMLTagTypes() {}
-
-	/** 
+	public static final StartTagType CFML_SCRIPT = StartTagTypeCFMLScript.INSTANCE;
+	public static final StartTagType HTML_SCRIPT = StartTagTypeHTMLScript.INSTANCE;
+	public static final StartTagType CFML_COMMENT = StartTagTypeCFMLComment.INSTANCE;
+	public static final StartTagType CFML_SET = StartTagTypeCfSet.INSTANCE;
+	public static final StartTagType CFML_IF = StartTagTypeCfIf.INSTANCE;
+	public static final StartTagType CFML_ELSE = StartTagTypeCfElse.INSTANCE;
+	public static final StartTagType CFML_ELSEIF = StartTagTypeCfElseIf.INSTANCE;
+	public static final StartTagType CFML_ARGUMENT = StartTagTypeCfArgument.INSTANCE;
+	public static final StartTagType CFML_INCLUDE = StartTagTypeCfInclude.INSTANCE;
+	public static final StartTagType CFML_INPUT = StartTagTypeCfInput.INSTANCE;
+	public static final StartTagType CFML_FUNCTION = StartTagTypeCfFunction.INSTANCE;
+	public static final StartTagType CFML_SAVECONTENT = StartTagTypeCfSaveContent.INSTANCE;
+	public static final StartTagType CFML_CONTENT = StartTagTypeCfContent.INSTANCE;
+	public static final StartTagType CFML_MAIL = StartTagTypeCfMail.INSTANCE;
+	
+	private static final TagType[] TAG_TYPES = { CFML_STANDARD, CFML_SAVECONTENT, CFML_CONTENT, CFML_COMMENT, CFML_SET,
+			CFML_IF, CFML_ELSE, CFML_ELSEIF, CFML_FUNCTION, CFML_ARGUMENT, CFML_INCLUDE, CFML_INPUT, HTML_SCRIPT,
+			CFML_SCRIPT, CFML_MAIL };
+	
+	private CFMLTagTypes() {
+	}
+	
+	/**
 	 * {@linkplain TagType#register() Registers} all of the tag types defined in this class at once.
 	 * <p>
 	 * The tag types must be registered before the parser will recognise them.
 	 */
 	public static void register() {
-		for (TagType tagType : TAG_TYPES) tagType.register();
+		for (TagType tagType : TAG_TYPES)
+			tagType.register();
 	}
 	
 	/**
 	 * Indicates whether the specified tag type is defined in this class.
-	 *
-	 * @param tagType  the {@link TagType} to test.
+	 * 
+	 * @param tagType
+	 *            the {@link TagType} to test.
 	 * @return <code>true</code> if the specified tag type is defined in this class, otherwise <code>false</code>.
 	 */
 	public static boolean defines(final TagType tagType) {
-		for (TagType definedTagType : TAG_TYPES) if (tagType==definedTagType) return true;
+		for (TagType definedTagType : TAG_TYPES)
+			if (tagType == definedTagType)
+				return true;
 		return false;
 	}
 	
-	/** 
-	 * Indicates whether the specified tag type is recognised by a <a target="_blank" href="http://www.php.net">CFML</a> parser.
+	/**
+	 * Indicates whether the specified tag type is recognised by a <a target="_blank" href="http://www.php.net">CFML</a>
+	 * parser.
 	 * <p>
-	 * This is true if the specified tag type is {@linkplain #defines(TagType) defined in this class} or if it is the 
+	 * This is true if the specified tag type is {@linkplain #defines(TagType) defined in this class} or if it is the
 	 * {@linkplain StartTagType#SERVER_COMMON common server tag type}.
 	 * 
-	 * @param tagType  the {@link TagType} to test.
-	 * @return <code>true</code> if the specified tag type is recognised by a <a target="_blank" href="http://www.php.net">CFML</a> parser, otherwise <code>false</code>.
+	 * @param tagType
+	 *            the {@link TagType} to test.
+	 * @return <code>true</code> if the specified tag type is recognised by a <a target="_blank"
+	 *         href="http://www.php.net">CFML</a> parser, otherwise <code>false</code>.
 	 */
 	public static boolean isParsedByCFML(final TagType tagType) {
-		return tagType==StartTagType.SERVER_COMMON || defines(tagType);
+		return tagType == StartTagType.SERVER_COMMON || defines(tagType);
 	}
 }

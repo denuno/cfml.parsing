@@ -32,13 +32,13 @@
  */
 
 package cfml.parsing.cfmentat.antlr;
- 
+
 import cfml.parsing.cfmentat.antlr.script.CFStatementResult;
 
-public interface CFStatement{
-
-  public String Decompile(int indent);
-  public void checkIndirectAssignments( String[] scriptSource );
-
+public interface CFStatement {
+	
+	public String Decompile(int indent);
+	
+	public void checkIndirectAssignments(String[] scriptSource);
+	
 }
-

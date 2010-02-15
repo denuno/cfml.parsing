@@ -38,87 +38,80 @@ import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 public class CFAssignmentExpression extends CFExpression {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression left;
 	private CFExpression right;
-
+	
 	private boolean isLocal;
 	private int type;
-
-	public CFAssignmentExpression( Token t, boolean _local, CFExpression _left,
-	    CFExpression _right ) {
+	
+	public CFAssignmentExpression(Token t, boolean _local, CFExpression _left, CFExpression _right) {
 		super(t);
 		isLocal = _local;
 		left = _left;
 		right = _right;
 		type = t.getType();
 	}
-
-	public void setLocal( boolean _b ) {
+	
+	public void setLocal(boolean _b) {
 		isLocal = _b;
 	}
-
+	
 	public byte getType() {
 		return CFExpression.ASSIGNMENT;
 	}
-
-	public void checkIndirect( String expr ) {
-		if ( left instanceof CFVarExpression ) {
+	
+	public void checkIndirect(String expr) {
+		if (left instanceof CFVarExpression) {
 			String lhs = expr.substring(0, expr.indexOf('=')).trim();
 			// check for special case of "#foo#"="bar" or '#foo#'='bar'
-			if ( (lhs.startsWith("\"#") && lhs.endsWith("#\""))
-			    || (lhs.startsWith("'#") && lhs.endsWith("#'")) ) {
+			if ((lhs.startsWith("\"#") && lhs.endsWith("#\"")) || (lhs.startsWith("'#") && lhs.endsWith("#'"))) {
 				((CFVarExpression) left).setIndirect(true);
 			}
 		}
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
-		if ( left instanceof CFVarExpression ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
+		if (left instanceof CFVarExpression) {
 			/*
-			 * We know this is a valid assignment expression but is the LHS expression
-			 * a # expression e.g. "#foo#" = "bar" Since the poundSignFilter removes
-			 * the #'s for the parser we need to look at the original source. We can
-			 * get the line from this CFExpression but the column isn't accurate
-			 * enough for CFFullVarExpressions especially as more than one expression
-			 * may occur on the same line.
+			 * We know this is a valid assignment expression but is the LHS expression a # expression e.g. "#foo#" =
+			 * "bar" Since the poundSignFilter removes the #'s for the parser we need to look at the original source. We
+			 * can get the line from this CFExpression but the column isn't accurate enough for CFFullVarExpressions
+			 * especially as more than one expression may occur on the same line.
 			 * 
-			 * We look backwards from the '=' skipping any whitespace and looking for
-			 * #", #' or # on it's own.
+			 * We look backwards from the '=' skipping any whitespace and looking for #", #' or # on it's own.
 			 */
 
 			// find the original expression in the script source code
 			String expr = scriptSource[left.getLine() - 1];
 			int lhsEnd = expr.indexOf("=", left.getColumn());
-			if ( lhsEnd == -1 ) {
+			if (lhsEnd == -1) {
 				// if the expression is split over 2 lines
 				// e.g. "#foo#"
 				// = "bar"
 				lhsEnd = expr.length();
 			}
-
+			
 			char[] exprChars = expr.substring(0, lhsEnd).toCharArray();
 			int i = exprChars.length - 1;
 			// skip over whitespace
-			while (i >= 0 && (Character.isWhitespace(exprChars[i]))) { 
+			while (i >= 0 && (Character.isWhitespace(exprChars[i]))) {
 				i--;
 			}
-
+			
 			// does LHS expression end in #" or #'?
-			if ( i >= 0 && (exprChars[i] == '\"' || exprChars[i] == '\'') ) {
+			if (i >= 0 && (exprChars[i] == '\"' || exprChars[i] == '\'')) {
 				i--;
-				if ( i >= 0 && exprChars[i] == '#' ) {
+				if (i >= 0 && exprChars[i] == '#') {
 					((CFVarExpression) left).setIndirect(true);
 				}
 			}
 		}
 	}
-
-
-	public String Decompile( int indent ) {
-		return (isLocal ? "var " : "") + left.Decompile(0) + "="
-		    + right.Decompile(0);
+	
+	public String Decompile(int indent) {
+		return (isLocal ? "var " : "") + left.Decompile(0) + "=" + right.Decompile(0);
 	}
 }

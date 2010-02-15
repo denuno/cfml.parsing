@@ -31,27 +31,27 @@ package cfml.parsing.cfmentat.antlr;
 
 import java.util.ArrayList;
 
-public class CFStructElementExpression implements java.io.Serializable{
-
+public class CFStructElementExpression implements java.io.Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	private ArrayList key;
 	private CFExpression value;
 	
-	public CFStructElementExpression( ArrayList _key, CFExpression _value ) {
+	public CFStructElementExpression(ArrayList _key, CFExpression _value) {
 		key = _key;
 		value = _value;
 	}
-
-	public String toString(){
+	
+	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append( ( (CFIdentifier) key.get( 0 ) ).getName() );
-		for ( int i = 1; i < key.size(); i++ ){
-			sb.append( '.' );
-			sb.append( ( (CFIdentifier) key.get( i ) ).getName() );
+		sb.append(((CFIdentifier) key.get(0)).getName());
+		for (int i = 1; i < key.size(); i++) {
+			sb.append('.');
+			sb.append(((CFIdentifier) key.get(i)).getName());
 		}
-		sb.append( ':' );
-		sb.append( value.Decompile( 0 ) );
+		sb.append(':');
+		sb.append(value.Decompile(0));
 		return sb.toString();
 	}
 	

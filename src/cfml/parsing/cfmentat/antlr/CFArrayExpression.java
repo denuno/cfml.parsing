@@ -33,37 +33,37 @@ import java.util.ArrayList;
 
 import org.antlr.runtime.Token;
 
-public class CFArrayExpression extends CFExpression implements java.io.Serializable{
-
+public class CFArrayExpression extends CFExpression implements java.io.Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	private ArrayList<CFExpression> elements;
 	
-  public CFArrayExpression(Token t) {
-    super(t);
-    elements = new ArrayList<CFExpression>();
-  }
-
-	public void addElement( CFExpression _e ){
-		elements.add( _e );
+	public CFArrayExpression(Token t) {
+		super(t);
+		elements = new ArrayList<CFExpression>();
+	}
+	
+	public void addElement(CFExpression _e) {
+		elements.add(_e);
 	}
 	
 	@Override
-	public String Decompile( int indent ) {
-		if ( elements.size() > 0 ){
+	public String Decompile(int indent) {
+		if (elements.size() > 0) {
 			StringBuilder sb = new StringBuilder();
-			sb.append( '[' );
-			for ( int i = 0; i < elements.size(); i++ ){
-				sb.append( ( (CFExpression) elements.get(i) ).Decompile( 0 ) );
-				sb.append( ',' );
+			sb.append('[');
+			for (int i = 0; i < elements.size(); i++) {
+				sb.append(((CFExpression) elements.get(i)).Decompile(0));
+				sb.append(',');
 			}
-			sb.deleteCharAt( sb.length()-1 );	
+			sb.deleteCharAt(sb.length() - 1);
 			
-			sb.append( ']' );
+			sb.append(']');
 			return sb.toString();
-		}else{
+		} else {
 			return "[]";
 		}
 	}
-
+	
 }

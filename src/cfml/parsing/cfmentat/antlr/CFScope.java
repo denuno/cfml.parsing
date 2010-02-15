@@ -33,10 +33,8 @@
 
 package cfml.parsing.cfmentat.antlr;
 
-
 import java.util.Map;
 
 public interface CFScope {
-
-
+	
 }

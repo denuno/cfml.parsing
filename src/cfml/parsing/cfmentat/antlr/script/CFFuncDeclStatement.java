@@ -36,60 +36,59 @@ import org.antlr.runtime.Token;
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.ParseException;
 
-public class CFFuncDeclStatement extends CFParsedStatement 
-{
+public class CFFuncDeclStatement extends CFParsedStatement {
 	
-  private static final long serialVersionUID = 1L;
-  
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
-	private List<String> formals;	// Vector of String's
+	private List<String> formals; // Vector of String's
 	private CFScriptStatement body;
-
-	public CFFuncDeclStatement( Token _t, Token _name, List<String> _formals, CFScriptStatement _body) {
-		super( _t );
+	
+	public CFFuncDeclStatement(Token _t, Token _name, List<String> _formals, CFScriptStatement _body) {
+		super(_t);
 		name = _name.getText();
 		formals = _formals;
 		body = _body;
-
-//		if ( com.naryx.tagfusion.expression.compile.expressionEngine.isFunction( name ) )
-		if ( false )
-			throw new ParseException( _name, "Invalid function name. The name \"" + name + "\" is the name of a predefined function." );
-
+		
+		// if (
+		// com.naryx.tagfusion.expression.compile.expressionEngine.isFunction(
+		// name ) )
+		if (false)
+			throw new ParseException(_name, "Invalid function name. The name \"" + name
+					+ "\" is the name of a predefined function.");
+		
 	}
-  
-	public void checkIndirectAssignments( String[] scriptSource ) {
-		body.checkIndirectAssignments( scriptSource );
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
+		body.checkIndirectAssignments(scriptSource);
 	}
-  
+	
 	public userDefinedFunction getUDF() {
-		return new userDefinedFunction( name, formals, body );
+		return new userDefinedFunction(name, formals, body);
 	}
-
-	public CFStatementResult Exec( CFContext context) {
+	
+	public CFStatementResult Exec(CFContext context) {
 		return null;
 	}
-  
+	
 	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( Indent(indent) );
-		sb.append( "function " );
-		sb.append( name );
-		sb.append( "(" );
-		for(int i=0; i < formals.size(); i++) {
-			sb.append( formals.get(i) );
-			if( i != formals.size()-1) {
-				sb.append( ", " );
+		sb.append(Indent(indent));
+		sb.append("function ");
+		sb.append(name);
+		sb.append("(");
+		for (int i = 0; i < formals.size(); i++) {
+			sb.append(formals.get(i));
+			if (i != formals.size() - 1) {
+				sb.append(", ");
 			}
 		}
-		sb.append( ") {\n" );
-		sb.append( body.Decompile( indent+2)  );
-		sb.append( "\n" );
-		sb.append( Indent(indent) );
-		sb.append( "}" );
+		sb.append(") {\n");
+		sb.append(body.Decompile(indent + 2));
+		sb.append("\n");
+		sb.append(Indent(indent));
+		sb.append("}");
 		
 		return sb.toString();
-  }
+	}
 }
-
-    
-

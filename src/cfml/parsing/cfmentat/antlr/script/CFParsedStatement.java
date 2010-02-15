@@ -36,43 +36,41 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 abstract public class CFParsedStatement implements CFScriptStatement, java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	protected int _line;
 	protected int _col;
-
-	protected CFParsedStatement( int line, int col ) {
+	
+	protected CFParsedStatement(int line, int col) {
 		_line = line;
 		_col = col;
 	}
-
-	protected CFParsedStatement( Token t ) {
+	
+	protected CFParsedStatement(Token t) {
 		this(t.getLine(), t.getCharPositionInLine());
 	}
-
-
-	public abstract String Decompile( int indent );
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public abstract String Decompile(int indent);
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		// default behavior: do nothing
 	}
-
-	protected void setLineCol( CFContext context ) {
+	
+	protected void setLineCol(CFContext context) {
 		context.setLineCol(_line, _col);
 	}
-
-	public String Indent( int indent ) {
+	
+	public String Indent(int indent) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < indent; i++) {
 			sb.append(' ');
 		}
 		return sb.toString();
 	}
-
+	
 }
