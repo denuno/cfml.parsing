@@ -55,12 +55,21 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 		INSTANCE = this;
 	}
 
-
+	protected GenericStartTagTypeCf() {
+		super("cf standard tag","<cf",">",EndTagType.NORMAL,false,true,false);
+	}
+	
 	protected GenericStartTagTypeCf(final String description, final String startDelimiter, final String closingDelimiter, final EndTagType correspondingEndTagType, final boolean isServerTag, final boolean hasAttributes, final boolean isNameAfterPrefixRequired) {
 		super(description,startDelimiter,closingDelimiter,correspondingEndTagType,isServerTag,hasAttributes,isNameAfterPrefixRequired);
 		INSTANCE = this;
 	}
 
+	public static GenericStartTagTypeCf getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new GenericStartTagTypeCf();
+		}
+		return INSTANCE;
+	}
 
 	protected int getEnd(final Source source, final int pos) {
 		final ParseText text = source.getParseText();
