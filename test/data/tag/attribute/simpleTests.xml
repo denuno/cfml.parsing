@@ -14,8 +14,9 @@
 	<test name="simpletest4" numattributes="2">
 	this="is a rather""" woo="hoo"
 	</test>
-	<test name="simpletest5" numattributes="2">
+	<test name="simpletest5" numattributes="4">
 	this="is a rather" simple="test"
+	multiline="true" multi-line-dash="true"
 	</test>
 	<test name="simpletest6" numattributes="3">
 	this="is a rather" simple="test" another=""
