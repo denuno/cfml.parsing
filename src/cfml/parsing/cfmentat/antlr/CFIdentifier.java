@@ -33,40 +33,40 @@ import org.antlr.runtime.Token;
 
 public class CFIdentifier extends CFVarExpression implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	protected String name;
 	protected Token token;
-
-	public CFIdentifier( Token _t ) {
+	
+	public CFIdentifier(Token _t) {
 		super(_t);
 		name = _t.getText();
 		token = _t;
 	}
-
-	public CFIdentifier( Token _t, String _img ) {
+	
+	public CFIdentifier(Token _t, String _img) {
 		super(_t);
 		name = _img;
 		token = _t;
 	}
-
+	
 	public byte getType() {
 		return CFExpression.IDENTIFIER;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
 	
-	public Token getToken(){
+	public Token getToken() {
 		return token;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		return name;
 	}
-
+	
 	public String toString() {
 		return name;
 	}
-
+	
 }

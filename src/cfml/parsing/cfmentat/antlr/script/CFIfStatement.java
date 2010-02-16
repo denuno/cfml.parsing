@@ -29,43 +29,40 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-
 import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFException;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
-public class CFIfStatement extends CFParsedStatement implements
-    java.io.Serializable {
+public class CFIfStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression cond;
 	private CFScriptStatement thenStatement;
 	private CFScriptStatement elseStatement; // null if there is no else clause
-
-	public CFIfStatement( org.antlr.runtime.Token _t, CFExpression _cond,
-	    CFScriptStatement _then, CFScriptStatement _else ) {
+	
+	public CFIfStatement(org.antlr.runtime.Token _t, CFExpression _cond, CFScriptStatement _then,
+			CFScriptStatement _else) {
 		super(_t);
 		cond = _cond;
 		thenStatement = _then;
 		elseStatement = _else;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		thenStatement.checkIndirectAssignments(scriptSource);
-		if ( elseStatement != null ) {
+		if (elseStatement != null) {
 			elseStatement.checkIndirectAssignments(scriptSource);
 		}
 	}
-
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder s = new StringBuilder();
 		s.append(Indent(indent));
 		s.append("if(");
 		s.append(cond.Decompile(indent));
 		s.append(" ) ");
 		s.append(thenStatement.Decompile(indent + 2));
-		if ( elseStatement != null ) {
+		if (elseStatement != null) {
 			s.append("\n");
 			s.append(Indent(indent));
 			s.append("else ");
@@ -73,5 +70,5 @@ public class CFIfStatement extends CFParsedStatement implements
 		}
 		return s.toString();
 	}
-
+	
 }

@@ -29,42 +29,40 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-
 public class CFCatchStatement extends cfCatchClause implements CFScriptStatement {
-
+	
 	private String var;
 	private CFScriptStatement body;
-
-	public CFCatchStatement( String _type, String _var, CFScriptStatement _body ) {
+	
+	public CFCatchStatement(String _type, String _var, CFScriptStatement _body) {
 		type = _type;
 		var = _var;
 		body = _body;
 	}
-
+	
 	public String getVariable() {
 		return var;
 	}
-
+	
 	public CFScriptStatement getCatchBody() {
 		return body;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		body.checkIndirectAssignments(scriptSource);
 	}
-
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( "catch( " );
-		sb.append( type );
-		sb.append( ' ' );
-		sb.append( var );
-		sb.append( ")\n" );
-		sb.append( body.Decompile(0) );
+		sb.append("catch( ");
+		sb.append(type);
+		sb.append(' ');
+		sb.append(var);
+		sb.append(")\n");
+		sb.append(body.Decompile(0));
 		return sb.toString();
 	}
-
+	
 	public String getType() {
 		// TODO Auto-generated method stub
 		return null;

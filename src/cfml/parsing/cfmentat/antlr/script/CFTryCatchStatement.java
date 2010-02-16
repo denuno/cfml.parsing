@@ -37,46 +37,46 @@ import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.ParseException;
 
 public class CFTryCatchStatement extends CFParsedStatement implements java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1;
-
+	
 	private CFScriptStatement body; // body of the try block
 	private List<cfCatchClause> catchStatements;
-
-	public CFTryCatchStatement( Token _t1, CFScriptStatement _s1, List<cfCatchClause> _catches ) {
+	
+	public CFTryCatchStatement(Token _t1, CFScriptStatement _s1, List<cfCatchClause> _catches) {
 		super(_t1);
 		body = _s1;
 		catchStatements = _catches;
-
-		if ( catchStatements.size() == 0 ) {
+		
+		if (catchStatements.size() == 0) {
 			throw new ParseException(_t1, "try statement must include at least one catch clause.");
 		}
-
+		
 		// now stick the catch 'any' if there is one at the end
 		cfCatchClause catchAny = null;
 		cfCatchClause nextClause;
 		for (int i = 0; i < catchStatements.size(); i++) {
 			nextClause = catchStatements.get(i);
-			if ( nextClause.isCatchAny() ) {
+			if (nextClause.isCatchAny()) {
 				catchAny = nextClause;
 				catchStatements.remove(i);
 				i--; // make adjustment for removed clause
 			}
 		}
-
-		if ( catchAny != null ) {
+		
+		if (catchAny != null) {
 			catchStatements.add(catchAny);
 		}
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		body.checkIndirectAssignments(scriptSource);
 		for (int i = 0; i < catchStatements.size(); i++) {
 			((CFScriptStatement) catchStatements.get(i)).checkIndirectAssignments(scriptSource);
 		}
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < catchStatements.size(); i++) {
 			CFCatchStatement clause = (CFCatchStatement) catchStatements.get(i);
@@ -88,9 +88,9 @@ public class CFTryCatchStatement extends CFParsedStatement implements java.io.Se
 			sb.append(clause.getCatchBody().Decompile(0));
 			sb.append("}");
 		}
-
+		
 		sb.insert(0, "try{" + body.Decompile(0) + "}");
 		return sb.toString();
 	}
-
+	
 }

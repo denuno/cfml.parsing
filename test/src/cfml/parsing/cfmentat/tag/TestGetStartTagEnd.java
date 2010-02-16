@@ -68,7 +68,7 @@ public class TestGetStartTagEnd {
 		tagSrc = "<cfset action=\"compileMapping\" type=\"web\" password=\"#variables[\"password\"&variables.adminType]#\" virtual=\"#arguments.mapping#\" stoponerror=\"false\" /><cfreturn \"compiled mapping: #arguments.mapping#\" />";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
 		assertEquals(tagSrc.length()-52,cfset.getEnd());
-		
+		 
 		tagSrc = "<cfreturn blah\"foo\"/>";
 		cfset = new Source(tagSrc).getAllStartTags().get(0);
 		assertEquals(tagSrc.length(),cfset.getEnd());

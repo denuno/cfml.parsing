@@ -36,41 +36,40 @@ import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFForStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression init;
 	private CFExpression cond;
 	private CFExpression next;
 	private CFScriptStatement body;
-
-	public CFForStatement( Token _t, CFExpression _init, CFExpression _cond,
-	    CFExpression _next, CFScriptStatement _body ) {
+	
+	public CFForStatement(Token _t, CFExpression _init, CFExpression _cond, CFExpression _next, CFScriptStatement _body) {
 		super(_t);
 		init = _init;
 		cond = _cond;
 		next = _next;
 		body = _body;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		body.checkIndirectAssignments(scriptSource);
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		String s = Indent(indent) + "for(";
-		if ( init != null ) {
+		if (init != null) {
 			s += init.Decompile(indent);
 		}
 		s += ";";
-		if ( cond != null ) {
+		if (cond != null) {
 			s += cond.Decompile(indent);
 		}
 		s += ";";
-		if ( next != null ) {
+		if (next != null) {
 			s += next.Decompile(indent);
 		}
 		body.Decompile(indent + 2);
-
+		
 		return s;
 	}
-
+	
 }

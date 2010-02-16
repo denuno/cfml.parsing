@@ -28,14 +28,13 @@
  */
 
 package cfml.parsing.cfmentat.antlr.script;
- 
 
 import cfml.parsing.cfmentat.antlr.CFContext;
 
-public interface CFScriptStatement{
-
-  public String Decompile( int indent );
-  public void checkIndirectAssignments( String[] scriptSource );
-
+public interface CFScriptStatement {
+	
+	public String Decompile(int indent);
+	
+	public void checkIndirectAssignments(String[] scriptSource);
+	
 }
-

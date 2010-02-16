@@ -40,61 +40,51 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
 import cfml.parsing.cfmentat.antlr.script.CFStatementResult;
 
-public abstract class CFExpression extends CFParsedStatement implements java.io.Serializable
-{
+public abstract class CFExpression extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	public static byte 	FUNCTION = 0,
-											ASSIGNMENT = 1, 
-											BINARY = 2, 
-											LITERAL = 3, 
-											IDENTIFIER = 4, 
-											VARIABLE = 5, 
-											UNARY = 6;
+	public static byte FUNCTION = 0, ASSIGNMENT = 1, BINARY = 2, LITERAL = 3, IDENTIFIER = 4, VARIABLE = 5, UNARY = 6;
 	
-	public static CFExpression getCFExpression( String _infix ) {
-
-		try{
-			ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream( new poundSignFilterStream( new StringReader( _infix ) ) );
+	public static CFExpression getCFExpression(String _infix) {
+		
+		try {
+			ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(new poundSignFilterStream(new StringReader(
+					_infix)));
 			
-			CFMLLexer lexer = new CFMLLexer( input );
-			CommonTokenStream tokens = new CommonTokenStream( lexer );
-			CFMLParser parser = new CFMLParser( tokens );
+			CFMLLexer lexer = new CFMLLexer(input);
+			CommonTokenStream tokens = new CommonTokenStream(lexer);
+			CFMLParser parser = new CFMLParser(tokens);
 			parser.scriptMode = false;
 			CFMLParser.expression_return r = parser.expression();
 			CommonTree tree = (CommonTree) r.getTree();
-		
-			CommonTreeNodeStream nodes = new CommonTreeNodeStream( tree );
-			nodes.setTokenStream( tokens );
-			CFMLTree p2 = new CFMLTree( nodes );
+			
+			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+			nodes.setTokenStream(tokens);
+			CFMLTree p2 = new CFMLTree(nodes);
 			p2.scriptMode = false;
 			CFExpression exp = p2.expression();
 			
-			if ( exp instanceof CFAssignmentExpression ) {
-				((CFAssignmentExpression)exp).checkIndirect( _infix );
+			if (exp instanceof CFAssignmentExpression) {
+				((CFAssignmentExpression) exp).checkIndirect(_infix);
 			}
-
+			
 			return exp;
-		}catch( Exception e ){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-
 	
-	public byte getType(){
+	public byte getType() {
 		return -1;
 	}
-
-	public boolean isEscapeSingleQuotes(){
+	
+	public boolean isEscapeSingleQuotes() {
 		return false;
 	}
-
-  public CFExpression( org.antlr.runtime.Token t) {
-  	super( t );
-  }
-
-
+	
+	public CFExpression(org.antlr.runtime.Token t) {
+		super(t);
+	}
+	
 }
-
-

@@ -130,7 +130,7 @@ public final class CFMLTagTypes {
 		CFML_ARGUMENT,
 		HTML_SCRIPT,
 		CFML_SCRIPT
-	};
+	}; 
 
 	private CFMLTagTypes() {}
 

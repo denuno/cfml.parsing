@@ -34,25 +34,25 @@ import org.antlr.runtime.Token;
 import cfml.parsing.cfmentat.antlr.*;
 
 public class CFReturnStatement extends CFParsedStatement {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression _ret; // null if no return
-
+	
 	// "ret" is null if there is no return value
-	public CFReturnStatement( Token t, CFExpression ret ) {
+	public CFReturnStatement(Token t, CFExpression ret) {
 		super(t);
 		_ret = ret;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder s = new StringBuilder();
 		s.append(Indent(indent));
 		s.append("return ");
-		if ( _ret != null ) {
+		if (_ret != null) {
 			s.append(_ret.Decompile(indent));
 		}
 		return s.toString();
 	}
-
+	
 }

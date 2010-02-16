@@ -42,56 +42,55 @@ import java.util.Vector;
 
 import org.antlr.runtime.Token;
 
-public class CFJavaMethodExpression extends CFExpression  {
+public class CFJavaMethodExpression extends CFExpression {
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	private CFExpression name;
 	private Vector<CFExpression> args; // Vector of CFExpression's
 	private boolean _onMissingMethod = false;
-
-	public CFJavaMethodExpression( Token _t,
-	    CFExpression _name, Vector<CFExpression> _args ) {
+	
+	public CFJavaMethodExpression(Token _t, CFExpression _name, Vector<CFExpression> _args) {
 		super(_t);
 		name = _name;
 		args = _args;
 	}
-
+	
 	public byte getType() {
 		return CFExpression.FUNCTION;
 	}
-
+	
 	public String getFunctionName() {
 		return ((CFIdentifier) name).getName();
 	}
-
+	
 	public Vector<CFExpression> getArguments() {
 		return args;
 	}
-
+	
 	public boolean isOnMethodMissing() {
 		return _onMissingMethod;
 	}
-
+	
 	public void setOnMethodMissing() {
 		_onMissingMethod = true;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		sb.append( name.Decompile(indent) );
-		sb.append( "(" );
-
+		sb.append(name.Decompile(indent));
+		sb.append("(");
+		
 		for (int i = 0; i < args.size(); i++) {
-			sb.append( (args.elementAt(i)).toString() );
-			if ( i < args.size() - 1 ) {
-				sb.append( ", " );
+			sb.append((args.elementAt(i)).toString());
+			if (i < args.size() - 1) {
+				sb.append(", ");
 			}
 		}
-
-		sb.append( ")" );
-
+		
+		sb.append(")");
+		
 		return sb.toString();
 	}
-
+	
 }

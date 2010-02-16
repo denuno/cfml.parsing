@@ -31,21 +31,20 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import cfml.parsing.cfmentat.antlr.CFContext;
 
-public class CFBreakStatement extends CFParsedStatement implements java.io.Serializable
-{
+public class CFBreakStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
-	public CFBreakStatement( org.antlr.runtime.Token t) {
+	
+	public CFBreakStatement(org.antlr.runtime.Token t) {
 		super(t);
 	}
-
-	public cfml.parsing.cfmentat.antlr.script.CFStatementResult Exec( CFContext context) {
+	
+	public cfml.parsing.cfmentat.antlr.script.CFStatementResult Exec(CFContext context) {
 		setLineCol(context);
 		return cfml.parsing.cfmentat.antlr.script.CFStatementResult.BREAK;
 	}
-
+	
 	public String Decompile(int indent) {
 		return Indent(indent) + "break";
 	}
-
+	
 }

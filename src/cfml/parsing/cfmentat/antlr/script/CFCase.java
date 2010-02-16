@@ -41,53 +41,52 @@ import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFCase implements CFScriptStatement, java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private List<CFScriptStatement> statementBlock;
 	private boolean isDefault = true;
 	private CFExpression constant;
-
-	public CFCase( CFExpression _constant, List<CFScriptStatement> _statementBlock ) {
-		this( _statementBlock );
+	
+	public CFCase(CFExpression _constant, List<CFScriptStatement> _statementBlock) {
+		this(_statementBlock);
 		isDefault = false;
 		constant = _constant;
 	}
-
-	public CFCase( List<CFScriptStatement> _statementBlock ) {
+	
+	public CFCase(List<CFScriptStatement> _statementBlock) {
 		statementBlock = _statementBlock;
 	}
-
-
+	
 	public boolean isDefault() {
 		return isDefault;
 	}
-
-	public void checkIndirectAssignments( String[] scriptSource ) {
+	
+	public void checkIndirectAssignments(String[] scriptSource) {
 		for (int i = 0; i < statementBlock.size(); i++) {
 			statementBlock.get(i).checkIndirectAssignments(scriptSource);
 		}
 	}
-
+	
 	public String toString() {
 		String temp = "case :\n";
 		Iterator<CFScriptStatement> statements = statementBlock.iterator();
-
+		
 		while (statements.hasNext())
 			temp += statements.next().Decompile(0) + "\n";
-
+		
 		return temp;
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		StringBuilder sb = new StringBuilder();
-		if ( isDefault ){
-			sb.append( "default:" );
-		}else{
-			sb.append( "case " );
-			sb.append( constant.Decompile(0) );
+		if (isDefault) {
+			sb.append("default:");
+		} else {
+			sb.append("case ");
+			sb.append(constant.Decompile(0));
 		}
 		return sb.toString();
 	}
-
+	
 }

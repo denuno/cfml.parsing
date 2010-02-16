@@ -37,25 +37,25 @@ import org.antlr.runtime.Token;
 import cfml.parsing.cfmentat.antlr.CFContext;
 
 public class CFEmptyStatement extends CFParsedStatement implements java.io.Serializable {
-
+	
 	private static final long serialVersionUID = 1L;
-
-	public CFEmptyStatement( Token t ) {
+	
+	public CFEmptyStatement(Token t) {
 		super(t);
 	}
-
+	
 	public CFEmptyStatement() {
 		super(0, 0);
 	}
-
-	public CFStatementResult Exec( CFContext context ) {
+	
+	public CFStatementResult Exec(CFContext context) {
 		setLineCol(context);
 		return null;
 		// do nothing
 	}
-
-	public String Decompile( int indent ) {
+	
+	public String Decompile(int indent) {
 		return Indent(indent) + ";";
 	}
-
+	
 }
