@@ -117,17 +117,10 @@ public final class CFMLTagTypes {
 	public static final StartTagType CFML_ELSE=StartTagTypeCfElse.INSTANCE;
 	public static final StartTagType CFML_ELSEIF=StartTagTypeCfElseIf.INSTANCE;
 	public static final StartTagType CFML_ARGUMENT=StartTagTypeCfArgument.INSTANCE;
-	public static final StartTagType CFML_INCLUDE=StartTagTypeCfInclude.INSTANCE;
-	public static final StartTagType CFML_INPUT=StartTagTypeCfInput.INSTANCE;
 	public static final StartTagType CFML_FUNCTION=StartTagTypeCfFunction.INSTANCE;
-	public static final StartTagType CFML_SAVECONTENT=StartTagTypeCfSaveContent.INSTANCE;
-	public static final StartTagType CFML_CONTENT=StartTagTypeCfContent.INSTANCE;
-	public static final StartTagType CFML_MAIL=StartTagTypeCfMail.INSTANCE;
 
 	private static final TagType[] TAG_TYPES={
 		CFML_STANDARD,
-		CFML_SAVECONTENT,
-		CFML_CONTENT,
 		CFML_COMMENT,
 		CFML_SET,
 		CFML_IF,
@@ -135,11 +128,8 @@ public final class CFMLTagTypes {
 		CFML_ELSEIF,
 		CFML_FUNCTION,
 		CFML_ARGUMENT,
-		CFML_INCLUDE,
-		CFML_INPUT,
 		HTML_SCRIPT,
-		CFML_SCRIPT,
-		CFML_MAIL
+		CFML_SCRIPT
 	};
 
 	private CFMLTagTypes() {}

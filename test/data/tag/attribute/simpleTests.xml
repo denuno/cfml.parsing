@@ -77,4 +77,8 @@
 	<test name="simpletest25" numattributes="1">
 	this='#hash# foo="blah"'
 	</test>
+	<test name="simpletest25" numattributes="5">
+	action="compileMapping" type="web" password="#variables["password"&variables.adminType]#" virtual="#arguments.mapping#" stoponerror="false"
+	</test>
+	
 </attributetests>

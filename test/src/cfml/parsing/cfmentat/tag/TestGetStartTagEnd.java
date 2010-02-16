@@ -31,6 +31,7 @@ public class TestGetStartTagEnd {
 	@Before
 	public void setUp() throws Exception {
 		CFMLTagTypes.register();
+		CFMLTags.register();
 		fSource=new Source(new URL(sourceUrlString));
 	}
 
@@ -44,7 +45,6 @@ public class TestGetStartTagEnd {
 		Source source;
 		List<StartTag> els;
 		StartTag cfset;
-		
 		tagSrc = "<cfset blah='foo'/>";
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
 		assertEquals(tagSrc.length(),cfset.getEnd());
@@ -65,6 +65,24 @@ public class TestGetStartTagEnd {
 		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
 		assertEquals(tagSrc.length(),cfset.getEnd());
 		
+		tagSrc = "<cfset action=\"compileMapping\" type=\"web\" password=\"#variables[\"password\"&variables.adminType]#\" virtual=\"#arguments.mapping#\" stoponerror=\"false\" /><cfreturn \"compiled mapping: #arguments.mapping#\" />";
+		cfset = new Source(tagSrc).getAllStartTags(StartTagTypeCfSet.INSTANCE).get(0);
+		assertEquals(tagSrc.length()-52,cfset.getEnd());
+		
+		tagSrc = "<cfreturn blah\"foo\"/>";
+		cfset = new Source(tagSrc).getAllStartTags().get(0);
+		assertEquals(tagSrc.length(),cfset.getEnd());
+
+		tagSrc = "<cfreturn \"compiled mapping\"\" #arguments.mapping#\" />";
+		cfset = new Source(tagSrc).getAllStartTags().get(0);
+		assertEquals(tagSrc.length(),cfset.getEnd());
+		
+		GenericStartTagTypeCf randomtag = new GenericStartTagTypeCf("test", "<cfrandom", ">", EndTagType.NORMAL, false);
+		randomtag.register();
+
+		tagSrc = "<cfrandom \"compiled mapping\"\" #arguments.mapping#\"/>";
+		cfset = new Source(tagSrc).getAllStartTags(randomtag.getInstance()).get(0);
+		assertEquals(tagSrc.length(),cfset.getEnd());
 		
 	}
 
