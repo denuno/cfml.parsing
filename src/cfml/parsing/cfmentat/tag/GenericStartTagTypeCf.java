@@ -71,6 +71,11 @@ public class GenericStartTagTypeCf extends StartTagTypeGenericImplementation {
 		return INSTANCE;
 	}
 	
+	public boolean atEndOfAttributes(final Source source, final int pos, final boolean isClosingSlashIgnored) {
+		final ParseText parseText = source.getParseText();
+		return parseText.charAt(pos) == '>' || (parseText.containsAt("/>", pos));
+	}
+	
 	protected int getEnd(final Source source, final int pos) {
 		final ParseText text = source.getParseText();
 		int endStartTagEnd = pos;

@@ -7,6 +7,6 @@ final class StartTagTypeCFMLComment extends StartTagTypeGenericImplementation {
 	protected static final StartTagTypeCFMLComment INSTANCE = new StartTagTypeCFMLComment();
 	
 	private StartTagTypeCFMLComment() {
-		super("comment", "<!---", "--->", null, true, false, false);
+		super("comment", "<!---", "--->", null, false);
 	}
 }
