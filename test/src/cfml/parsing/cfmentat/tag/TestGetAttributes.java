@@ -1,26 +1,17 @@
 package cfml.parsing.cfmentat.tag;
 
-import static org.junit.Assert.assertEquals;
-
 import java.net.URL;
 import java.util.Iterator;
 
+import junit.framework.TestCase;
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.EndTagType;
 import net.htmlparser.jericho.Source;
 
-import org.junit.Before;
-import org.junit.Test;
-
-/**
- * 
- */
-
 /**
  * @author denny
- * 
  */
-public class TestGetAttributes {
+public class TestGetAttributes extends TestCase {
 	private static final String sourceUrlString = "file:test/data/tag/attribute/simpleTests.xml";
 	private Source fSource;
 	private GenericStartTagTypeCf fGenericStartTag;
@@ -28,7 +19,6 @@ public class TestGetAttributes {
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
 	public void setUp() throws Exception {
 		fGenericStartTag = new GenericStartTagTypeCf("CFML if tag", "<cfsavecontent", ">", EndTagType.NORMAL, false,
 				false, false);
@@ -38,7 +28,6 @@ public class TestGetAttributes {
 	/**
 	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getAttributes(java.lang.String)} .
 	 */
-	@Test
 	public void testGetAttributes() {
 		Iterator<Element> tests = fSource.getFirstElement().getChildElements().iterator();
 		String attributes, numattributes, testname;
@@ -54,10 +43,8 @@ public class TestGetAttributes {
 			System.out.println(type.getAttributeValue("numattributes"));
 			i++;
 		}
-		
 	}
 	
-	@Test
 	public void testParseAttr() {
 		Iterator<Element> tests = fSource.getFirstElement().getChildElements().iterator();
 		String attributes, numattributes, testname;
@@ -73,7 +60,5 @@ public class TestGetAttributes {
 			System.out.println(type.getAttributeValue("numattributes"));
 			i++;
 		}
-		
 	}
-	
 }
