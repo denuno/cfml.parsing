@@ -22,6 +22,7 @@ public class CFMLTags {
 	public static final StartTagType CFML_ARGUMENT = StartTagTypeCfArgument.INSTANCE;
 	public static final StartTagType CFML_FUNCTION = StartTagTypeCfFunction.INSTANCE;
 	public static final StartTagType CFML_CONTENT = StartTagTypeCfContent.INSTANCE;
+	public static final StartTagType CFML_RETURN = StartTagTypeCfReturn.INSTANCE;
 	
 	private static SyntaxDictionary cfdic;
 	
@@ -29,7 +30,7 @@ public class CFMLTags {
 	}
 	
 	private static final TagType[] TAG_TYPES = { CFML_STANDARD, CFML_COMMENT, CFML_SET, CFML_IF, CFML_ELSE,
-			CFML_ELSEIF, CFML_FUNCTION, CFML_ARGUMENT, HTML_SCRIPT, CFML_SCRIPT, CFML_CONTENT };
+			CFML_ELSEIF, CFML_FUNCTION, CFML_ARGUMENT, HTML_SCRIPT, CFML_SCRIPT, CFML_CONTENT, CFML_RETURN };
 	
 	public static void register() {
 		DictionaryManager.initDictionaries();
