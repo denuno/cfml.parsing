@@ -20,8 +20,8 @@ public class TestGetAttributes extends TestCase {
 	 * @throws java.lang.Exception
 	 */
 	public void setUp() throws Exception {
-		fGenericStartTag = new GenericStartTagTypeCf("CFML if tag", "<cfsavecontent", ">", EndTagType.NORMAL, false,
-				false, false);
+		fGenericStartTag = new GenericStartTagTypeCf("CFML generic tag", "<cf", ">", EndTagType.NORMAL, false, false,
+				false);
 		fSource = new Source(new URL(sourceUrlString));
 	}
 	
