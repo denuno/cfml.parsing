@@ -10,11 +10,11 @@ import net.htmlparser.jericho.Source;
 import net.htmlparser.jericho.SourceFormatter;
 import net.htmlparser.jericho.StartTagType;
 
-public class CFSource {
+public class CFMLSource {
 	
 	private static Source fSource;
 	
-	public CFSource(String contents) {
+	public CFMLSource(String contents) {
 		fSource = new Source(contents);
 		fSource.ignoreWhenParsing(fSource.getAllElements(CFMLTags.CFML_CONTENT));
 		CFMLTags.register();
