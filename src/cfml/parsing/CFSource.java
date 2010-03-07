@@ -1,6 +1,8 @@
-package cfml.parsing.cfmentat.tag;
+package cfml.parsing;
 
 import java.util.List;
+
+import cfml.parsing.cfmentat.tag.CFMLTags;
 
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.OutputDocument;
