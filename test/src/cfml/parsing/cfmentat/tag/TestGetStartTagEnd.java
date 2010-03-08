@@ -24,18 +24,17 @@ public class TestGetStartTagEnd extends TestCase {
 	 * @throws java.lang.Exception
 	 */
 	public void setUp() throws Exception {
-		CFMLTagTypes.register();
 		CFMLTags.register();
 	}
 	
 	public void testAllStartTags_length_randomWithString() {
 		// Create and register the random, custom tag
-		GenericStartTagTypeCf randomTag = new GenericStartTagTypeCf("test", "<cfrandom", ">", EndTagType.NORMAL, false);
+		CFMLStartTag randomTag = new CFMLStartTag("test", "<cfrandom", ">", EndTagType.NORMAL, false);
 		randomTag.register();
 		
 		String rawSource = "<cfrandom \"custom string\" />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, GenericStartTagTypeCf.getInstance());
+		StartTag cftag = parseAndGetFirstTag(rawSource, CFMLStartTag.getInstance());
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}

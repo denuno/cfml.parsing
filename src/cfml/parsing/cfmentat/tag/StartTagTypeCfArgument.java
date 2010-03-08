@@ -1,7 +1,7 @@
 package cfml.parsing.cfmentat.tag;
 
 // note this has the same startdelimiter as processing instruction, so overrides it if registered
-final class StartTagTypeCfArgument extends GenericStartTagTypeCf {
+final class StartTagTypeCfArgument extends CFMLStartTag {
 	protected static final StartTagTypeCfArgument INSTANCE = new StartTagTypeCfArgument();
 	
 	private StartTagTypeCfArgument() {

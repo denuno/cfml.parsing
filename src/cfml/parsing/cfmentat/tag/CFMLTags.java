@@ -36,14 +36,14 @@ public class CFMLTags {
 		DictionaryManager.initDictionaries();
 		cfdic = DictionaryManager.getDictionary("CF_DICTIONARY");
 		Set<Tag> cfTags = cfdic.getAllTags();
-		GenericStartTagTypeCf cftag;
+		CFMLStartTag cftag;
 		for (Tag tag : cfTags) {
 			if (!tag.getName().equals("cfif") && tag.getName().equals("cfcomment")) {
 				if (tag.isSingle()) {
-					cftag = new GenericStartTagTypeCf(tag.getHelp(), "<" + tag.getName(), ">", null, false, tag
+					cftag = new CFMLStartTag(tag.getHelp(), "<" + tag.getName(), ">", null, false, tag
 							.hasParameters(), tag.isXMLStyle());
 				} else {
-					cftag = new GenericStartTagTypeCf(tag.getHelp(), "<" + tag.getName(), ">", EndTagType.NORMAL,
+					cftag = new CFMLStartTag(tag.getHelp(), "<" + tag.getName(), ">", EndTagType.NORMAL,
 							false, tag.hasParameters(), tag.isXMLStyle());
 				}
 				cftag.register();

@@ -32,7 +32,7 @@ public class TestAntlrParser {
 	
 	/**
 	 * Test method for
-	 * {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getEnd(net.htmlparser.jericho.Source, int)} .
+	 * {@link cfml.parsing.cfmentat.tag.CFMLStartTag#getEnd(net.htmlparser.jericho.Source, int)} .
 	 */
 	@Test
 	public void testGetEndSourceInt() {
@@ -40,7 +40,7 @@ public class TestAntlrParser {
 	}
 	
 	/**
-	 * Test method for {@link cfml.parsing.cfmentat.tag.GenericStartTagTypeCf#getAttributes(java.lang.String)} .
+	 * Test method for {@link cfml.parsing.cfmentat.tag.CFMLStartTag#getAttributes(java.lang.String)} .
 	 */
 	@Test
 	public void testGetAttributes() {

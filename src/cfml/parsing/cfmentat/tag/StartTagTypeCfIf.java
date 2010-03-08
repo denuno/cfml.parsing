@@ -2,7 +2,7 @@ package cfml.parsing.cfmentat.tag;
 
 import net.htmlparser.jericho.EndTagType;
 
-final class StartTagTypeCfIf extends GenericStartTagTypeCf {
+final class StartTagTypeCfIf extends CFMLStartTag {
 	protected static final StartTagTypeCfIf INSTANCE = new StartTagTypeCfIf();
 	
 	private StartTagTypeCfIf() {

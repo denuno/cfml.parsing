@@ -11,7 +11,6 @@ import java.util.List;
 
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.StartTag;
-import net.htmlparser.jericho.Tag;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -62,9 +61,9 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Tag tag = fCfmlParser.getCFMLSource(path).getTagAt(350);
+		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getTagAt(350);
 		System.out.println(fCfmlParser.printMessages());
-		assertEquals("cffunction", tag.getName());
+		assertEquals("cffunction", parserTag.getName());
 	}
 	
 	@Test
@@ -76,9 +75,9 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Tag tag = fCfmlParser.getCFMLSource(path).getEnclosingTag(355);
+		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getEnclosingTag(355);
 		System.out.println(fCfmlParser.printMessages());
-		assertEquals("cffunction", tag.getName());
+		assertEquals("cffunction", parserTag.getName());
 	}
 	
 	@Test
@@ -90,9 +89,9 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Tag tag = fCfmlParser.getCFMLSource(path).getNextTag(355);
+		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getNextTag(355);
 		System.out.println(fCfmlParser.printMessages());
-		assertEquals("cfargument", tag.getName());
+		assertEquals("cfargument", parserTag.getName());
 	}
 	
 	@Test
@@ -104,9 +103,9 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Tag tag = fCfmlParser.getCFMLSource(path).getPreviousTag(355);
+		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getPreviousTag(355);
 		System.out.println(fCfmlParser.printMessages());
-		assertEquals("cfquery", tag.getName());
+		assertEquals("cfquery", parserTag.getName());
 	}
 	
 	@Test

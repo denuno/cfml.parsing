@@ -65,23 +65,35 @@ public class CFMLSource {
 		return fSource.getAllStartTags("cf");
 	}
 	
-	public Tag getTagAt(int i) {
-		return fSource.getTagAt(i);
+	public ParserTag getTagAt(int i) {
+		ParserTag parserTag = makeParserTag(fSource.getTagAt(i));
+		return parserTag;
 	}
 	
-	public Tag getEnclosingTag(int i) {
-		return fSource.getEnclosingTag(i);
+	public ParserTag getEnclosingTag(int i) {
+		return makeParserTag(fSource.getEnclosingTag(i));
 	}
 	
-	public Tag getNextTag(int i) {
-		return fSource.getNextTag(i);
+	public ParserTag getNextTag(int i) {
+		return makeParserTag(fSource.getNextTag(i));
 	}
 	
-	public Tag getPreviousTag(int i) {
+	public ParserTag getPreviousTag(int i) {
 		Tag encosingTag = fSource.getEnclosingTag(i);
-		Tag tag = fSource.getPreviousTag(i);
-		if (tag.getBegin() == encosingTag.getBegin())
-			return fSource.getPreviousTag(encosingTag.getBegin() - 1);
-		return fSource.getPreviousTag(i);
+		Tag parserTag = fSource.getPreviousTag(i);
+		if (parserTag.getBegin() == encosingTag.getBegin())
+			return makeParserTag(fSource.getPreviousTag(encosingTag.getBegin() - 1));
+		return makeParserTag(fSource.getPreviousTag(i));
+	}
+	
+	private ParserTag makeParserTag(net.htmlparser.jericho.Tag nextTag) {
+		ParserTag newTag = new ParserTag(nextTag);
+		return newTag;
+	}
+	
+	private ParserTag makeParserTag(net.htmlparser.jericho.StartTag tag) {
+		ParserTag newTag = new ParserTag(tag);
+		return newTag;
+		
 	}
 }

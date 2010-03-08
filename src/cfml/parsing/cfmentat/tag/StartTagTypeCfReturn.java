@@ -21,7 +21,7 @@
 package cfml.parsing.cfmentat.tag;
 
 
-final class StartTagTypeCfReturn extends GenericStartTagTypeCf {
+final class StartTagTypeCfReturn extends CFMLStartTag {
 	protected static final StartTagTypeCfReturn INSTANCE = new StartTagTypeCfReturn();
 	
 	private StartTagTypeCfReturn() {
