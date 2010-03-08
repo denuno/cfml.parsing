@@ -19,7 +19,7 @@ import cfml.dictionary.SyntaxDictionary;
 
 public class CFMLParser {
 	
-	private ArrayList<CFMLSource> fCfmlSources = new ArrayList<CFMLSource>();
+	private Map fCfmlSources = new HashMap();
 	protected ArrayList<ParseMessage> messages = new ArrayList<ParseMessage>();
 	private boolean hadFatal;
 	private int errCount = 0;
@@ -64,41 +64,45 @@ public class CFMLParser {
 	public void addDictionary(String dictionary) {
 	}
 	
-	public void addCFMLSource(File cfmlsource) throws IOException {
-		CFMLSource source = new CFMLSource(readFileAsString(cfmlsource.getPath()));
-		fCfmlSources.add(source);
-	}
-	
-	public void addCFMLSource(String cfmlsource) {
+	public CFMLSource addCFMLSource(String path, String cfmlsource) {
 		CFMLSource source = new CFMLSource(cfmlsource);
-		fCfmlSources.add(source);
+		fCfmlSources.put(path, source);
+		return source;
 	}
 	
-	public void addCFMLSource(URL url) throws IOException {
+	public CFMLSource addCFMLSource(File cfmlsource) throws IOException {
+		return addCFMLSource(cfmlsource.getPath(), readFileAsString(cfmlsource.getPath()));
+	}
+	
+	public CFMLSource addCFMLSource(URL url) throws IOException {
 		CFMLSource source = new CFMLSource(url);
-		fCfmlSources.add(source);
+		fCfmlSources.put(url.getPath(), source);
+		return source;
 	}
 	
 	public ArrayList<StartTag> getCFMLTags() {
 		ArrayList<StartTag> cfmlTags = new ArrayList<StartTag>();
-		for (CFMLSource cfmlSource : fCfmlSources) {
-			cfmlTags.addAll(cfmlSource.getAllCFMLTags());
+		Iterator sources = fCfmlSources.keySet().iterator();
+		while (sources.hasNext()) {
+			cfmlTags.addAll(((CFMLSource) fCfmlSources.get(sources.next())).getAllCFMLTags());
 		}
 		return cfmlTags;
 	}
 	
 	public ArrayList getAllTags() {
 		ArrayList<Element> allTags = new ArrayList<Element>();
-		for (CFMLSource cfmlSource : fCfmlSources) {
-			allTags.addAll(cfmlSource.getAllElements());
+		Iterator sources = fCfmlSources.keySet().iterator();
+		while (sources.hasNext()) {
+			allTags.addAll(((CFMLSource) fCfmlSources.get(sources.next())).getAllElements());
 		}
 		return allTags;
 	}
 	
 	public String getCacheDebugInfo() {
 		String info = "";
-		for (CFMLSource cfmlSource : fCfmlSources) {
-			info = info.concat(cfmlSource.getCacheDebugInfo());
+		Iterator sources = fCfmlSources.keySet().iterator();
+		while (sources.hasNext()) {
+			info = info.concat((((CFMLSource) fCfmlSources.get(sources.next())).getCacheDebugInfo()));
 		}
 		return info;
 	}
@@ -209,9 +213,15 @@ public class CFMLParser {
 	}
 	
 	public void parse() {
-		for (CFMLSource cfmlSource : fCfmlSources) {
-			parseElements(cfmlSource);
+		Iterator sources = fCfmlSources.keySet().iterator();
+		while (sources.hasNext()) {
+			parseElements(((CFMLSource) fCfmlSources.get(sources.next())));
 		}
+	}
+	
+	public CFMLSource getCFMLSource(String path) {
+		CFMLSource cfmlSource = (CFMLSource) fCfmlSources.get(path);
+		return cfmlSource;
 	}
 	
 }

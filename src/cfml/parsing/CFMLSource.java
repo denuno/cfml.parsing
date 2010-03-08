@@ -10,6 +10,7 @@ import net.htmlparser.jericho.Source;
 import net.htmlparser.jericho.SourceFormatter;
 import net.htmlparser.jericho.StartTag;
 import net.htmlparser.jericho.StartTagType;
+import net.htmlparser.jericho.Tag;
 import cfml.parsing.cfmentat.tag.CFMLTags;
 
 public class CFMLSource {
@@ -64,4 +65,23 @@ public class CFMLSource {
 		return fSource.getAllStartTags("cf");
 	}
 	
+	public Tag getTagAt(int i) {
+		return fSource.getTagAt(i);
+	}
+	
+	public Tag getEnclosingTag(int i) {
+		return fSource.getEnclosingTag(i);
+	}
+	
+	public Tag getNextTag(int i) {
+		return fSource.getNextTag(i);
+	}
+	
+	public Tag getPreviousTag(int i) {
+		Tag encosingTag = fSource.getEnclosingTag(i);
+		Tag tag = fSource.getPreviousTag(i);
+		if (tag.getBegin() == encosingTag.getBegin())
+			return fSource.getPreviousTag(encosingTag.getBegin() - 1);
+		return fSource.getPreviousTag(i);
+	}
 }
