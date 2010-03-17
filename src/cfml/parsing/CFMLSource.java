@@ -18,15 +18,15 @@ public class CFMLSource {
 	private static Source fSource;
 	
 	public CFMLSource(String contents) {
+		CFMLTags.register();
 		fSource = new Source(contents);
 		fSource.ignoreWhenParsing(fSource.getAllElements(CFMLTags.CFML_CONTENT));
-		CFMLTags.register();
 	}
 	
 	public CFMLSource(URL url) throws IOException {
+		CFMLTags.register();
 		fSource = new Source(url);
 		fSource.ignoreWhenParsing(fSource.getAllElements(CFMLTags.CFML_CONTENT));
-		CFMLTags.register();
 	}
 	
 	public List<Element> getAllElements(StartTagType startTagType) {

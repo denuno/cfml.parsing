@@ -6,6 +6,6 @@ final class StartTagTypeCfArgument extends CFMLStartTag {
 	
 	private StartTagTypeCfArgument() {
 		// super("CFSET","<cfset",">",null,true,false,false);
-		super("CFML short tag", "<cfargument", ">", null, true, true, false);
+		super("CFML short tag", "<cfargument", ">", null, false, true, false);
 	}
 }
