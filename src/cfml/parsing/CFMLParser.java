@@ -107,6 +107,15 @@ public class CFMLParser {
 		return info;
 	}
 	
+	public String getDebuggingInfo() {
+		String info = "";
+		Iterator sources = fCfmlSources.keySet().iterator();
+		while (sources.hasNext()) {
+			info = info.concat((((CFMLSource) fCfmlSources.get(sources.next())).getDebuggingInfo()));
+		}
+		return info;
+	}
+	
 	/**
 	 * Returns whether this parse has experienced a fatal error or not.
 	 * 

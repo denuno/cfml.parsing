@@ -29,6 +29,10 @@ public class CFMLSource {
 		fSource.ignoreWhenParsing(fSource.getAllElements(CFMLTags.CFML_CONTENT));
 	}
 	
+	public String getDebuggingInfo() {
+		return fSource.getDebugInfo();
+	}
+	
 	public List<Element> getAllElements(StartTagType startTagType) {
 		return fSource.getAllElements(startTagType);
 	}

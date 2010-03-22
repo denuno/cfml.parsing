@@ -53,6 +53,13 @@ public class TestCFMLParser {
 	}
 	
 	@Test
+	public void testGetDebugInfo() {
+		String debugInfo = fCfmlParser.getDebuggingInfo();
+		System.out.println(debugInfo);
+		assertEquals(21, 21);
+	}
+	
+	@Test
 	public void testGetTagAt() {
 		String path = "";
 		try {
