@@ -51,12 +51,12 @@ public class CFBinaryExpression extends CFExpression implements java.io.Serializ
 		super(t);
 		_kind = t.getType();
 		operatorImage = t.getText();
-		if (_kind == CFMLLexer.ANDOPERATOR) {
-			_kind = CFMLLexer.AND;
-		} else if (_kind == CFMLLexer.OROPERATOR) {
-			_kind = CFMLLexer.OR;
-		} else if (_kind == CFMLLexer.MODOPERATOR) {
-			_kind = CFMLLexer.MOD;
+		if (_kind == CFScriptLexer.ANDOPERATOR) {
+			_kind = CFScriptLexer.AND;
+		} else if (_kind == CFScriptLexer.OROPERATOR) {
+			_kind = CFScriptLexer.OR;
+		} else if (_kind == CFScriptLexer.MODOPERATOR) {
+			_kind = CFScriptLexer.MOD;
 		}
 		_left = left;
 		_right = right;
@@ -68,7 +68,7 @@ public class CFBinaryExpression extends CFExpression implements java.io.Serializ
 	
 	public String Decompile(int indent) {
 		String endChar = "";
-		if (_kind == CFMLLexer.LEFTBRACKET) {
+		if (_kind == CFScriptLexer.LEFTBRACKET) {
 			endChar = "]";
 		}
 		return "" + _left.Decompile(indent) + operatorImage + _right.Decompile(indent) + endChar;

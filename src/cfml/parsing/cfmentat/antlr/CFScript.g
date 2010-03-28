@@ -27,7 +27,7 @@
  *  http://www.openbluedragon.org/
  */
 
-grammar CFML;
+grammar CFScript;
 options {
 	output=AST;
 	ASTLabelType=CommonTree;
@@ -60,6 +60,25 @@ protected void mismatch( IntStream input, int ttype, BitSet follow ) throws Reco
 public Object recoverFromMismatchedSet( IntStream input, RecognitionException e, BitSet follow ) throws RecognitionException{
   throw e;
 }
+
+public String getErrorMessage(RecognitionException e, 
+	String[] tokenNames) 
+	{ 
+	List stack = getRuleInvocationStack(e, this.getClass().getName()); 
+	String msg = null; 
+	if ( e instanceof NoViableAltException ) { 
+	NoViableAltException nvae = (NoViableAltException)e; 
+	msg = " no viable alt; token="+e.token+ 
+	" (decision="+nvae.decisionNumber+ 
+	" state "+nvae.stateNumber+")"+ 
+	" decision=<<"+nvae.grammarDecisionDescription+">>"; 
+	} 
+	else { 
+	msg = super.getErrorMessage(e, tokenNames); 
+	} 
+	return stack+" "+msg; 
+} 
+
 }
 
 @lexer::members {
@@ -106,7 +125,6 @@ catch (RecognitionException e) {
   throw e;
 }
 }
-
 
 //Note: need case insensitive stream: http://www.antlr.org/wiki/pages/viewpage.action?pageId=1782
 

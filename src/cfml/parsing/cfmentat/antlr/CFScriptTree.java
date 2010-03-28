@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g 2010-02-11 02:57:41
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g 2010-02-11 02:57:41
 
 package cfml.parsing.cfmentat.antlr;
 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
-public class CFMLTree extends TreeParser {
+public class CFScriptTree extends TreeParser {
 	public static final String[] tokenNames = new String[] { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOESNOTCONTAIN",
 			"VARLOCAL", "FUNCTIONCALL", "JAVAMETHODCALL", "EMPTYARGS", "FUNCDECL", "POSTMINUSMINUS", "POSTPLUSPLUS",
 			"WS", "LINE_COMMENT", "ML_COMMENT", "BOOLEAN_LITERAL", "DoubleStringCharacter", "SingleStringCharacter",
@@ -135,21 +135,21 @@ public class CFMLTree extends TreeParser {
 	// delegates
 	// delegators
 	
-	public CFMLTree(TreeNodeStream input) {
+	public CFScriptTree(TreeNodeStream input) {
 		this(input, new RecognizerSharedState());
 	}
 	
-	public CFMLTree(TreeNodeStream input, RecognizerSharedState state) {
+	public CFScriptTree(TreeNodeStream input, RecognizerSharedState state) {
 		super(input, state);
 		
 	}
 	
 	public String[] getTokenNames() {
-		return CFMLTree.tokenNames;
+		return CFScriptTree.tokenNames;
 	}
 	
 	public String getGrammarFileName() {
-		return "/Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g";
+		return "/Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g";
 	}
 	
 	public boolean scriptMode = true;
@@ -168,7 +168,7 @@ public class CFMLTree extends TreeParser {
 	}
 	
 	// $ANTLR start "scriptBlock"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:72:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:72:1:
 	// scriptBlock returns [CFScriptStatement s] : (e= element )* ( SCRIPTCLOSE
 	// | EOF ) ;
 	public final CFScriptStatement scriptBlock() throws RecognitionException {
@@ -178,12 +178,12 @@ public class CFMLTree extends TreeParser {
 		
 		s = new CFCompoundStatement();
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:74:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:74:3:
 			// ( (e= element )* ( SCRIPTCLOSE | EOF ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:74:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:74:5:
 			// (e= element )* ( SCRIPTCLOSE | EOF )
 			{
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:74:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:74:5:
 				// (e= element )*
 				loop1: do {
 					int alt1 = 2;
@@ -201,7 +201,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt1) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:74:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:74:7:
 						// e= element
 					{
 						pushFollow(FOLLOW_element_in_scriptBlock84);
@@ -252,7 +252,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "scriptBlock"
 	
 	// $ANTLR start "element"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:78:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:78:1:
 	// element returns [CFScriptStatement s] : ( ^(f= FUNCDECL i= identifier p=
 	// parameterList body= compoundStatement ) | st= statement );
 	public final CFScriptStatement element() throws RecognitionException {
@@ -268,14 +268,14 @@ public class CFMLTree extends TreeParser {
 		CFScriptStatement st = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:79:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:79:3:
 			// ( ^(f= FUNCDECL i= identifier p= parameterList body=
 			// compoundStatement ) | st= statement )
 			int alt2 = 2;
 			alt2 = dfa2.predict(input);
 			switch (alt2) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:79:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:79:5:
 				// ^(f= FUNCDECL i= identifier p= parameterList body=
 				// compoundStatement )
 			{
@@ -317,7 +317,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:82:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:82:5:
 				// st= statement
 			{
 				pushFollow(FOLLOW_statement_in_element155);
@@ -346,7 +346,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "element"
 	
 	// $ANTLR start "compoundStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:85:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:85:1:
 	// compoundStatement returns [CFScriptStatement s] : ^( LEFTCURLYBRACKET
 	// (statmt= statement )* RIGHTCURLYBRACKET ) ;
 	public final CFScriptStatement compoundStatement() throws RecognitionException {
@@ -356,9 +356,9 @@ public class CFMLTree extends TreeParser {
 		
 		s = new CFCompoundStatement();
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:3:
 			// ( ^( LEFTCURLYBRACKET (statmt= statement )* RIGHTCURLYBRACKET ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:5:
 			// ^( LEFTCURLYBRACKET (statmt= statement )* RIGHTCURLYBRACKET )
 			{
 				match(input, LEFTCURLYBRACKET, FOLLOW_LEFTCURLYBRACKET_in_compoundStatement183);
@@ -368,7 +368,7 @@ public class CFMLTree extends TreeParser {
 				match(input, Token.DOWN, null);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:25:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:25:
 				// (statmt= statement )*
 				loop3: do {
 					int alt3 = 2;
@@ -386,7 +386,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt3) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:27:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:27:
 						// statmt= statement
 					{
 						pushFollow(FOLLOW_statement_in_compoundStatement191);
@@ -429,7 +429,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "compoundStatement"
 	
 	// $ANTLR start "statement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:90:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:90:1:
 	// statement returns [CFScriptStatement s] : ( ^(t= IF c= expression s1=
 	// statement (t= ELSE s2= statement )? ) | t= BREAK | t= CONTINUE | s1=
 	// returnStatement | (e1= expression ) | ^(t= WHILE c= expression s1=
@@ -449,7 +449,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:3:
 			// ( ^(t= IF c= expression s1= statement (t= ELSE s2= statement )? )
 			// | t= BREAK | t= CONTINUE | s1= returnStatement | (e1= expression
 			// ) | ^(t= WHILE c= expression s1= statement ) | ^(t= DO s1=
@@ -459,7 +459,7 @@ public class CFMLTree extends TreeParser {
 			alt5 = dfa5.predict(input);
 			switch (alt5) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:5:
 				// ^(t= IF c= expression s1= statement (t= ELSE s2= statement )?
 				// )
 			{
@@ -482,7 +482,7 @@ public class CFMLTree extends TreeParser {
 				state._fsp--;
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:39:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:39:
 				// (t= ELSE s2= statement )?
 				int alt4 = 2;
 				int LA4_0 = input.LA(1);
@@ -492,7 +492,7 @@ public class CFMLTree extends TreeParser {
 				}
 				switch (alt4) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:41:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:41:
 					// t= ELSE s2= statement
 				{
 					t = (CommonTree) match(input, ELSE, FOLLOW_ELSE_in_statement242);
@@ -521,7 +521,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:92:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:92:5:
 				// t= BREAK
 			{
 				t = (CommonTree) match(input, BREAK, FOLLOW_BREAK_in_statement261);
@@ -534,7 +534,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:93:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:93:5:
 				// t= CONTINUE
 			{
 				t = (CommonTree) match(input, CONTINUE, FOLLOW_CONTINUE_in_statement271);
@@ -547,7 +547,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:94:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:94:5:
 				// s1= returnStatement
 			{
 				pushFollow(FOLLOW_returnStatement_in_statement281);
@@ -563,12 +563,12 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:5:
 				// (e1= expression )
 			{
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:5:
 				// (e1= expression )
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:7:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:7:
 				// e1= expression
 				{
 					pushFollow(FOLLOW_expression_in_statement293);
@@ -587,7 +587,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:96:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:96:5:
 				// ^(t= WHILE c= expression s1= statement )
 			{
 				t = (CommonTree) match(input, WHILE, FOLLOW_WHILE_in_statement306);
@@ -620,7 +620,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:97:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:97:5:
 				// ^(t= DO s1= statement WHILE c= expression SEMICOLON )
 			{
 				t = (CommonTree) match(input, DO, FOLLOW_DO_in_statement328);
@@ -659,7 +659,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:98:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:98:5:
 				// s1= forStatement
 			{
 				pushFollow(FOLLOW_forStatement_in_statement351);
@@ -675,7 +675,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:99:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:99:5:
 				// s1= switchStatement
 			{
 				pushFollow(FOLLOW_switchStatement_in_statement362);
@@ -691,7 +691,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 10:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:100:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:100:5:
 				// s1= tryStatement
 			{
 				pushFollow(FOLLOW_tryStatement_in_statement372);
@@ -707,7 +707,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 11:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:101:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:101:5:
 				// s2= compoundStatement
 			{
 				pushFollow(FOLLOW_compoundStatement_in_statement382);
@@ -736,7 +736,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "statement"
 	
 	// $ANTLR start "returnStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:104:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:104:1:
 	// returnStatement returns [CFScriptStatement s ] : t= RETURN (c= expression
 	// )? ;
 	public final CFScriptStatement returnStatement() throws RecognitionException {
@@ -746,21 +746,21 @@ public class CFMLTree extends TreeParser {
 		CFExpression c = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:3:
 			// (t= RETURN (c= expression )? )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:5:
 			// t= RETURN (c= expression )?
 			{
 				t = (CommonTree) match(input, RETURN, FOLLOW_RETURN_in_returnStatement407);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:14:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:14:
 				// (c= expression )?
 				int alt6 = 2;
 				alt6 = dfa6.predict(input);
 				switch (alt6) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:16:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:16:
 					// c= expression
 				{
 					pushFollow(FOLLOW_expression_in_returnStatement413);
@@ -793,7 +793,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "returnStatement"
 	
 	// $ANTLR start "tryStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:108:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:108:1:
 	// tryStatement returns [CFScriptStatement s] : ^(t1= TRY s1= statement (c=
 	// catchStatement )* ) ;
 	public final CFScriptStatement tryStatement() throws RecognitionException {
@@ -807,9 +807,9 @@ public class CFMLTree extends TreeParser {
 		ArrayList catchStatements = new ArrayList();
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:112:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:112:3:
 			// ( ^(t1= TRY s1= statement (c= catchStatement )* ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:112:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:112:5:
 			// ^(t1= TRY s1= statement (c= catchStatement )* )
 			{
 				t1 = (CommonTree) match(input, TRY, FOLLOW_TRY_in_tryStatement446);
@@ -825,7 +825,7 @@ public class CFMLTree extends TreeParser {
 				state._fsp--;
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:113:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:113:5:
 				// (c= catchStatement )*
 				loop7: do {
 					int alt7 = 2;
@@ -837,7 +837,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt7) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:113:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:113:7:
 						// c= catchStatement
 					{
 						pushFollow(FOLLOW_catchStatement_in_tryStatement461);
@@ -881,7 +881,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "tryStatement"
 	
 	// $ANTLR start "catchStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:119:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:119:1:
 	// catchStatement returns [CFCatchStatement c] : ^(t1= CATCH e1=
 	// exceptionType e2= identifier s1= compoundStatement ) ;
 	public final CFCatchStatement catchStatement() throws RecognitionException {
@@ -895,10 +895,10 @@ public class CFMLTree extends TreeParser {
 		CFScriptStatement s1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:120:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:120:3:
 			// ( ^(t1= CATCH e1= exceptionType e2= identifier s1=
 			// compoundStatement ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:120:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:120:5:
 			// ^(t1= CATCH e1= exceptionType e2= identifier s1=
 			// compoundStatement )
 			{
@@ -952,7 +952,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "catchStatement"
 	
 	// $ANTLR start "exceptionType"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:126:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:126:1:
 	// exceptionType returns [String image] : (i1= identifier ( DOT (i2=
 	// identifier | i2= reservedWord ) )* | t= STRING_LITERAL );
 	public final String exceptionType() throws RecognitionException {
@@ -966,7 +966,7 @@ public class CFMLTree extends TreeParser {
 		StringBuilder sb = new StringBuilder();
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:130:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:130:3:
 			// (i1= identifier ( DOT (i2= identifier | i2= reservedWord ) )* |
 			// t= STRING_LITERAL )
 			int alt10 = 2;
@@ -988,7 +988,7 @@ public class CFMLTree extends TreeParser {
 			}
 			switch (alt10) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:130:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:130:5:
 				// i1= identifier ( DOT (i2= identifier | i2= reservedWord ) )*
 			{
 				pushFollow(FOLLOW_identifier_in_exceptionType535);
@@ -1000,7 +1000,7 @@ public class CFMLTree extends TreeParser {
 				if (state.backtracking == 0) {
 					sb.append(i1.getName());
 				}
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:5:
 				// ( DOT (i2= identifier | i2= reservedWord ) )*
 				loop9: do {
 					int alt9 = 2;
@@ -1012,19 +1012,19 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt9) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:7:
 						// DOT (i2= identifier | i2= reservedWord )
 					{
 						match(input, DOT, FOLLOW_DOT_in_exceptionType545);
 						if (state.failed)
 							return image;
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:11:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:11:
 						// (i2= identifier | i2= reservedWord )
 						int alt8 = 2;
 						alt8 = dfa8.predict(input);
 						switch (alt8) {
 						case 1:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:13:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:13:
 							// i2= identifier
 						{
 							pushFollow(FOLLOW_identifier_in_exceptionType551);
@@ -1037,7 +1037,7 @@ public class CFMLTree extends TreeParser {
 						}
 							break;
 						case 2:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:29:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:29:
 							// i2= reservedWord
 						{
 							pushFollow(FOLLOW_reservedWord_in_exceptionType557);
@@ -1074,7 +1074,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:136:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:136:5:
 				// t= STRING_LITERAL
 			{
 				t = (CommonTree) match(input, STRING_LITERAL, FOLLOW_STRING_LITERAL_in_exceptionType579);
@@ -1100,7 +1100,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "exceptionType"
 	
 	// $ANTLR start "switchStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:139:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:139:1:
 	// switchStatement returns [CFScriptStatement s ] : ^(t1= SWITCH c=
 	// expression LEFTCURLYBRACKET (cs= caseStatement )* RIGHTCURLYBRACKET ) ;
 	public final CFScriptStatement switchStatement() throws RecognitionException {
@@ -1114,10 +1114,10 @@ public class CFMLTree extends TreeParser {
 		ArrayList cases = new ArrayList();
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:143:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:143:3:
 			// ( ^(t1= SWITCH c= expression LEFTCURLYBRACKET (cs= caseStatement
 			// )* RIGHTCURLYBRACKET ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:143:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:143:5:
 			// ^(t1= SWITCH c= expression LEFTCURLYBRACKET (cs= caseStatement )*
 			// RIGHTCURLYBRACKET )
 			{
@@ -1137,7 +1137,7 @@ public class CFMLTree extends TreeParser {
 				match(input, LEFTCURLYBRACKET, FOLLOW_LEFTCURLYBRACKET_in_switchStatement615);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:144:3:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:144:3:
 				// (cs= caseStatement )*
 				loop11: do {
 					int alt11 = 2;
@@ -1149,7 +1149,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt11) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:144:5:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:144:5:
 						// cs= caseStatement
 					{
 						pushFollow(FOLLOW_caseStatement_in_switchStatement625);
@@ -1195,7 +1195,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "switchStatement"
 	
 	// $ANTLR start "caseStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:148:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:148:1:
 	// caseStatement returns [CFCase c] : ( ^( CASE e2= expression COLON (s1=
 	// statement )* ) | ^( DEFAULT COLON (s1= statement )* ) );
 	public final CFCase caseStatement() throws RecognitionException {
@@ -1208,7 +1208,7 @@ public class CFMLTree extends TreeParser {
 		ArrayList block = new ArrayList();
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:3:
 			// ( ^( CASE e2= expression COLON (s1= statement )* ) | ^( DEFAULT
 			// COLON (s1= statement )* ) )
 			int alt14 = 2;
@@ -1229,7 +1229,7 @@ public class CFMLTree extends TreeParser {
 			}
 			switch (alt14) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:5:
 				// ^( CASE e2= expression COLON (s1= statement )* )
 			{
 				match(input, CASE, FOLLOW_CASE_in_caseStatement661);
@@ -1248,7 +1248,7 @@ public class CFMLTree extends TreeParser {
 				match(input, COLON, FOLLOW_COLON_in_caseStatement667);
 				if (state.failed)
 					return c;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:32:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:32:
 				// (s1= statement )*
 				loop12: do {
 					int alt12 = 2;
@@ -1266,7 +1266,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt12) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:34:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:34:
 						// s1= statement
 					{
 						pushFollow(FOLLOW_statement_in_caseStatement673);
@@ -1297,7 +1297,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:154:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:154:5:
 				// ^( DEFAULT COLON (s1= statement )* )
 			{
 				match(input, DEFAULT, FOLLOW_DEFAULT_in_caseStatement695);
@@ -1310,7 +1310,7 @@ public class CFMLTree extends TreeParser {
 				match(input, COLON, FOLLOW_COLON_in_caseStatement697);
 				if (state.failed)
 					return c;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:154:21:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:154:21:
 				// (s1= statement )*
 				loop13: do {
 					int alt13 = 2;
@@ -1328,7 +1328,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt13) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:154:23:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:154:23:
 						// s1= statement
 					{
 						pushFollow(FOLLOW_statement_in_caseStatement703);
@@ -1372,7 +1372,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "caseStatement"
 	
 	// $ANTLR start "forStatement"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:158:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:158:1:
 	// forStatement returns [CFScriptStatement s] : ( ^(t= FOR (e1= expression
 	// )? SEMICOLON (e2= expression )? SEMICOLON (e3= expression )? s1=
 	// statement ) | ^(t= FOR e= forInKey IN e1= expression s1= statement ) );
@@ -1391,7 +1391,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:3:
 			// ( ^(t= FOR (e1= expression )? SEMICOLON (e2= expression )?
 			// SEMICOLON (e3= expression )? s1= statement ) | ^(t= FOR e=
 			// forInKey IN e1= expression s1= statement ) )
@@ -1399,7 +1399,7 @@ public class CFMLTree extends TreeParser {
 			alt18 = dfa18.predict(input);
 			switch (alt18) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:5:
 				// ^(t= FOR (e1= expression )? SEMICOLON (e2= expression )?
 				// SEMICOLON (e3= expression )? s1= statement )
 			{
@@ -1410,7 +1410,7 @@ public class CFMLTree extends TreeParser {
 				match(input, Token.DOWN, null);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:13:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:13:
 				// (e1= expression )?
 				int alt15 = 2;
 				int LA15_0 = input.LA(1);
@@ -1426,7 +1426,7 @@ public class CFMLTree extends TreeParser {
 				}
 				switch (alt15) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:14:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:14:
 					// e1= expression
 				{
 					pushFollow(FOLLOW_expression_in_forStatement743);
@@ -1444,7 +1444,7 @@ public class CFMLTree extends TreeParser {
 				match(input, SEMICOLON, FOLLOW_SEMICOLON_in_forStatement747);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:40:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:40:
 				// (e2= expression )?
 				int alt16 = 2;
 				int LA16_0 = input.LA(1);
@@ -1460,7 +1460,7 @@ public class CFMLTree extends TreeParser {
 				}
 				switch (alt16) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:41:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:41:
 					// e2= expression
 				{
 					pushFollow(FOLLOW_expression_in_forStatement752);
@@ -1478,13 +1478,13 @@ public class CFMLTree extends TreeParser {
 				match(input, SEMICOLON, FOLLOW_SEMICOLON_in_forStatement756);
 				if (state.failed)
 					return s;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:67:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:67:
 				// (e3= expression )?
 				int alt17 = 2;
 				alt17 = dfa17.predict(input);
 				switch (alt17) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:68:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:68:
 					// e3= expression
 				{
 					pushFollow(FOLLOW_expression_in_forStatement761);
@@ -1518,7 +1518,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:162:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:162:5:
 				// ^(t= FOR e= forInKey IN e1= expression s1= statement )
 			{
 				t = (CommonTree) match(input, FOR, FOLLOW_FOR_in_forStatement780);
@@ -1575,7 +1575,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "forStatement"
 	
 	// $ANTLR start "forInKey"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:167:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:167:1:
 	// forInKey returns [CFExpression e] : t1= identifier ( DOT (t2= identifier
 	// | t2= reservedWord ) )* ;
 	public final CFExpression forInKey() throws RecognitionException {
@@ -1586,9 +1586,9 @@ public class CFMLTree extends TreeParser {
 		CFIdentifier t2 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:168:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:168:3:
 			// (t1= identifier ( DOT (t2= identifier | t2= reservedWord ) )* )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:168:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:168:5:
 			// t1= identifier ( DOT (t2= identifier | t2= reservedWord ) )*
 			{
 				pushFollow(FOLLOW_identifier_in_forInKey818);
@@ -1600,7 +1600,7 @@ public class CFMLTree extends TreeParser {
 				if (state.backtracking == 0) {
 					e = t1;
 				}
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:169:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:169:5:
 				// ( DOT (t2= identifier | t2= reservedWord ) )*
 				loop20: do {
 					int alt20 = 2;
@@ -1612,19 +1612,19 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt20) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:7:
 						// DOT (t2= identifier | t2= reservedWord )
 					{
 						match(input, DOT, FOLLOW_DOT_in_forInKey834);
 						if (state.failed)
 							return e;
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:11:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:11:
 						// (t2= identifier | t2= reservedWord )
 						int alt19 = 2;
 						alt19 = dfa19.predict(input);
 						switch (alt19) {
 						case 1:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:13:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:13:
 							// t2= identifier
 						{
 							pushFollow(FOLLOW_identifier_in_forInKey840);
@@ -1637,7 +1637,7 @@ public class CFMLTree extends TreeParser {
 						}
 							break;
 						case 2:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:29:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:29:
 							// t2= reservedWord
 						{
 							pushFollow(FOLLOW_reservedWord_in_forInKey846);
@@ -1683,7 +1683,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "forInKey"
 	
 	// $ANTLR start "parameterList"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:181:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:181:1:
 	// parameterList returns [ArrayList v] : (i= identifier )* ;
 	public final ArrayList parameterList() throws RecognitionException {
 		ArrayList v = null;
@@ -1692,12 +1692,12 @@ public class CFMLTree extends TreeParser {
 		
 		v = new ArrayList();
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:183:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:183:3:
 			// ( (i= identifier )* )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:183:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:183:5:
 			// (i= identifier )*
 			{
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:183:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:183:5:
 				// (i= identifier )*
 				loop21: do {
 					int alt21 = 2;
@@ -1710,7 +1710,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt21) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:183:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:183:7:
 						// i= identifier
 					{
 						pushFollow(FOLLOW_identifier_in_parameterList892);
@@ -1745,7 +1745,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "parameterList"
 	
 	// $ANTLR start "expression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:189:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:189:1:
 	// expression returns [CFExpression e] : (be= binaryExpression | pe=
 	// memberExpression );
 	public final CFExpression expression() throws RecognitionException {
@@ -1756,13 +1756,13 @@ public class CFMLTree extends TreeParser {
 		CFExpression pe = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:190:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:190:3:
 			// (be= binaryExpression | pe= memberExpression )
 			int alt22 = 2;
 			alt22 = dfa22.predict(input);
 			switch (alt22) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:190:6:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:190:6:
 				// be= binaryExpression
 			{
 				pushFollow(FOLLOW_binaryExpression_in_expression925);
@@ -1778,7 +1778,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:191:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:191:5:
 				// pe= memberExpression
 			{
 				pushFollow(FOLLOW_memberExpression_in_expression936);
@@ -1807,7 +1807,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "expression"
 	
 	// $ANTLR start "localAssignmentExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:194:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:194:1:
 	// localAssignmentExpression returns [CFExpression e] : ^(op= VARLOCAL e1=
 	// assignmentExpression ) ;
 	public final CFExpression localAssignmentExpression() throws RecognitionException {
@@ -1817,9 +1817,9 @@ public class CFMLTree extends TreeParser {
 		CFAssignmentExpression e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:195:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:195:3:
 			// ( ^(op= VARLOCAL e1= assignmentExpression ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:195:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:195:5:
 			// ^(op= VARLOCAL e1= assignmentExpression )
 			{
 				op = (CommonTree) match(input, VARLOCAL, FOLLOW_VARLOCAL_in_localAssignmentExpression960);
@@ -1858,7 +1858,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "localAssignmentExpression"
 	
 	// $ANTLR start "assignmentExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:198:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:198:1:
 	// assignmentExpression returns [CFAssignmentExpression e] : ( ^(op=
 	// EQUALSOP e1= memberExpression e2= memberExpression ) | ^(op= PLUSEQUALS
 	// e1= memberExpression e2= memberExpression ) | ^(op= MINUSEQUALS e1=
@@ -1876,7 +1876,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e2 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:199:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:199:3:
 			// ( ^(op= EQUALSOP e1= memberExpression e2= memberExpression ) |
 			// ^(op= PLUSEQUALS e1= memberExpression e2= memberExpression ) |
 			// ^(op= MINUSEQUALS e1= memberExpression e2= memberExpression ) |
@@ -1926,7 +1926,7 @@ public class CFMLTree extends TreeParser {
 			
 			switch (alt23) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:199:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:199:5:
 				// ^(op= EQUALSOP e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, EQUALSOP, FOLLOW_EQUALSOP_in_assignmentExpression988);
@@ -1959,7 +1959,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:200:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:200:5:
 				// ^(op= PLUSEQUALS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, PLUSEQUALS, FOLLOW_PLUSEQUALS_in_assignmentExpression1010);
@@ -1992,7 +1992,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:201:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:201:5:
 				// ^(op= MINUSEQUALS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, MINUSEQUALS, FOLLOW_MINUSEQUALS_in_assignmentExpression1032);
@@ -2025,7 +2025,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:202:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:202:5:
 				// ^(op= STAREQUALS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, STAREQUALS, FOLLOW_STAREQUALS_in_assignmentExpression1054);
@@ -2058,7 +2058,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:203:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:203:5:
 				// ^(op= SLASHEQUALS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, SLASHEQUALS, FOLLOW_SLASHEQUALS_in_assignmentExpression1076);
@@ -2091,7 +2091,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:204:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:204:5:
 				// ^(op= MODEQUALS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, MODEQUALS, FOLLOW_MODEQUALS_in_assignmentExpression1098);
@@ -2124,7 +2124,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:205:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:205:5:
 				// ^(op= CONCATEQUALS e1= memberExpression e2= memberExpression
 				// )
 			{
@@ -2171,7 +2171,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "assignmentExpression"
 	
 	// $ANTLR start "binaryExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:208:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:208:1:
 	// binaryExpression returns [CFExpression e] : (e1=
 	// localAssignmentExpression | e1= assignmentExpression | ^(op= IMP e1=
 	// memberExpression e2= memberExpression ) | ^(op= EQV e1= memberExpression
@@ -2205,7 +2205,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e2 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:209:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:209:3:
 			// (e1= localAssignmentExpression | e1= assignmentExpression | ^(op=
 			// IMP e1= memberExpression e2= memberExpression ) | ^(op= EQV e1=
 			// memberExpression e2= memberExpression ) | ^(op= XOR e1=
@@ -2236,7 +2236,7 @@ public class CFMLTree extends TreeParser {
 			alt24 = dfa24.predict(input);
 			switch (alt24) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:209:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:209:5:
 				// e1= localAssignmentExpression
 			{
 				pushFollow(FOLLOW_localAssignmentExpression_in_binaryExpression1156);
@@ -2252,7 +2252,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:210:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:210:5:
 				// e1= assignmentExpression
 			{
 				pushFollow(FOLLOW_assignmentExpression_in_binaryExpression1166);
@@ -2268,7 +2268,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:211:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:211:5:
 				// ^(op= IMP e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, IMP, FOLLOW_IMP_in_binaryExpression1178);
@@ -2301,7 +2301,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:212:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:212:5:
 				// ^(op= EQV e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, EQV, FOLLOW_EQV_in_binaryExpression1200);
@@ -2334,7 +2334,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:213:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:213:5:
 				// ^(op= XOR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, XOR, FOLLOW_XOR_in_binaryExpression1222);
@@ -2367,7 +2367,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:214:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:214:5:
 				// ^(op= OR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, OR, FOLLOW_OR_in_binaryExpression1244);
@@ -2400,7 +2400,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:215:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:215:5:
 				// ^(op= OROPERATOR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, OROPERATOR, FOLLOW_OROPERATOR_in_binaryExpression1266);
@@ -2433,7 +2433,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:216:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:216:5:
 				// ^(op= AND e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, AND, FOLLOW_AND_in_binaryExpression1288);
@@ -2466,7 +2466,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:217:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:217:5:
 				// ^(op= ANDOPERATOR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, ANDOPERATOR, FOLLOW_ANDOPERATOR_in_binaryExpression1310);
@@ -2499,7 +2499,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 10:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:218:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:218:5:
 				// ^(op= NOT e1= memberExpression )
 			{
 				op = (CommonTree) match(input, NOT, FOLLOW_NOT_in_binaryExpression1332);
@@ -2526,7 +2526,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 11:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:219:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:219:5:
 				// ^(op= NOTOP e1= memberExpression )
 			{
 				op = (CommonTree) match(input, NOTOP, FOLLOW_NOTOP_in_binaryExpression1349);
@@ -2553,7 +2553,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 12:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:220:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:220:5:
 				// ^(op= EQ e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, EQ, FOLLOW_EQ_in_binaryExpression1367);
@@ -2586,7 +2586,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 13:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:221:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:221:5:
 				// ^(op= NEQ e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, NEQ, FOLLOW_NEQ_in_binaryExpression1390);
@@ -2619,7 +2619,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 14:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:222:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:222:5:
 				// ^(op= LT e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, LT, FOLLOW_LT_in_binaryExpression1412);
@@ -2652,7 +2652,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 15:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:223:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:223:5:
 				// ^(op= LTE e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, LTE, FOLLOW_LTE_in_binaryExpression1434);
@@ -2685,7 +2685,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 16:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:224:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:224:5:
 				// ^(op= GT e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, GT, FOLLOW_GT_in_binaryExpression1456);
@@ -2718,7 +2718,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 17:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:225:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:225:5:
 				// ^(op= GTE e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, GTE, FOLLOW_GTE_in_binaryExpression1478);
@@ -2751,7 +2751,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 18:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:226:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:226:5:
 				// ^(op= CONTAINS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, CONTAINS, FOLLOW_CONTAINS_in_binaryExpression1500);
@@ -2784,7 +2784,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 19:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:227:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:227:5:
 				// ^(op= DOESNOTCONTAIN e1= memberExpression e2=
 				// memberExpression )
 			{
@@ -2818,7 +2818,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 20:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:228:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:228:5:
 				// ^(op= CONCAT e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, CONCAT, FOLLOW_CONCAT_in_binaryExpression1544);
@@ -2851,7 +2851,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 21:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:229:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:229:5:
 				// ^(op= PLUS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, PLUS, FOLLOW_PLUS_in_binaryExpression1566);
@@ -2884,7 +2884,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 22:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:230:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:230:5:
 				// ^(op= MINUS e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, MINUS, FOLLOW_MINUS_in_binaryExpression1588);
@@ -2917,7 +2917,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 23:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:231:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:231:5:
 				// ^(op= MOD e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, MOD, FOLLOW_MOD_in_binaryExpression1610);
@@ -2950,7 +2950,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 24:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:232:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:232:5:
 				// ^(op= MODOPERATOR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, MODOPERATOR, FOLLOW_MODOPERATOR_in_binaryExpression1632);
@@ -2983,7 +2983,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 25:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:233:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:233:5:
 				// ^(op= BSLASH e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, BSLASH, FOLLOW_BSLASH_in_binaryExpression1654);
@@ -3016,7 +3016,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 26:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:234:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:234:5:
 				// ^(op= STAR e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, STAR, FOLLOW_STAR_in_binaryExpression1676);
@@ -3049,7 +3049,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 27:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:235:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:235:5:
 				// ^(op= SLASH e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, SLASH, FOLLOW_SLASH_in_binaryExpression1698);
@@ -3082,7 +3082,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 28:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:236:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:236:5:
 				// ^(op= POWER e1= memberExpression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, POWER, FOLLOW_POWER_in_binaryExpression1720);
@@ -3115,7 +3115,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 29:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:237:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:237:5:
 				// e1= unaryExpression
 			{
 				pushFollow(FOLLOW_unaryExpression_in_binaryExpression1742);
@@ -3144,7 +3144,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "binaryExpression"
 	
 	// $ANTLR start "unaryExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:240:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:240:1:
 	// unaryExpression returns [CFExpression e] : ( ^(op= PLUS e1=
 	// memberExpression ) | ^(op= MINUS e1= memberExpression ) | ^(op= PLUSPLUS
 	// e1= memberExpression ) | ^(op= MINUSMINUS e1= memberExpression ) | ^(op=
@@ -3157,7 +3157,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:241:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:241:3:
 			// ( ^(op= PLUS e1= memberExpression ) | ^(op= MINUS e1=
 			// memberExpression ) | ^(op= PLUSPLUS e1= memberExpression ) |
 			// ^(op= MINUSMINUS e1= memberExpression ) | ^(op= POSTPLUSPLUS e1=
@@ -3201,7 +3201,7 @@ public class CFMLTree extends TreeParser {
 			
 			switch (alt25) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:241:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:241:5:
 				// ^(op= PLUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, PLUS, FOLLOW_PLUS_in_unaryExpression1766);
@@ -3228,7 +3228,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:242:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:242:5:
 				// ^(op= MINUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, MINUS, FOLLOW_MINUS_in_unaryExpression1783);
@@ -3255,7 +3255,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:243:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:243:5:
 				// ^(op= PLUSPLUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, PLUSPLUS, FOLLOW_PLUSPLUS_in_unaryExpression1800);
@@ -3282,7 +3282,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:244:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:244:5:
 				// ^(op= MINUSMINUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, MINUSMINUS, FOLLOW_MINUSMINUS_in_unaryExpression1817);
@@ -3309,7 +3309,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:245:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:245:5:
 				// ^(op= POSTPLUSPLUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, POSTPLUSPLUS, FOLLOW_POSTPLUSPLUS_in_unaryExpression1834);
@@ -3336,7 +3336,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:246:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:246:5:
 				// ^(op= POSTMINUSMINUS e1= memberExpression )
 			{
 				op = (CommonTree) match(input, POSTMINUSMINUS, FOLLOW_POSTMINUSMINUS_in_unaryExpression1851);
@@ -3376,7 +3376,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "unaryExpression"
 	
 	// $ANTLR start "memberExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:249:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:249:1:
 	// memberExpression returns [CFExpression e] : ( ^(op= DOT e1=
 	// memberExpression e2= primaryExpressionIRW ) | ^(op= LEFTBRACKET e1=
 	// expression e2= memberExpression ) | ^(op= JAVAMETHODCALL e1=
@@ -3394,7 +3394,7 @@ public class CFMLTree extends TreeParser {
 		Vector<CFExpression> args = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:250:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:250:3:
 			// ( ^(op= DOT e1= memberExpression e2= primaryExpressionIRW ) |
 			// ^(op= LEFTBRACKET e1= expression e2= memberExpression ) | ^(op=
 			// JAVAMETHODCALL e1= memberExpression e2= primaryExpressionIRW
@@ -3404,7 +3404,7 @@ public class CFMLTree extends TreeParser {
 			alt27 = dfa27.predict(input);
 			switch (alt27) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:250:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:250:5:
 				// ^(op= DOT e1= memberExpression e2= primaryExpressionIRW )
 			{
 				op = (CommonTree) match(input, DOT, FOLLOW_DOT_in_memberExpression1890);
@@ -3444,7 +3444,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:258:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:258:5:
 				// ^(op= LEFTBRACKET e1= expression e2= memberExpression )
 			{
 				op = (CommonTree) match(input, LEFTBRACKET, FOLLOW_LEFTBRACKET_in_memberExpression1912);
@@ -3484,7 +3484,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:266:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:266:5:
 				// ^(op= JAVAMETHODCALL e1= memberExpression e2=
 				// primaryExpressionIRW (args= argumentList )? )
 			{
@@ -3507,7 +3507,7 @@ public class CFMLTree extends TreeParser {
 				state._fsp--;
 				if (state.failed)
 					return e;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:266:70:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:266:70:
 				// (args= argumentList )?
 				int alt26 = 2;
 				int LA26_0 = input.LA(1);
@@ -3529,7 +3529,7 @@ public class CFMLTree extends TreeParser {
 				}
 				switch (alt26) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:266:72:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:266:72:
 					// args= argumentList
 				{
 					pushFollow(FOLLOW_argumentList_in_memberExpression1948);
@@ -3568,7 +3568,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:282:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:282:5:
 				// ^(op= FUNCTIONCALL e1= identifier args= argumentList )
 			{
 				op = (CommonTree) match(input, FUNCTIONCALL, FOLLOW_FUNCTIONCALL_in_memberExpression1964);
@@ -3607,7 +3607,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:289:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:289:5:
 				// e1= primaryExpression
 			{
 				pushFollow(FOLLOW_primaryExpression_in_memberExpression1983);
@@ -3636,7 +3636,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "memberExpression"
 	
 	// $ANTLR start "primaryExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:293:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:293:1:
 	// primaryExpression returns [CFExpression e] : (t= STRING_LITERAL | t=
 	// BOOLEAN_LITERAL | t= FLOATING_POINT_LITERAL | t= INTEGER_LITERAL | t=
 	// NULL | ie= implicitArray | is= implicitStruct | i= identifier | be=
@@ -3654,7 +3654,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression be = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:294:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:294:3:
 			// (t= STRING_LITERAL | t= BOOLEAN_LITERAL | t=
 			// FLOATING_POINT_LITERAL | t= INTEGER_LITERAL | t= NULL | ie=
 			// implicitArray | is= implicitStruct | i= identifier | be=
@@ -3663,7 +3663,7 @@ public class CFMLTree extends TreeParser {
 			alt28 = dfa28.predict(input);
 			switch (alt28) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:294:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:294:5:
 				// t= STRING_LITERAL
 			{
 				t = (CommonTree) match(input, STRING_LITERAL, FOLLOW_STRING_LITERAL_in_primaryExpression2007);
@@ -3676,7 +3676,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:295:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:295:5:
 				// t= BOOLEAN_LITERAL
 			{
 				t = (CommonTree) match(input, BOOLEAN_LITERAL, FOLLOW_BOOLEAN_LITERAL_in_primaryExpression2026);
@@ -3689,7 +3689,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:296:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:296:5:
 				// t= FLOATING_POINT_LITERAL
 			{
 				t = (CommonTree) match(input, FLOATING_POINT_LITERAL,
@@ -3703,7 +3703,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:297:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:297:5:
 				// t= INTEGER_LITERAL
 			{
 				t = (CommonTree) match(input, INTEGER_LITERAL, FOLLOW_INTEGER_LITERAL_in_primaryExpression2055);
@@ -3716,7 +3716,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:298:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:298:5:
 				// t= NULL
 			{
 				t = (CommonTree) match(input, NULL, FOLLOW_NULL_in_primaryExpression2073);
@@ -3729,7 +3729,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:299:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:299:5:
 				// ie= implicitArray
 			{
 				pushFollow(FOLLOW_implicitArray_in_primaryExpression2102);
@@ -3745,7 +3745,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:300:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:300:5:
 				// is= implicitStruct
 			{
 				pushFollow(FOLLOW_implicitStruct_in_primaryExpression2121);
@@ -3761,7 +3761,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:301:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:301:5:
 				// i= identifier
 			{
 				pushFollow(FOLLOW_identifier_in_primaryExpression2139);
@@ -3777,7 +3777,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:302:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:302:5:
 				// be= binaryExpression
 			{
 				pushFollow(FOLLOW_binaryExpression_in_primaryExpression2162);
@@ -3806,7 +3806,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "primaryExpression"
 	
 	// $ANTLR start "identifier"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:306:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:306:1:
 	// identifier returns [CFIdentifier e] : (t= IDENTIFIER | t= DOES | t=
 	// CONTAIN | t= GREATER | t= THAN | t= LESS | t= VAR | t= DEFAULT | t= TO |
 	// {...}? =>kw= cfscriptKeywords );
@@ -3817,7 +3817,7 @@ public class CFMLTree extends TreeParser {
 		CFIdentifier kw = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:307:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:307:3:
 			// (t= IDENTIFIER | t= DOES | t= CONTAIN | t= GREATER | t= THAN | t=
 			// LESS | t= VAR | t= DEFAULT | t= TO | {...}? =>kw=
 			// cfscriptKeywords )
@@ -3825,7 +3825,7 @@ public class CFMLTree extends TreeParser {
 			alt29 = dfa29.predict(input);
 			switch (alt29) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:307:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:307:5:
 				// t= IDENTIFIER
 			{
 				t = (CommonTree) match(input, IDENTIFIER, FOLLOW_IDENTIFIER_in_identifier2193);
@@ -3838,7 +3838,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:308:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:308:5:
 				// t= DOES
 			{
 				t = (CommonTree) match(input, DOES, FOLLOW_DOES_in_identifier2204);
@@ -3851,7 +3851,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:309:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:309:5:
 				// t= CONTAIN
 			{
 				t = (CommonTree) match(input, CONTAIN, FOLLOW_CONTAIN_in_identifier2221);
@@ -3864,7 +3864,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:310:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:310:5:
 				// t= GREATER
 			{
 				t = (CommonTree) match(input, GREATER, FOLLOW_GREATER_in_identifier2235);
@@ -3877,7 +3877,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:311:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:311:5:
 				// t= THAN
 			{
 				t = (CommonTree) match(input, THAN, FOLLOW_THAN_in_identifier2249);
@@ -3890,7 +3890,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:312:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:312:5:
 				// t= LESS
 			{
 				t = (CommonTree) match(input, LESS, FOLLOW_LESS_in_identifier2266);
@@ -3903,7 +3903,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:313:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:313:5:
 				// t= VAR
 			{
 				t = (CommonTree) match(input, VAR, FOLLOW_VAR_in_identifier2283);
@@ -3916,7 +3916,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:314:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:314:5:
 				// t= DEFAULT
 			{
 				t = (CommonTree) match(input, DEFAULT, FOLLOW_DEFAULT_in_identifier2301);
@@ -3929,7 +3929,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:315:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:315:5:
 				// t= TO
 			{
 				t = (CommonTree) match(input, TO, FOLLOW_TO_in_identifier2315);
@@ -3942,7 +3942,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 10:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:316:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:316:5:
 				// {...}? =>kw= cfscriptKeywords
 			{
 				if (!((!scriptMode))) {
@@ -3978,7 +3978,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "identifier"
 	
 	// $ANTLR start "cfscriptKeywords"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:319:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:319:1:
 	// cfscriptKeywords returns [CFIdentifier e] : (t= IF | t= ELSE | t= BREAK |
 	// t= CONTINUE | t= FUNCTION | t= RETURN | t= WHILE | t= DO | t= FOR | t= IN
 	// | t= TRY | t= CATCH | t= SWITCH | t= CASE | t= DEFAULT );
@@ -3988,7 +3988,7 @@ public class CFMLTree extends TreeParser {
 		CommonTree t = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:320:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:320:3:
 			// (t= IF | t= ELSE | t= BREAK | t= CONTINUE | t= FUNCTION | t=
 			// RETURN | t= WHILE | t= DO | t= FOR | t= IN | t= TRY | t= CATCH |
 			// t= SWITCH | t= CASE | t= DEFAULT )
@@ -4066,7 +4066,7 @@ public class CFMLTree extends TreeParser {
 			
 			switch (alt30) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:320:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:320:5:
 				// t= IF
 			{
 				t = (CommonTree) match(input, IF, FOLLOW_IF_in_cfscriptKeywords2358);
@@ -4079,7 +4079,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:321:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:321:5:
 				// t= ELSE
 			{
 				t = (CommonTree) match(input, ELSE, FOLLOW_ELSE_in_cfscriptKeywords2375);
@@ -4092,7 +4092,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:322:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:322:5:
 				// t= BREAK
 			{
 				t = (CommonTree) match(input, BREAK, FOLLOW_BREAK_in_cfscriptKeywords2390);
@@ -4105,7 +4105,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:323:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:323:5:
 				// t= CONTINUE
 			{
 				t = (CommonTree) match(input, CONTINUE, FOLLOW_CONTINUE_in_cfscriptKeywords2404);
@@ -4118,7 +4118,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:324:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:324:5:
 				// t= FUNCTION
 			{
 				t = (CommonTree) match(input, FUNCTION, FOLLOW_FUNCTION_in_cfscriptKeywords2415);
@@ -4131,7 +4131,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:325:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:325:5:
 				// t= RETURN
 			{
 				t = (CommonTree) match(input, RETURN, FOLLOW_RETURN_in_cfscriptKeywords2426);
@@ -4144,7 +4144,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:326:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:326:5:
 				// t= WHILE
 			{
 				t = (CommonTree) match(input, WHILE, FOLLOW_WHILE_in_cfscriptKeywords2439);
@@ -4157,7 +4157,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:327:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:327:5:
 				// t= DO
 			{
 				t = (CommonTree) match(input, DO, FOLLOW_DO_in_cfscriptKeywords2453);
@@ -4170,7 +4170,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:328:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:328:5:
 				// t= FOR
 			{
 				t = (CommonTree) match(input, FOR, FOLLOW_FOR_in_cfscriptKeywords2470);
@@ -4183,7 +4183,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 10:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:329:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:329:5:
 				// t= IN
 			{
 				t = (CommonTree) match(input, IN, FOLLOW_IN_in_cfscriptKeywords2486);
@@ -4196,7 +4196,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 11:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:330:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:330:5:
 				// t= TRY
 			{
 				t = (CommonTree) match(input, TRY, FOLLOW_TRY_in_cfscriptKeywords2503);
@@ -4209,7 +4209,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 12:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:331:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:331:5:
 				// t= CATCH
 			{
 				t = (CommonTree) match(input, CATCH, FOLLOW_CATCH_in_cfscriptKeywords2519);
@@ -4222,7 +4222,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 13:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:332:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:332:5:
 				// t= SWITCH
 			{
 				t = (CommonTree) match(input, SWITCH, FOLLOW_SWITCH_in_cfscriptKeywords2533);
@@ -4235,7 +4235,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 14:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:333:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:333:5:
 				// t= CASE
 			{
 				t = (CommonTree) match(input, CASE, FOLLOW_CASE_in_cfscriptKeywords2546);
@@ -4248,7 +4248,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 15:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:334:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:334:5:
 				// t= DEFAULT
 			{
 				t = (CommonTree) match(input, DEFAULT, FOLLOW_DEFAULT_in_cfscriptKeywords2561);
@@ -4274,7 +4274,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "cfscriptKeywords"
 	
 	// $ANTLR start "primaryExpressionIRW"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:337:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:337:1:
 	// primaryExpressionIRW returns [CFExpression e] : (pe= primaryExpression |
 	// rw= reservedWord );
 	public final CFExpression primaryExpressionIRW() throws RecognitionException {
@@ -4285,13 +4285,13 @@ public class CFMLTree extends TreeParser {
 		CFIdentifier rw = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:338:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:338:3:
 			// (pe= primaryExpression | rw= reservedWord )
 			int alt31 = 2;
 			alt31 = dfa31.predict(input);
 			switch (alt31) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:338:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:338:5:
 				// pe= primaryExpression
 			{
 				pushFollow(FOLLOW_primaryExpression_in_primaryExpressionIRW2586);
@@ -4307,7 +4307,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:339:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:339:5:
 				// rw= reservedWord
 			{
 				pushFollow(FOLLOW_reservedWord_in_primaryExpressionIRW2599);
@@ -4336,7 +4336,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "primaryExpressionIRW"
 	
 	// $ANTLR start "reservedWord"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:342:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:342:1:
 	// reservedWord returns [CFIdentifier e] : (t= CONTAINS | t= IS | t= EQUAL |
 	// t= EQ | t= NEQ | t= GT | t= LT | t= GTE | t= GE | t= LTE | t= LE | t= NOT
 	// | t= AND | t= OR | t= XOR | t= EQV | t= IMP | t= MOD | t= NULL | t= TO |
@@ -4348,7 +4348,7 @@ public class CFMLTree extends TreeParser {
 		CFIdentifier e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:343:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:343:3:
 			// (t= CONTAINS | t= IS | t= EQUAL | t= EQ | t= NEQ | t= GT | t= LT
 			// | t= GTE | t= GE | t= LTE | t= LE | t= NOT | t= AND | t= OR | t=
 			// XOR | t= EQV | t= IMP | t= MOD | t= NULL | t= TO | t= EQUALS |
@@ -4469,7 +4469,7 @@ public class CFMLTree extends TreeParser {
 			
 			switch (alt32) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:343:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:343:5:
 				// t= CONTAINS
 			{
 				t = (CommonTree) match(input, CONTAINS, FOLLOW_CONTAINS_in_reservedWord2628);
@@ -4482,7 +4482,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:344:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:344:5:
 				// t= IS
 			{
 				t = (CommonTree) match(input, IS, FOLLOW_IS_in_reservedWord2640);
@@ -4495,7 +4495,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 3:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:345:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:345:5:
 				// t= EQUAL
 			{
 				t = (CommonTree) match(input, EQUAL, FOLLOW_EQUAL_in_reservedWord2657);
@@ -4508,7 +4508,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 4:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:346:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:346:5:
 				// t= EQ
 			{
 				t = (CommonTree) match(input, EQ, FOLLOW_EQ_in_reservedWord2672);
@@ -4521,7 +4521,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 5:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:347:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:347:5:
 				// t= NEQ
 			{
 				t = (CommonTree) match(input, NEQ, FOLLOW_NEQ_in_reservedWord2689);
@@ -4534,7 +4534,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 6:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:348:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:348:5:
 				// t= GT
 			{
 				t = (CommonTree) match(input, GT, FOLLOW_GT_in_reservedWord2705);
@@ -4547,7 +4547,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 7:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:349:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:349:5:
 				// t= LT
 			{
 				t = (CommonTree) match(input, LT, FOLLOW_LT_in_reservedWord2722);
@@ -4560,7 +4560,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 8:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:350:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:350:5:
 				// t= GTE
 			{
 				t = (CommonTree) match(input, GTE, FOLLOW_GTE_in_reservedWord2739);
@@ -4573,7 +4573,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 9:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:351:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:351:5:
 				// t= GE
 			{
 				t = (CommonTree) match(input, GE, FOLLOW_GE_in_reservedWord2755);
@@ -4586,7 +4586,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 10:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:352:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:352:5:
 				// t= LTE
 			{
 				t = (CommonTree) match(input, LTE, FOLLOW_LTE_in_reservedWord2772);
@@ -4599,7 +4599,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 11:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:353:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:353:5:
 				// t= LE
 			{
 				t = (CommonTree) match(input, LE, FOLLOW_LE_in_reservedWord2788);
@@ -4612,7 +4612,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 12:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:354:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:354:5:
 				// t= NOT
 			{
 				t = (CommonTree) match(input, NOT, FOLLOW_NOT_in_reservedWord2805);
@@ -4625,7 +4625,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 13:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:355:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:355:5:
 				// t= AND
 			{
 				t = (CommonTree) match(input, AND, FOLLOW_AND_in_reservedWord2821);
@@ -4638,7 +4638,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 14:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:356:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:356:5:
 				// t= OR
 			{
 				t = (CommonTree) match(input, OR, FOLLOW_OR_in_reservedWord2837);
@@ -4651,7 +4651,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 15:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:357:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:357:5:
 				// t= XOR
 			{
 				t = (CommonTree) match(input, XOR, FOLLOW_XOR_in_reservedWord2854);
@@ -4664,7 +4664,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 16:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:358:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:358:5:
 				// t= EQV
 			{
 				t = (CommonTree) match(input, EQV, FOLLOW_EQV_in_reservedWord2870);
@@ -4677,7 +4677,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 17:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:359:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:359:5:
 				// t= IMP
 			{
 				t = (CommonTree) match(input, IMP, FOLLOW_IMP_in_reservedWord2886);
@@ -4690,7 +4690,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 18:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:360:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:360:5:
 				// t= MOD
 			{
 				t = (CommonTree) match(input, MOD, FOLLOW_MOD_in_reservedWord2902);
@@ -4703,7 +4703,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 19:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:361:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:361:5:
 				// t= NULL
 			{
 				t = (CommonTree) match(input, NULL, FOLLOW_NULL_in_reservedWord2918);
@@ -4716,7 +4716,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 20:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:362:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:362:5:
 				// t= TO
 			{
 				t = (CommonTree) match(input, TO, FOLLOW_TO_in_reservedWord2933);
@@ -4729,7 +4729,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 21:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:363:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:363:5:
 				// t= EQUALS
 			{
 				t = (CommonTree) match(input, EQUALS, FOLLOW_EQUALS_in_reservedWord2950);
@@ -4742,7 +4742,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 22:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:364:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:364:5:
 				// e1= cfscriptKeywords
 			{
 				pushFollow(FOLLOW_cfscriptKeywords_in_reservedWord2963);
@@ -4771,7 +4771,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "reservedWord"
 	
 	// $ANTLR start "implicitArray"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:367:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:367:1:
 	// implicitArray returns [CFArrayExpression e] : ^(t= LEFTBRACKET (e1=
 	// primaryExpression )* RIGHTBRACKET ) ;
 	public final CFArrayExpression implicitArray() throws RecognitionException {
@@ -4781,9 +4781,9 @@ public class CFMLTree extends TreeParser {
 		CFExpression e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:368:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:368:3:
 			// ( ^(t= LEFTBRACKET (e1= primaryExpression )* RIGHTBRACKET ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:368:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:368:5:
 			// ^(t= LEFTBRACKET (e1= primaryExpression )* RIGHTBRACKET )
 			{
 				t = (CommonTree) match(input, LEFTBRACKET, FOLLOW_LEFTBRACKET_in_implicitArray2986);
@@ -4797,7 +4797,7 @@ public class CFMLTree extends TreeParser {
 				match(input, Token.DOWN, null);
 				if (state.failed)
 					return e;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:369:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:369:5:
 				// (e1= primaryExpression )*
 				loop33: do {
 					int alt33 = 2;
@@ -4815,7 +4815,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt33) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:369:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:369:7:
 						// e1= primaryExpression
 					{
 						pushFollow(FOLLOW_primaryExpression_in_implicitArray3000);
@@ -4858,7 +4858,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "implicitArray"
 	
 	// $ANTLR start "implicitStruct"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:372:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:372:1:
 	// implicitStruct returns [CFStructExpression e] : ^(t= LEFTCURLYBRACKET
 	// (e1= implicitStructExpression ( ( ',' | SEMICOLON ) e1=
 	// implicitStructExpression )* )? RIGHTCURLYBRACKET ) ;
@@ -4869,11 +4869,11 @@ public class CFMLTree extends TreeParser {
 		CFStructElementExpression e1 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:373:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:373:3:
 			// ( ^(t= LEFTCURLYBRACKET (e1= implicitStructExpression ( ( ',' |
 			// SEMICOLON ) e1= implicitStructExpression )* )? RIGHTCURLYBRACKET
 			// ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:373:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:373:5:
 			// ^(t= LEFTCURLYBRACKET (e1= implicitStructExpression ( ( ',' |
 			// SEMICOLON ) e1= implicitStructExpression )* )? RIGHTCURLYBRACKET
 			// )
@@ -4889,7 +4889,7 @@ public class CFMLTree extends TreeParser {
 				match(input, Token.DOWN, null);
 				if (state.failed)
 					return e;
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:374:7:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:374:7:
 				// (e1= implicitStructExpression ( ( ',' | SEMICOLON ) e1=
 				// implicitStructExpression )* )?
 				int alt35 = 2;
@@ -4900,7 +4900,7 @@ public class CFMLTree extends TreeParser {
 				}
 				switch (alt35) {
 				case 1:
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:375:8:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:375:8:
 					// e1= implicitStructExpression ( ( ',' | SEMICOLON ) e1=
 					// implicitStructExpression )*
 				{
@@ -4913,7 +4913,7 @@ public class CFMLTree extends TreeParser {
 					if (state.backtracking == 0) {
 						e.addElement(e1);
 					}
-					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:376:8:
+					// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:376:8:
 					// ( ( ',' | SEMICOLON ) e1= implicitStructExpression )*
 					loop34: do {
 						int alt34 = 2;
@@ -4925,7 +4925,7 @@ public class CFMLTree extends TreeParser {
 						
 						switch (alt34) {
 						case 1:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:376:10:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:376:10:
 							// ( ',' | SEMICOLON ) e1= implicitStructExpression
 						{
 							if (input.LA(1) == SEMICOLON || input.LA(1) == 99) {
@@ -4986,7 +4986,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "implicitStruct"
 	
 	// $ANTLR start "implicitStructExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:382:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:382:1:
 	// implicitStructExpression returns [CFStructElementExpression e] : ^( (
 	// COLON | EQUALSOP ) e1= implicitStructKeyExpression e2= primaryExpression
 	// ) ;
@@ -4998,10 +4998,10 @@ public class CFMLTree extends TreeParser {
 		CFExpression e2 = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:383:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:383:3:
 			// ( ^( ( COLON | EQUALSOP ) e1= implicitStructKeyExpression e2=
 			// primaryExpression ) )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:383:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:383:5:
 			// ^( ( COLON | EQUALSOP ) e1= implicitStructKeyExpression e2=
 			// primaryExpression )
 			{
@@ -5055,7 +5055,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "implicitStructExpression"
 	
 	// $ANTLR start "implicitStructKeyExpression"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:387:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:387:1:
 	// implicitStructKeyExpression returns [ArrayList e] : t= identifier ( DOT
 	// (t= identifier | t= reservedWord ) )* ;
 	public final ArrayList implicitStructKeyExpression() throws RecognitionException {
@@ -5064,9 +5064,9 @@ public class CFMLTree extends TreeParser {
 		CFIdentifier t = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:388:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:388:3:
 			// (t= identifier ( DOT (t= identifier | t= reservedWord ) )* )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:388:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:388:5:
 			// t= identifier ( DOT (t= identifier | t= reservedWord ) )*
 			{
 				pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression3167);
@@ -5079,7 +5079,7 @@ public class CFMLTree extends TreeParser {
 					e = new ArrayList();
 					e.add(t);
 				}
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:5:
 				// ( DOT (t= identifier | t= reservedWord ) )*
 				loop37: do {
 					int alt37 = 2;
@@ -5091,19 +5091,19 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt37) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:7:
 						// DOT (t= identifier | t= reservedWord )
 					{
 						match(input, DOT, FOLLOW_DOT_in_implicitStructKeyExpression3177);
 						if (state.failed)
 							return e;
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:11:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:11:
 						// (t= identifier | t= reservedWord )
 						int alt36 = 2;
 						alt36 = dfa36.predict(input);
 						switch (alt36) {
 						case 1:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:13:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:13:
 							// t= identifier
 						{
 							pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression3183);
@@ -5116,7 +5116,7 @@ public class CFMLTree extends TreeParser {
 						}
 							break;
 						case 2:
-							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:28:
+							// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:28:
 							// t= reservedWord
 						{
 							pushFollow(FOLLOW_reservedWord_in_implicitStructKeyExpression3189);
@@ -5157,7 +5157,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "implicitStructKeyExpression"
 	
 	// $ANTLR start "argumentList"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:392:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:392:1:
 	// argumentList returns [Vector<CFExpression> v] : ( (ve= argument[v] )* |
 	// EMPTYARGS );
 	public final Vector<CFExpression> argumentList() throws RecognitionException {
@@ -5167,7 +5167,7 @@ public class CFMLTree extends TreeParser {
 		
 		v = null;
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:394:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:394:3:
 			// ( (ve= argument[v] )* | EMPTYARGS )
 			int alt39 = 2;
 			int LA39_0 = input.LA(1);
@@ -5193,10 +5193,10 @@ public class CFMLTree extends TreeParser {
 			}
 			switch (alt39) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:394:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:394:5:
 				// (ve= argument[v] )*
 			{
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:394:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:394:5:
 				// (ve= argument[v] )*
 				loop38: do {
 					int alt38 = 2;
@@ -5214,7 +5214,7 @@ public class CFMLTree extends TreeParser {
 					
 					switch (alt38) {
 					case 1:
-						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:394:7:
+						// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:394:7:
 						// ve= argument[v]
 					{
 						pushFollow(FOLLOW_argument_in_argumentList3222);
@@ -5238,7 +5238,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:395:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:395:5:
 				// EMPTYARGS
 			{
 				match(input, EMPTYARGS, FOLLOW_EMPTYARGS_in_argumentList3234);
@@ -5264,7 +5264,7 @@ public class CFMLTree extends TreeParser {
 	// $ANTLR end "argumentList"
 	
 	// $ANTLR start "argument"
-	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:398:1:
+	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:398:1:
 	// argument[Vector<CFExpression> v] returns [Vector<CFExpression> vl] : ( ^(
 	// COLON t1= identifier e= expression ) | e= expression );
 	public final Vector<CFExpression> argument(Vector<CFExpression> v) throws RecognitionException {
@@ -5275,7 +5275,7 @@ public class CFMLTree extends TreeParser {
 		CFExpression e = null;
 		
 		try {
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:399:3:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:399:3:
 			// ( ^( COLON t1= identifier e= expression ) | e= expression )
 			int alt40 = 2;
 			int LA40_0 = input.LA(1);
@@ -5304,7 +5304,7 @@ public class CFMLTree extends TreeParser {
 			}
 			switch (alt40) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:399:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:399:5:
 				// ^( COLON t1= identifier e= expression )
 			{
 				match(input, COLON, FOLLOW_COLON_in_argument3256);
@@ -5343,7 +5343,7 @@ public class CFMLTree extends TreeParser {
 			}
 				break;
 			case 2:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:406:5:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:406:5:
 				// e= expression
 			{
 				pushFollow(FOLLOW_expression_in_argument3275);
@@ -5381,9 +5381,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred4_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement statmt = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:27:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:27:
 		// (statmt= statement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:87:27:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:87:27:
 		// statmt= statement
 		{
 			pushFollow(FOLLOW_statement_in_synpred4_CFMLTree191);
@@ -5407,9 +5407,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFScriptStatement s2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:5:
 		// ( ^(t= IF c= expression s1= statement (t= ELSE s2= statement )? ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:5:
 		// ^(t= IF c= expression s1= statement (t= ELSE s2= statement )? )
 		{
 			t = (CommonTree) match(input, IF, FOLLOW_IF_in_synpred6_CFMLTree228);
@@ -5431,7 +5431,7 @@ public class CFMLTree extends TreeParser {
 			state._fsp--;
 			if (state.failed)
 				return;
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:39:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:39:
 			// (t= ELSE s2= statement )?
 			int alt41 = 2;
 			int LA41_0 = input.LA(1);
@@ -5441,7 +5441,7 @@ public class CFMLTree extends TreeParser {
 			}
 			switch (alt41) {
 			case 1:
-				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:91:41:
+				// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:91:41:
 				// t= ELSE s2= statement
 			{
 				t = (CommonTree) match(input, ELSE, FOLLOW_ELSE_in_synpred6_CFMLTree242);
@@ -5472,9 +5472,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred7_CFMLTree_fragment() throws RecognitionException {
 		CommonTree t = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:92:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:92:5:
 		// (t= BREAK )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:92:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:92:5:
 		// t= BREAK
 		{
 			t = (CommonTree) match(input, BREAK, FOLLOW_BREAK_in_synpred7_CFMLTree261);
@@ -5490,9 +5490,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred8_CFMLTree_fragment() throws RecognitionException {
 		CommonTree t = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:93:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:93:5:
 		// (t= CONTINUE )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:93:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:93:5:
 		// t= CONTINUE
 		{
 			t = (CommonTree) match(input, CONTINUE, FOLLOW_CONTINUE_in_synpred8_CFMLTree271);
@@ -5508,9 +5508,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred9_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:94:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:94:5:
 		// (s1= returnStatement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:94:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:94:5:
 		// s1= returnStatement
 		{
 			pushFollow(FOLLOW_returnStatement_in_synpred9_CFMLTree281);
@@ -5529,14 +5529,14 @@ public class CFMLTree extends TreeParser {
 	public final void synpred10_CFMLTree_fragment() throws RecognitionException {
 		CFExpression e1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:5:
 		// ( (e1= expression ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:5:
 		// (e1= expression )
 		{
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:5:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:5:
 			// (e1= expression )
-			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:95:7:
+			// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:95:7:
 			// e1= expression
 			{
 				pushFollow(FOLLOW_expression_in_synpred10_CFMLTree293);
@@ -5560,9 +5560,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:96:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:96:5:
 		// ( ^(t= WHILE c= expression s1= statement ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:96:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:96:5:
 		// ^(t= WHILE c= expression s1= statement )
 		{
 			t = (CommonTree) match(input, WHILE, FOLLOW_WHILE_in_synpred11_CFMLTree306);
@@ -5601,9 +5601,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFExpression c = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:97:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:97:5:
 		// ( ^(t= DO s1= statement WHILE c= expression SEMICOLON ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:97:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:97:5:
 		// ^(t= DO s1= statement WHILE c= expression SEMICOLON )
 		{
 			t = (CommonTree) match(input, DO, FOLLOW_DO_in_synpred12_CFMLTree328);
@@ -5645,9 +5645,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred13_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:98:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:98:5:
 		// (s1= forStatement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:98:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:98:5:
 		// s1= forStatement
 		{
 			pushFollow(FOLLOW_forStatement_in_synpred13_CFMLTree351);
@@ -5666,9 +5666,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred14_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:99:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:99:5:
 		// (s1= switchStatement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:99:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:99:5:
 		// s1= switchStatement
 		{
 			pushFollow(FOLLOW_switchStatement_in_synpred14_CFMLTree362);
@@ -5687,9 +5687,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred15_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:100:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:100:5:
 		// (s1= tryStatement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:100:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:100:5:
 		// s1= tryStatement
 		{
 			pushFollow(FOLLOW_tryStatement_in_synpred15_CFMLTree372);
@@ -5708,9 +5708,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred16_CFMLTree_fragment() throws RecognitionException {
 		CFExpression c = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:16:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:16:
 		// (c= expression )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:105:16:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:105:16:
 		// c= expression
 		{
 			pushFollow(FOLLOW_expression_in_synpred16_CFMLTree413);
@@ -5729,9 +5729,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred18_CFMLTree_fragment() throws RecognitionException {
 		CFIdentifier i2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:13:
 		// (i2= identifier )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:131:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:131:13:
 		// i2= identifier
 		{
 			pushFollow(FOLLOW_identifier_in_synpred18_CFMLTree551);
@@ -5750,9 +5750,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred22_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:34:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:34:
 		// (s1= statement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:152:34:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:152:34:
 		// s1= statement
 		{
 			pushFollow(FOLLOW_statement_in_synpred22_CFMLTree673);
@@ -5771,9 +5771,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred24_CFMLTree_fragment() throws RecognitionException {
 		CFScriptStatement s1 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:154:23:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:154:23:
 		// (s1= statement )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:154:23:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:154:23:
 		// s1= statement
 		{
 			pushFollow(FOLLOW_statement_in_synpred24_CFMLTree703);
@@ -5792,9 +5792,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred27_CFMLTree_fragment() throws RecognitionException {
 		CFExpression e3 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:68:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:68:
 		// (e3= expression )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:159:68:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:159:68:
 		// e3= expression
 		{
 			pushFollow(FOLLOW_expression_in_synpred27_CFMLTree761);
@@ -5813,9 +5813,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred29_CFMLTree_fragment() throws RecognitionException {
 		CFIdentifier t2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:13:
 		// (t2= identifier )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:170:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:170:13:
 		// t2= identifier
 		{
 			pushFollow(FOLLOW_identifier_in_synpred29_CFMLTree840);
@@ -5834,9 +5834,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred32_CFMLTree_fragment() throws RecognitionException {
 		CFExpression be = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:190:6:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:190:6:
 		// (be= binaryExpression )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:190:6:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:190:6:
 		// be= binaryExpression
 		{
 			pushFollow(FOLLOW_binaryExpression_in_synpred32_CFMLTree925);
@@ -5858,9 +5858,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFExpression e2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:229:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:229:5:
 		// ( ^(op= PLUS e1= memberExpression e2= memberExpression ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:229:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:229:5:
 		// ^(op= PLUS e1= memberExpression e2= memberExpression )
 		{
 			op = (CommonTree) match(input, PLUS, FOLLOW_PLUS_in_synpred59_CFMLTree1566);
@@ -5899,9 +5899,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFExpression e2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:230:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:230:5:
 		// ( ^(op= MINUS e1= memberExpression e2= memberExpression ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:230:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:230:5:
 		// ^(op= MINUS e1= memberExpression e2= memberExpression )
 		{
 			op = (CommonTree) match(input, MINUS, FOLLOW_MINUS_in_synpred60_CFMLTree1588);
@@ -5940,9 +5940,9 @@ public class CFMLTree extends TreeParser {
 		
 		CFExpression e2 = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:258:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:258:5:
 		// ( ^(op= LEFTBRACKET e1= expression e2= memberExpression ) )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:258:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:258:5:
 		// ^(op= LEFTBRACKET e1= expression e2= memberExpression )
 		{
 			op = (CommonTree) match(input, LEFTBRACKET, FOLLOW_LEFTBRACKET_in_synpred73_CFMLTree1912);
@@ -5978,9 +5978,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred74_CFMLTree_fragment() throws RecognitionException {
 		Vector<CFExpression> args = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:266:72:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:266:72:
 		// (args= argumentList )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:266:72:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:266:72:
 		// args= argumentList
 		{
 			pushFollow(FOLLOW_argumentList_in_synpred74_CFMLTree1948);
@@ -5999,9 +5999,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred92_CFMLTree_fragment() throws RecognitionException {
 		CommonTree t = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:314:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:314:5:
 		// (t= DEFAULT )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:314:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:314:5:
 		// t= DEFAULT
 		{
 			t = (CommonTree) match(input, DEFAULT, FOLLOW_DEFAULT_in_synpred92_CFMLTree2301);
@@ -6017,9 +6017,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred108_CFMLTree_fragment() throws RecognitionException {
 		CFExpression pe = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:338:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:338:5:
 		// (pe= primaryExpression )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:338:5:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:338:5:
 		// pe= primaryExpression
 		{
 			pushFollow(FOLLOW_primaryExpression_in_synpred108_CFMLTree2586);
@@ -6038,9 +6038,9 @@ public class CFMLTree extends TreeParser {
 	public final void synpred135_CFMLTree_fragment() throws RecognitionException {
 		CFIdentifier t = null;
 		
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:13:
 		// (t= identifier )
-		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFMLTree.g:389:13:
+		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFScriptTree.g:389:13:
 		// t= identifier
 		{
 			pushFollow(FOLLOW_identifier_in_synpred135_CFMLTree3183);

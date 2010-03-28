@@ -51,16 +51,16 @@ public abstract class CFExpression extends CFParsedStatement implements java.io.
 			ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(new poundSignFilterStream(new StringReader(
 					_infix)));
 			
-			CFMLLexer lexer = new CFMLLexer(input);
+			CFScriptLexer lexer = new CFScriptLexer(input);
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
-			CFMLParser parser = new CFMLParser(tokens);
+			CFScriptParser parser = new CFScriptParser(tokens);
 			parser.scriptMode = false;
-			CFMLParser.expression_return r = parser.expression();
+			CFScriptParser.expression_return r = parser.expression();
 			CommonTree tree = (CommonTree) r.getTree();
 			
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 			nodes.setTokenStream(tokens);
-			CFMLTree p2 = new CFMLTree(nodes);
+			CFScriptTree p2 = new CFScriptTree(nodes);
 			p2.scriptMode = false;
 			CFExpression exp = p2.expression();
 			

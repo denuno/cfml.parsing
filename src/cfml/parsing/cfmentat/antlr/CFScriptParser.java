@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 import org.antlr.runtime.tree.*;
 
-public class CFMLParser extends Parser {
+public class CFScriptParser extends Parser {
 	public static final String[] tokenNames = new String[] { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOESNOTCONTAIN",
 			"VARLOCAL", "FUNCTIONCALL", "JAVAMETHODCALL", "EMPTYARGS", "FUNCDECL", "POSTMINUSMINUS", "POSTPLUSPLUS",
 			"WS", "LINE_COMMENT", "ML_COMMENT", "BOOLEAN_LITERAL", "DoubleStringCharacter", "SingleStringCharacter",
@@ -131,11 +131,11 @@ public class CFMLParser extends Parser {
 	// delegates
 	// delegators
 	
-	public CFMLParser(TokenStream input) {
+	public CFScriptParser(TokenStream input) {
 		this(input, new RecognizerSharedState());
 	}
 	
-	public CFMLParser(TokenStream input, RecognizerSharedState state) {
+	public CFScriptParser(TokenStream input, RecognizerSharedState state) {
 		super(input, state);
 		this.state.ruleMemo = new HashMap[229 + 1];
 		
@@ -152,7 +152,7 @@ public class CFMLParser extends Parser {
 	}
 	
 	public String[] getTokenNames() {
-		return CFMLParser.tokenNames;
+		return CFScriptParser.tokenNames;
 	}
 	
 	public String getGrammarFileName() {
@@ -181,15 +181,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "scriptBlock"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:285:1:
 	// scriptBlock : ( element )* endOfScriptBlock ;
-	public final CFMLParser.scriptBlock_return scriptBlock() throws RecognitionException {
-		CFMLParser.scriptBlock_return retval = new CFMLParser.scriptBlock_return();
+	public final CFScriptParser.scriptBlock_return scriptBlock() throws RecognitionException {
+		CFScriptParser.scriptBlock_return retval = new CFScriptParser.scriptBlock_return();
 		retval.start = input.LT(1);
 		int scriptBlock_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
-		CFMLParser.element_return element1 = null;
+		CFScriptParser.element_return element1 = null;
 		
-		CFMLParser.endOfScriptBlock_return endOfScriptBlock2 = null;
+		CFScriptParser.endOfScriptBlock_return endOfScriptBlock2 = null;
 		
 		try {
 			if (state.backtracking > 0 && alreadyParsedRule(input, 1)) {
@@ -282,8 +282,8 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "endOfScriptBlock"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:289:1:
 	// endOfScriptBlock : ( SCRIPTCLOSE | EOF );
-	public final CFMLParser.endOfScriptBlock_return endOfScriptBlock() throws RecognitionException {
-		CFMLParser.endOfScriptBlock_return retval = new CFMLParser.endOfScriptBlock_return();
+	public final CFScriptParser.endOfScriptBlock_return endOfScriptBlock() throws RecognitionException {
+		CFScriptParser.endOfScriptBlock_return retval = new CFScriptParser.endOfScriptBlock_return();
 		retval.start = input.LT(1);
 		int endOfScriptBlock_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -354,8 +354,8 @@ public class CFMLParser extends Parser {
 	// element : ( FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN
 	// compoundStatement -> ^( FUNCDECL identifier ( parameterList )?
 	// compoundStatement ) | statement );
-	public final CFMLParser.element_return element() throws RecognitionException {
-		CFMLParser.element_return retval = new CFMLParser.element_return();
+	public final CFScriptParser.element_return element() throws RecognitionException {
+		CFScriptParser.element_return retval = new CFScriptParser.element_return();
 		retval.start = input.LT(1);
 		int element_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -363,13 +363,13 @@ public class CFMLParser extends Parser {
 		Token FUNCTION4 = null;
 		Token LEFTPAREN6 = null;
 		Token RIGHTPAREN8 = null;
-		CFMLParser.identifier_return identifier5 = null;
+		CFScriptParser.identifier_return identifier5 = null;
 		
-		CFMLParser.parameterList_return parameterList7 = null;
+		CFScriptParser.parameterList_return parameterList7 = null;
 		
-		CFMLParser.compoundStatement_return compoundStatement9 = null;
+		CFScriptParser.compoundStatement_return compoundStatement9 = null;
 		
-		CFMLParser.statement_return statement10 = null;
+		CFScriptParser.statement_return statement10 = null;
 		
 		CommonTree FUNCTION4_tree = null;
 		CommonTree LEFTPAREN6_tree = null;
@@ -560,16 +560,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "parameterList"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:299:1:
 	// parameterList : ( identifier ( ',' identifier )* | );
-	public final CFMLParser.parameterList_return parameterList() throws RecognitionException {
-		CFMLParser.parameterList_return retval = new CFMLParser.parameterList_return();
+	public final CFScriptParser.parameterList_return parameterList() throws RecognitionException {
+		CFScriptParser.parameterList_return retval = new CFScriptParser.parameterList_return();
 		retval.start = input.LT(1);
 		int parameterList_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token char_literal12 = null;
-		CFMLParser.identifier_return identifier11 = null;
+		CFScriptParser.identifier_return identifier11 = null;
 		
-		CFMLParser.identifier_return identifier13 = null;
+		CFScriptParser.identifier_return identifier13 = null;
 		
 		CommonTree char_literal12_tree = null;
 		
@@ -689,15 +689,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "compoundStatement"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:304:1:
 	// compoundStatement : LEFTCURLYBRACKET ( statement )* RIGHTCURLYBRACKET ;
-	public final CFMLParser.compoundStatement_return compoundStatement() throws RecognitionException {
-		CFMLParser.compoundStatement_return retval = new CFMLParser.compoundStatement_return();
+	public final CFScriptParser.compoundStatement_return compoundStatement() throws RecognitionException {
+		CFScriptParser.compoundStatement_return retval = new CFScriptParser.compoundStatement_return();
 		retval.start = input.LT(1);
 		int compoundStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token LEFTCURLYBRACKET14 = null;
 		Token RIGHTCURLYBRACKET16 = null;
-		CFMLParser.statement_return statement15 = null;
+		CFScriptParser.statement_return statement15 = null;
 		
 		CommonTree LEFTCURLYBRACKET14_tree = null;
 		CommonTree RIGHTCURLYBRACKET16_tree = null;
@@ -804,8 +804,8 @@ public class CFMLParser extends Parser {
 	// doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON |
 	// BREAK SEMICOLON | returnStatement | compoundStatement |
 	// localAssignmentExpression SEMICOLON | SEMICOLON );
-	public final CFMLParser.statement_return statement() throws RecognitionException {
-		CFMLParser.statement_return retval = new CFMLParser.statement_return();
+	public final CFScriptParser.statement_return statement() throws RecognitionException {
+		CFScriptParser.statement_return retval = new CFScriptParser.statement_return();
 		retval.start = input.LT(1);
 		int statement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -816,23 +816,23 @@ public class CFMLParser extends Parser {
 		Token SEMICOLON26 = null;
 		Token SEMICOLON30 = null;
 		Token SEMICOLON31 = null;
-		CFMLParser.tryCatchStatement_return tryCatchStatement17 = null;
+		CFScriptParser.tryCatchStatement_return tryCatchStatement17 = null;
 		
-		CFMLParser.ifStatement_return ifStatement18 = null;
+		CFScriptParser.ifStatement_return ifStatement18 = null;
 		
-		CFMLParser.whileStatement_return whileStatement19 = null;
+		CFScriptParser.whileStatement_return whileStatement19 = null;
 		
-		CFMLParser.doWhileStatement_return doWhileStatement20 = null;
+		CFScriptParser.doWhileStatement_return doWhileStatement20 = null;
 		
-		CFMLParser.forStatement_return forStatement21 = null;
+		CFScriptParser.forStatement_return forStatement21 = null;
 		
-		CFMLParser.switchStatement_return switchStatement22 = null;
+		CFScriptParser.switchStatement_return switchStatement22 = null;
 		
-		CFMLParser.returnStatement_return returnStatement27 = null;
+		CFScriptParser.returnStatement_return returnStatement27 = null;
 		
-		CFMLParser.compoundStatement_return compoundStatement28 = null;
+		CFScriptParser.compoundStatement_return compoundStatement28 = null;
 		
-		CFMLParser.localAssignmentExpression_return localAssignmentExpression29 = null;
+		CFScriptParser.localAssignmentExpression_return localAssignmentExpression29 = null;
 		
 		CommonTree CONTINUE23_tree = null;
 		CommonTree SEMICOLON24_tree = null;
@@ -1093,15 +1093,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "condition"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:324:1:
 	// condition : LEFTPAREN localAssignmentExpression RIGHTPAREN ;
-	public final CFMLParser.condition_return condition() throws RecognitionException {
-		CFMLParser.condition_return retval = new CFMLParser.condition_return();
+	public final CFScriptParser.condition_return condition() throws RecognitionException {
+		CFScriptParser.condition_return retval = new CFScriptParser.condition_return();
 		retval.start = input.LT(1);
 		int condition_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token LEFTPAREN32 = null;
 		Token RIGHTPAREN34 = null;
-		CFMLParser.localAssignmentExpression_return localAssignmentExpression33 = null;
+		CFScriptParser.localAssignmentExpression_return localAssignmentExpression33 = null;
 		
 		CommonTree LEFTPAREN32_tree = null;
 		CommonTree RIGHTPAREN34_tree = null;
@@ -1167,8 +1167,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:328:1:
 	// returnStatement : ( RETURN SEMICOLON | RETURN assignmentExpression
 	// SEMICOLON );
-	public final CFMLParser.returnStatement_return returnStatement() throws RecognitionException {
-		CFMLParser.returnStatement_return retval = new CFMLParser.returnStatement_return();
+	public final CFScriptParser.returnStatement_return returnStatement() throws RecognitionException {
+		CFScriptParser.returnStatement_return retval = new CFScriptParser.returnStatement_return();
 		retval.start = input.LT(1);
 		int returnStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -1177,7 +1177,7 @@ public class CFMLParser extends Parser {
 		Token SEMICOLON36 = null;
 		Token RETURN37 = null;
 		Token SEMICOLON39 = null;
-		CFMLParser.assignmentExpression_return assignmentExpression38 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression38 = null;
 		
 		CommonTree RETURN35_tree = null;
 		CommonTree SEMICOLON36_tree = null;
@@ -1303,19 +1303,19 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "ifStatement"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:333:1:
 	// ifStatement : IF condition statement ( ELSE statement )? ;
-	public final CFMLParser.ifStatement_return ifStatement() throws RecognitionException {
-		CFMLParser.ifStatement_return retval = new CFMLParser.ifStatement_return();
+	public final CFScriptParser.ifStatement_return ifStatement() throws RecognitionException {
+		CFScriptParser.ifStatement_return retval = new CFScriptParser.ifStatement_return();
 		retval.start = input.LT(1);
 		int ifStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token IF40 = null;
 		Token ELSE43 = null;
-		CFMLParser.condition_return condition41 = null;
+		CFScriptParser.condition_return condition41 = null;
 		
-		CFMLParser.statement_return statement42 = null;
+		CFScriptParser.statement_return statement42 = null;
 		
-		CFMLParser.statement_return statement44 = null;
+		CFScriptParser.statement_return statement44 = null;
 		
 		CommonTree IF40_tree = null;
 		CommonTree ELSE43_tree = null;
@@ -1426,16 +1426,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "whileStatement"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:337:1:
 	// whileStatement : WHILE condition statement ;
-	public final CFMLParser.whileStatement_return whileStatement() throws RecognitionException {
-		CFMLParser.whileStatement_return retval = new CFMLParser.whileStatement_return();
+	public final CFScriptParser.whileStatement_return whileStatement() throws RecognitionException {
+		CFScriptParser.whileStatement_return retval = new CFScriptParser.whileStatement_return();
 		retval.start = input.LT(1);
 		int whileStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token WHILE45 = null;
-		CFMLParser.condition_return condition46 = null;
+		CFScriptParser.condition_return condition46 = null;
 		
-		CFMLParser.statement_return statement47 = null;
+		CFScriptParser.statement_return statement47 = null;
 		
 		CommonTree WHILE45_tree = null;
 		
@@ -1508,8 +1508,8 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "doWhileStatement"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:341:1:
 	// doWhileStatement : DO statement WHILE condition SEMICOLON ;
-	public final CFMLParser.doWhileStatement_return doWhileStatement() throws RecognitionException {
-		CFMLParser.doWhileStatement_return retval = new CFMLParser.doWhileStatement_return();
+	public final CFScriptParser.doWhileStatement_return doWhileStatement() throws RecognitionException {
+		CFScriptParser.doWhileStatement_return retval = new CFScriptParser.doWhileStatement_return();
 		retval.start = input.LT(1);
 		int doWhileStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -1517,9 +1517,9 @@ public class CFMLParser extends Parser {
 		Token DO48 = null;
 		Token WHILE50 = null;
 		Token SEMICOLON52 = null;
-		CFMLParser.statement_return statement49 = null;
+		CFScriptParser.statement_return statement49 = null;
 		
-		CFMLParser.condition_return condition51 = null;
+		CFScriptParser.condition_return condition51 = null;
 		
 		CommonTree DO48_tree = null;
 		CommonTree WHILE50_tree = null;
@@ -1611,8 +1611,8 @@ public class CFMLParser extends Parser {
 	// assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN
 	// statement | FOR LEFTPAREN forInKey IN assignmentExpression RIGHTPAREN
 	// statement );
-	public final CFMLParser.forStatement_return forStatement() throws RecognitionException {
-		CFMLParser.forStatement_return retval = new CFMLParser.forStatement_return();
+	public final CFScriptParser.forStatement_return forStatement() throws RecognitionException {
+		CFScriptParser.forStatement_return retval = new CFScriptParser.forStatement_return();
 		retval.start = input.LT(1);
 		int forStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -1626,19 +1626,19 @@ public class CFMLParser extends Parser {
 		Token LEFTPAREN63 = null;
 		Token IN65 = null;
 		Token RIGHTPAREN67 = null;
-		CFMLParser.assignmentExpression_return assignmentExpression55 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression55 = null;
 		
-		CFMLParser.assignmentExpression_return assignmentExpression57 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression57 = null;
 		
-		CFMLParser.assignmentExpression_return assignmentExpression59 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression59 = null;
 		
-		CFMLParser.statement_return statement61 = null;
+		CFScriptParser.statement_return statement61 = null;
 		
-		CFMLParser.forInKey_return forInKey64 = null;
+		CFScriptParser.forInKey_return forInKey64 = null;
 		
-		CFMLParser.assignmentExpression_return assignmentExpression66 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression66 = null;
 		
-		CFMLParser.statement_return statement68 = null;
+		CFScriptParser.statement_return statement68 = null;
 		
 		CommonTree FOR53_tree = null;
 		CommonTree LEFTPAREN54_tree = null;
@@ -1892,18 +1892,18 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "forInKey"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:350:1:
 	// forInKey : identifier ( DOT ( identifier | reservedWord ) )* ;
-	public final CFMLParser.forInKey_return forInKey() throws RecognitionException {
-		CFMLParser.forInKey_return retval = new CFMLParser.forInKey_return();
+	public final CFScriptParser.forInKey_return forInKey() throws RecognitionException {
+		CFScriptParser.forInKey_return retval = new CFScriptParser.forInKey_return();
 		retval.start = input.LT(1);
 		int forInKey_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token DOT70 = null;
-		CFMLParser.identifier_return identifier69 = null;
+		CFScriptParser.identifier_return identifier69 = null;
 		
-		CFMLParser.identifier_return identifier71 = null;
+		CFScriptParser.identifier_return identifier71 = null;
 		
-		CFMLParser.reservedWord_return reservedWord72 = null;
+		CFScriptParser.reservedWord_return reservedWord72 = null;
 		
 		CommonTree DOT70_tree = null;
 		
@@ -2121,16 +2121,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "tryCatchStatement"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:354:1:
 	// tryCatchStatement : TRY statement ( catchCondition )* ;
-	public final CFMLParser.tryCatchStatement_return tryCatchStatement() throws RecognitionException {
-		CFMLParser.tryCatchStatement_return retval = new CFMLParser.tryCatchStatement_return();
+	public final CFScriptParser.tryCatchStatement_return tryCatchStatement() throws RecognitionException {
+		CFScriptParser.tryCatchStatement_return retval = new CFScriptParser.tryCatchStatement_return();
 		retval.start = input.LT(1);
 		int tryCatchStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token TRY73 = null;
-		CFMLParser.statement_return statement74 = null;
+		CFScriptParser.statement_return statement74 = null;
 		
-		CFMLParser.catchCondition_return catchCondition75 = null;
+		CFScriptParser.catchCondition_return catchCondition75 = null;
 		
 		CommonTree TRY73_tree = null;
 		
@@ -2232,8 +2232,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:358:1:
 	// catchCondition : CATCH LEFTPAREN exceptionType identifier RIGHTPAREN
 	// compoundStatement ;
-	public final CFMLParser.catchCondition_return catchCondition() throws RecognitionException {
-		CFMLParser.catchCondition_return retval = new CFMLParser.catchCondition_return();
+	public final CFScriptParser.catchCondition_return catchCondition() throws RecognitionException {
+		CFScriptParser.catchCondition_return retval = new CFScriptParser.catchCondition_return();
 		retval.start = input.LT(1);
 		int catchCondition_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -2241,11 +2241,11 @@ public class CFMLParser extends Parser {
 		Token CATCH76 = null;
 		Token LEFTPAREN77 = null;
 		Token RIGHTPAREN80 = null;
-		CFMLParser.exceptionType_return exceptionType78 = null;
+		CFScriptParser.exceptionType_return exceptionType78 = null;
 		
-		CFMLParser.identifier_return identifier79 = null;
+		CFScriptParser.identifier_return identifier79 = null;
 		
-		CFMLParser.compoundStatement_return compoundStatement81 = null;
+		CFScriptParser.compoundStatement_return compoundStatement81 = null;
 		
 		CommonTree CATCH76_tree = null;
 		CommonTree LEFTPAREN77_tree = null;
@@ -2337,19 +2337,19 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:362:1:
 	// exceptionType : ( identifier ( 'DOT' ( identifier | reservedWord ) )* |
 	// STRING_LITERAL );
-	public final CFMLParser.exceptionType_return exceptionType() throws RecognitionException {
-		CFMLParser.exceptionType_return retval = new CFMLParser.exceptionType_return();
+	public final CFScriptParser.exceptionType_return exceptionType() throws RecognitionException {
+		CFScriptParser.exceptionType_return retval = new CFScriptParser.exceptionType_return();
 		retval.start = input.LT(1);
 		int exceptionType_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token string_literal83 = null;
 		Token STRING_LITERAL86 = null;
-		CFMLParser.identifier_return identifier82 = null;
+		CFScriptParser.identifier_return identifier82 = null;
 		
-		CFMLParser.identifier_return identifier84 = null;
+		CFScriptParser.identifier_return identifier84 = null;
 		
-		CFMLParser.reservedWord_return reservedWord85 = null;
+		CFScriptParser.reservedWord_return reservedWord85 = null;
 		
 		CommonTree string_literal83_tree = null;
 		CommonTree STRING_LITERAL86_tree = null;
@@ -2608,8 +2608,8 @@ public class CFMLParser extends Parser {
 	// constantExpression : ( LEFTPAREN constantExpression RIGHTPAREN | MINUS (
 	// INTEGER_LITERAL | FLOATING_POINT_LITERAL ) | INTEGER_LITERAL |
 	// FLOATING_POINT_LITERAL | STRING_LITERAL | BOOLEAN_LITERAL | NULL );
-	public final CFMLParser.constantExpression_return constantExpression() throws RecognitionException {
-		CFMLParser.constantExpression_return retval = new CFMLParser.constantExpression_return();
+	public final CFScriptParser.constantExpression_return constantExpression() throws RecognitionException {
+		CFScriptParser.constantExpression_return retval = new CFScriptParser.constantExpression_return();
 		retval.start = input.LT(1);
 		int constantExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -2623,7 +2623,7 @@ public class CFMLParser extends Parser {
 		Token STRING_LITERAL94 = null;
 		Token BOOLEAN_LITERAL95 = null;
 		Token NULL96 = null;
-		CFMLParser.constantExpression_return constantExpression88 = null;
+		CFScriptParser.constantExpression_return constantExpression88 = null;
 		
 		CommonTree LEFTPAREN87_tree = null;
 		CommonTree RIGHTPAREN89_tree = null;
@@ -2865,8 +2865,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:377:1:
 	// switchStatement : SWITCH condition LEFTCURLYBRACKET ( caseStatement )*
 	// RIGHTCURLYBRACKET ;
-	public final CFMLParser.switchStatement_return switchStatement() throws RecognitionException {
-		CFMLParser.switchStatement_return retval = new CFMLParser.switchStatement_return();
+	public final CFScriptParser.switchStatement_return switchStatement() throws RecognitionException {
+		CFScriptParser.switchStatement_return retval = new CFScriptParser.switchStatement_return();
 		retval.start = input.LT(1);
 		int switchStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -2874,9 +2874,9 @@ public class CFMLParser extends Parser {
 		Token SWITCH97 = null;
 		Token LEFTCURLYBRACKET99 = null;
 		Token RIGHTCURLYBRACKET101 = null;
-		CFMLParser.condition_return condition98 = null;
+		CFScriptParser.condition_return condition98 = null;
 		
-		CFMLParser.caseStatement_return caseStatement100 = null;
+		CFScriptParser.caseStatement_return caseStatement100 = null;
 		
 		CommonTree SWITCH97_tree = null;
 		CommonTree LEFTCURLYBRACKET99_tree = null;
@@ -2994,8 +2994,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:386:1:
 	// caseStatement : ( ( CASE constantExpression COLON ( statement )* ) | (
 	// DEFAULT COLON ( statement )* ) );
-	public final CFMLParser.caseStatement_return caseStatement() throws RecognitionException {
-		CFMLParser.caseStatement_return retval = new CFMLParser.caseStatement_return();
+	public final CFScriptParser.caseStatement_return caseStatement() throws RecognitionException {
+		CFScriptParser.caseStatement_return retval = new CFScriptParser.caseStatement_return();
 		retval.start = input.LT(1);
 		int caseStatement_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -3004,11 +3004,11 @@ public class CFMLParser extends Parser {
 		Token COLON104 = null;
 		Token DEFAULT106 = null;
 		Token COLON107 = null;
-		CFMLParser.constantExpression_return constantExpression103 = null;
+		CFScriptParser.constantExpression_return constantExpression103 = null;
 		
-		CFMLParser.statement_return statement105 = null;
+		CFScriptParser.statement_return statement105 = null;
 		
-		CFMLParser.statement_return statement108 = null;
+		CFScriptParser.statement_return statement108 = null;
 		
 		CommonTree CASE102_tree = null;
 		CommonTree COLON104_tree = null;
@@ -3193,14 +3193,14 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "expression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:396:1:
 	// expression : localAssignmentExpression EOF ;
-	public final CFMLParser.expression_return expression() throws RecognitionException {
-		CFMLParser.expression_return retval = new CFMLParser.expression_return();
+	public final CFScriptParser.expression_return expression() throws RecognitionException {
+		CFScriptParser.expression_return retval = new CFScriptParser.expression_return();
 		retval.start = input.LT(1);
 		int expression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token EOF110 = null;
-		CFMLParser.localAssignmentExpression_return localAssignmentExpression109 = null;
+		CFScriptParser.localAssignmentExpression_return localAssignmentExpression109 = null;
 		
 		CommonTree EOF110_tree = null;
 		
@@ -3262,16 +3262,16 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:400:1:
 	// localAssignmentExpression : ( VAR assignmentExpression -> ^( VARLOCAL
 	// assignmentExpression ) | assignmentExpression );
-	public final CFMLParser.localAssignmentExpression_return localAssignmentExpression() throws RecognitionException {
-		CFMLParser.localAssignmentExpression_return retval = new CFMLParser.localAssignmentExpression_return();
+	public final CFScriptParser.localAssignmentExpression_return localAssignmentExpression() throws RecognitionException {
+		CFScriptParser.localAssignmentExpression_return retval = new CFScriptParser.localAssignmentExpression_return();
 		retval.start = input.LT(1);
 		int localAssignmentExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token VAR111 = null;
-		CFMLParser.assignmentExpression_return assignmentExpression112 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression112 = null;
 		
-		CFMLParser.assignmentExpression_return assignmentExpression113 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression113 = null;
 		
 		CommonTree VAR111_tree = null;
 		RewriteRuleTokenStream stream_VAR = new RewriteRuleTokenStream(adaptor, "token VAR");
@@ -3392,16 +3392,16 @@ public class CFMLParser extends Parser {
 	// assignmentExpression : impliesExpression ( ( EQUALSOP | PLUSEQUALS |
 	// MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS )
 	// impliesExpression )? ;
-	public final CFMLParser.assignmentExpression_return assignmentExpression() throws RecognitionException {
-		CFMLParser.assignmentExpression_return retval = new CFMLParser.assignmentExpression_return();
+	public final CFScriptParser.assignmentExpression_return assignmentExpression() throws RecognitionException {
+		CFScriptParser.assignmentExpression_return retval = new CFScriptParser.assignmentExpression_return();
 		retval.start = input.LT(1);
 		int assignmentExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token set115 = null;
-		CFMLParser.impliesExpression_return impliesExpression114 = null;
+		CFScriptParser.impliesExpression_return impliesExpression114 = null;
 		
-		CFMLParser.impliesExpression_return impliesExpression116 = null;
+		CFScriptParser.impliesExpression_return impliesExpression116 = null;
 		
 		CommonTree set115_tree = null;
 		
@@ -3509,16 +3509,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "impliesExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:409:1:
 	// impliesExpression : equivalentExpression ( IMP equivalentExpression )* ;
-	public final CFMLParser.impliesExpression_return impliesExpression() throws RecognitionException {
-		CFMLParser.impliesExpression_return retval = new CFMLParser.impliesExpression_return();
+	public final CFScriptParser.impliesExpression_return impliesExpression() throws RecognitionException {
+		CFScriptParser.impliesExpression_return retval = new CFScriptParser.impliesExpression_return();
 		retval.start = input.LT(1);
 		int impliesExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token IMP118 = null;
-		CFMLParser.equivalentExpression_return equivalentExpression117 = null;
+		CFScriptParser.equivalentExpression_return equivalentExpression117 = null;
 		
-		CFMLParser.equivalentExpression_return equivalentExpression119 = null;
+		CFScriptParser.equivalentExpression_return equivalentExpression119 = null;
 		
 		CommonTree IMP118_tree = null;
 		
@@ -3614,16 +3614,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "equivalentExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:413:1:
 	// equivalentExpression : xorExpression ( EQV xorExpression )* ;
-	public final CFMLParser.equivalentExpression_return equivalentExpression() throws RecognitionException {
-		CFMLParser.equivalentExpression_return retval = new CFMLParser.equivalentExpression_return();
+	public final CFScriptParser.equivalentExpression_return equivalentExpression() throws RecognitionException {
+		CFScriptParser.equivalentExpression_return retval = new CFScriptParser.equivalentExpression_return();
 		retval.start = input.LT(1);
 		int equivalentExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token EQV121 = null;
-		CFMLParser.xorExpression_return xorExpression120 = null;
+		CFScriptParser.xorExpression_return xorExpression120 = null;
 		
-		CFMLParser.xorExpression_return xorExpression122 = null;
+		CFScriptParser.xorExpression_return xorExpression122 = null;
 		
 		CommonTree EQV121_tree = null;
 		
@@ -3719,16 +3719,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "xorExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:417:1:
 	// xorExpression : orExpression ( XOR orExpression )* ;
-	public final CFMLParser.xorExpression_return xorExpression() throws RecognitionException {
-		CFMLParser.xorExpression_return retval = new CFMLParser.xorExpression_return();
+	public final CFScriptParser.xorExpression_return xorExpression() throws RecognitionException {
+		CFScriptParser.xorExpression_return retval = new CFScriptParser.xorExpression_return();
 		retval.start = input.LT(1);
 		int xorExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token XOR124 = null;
-		CFMLParser.orExpression_return orExpression123 = null;
+		CFScriptParser.orExpression_return orExpression123 = null;
 		
-		CFMLParser.orExpression_return orExpression125 = null;
+		CFScriptParser.orExpression_return orExpression125 = null;
 		
 		CommonTree XOR124_tree = null;
 		
@@ -3824,16 +3824,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "orExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:421:1:
 	// orExpression : andExpression ( ( OR | OROPERATOR ) andExpression )* ;
-	public final CFMLParser.orExpression_return orExpression() throws RecognitionException {
-		CFMLParser.orExpression_return retval = new CFMLParser.orExpression_return();
+	public final CFScriptParser.orExpression_return orExpression() throws RecognitionException {
+		CFScriptParser.orExpression_return retval = new CFScriptParser.orExpression_return();
 		retval.start = input.LT(1);
 		int orExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token set127 = null;
-		CFMLParser.andExpression_return andExpression126 = null;
+		CFScriptParser.andExpression_return andExpression126 = null;
 		
-		CFMLParser.andExpression_return andExpression128 = null;
+		CFScriptParser.andExpression_return andExpression128 = null;
 		
 		CommonTree set127_tree = null;
 		
@@ -3939,16 +3939,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "andExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:425:1:
 	// andExpression : notExpression ( ( AND | ANDOPERATOR ) notExpression )* ;
-	public final CFMLParser.andExpression_return andExpression() throws RecognitionException {
-		CFMLParser.andExpression_return retval = new CFMLParser.andExpression_return();
+	public final CFScriptParser.andExpression_return andExpression() throws RecognitionException {
+		CFScriptParser.andExpression_return retval = new CFScriptParser.andExpression_return();
 		retval.start = input.LT(1);
 		int andExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token set130 = null;
-		CFMLParser.notExpression_return notExpression129 = null;
+		CFScriptParser.notExpression_return notExpression129 = null;
 		
-		CFMLParser.notExpression_return notExpression131 = null;
+		CFScriptParser.notExpression_return notExpression131 = null;
 		
 		CommonTree set130_tree = null;
 		
@@ -4054,15 +4054,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "notExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:429:1:
 	// notExpression : ( NOT | NOTOP )? equalityExpression ;
-	public final CFMLParser.notExpression_return notExpression() throws RecognitionException {
-		CFMLParser.notExpression_return retval = new CFMLParser.notExpression_return();
+	public final CFScriptParser.notExpression_return notExpression() throws RecognitionException {
+		CFScriptParser.notExpression_return retval = new CFScriptParser.notExpression_return();
 		retval.start = input.LT(1);
 		int notExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token NOT132 = null;
 		Token NOTOP133 = null;
-		CFMLParser.equalityExpression_return equalityExpression134 = null;
+		CFScriptParser.equalityExpression_return equalityExpression134 = null;
 		
 		CommonTree NOT132_tree = null;
 		CommonTree NOTOP133_tree = null;
@@ -4165,23 +4165,23 @@ public class CFMLParser extends Parser {
 	// equalityExpression : concatenationExpression ( ( equalityOperator5 |
 	// equalityOperator3 | equalityOperator2 | equalityOperator1 )
 	// concatenationExpression )* ;
-	public final CFMLParser.equalityExpression_return equalityExpression() throws RecognitionException {
-		CFMLParser.equalityExpression_return retval = new CFMLParser.equalityExpression_return();
+	public final CFScriptParser.equalityExpression_return equalityExpression() throws RecognitionException {
+		CFScriptParser.equalityExpression_return retval = new CFScriptParser.equalityExpression_return();
 		retval.start = input.LT(1);
 		int equalityExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
-		CFMLParser.concatenationExpression_return concatenationExpression135 = null;
+		CFScriptParser.concatenationExpression_return concatenationExpression135 = null;
 		
-		CFMLParser.equalityOperator5_return equalityOperator5136 = null;
+		CFScriptParser.equalityOperator5_return equalityOperator5136 = null;
 		
-		CFMLParser.equalityOperator3_return equalityOperator3137 = null;
+		CFScriptParser.equalityOperator3_return equalityOperator3137 = null;
 		
-		CFMLParser.equalityOperator2_return equalityOperator2138 = null;
+		CFScriptParser.equalityOperator2_return equalityOperator2138 = null;
 		
-		CFMLParser.equalityOperator1_return equalityOperator1139 = null;
+		CFScriptParser.equalityOperator1_return equalityOperator1139 = null;
 		
-		CFMLParser.concatenationExpression_return concatenationExpression140 = null;
+		CFScriptParser.concatenationExpression_return concatenationExpression140 = null;
 		
 		try {
 			if (state.backtracking > 0 && alreadyParsedRule(input, 29)) {
@@ -4363,8 +4363,8 @@ public class CFMLParser extends Parser {
 	// GT ) | GTE -> ^( GTE ) | {...}? => '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ
 	// -> ^( EQ ) | NEQ -> ^( NEQ ) | {...}? => '!=' -> ^( NEQ ) | EQUAL -> ^(
 	// EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) );
-	public final CFMLParser.equalityOperator1_return equalityOperator1() throws RecognitionException {
-		CFMLParser.equalityOperator1_return retval = new CFMLParser.equalityOperator1_return();
+	public final CFScriptParser.equalityOperator1_return equalityOperator1() throws RecognitionException {
+		CFScriptParser.equalityOperator1_return retval = new CFScriptParser.equalityOperator1_return();
 		retval.start = input.LT(1);
 		int equalityOperator1_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -5237,8 +5237,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:459:1:
 	// equalityOperator2 : ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) |
 	// NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) );
-	public final CFMLParser.equalityOperator2_return equalityOperator2() throws RecognitionException {
-		CFMLParser.equalityOperator2_return retval = new CFMLParser.equalityOperator2_return();
+	public final CFScriptParser.equalityOperator2_return equalityOperator2() throws RecognitionException {
+		CFScriptParser.equalityOperator2_return retval = new CFScriptParser.equalityOperator2_return();
 		retval.start = input.LT(1);
 		int equalityOperator2_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -5521,8 +5521,8 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "equalityOperator3"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:466:1:
 	// equalityOperator3 : DOES NOT CONTAIN -> ^( DOESNOTCONTAIN ) ;
-	public final CFMLParser.equalityOperator3_return equalityOperator3() throws RecognitionException {
-		CFMLParser.equalityOperator3_return retval = new CFMLParser.equalityOperator3_return();
+	public final CFScriptParser.equalityOperator3_return equalityOperator3() throws RecognitionException {
+		CFScriptParser.equalityOperator3_return retval = new CFScriptParser.equalityOperator3_return();
 		retval.start = input.LT(1);
 		int equalityOperator3_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -5629,8 +5629,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:470:1:
 	// equalityOperator5 : ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR
 	// EQUAL TO -> ^( GTE ) );
-	public final CFMLParser.equalityOperator5_return equalityOperator5() throws RecognitionException {
-		CFMLParser.equalityOperator5_return retval = new CFMLParser.equalityOperator5_return();
+	public final CFScriptParser.equalityOperator5_return equalityOperator5() throws RecognitionException {
+		CFScriptParser.equalityOperator5_return retval = new CFScriptParser.equalityOperator5_return();
 		retval.start = input.LT(1);
 		int equalityOperator5_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -5850,16 +5850,16 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:475:1:
 	// concatenationExpression : additiveExpression ( CONCAT additiveExpression
 	// )* ;
-	public final CFMLParser.concatenationExpression_return concatenationExpression() throws RecognitionException {
-		CFMLParser.concatenationExpression_return retval = new CFMLParser.concatenationExpression_return();
+	public final CFScriptParser.concatenationExpression_return concatenationExpression() throws RecognitionException {
+		CFScriptParser.concatenationExpression_return retval = new CFScriptParser.concatenationExpression_return();
 		retval.start = input.LT(1);
 		int concatenationExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token CONCAT181 = null;
-		CFMLParser.additiveExpression_return additiveExpression180 = null;
+		CFScriptParser.additiveExpression_return additiveExpression180 = null;
 		
-		CFMLParser.additiveExpression_return additiveExpression182 = null;
+		CFScriptParser.additiveExpression_return additiveExpression182 = null;
 		
 		CommonTree CONCAT181_tree = null;
 		
@@ -5955,17 +5955,17 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "additiveExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:479:1:
 	// additiveExpression : modExpression ( ( PLUS | MINUS ) modExpression )* ;
-	public final CFMLParser.additiveExpression_return additiveExpression() throws RecognitionException {
-		CFMLParser.additiveExpression_return retval = new CFMLParser.additiveExpression_return();
+	public final CFScriptParser.additiveExpression_return additiveExpression() throws RecognitionException {
+		CFScriptParser.additiveExpression_return retval = new CFScriptParser.additiveExpression_return();
 		retval.start = input.LT(1);
 		int additiveExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token PLUS184 = null;
 		Token MINUS185 = null;
-		CFMLParser.modExpression_return modExpression183 = null;
+		CFScriptParser.modExpression_return modExpression183 = null;
 		
-		CFMLParser.modExpression_return modExpression186 = null;
+		CFScriptParser.modExpression_return modExpression186 = null;
 		
 		CommonTree PLUS184_tree = null;
 		CommonTree MINUS185_tree = null;
@@ -6106,16 +6106,16 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:483:1:
 	// modExpression : intDivisionExpression ( ( MOD | MODOPERATOR )
 	// intDivisionExpression )* ;
-	public final CFMLParser.modExpression_return modExpression() throws RecognitionException {
-		CFMLParser.modExpression_return retval = new CFMLParser.modExpression_return();
+	public final CFScriptParser.modExpression_return modExpression() throws RecognitionException {
+		CFScriptParser.modExpression_return retval = new CFScriptParser.modExpression_return();
 		retval.start = input.LT(1);
 		int modExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token set188 = null;
-		CFMLParser.intDivisionExpression_return intDivisionExpression187 = null;
+		CFScriptParser.intDivisionExpression_return intDivisionExpression187 = null;
 		
-		CFMLParser.intDivisionExpression_return intDivisionExpression189 = null;
+		CFScriptParser.intDivisionExpression_return intDivisionExpression189 = null;
 		
 		CommonTree set188_tree = null;
 		
@@ -6224,16 +6224,16 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:487:1:
 	// intDivisionExpression : multiplicativeExpression ( BSLASH
 	// multiplicativeExpression )* ;
-	public final CFMLParser.intDivisionExpression_return intDivisionExpression() throws RecognitionException {
-		CFMLParser.intDivisionExpression_return retval = new CFMLParser.intDivisionExpression_return();
+	public final CFScriptParser.intDivisionExpression_return intDivisionExpression() throws RecognitionException {
+		CFScriptParser.intDivisionExpression_return retval = new CFScriptParser.intDivisionExpression_return();
 		retval.start = input.LT(1);
 		int intDivisionExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token BSLASH191 = null;
-		CFMLParser.multiplicativeExpression_return multiplicativeExpression190 = null;
+		CFScriptParser.multiplicativeExpression_return multiplicativeExpression190 = null;
 		
-		CFMLParser.multiplicativeExpression_return multiplicativeExpression192 = null;
+		CFScriptParser.multiplicativeExpression_return multiplicativeExpression192 = null;
 		
 		CommonTree BSLASH191_tree = null;
 		
@@ -6330,17 +6330,17 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:491:1:
 	// multiplicativeExpression : powerOfExpression ( ( STAR | SLASH )
 	// powerOfExpression )* ;
-	public final CFMLParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
-		CFMLParser.multiplicativeExpression_return retval = new CFMLParser.multiplicativeExpression_return();
+	public final CFScriptParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
+		CFScriptParser.multiplicativeExpression_return retval = new CFScriptParser.multiplicativeExpression_return();
 		retval.start = input.LT(1);
 		int multiplicativeExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token STAR194 = null;
 		Token SLASH195 = null;
-		CFMLParser.powerOfExpression_return powerOfExpression193 = null;
+		CFScriptParser.powerOfExpression_return powerOfExpression193 = null;
 		
-		CFMLParser.powerOfExpression_return powerOfExpression196 = null;
+		CFScriptParser.powerOfExpression_return powerOfExpression196 = null;
 		
 		CommonTree STAR194_tree = null;
 		CommonTree SLASH195_tree = null;
@@ -6480,16 +6480,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "powerOfExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:495:1:
 	// powerOfExpression : unaryExpression ( POWER unaryExpression )* ;
-	public final CFMLParser.powerOfExpression_return powerOfExpression() throws RecognitionException {
-		CFMLParser.powerOfExpression_return retval = new CFMLParser.powerOfExpression_return();
+	public final CFScriptParser.powerOfExpression_return powerOfExpression() throws RecognitionException {
+		CFScriptParser.powerOfExpression_return retval = new CFScriptParser.powerOfExpression_return();
 		retval.start = input.LT(1);
 		int powerOfExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token POWER198 = null;
-		CFMLParser.unaryExpression_return unaryExpression197 = null;
+		CFScriptParser.unaryExpression_return unaryExpression197 = null;
 		
-		CFMLParser.unaryExpression_return unaryExpression199 = null;
+		CFScriptParser.unaryExpression_return unaryExpression199 = null;
 		
 		CommonTree POWER198_tree = null;
 		
@@ -6590,8 +6590,8 @@ public class CFMLParser extends Parser {
 	// memberExpression -> ^( PLUSPLUS memberExpression ) | memberExpression
 	// MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression
 	// PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression );
-	public final CFMLParser.unaryExpression_return unaryExpression() throws RecognitionException {
-		CFMLParser.unaryExpression_return retval = new CFMLParser.unaryExpression_return();
+	public final CFScriptParser.unaryExpression_return unaryExpression() throws RecognitionException {
+		CFScriptParser.unaryExpression_return retval = new CFScriptParser.unaryExpression_return();
 		retval.start = input.LT(1);
 		int unaryExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -6602,19 +6602,19 @@ public class CFMLParser extends Parser {
 		Token PLUSPLUS206 = null;
 		Token MINUSMINUS209 = null;
 		Token PLUSPLUS211 = null;
-		CFMLParser.memberExpression_return memberExpression201 = null;
+		CFScriptParser.memberExpression_return memberExpression201 = null;
 		
-		CFMLParser.memberExpression_return memberExpression203 = null;
+		CFScriptParser.memberExpression_return memberExpression203 = null;
 		
-		CFMLParser.memberExpression_return memberExpression205 = null;
+		CFScriptParser.memberExpression_return memberExpression205 = null;
 		
-		CFMLParser.memberExpression_return memberExpression207 = null;
+		CFScriptParser.memberExpression_return memberExpression207 = null;
 		
-		CFMLParser.memberExpression_return memberExpression208 = null;
+		CFScriptParser.memberExpression_return memberExpression208 = null;
 		
-		CFMLParser.memberExpression_return memberExpression210 = null;
+		CFScriptParser.memberExpression_return memberExpression210 = null;
 		
-		CFMLParser.memberExpression_return memberExpression212 = null;
+		CFScriptParser.memberExpression_return memberExpression212 = null;
 		
 		CommonTree MINUS200_tree = null;
 		CommonTree PLUS202_tree = null;
@@ -7000,17 +7000,17 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "memberExpression"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:509:1:
 	// memberExpression : ( '#' memberExpressionB '#' | memberExpressionB );
-	public final CFMLParser.memberExpression_return memberExpression() throws RecognitionException {
-		CFMLParser.memberExpression_return retval = new CFMLParser.memberExpression_return();
+	public final CFScriptParser.memberExpression_return memberExpression() throws RecognitionException {
+		CFScriptParser.memberExpression_return retval = new CFScriptParser.memberExpression_return();
 		retval.start = input.LT(1);
 		int memberExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token char_literal213 = null;
 		Token char_literal215 = null;
-		CFMLParser.memberExpressionB_return memberExpressionB214 = null;
+		CFScriptParser.memberExpressionB_return memberExpressionB214 = null;
 		
-		CFMLParser.memberExpressionB_return memberExpressionB216 = null;
+		CFScriptParser.memberExpressionB_return memberExpressionB216 = null;
 		
 		CommonTree char_literal213_tree = null;
 		CommonTree char_literal215_tree = null;
@@ -7123,8 +7123,8 @@ public class CFMLParser extends Parser {
 	// LEFTBRACKET ie= impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET
 	// $memberExpressionB $ie) | DOT p= primaryExpressionIRW -> ^( DOT
 	// $memberExpressionB $p) )* ;
-	public final CFMLParser.memberExpressionB_return memberExpressionB() throws RecognitionException {
-		CFMLParser.memberExpressionB_return retval = new CFMLParser.memberExpressionB_return();
+	public final CFScriptParser.memberExpressionB_return memberExpressionB() throws RecognitionException {
+		CFScriptParser.memberExpressionB_return retval = new CFScriptParser.memberExpressionB_return();
 		retval.start = input.LT(1);
 		int memberExpressionB_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -7137,13 +7137,13 @@ public class CFMLParser extends Parser {
 		Token LEFTBRACKET223 = null;
 		Token RIGHTBRACKET224 = null;
 		Token DOT225 = null;
-		CFMLParser.primaryExpressionIRW_return p = null;
+		CFScriptParser.primaryExpressionIRW_return p = null;
 		
-		CFMLParser.argumentList_return args = null;
+		CFScriptParser.argumentList_return args = null;
 		
-		CFMLParser.impliesExpression_return ie = null;
+		CFScriptParser.impliesExpression_return ie = null;
 		
-		CFMLParser.primaryExpression_return primaryExpression217 = null;
+		CFScriptParser.primaryExpression_return primaryExpression217 = null;
 		
 		CommonTree DOT218_tree = null;
 		CommonTree LEFTPAREN219_tree = null;
@@ -7529,15 +7529,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "memberExpressionSuffix"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:526:1:
 	// memberExpressionSuffix : ( indexSuffix | propertyReferenceSuffix );
-	public final CFMLParser.memberExpressionSuffix_return memberExpressionSuffix() throws RecognitionException {
-		CFMLParser.memberExpressionSuffix_return retval = new CFMLParser.memberExpressionSuffix_return();
+	public final CFScriptParser.memberExpressionSuffix_return memberExpressionSuffix() throws RecognitionException {
+		CFScriptParser.memberExpressionSuffix_return retval = new CFScriptParser.memberExpressionSuffix_return();
 		retval.start = input.LT(1);
 		int memberExpressionSuffix_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
-		CFMLParser.indexSuffix_return indexSuffix226 = null;
+		CFScriptParser.indexSuffix_return indexSuffix226 = null;
 		
-		CFMLParser.propertyReferenceSuffix_return propertyReferenceSuffix227 = null;
+		CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix227 = null;
 		
 		try {
 			if (state.backtracking > 0 && alreadyParsedRule(input, 43)) {
@@ -7630,15 +7630,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "propertyReferenceSuffix"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:531:1:
 	// propertyReferenceSuffix : DOT ( LT )* identifier ;
-	public final CFMLParser.propertyReferenceSuffix_return propertyReferenceSuffix() throws RecognitionException {
-		CFMLParser.propertyReferenceSuffix_return retval = new CFMLParser.propertyReferenceSuffix_return();
+	public final CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix() throws RecognitionException {
+		CFScriptParser.propertyReferenceSuffix_return retval = new CFScriptParser.propertyReferenceSuffix_return();
 		retval.start = input.LT(1);
 		int propertyReferenceSuffix_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token DOT228 = null;
 		Token LT229 = null;
-		CFMLParser.identifier_return identifier230 = null;
+		CFScriptParser.identifier_return identifier230 = null;
 		
 		CommonTree DOT228_tree = null;
 		CommonTree LT229_tree = null;
@@ -7731,8 +7731,8 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "indexSuffix"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:535:1:
 	// indexSuffix : LEFTBRACKET ( LT )* primaryExpression ( LT )* ']' ;
-	public final CFMLParser.indexSuffix_return indexSuffix() throws RecognitionException {
-		CFMLParser.indexSuffix_return retval = new CFMLParser.indexSuffix_return();
+	public final CFScriptParser.indexSuffix_return indexSuffix() throws RecognitionException {
+		CFScriptParser.indexSuffix_return retval = new CFScriptParser.indexSuffix_return();
 		retval.start = input.LT(1);
 		int indexSuffix_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -7741,7 +7741,7 @@ public class CFMLParser extends Parser {
 		Token LT232 = null;
 		Token LT234 = null;
 		Token char_literal235 = null;
-		CFMLParser.primaryExpression_return primaryExpression233 = null;
+		CFScriptParser.primaryExpression_return primaryExpression233 = null;
 		
 		CommonTree LEFTBRACKET231_tree = null;
 		CommonTree LT232_tree = null;
@@ -7866,15 +7866,15 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "primaryExpressionIRW"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:539:1:
 	// primaryExpressionIRW : ( primaryExpression | reservedWord );
-	public final CFMLParser.primaryExpressionIRW_return primaryExpressionIRW() throws RecognitionException {
-		CFMLParser.primaryExpressionIRW_return retval = new CFMLParser.primaryExpressionIRW_return();
+	public final CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW() throws RecognitionException {
+		CFScriptParser.primaryExpressionIRW_return retval = new CFScriptParser.primaryExpressionIRW_return();
 		retval.start = input.LT(1);
 		int primaryExpressionIRW_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
-		CFMLParser.primaryExpression_return primaryExpression236 = null;
+		CFScriptParser.primaryExpression_return primaryExpression236 = null;
 		
-		CFMLParser.reservedWord_return reservedWord237 = null;
+		CFScriptParser.reservedWord_return reservedWord237 = null;
 		
 		try {
 			if (state.backtracking > 0 && alreadyParsedRule(input, 46)) {
@@ -8072,8 +8072,8 @@ public class CFMLParser extends Parser {
 	// reservedWord : ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE |
 	// LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | NULL | EQUALS |
 	// cfscriptKeywords );
-	public final CFMLParser.reservedWord_return reservedWord() throws RecognitionException {
-		CFMLParser.reservedWord_return retval = new CFMLParser.reservedWord_return();
+	public final CFScriptParser.reservedWord_return reservedWord() throws RecognitionException {
+		CFScriptParser.reservedWord_return retval = new CFScriptParser.reservedWord_return();
 		retval.start = input.LT(1);
 		int reservedWord_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -8098,7 +8098,7 @@ public class CFMLParser extends Parser {
 		Token MOD255 = null;
 		Token NULL256 = null;
 		Token EQUALS257 = null;
-		CFMLParser.cfscriptKeywords_return cfscriptKeywords258 = null;
+		CFScriptParser.cfscriptKeywords_return cfscriptKeywords258 = null;
 		
 		CommonTree CONTAINS238_tree = null;
 		CommonTree IS239_tree = null;
@@ -8611,16 +8611,16 @@ public class CFMLParser extends Parser {
 	// $ANTLR start "argumentList"
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:554:1:
 	// argumentList : ( argument ( ',' argument )* | -> ^( EMPTYARGS ) );
-	public final CFMLParser.argumentList_return argumentList() throws RecognitionException {
-		CFMLParser.argumentList_return retval = new CFMLParser.argumentList_return();
+	public final CFScriptParser.argumentList_return argumentList() throws RecognitionException {
+		CFScriptParser.argumentList_return retval = new CFScriptParser.argumentList_return();
 		retval.start = input.LT(1);
 		int argumentList_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token char_literal260 = null;
-		CFMLParser.argument_return argument259 = null;
+		CFScriptParser.argument_return argument259 = null;
 		
-		CFMLParser.argument_return argument261 = null;
+		CFScriptParser.argument_return argument261 = null;
 		
 		CommonTree char_literal260_tree = null;
 		
@@ -8774,23 +8774,23 @@ public class CFMLParser extends Parser {
 	// argument : ( ( identifier COLON impliesExpression -> ^( COLON identifier
 	// impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^(
 	// COLON identifier impliesExpression ) ) | impliesExpression );
-	public final CFMLParser.argument_return argument() throws RecognitionException {
-		CFMLParser.argument_return retval = new CFMLParser.argument_return();
+	public final CFScriptParser.argument_return argument() throws RecognitionException {
+		CFScriptParser.argument_return retval = new CFScriptParser.argument_return();
 		retval.start = input.LT(1);
 		int argument_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token COLON263 = null;
 		Token EQUALSOP266 = null;
-		CFMLParser.identifier_return identifier262 = null;
+		CFScriptParser.identifier_return identifier262 = null;
 		
-		CFMLParser.impliesExpression_return impliesExpression264 = null;
+		CFScriptParser.impliesExpression_return impliesExpression264 = null;
 		
-		CFMLParser.identifier_return identifier265 = null;
+		CFScriptParser.identifier_return identifier265 = null;
 		
-		CFMLParser.impliesExpression_return impliesExpression267 = null;
+		CFScriptParser.impliesExpression_return impliesExpression267 = null;
 		
-		CFMLParser.impliesExpression_return impliesExpression268 = null;
+		CFScriptParser.impliesExpression_return impliesExpression268 = null;
 		
 		CommonTree COLON263_tree = null;
 		CommonTree EQUALSOP266_tree = null;
@@ -9002,8 +9002,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:565:1:
 	// identifier : ( IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR
 	// | TO | DEFAULT | {...}? => cfscriptKeywords );
-	public final CFMLParser.identifier_return identifier() throws RecognitionException {
-		CFMLParser.identifier_return retval = new CFMLParser.identifier_return();
+	public final CFScriptParser.identifier_return identifier() throws RecognitionException {
+		CFScriptParser.identifier_return retval = new CFScriptParser.identifier_return();
 		retval.start = input.LT(1);
 		int identifier_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -9017,7 +9017,7 @@ public class CFMLParser extends Parser {
 		Token VAR275 = null;
 		Token TO276 = null;
 		Token DEFAULT277 = null;
-		CFMLParser.cfscriptKeywords_return cfscriptKeywords278 = null;
+		CFScriptParser.cfscriptKeywords_return cfscriptKeywords278 = null;
 		
 		CommonTree IDENTIFIER269_tree = null;
 		CommonTree DOES270_tree = null;
@@ -9242,8 +9242,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:578:1:
 	// cfscriptKeywords : ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN |
 	// WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT );
-	public final CFMLParser.cfscriptKeywords_return cfscriptKeywords() throws RecognitionException {
-		CFMLParser.cfscriptKeywords_return retval = new CFMLParser.cfscriptKeywords_return();
+	public final CFScriptParser.cfscriptKeywords_return cfscriptKeywords() throws RecognitionException {
+		CFScriptParser.cfscriptKeywords_return retval = new CFScriptParser.cfscriptKeywords_return();
 		retval.start = input.LT(1);
 		int cfscriptKeywords_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -9315,8 +9315,8 @@ public class CFMLParser extends Parser {
 	// primaryExpression : ( STRING_LITERAL | BOOLEAN_LITERAL |
 	// FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct
 	// | NULL | '(' ( LT )* assignmentExpression ( LT )* ')' | identifier );
-	public final CFMLParser.primaryExpression_return primaryExpression() throws RecognitionException {
-		CFMLParser.primaryExpression_return retval = new CFMLParser.primaryExpression_return();
+	public final CFScriptParser.primaryExpression_return primaryExpression() throws RecognitionException {
+		CFScriptParser.primaryExpression_return retval = new CFScriptParser.primaryExpression_return();
 		retval.start = input.LT(1);
 		int primaryExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -9330,13 +9330,13 @@ public class CFMLParser extends Parser {
 		Token LT288 = null;
 		Token LT290 = null;
 		Token char_literal291 = null;
-		CFMLParser.implicitArray_return implicitArray284 = null;
+		CFScriptParser.implicitArray_return implicitArray284 = null;
 		
-		CFMLParser.implicitStruct_return implicitStruct285 = null;
+		CFScriptParser.implicitStruct_return implicitStruct285 = null;
 		
-		CFMLParser.assignmentExpression_return assignmentExpression289 = null;
+		CFScriptParser.assignmentExpression_return assignmentExpression289 = null;
 		
-		CFMLParser.identifier_return identifier292 = null;
+		CFScriptParser.identifier_return identifier292 = null;
 		
 		CommonTree STRING_LITERAL280_tree = null;
 		CommonTree BOOLEAN_LITERAL281_tree = null;
@@ -9605,8 +9605,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:608:1:
 	// implicitArray : LEFTBRACKET ( primaryExpression ( ',' primaryExpression
 	// )* )? RIGHTBRACKET ;
-	public final CFMLParser.implicitArray_return implicitArray() throws RecognitionException {
-		CFMLParser.implicitArray_return retval = new CFMLParser.implicitArray_return();
+	public final CFScriptParser.implicitArray_return implicitArray() throws RecognitionException {
+		CFScriptParser.implicitArray_return retval = new CFScriptParser.implicitArray_return();
 		retval.start = input.LT(1);
 		int implicitArray_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -9614,9 +9614,9 @@ public class CFMLParser extends Parser {
 		Token LEFTBRACKET293 = null;
 		Token char_literal295 = null;
 		Token RIGHTBRACKET297 = null;
-		CFMLParser.primaryExpression_return primaryExpression294 = null;
+		CFScriptParser.primaryExpression_return primaryExpression294 = null;
 		
-		CFMLParser.primaryExpression_return primaryExpression296 = null;
+		CFScriptParser.primaryExpression_return primaryExpression296 = null;
 		
 		CommonTree LEFTBRACKET293_tree = null;
 		CommonTree char_literal295_tree = null;
@@ -9750,8 +9750,8 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:612:1:
 	// implicitStruct : LEFTCURLYBRACKET ( implicitStructExpression ( ( ',' |
 	// SEMICOLON ) implicitStructExpression )* )? RIGHTCURLYBRACKET ;
-	public final CFMLParser.implicitStruct_return implicitStruct() throws RecognitionException {
-		CFMLParser.implicitStruct_return retval = new CFMLParser.implicitStruct_return();
+	public final CFScriptParser.implicitStruct_return implicitStruct() throws RecognitionException {
+		CFScriptParser.implicitStruct_return retval = new CFScriptParser.implicitStruct_return();
 		retval.start = input.LT(1);
 		int implicitStruct_StartIndex = input.index();
 		CommonTree root_0 = null;
@@ -9759,9 +9759,9 @@ public class CFMLParser extends Parser {
 		Token LEFTCURLYBRACKET298 = null;
 		Token set300 = null;
 		Token RIGHTCURLYBRACKET302 = null;
-		CFMLParser.implicitStructExpression_return implicitStructExpression299 = null;
+		CFScriptParser.implicitStructExpression_return implicitStructExpression299 = null;
 		
-		CFMLParser.implicitStructExpression_return implicitStructExpression301 = null;
+		CFScriptParser.implicitStructExpression_return implicitStructExpression301 = null;
 		
 		CommonTree LEFTCURLYBRACKET298_tree = null;
 		CommonTree set300_tree = null;
@@ -9909,16 +9909,16 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:617:1:
 	// implicitStructExpression : implicitStructKeyExpression ( COLON | EQUALSOP
 	// ) primaryExpression ;
-	public final CFMLParser.implicitStructExpression_return implicitStructExpression() throws RecognitionException {
-		CFMLParser.implicitStructExpression_return retval = new CFMLParser.implicitStructExpression_return();
+	public final CFScriptParser.implicitStructExpression_return implicitStructExpression() throws RecognitionException {
+		CFScriptParser.implicitStructExpression_return retval = new CFScriptParser.implicitStructExpression_return();
 		retval.start = input.LT(1);
 		int implicitStructExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token set304 = null;
-		CFMLParser.implicitStructKeyExpression_return implicitStructKeyExpression303 = null;
+		CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression303 = null;
 		
-		CFMLParser.primaryExpression_return primaryExpression305 = null;
+		CFScriptParser.primaryExpression_return primaryExpression305 = null;
 		
 		CommonTree set304_tree = null;
 		
@@ -10004,19 +10004,19 @@ public class CFMLParser extends Parser {
 	// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:621:1:
 	// implicitStructKeyExpression : identifier ( DOT ( identifier |
 	// reservedWord ) )* ;
-	public final CFMLParser.implicitStructKeyExpression_return implicitStructKeyExpression()
+	public final CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression()
 			throws RecognitionException {
-		CFMLParser.implicitStructKeyExpression_return retval = new CFMLParser.implicitStructKeyExpression_return();
+		CFScriptParser.implicitStructKeyExpression_return retval = new CFScriptParser.implicitStructKeyExpression_return();
 		retval.start = input.LT(1);
 		int implicitStructKeyExpression_StartIndex = input.index();
 		CommonTree root_0 = null;
 		
 		Token DOT307 = null;
-		CFMLParser.identifier_return identifier306 = null;
+		CFScriptParser.identifier_return identifier306 = null;
 		
-		CFMLParser.identifier_return identifier308 = null;
+		CFScriptParser.identifier_return identifier308 = null;
 		
-		CFMLParser.reservedWord_return reservedWord309 = null;
+		CFScriptParser.reservedWord_return reservedWord309 = null;
 		
 		CommonTree DOT307_tree = null;
 		
@@ -10815,9 +10815,9 @@ public class CFMLParser extends Parser {
 	
 	// $ANTLR start synpred100_CFML
 	public final void synpred100_CFML_fragment() throws RecognitionException {
-		CFMLParser.primaryExpressionIRW_return p = null;
+		CFScriptParser.primaryExpressionIRW_return p = null;
 		
-		CFMLParser.argumentList_return args = null;
+		CFScriptParser.argumentList_return args = null;
 		
 		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:517:5:
 		// ( DOT p= primaryExpressionIRW LEFTPAREN args= argumentList ')' )
@@ -10853,7 +10853,7 @@ public class CFMLParser extends Parser {
 	
 	// $ANTLR start synpred103_CFML
 	public final void synpred103_CFML_fragment() throws RecognitionException {
-		CFMLParser.primaryExpressionIRW_return p = null;
+		CFScriptParser.primaryExpressionIRW_return p = null;
 		
 		// /Users/denny/Documents/workspace-cfe-trunk/cfml.parsing/src/cfml/parsing/cfmentat/antlr/CFML.g:520:7:
 		// ( DOT p= primaryExpressionIRW )

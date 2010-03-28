@@ -6,7 +6,7 @@ import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
-public class CFMLLexer extends Lexer {
+public class CFScriptLexer extends Lexer {
 	public static final int MINUS = 71;
 	public static final int DecimalDigit = 95;
 	public static final int CONCATEQUALS = 82;
@@ -147,15 +147,15 @@ public class CFMLLexer extends Lexer {
 	// delegates
 	// delegators
 	
-	public CFMLLexer() {
+	public CFScriptLexer() {
 		;
 	}
 	
-	public CFMLLexer(CharStream input) {
+	public CFScriptLexer(CharStream input) {
 		this(input, new RecognizerSharedState());
 	}
 	
-	public CFMLLexer(CharStream input, RecognizerSharedState state) {
+	public CFScriptLexer(CharStream input, RecognizerSharedState state) {
 		super(input, state);
 		
 	}

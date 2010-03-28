@@ -1,5 +1,5 @@
 /* 
- *  Copyright (C) 2000 - 2010 TagServlet Ltd
+ *  Copyright (C) 2000 - 2008 TagServlet Ltd
  *
  *  This file is part of Open BlueDragon (OpenBD) CFML Server Engine.
  *  
@@ -29,53 +29,46 @@
 
 package cfml.parsing.cfmentat.antlr;
 
-import java.util.Map;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.antlr.runtime.Token;
-
-public class CFLiteral extends CFExpression implements java.io.Serializable {
-	private static final long serialVersionUID = 1L;
+public class sourceReader extends Object {
 	
-	private String val;
-	private int kind;
+	private List<String> lineBuffer = new ArrayList<String>();
+	private int lineStart, lineCount;
 	
-	public CFLiteral(Token _t) {
-		super(_t);
-		kind = _t.getType();
-		switch (kind) {
-		case CFScriptLexer.FLOATING_POINT_LITERAL:
-		case CFScriptLexer.INTEGER_LITERAL:
-			val = _t.getText();
-			break;
-		case CFScriptLexer.STRING_LITERAL:
-			// create a String, stripping off the surrounding quotes and
-			// replacing any escaped quotes with a single quote
-			String quote = _t.getText().substring(0, 1);
-			String str = _t.getText().substring(1, _t.getText().length() - 1);
-			str = str.replaceAll(quote + quote, quote);
-			val = str;
-			break;
-		case CFScriptLexer.BOOLEAN_LITERAL:
-			val = _t.getText();
-			break;
-		case CFScriptLexer.NULL:
-			val = "";
-			break;
-		default:
-			break;
-		}
+	public sourceReader( BufferedReader in ) throws IOException {
+		this( in, 0, Integer.MAX_VALUE );
 	}
 	
-	public byte getType() {
-		return CFExpression.LITERAL;
-	}
-	
-	public String Decompile(int indent) {
-		try {
-			return val;
-		} catch (Exception e) {
-			return "Couldn't get literal value";
+	public sourceReader( BufferedReader in, int _lineStart, int _lineCount ) throws IOException {
+		
+		lineStart	= _lineStart;
+		lineCount	= _lineCount;
+		
+		if ( lineStart < 0 ) lineStart = 0;
+		
+		//--[ Skip a head
+		int currentLine = 0;
+		while ( ( currentLine < lineStart ) && ( in.readLine() != null ) ) {
+			currentLine++;
 		}
 		
+		if ( currentLine != lineStart )
+			throw new IOException( "sourceReader: not enough lines in the file" );
+		
+		String line;
+		for ( int i = 0; ( i < lineCount ) && ( ( line = in.readLine() ) != null ); i++ ) {
+			lineBuffer.add( line );
+		}
+	}
+	
+	public String[] getLines(){
+		return lineBuffer.toArray( new String[ lineBuffer.size() ] );
+	}
+	
+	public int getLineStart(){
+		return lineStart;
 	}
 }

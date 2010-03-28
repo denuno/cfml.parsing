@@ -15,6 +15,8 @@ import net.htmlparser.jericho.StartTag;
 import org.junit.Before;
 import org.junit.Test;
 
+import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+
 public class TestCFMLParser {
 	
 	private CFMLParser fCfmlParser;
@@ -126,6 +128,69 @@ public class TestCFMLParser {
 		}
 		CFMLSource cfmlSource = fCfmlParser.getCFMLSource(path);
 		assertNotNull(cfmlSource);
+	}
+	
+	@Test
+	public void testParseScript() {
+		String path = "";
+		String script = "var x = 1; y = 5; createObject('java','java.lang.String');";
+		try {
+			path = new URL(sourceUrlFile).getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptMissingSemiColon() {
+		String path = "";
+		String script = "var x = 1; y = 5 createObject('java','java.lang.String');";
+		try {
+			path = new URL(sourceUrlFile).getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptMissingAssignment() {
+		String path = "";
+		String script = "var x = 1; y =; createObject('java','java.lang.String');";
+		try {
+			path = new URL(sourceUrlFile).getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		assertNotNull(scriptStatement);
 	}
 	
 	@Test

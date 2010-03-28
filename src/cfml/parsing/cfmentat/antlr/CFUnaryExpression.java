@@ -53,35 +53,35 @@ public class CFUnaryExpression extends CFExpression implements java.io.Serializa
 		StringBuilder sb = new StringBuilder();
 		
 		switch (kind) {
-		case CFMLLexer.MINUS:
+		case CFScriptLexer.MINUS:
 			sb.append('-');
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.NOT:
+		case CFScriptLexer.NOT:
 			sb.append("NOT ");
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.NOTOP:
+		case CFScriptLexer.NOTOP:
 			sb.append('!');
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.PLUS:
+		case CFScriptLexer.PLUS:
 			sb.append('+');
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.PLUSPLUS:
+		case CFScriptLexer.PLUSPLUS:
 			sb.append("++");
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.MINUSMINUS:
+		case CFScriptLexer.MINUSMINUS:
 			sb.append("--");
 			sb.append(sub.Decompile(0));
 			break;
-		case CFMLLexer.POSTPLUSPLUS:
+		case CFScriptLexer.POSTPLUSPLUS:
 			sb.append(sub.Decompile(0));
 			sb.append("--");
 			break;
-		case CFMLLexer.POSTMINUSMINUS:
+		case CFScriptLexer.POSTMINUSMINUS:
 			sb.append(sub.Decompile(0));
 			sb.append("--");
 			break;

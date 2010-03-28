@@ -27,7 +27,7 @@
  *  http://www.openbluedragon.org/
  */
 
-tree grammar CFMLTree;
+tree grammar CFScriptTree;
  
 options {
   tokenVocab=CFML;

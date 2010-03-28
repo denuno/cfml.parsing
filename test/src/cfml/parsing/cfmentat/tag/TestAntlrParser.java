@@ -19,9 +19,9 @@ import org.junit.Test;
 
 import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
 import cfml.parsing.cfmentat.antlr.CFExpression;
-import cfml.parsing.cfmentat.antlr.CFMLLexer;
-import cfml.parsing.cfmentat.antlr.CFMLParser;
-import cfml.parsing.cfmentat.antlr.CFMLTree;
+import cfml.parsing.cfmentat.antlr.CFScriptLexer;
+import cfml.parsing.cfmentat.antlr.CFScriptParser;
+import cfml.parsing.cfmentat.antlr.CFScriptTree;
 import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
 import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
 import cfml.parsing.cfmentat.antlr.sourceReader;
@@ -68,7 +68,7 @@ public class TestAntlrParser {
 	@Test
 	public void testCFScriptStatement() {
 		CFScriptStatement scriptStatement;
-		String script = "var x = 1; y = 5; createObject('java','java.lang.String');";
+		String script = "var x = 1; y = 5; createObject('java','java.lang.String'); createObject('java','java.lang.String');";
 		char[] scriptWithEndTag = script.toCharArray();
 		
 		try {
@@ -78,15 +78,15 @@ public class TestAntlrParser {
 			// )
 			// );
 			
-			CFMLLexer lexer = new CFMLLexer(input);
+			CFScriptLexer lexer = new CFScriptLexer(input);
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
-			CFMLParser parser = new CFMLParser(tokens);
+			CFScriptParser parser = new CFScriptParser(tokens);
 			ParserRuleReturnScope r = parser.scriptBlock();
 			CommonTree tree = (CommonTree) r.getTree();
 			
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 			nodes.setTokenStream(tokens);
-			CFMLTree p2 = new CFMLTree(nodes);
+			CFScriptTree p2 = new CFScriptTree(nodes);
 			scriptStatement = p2.scriptBlock();
 			
 			// find special cases of "#varName#"="value";

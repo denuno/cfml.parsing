@@ -1,6 +1,7 @@
 package cfml.parsing;
 
 import java.io.BufferedReader;
+import java.io.CharArrayReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,9 +14,24 @@ import java.util.Set;
 
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.StartTag;
+
+import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.ParserRuleReturnScope;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.tree.CommonTree;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
+
 import cfml.dictionary.DictionaryManager;
 import cfml.dictionary.Parameter;
 import cfml.dictionary.SyntaxDictionary;
+import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
+import cfml.parsing.cfmentat.antlr.CFScriptLexer;
+import cfml.parsing.cfmentat.antlr.CFScriptParser;
+import cfml.parsing.cfmentat.antlr.CFScriptTree;
+import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
+import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
+import cfml.parsing.cfmentat.antlr.sourceReader;
+import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
 
 public class CFMLParser {
 	
@@ -219,6 +235,48 @@ public class CFMLParser {
 			}
 		}
 		
+	}
+	
+	public CFScriptStatement parseScript(String cfscript) throws ParseException, IOException {
+		CFScriptStatement scriptStatement = null;
+		char[] scriptWithEndTag = cfscript.toCharArray();
+		
+		poundSignFilterStream psfstream = new poundSignFilterStream(new CharArrayReader(scriptWithEndTag));
+		ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(psfstream); // +
+		CFScriptLexer lexer = new CFScriptLexer(input);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		CFScriptParser parser = new CFScriptParser(tokens);
+		try {
+			// "</CFSCRIPT>")
+			// )
+			// );
+			ParserRuleReturnScope r = parser.scriptBlock();
+			CommonTree tree = (CommonTree) r.getTree();
+			System.out.println(parser.getSourceName());
+			System.out.println(parser.getNumberOfSyntaxErrors());
+			
+			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+			System.out.println(nodes.getTreeAdaptor().getChildCount(tree));
+			nodes.setTokenStream(tokens);
+			CFScriptTree p2 = new CFScriptTree(nodes);
+			scriptStatement = p2.scriptBlock();
+			
+			// find special cases of "#varName#"="value";
+			sourceReader sr = new sourceReader(new BufferedReader(new CharArrayReader(cfscript.toCharArray())));
+			scriptStatement.checkIndirectAssignments(sr.getLines());
+		} catch (RecognitionException e) {
+			parser.displayRecognitionError(parser.getTokenNames(), e);
+			System.out.println(cfscript);
+			System.out.println(e.line + ":" + e.charPositionInLine + " er:" + e.getMessage()
+					+ parser.getTokenErrorDisplay(e.token) + e.token.getTokenIndex() + e.getUnexpectedType()
+					+ cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (poundSignFilterStreamException e) {
+			e.printStackTrace();
+		}
+		return scriptStatement;
 	}
 	
 	public void parse() {
