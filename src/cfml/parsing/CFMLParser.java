@@ -16,10 +16,7 @@ import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.StartTag;
 
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.ParserRuleReturnScope;
 import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.tree.CommonTree;
-import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 import cfml.dictionary.DictionaryManager;
 import cfml.dictionary.Parameter;
@@ -27,12 +24,7 @@ import cfml.dictionary.SyntaxDictionary;
 import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
 import cfml.parsing.cfmentat.antlr.CFScriptLexer;
 import cfml.parsing.cfmentat.antlr.CFScriptParser;
-import cfml.parsing.cfmentat.antlr.CFScriptTree;
-import cfml.parsing.cfmentat.antlr.ParseException;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
-import cfml.parsing.cfmentat.antlr.sourceReader;
-import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+import cfml.parsing.cfmentat.antlr.CFScriptParser.script_return;
 
 public class CFMLParser {
 	
@@ -238,50 +230,19 @@ public class CFMLParser {
 		
 	}
 	
-	public CFScriptStatement parseScript(String cfscript) throws ParseException, IOException {
-		CFScriptStatement scriptStatement = null;
+	public script_return parseScript(String cfscript) throws IOException {
 		char[] scriptWithEndTag = cfscript.toCharArray();
-		
-		poundSignFilterStream psfstream = new poundSignFilterStream(new CharArrayReader(scriptWithEndTag));
-		ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(psfstream); // +
+		ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(new CharArrayReader(scriptWithEndTag)); // +
 		CFScriptLexer lexer = new CFScriptLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		CFScriptParser parser = new CFScriptParser(tokens);
+		script_return script = null;
 		try {
-			// "</CFSCRIPT>")
-			// )
-			// );
-			ParserRuleReturnScope r = parser.scriptBlock();
-			CommonTree tree = (CommonTree) r.getTree();
-			System.out.println(parser.getSourceName());
-			System.out.println(parser.getNumberOfSyntaxErrors());
-			
-			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-			System.out.println(nodes.getTreeAdaptor().getChildCount(tree));
-			nodes.setTokenStream(tokens);
-			CFScriptTree p2 = new CFScriptTree(nodes);
-			scriptStatement = p2.scriptBlock();
-			
-			// find special cases of "#varName#"="value";
-			sourceReader sr = new sourceReader(new BufferedReader(new CharArrayReader(cfscript.toCharArray())));
-			scriptStatement.checkIndirectAssignments(sr.getLines());
+			script = parser.script();
 		} catch (RecognitionException e) {
-			throw new ParseException(e.token, "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'");
-			// addMessage(new ParseError(e.line, e.charPositionInLine, e.charPositionInLine, parser
-			// .getTokenErrorDisplay(e.token), "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'"));
-			// parser.displayRecognitionError(parser.getTokenNames(), e);
-			// System.out.println(cfscript);
-			// System.out.println(parser.getErrorMessage(e, parser.getTokenNames()));
-			// System.out.println(e.line + ":" + e.charPositionInLine + " er:" + e.getMessage()
-			// + parser.getTokenErrorDisplay(e.token) + e.token.getTokenIndex() + e.getUnexpectedType()
-			// + cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
-			// e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (poundSignFilterStreamException e) {
 			e.printStackTrace();
 		}
-		return scriptStatement;
+		return script;
 	}
 	
 	public void parse() {
