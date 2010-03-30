@@ -37,7 +37,6 @@ package cfml.parsing.cfmentat.antlr.script;
 import java.util.Iterator;
 import java.util.List;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFCase implements CFScriptStatement, java.io.Serializable {

@@ -33,7 +33,6 @@ import java.util.List;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.ParseException;
 
 public class CFTryCatchStatement extends CFParsedStatement implements java.io.Serializable {
@@ -42,14 +41,16 @@ public class CFTryCatchStatement extends CFParsedStatement implements java.io.Se
 	
 	private CFScriptStatement body; // body of the try block
 	private List<cfCatchClause> catchStatements;
+	private CFScriptStatement finallyStatement;
 	
-	public CFTryCatchStatement(Token _t1, CFScriptStatement _s1, List<cfCatchClause> _catches) {
+	public CFTryCatchStatement(Token _t1, CFScriptStatement _s1, List<cfCatchClause> _catches,
+			CFScriptStatement _finally) {
 		super(_t1);
 		body = _s1;
 		catchStatements = _catches;
 		
-		if (catchStatements.size() == 0) {
-			throw new ParseException(_t1, "try statement must include at least one catch clause.");
+		if (catchStatements.size() == 0 && _finally == null) {
+			throw new ParseException(_t1, "try statement must include at least one catch clause or a finally clause.");
 		}
 		
 		// now stick the catch 'any' if there is one at the end
@@ -67,6 +68,8 @@ public class CFTryCatchStatement extends CFParsedStatement implements java.io.Se
 		if (catchAny != null) {
 			catchStatements.add(catchAny);
 		}
+		
+		finallyStatement = _finally;
 	}
 	
 	public void checkIndirectAssignments(String[] scriptSource) {

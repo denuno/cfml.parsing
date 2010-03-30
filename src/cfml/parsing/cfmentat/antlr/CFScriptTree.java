@@ -4,15 +4,38 @@ package cfml.parsing.cfmentat.antlr;
 
 import java.util.ArrayList;
 import java.util.Vector;
-import cfml.parsing.cfmentat.antlr.script.*;
 
-import org.antlr.runtime.*;
-import org.antlr.runtime.tree.*;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import org.antlr.runtime.BaseRecognizer;
+import org.antlr.runtime.BitSet;
+import org.antlr.runtime.DFA;
+import org.antlr.runtime.FailedPredicateException;
+import org.antlr.runtime.IntStream;
+import org.antlr.runtime.MismatchedSetException;
+import org.antlr.runtime.MismatchedTokenException;
+import org.antlr.runtime.NoViableAltException;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.RecognizerSharedState;
+import org.antlr.runtime.Token;
+import org.antlr.runtime.tree.CommonTree;
+import org.antlr.runtime.tree.TreeNodeStream;
+import org.antlr.runtime.tree.TreeParser;
+
+import cfml.parsing.cfmentat.antlr.script.CFBreakStatement;
+import cfml.parsing.cfmentat.antlr.script.CFCase;
+import cfml.parsing.cfmentat.antlr.script.CFCatchStatement;
+import cfml.parsing.cfmentat.antlr.script.CFCompoundStatement;
+import cfml.parsing.cfmentat.antlr.script.CFContinueStatement;
+import cfml.parsing.cfmentat.antlr.script.CFDoWhileStatement;
+import cfml.parsing.cfmentat.antlr.script.CFExpressionStatement;
+import cfml.parsing.cfmentat.antlr.script.CFForInStatement;
+import cfml.parsing.cfmentat.antlr.script.CFForStatement;
+import cfml.parsing.cfmentat.antlr.script.CFFuncDeclStatement;
+import cfml.parsing.cfmentat.antlr.script.CFIfStatement;
+import cfml.parsing.cfmentat.antlr.script.CFReturnStatement;
+import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+import cfml.parsing.cfmentat.antlr.script.CFSwitchStatement;
+import cfml.parsing.cfmentat.antlr.script.CFTryCatchStatement;
+import cfml.parsing.cfmentat.antlr.script.CFWhileStatement;
 
 public class CFScriptTree extends TreeParser {
 	public static final String[] tokenNames = new String[] { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOESNOTCONTAIN",
@@ -863,7 +886,7 @@ public class CFScriptTree extends TreeParser {
 					return s;
 				if (state.backtracking == 0) {
 					
-					return new CFTryCatchStatement(t1.getToken(), s1, catchStatements);
+					return new CFTryCatchStatement(t1.getToken(), s1, catchStatements, s1);
 					
 				}
 				

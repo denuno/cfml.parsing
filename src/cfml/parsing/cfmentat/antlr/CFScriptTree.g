@@ -30,18 +30,20 @@
 tree grammar CFScriptTree;
  
 options {
-  tokenVocab=CFML;
+  tokenVocab=CFScript;
   ASTLabelType=CommonTree;
   backtrack=true;
 }
 
 
 @header {
-  package cfml.parsing.cfmentat.antlr;
+  package com.naryx.tagfusion.cfm.parser;
 
 	import java.util.ArrayList;
 	import java.util.Vector;
-  import cfml.parsing.cfmentat.antlr.script.*;
+	import com.naryx.tagfusion.cfm.parser.ArgumentsVector;
+  import com.naryx.tagfusion.cfm.parser.script.*;
+  import com.naryx.tagfusion.cfm.engine.cfCatchClause;
 }
 
 @members { public boolean scriptMode = true;
@@ -99,6 +101,7 @@ statement returns [CFScriptStatement s] throws ParseException
   | s1=switchStatement { s = s1; }
   | s1=tryStatement { s = s1; }
   | s2=compoundStatement { s = s2; }
+  | s1=tagOperatorStatement { s = s1; }
   ;
 
 returnStatement returns [CFScriptStatement s ] throws ParseException
@@ -107,21 +110,26 @@ returnStatement returns [CFScriptStatement s ] throws ParseException
 
 tryStatement returns [CFScriptStatement s] throws ParseException
 @init{
-  ArrayList catchStatements = new ArrayList();
+  ArrayList<cfCatchClause> catchStatements = new ArrayList<cfCatchClause>();
 }
   : ^(t1=TRY s1=statement 
-    ( c=catchStatement { catchStatements.add( c ); } )* )
+    ( c=catchStatement { catchStatements.add( c ); } )* (f=finallyStatement)?)
     {
-      return new CFTryCatchStatement( t1.getToken(), s1, catchStatements );
+      return new CFTryCatchStatement( t1.getToken(), s1, catchStatements, f );
     }
   ;
   
-catchStatement returns [CFCatchStatement c]
+catchStatement returns [cfCatchClause c]
   : ^(t1=CATCH e1=exceptionType e2=identifier s1=compoundStatement ){
     c = new CFCatchStatement( e1, e2.getName(), s1 );;
   }
   ;
 
+finallyStatement returns [CFScriptStatement s]
+  : ^(FINALLY s1=compoundStatement ){
+    s = s1;
+  }
+  ;
 
 exceptionType returns [String image]
 @init{
@@ -130,7 +138,7 @@ exceptionType returns [String image]
   : i1=identifier { sb.append( i1.getName() ); }
     ( DOT ( i2=identifier | i2=reservedWord ) { 
         sb.append( '.' );
-        sb.append( i1.getName() ); 
+        sb.append( i2.getName() ); 
       } 
     )* { image = sb.toString(); }
   | t=STRING_LITERAL { image = t.getToken().getText().substring( 1, t.getToken().getText().length() - 1 ); }
@@ -138,7 +146,7 @@ exceptionType returns [String image]
   
 switchStatement returns [CFScriptStatement s ]
 @init{ 
-  ArrayList cases = new ArrayList(); 
+  ArrayList<CFCase> cases = new ArrayList<CFCase>(); 
 }  
   : ^(t1=SWITCH c=expression LEFTCURLYBRACKET
   ( cs = caseStatement { cases.add( cs ); } )* RIGHTCURLYBRACKET 
@@ -147,7 +155,7 @@ switchStatement returns [CFScriptStatement s ]
  
 caseStatement returns [CFCase c]
 @init{
-  ArrayList block = new ArrayList();
+  ArrayList<CFScriptStatement> block = new ArrayList<CFScriptStatement>();
 }
   : ^(CASE e2=expression COLON ( s1=statement { block.add( s1 ); } )* ) { c = new CFCase( e2, block ); } 
   | 
@@ -178,13 +186,16 @@ forInKey returns [CFExpression e]
   ;
     
  
-parameterList returns [ArrayList v]
-@init{ v = new ArrayList(); }
+parameterList returns [ArrayList<String> v]
+@init{ v = new ArrayList<String>(); }
   : ( i=identifier { v.add( ( (CFIdentifier) i).getName() ); } )*
   ; 
   
+tagOperatorStatement returns [CFScriptStatement e]
+  : ^(t1=INCLUDE e1=memberExpression ){ e = new IncludeStatement( t1.getToken(), e1 ); }
+  ;
 
-//--- expression engine grammar rules (a subset of the cfscript rules) 
+//--- expression engine grammar rules (a subset of the cfscript rules)
   
 expression returns [CFExpression e]
   :  be=binaryExpression { e = be; } 
@@ -192,17 +203,19 @@ expression returns [CFExpression e]
   ; 
 
 localAssignmentExpression returns [CFExpression e]
-  : ^( op=VARLOCAL e1=assignmentExpression ){ e1.setLocal( true ); e = e1; }
+  : ^( op=VARLOCAL e1=identifier ( EQUALSOP e2=memberExpression)? ){ 
+      e = new CFVarDeclExpression( op.getToken(), e1, e2 );
+    }
   ;
 
 assignmentExpression returns [CFAssignmentExpression e]
-  : ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=PLUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=MINUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=STAREQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=SLASHEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=MODEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
-  | ^( op=CONCATEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), false, e1, e2 ); }
+  : ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=PLUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=MINUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=STAREQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=SLASHEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=MODEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=CONCATEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   ;
      
 binaryExpression returns [CFExpression e]
@@ -244,6 +257,7 @@ unaryExpression returns [CFExpression e]
   | ^( op=MINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTPLUSPLUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTMINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
+  | e1 = newComponentExpression { e = e1; }
   ;    
    
 memberExpression returns [CFExpression e] throws ParseException
@@ -313,6 +327,8 @@ identifier returns [CFIdentifier e]
   | t=VAR         { e = new CFIdentifier( t.getToken() ); }
   | t=DEFAULT     { e = new CFIdentifier( t.getToken() ); }
   | t=TO          { e = new CFIdentifier( t.getToken() ); }
+  | t=INCLUDE     { e = new CFIdentifier( t.getToken() ); }
+  | t=NEW         { e = new CFIdentifier( t.getToken() ); }
   | {!scriptMode}?=> kw=cfscriptKeywords { e = kw; }
   ;
 
@@ -365,28 +381,30 @@ reservedWord returns [CFIdentifier e]
   ;
 
 implicitArray returns [CFArrayExpression e]
-  : ^(t=LEFTBRACKET {e = new CFArrayExpression(t.getToken());}
-    ( e1 = primaryExpression { e.addElement( e1 ); } )* RIGHTBRACKET)
+  : ^(t=IMPLICITARRAY {e = new CFArrayExpression(t.getToken());}
+    ( e1 = expression { e.addElement( e1 ); } )* ) 
   ;
   
 implicitStruct returns [CFStructExpression e]
-  : ^(t=LEFTCURLYBRACKET { e = new CFStructExpression( t.getToken() ); } 
+  : ^(t=IMPLICITSTRUCT { e = new CFStructExpression( t.getToken() ); } 
       ( 
 	      e1=implicitStructExpression { e.addElement( e1 ); }
-	      ( ( ',' | SEMICOLON ) e1=implicitStructExpression { e.addElement( e1 ); } )* 
-      )? RIGHTCURLYBRACKET
+	      ( ',' e1=implicitStructExpression { e.addElement( e1 ); } )* 
+      )? 
     )
   ;
 
 
 implicitStructExpression returns [CFStructElementExpression e]
-  : ^( ( COLON | EQUALSOP ) e1=implicitStructKeyExpression e2=primaryExpression )
+  : ^( ( COLON | EQUALSOP ) e1=implicitStructKeyExpression e2=expression )
     { return new CFStructElementExpression( e1, e2 ); } 
   ;
   
-implicitStructKeyExpression returns [ArrayList e]
-  : t=identifier { e = new ArrayList(); e.add( t ); }
-    ( DOT ( t=identifier | t=reservedWord ) { e.add( t ); } )*
+implicitStructKeyExpression returns [ArrayList<String> e]
+@init{ e = new ArrayList<String>(); }
+  : t=identifier { e.add( t.getName() ); }
+    ( DOT ( t=identifier | t=reservedWord ) { e.add( t.getName() ); } )*
+  | e1=STRING_LITERAL { e.add( e1.getToken().getText().substring( 1, e1.getToken().getText().length() - 1 ) ); }
   ; 
 
 argumentList returns [Vector<CFExpression> v]
@@ -413,7 +431,13 @@ argument[Vector<CFExpression> v] returns [Vector<CFExpression> vl]
   ;
 
 
-
-
+newComponentExpression returns [CFExpression e]
+  : ^( t=NEW c=componentPath LEFTPAREN args=argumentList ){ e = new CFNewExpression( t.getToken(), c, args ); }
+  ;
   
-
+componentPath returns [String e]
+@init{ StringBuilder sb = null; }
+  : t=STRING_LITERAL { e = t.getToken().getText().substring( 1, t.getToken().getText().length()-1 ); }
+  | i=identifier { sb = new StringBuilder(); sb.append( i.getName() ); }
+    ( DOT i2=identifier { sb.append( "." ); sb.append( i2.getName() ); } )* { e = sb.toString(); }
+  ;

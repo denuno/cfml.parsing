@@ -36,11 +36,7 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-import cfml.parsing.cfmentat.antlr.CFExpression;
-
 abstract public class CFParsedStatement implements CFScriptStatement, java.io.Serializable {
-	
 	private static final long serialVersionUID = 1L;
 	
 	protected int _line;
@@ -61,8 +57,12 @@ abstract public class CFParsedStatement implements CFScriptStatement, java.io.Se
 		// default behavior: do nothing
 	}
 	
-	protected void setLineCol(CFContext context) {
-		context.setLineCol(_line, _col);
+	public int getLine() {
+		return _line;
+	}
+	
+	public int getColumn() {
+		return _col;
 	}
 	
 	public String Indent(int indent) {
@@ -72,5 +72,4 @@ abstract public class CFParsedStatement implements CFScriptStatement, java.io.Se
 		}
 		return sb.toString();
 	}
-	
 }

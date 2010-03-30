@@ -29,46 +29,14 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-import org.antlr.runtime.Token;
+import cfml.parsing.cfmentat.antlr.CFContext;
+import cfml.parsing.cfmentat.antlr.cfData;
 
-import cfml.parsing.cfmentat.antlr.CFExpression;
-
-public class CFForStatement extends CFParsedStatement implements java.io.Serializable {
-	private static final long serialVersionUID = 1L;
+public class ExceptionVarHandler {
 	
-	private CFExpression init;
-	private CFExpression cond;
-	private CFExpression next;
-	private CFScriptStatement body;
+	private cfData preExistVal;
 	
-	public CFForStatement(Token _t, CFExpression _init, CFExpression _cond, CFExpression _next, CFScriptStatement _body) {
-		super(_t);
-		init = _init;
-		cond = _cond;
-		next = _next;
-		body = _body;
-	}
-	
-	public void checkIndirectAssignments(String[] scriptSource) {
-		body.checkIndirectAssignments(scriptSource);
-	}
-	
-	public String Decompile(int indent) {
-		String s = Indent(indent) + "for(";
-		if (init != null) {
-			s += init.Decompile(indent);
-		}
-		s += ";";
-		if (cond != null) {
-			s += cond.Decompile(indent);
-		}
-		s += ";";
-		if (next != null) {
-			s += next.Decompile(indent);
-		}
-		body.Decompile(indent + 2);
-		
-		return s;
-	}
+	private CFContext context;
+	private String varname;
 	
 }

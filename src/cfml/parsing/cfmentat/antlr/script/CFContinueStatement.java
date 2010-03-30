@@ -31,18 +31,11 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-
 public class CFContinueStatement extends CFParsedStatement implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	public CFContinueStatement(Token t) {
 		super(t);
-	}
-	
-	public CFStatementResult Exec(CFContext context) {
-		setLineCol(context);
-		return CFStatementResult.CONTINUE;
 	}
 	
 	public String Decompile(int indent) {

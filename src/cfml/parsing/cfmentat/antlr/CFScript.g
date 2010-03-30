@@ -46,10 +46,13 @@ tokens {
   FUNCDECL; // function declaration
   POSTMINUSMINUS; // '--' post-expression
   POSTPLUSPLUS; // '++' post-expression
+  IMPLICITSTRUCT; // implicit struct 
+  IMPLICITARRAY; // implicit struct
 }
 
-@parser::header { package cfml.parsing.cfmentat.antlr; }
-@lexer::header { package cfml.parsing.cfmentat.antlr; }
+@parser::header { package com.naryx.tagfusion.cfm.parser; }
+@lexer::header { package com.naryx.tagfusion.cfm.parser; }
+ 
 
 @members { public boolean scriptMode = true; 
 
@@ -60,25 +63,6 @@ protected void mismatch( IntStream input, int ttype, BitSet follow ) throws Reco
 public Object recoverFromMismatchedSet( IntStream input, RecognitionException e, BitSet follow ) throws RecognitionException{
   throw e;
 }
-
-public String getErrorMessage(RecognitionException e, 
-	String[] tokenNames) 
-	{ 
-	List stack = getRuleInvocationStack(e, this.getClass().getName()); 
-	String msg = null; 
-	if ( e instanceof NoViableAltException ) { 
-	NoViableAltException nvae = (NoViableAltException)e; 
-	msg = " no viable alt; token="+e.token+ 
-	" (decision="+nvae.decisionNumber+ 
-	" state "+nvae.stateNumber+")"+ 
-	" decision=<<"+nvae.grammarDecisionDescription+">>"; 
-	} 
-	else { 
-	msg = super.getErrorMessage(e, tokenNames); 
-	} 
-	return stack+" "+msg; 
-} 
-
 }
 
 @lexer::members {
@@ -125,6 +109,7 @@ catch (RecognitionException e) {
   throw e;
 }
 }
+
 
 //Note: need case insensitive stream: http://www.antlr.org/wiki/pages/viewpage.action?pageId=1782
 
@@ -224,6 +209,7 @@ AND: 'AND';
 NOT: 'NOT';
 MOD: 'MOD';
 VAR: 'VAR';
+NEW: 'NEW';
 
 // cfscript
 IF: 'IF';
@@ -241,6 +227,7 @@ CATCH: 'CATCH';
 SWITCH: 'SWITCH';
 CASE: 'CASE';
 DEFAULT: 'DEFAULT';
+FINALLY: 'FINALLY';
 
 SCRIPTCLOSE: '</CFSCRIPT>'; 
 
@@ -276,6 +263,9 @@ RIGHTPAREN: ')';
 LEFTCURLYBRACKET: '{';
 RIGHTCURLYBRACKET: '}';
 
+// tag operators
+INCLUDE: 'INCLUDE';
+
 IDENTIFIER 
 	:	LETTER (LETTER|DIGIT)*;
 	
@@ -310,7 +300,7 @@ endOfScriptBlock
   ;
   
 element
-  : FUNCTION identifier LEFTPAREN (parameterList)? RIGHTPAREN compoundStatement -> ^( FUNCDECL identifier (parameterList)? compoundStatement )
+  : lc=FUNCTION identifier LEFTPAREN (parameterList)? RIGHTPAREN compoundStatement -> ^( FUNCDECL[$lc] identifier (parameterList)? compoundStatement )
   | statement
   ;
 
@@ -336,6 +326,7 @@ statement
   |   returnStatement
   |   compoundStatement 
   |   localAssignmentExpression SEMICOLON!
+  |   tagOperatorStatement
   |   SEMICOLON! // empty statement
   ;
    
@@ -370,15 +361,19 @@ forInKey
   ;
 
 tryCatchStatement
-  : TRY^ statement ( catchCondition )*
+  : TRY^ statement ( catchCondition )* finallyStatement?
   ;
   
 catchCondition
   : CATCH^ LEFTPAREN! exceptionType identifier RIGHTPAREN! compoundStatement  
   ;
-  
+
+finallyStatement
+  : FINALLY^ compoundStatement
+  ;
+
 exceptionType
-  : identifier ( 'DOT' ( identifier | reservedWord ) )*
+  : identifier ( DOT ( identifier | reservedWord ) )*
   | STRING_LITERAL
   ;
   
@@ -408,6 +403,9 @@ caseStatement
   ;
 
 
+tagOperatorStatement
+  : INCLUDE^ memberExpression
+  ;
 
 //--- expression engine grammar rules (a subset of the cfscript rules)
   
@@ -416,7 +414,7 @@ expression
 	;
 	
 localAssignmentExpression 
-	:	VAR assignmentExpression -> ^( VARLOCAL assignmentExpression ) 
+	:	lc=VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL[$lc] identifier ( EQUALSOP impliesExpression )? ) 
 	|	assignmentExpression
 	;
 
@@ -455,20 +453,20 @@ equalityExpression
 
 equalityOperator1
     : 	IS -> ^(EQ)
-    |   {scriptMode}?=> EQUALSEQUALSOP -> ^(EQ)
+    |   EQUALSEQUALSOP -> ^(EQ)
     |   LT -> ^(LT)
-    |   {scriptMode}?=> '<' -> ^(LT)
+    |   '<' -> ^(LT)
     |   LTE -> ^(LTE)
-    |   {scriptMode}?=> '<=' -> ^(LTE)
+    |   '<=' -> ^(LTE)
     |   LE -> ^(LTE)
     |   GT -> ^(GT)
-    |   {scriptMode}?=> '>' -> ^(GT)
+    |   '>' -> ^(GT)
     |   GTE -> ^(GTE)
-    |   {scriptMode}?=> '>=' -> ^(GTE)
+    |   '>=' -> ^(GTE)
     |   GE -> ^(GTE)
     |   EQ -> ^(EQ)
     |   NEQ -> ^(NEQ)
-    |   {scriptMode}?=> '!=' -> ^(NEQ)
+    |   '!=' -> ^(NEQ)
     |   EQUAL -> ^(EQ)
     |   EQUALS -> ^(EQ)
     |   CONTAINS -> ^(CONTAINS)
@@ -482,7 +480,7 @@ equalityOperator2
     ;
 
 equalityOperator3
-    :   DOES NOT CONTAIN -> ^(DOESNOTCONTAIN)
+    :   lc=DOES NOT CONTAIN -> ^(DOESNOTCONTAIN[$lc])
     ;
 
 equalityOperator5
@@ -519,8 +517,9 @@ unaryExpression
 	| PLUS memberExpression -> ^(PLUS memberExpression)
 	| MINUSMINUS memberExpression -> ^(MINUSMINUS memberExpression) 
 	| PLUSPLUS memberExpression -> ^(PLUSPLUS memberExpression)
-  | memberExpression MINUSMINUS -> ^(POSTMINUSMINUS memberExpression)
-  | memberExpression PLUSPLUS -> ^(POSTPLUSPLUS memberExpression)
+	| newComponentExpression
+  | memberExpression lc=MINUSMINUS -> ^(POSTMINUSMINUS[$lc] memberExpression)
+  | memberExpression lc=PLUSPLUS -> ^(POSTPLUSPLUS[$lc] memberExpression)
   | memberExpression 
 	;
 	
@@ -532,8 +531,8 @@ memberExpression
 memberExpressionB
   : ( primaryExpression -> primaryExpression ) // set return tree to just primary
   ( 
-  : DOT p=primaryExpressionIRW LEFTPAREN args=argumentList ')' -> ^(JAVAMETHODCALL $memberExpressionB $p $args )
-    |  LEFTPAREN args=argumentList RIGHTPAREN -> ^(FUNCTIONCALL $memberExpressionB $args)
+  : lc=DOT p=primaryExpressionIRW LEFTPAREN args=argumentList ')' -> ^(JAVAMETHODCALL[$lc] $memberExpressionB $p $args )
+    |  lc=LEFTPAREN args=argumentList RIGHTPAREN -> ^(FUNCTIONCALL[$lc] $memberExpressionB $args)
     | LEFTBRACKET ie=impliesExpression RIGHTBRACKET -> ^(LEFTBRACKET $memberExpressionB $ie)
     | DOT p=primaryExpressionIRW -> ^(DOT $memberExpressionB $p)
   )*
@@ -590,6 +589,8 @@ identifier
   | VAR
   | TO
   | DEFAULT // default is a cfscript keyword that's always allowed as a var name
+  | INCLUDE
+  | NEW
   | {!scriptMode}?=> cfscriptKeywords 
 	;
 
@@ -624,18 +625,35 @@ primaryExpression
 	;
 
 implicitArray
-  : LEFTBRACKET^ ( primaryExpression ( ','! primaryExpression )* )? RIGHTBRACKET
+  : lc=LEFTBRACKET implicitArrayElements? RIGHTBRACKET -> ^(IMPLICITARRAY[$lc] implicitArrayElements?) 
+  ;
+  
+implicitArrayElements
+  : impliesExpression ( ','! impliesExpression )*
   ;
   
 implicitStruct
-  : LEFTCURLYBRACKET^ ( implicitStructExpression ( ( ',' | SEMICOLON ) implicitStructExpression )* )? RIGHTCURLYBRACKET
+  : lc=LEFTCURLYBRACKET implicitStructElements? RIGHTCURLYBRACKET -> ^(IMPLICITSTRUCT[$lc] implicitStructElements?)
+  ;
+  
+implicitStructElements
+  : implicitStructExpression ( ',' implicitStructExpression )*
   ;
 
-
 implicitStructExpression
-  : implicitStructKeyExpression ( COLON | EQUALSOP )^ primaryExpression 
+  :  implicitStructKeyExpression ( COLON | EQUALSOP )^ impliesExpression 
   ;
   
 implicitStructKeyExpression
   : identifier ( DOT ( identifier | reservedWord ) )*
+  | STRING_LITERAL
+  ;
+
+newComponentExpression
+  : NEW^ componentPath LEFTPAREN argumentList ')'!
+  ;
+  
+componentPath
+  : STRING_LITERAL
+  | identifier ( DOT identifier )*
   ;

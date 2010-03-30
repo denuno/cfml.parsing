@@ -63,8 +63,9 @@ public class CFCatchStatement extends cfCatchClause implements CFScriptStatement
 		return sb.toString();
 	}
 	
-	public String getType() {
+	public Object getType() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 }

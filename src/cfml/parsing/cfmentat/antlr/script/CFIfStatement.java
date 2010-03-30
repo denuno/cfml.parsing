@@ -29,8 +29,6 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-import cfml.parsing.cfmentat.antlr.CFException;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFIfStatement extends CFParsedStatement implements java.io.Serializable {

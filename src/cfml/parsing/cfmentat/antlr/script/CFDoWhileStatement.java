@@ -29,11 +29,8 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-import java.lang.String;
-
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFDoWhileStatement extends CFParsedStatement implements java.io.Serializable {

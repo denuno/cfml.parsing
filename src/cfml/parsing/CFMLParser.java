@@ -28,6 +28,7 @@ import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
 import cfml.parsing.cfmentat.antlr.CFScriptLexer;
 import cfml.parsing.cfmentat.antlr.CFScriptParser;
 import cfml.parsing.cfmentat.antlr.CFScriptTree;
+import cfml.parsing.cfmentat.antlr.ParseException;
 import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
 import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
 import cfml.parsing.cfmentat.antlr.sourceReader;
@@ -265,12 +266,16 @@ public class CFMLParser {
 			sourceReader sr = new sourceReader(new BufferedReader(new CharArrayReader(cfscript.toCharArray())));
 			scriptStatement.checkIndirectAssignments(sr.getLines());
 		} catch (RecognitionException e) {
-			parser.displayRecognitionError(parser.getTokenNames(), e);
-			System.out.println(cfscript);
-			System.out.println(e.line + ":" + e.charPositionInLine + " er:" + e.getMessage()
-					+ parser.getTokenErrorDisplay(e.token) + e.token.getTokenIndex() + e.getUnexpectedType()
-					+ cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
-			e.printStackTrace();
+			throw new ParseException(e.token, "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'");
+			// addMessage(new ParseError(e.line, e.charPositionInLine, e.charPositionInLine, parser
+			// .getTokenErrorDisplay(e.token), "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'"));
+			// parser.displayRecognitionError(parser.getTokenNames(), e);
+			// System.out.println(cfscript);
+			// System.out.println(parser.getErrorMessage(e, parser.getTokenNames()));
+			// System.out.println(e.line + ":" + e.charPositionInLine + " er:" + e.getMessage()
+			// + parser.getTokenErrorDisplay(e.token) + e.token.getTokenIndex() + e.getUnexpectedType()
+			// + cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
+			// e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (poundSignFilterStreamException e) {

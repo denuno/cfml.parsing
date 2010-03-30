@@ -35,8 +35,6 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import java.util.ArrayList;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-
 public class CFCompoundStatement extends CFParsedStatement implements CFScriptStatement, java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	

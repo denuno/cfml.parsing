@@ -29,8 +29,6 @@
 
 package cfml.parsing.cfmentat.antlr.script;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-
 public interface CFScriptStatement {
 	
 	public String Decompile(int indent);

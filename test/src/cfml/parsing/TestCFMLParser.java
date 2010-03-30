@@ -194,6 +194,48 @@ public class TestCFMLParser {
 	}
 	
 	@Test
+	public void testParseScriptFunction() {
+		String path = "";
+		String script = "function runFunction(functionName,argCol) { runFunk = this[functionName]; results = structNew(); results.result = runFunk(argumentCollection=argCol); results.debug = getDebugMessages(); return results; }";
+		try {
+			path = new URL(sourceUrlFile).getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptTryCatch() {
+		String path = "";
+		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
+		try {
+			path = new URL(sourceUrlFile).getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testGetAllTags() {
 		List<Element> elementList = fCfmlParser.getAllTags();
 		for (Element element : elementList) {

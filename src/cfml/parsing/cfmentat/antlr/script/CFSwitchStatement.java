@@ -37,7 +37,6 @@ import java.util.List;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFSwitchStatement extends CFParsedStatement implements java.io.Serializable {

@@ -33,9 +33,6 @@ import java.util.List;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-import cfml.parsing.cfmentat.antlr.ParseException;
-
 public class CFFuncDeclStatement extends CFParsedStatement {
 	
 	private static final long serialVersionUID = 1L;
@@ -50,13 +47,14 @@ public class CFFuncDeclStatement extends CFParsedStatement {
 		formals = _formals;
 		body = _body;
 		
-		// if (
-		// com.naryx.tagfusion.expression.compile.expressionEngine.isFunction(
-		// name ) )
-		if (false)
-			throw new ParseException(_name, "Invalid function name. The name \"" + name
-					+ "\" is the name of a predefined function.");
+		// if (com.naryx.tagfusion.expression.compile.expressionEngine.isFunction(name))
+		// throw new ParseException(_name, "Invalid function name. The name \"" + name
+		// + "\" is the name of a predefined function.");
 		
+	}
+	
+	public CFScriptStatement getBody() {
+		return body;
 	}
 	
 	public void checkIndirectAssignments(String[] scriptSource) {
@@ -65,10 +63,6 @@ public class CFFuncDeclStatement extends CFParsedStatement {
 	
 	public userDefinedFunction getUDF() {
 		return new userDefinedFunction(name, formals, body);
-	}
-	
-	public CFStatementResult Exec(CFContext context) {
-		return null;
 	}
 	
 	public String Decompile(int indent) {

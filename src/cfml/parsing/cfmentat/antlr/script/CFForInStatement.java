@@ -31,8 +31,6 @@ package cfml.parsing.cfmentat.antlr.script;
 
 import org.antlr.runtime.Token;
 
-import cfml.parsing.cfmentat.antlr.CFContext;
-import cfml.parsing.cfmentat.antlr.CFException;
 import cfml.parsing.cfmentat.antlr.CFExpression;
 
 public class CFForInStatement extends CFParsedStatement implements java.io.Serializable {
