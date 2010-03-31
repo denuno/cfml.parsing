@@ -2,6 +2,7 @@ package cfml.parsing;
 
 import net.htmlparser.jericho.Attributes;
 import net.htmlparser.jericho.StartTag;
+import net.htmlparser.jericho.Tag;
 
 public class ParserTag {
 	
@@ -15,7 +16,6 @@ public class ParserTag {
 	private Attributes fAttributes;
 	
 	public ParserTag() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public ParserTag(String name, int startTagBegin, int startTagEnd, int endTagBegin, int endTagEnd,
@@ -31,6 +31,9 @@ public class ParserTag {
 	}
 	
 	public ParserTag(StartTag tag) {
+		if (tag == null) {
+			return;
+		}
 		setName(tag.getName());
 		setBegin(tag.getElement().getEnd());
 		setEnd(tag.getElement().getBegin());
@@ -46,20 +49,32 @@ public class ParserTag {
 		setAttributes(tag.getAttributes());
 	}
 	
-	public ParserTag(net.htmlparser.jericho.Tag tag) {
-		setName(tag.getName());
-		setBegin(tag.getElement().getEnd());
-		setEnd(tag.getElement().getBegin());
-		setStartTagBegin(tag.getElement().getStartTag().getBegin());
-		setStartTagEnd(tag.getElement().getStartTag().getEnd());
-		if (tag.getElement().getEndTag() != null) {
-			setEndTagBegin(tag.getElement().getEndTag().getBegin());
-			setEndTagEnd(tag.getElement().getEndTag().getEnd());
-		} else {
-			setEndTagBegin(tag.getElement().getStartTag().getBegin());
-			setEndTagEnd(tag.getElement().getStartTag().getEnd());
+	public ParserTag(Tag tag) {
+		if (tag == null) {
+			return;
 		}
-		setAttributes(tag.getElement().getAttributes());
+		setName(tag.getName());
+		if (tag.getElement() != null) {
+			setBegin(tag.getElement().getEnd());
+			setEnd(tag.getElement().getBegin());
+			setStartTagBegin(tag.getElement().getStartTag().getBegin());
+			setStartTagEnd(tag.getElement().getStartTag().getEnd());
+			if (tag.getElement().getEndTag() != null) {
+				setEndTagBegin(tag.getElement().getEndTag().getBegin());
+				setEndTagEnd(tag.getElement().getEndTag().getEnd());
+			} else {
+				setEndTagBegin(tag.getElement().getStartTag().getBegin());
+				setEndTagEnd(tag.getElement().getStartTag().getEnd());
+			}
+			setAttributes(tag.getElement().getAttributes());
+		} else {
+			setBegin(tag.getEnd());
+			setEnd(tag.getBegin());
+			setStartTagBegin(tag.getBegin());
+			setStartTagEnd(tag.getEnd());
+			setEndTagBegin(tag.getBegin());
+			setEndTagEnd(tag.getEnd());
+		}
 	}
 	
 	/**

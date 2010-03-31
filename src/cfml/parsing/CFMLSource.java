@@ -90,12 +90,16 @@ public class CFMLSource {
 		return makeParserTag(fSource.getPreviousTag(i));
 	}
 	
-	private ParserTag makeParserTag(net.htmlparser.jericho.Tag nextTag) {
+	private ParserTag makeParserTag(Tag nextTag) {
+		if (nextTag == null)
+			return null;
 		ParserTag newTag = new ParserTag(nextTag);
 		return newTag;
 	}
 	
 	private ParserTag makeParserTag(net.htmlparser.jericho.StartTag tag) {
+		if (tag == null)
+			return null;
 		ParserTag newTag = new ParserTag(tag);
 		return newTag;
 		
