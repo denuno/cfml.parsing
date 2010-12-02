@@ -81,5 +81,9 @@
 	<test name="simpletest25" numattributes="5">
 	action="compileMapping" type="web" password="#variables["password"&variables.adminType]#" virtual="#arguments.mapping#" stoponerror="false"
 	</test>
+	<test name="simpletest26" numattributes="3">
+	cffile action="write" file="#getTempDirectory()#/tempCSVdata.txt" output="#rereplace(csvData,'"',"some")#"
+	</test>
+	
 	
 </attributetests>
