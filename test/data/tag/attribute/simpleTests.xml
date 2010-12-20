@@ -84,5 +84,8 @@
 	<test name="simpletest26" numattributes="2">
 	fargument name="test" default="#WriteOutput("">"")#"
 	</test>
+	<test name="simpletest27" numattributes="3">
+	cffile action="write" file="#getTempDirectory()#/tempCSVdata.txt" output="#rereplace(csvData,'"',"some")#"
+	</test>
 	
 </attributetests>
