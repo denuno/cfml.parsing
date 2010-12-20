@@ -25,16 +25,16 @@ import cfml.dictionary.DictionaryManager;
 import cfml.dictionary.Parameter;
 import cfml.dictionary.SyntaxDictionary;
 import cfml.dictionary.preferences.DictionaryPreferences;
-import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
-import cfml.parsing.cfmentat.antlr.CFParseException;
-import cfml.parsing.cfmentat.antlr.CFScriptLexer;
-import cfml.parsing.cfmentat.antlr.CFScriptParser;
-import cfml.parsing.cfmentat.antlr.CFScriptTree;
-import cfml.parsing.cfmentat.antlr.ParseException;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
-import cfml.parsing.cfmentat.antlr.sourceReader;
-import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+import cfml.parsing.cfscript.ANTLRNoCaseReaderStream;
+import cfml.parsing.cfscript.CFParseException;
+import cfml.parsing.cfscript.CFScriptLexer;
+import cfml.parsing.cfscript.CFScriptParser;
+import cfml.parsing.cfscript.CFScriptTree;
+import cfml.parsing.cfscript.ParseException;
+import cfml.parsing.cfscript.poundSignFilterStream;
+import cfml.parsing.cfscript.poundSignFilterStreamException;
+import cfml.parsing.cfscript.sourceReader;
+import cfml.parsing.cfscript.script.CFScriptStatement;
 
 public class CFMLParser {
 	

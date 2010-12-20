@@ -41,7 +41,7 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.Tree;
 
-import cfml.parsing.cfmentat.antlr.ANTLRNoCaseStringStream;
+import cfml.parsing.cfscript.ANTLRNoCaseStringStream;
 
 public class CFMLASTViewer {
 	private JFrame window;

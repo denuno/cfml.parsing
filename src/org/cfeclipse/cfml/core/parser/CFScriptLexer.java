@@ -3,7 +3,7 @@ package org.cfeclipse.cfml.core.parser;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.RecognitionException;
 
-public class CFScriptLexer extends cfml.parsing.cfmentat.antlr.CFScriptLexer {
+public class CFScriptLexer extends cfml.parsing.cfscript.CFScriptLexer {
 	private ErrorObservable observable;
 	
 	public CFScriptLexer() {

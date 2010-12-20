@@ -33,7 +33,7 @@ import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
 
-import cfml.parsing.cfmentat.antlr.ANTLRNoCaseStringStream;
+import cfml.parsing.cfscript.ANTLRNoCaseStringStream;
 
 /**
  * @author mark
