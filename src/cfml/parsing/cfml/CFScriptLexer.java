@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.RecognitionException;

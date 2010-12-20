@@ -43,7 +43,7 @@ scope tagScope {
 
 @parser::header 
 {
-package org.cfeclipse.cfml.core.parser.antlr;
+package cfml.parsing.cfml.antlr;
 
 /*
 Copyright (c) 2007 Mark Mandel, Mark Drew
@@ -73,7 +73,7 @@ import java.util.LinkedList;
 
 @lexer::header
 {
-package org.cfeclipse.cfml.core.parser.antlr;
+package cfml.parsing.cfml.antlr;
 
 /*
 Copyright (c) 2007 Mark Mandel, Mark Drew

@@ -15,7 +15,7 @@ import net.htmlparser.jericho.StartTag;
 import org.junit.Before;
 import org.junit.Test;
 
-import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+import cfml.parsing.cfscript.script.CFScriptStatement;
 
 public class TestCFMLParser {
 	

@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 /*
  Copyright (c) 2007 Mark Mandel, Mark Drew

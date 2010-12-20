@@ -17,15 +17,15 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import cfml.parsing.cfmentat.antlr.ANTLRNoCaseReaderStream;
-import cfml.parsing.cfmentat.antlr.CFExpression;
-import cfml.parsing.cfmentat.antlr.CFScriptLexer;
-import cfml.parsing.cfmentat.antlr.CFScriptParser;
-import cfml.parsing.cfmentat.antlr.CFScriptTree;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStream;
-import cfml.parsing.cfmentat.antlr.poundSignFilterStreamException;
-import cfml.parsing.cfmentat.antlr.sourceReader;
-import cfml.parsing.cfmentat.antlr.script.CFScriptStatement;
+import cfml.parsing.cfscript.ANTLRNoCaseReaderStream;
+import cfml.parsing.cfscript.CFExpression;
+import cfml.parsing.cfscript.CFScriptLexer;
+import cfml.parsing.cfscript.CFScriptParser;
+import cfml.parsing.cfscript.CFScriptTree;
+import cfml.parsing.cfscript.poundSignFilterStream;
+import cfml.parsing.cfscript.poundSignFilterStreamException;
+import cfml.parsing.cfscript.sourceReader;
+import cfml.parsing.cfscript.script.CFScriptStatement;
 
 /**
  * 

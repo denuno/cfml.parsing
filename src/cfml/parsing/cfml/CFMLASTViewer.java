@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 /*
  Copyright (c) 2007 Mark Mandel, Mark Drew
@@ -208,7 +208,7 @@ public class CFMLASTViewer {
 		CFMLParser parser = new CFMLParser(null, null);
 		try {
 			Class clazz = Thread.currentThread().getContextClassLoader()
-					.loadClass("org.cfeclipse.cfml.core.parser.antlr.CFMLParser");
+					.loadClass("cfml.parsing.cfml.antlr.CFMLParser");
 			Field[] fields = clazz.getDeclaredFields();
 			
 			for (Field f : fields) {
@@ -225,7 +225,7 @@ public class CFMLASTViewer {
 		CFScriptParser parser = new CFScriptParser(null);
 		try {
 			Class clazz = Thread.currentThread().getContextClassLoader()
-					.loadClass("org.cfeclipse.cfml.core.parser.antlr.CFScriptParser");
+					.loadClass("cfml.parsing.cfml.antlr.CFScriptParser");
 			Field[] fields = clazz.getDeclaredFields();
 			
 			for (Field f : fields) {

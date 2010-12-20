@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 /*
  Copyright (c) 2007 Mark Mandel, Mark Drew
@@ -39,7 +39,7 @@ import cfml.parsing.cfscript.ANTLRNoCaseStringStream;
  * @author mark
  * 
  */
-public class CFMLParser extends org.cfeclipse.cfml.core.parser.antlr.CFMLParser implements IErrorObserver {
+public class CFMLParser extends cfml.parsing.cfml.antlr.CFMLParser implements IErrorObserver {
 	private ErrorObservable observable;
 	private ICFMLDictionary dictionary;
 	

@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 /*
 Copyright (c) 2007 Mark Mandel, Mark Drew
@@ -22,12 +22,53 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.	
 */
 
-/**
- * 
- * Interface for catching an error event
- */
+import org.antlr.runtime.*;
 
-public interface IErrorObserver
+import cfml.parsing.cfml.antlr.*;
+
+public class CFMLLexer extends cfml.parsing.cfml.antlr.CFMLLexer
 {
-	public void actionCFMLParserError(ErrorEvent event);
+	private ErrorObservable observable;
+
+	public CFMLLexer()
+	{
+		super();
+		setObservable(new ErrorObservable());
+	}
+
+	public CFMLLexer(CharStream input)
+	{
+		super(input);
+		setObservable(new ErrorObservable());
+	}
+	
+	
+	public void addObserver(IErrorObserver observer)
+	{
+		getObservable().addObserver(observer);
+	}
+	
+	public void removeObserver(IErrorObserver observer)
+	{
+		getObservable().removeObserver(observer);
+	}
+	
+	public void displayRecognitionError(String[] tokenNames, RecognitionException e)
+	{
+		ErrorEvent event = new ErrorEvent(e, getErrorMessage(e, tokenNames));
+		
+		getObservable().notifyObservers(event);
+		
+		super.displayRecognitionError(tokenNames, e);
+	}
+
+	private ErrorObservable getObservable()
+	{
+		return observable;
+	}
+
+	private void setObservable(ErrorObservable observable)
+	{
+		this.observable = observable;
+	}
 }

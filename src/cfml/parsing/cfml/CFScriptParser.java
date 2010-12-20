@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.TokenStream;

@@ -1,4 +1,4 @@
-package org.cfeclipse.cfml.core.parser;
+package cfml.parsing.cfml;
 
 /*
 Copyright (c) 2007 Mark Mandel, Mark Drew
@@ -22,47 +22,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.	
 */
 
-import java.util.*;
+import org.antlr.runtime.*;
 
 /**
- * Observerl for CFML Parser / Lexer Errors
+ * Event objects for Errors from ANTLR
  * @author mark
  *
  */
-public class ErrorObservable
+public class ErrorEvent
 {
-	List<IErrorObserver> observers; 
+	private RecognitionException exception;
+	private String errorMsg;
 	
-	public ErrorObservable()
+	public ErrorEvent(RecognitionException exception, String errorMsg)
 	{
-		setObservers(Collections.synchronizedList(new LinkedList<IErrorObserver>()));
-	}
-	
-	public void addObserver(IErrorObserver observer)
-	{
-		getObservers().add(observer);
-	}
-	
-	public void removeObserver(IErrorObserver observer)
-	{
-		getObservers().remove(observer);
-	}
-	
-	public void notifyObservers(ErrorEvent event)
-	{
-		for(IErrorObserver observer : getObservers())
-		{
-			observer.actionCFMLParserError(event);			
-		}
+		setErrorMsg(errorMsg);
+		setException(exception);
 	}
 
-	private List<IErrorObserver> getObservers()
+	public String getErrorMsg()
 	{
-		return observers;
+		return errorMsg;
 	}
 
-	private void setObservers(List<IErrorObserver> observers)
+	private void setErrorMsg(String errorMsg)
 	{
-		this.observers = observers;
+		this.errorMsg = errorMsg;
 	}
+
+	public RecognitionException getException()
+	{
+		return exception;
+	}
+
+	private void setException(RecognitionException exception)
+	{
+		this.exception = exception;
+	}
+	
 }
