@@ -173,7 +173,7 @@ public class CFMLParser extends cfml.parsing.cfml.antlr.CFMLParser implements IE
 		CFScriptParser parser = setupCFScriptParser(lexer);
 		
 		try {
-			ParserRuleReturnScope r = parser.statement();
+			ParserRuleReturnScope r = parser.scriptBlock();
 			ast = (CommonTree) r.getTree();
 		} catch (RecognitionException exc) {
 			ErrorEvent event = new ErrorEvent(exc, "String Literal Error");

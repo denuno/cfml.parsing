@@ -27,6 +27,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
@@ -104,6 +108,14 @@ public class CFMLASTViewer {
 		window.setLayout(new BorderLayout());
 		
 		text = new JTextArea();
+		try {
+			File bar = new File("./src/cfml/parsing/cfml/test1.cfm");
+			String path = bar.getAbsolutePath();
+			text.setText(readFileAsString(path));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		window.add(new JScrollPane(text), BorderLayout.CENTER);
 		
 		window.add(button, BorderLayout.SOUTH);
@@ -259,5 +271,19 @@ public class CFMLASTViewer {
 	
 	private void setDictionary(ICFMLDictionary dictionary) {
 		this.dictionary = dictionary;
+	}
+	
+	private static String readFileAsString(String filePath) throws java.io.IOException {
+		StringBuffer fileData = new StringBuffer(1000);
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		char[] buf = new char[1024];
+		int numRead = 0;
+		while ((numRead = reader.read(buf)) != -1) {
+			String readData = String.valueOf(buf, 0, numRead);
+			fileData.append(readData);
+			buf = new char[1024];
+		}
+		reader.close();
+		return fileData.toString();
 	}
 }
