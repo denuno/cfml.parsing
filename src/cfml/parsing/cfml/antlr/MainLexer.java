@@ -7,12 +7,14 @@ import org.antlr.runtime.Token;
 public class MainLexer {
 	public static void main(String[] args) {
 		try {
-			CharStream input = new ANTLRFileStream("./src/cfml/parsing/cfml/antlr/input");
+			CharStream input = new ANTLRFileStream("./src/cfml/parsing/cfml/antlr/input2");
 			XMLLexer lexer = new XMLLexer(input);
-			Token token;
-			while ((token = lexer.nextToken()) != Token.EOF_TOKEN) {
+			Token token = lexer.nextToken();
+			while (token.getType() != Token.EOF) {
 				System.out.println("Token: " + token.getText());
+				token = lexer.nextToken();
 			}
+			
 		} catch (Throwable t) {
 			System.out.println("Exception: " + t);
 			t.printStackTrace();

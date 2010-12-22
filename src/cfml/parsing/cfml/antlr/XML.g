@@ -1,7 +1,13 @@
 grammar XML;
 
-options {       output=AST;
+options {       
+  output=AST;
   ASTLabelType=CommonTree;
+}
+
+tokens {
+ ELEMENT;
+ ATTRIBUTE;
 }
 
 scope ElementScope {
@@ -18,6 +24,11 @@ import java.util.LinkedList;
 package cfml.parsing.cfml.antlr;
 }
 
+@lexer::members {
+    boolean tagMode = false;
+}
+
+document : element ;
 
 element
 scope ElementScope;
@@ -31,168 +42,67 @@ scope ElementScope;
     ;
 
 startTag
-    : START_TAG
-            {$ElementScope::currentElementName = $START_TAG.text; }
-        -> ^(START_TAG)
-    ;
+    : TAG_START_OPEN GENERIC_ID attribute* TAG_CLOSE
+            {$ElementScope::currentElementName = $GENERIC_ID.text; }
+        -> ^(ELEMENT GENERIC_ID attribute*)
+    ; 
 
-attribute : ATTRIBUTE-> ^(ATTRIBUTE) ;
+attribute : GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE GENERIC_ID ATTR_VALUE) ;
 
 endTag!
     : { $ElementScope::currentElementName.equals(input.LT(2).getText()) }?
-      END_TAG
+      TAG_END_OPEN GENERIC_ID TAG_CLOSE
     ;
+catch [FailedPredicateException fpe] {
+    String hdr = getErrorHeader(fpe);
+    String msg = "end tag (" + input.LT(2).getText() +
+                 ") does not match start tag (" +
+                 $ElementScope::currentElementName +
+                 ") currently open, closing it anyway";
+    emitErrorMessage(hdr+" "+msg);
+    System.out.println(msg);
+    consumeUntil(input, TAG_CLOSE);
+    input.consume();
+}
 
-emptyElement : EMPTY_ELEMENT
-        -> ^(EMPTY_ELEMENT)
+emptyElement : TAG_START_OPEN GENERIC_ID attribute* TAG_EMPTY_CLOSE
+        -> ^(ELEMENT GENERIC_ID attribute*)
     ;
+    
+    
+TAG_START_OPEN : '<' { tagMode = true; } ;
+TAG_END_OPEN : '</' { tagMode = true; } ;
+TAG_CLOSE : { tagMode }?=> '>' { tagMode = false; } ;
+TAG_EMPTY_CLOSE : { tagMode }?=> '/>' { tagMode = false; } ;
 
-DOCUMENT
-    :  XMLDECL? DOCTYPE? ELEMENT+
-    ;
+ATTR_EQ : { tagMode }?=> '=' ;
 
-fragment STRING_LITERAL
-  : '"' DOUBLESTRINGCHARACTER* '"'
-  | '\'' SINGLESTRINGCHARACTER* '\''
-  ;
- 
-fragment DOUBLESTRINGCHARACTER
-  : ~('"')
-  | '""'  
-  ;
-
-fragment SINGLESTRINGCHARACTER
-  : ~('\'')
-  | '\'\''  
-  ;
-
-fragment DOCTYPE
-    :
-        '<!DOCTYPE' WS rootElementName=GENERIC_ID 
-        { System.out.println("ROOTELEMENT: "+rootElementName.getText()); }   
-        WS
-        ( 
-            ( 'SYSTEM' WS sys1=VALUE
-                { System.out.println("SYSTEM: "+sys1.getText()); }   
-                
-            | 'PUBLIC' WS pub=VALUE WS sys2=VALUE
-                { System.out.println("PUBLIC: "+pub.getText()); }   
-                { System.out.println("SYSTEM: "+sys2.getText()); }   
-            )
-            ( WS )?
-        )?
-        ( dtd=INTERNAL_DTD
-            { System.out.println("INTERNAL DTD: "+dtd.getText()); }   
-        )?
-		'>'
-	;
-
-fragment INTERNAL_DTD : '[' (options {greedy=false;} : .)* ']' ;
-
-fragment PI :
-        '<?' target=GENERIC_ID WS? 
-          { System.out.println("PI: "+target.getText()); }
-        ( ATTRIBUTE WS? )*  '?>'
-	;
-
-fragment XMLDECL :
-        '<?' ('x'|'X') ('m'|'M') ('l'|'L') WS? 
-          { System.out.println("XML declaration"); }
-        ( ATTRIBUTE WS? )*  '?>'
-	;
-
-
-fragment ELEMENT
-    : ( START_TAG
-            (ELEMENT
-            | t=PCDATA
-                { System.out.println("PCDATA: \""+$t.getText()+"\""); }
-            | t=CDATA
-                { System.out.println("CDATA: \""+$t.getText()+"\""); }
-            | t=COMMENT
-                { System.out.println("Comment: \""+$t.getText()+"\""); }
-            | pi=PI
-            )*
-            END_TAG
-        | EMPTY_ELEMENT
-        ) WS?
-    ;
-
-fragment START_TAG 
-    : '<' WS? name=TAG_NAME WS?
-          { System.out.println("Start Tag: "+name.getText()); }
-        ( ATTRIBUTE WS? )* '>'
-    ;
-
-fragment EMPTY_ELEMENT 
-    : '<' WS? name=TAG_NAME WS?
-          { System.out.println("Empty Element: "+name.getText()); }
-        ( ATTRIBUTE WS? )* '/>'
-    ;
-
-fragment ATTRIBUTE 
-    : name=GENERIC_ID WS? '=' WS? value=VALUE
-        { System.out.println("Attr: "+name.getText()+"="+value.getText()); }
-    ;
-
-fragment END_TAG 
-    : '</' WS? name=GENERIC_ID WS? '>'
-        { System.out.println("End Tag: "+name.getText()); }
-    ;
-
-fragment COMMENT
-	:	'<!--' (options {greedy=false;} : .)* '-->'
-	;
-
-fragment CDATA
-	:	'<![CDATA[' (options {greedy=false;} : .)* ']]>'
-	;
-
-fragment PCDATA : (~'<')+ ; 
-
-fragment IDENTIFIER 
-  : LETTER (options {greedy=true;} : LETTER|DIGIT)*;
-
-fragment OBJECT
-  : IDENTIFIER '.' (IDENTIFIER '.'?)*;
-
-fragment VALUE : 
-        ( OBJECT| IDENTIFIER| DIGIT |
-        '\"' (~'\"')* '\"'
+ATTR_VALUE : { tagMode }?=>
+        ( '"' (~'"')* '"'
         | '\'' (~'\'')* '\''
         )
-	;
+    ;
 
-fragment TAG_NAME 
-    : IDENTIFIER
-  ;
+PCDATA : { !tagMode }?=> (~'<')+ ;
 
-fragment GENERIC_ID 
-    : ( LETTER | '_' | ':') 
-        ( options {greedy=true;} : LETTER | '0'..'9' | '.' | '-' | '_' | ':' )*
-	;
+GENERIC_ID
+    : { tagMode }?=>
+      ( LETTER | '_' | ':') (NAMECHAR)*
+    ;
+
+fragment NAMECHAR
+    : LETTER | DIGIT | '.' | '-' | '_' | ':'
+    ;
+
+fragment DIGIT
+    :    '0'..'9'
+    ;
 
 fragment LETTER
-	: 'a'..'z' 
-	| 'A'..'Z'
-	;
+    : 'a'..'z'
+    | 'A'..'Z'
+    ;
 
-
-fragment DIGIT  
-  : '\u0030'..'\u0039'
-  | '\u0660'..'\u0669'
-  | '\u06f0'..'\u06f9'
-  | '\u0966'..'\u096f'
-  | '\u09e6'..'\u09ef'
-  | '\u0a66'..'\u0a6f'
-  | '\u0ae6'..'\u0aef'
-  | '\u0b66'..'\u0b6f'
-  | '\u0be7'..'\u0bef'
-  | '\u0c66'..'\u0c6f'
-  | '\u0ce6'..'\u0cef'
-  | '\u0d66'..'\u0d6f'
-  | '\u0e50'..'\u0e59'
-  | '\u0ed0'..'\u0ed9'
-  | '\u1040'..'\u1049';
-
-fragment WS  : (' ' | '\t' | '\n' | '\r' | '\f' )+;
+WS  :  { tagMode }?=>
+       (' '|'\r'|'\t'|'\u000C'|'\n') {$channel=99;}
+    ;
