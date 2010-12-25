@@ -9,12 +9,12 @@ import org.antlr.runtime.tree.Tree;
 public class MainTree {
 	public static void main(String[] args) {
 		try {
-			CharStream input = new ANTLRFileStream("./src/cfml/parsing/cfml/antlr/input2");
+			CharStream input = new ANTLRFileStream("./src/cfml/parsing/cfml/antlr/input3");
 			XMLLexer lex = new XMLLexer(input);
 			
 			CommonTokenStream tokens = new CommonTokenStream(lex);
 			XMLParser parser = new XMLParser(tokens);
-			XMLParser.document_return root = parser.document();
+			XMLParser.compilationUnit_return root = parser.compilationUnit();
 			System.out.println("tree=" + ((Tree) root.tree).toStringTree());
 			
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream((Tree) root.tree);

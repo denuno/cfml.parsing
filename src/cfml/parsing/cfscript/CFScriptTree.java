@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScriptTree.g 2010-12-21 13:50:03
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScriptTree.g 2010-12-22 10:49:41
 
   package cfml.parsing.cfscript;
 
@@ -9180,7 +9180,7 @@ public class CFScriptTree extends TreeParser {
                         int index16_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred29_CFScriptTree()||(synpred29_CFScriptTree()&&(!scriptMode)))) ) {s = 1;}
+                        if ( (((synpred29_CFScriptTree()&&(!scriptMode))||synpred29_CFScriptTree())) ) {s = 1;}
 
                         else if ( (true) ) {s = 19;}
 
@@ -10587,7 +10587,7 @@ public class CFScriptTree extends TreeParser {
                         int index27_58 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred45_CFScriptTree()||(synpred45_CFScriptTree()&&(!scriptMode)))) ) {s = 98;}
+                        if ( (((synpred45_CFScriptTree()&&(!scriptMode))||synpred45_CFScriptTree())) ) {s = 98;}
 
                         else if ( (true) ) {s = 89;}
 

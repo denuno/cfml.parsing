@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g 2010-12-21 13:50:07
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g 2010-12-22 10:49:31
  package cfml.parsing.cfscript; 
 
 import org.antlr.runtime.*;
@@ -2669,7 +2669,7 @@ public class CFScriptParser extends Parser {
             	        {
             	        int LA23_2 = input.LA(2);
 
-            	        if ( ((synpred38_CFScript()||(synpred38_CFScript()&&(!scriptMode)))) ) {
+            	        if ( (((synpred38_CFScript()&&(!scriptMode))||synpred38_CFScript())) ) {
             	            alt23=1;
             	        }
             	        else if ( (true) ) {
@@ -11689,7 +11689,7 @@ public class CFScriptParser extends Parser {
                     	        {
                     	        int LA84_2 = input.LA(2);
 
-                    	        if ( ((synpred218_CFScript()||(synpred218_CFScript()&&(!scriptMode)))) ) {
+                    	        if ( (((synpred218_CFScript()&&(!scriptMode))||synpred218_CFScript())) ) {
                     	            alt84=1;
                     	        }
                     	        else if ( (true) ) {
@@ -17182,7 +17182,7 @@ public class CFScriptParser extends Parser {
                         int index32_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred53_CFScript()||(synpred53_CFScript()&&(!scriptMode))||(synpred53_CFScript()&&(!scriptMode))||(synpred53_CFScript()&&(!scriptMode)))) ) {s = 5;}
+                        if ( (((synpred53_CFScript()&&(!scriptMode))||(synpred53_CFScript()&&(!scriptMode))||synpred53_CFScript()||(synpred53_CFScript()&&(!scriptMode)))) ) {s = 5;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -18009,7 +18009,7 @@ public class CFScriptParser extends Parser {
                         int index41_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((synpred70_CFScript()||(synpred70_CFScript()&&(!scriptMode)))) ) {s = 60;}
+                        if ( (((synpred70_CFScript()&&(!scriptMode))||synpred70_CFScript())) ) {s = 60;}
 
                         else if ( (true) ) {s = 1;}
 

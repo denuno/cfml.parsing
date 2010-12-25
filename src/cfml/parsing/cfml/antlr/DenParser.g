@@ -1,6 +1,7 @@
-grammar XML;
+parser grammar DenParser;
 
 options {       
+  tokenVocab=DenLexer;
   output=AST;
   ASTLabelType=CommonTree;
 }
@@ -18,27 +19,11 @@ scope ElementScope {
 package cfml.parsing.cfml.antlr;
 
 import java.util.LinkedList;
-import treetool.TreeBuilder;
-import javax.swing.tree.DefaultMutableTreeNode;
 }
 
-@parser::members {
-    private TreeBuilder T;
-   // private DefaultMutableTreeNode oldNode;
-    public void setTreeBuilder(TreeBuilder T){
-        this.T = T;
-    }
-}
+document : tags ;
 
-@lexer::header {
-package cfml.parsing.cfml.antlr;
-}
-
-@lexer::members {
-    boolean tagMode = false;
-}
-
-compilationUnit : element+;
+tags : (ifStatement | element);
 
 element
 scope ElementScope;
@@ -50,6 +35,13 @@ scope ElementScope;
         | emptyElement
         )
     ;
+
+ifStatement
+    : TAG_START_OPEN CFIF attribute* TAG_CLOSE
+            {$ElementScope::currentElementName = $CFIF.text; }
+        -> ^(ELEMENT CFIF attribute*)
+    ; 
+
 
 startTag
     : TAG_START_OPEN GENERIC_ID attribute* TAG_CLOSE
@@ -78,41 +70,3 @@ emptyElement : TAG_START_OPEN GENERIC_ID attribute* TAG_EMPTY_CLOSE
         -> ^(ELEMENT GENERIC_ID attribute*)
     ;
     
-    
-TAG_START_OPEN : '<' { tagMode = true; } ;
-TAG_END_OPEN : '</' { tagMode = true; } ;
-TAG_CLOSE : { tagMode }?=> '>' { tagMode = false; } ;
-TAG_EMPTY_CLOSE : { tagMode }?=> '/>' { tagMode = false; } ;
-
-ATTR_EQ : { tagMode }?=> '=' ;
-
-ATTR_VALUE : { tagMode }?=>
-        ( '"' (~'"')* '"'
-        | '\'' (~'\'')* '\''
-        )
-    ;
-
-
-PCDATA : { !tagMode }?=> (~'<')+ ;
-
-GENERIC_ID
-    : { tagMode }?=>
-      ( LETTER | '_' | ':') (NAMECHAR)*
-    ;
-
-fragment NAMECHAR
-    : LETTER | DIGIT | '.' | '-' | '_' | ':'
-    ;
-
-fragment DIGIT
-    :    '0'..'9'
-    ;
-
-fragment LETTER
-    : 'a'..'z'
-    | 'A'..'Z'
-    ;
-
-WS  :  { tagMode }?=>
-       (' '|'\r'|'\t'|'\u000C'|'\n') {$channel=99;}
-    ;
