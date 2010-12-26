@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g 2010-12-24 17:22:45
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g 2010-12-26 05:41:38
 
 package cfml.parsing.cfml.antlr;
 
@@ -10,20 +10,23 @@ import java.util.ArrayList;
 
 public class XMLLexer extends Lexer {
     public static final int EOF=-1;
-    public static final int ELEMENT=4;
-    public static final int ATTRIBUTE=5;
-    public static final int PCDATA=6;
-    public static final int TAG_START_OPEN=7;
-    public static final int GENERIC_ID=8;
-    public static final int TAG_CLOSE=9;
-    public static final int ATTR_EQ=10;
-    public static final int ATTR_VALUE=11;
-    public static final int TAG_END_OPEN=12;
-    public static final int TAG_EMPTY_CLOSE=13;
-    public static final int LETTER=14;
-    public static final int NAMECHAR=15;
-    public static final int DIGIT=16;
-    public static final int WS=17;
+    public static final int TAG=4;
+    public static final int ELEMENT=5;
+    public static final int ATTRIBUTE=6;
+    public static final int TAGNAME=7;
+    public static final int ATTRIBUTENAME=8;
+    public static final int PCDATA=9;
+    public static final int TAG_START_OPEN=10;
+    public static final int GENERIC_ID=11;
+    public static final int TAG_CLOSE=12;
+    public static final int ATTR_EQ=13;
+    public static final int ATTR_VALUE=14;
+    public static final int TAG_END_OPEN=15;
+    public static final int TAG_EMPTY_CLOSE=16;
+    public static final int LETTER=17;
+    public static final int NAMECHAR=18;
+    public static final int DIGIT=19;
+    public static final int WS=20;
 
         boolean tagMode = false;
 
@@ -46,8 +49,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = TAG_START_OPEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:82:16: ( '<' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:82:18: '<'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:89:16: ( '<' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:89:18: '<'
             {
             match('<'); 
              tagMode = true; 
@@ -67,8 +70,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = TAG_END_OPEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:83:14: ( '</' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:83:16: '</'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:14: ( '</' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:16: '</'
             {
             match("</"); 
 
@@ -89,8 +92,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = TAG_CLOSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:11: ({...}? => '>' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:13: {...}? => '>'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:91:11: ({...}? => '>' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:91:13: {...}? => '>'
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "TAG_CLOSE", " tagMode ");
@@ -113,8 +116,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = TAG_EMPTY_CLOSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:85:17: ({...}? => '/>' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:85:19: {...}? => '/>'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:92:17: ({...}? => '/>' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:92:19: {...}? => '/>'
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "TAG_EMPTY_CLOSE", " tagMode ");
@@ -138,8 +141,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = ATTR_EQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:87:9: ({...}? => '=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:87:11: {...}? => '='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:94:9: ({...}? => '=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:94:11: {...}? => '='
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "ATTR_EQ", " tagMode ");
@@ -161,13 +164,13 @@ public class XMLLexer extends Lexer {
         try {
             int _type = ATTR_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:89:12: ({...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:89:14: {...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:12: ({...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:14: {...}? => ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "ATTR_VALUE", " tagMode ");
             }
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:97:9: ( '\"' (~ '\"' )* '\"' | '\\'' (~ '\\'' )* '\\'' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -185,10 +188,10 @@ public class XMLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:11: '\"' (~ '\"' )* '\"'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:97:11: '\"' (~ '\"' )* '\"'
                     {
                     match('\"'); 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:15: (~ '\"' )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:97:15: (~ '\"' )*
                     loop1:
                     do {
                         int alt1=2;
@@ -201,7 +204,7 @@ public class XMLLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:90:16: ~ '\"'
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:97:16: ~ '\"'
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -226,10 +229,10 @@ public class XMLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:91:11: '\\'' (~ '\\'' )* '\\''
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:98:11: '\\'' (~ '\\'' )* '\\''
                     {
                     match('\''); 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:91:16: (~ '\\'' )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:98:16: (~ '\\'' )*
                     loop2:
                     do {
                         int alt2=2;
@@ -242,7 +245,7 @@ public class XMLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:91:17: ~ '\\''
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:98:17: ~ '\\''
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -285,13 +288,13 @@ public class XMLLexer extends Lexer {
         try {
             int _type = PCDATA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:8: ({...}? => (~ '<' )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:10: {...}? => (~ '<' )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:103:8: ({...}? => (~ '<' )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:103:10: {...}? => (~ '<' )+
             {
             if ( !(( !tagMode )) ) {
                 throw new FailedPredicateException(input, "PCDATA", " !tagMode ");
             }
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:26: (~ '<' )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:103:26: (~ '<' )+
             int cnt4=0;
             loop4:
             do {
@@ -305,7 +308,7 @@ public class XMLLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:96:27: ~ '<'
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:103:27: ~ '<'
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -345,8 +348,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = GENERIC_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:99:5: ({...}? => ( LETTER | '_' | ':' ) ( NAMECHAR )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:99:7: {...}? => ( LETTER | '_' | ':' ) ( NAMECHAR )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:106:5: ({...}? => ( LETTER | '_' | ':' ) ( NAMECHAR )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:106:7: {...}? => ( LETTER | '_' | ':' ) ( NAMECHAR )*
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "GENERIC_ID", " tagMode ");
@@ -360,7 +363,7 @@ public class XMLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:100:29: ( NAMECHAR )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:107:29: ( NAMECHAR )*
             loop5:
             do {
                 int alt5=2;
@@ -373,7 +376,7 @@ public class XMLLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:100:30: NAMECHAR
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:107:30: NAMECHAR
             	    {
             	    mNAMECHAR(); 
 
@@ -399,7 +402,7 @@ public class XMLLexer extends Lexer {
     // $ANTLR start "NAMECHAR"
     public final void mNAMECHAR() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:104:5: ( LETTER | DIGIT | '.' | '-' | '_' | ':' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:111:5: ( LETTER | DIGIT | '.' | '-' | '_' | ':' )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -423,8 +426,8 @@ public class XMLLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:108:5: ( '0' .. '9' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:108:10: '0' .. '9'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:115:5: ( '0' .. '9' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:115:10: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -439,7 +442,7 @@ public class XMLLexer extends Lexer {
     // $ANTLR start "LETTER"
     public final void mLETTER() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:112:5: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:119:5: ( 'a' .. 'z' | 'A' .. 'Z' )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -465,8 +468,8 @@ public class XMLLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:116:5: ({...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:116:8: {...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:123:5: ({...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:123:8: {...}? => ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             if ( !(( tagMode )) ) {
                 throw new FailedPredicateException(input, "WS", " tagMode ");

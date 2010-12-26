@@ -6,12 +6,17 @@ options {
 }
 
 tokens {
+TAG;
  ELEMENT;
  ATTRIBUTE;
+ TAGNAME;
+ ATTRIBUTENAME;
 }
 
 scope ElementScope {
   String currentElementName;
+  int closerLine;
+  int closerPosInLine;
 }
 
 @parser::header {
@@ -38,7 +43,9 @@ package cfml.parsing.cfml.antlr;
     boolean tagMode = false;
 }
 
-compilationUnit : element+;
+compilationUnit : tag;
+
+tag: element*;
 
 element
 scope ElementScope;
@@ -46,18 +53,18 @@ scope ElementScope;
             (element
             | PCDATA
             )*
-            endTag!
+            endTag
         | emptyElement
         )
     ;
 
 startTag
-    : TAG_START_OPEN GENERIC_ID attribute* TAG_CLOSE
-            {$ElementScope::currentElementName = $GENERIC_ID.text; }
-        -> ^(ELEMENT GENERIC_ID attribute*)
+    : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_CLOSE
+            {$ElementScope::currentElementName = $GENERIC_ID.text;}
+        -> ^(ELEMENT[$el] TAGNAME[$tname] attribute*)
     ; 
 
-attribute : GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE GENERIC_ID ATTR_VALUE) ;
+attribute : aname=GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE) ;
 
 endTag!
     : { $ElementScope::currentElementName.equals(input.LT(2).getText()) }?
@@ -74,8 +81,8 @@ catch [FailedPredicateException fpe] {
     input.consume();
 }
 
-emptyElement : TAG_START_OPEN GENERIC_ID attribute* TAG_EMPTY_CLOSE
-        -> ^(ELEMENT GENERIC_ID attribute*)
+emptyElement : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_EMPTY_CLOSE
+        -> ^(ELEMENT[$el] GENERIC_ID[$tname] attribute*)
     ;
     
     

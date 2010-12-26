@@ -48,7 +48,7 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.Token;
-import org.antlr.runtime.tree.Tree;
+import org.antlr.runtime.tree.CommonTree;
 
 import cfml.parsing.cfml.DefaultCFMLDictionary;
 import cfml.parsing.cfml.ICFMLDictionary;
@@ -160,9 +160,10 @@ public class XMLASTViewer extends JPanel implements MouseListener {
 			XMLParser parser = new XMLParser(tokens);
 			
 			// XMLParser.script_return root = parser.script();
+			
 			XMLParser.compilationUnit_return root = parser.compilationUnit();
 			
-			Tree ast = (Tree) root.getTree();
+			CommonTree ast = (CommonTree) root.tree;
 			
 			JFrame astWindow = new JFrame("Tree...");
 			
@@ -173,7 +174,7 @@ public class XMLASTViewer extends JPanel implements MouseListener {
 			
 			astWindow.add(new JScrollPane(tree), BorderLayout.CENTER);
 			
-			astWindow.setSize(300, 300);
+			astWindow.setSize(500, 300);
 			astWindow.setLocation(640, 0);
 			
 			astWindow.setVisible(true);
@@ -184,31 +185,39 @@ public class XMLASTViewer extends JPanel implements MouseListener {
 		}
 	}
 	
-	private TreeNode buildTree(Tree tree) {
+	private TreeNode buildTree(CommonTree tree) {
 		TreeNode node = displayNode(tree);
 		buildTree(tree, node);
-		
 		return node;
 	}
 	
-	private void buildTree(Tree tree, DefaultMutableTreeNode node) {
+	private void buildTree(CommonTree tree, TreeNode node) {
 		for (int counter = 0; counter < tree.getChildCount(); counter++) {
-			Tree child = tree.getChild(counter);
-			DefaultMutableTreeNode childNode = displayNode(child);
+			CommonTree child = (CommonTree) tree.getChild(counter);
+			TreeNode childNode = displayNode(child);
 			node.add(childNode);
 			buildTree(child, childNode);
 		}
 	}
 	
-	private TreeNode displayNode(Tree t) {
+	private TreeNode displayNode(CommonTree t) {
 		String tokenType = getTokenType(t.getType());
+		int startIndex = -1, stopIndex = -1;
 		
 		String str = "[" + tokenType + "] ";
 		str += t.getText();
-		str += " (line:" + t.getLine() + ", pos: " + t.getCharPositionInLine() + ")";
+		str += " (line:" + t.getLine() + ", pos: " + t.getCharPositionInLine() + " startind:" + t.getTokenStartIndex()
+				+ " stopind:" + t.getTokenStopIndex() + " stopline:" + t.getChildCount() + ")";
+		CommonToken tokenStart = (CommonToken) t.getToken();
+		CommonToken tokenEnd = tokenStart;
+		if (t.getChildCount() != 0) {
+			CommonTree lastChild = (CommonTree) t.getChild(t.getChildCount() - 1);
+			tokenEnd = (CommonToken) lastChild.getToken();
+		}
+		startIndex = tokenStart.getStartIndex();
+		stopIndex = tokenEnd.getStopIndex();
 		// return new DefaultMutableTreeNode(str);
-		return new TreeNode(str, new TextRange(t.getTokenStartIndex(), t.getTokenStopIndex()
-				+ t.getCharPositionInLine()));
+		return new TreeNode(str, new TextRange(tokenStart.getStartIndex(), tokenEnd.getStopIndex()));
 	}
 	
 	private void initCFMLTokenTypes() {
