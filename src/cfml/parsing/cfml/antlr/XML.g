@@ -9,6 +9,7 @@ tokens {
 TAG;
  ELEMENT;
  ATTRIBUTE;
+ CFMLTAG;
  TAGNAME;
  ATTRIBUTENAME;
 }
@@ -23,16 +24,16 @@ scope ElementScope {
 package cfml.parsing.cfml.antlr;
 
 import java.util.LinkedList;
-import treetool.TreeBuilder;
-import javax.swing.tree.DefaultMutableTreeNode;
 }
 
 @parser::members {
-    private TreeBuilder T;
-   // private DefaultMutableTreeNode oldNode;
-    public void setTreeBuilder(TreeBuilder T){
-        this.T = T;
-    }
+  protected boolean isColdFusionTag(String name)
+  {   
+    boolean isColdfusion = name.toLowerCase().startsWith("cf");
+    System.out.println("isColdFusion: " + name + " : " + isColdfusion);
+    return isColdfusion;
+  }
+
 }
 
 @lexer::header {
@@ -43,7 +44,7 @@ package cfml.parsing.cfml.antlr;
     boolean tagMode = false;
 }
 
-compilationUnit : tag;
+compilationUnit : tag | PCDATA;
 
 tag: element*;
 
@@ -61,6 +62,7 @@ scope ElementScope;
 startTag
     : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_CLOSE
             {$ElementScope::currentElementName = $GENERIC_ID.text;}
+        -> {isColdFusionTag($tname.text)}? ^(CFMLTAG[$el] TAGNAME[$tname] attribute*)
         -> ^(ELEMENT[$el] TAGNAME[$tname] attribute*)
     ; 
 
