@@ -7,6 +7,7 @@ options {
 
 tokens {
 TAG;
+ ASSIGN;
  ELEMENT;
  ATTRIBUTE;
  CFMLTAG;
@@ -34,6 +35,21 @@ import java.util.LinkedList;
     return isColdfusion;
   }
 
+  protected boolean isAssignmentTag(String name)
+  {   
+    boolean isSingle = name.toLowerCase().startsWith("cfset");
+    System.out.println("isColdFusion: " + name + " : " + isSingle);
+    return isSingle;
+  }
+
+  protected boolean isSingleTag(String name)
+  {   
+    boolean isSingle = name.toLowerCase().startsWith("cf");
+    System.out.println("isColdFusion: " + name + " : " + isSingle);
+    return isSingle;
+  }
+
+
 }
 
 @lexer::header {
@@ -44,7 +60,7 @@ package cfml.parsing.cfml.antlr;
     boolean tagMode = false;
 }
 
-compilationUnit : tag | PCDATA;
+compilationUnit : tag;
 
 tag: element*;
 
@@ -59,11 +75,19 @@ scope ElementScope;
         )
     ;
 
-startTag
-    : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_CLOSE
+
+startTag: startTagStart^ startTagEnd;
+
+startTagStart
+    : el=TAG_START_OPEN tname=GENERIC_ID
             {$ElementScope::currentElementName = $GENERIC_ID.text;}
-        -> {isColdFusionTag($tname.text)}? ^(CFMLTAG[$el] TAGNAME[$tname] attribute*)
-        -> ^(ELEMENT[$el] TAGNAME[$tname] attribute*)
+        -> {isAssignmentTag($tname.text)}? ^(ASSIGN[$el] TAGNAME[$tname])
+        -> {isColdFusionTag($tname.text)}? ^(CFMLTAG[$el] TAGNAME[$tname])
+        -> ^(ELEMENT[$el] TAGNAME[$tname])
+    ; 
+
+startTagEnd
+    : attribute* TAG_CLOSE
     ; 
 
 attribute : aname=GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE) ;
@@ -108,6 +132,13 @@ GENERIC_ID
     : { tagMode }?=>
       ( LETTER | '_' | ':') (NAMECHAR)*
     ;
+
+fragment CFSET
+    :    'cfset'
+    ;
+
+fragment ASSIGNEXPR : (~'>')+ ;
+
 
 fragment NAMECHAR
     : LETTER | DIGIT | '.' | '-' | '_' | ':'
