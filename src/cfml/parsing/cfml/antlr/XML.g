@@ -58,11 +58,23 @@ package cfml.parsing.cfml.antlr;
 
 @lexer::members {
     boolean tagMode = false;
+    boolean internalTagMode = false;
 }
 
 compilationUnit : tag;
 
 tag: element*;
+
+
+internalElement
+scope ElementScope;
+    : ( internalStartTag^
+            (internalElement
+            | PCDATA
+            )*
+            internalEndTag
+        )
+    ;
 
 element
 scope ElementScope;
@@ -75,8 +87,18 @@ scope ElementScope;
         )
     ;
 
+internalStartTag: internalStartTagStart^ internalStartTagEnd;
 
-startTag: startTagStart^ startTagEnd;
+startTag: startTagStart^ internalElement* startTagEnd;
+
+
+internalStartTagStart
+    : el=INTERNAL_TAG_START_OPEN tname=GENERIC_ID
+            {$ElementScope::currentElementName = $GENERIC_ID.text;}
+        -> {isAssignmentTag($tname.text)}? ^(ASSIGN[$el] TAGNAME[$tname])
+        -> {isColdFusionTag($tname.text)}? ^(CFMLTAG[$el] TAGNAME[$tname])
+        -> ^(ELEMENT[$el] TAGNAME[$tname])
+    ; 
 
 startTagStart
     : el=TAG_START_OPEN tname=GENERIC_ID
@@ -86,11 +108,31 @@ startTagStart
         -> ^(ELEMENT[$el] TAGNAME[$tname])
     ; 
 
+internalStartTagEnd
+    : attribute* INTERNAL_TAG_CLOSE
+    ; 
+
 startTagEnd
     : attribute* TAG_CLOSE
     ; 
 
 attribute : aname=GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE) ;
+
+internalEndTag!
+    : { $ElementScope::currentElementName.equals(input.LT(2).getText()) }?
+      INTERNAL_TAG_END_OPEN GENERIC_ID INTERNAL_TAG_CLOSE
+    ;
+catch [FailedPredicateException fpe] {
+    String hdr = getErrorHeader(fpe);
+    String msg = "end tag (" + input.LT(2).getText() +
+                 ") does not match start tag (" +
+                 $ElementScope::currentElementName +
+                 ") currently open, closing it anyway";
+    emitErrorMessage(hdr+" "+msg);
+    consumeUntil(input, INTERNAL_TAG_CLOSE);
+    input.consume();
+}
+
 
 endTag!
     : { $ElementScope::currentElementName.equals(input.LT(2).getText()) }?
@@ -112,10 +154,15 @@ emptyElement : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_EMPTY_CLOSE
     ;
     
     
-TAG_START_OPEN : '<' { tagMode = true; } ;
-TAG_END_OPEN : '</' { tagMode = true; } ;
-TAG_CLOSE : { tagMode }?=> '>' { tagMode = false; } ;
-TAG_EMPTY_CLOSE : { tagMode }?=> '/>' { tagMode = false; } ;
+INTERNAL_TAG_START_OPEN : { tagMode }?=> '<' { internalTagMode = true; System.out.println("internal-open:");} ;
+INTERNAL_TAG_END_OPEN : { tagMode }?=> '</' { internalTagMode = true; System.out.println("internal-end");} ;
+INTERNAL_TAG_CLOSE : { internalTagMode }?=> '>' { internalTagMode = false; System.out.println("internal-close");} ;
+
+TAG_START_OPEN : { !internalTagMode }?=> '<' { tagMode = true; } ;
+TAG_END_OPEN : { !internalTagMode }?=>'</' { tagMode = true; } ;
+TAG_CLOSE : { tagMode && !internalTagMode}?=> '>' { tagMode = false; } ;
+
+TAG_EMPTY_CLOSE : { tagMode && !internalTagMode }?=> '/>' { tagMode = false; } ;
 
 ATTR_EQ : { tagMode }?=> '=' ;
 
@@ -126,7 +173,7 @@ ATTR_VALUE : { tagMode }?=>
     ;
 
 
-PCDATA : { !tagMode }?=> (~'<')+ ;
+PCDATA : { !tagMode && !internalTagMode}?=> (~'<')+ ;
 
 GENERIC_ID
     : { tagMode }?=>
@@ -153,6 +200,6 @@ fragment LETTER
     | 'A'..'Z'
     ;
 
-WS  :  { tagMode }?=>
+WS  :  { tagMode}?=>
        (' '|'\r'|'\t'|'\u000C'|'\n') {$channel=99;}
     ;
