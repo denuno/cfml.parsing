@@ -54,6 +54,7 @@ tokens {
   ABORTSTATEMENT; // abort statement
   EXITSTATEMENT; // exit statement
   PARAMSTATEMENT;  // param statement
+  PROPERTYSTATEMENT;  // property statement
   THROWSTATEMENT; // throw statement
   RETHROWSTATEMENT; // rethrow statement
   LOCKSTATEMENT; // lock statement
@@ -66,11 +67,20 @@ tokens {
   PARAMETER_TYPE; // function parameter type
 }
 
-@parser::header { package cfml.parsing.cfscript; }
-@lexer::header { package cfml.parsing.cfscript; }
+@parser::header { package cfml.parsing.cfscript;}
+
+@lexer::header { package cfml.parsing.cfscript;}
  
 
 @members { public boolean scriptMode = true; 
+
+  private IErrorReporter errorReporter = null;
+  public void setErrorReporter(IErrorReporter errorReporter) {
+      this.errorReporter = errorReporter;
+  }
+  public void emitErrorMessage(String msg) {
+      errorReporter.reportError(msg);
+  }
 
 protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {
   throw new MismatchedTokenException(ttype, input);
@@ -93,7 +103,9 @@ public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet fol
   //TODO: get different token names
   throw new CFParseException( this.getErrorMessage( e, this.getTokenNames() ), e );
 }
+
 }
+
 
 @lexer::members {
 
@@ -123,22 +135,35 @@ public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet fol
           continue;
         }
         return state.token;
+      } catch (NoViableAltException nva) {
+                errorReporter.reportError(nva);
+                recover(nva); // throw out current char and try again
       }
       catch (RecognitionException re) {
-        //reportError(re);
+        errorReporter.reportError(re);
         return Token.EOF_TOKEN;
         //throw new RuntimeException("Bailing out!"); // or throw Error
       }
     }
   } 
+
+  private IErrorReporter errorReporter = null;
+  public void setErrorReporter(IErrorReporter errorReporter) {
+      this.errorReporter = errorReporter;
+  }
+  public void emitErrorMessage(String msg) {
+      errorReporter.reportError("from lex" + msg);
+  }
   
 }
 
 // Alter code generation so catch-clauses get replace with
 // this action.
-@rulecatch {
+@parser::rulecatch {
 catch (RecognitionException e) {
-  throw e;
+  System.out.println("cfscript.g");
+  errorReporter.reportError(e);
+  recover(getTokenStream(),e);
 }
 }
 
@@ -320,6 +345,7 @@ THROW: 'THROW';
 RETHROW: 'RETHROW';
 EXIT: 'EXIT';
 PARAM: 'PARAM';
+PROPERTY: 'PROPERTY';
 LOCK: 'LOCK';
 THREAD: 'THREAD';
 TRANSACTION: 'TRANSACTION';
@@ -353,11 +379,16 @@ FLOATING_POINT_LITERAL
 fragment ExponentPart
   : ('e'|'E') ('+'|'-')? DecimalDigit+
   ;
-
+ 
 //--- cfscript grammar rules
 
 scriptBlock
-  : ( element )* endOfScriptBlock
+  : componentDeclaration
+  | ( element )* endOfScriptBlock
+  ; 
+
+componentDeclaration
+  : COMPONENT functionAttribute* componentGuts -> ^( COMPDECL functionAttribute* componentGuts)
   ;
 
 endOfScriptBlock
@@ -408,6 +439,9 @@ compoundStatement
   : LEFTCURLYBRACKET^ ( statement )* RIGHTCURLYBRACKET
   ;
   
+componentGuts
+  : LEFTCURLYBRACKET^ ( element )* RIGHTCURLYBRACKET
+  ;
   
 statement
   :   tryCatchStatement
@@ -421,7 +455,8 @@ statement
   |   returnStatement
   |   tagOperatorStatement
   |   compoundStatement 
-  |   localAssignmentExpression SEMICOLON!
+//  |   localAssignmentExpression SEMICOLON!
+  |   localAssignmentExpression
   |   SEMICOLON! // empty statement
   ;
    
@@ -506,6 +541,7 @@ tagOperatorStatement
   | RETHROW SEMICOLON -> ^(RETHROWSTATEMENT)
   | exitStatement
   | paramStatement
+  | propertyStatement
   | lockStatement
   | threadStatement
   | transactionStatement
@@ -514,7 +550,7 @@ tagOperatorStatement
 // component  
 
 transactionStatement
-  : lc=TRANSACTION p=paramStatementAttributes (cs=compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  : lc=TRANSACTION p=paramStatementAttributes (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
   ;
 
 lockStatement
@@ -522,7 +558,7 @@ lockStatement
   ;
 
 threadStatement
-  : lc=THREAD p=paramStatementAttributes (cs=compoundStatement)? -> ^(THREADSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  : lc=THREAD p=paramStatementAttributes (compoundStatement)? -> ^(THREADSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
   ;
 
 abortStatement
@@ -544,6 +580,10 @@ paramStatement
   : lc=PARAM paramStatementAttributes  -> ^(PARAMSTATEMENT[$lc] paramStatementAttributes)
   ;
   
+propertyStatement
+  : lc=PROPERTY paramStatementAttributes  -> ^(PROPERTYSTATEMENT[$lc] paramStatementAttributes)
+  ;
+  
 paramStatementAttributes
   : ( param )+
   ;
@@ -560,7 +600,7 @@ expression
 	;
 	
 localAssignmentExpression 
-	:	lc=VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL[$lc] identifier ( EQUALSOP impliesExpression )? ) 
+	:	VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) 
 	|	assignmentExpression
 	;
 
@@ -664,8 +704,8 @@ unaryExpression
 	| MINUSMINUS memberExpression -> ^(MINUSMINUS memberExpression) 
 	| PLUSPLUS memberExpression -> ^(PLUSPLUS memberExpression)
 	| newComponentExpression
-  | memberExpression lc=MINUSMINUS -> ^(POSTMINUSMINUS[$lc] memberExpression)
-  | memberExpression lc=PLUSPLUS -> ^(POSTPLUSPLUS[$lc] memberExpression)
+  | memberExpression MINUSMINUS -> ^(POSTMINUSMINUS memberExpression)
+  | memberExpression PLUSPLUS -> ^(POSTPLUSPLUS memberExpression)
   | memberExpression 
 	;
 	
@@ -677,10 +717,10 @@ memberExpression
 memberExpressionB
   : ( primaryExpression -> primaryExpression ) // set return tree to just primary
   ( 
-  : lc=DOT p=primaryExpressionIRW LEFTPAREN args=argumentList ')' -> ^(JAVAMETHODCALL[$lc] $memberExpressionB $p $args )
-    |  lc=LEFTPAREN args=argumentList RIGHTPAREN -> ^(FUNCTIONCALL[$lc] $memberExpressionB $args)
-    | LEFTBRACKET ie=impliesExpression RIGHTBRACKET -> ^(LEFTBRACKET $memberExpressionB $ie)
-    | DOT p=primaryExpressionIRW -> ^(DOT $memberExpressionB $p)
+  : DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^(JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+    |  LEFTPAREN argumentList RIGHTPAREN -> ^(FUNCTIONCALL $memberExpressionB argumentList)
+    | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^(LEFTBRACKET $memberExpressionB impliesExpression)
+    | DOT primaryExpressionIRW -> ^(DOT $memberExpressionB primaryExpressionIRW)
   )*
   ;
   
@@ -812,11 +852,6 @@ implicitStructKeyExpression
 newComponentExpression
   : NEW^ componentPath LEFTPAREN argumentList ')'!
   ;
-
-componentDeclaration
-  : lc=COMPONENT functionAttribute* compoundStatement -> ^( COMPDECL[$lc] functionAttribute* compoundStatement )
-  ;
-
   
 componentPath
   : STRING_LITERAL

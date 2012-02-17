@@ -49,8 +49,16 @@ options {
 
 private List<String> importPaths = new ArrayList();
 
+  private IErrorReporter errorReporter = null;
+  public void setErrorReporter(IErrorReporter errorReporter) {
+      this.errorReporter = errorReporter;
+  }
+  public void emitErrorMessage(String msg) {
+      errorReporter.reportError(msg);
+  }
+
 public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-  // Override this method so errors aren't written to Standard Error
+  errorReporter.reportError(tokenNames,e);
 }
 
 protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {
@@ -70,7 +78,8 @@ public List<String> getImportPaths(){
 // this action.
 @rulecatch {
 catch (RecognitionException re) {
-  throw re;
+  System.out.println("cfscripttree.g");
+  errorReporter.reportError(re);
 }
 }
 
@@ -78,7 +87,8 @@ catch (RecognitionException re) {
  
 scriptBlock returns [CFScriptStatement s] throws ParseException
 @init{ s = new CFCompoundStatement(); }
-  : ( e=element { if ( e instanceof CFFuncDeclStatement ) ( (CFCompoundStatement) s).addFunction( e ); else ( (CFCompoundStatement) s).add( e ); } )* 
+  : st=componentDeclaration { s = st; }
+  | ( e=element { if ( e instanceof CFFuncDeclStatement ) ( (CFCompoundStatement) s).addFunction( e ); else ( (CFCompoundStatement) s).add( e ); } )* 
     ( SCRIPTCLOSE | EOF )
   ; 
   
@@ -87,6 +97,12 @@ element returns [CFScriptStatement s] throws ParseException
   | st=statement { s = st; } 
   ;  
 
+  
+componentDeclaration returns [CFScriptStatement s] throws ParseException
+  : ^( f=COMPDECL fa=functionAttributes body=componentGuts ){ 
+          s = new CFCompDeclStatement( f.getToken(), fa, body ); 
+        }
+  ; 
   
 functionDeclaration returns [CFScriptStatement s] throws ParseException
   : ^( f=FUNCDECL (a=functionAccessType)? (rt=functionReturnType)? i=identifier p=parameterList fa=functionAttributes body=compoundStatement ){ 
@@ -131,6 +147,11 @@ typeSpec returns [String image]
 compoundStatement returns [CFScriptStatement s]
 @init{ s = new CFCompoundStatement(); }
   : ^( LEFTCURLYBRACKET ( statmt = statement { ( (CFCompoundStatement) s ).add( statmt ); } )* RIGHTCURLYBRACKET ) 
+  ;
+  
+componentGuts returns [CFScriptStatement s]
+@init{ s = new CFCompoundStatement(); }
+  : ^( LEFTCURLYBRACKET ( e=element { if ( e instanceof CFFuncDeclStatement ) ( (CFCompoundStatement) s).addFunction( e ); else ( (CFCompoundStatement) s).add( e ); } )* RIGHTCURLYBRACKET ) 
   ;
   
 statement returns [CFScriptStatement s] throws ParseException
@@ -264,6 +285,7 @@ tagOperatorStatement returns [CFScriptStatement e]
   | ^(t1=EXITSTATEMENT (s1=memberExpression)? ){ if ( s1 == null ) e = new CFExitStatement( t1.getToken(), null ); else e = new CFExitStatement( t1.getToken(), s1 ); }
   | t1=RETHROWSTATEMENT { e = new CFReThrowStatement( t1.getToken() ); }
   | ^(t1=PARAMSTATEMENT attr=paramStatementAttributes){ e = new CFParamStatement( t1.getToken(), attr ); }
+  | ^(t1=PROPERTYSTATEMENT attr=paramStatementAttributes){ e = new CFPropertyStatement( t1.getToken(), attr ); }
   | ^(t1=LOCKSTATEMENT attr=paramStatementAttributes body=compoundStatement){ e = new CFLockStatement( t1.getToken(), attr, body ); }
   | ^(t1=THREADSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFThreadStatement( t1.getToken(), attr, body ); }
   | ^(t1=TRANSACTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
