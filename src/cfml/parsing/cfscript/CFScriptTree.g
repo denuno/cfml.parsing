@@ -80,6 +80,7 @@ public List<String> getImportPaths(){
 catch (RecognitionException re) {
   System.out.println("cfscripttree.g");
   errorReporter.reportError(re);
+  recover(getTreeNodeStream(),re);
 }
 }
 
@@ -99,7 +100,7 @@ element returns [CFScriptStatement s] throws ParseException
 
   
 componentDeclaration returns [CFScriptStatement s] throws ParseException
-  : ^( f=COMPDECL fa=functionAttributes body=componentGuts ){ 
+  : ^( f=COMPDECL fa=componentAttributes body=componentGuts ){ 
           s = new CFCompDeclStatement( f.getToken(), fa, body ); 
         }
   ; 
@@ -126,6 +127,16 @@ functionAttributes returns [Map<String,CFExpression> attr]
   attr = new HashMap<String,CFExpression>();
 }
   : ( ^(FUNCTION_ATTRIBUTE i=identifier e=expression){
+        attr.put( i.getToken().getText(), e );
+      }
+    )*
+  ;
+
+componentAttributes returns [Map<String,CFExpression> attr]
+@init{
+  attr = new HashMap<String,CFExpression>();
+}
+  : ( ^(COMPONENT_ATTRIBUTE i=identifierWithColon e=expression){
         attr.put( i.getToken().getText(), e );
       }
     )*
@@ -311,12 +322,14 @@ localAssignmentExpression returns [CFExpression e]
   ;
 
 assignmentExpression returns [CFAssignmentExpression e]
-  : ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  : ^( op=TERNARY e1=binaryExpression e2=localAssignmentExpression e3=localAssignmentExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=PLUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=MINUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=STAREQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=SLASHEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=MODEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  | ^( op=CONCATEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=CONCATEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   ;
      
@@ -419,6 +432,11 @@ primaryExpression returns [CFExpression e]
   
   ;
  
+identifierWithColon returns [CFIdentifier e]
+  : t=IDENTIFIERWITHCOLON  { e = new CFIdentifier( t.getToken() ); }
+  | ie=identifier          { e = ie; }
+  ;
+
 identifier returns [CFIdentifier e]
   : t=IDENTIFIER  { e = new CFIdentifier( t.getToken() ); }
   | t=DOES        { e = new CFIdentifier( t.getToken() ); }

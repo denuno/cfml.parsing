@@ -42,6 +42,7 @@ tokens {
   FUNCTIONCALL; // function call
   JAVAMETHODCALL; // java method call
   EMPTYARGS; // empty list of arguments
+  TERNARY; // ternary operator
   
   COMPDECL; // component declaration
   FUNCDECL; // function declaration
@@ -64,6 +65,7 @@ tokens {
   FUNCTION_PARAMETER; // function parameter
   FUNCTION_RETURNTYPE; // function return type
   FUNCTION_ATTRIBUTE; // the attributes of the function 
+  COMPONENT_ATTRIBUTE; // the attributes of the component 
   PARAMETER_TYPE; // function parameter type
 }
 
@@ -360,7 +362,10 @@ COMPONENT: 'COMPONENT';
 
 IDENTIFIER 
 	:	LETTER (LETTER|DIGIT)*;
-	
+
+IDENTIFIERWITHCOLON 
+  : (IDENTIFIER|COLON)*;
+  
 	
 INTEGER_LITERAL
   : DecimalDigit+
@@ -388,7 +393,7 @@ scriptBlock
   ; 
 
 componentDeclaration
-  : COMPONENT functionAttribute* componentGuts -> ^( COMPDECL functionAttribute* componentGuts)
+  : COMPONENT componentAttribute* componentGuts -> ^( COMPDECL componentAttribute* componentGuts)
   ;
 
 endOfScriptBlock
@@ -431,6 +436,10 @@ parameterType
   : typeSpec -> ^( PARAMETER_TYPE typeSpec )
   ;
 
+componentAttribute
+  : identifierWithColon op=EQUALSOP impliesExpression -> ^(COMPONENT_ATTRIBUTE[$op] identifierWithColon impliesExpression)
+  ;
+  
 functionAttribute
   : identifier op=EQUALSOP impliesExpression -> ^(FUNCTION_ATTRIBUTE[$op] identifier impliesExpression)
   ;
@@ -614,7 +623,8 @@ impliesExpression
 	;
 
 ternary
-   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
+//   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(IF equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression)
+   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(TERNARY equivalentExpression localAssignmentExpression*)
    ;
 
 equivalentExpression
@@ -768,6 +778,11 @@ argument
   : ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
   | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
   | impliesExpression 
+  ;
+
+identifierWithColon
+  : IDENTIFIERWITHCOLON
+  | identifier
   ;
 
 identifier
