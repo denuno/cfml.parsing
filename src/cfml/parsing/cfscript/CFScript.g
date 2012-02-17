@@ -111,7 +111,6 @@ public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet fol
 
   public static final int JAVADOC_CHANNEL = 1;
   public Token nextToken() {
-    
     if ( state.token != null && state.token.getType() == SCRIPTCLOSE ){
       return Token.EOF_TOKEN;
     }
@@ -336,6 +335,7 @@ LEFTPAREN: '(';
 RIGHTPAREN: ')';
 LEFTCURLYBRACKET: '{';
 RIGHTCURLYBRACKET: '}';
+QUESTIONMARK: '?';
 
 // tag operators
 INCLUDE: 'INCLUDE';
@@ -596,7 +596,7 @@ param
 //--- expression engine grammar rules (a subset of the cfscript rules)
   
 expression 
-	: 	localAssignmentExpression EOF!
+	: localAssignmentExpression EOF!
 	;
 	
 localAssignmentExpression 
@@ -605,12 +605,17 @@ localAssignmentExpression
 	;
 
 assignmentExpression 
-  : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS )^ impliesExpression )? 
+  : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS )^ impliesExpression )?
   ;
 
 impliesExpression
-	:	equivalentExpression ( IMP^ equivalentExpression )*
+	:	ternary
+	| equivalentExpression ( IMP^ equivalentExpression )*
 	;
+
+ternary
+   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
+   ;
 
 equivalentExpression
 	:	xorExpression ( EQV^ xorExpression )*
