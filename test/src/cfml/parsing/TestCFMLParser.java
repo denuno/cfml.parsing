@@ -174,8 +174,52 @@ public class TestCFMLParser {
 	
 	@Test
 	public void testParseScriptMissingAssignment() {
-		String path = "";
 		String script = "var x = 1; y =; createObject('java','java.lang.String');";
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptTernary() {
+		// String script = "result = (fileExists(destfile)) ? \"overwritten\" : \"created\";";
+		String script = "result = a == b ? \"overwritten\" : \"created\";";
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptTernary2() {
+		String script = "result = a == b ? c > a ? 'c > a' : 'a > c' : 'b != a';";
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScript(script);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptBadLex() {
+		String path = "";
+		String script = "string function fart(required kind, area='elavator') {"
+				+ "var toot = 'se5ee6yye67tutuityit69t9imfuihki';"
+				+ "var registry = createObject('java','org.eclipse.emf.ecore.EPackage$Registry').INSTANCE;"
+				+ "var className = listLast(class,'/');" + "var packageName = '';" + "if(isObject(class)) {"
+				+ "this._instance = class;" + "} else {" + "weee" + "}};";
 		try {
 			path = new URL(sourceUrlFile).getPath();
 		} catch (MalformedURLException e) {
@@ -189,20 +233,76 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(scriptStatement.toString());
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptCfcGood() {
+		String path = "";
+		try {
+			path = new URL("file:test/data/cfml/ScriptComponent.cfc").getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScriptFile(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		System.out.println(scriptStatement.toString());
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptCfcHarder() {
+		String path = "";
+		try {
+			path = new URL("file:test/data/cfml/ScriptComponentHarder.cfc").getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScriptFile(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(scriptStatement.toString());
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptCfcWow() {
+		String path = "";
+		try {
+			path = new URL("file:test/data/cfml/ScriptComponentWow.cfc").getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScriptFile(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(scriptStatement.toString());
 		assertNotNull(scriptStatement);
 	}
 	
 	@Test
 	public void testParseScriptFunction() {
-		String path = "";
 		String script = "function runFunction(functionName,argCol) { runFunk = this[functionName]; results = structNew(); results.result = runFunk(argumentCollection=argCol); results.debug = getDebugMessages(); return results; }";
-		try {
-			path = new URL(sourceUrlFile).getPath();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		CFScriptStatement scriptStatement = null;
 		try {
 			scriptStatement = fCfmlParser.parseScript(script);
@@ -216,14 +316,7 @@ public class TestCFMLParser {
 	
 	@Test
 	public void testParseScriptTryCatch() {
-		String path = "";
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
-		try {
-			path = new URL(sourceUrlFile).getPath();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		CFScriptStatement scriptStatement = null;
 		try {
 			scriptStatement = fCfmlParser.parseScript(script);
