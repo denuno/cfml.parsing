@@ -862,7 +862,7 @@ implicitStructKeyExpression
   ;
 
 newComponentExpression
-  : NEW^ componentPath LEFTPAREN argumentList ')'!
+  : NEW^ (componentPath LEFTPAREN argumentList ')'!)* 
   ;
   
 componentPath
