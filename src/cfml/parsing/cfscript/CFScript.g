@@ -362,11 +362,6 @@ COMPONENT: 'COMPONENT';
 
 IDENTIFIER 
 	:	LETTER (LETTER|DIGIT)*;
-
-IDENTIFIERWITHCOLON
-  : COLON IDENTIFIER
-  ;
-  
 	
 INTEGER_LITERAL
   : DecimalDigit+
@@ -438,8 +433,9 @@ parameterType
   ;
 
 componentAttribute
-  : identifierWithColon op=EQUALSOP impliesExpression -> ^(COMPONENT_ATTRIBUTE[$op] identifierWithColon impliesExpression)
+  : identifier (COLON identifier)? op=EQUALSOP impliesExpression -> ^(COMPONENT_ATTRIBUTE identifier (COLON identifier)? impliesExpression)
   ;
+//i=identifier EQUALSOP^ v=impliesExpression
   
 functionAttribute
   : identifier op=EQUALSOP impliesExpression -> ^(FUNCTION_ATTRIBUTE[$op] identifier impliesExpression)
@@ -492,12 +488,12 @@ doWhileStatement
   ;
   
 forStatement
-  : FOR^ LEFTPAREN! ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON  ( assignmentExpression )? RIGHTPAREN! statement
+  : FOR^ LEFTPAREN! VAR? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON  ( assignmentExpression )? RIGHTPAREN! statement
   | FOR^ LEFTPAREN! forInKey IN assignmentExpression RIGHTPAREN! statement
   ;
   
 forInKey
-  : identifier ( DOT ( identifier | reservedWord ) )*
+  : VAR? identifier ( DOT ( identifier | reservedWord ) )*
   ;
 
 tryCatchStatement
@@ -625,7 +621,7 @@ impliesExpression
 
 ternary
 //   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(IF equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression)
-   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(TERNARY equivalentExpression localAssignmentExpression*)
+   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression)
    ;
 
 equivalentExpression
@@ -779,11 +775,6 @@ argument
   : ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
   | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
   | impliesExpression 
-  ;
-
-identifierWithColon
-  : IDENTIFIERWITHCOLON
-  | identifier
   ;
 
 identifier

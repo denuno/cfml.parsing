@@ -136,8 +136,12 @@ componentAttributes returns [Map<String,CFExpression> attr]
 @init{
   attr = new HashMap<String,CFExpression>();
 }
-  : ( ^(COMPONENT_ATTRIBUTE i=identifierWithColon e=expression){
-        attr.put( i.getToken().getText(), e );
+  : ( ^(COMPONENT_ATTRIBUTE i=identifier (COLON ii=identifier)? e=expression){
+        if(ii != null) {
+          attr.put( i.getToken().getText() + ii.getToken().getText(), e );
+         } else {
+          attr.put( i.getToken().getText(), e );
+         }
       }
     )*
   ;
@@ -250,7 +254,7 @@ constantExpression returns [CFExpression e]
   
   
 forStatement returns [CFScriptStatement s]
-  : ^(t=FOR (e1=expression)? SEMICOLON (e2=expression)? SEMICOLON (e3=expression)? s1=statement ){
+  : ^(t=FOR VAR? (e1=expression)? SEMICOLON (e2=expression)? SEMICOLON (e3=expression)? s1=statement ){
       return new CFForStatement( t.getToken(), e1, e2, e3, s1 );
     } 
   | ^(t=FOR e=forInKey IN e1=expression s1=statement ){
@@ -259,7 +263,7 @@ forStatement returns [CFScriptStatement s]
   ;
   
 forInKey returns [CFExpression e]
-  : t1=identifier { e = t1; }
+  : VAR? t1=identifier { e = t1; }
     (
       DOT ( t2=identifier | t2=reservedWord ){
         if ( !( e instanceof cfFullVarExpression ) ){
@@ -321,9 +325,15 @@ localAssignmentExpression returns [CFExpression e]
     }
   ;
 
+ternary returns [CFAssignmentExpression e]
+  : ^( op=TERNARY e1=memberExpression e2=memberExpression e3=memberExpression ){ 
+      e = new CFTernaryExpression( op.getToken(), e1, e2, e3 );
+    }
+  ;
+
 assignmentExpression returns [CFAssignmentExpression e]
-  : ^( op=TERNARY e1=binaryExpression e2=localAssignmentExpression e3=localAssignmentExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
-  | ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
+  : te=ternary { e = te; }
+  | ^( op=EQUALSOP e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); } 
   | ^( op=PLUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=MINUSEQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
   | ^( op=STAREQUALS e1=memberExpression e2=memberExpression ) { e = new CFAssignmentExpression( op.getToken(), e1, e2 ); }
