@@ -407,11 +407,13 @@ functionDeclaration
   ;
 
 functionAccessType
-  : PUBLIC | PRIVATE | REMOTE | PACKAGE
+  //: (PUBLIC | PRIVATE | REMOTE | PACKAGE) (functionReturnType|identifier)
+  : ((PUBLIC | PRIVATE | REMOTE | PACKAGE) functionReturnType? FUNCTION identifier) => PUBLIC | PRIVATE | REMOTE | PACKAGE
+//  : ((PUBLIC | PRIVATE | REMOTE | PACKAGE) functionReturnType? FUNCTION identifier) => lc=(PUBLIC | PRIVATE | REMOTE | PACKAGE -> ^(FUNCTION_ACCESS[$lc])
   ;
 
 functionReturnType
-  : typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec )
+  : (typeSpec FUNCTION) => typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec )
   ;
 
 typeSpec
