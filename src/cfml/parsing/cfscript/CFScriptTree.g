@@ -106,12 +106,16 @@ componentDeclaration returns [CFScriptStatement s] throws ParseException
   ; 
   
 functionDeclaration returns [CFScriptStatement s] throws ParseException
-  : ^( f=FUNCDECL (a=functionAccessType)? (rt=functionReturnType)? i=identifier p=parameterList fa=functionAttributes body=compoundStatement ){ 
+  : ^( f=FUNCDECL (a=functionAccessType)? (rt=functionReturnType)? ^(FUNCTION_NAME i=identifier) p=parameterList fa=functionAttributes body=compoundStatement ){ 
           s = new CFFuncDeclStatement( f.getToken(), i.getToken(), a, rt, p, fa, body ); 
         }
   ;
   
 functionAccessType returns [String s]
+  :^( f=FUNCTION_ACCESS a=accessType) { return a; }
+  ;
+
+accessType returns [String s]
   : PRIVATE { return "private"; }
   | PUBLIC { return "public"; }
   | REMOTE { return "remote"; }

@@ -62,6 +62,8 @@ tokens {
   THREADSTATEMENT; // thread statement
   TRANSACTIONSTATEMENT; // thread statement
   
+  FUNCTION_NAME; // function name (identifier token types may vary, thus this specific type)
+  FUNCTION_ACCESS; // function access
   FUNCTION_PARAMETER; // function parameter
   FUNCTION_RETURNTYPE; // function return type
   FUNCTION_ATTRIBUTE; // the attributes of the function 
@@ -403,18 +405,22 @@ element
   ;
 
 functionDeclaration
-  : (functionAccessType)? (functionReturnType)? lc=FUNCTION identifier LEFTPAREN (parameterList)? RIGHTPAREN functionAttribute* compoundStatement -> ^( FUNCDECL[$lc] (functionAccessType)? (functionReturnType)? identifier (parameterList)? functionAttribute* compoundStatement )
+  : (functionAccessType)? (functionReturnType)? lc=FUNCTION identifier LEFTPAREN (parameterList)? RIGHTPAREN functionAttribute* compoundStatement -> ^( FUNCDECL[$lc] (functionAccessType)? (functionReturnType)? ^(FUNCTION_NAME identifier) (parameterList)? functionAttribute* compoundStatement )
   ;
 
 functionAccessType
   //: (PUBLIC | PRIVATE | REMOTE | PACKAGE) (functionReturnType|identifier)
-  : ((PUBLIC | PRIVATE | REMOTE | PACKAGE) functionReturnType? FUNCTION identifier) => PUBLIC | PRIVATE | REMOTE | PACKAGE
+  : (accessType functionReturnType? FUNCTION identifier) => accessType -> ^(FUNCTION_ACCESS accessType) 
 //  : ((PUBLIC | PRIVATE | REMOTE | PACKAGE) functionReturnType? FUNCTION identifier) => lc=(PUBLIC | PRIVATE | REMOTE | PACKAGE -> ^(FUNCTION_ACCESS[$lc])
   ;
 
 functionReturnType
   : (typeSpec FUNCTION) => typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec )
   ;
+
+accessType
+	:PUBLIC | PRIVATE | REMOTE | PACKAGE
+	;
 
 typeSpec
   : identifier ( DOT ( identifier | reservedWord ) )*
@@ -618,6 +624,7 @@ assignmentExpression
 
 impliesExpression
 	:	ternary
+	| newComponentExpression
 	| equivalentExpression ( IMP^ equivalentExpression )*
 	;
 
