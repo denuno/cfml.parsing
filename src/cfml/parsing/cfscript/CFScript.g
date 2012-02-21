@@ -624,7 +624,6 @@ assignmentExpression
 
 impliesExpression
 	:	ternary
-	| newComponentExpression
 	| equivalentExpression ( IMP^ equivalentExpression )*
 	;
 
