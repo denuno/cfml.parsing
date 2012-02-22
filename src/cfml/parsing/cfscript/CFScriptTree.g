@@ -308,6 +308,7 @@ tagOperatorStatement returns [CFScriptStatement e]
   | ^(t1=LOCKSTATEMENT attr=paramStatementAttributes body=compoundStatement){ e = new CFLockStatement( t1.getToken(), attr, body ); }
   | ^(t1=THREADSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFThreadStatement( t1.getToken(), attr, body ); }
   | ^(t1=TRANSACTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
+  | ^(t1=CFMLFUNCTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
   ;
 
 

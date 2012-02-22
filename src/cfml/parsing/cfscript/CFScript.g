@@ -62,6 +62,8 @@ tokens {
   THREADSTATEMENT; // thread statement
   TRANSACTIONSTATEMENT; // thread statement
   
+  CFMLFUNCTIONSTATEMENT; // for calling functions in script (savecontent variable="wee" {} )
+
   FUNCTION_NAME; // function name (identifier token types may vary, thus this specific type)
   FUNCTION_ACCESS; // function access
   FUNCTION_PARAMETER; // function parameter
@@ -343,6 +345,7 @@ QUESTIONMARK: '?';
 
 // tag operators
 INCLUDE: 'INCLUDE';
+TEMPLATE: 'TEMPLATE';
 IMPORT: 'IMPORT';
 ABORT: 'ABORT';
 THROW: 'THROW';
@@ -353,6 +356,9 @@ PROPERTY: 'PROPERTY';
 LOCK: 'LOCK';
 THREAD: 'THREAD';
 TRANSACTION: 'TRANSACTION';
+SAVECONTENT: 'SAVECONTENT';
+HTTP: 'HTTP';
+FILE: 'FILE';
 
 // function related
 PRIVATE: 'PRIVATE';
@@ -469,8 +475,8 @@ statement
   |   returnStatement
   |   tagOperatorStatement
   |   compoundStatement 
-//  |   localAssignmentExpression SEMICOLON!
-  |   localAssignmentExpression
+  |   localAssignmentExpression SEMICOLON!
+//  |   localAssignmentExpression
   |   SEMICOLON! // empty statement
   ;
    
@@ -546,9 +552,9 @@ caseStatement
     ( DEFAULT^ COLON ( statement )* ) 
   ;
 
-
 tagOperatorStatement
-  : INCLUDE^ memberExpression SEMICOLON!
+  //: INCLUDE^ compoundStatement SEMICOLON!  (poundSignReader kills this :-/)
+  : includeStatement
   | IMPORT^ componentPath SEMICOLON!
   | abortStatement
   | throwStatement
@@ -559,12 +565,30 @@ tagOperatorStatement
   | lockStatement
   | threadStatement
   | transactionStatement
+  | cfmlfunctionStatement
   ;
 
 // component  
 
+includeStatement
+  : INCLUDE  (TEMPLATE EQUALSOP)? impliesExpression* SEMICOLON  -> ^(INCLUDE  impliesExpression* ) 
+  ;
+
 transactionStatement
   : lc=TRANSACTION p=paramStatementAttributes (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  ;
+
+cfmlfunctionStatement
+  : savecontentStatement
+  | httpStatement
+  ;
+
+savecontentStatement
+  : lc=SAVECONTENT p=paramStatementAttributes (compoundStatement)? -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  ;
+
+httpStatement
+  : lc=HTTP p=paramStatementAttributes (compoundStatement)? -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
   ;
 
 lockStatement
