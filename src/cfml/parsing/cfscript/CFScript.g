@@ -723,7 +723,7 @@ unaryExpression
 	| PLUS memberExpression -> ^(PLUS memberExpression)
 	| MINUSMINUS memberExpression -> ^(MINUSMINUS memberExpression) 
 	| PLUSPLUS memberExpression -> ^(PLUSPLUS memberExpression)
-	| newComponentExpression
+	| newComponentExpression (DOT memberExpression)*
   | memberExpression MINUSMINUS -> ^(POSTMINUSMINUS memberExpression)
   | memberExpression PLUSPLUS -> ^(POSTPLUSPLUS memberExpression)
   | memberExpression 
@@ -870,7 +870,7 @@ implicitStructKeyExpression
   ;
 
 newComponentExpression
-  : NEW^ (componentPath LEFTPAREN argumentList ')'!)* 
+  : NEW^ componentPath LEFTPAREN argumentList ')'!
   ;
   
 componentPath

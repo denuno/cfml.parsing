@@ -386,7 +386,7 @@ unaryExpression returns [CFExpression e]
   | ^( op=MINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTPLUSPLUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTMINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
-  | e1 = newComponentExpression { e = e1; }
+  | e1 = newComponentExpression (DOT memberExpression)* { e = e1; }
   ;    
    
 memberExpression returns [CFExpression e] throws ParseException
