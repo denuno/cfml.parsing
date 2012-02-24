@@ -308,7 +308,7 @@ tagOperatorStatement returns [CFScriptStatement e]
   | ^(t1=LOCKSTATEMENT attr=paramStatementAttributes body=compoundStatement){ e = new CFLockStatement( t1.getToken(), attr, body ); }
   | ^(t1=THREADSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFThreadStatement( t1.getToken(), attr, body ); }
   | ^(t1=TRANSACTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
-  | ^(t1=CFMLFUNCTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
+  | ^(t1=CFMLFUNCTIONSTATEMENT fs=cfmlFunction attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
   ;
 
 
@@ -387,7 +387,7 @@ unaryExpression returns [CFExpression e]
   | ^( op=MINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTPLUSPLUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
   | ^( op=POSTMINUSMINUS e1=memberExpression ){ e = new CFUnaryExpression( op.getToken(), e1 ); }
-  | e1 = newComponentExpression (DOT memberExpression)* { e = e1; }
+  | e1 = newComponentExpression (DOT primaryExpressionIRW (LEFTPAREN argumentList ')')*)* { e = e1; }
   ;    
    
 memberExpression returns [CFExpression e] throws ParseException
@@ -477,8 +477,21 @@ identifier returns [CFIdentifier e]
   | t=REMOTE      { e = new CFIdentifier( t.getToken() ); }
   | t=PACKAGE     { e = new CFIdentifier( t.getToken() ); }
   | t=REQUIRED    { e = new CFIdentifier( t.getToken() ); }
+  | kw=cfmlFunction { e = kw; }
   | {!scriptMode}?=> kw=cfscriptKeywords { e = kw; }
   ;
+
+cfmlFunction returns [CFIdentifier e]
+  : t=LOCATION { e = new CFIdentifier( t.getToken() ); }
+  | t=SAVECONTENT { e = new CFIdentifier( t.getToken() ); }
+  | t=HTTP { e = new CFIdentifier( t.getToken() ); }
+  | t=FILE { e = new CFIdentifier( t.getToken() ); }
+  | t=DIRECTORY { e = new CFIdentifier( t.getToken() ); }
+  | t=LOOP { e = new CFIdentifier( t.getToken() ); }
+  | t=SETTING { e = new CFIdentifier( t.getToken() ); }
+  | t=QUERY { e = new CFIdentifier( t.getToken() ); }
+  ;
+
 
 cfscriptKeywords returns [CFIdentifier e]
   : t=IF        { e = new CFIdentifier( t.getToken() ); }

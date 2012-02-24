@@ -88,28 +88,58 @@ tokens {
       errorReporter.reportError(msg);
   }
 
-protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {
-  throw new MismatchedTokenException(ttype, input);
-}
+
+/*
 	
-public Object recoverFromMismatchedSet( IntStream input, RecognitionException e, BitSet follow ) throws RecognitionException{
-  throw e;
-}
-
-public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet follow ) throws RecognitionException{
-  RecognitionException e = null;
-  if ( mismatchIsUnwantedToken(input, ttype) ) {
-    e = new UnwantedTokenException(ttype, input);
-  }else if ( mismatchIsMissingToken(input, follow) ) {
-    Object inserted = getMissingSymbol(input, e, ttype, follow);
-    e = new MissingTokenException(ttype, input, inserted);
-  }else{
-    e = new MismatchedTokenException(ttype, input);
-  }
-  //TODO: get different token names
-  throw new CFParseException( this.getErrorMessage( e, this.getTokenNames() ), e );
-}
-
+	public String getErrorMessage(RecognitionException e,
+	                                  String[] tokenNames)
+	    {
+	        List stack = getRuleInvocationStack(e, this.getClass().getName());
+	        String msg = null;
+	        String inputContext =
+	            input.LT(-3) == null ? "" : ((CommonToken)input.LT(-3)).getText()+" "+
+	            input.LT(-2) == null ? "" : ((CommonToken)input.LT(-2)).getText()+" "+
+	            input.LT(-1) == null ? "" : ((CommonToken)input.LT(-1)).getText()+" >>>"+
+	            ((CommonToken)input.LT(1)).getText()+"<<< "+
+	            ((CommonToken)input.LT(2)).getText()+" "+
+	            ((CommonToken)input.LT(3)).getText();
+	        if ( e instanceof NoViableAltException ) {
+	           NoViableAltException nvae = (NoViableAltException)e;
+	           msg = " no viable alt; token="+e.token+
+	              " (decision="+nvae.decisionNumber+
+	              " state "+nvae.stateNumber+")"+
+	              " decision=<<"+nvae.grammarDecisionDescription+">>";
+	        }
+	        else {
+	           msg = super.getErrorMessage(e, tokenNames);
+	        }
+	        return stack+" "+msg+" context=..."+inputContext+"...";
+	    }
+	    public String getTokenErrorDisplay(Token t) {
+	        return t.toString();
+	    }
+*/
+	protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {
+	  throw new MismatchedTokenException(ttype, input);
+	}
+		
+	public Object recoverFromMismatchedSet( IntStream input, RecognitionException e, BitSet follow ) throws RecognitionException{
+	  throw e;
+	}
+	
+	public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet follow ) throws RecognitionException{
+	  RecognitionException e = null;
+	  if ( mismatchIsUnwantedToken(input, ttype) ) {
+	    e = new UnwantedTokenException(ttype, input);
+	  }else if ( mismatchIsMissingToken(input, follow) ) {
+	    Object inserted = getMissingSymbol(input, e, ttype, follow);
+	    e = new MissingTokenException(ttype, input, inserted);
+	  }else{
+	    e = new MismatchedTokenException(ttype, input);
+	  }
+	  //TODO: get different token names
+	  throw new CFParseException( this.getErrorMessage( e, this.getTokenNames() ), e );
+	}
 }
 
 
@@ -166,7 +196,7 @@ public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet fol
 // this action.
 @parser::rulecatch {
 catch (RecognitionException e) {
-  System.out.println("cfscript.g");
+  //System.out.println("cfscript.g");
   errorReporter.reportError(e);
   recover(getTokenStream(),e);
 }
@@ -345,7 +375,6 @@ QUESTIONMARK: '?';
 
 // tag operators
 INCLUDE: 'INCLUDE';
-TEMPLATE: 'TEMPLATE';
 IMPORT: 'IMPORT';
 ABORT: 'ABORT';
 THROW: 'THROW';
@@ -356,9 +385,16 @@ PROPERTY: 'PROPERTY';
 LOCK: 'LOCK';
 THREAD: 'THREAD';
 TRANSACTION: 'TRANSACTION';
+
+// cfmlfunction (tags you can call from script)
+LOCATION: 'LOCATION';
 SAVECONTENT: 'SAVECONTENT';
 HTTP: 'HTTP';
 FILE: 'FILE';
+DIRECTORY: 'DIRECTORY';
+LOOP: 'LOOP'; 
+SETTING: 'SETTING';
+QUERY: 'QUERY';
 
 // function related
 PRIVATE: 'PRIVATE';
@@ -374,6 +410,7 @@ IDENTIFIER
 INTEGER_LITERAL
   : DecimalDigit+
   ;
+
 
 fragment DecimalDigit
   : ('0'..'9')
@@ -571,25 +608,38 @@ tagOperatorStatement
 // component  
 
 includeStatement
-  : INCLUDE  (TEMPLATE EQUALSOP)? impliesExpression* SEMICOLON  -> ^(INCLUDE  impliesExpression* ) 
+  : INCLUDE impliesExpression* SEMICOLON  -> ^(INCLUDE  impliesExpression* ) 
   ;
 
 transactionStatement
   : lc=TRANSACTION p=paramStatementAttributes (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
   ;
+  
+cfmlfunctionStatement
+  : cfmlFunction (param)* (compoundStatement)?-> ^(CFMLFUNCTIONSTATEMENT cfmlFunction (param)* (compoundStatement)?)
+  ;
+  
+cfmlFunction
+  : LOCATION
+  | SAVECONTENT
+  | HTTP 
+  | FILE 
+  | DIRECTORY
+  | LOOP 
+  | SETTING
+  | QUERY
+  ;
+
+/*
 
 cfmlfunctionStatement
   : savecontentStatement
-  | httpStatement
   ;
 
 savecontentStatement
-  : lc=SAVECONTENT p=paramStatementAttributes (compoundStatement)? -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  : lc=SAVECONTENT p=paramStatementAttributes cs=compoundStatement -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes compoundStatement)
   ;
-
-httpStatement
-  : lc=HTTP p=paramStatementAttributes (compoundStatement)? -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
-  ;
+*/
 
 lockStatement
   : lc=LOCK p=paramStatementAttributes cs=compoundStatement -> ^(LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement)
@@ -747,7 +797,7 @@ unaryExpression
 	| PLUS memberExpression -> ^(PLUS memberExpression)
 	| MINUSMINUS memberExpression -> ^(MINUSMINUS memberExpression) 
 	| PLUSPLUS memberExpression -> ^(PLUSPLUS memberExpression)
-	| newComponentExpression (DOT memberExpression)*
+	| newComponentExpression (DOT primaryExpressionIRW (LEFTPAREN argumentList ')')*)*
   | memberExpression MINUSMINUS -> ^(POSTMINUSMINUS memberExpression)
   | memberExpression PLUSPLUS -> ^(POSTPLUSPLUS memberExpression)
   | memberExpression 
@@ -834,6 +884,7 @@ identifier
   | REMOTE
   | PACKAGE
   | REQUIRED
+  | cfmlFunction
   | {!scriptMode}?=> cfscriptKeywords 
 	;
 
