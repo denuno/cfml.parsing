@@ -1,8 +1,10 @@
 package cfml.parsing;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,9 +22,7 @@ public class TestScriptParser {
 		fCfmlParser = new CFMLParser();
 	}
 	
-	@Test
-	public void testParseScript() {
-		String script = "var x = 1; y = 5; createObject('java','java.lang.String');";
+	private CFScriptStatement parseScript(String script) {
 		CFScriptStatement scriptStatement = null;
 		try {
 			scriptStatement = fCfmlParser.parseScript(script);
@@ -31,6 +31,13 @@ public class TestScriptParser {
 			e.printStackTrace();
 			fail("whoops! " + e.getMessage());
 		}
+		return scriptStatement;
+	}
+	
+	@Test
+	public void testParseScript() {
+		String script = "var x = 1; y = 5; createObject('java','java.lang.String');";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -41,15 +48,8 @@ public class TestScriptParser {
 	@Test
 	public void testParseScriptMissingSemiColon() {
 		String script = "var x = 1; y = 5 createObject('java','java.lang.String');";
-		CFScriptStatement scriptStatement = null;
-		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
-		}
-		if (fCfmlParser.getMessages().size() > 0) {
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() == 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
 		System.out.println(fCfmlParser.printMessages());
@@ -59,14 +59,7 @@ public class TestScriptParser {
 	@Test
 	public void testParseScriptMissingAssignment() {
 		String script = "var x = 1; y =; createObject('java','java.lang.String');";
-		CFScriptStatement scriptStatement = null;
-		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
-		}
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() == 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -75,15 +68,44 @@ public class TestScriptParser {
 	
 	@Test
 	public void testForIn() {
-		String script = "for(widget in thingWithWidgets.getWidgets()) { writeOutput(widget) };";
-		CFScriptStatement scriptStatement = null;
-		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
+		String script = "for(widget in thingWithWidgets.getWidgets()) { writeOutput(widget); }";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
 		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testNewOperator() {
+		String script = "datatypes = new CFDataTypes().package();";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+		script = "datatypes = new CFDataTypes().package().member;";
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testFuncNameMatchesAccessType() {
+		String script = "function package() {}";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testAccessTypeAndFuncNameMatch() {
+		String script = "package function package() {}";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -97,19 +119,12 @@ public class TestScriptParser {
 				+ "var registry = createObject('java','org.eclipse.emf.ecore.EPackage$Registry').INSTANCE;"
 				+ "var className = listLast(class,'/');" + "var packageName = '';" + "if(isObject(class)) {"
 				+ "this._instance = class;" + "} else {" + "weee" + "}};";
-		CFScriptStatement scriptStatement = null;
-		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
-		}
-		if (fCfmlParser.getMessages().size() > 0) {
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() == 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
 		System.out.println(scriptStatement.toString());
-		assertNotNull(scriptStatement);
+		assertNull(scriptStatement);
 	}
 	
 	@Test
@@ -237,16 +252,51 @@ public class TestScriptParser {
 	}
 	
 	@Test
-	public void testParseScriptFunction() {
-		String script = "function runFunction(functionName,argCol) { runFunk = this[functionName]; results = structNew(); results.result = runFunk(argumentCollection=argCol); results.debug = getDebugMessages(); return results; }";
-		CFScriptStatement scriptStatement = null;
+	public void testParseAllTestCFCs() {
+		String path = "";
 		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
+			path = new URL("file:test/data/cfml/").getPath();
+			File[] files = new File(path).listFiles();
+			for (File file : files) {
+				if (file.isDirectory()) {
+					System.out.println("Directory: " + file.getName());
+				} else if (file.getPath().endsWith(".cfc")) {
+					CFScriptStatement scriptStatement = null;
+					try {
+						scriptStatement = fCfmlParser.parseScriptFile(file.getAbsolutePath());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						fail("whoops! " + e.getMessage());
+					}
+					if (fCfmlParser.getMessages().size() > 0) {
+						fail("whoops! " + fCfmlParser.getMessages());
+					}
+					System.out.println(scriptStatement.toString());
+					assertNotNull(scriptStatement);
+				}
+			}
+		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
 		}
+	}
+	
+	@Test
+	public void testParseScriptFunction() {
+		String script = "function runFunction(functionName,argCol) { runFunk = this[functionName]; results = structNew(); results.result = runFunk(argumentCollection=argCol); results.debug = getDebugMessages(); return results; }";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testParseScriptEmptyCompDecl() {
+		String script = "component { }";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -257,14 +307,7 @@ public class TestScriptParser {
 	@Test
 	public void testParseScriptTryCatch() {
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
-		CFScriptStatement scriptStatement = null;
-		try {
-			scriptStatement = fCfmlParser.parseScript(script);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("whoops! " + e.getMessage());
-		}
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}

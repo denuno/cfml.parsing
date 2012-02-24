@@ -16,13 +16,14 @@ component output="false" persistent="false" {
 			arrayAppend(cfpropertyAttributes,cfpropertyAttribute);
 		}
 		// add generic attributes for random metadata
-		arrayAppend(cfpropertyAttributes,{name="attributes", reference:"Attribute",containment:true, lowerBound:0,upperBound:-1})
+		arrayAppend(cfpropertyAttributes,{name="attributes", reference:"Attribute",containment:true, lowerBound:0,upperBound:-1});
 		cfpropertyAttribute = {};
 		cfpropertyAttribute["name"] = "id";
 		cfpropertyAttribute["etype"] = "EString";
 		cfpropertyAttribute["lowerBound"] = 0;
 		cfpropertyAttribute["upperBound"] = 1;
 		arrayAppend(cfpropertyAttributes,cfpropertyAttribute);
+		
 		var package = {
 			name:"cfcPackage",
 			datatypes:datatypes,
@@ -30,7 +31,7 @@ component output="false" persistent="false" {
 				{ name:"CFCModel",
 					features : [
 						{name="package", etype:"EString", lowerBound:0,upperBound:1},
-						{name="cfcs", reference:"ORMEntity",containment:true, lowerBound:0,upperBound:-1},
+						{name="cfcs", reference:"ORMEntity",containment:true, lowerBound:0,upperBound:-1}
 					]
 				},
 				{ name:"ORMEntity",
@@ -104,7 +105,7 @@ component output="false" persistent="false" {
 					]
 				}
 			]
-		}
+		};
 		return package;
 	}
 

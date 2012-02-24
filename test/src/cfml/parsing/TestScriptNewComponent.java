@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import cfml.parsing.cfscript.script.CFScriptStatement;
 
-public class TestScriptParserForLoop {
+public class TestScriptNewComponent {
 	
 	private CFMLParser fCfmlParser;
 	
@@ -30,10 +30,9 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForIn() {
-		String script = "for(widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
+	public void testNewInFunction() {
+		String script = "var dojoAppPackage = ecore.load(new moshen.metamodels.DojoApp().package());";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -41,10 +40,9 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithVar() {
-		String script = "for(var widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
+	public void testNewInFunctionMember() {
+		String script = "var dojoAppPackage = ecore.load(new moshen.metamodels.DojoApp().package().thing);";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
@@ -52,31 +50,14 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithPropVar() {
-		String script = "for(var prop in displayFields) {}";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
+	public void testNewOp() {
+		String script = "myvar = new my.path.cfc.Here();";
+		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
 		assertNotNull(scriptStatement);
-	}
-	
-	@Test
-	public void testForInWithMember() {
-		String script = "for(tag in e.tagcontext) {if(tag.template.startsWith('ram:')) {tag.template = templatepath;}}";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
-		if (fCfmlParser.getMessages().size() > 0) {
-			fail("whoops! " + fCfmlParser.getMessages());
-		}
-		assertNotNull(scriptStatement);
-	}
-	
-	@Test
-	public void testForInWithMemberEmpty() {
-		String script = "for(tag in e.tagcontext) {}";
-		CFScriptStatement scriptStatement = null;
+		script = "var myvar = new my.path.cfc.Here(); var funk=newthing(wee);";
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());

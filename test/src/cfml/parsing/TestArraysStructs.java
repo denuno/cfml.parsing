@@ -3,12 +3,15 @@ package cfml.parsing;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import cfml.parsing.cfscript.script.CFScriptStatement;
 
-public class TestScriptParserForLoop {
+public class TestArraysStructs {
 	
 	private CFMLParser fCfmlParser;
 	
@@ -30,8 +33,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForIn() {
-		String script = "for(widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
+	public void testEmptyVaredArray() {
+		String script = "var someArry = [];";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -41,8 +44,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithVar() {
-		String script = "for(var widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
+	public void testVaredArrayOfStruct() {
+		String script = "var someArry = [{funk:'wee'},{funk2:'wee2'}];";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -52,8 +55,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithPropVar() {
-		String script = "for(var prop in displayFields) {}";
+	public void testVaredArrayOfStructKyeyWerd() {
+		String script = "var package = { name:'cfcPackage', datatypes:datatypes, classes : [{ name:'CFCModel',features : [{name='package', etype:'EString', lowerBound:0,upperBound:1},{name='cfcs', reference:'ORMEntity',containment:true, lowerBound:0,upperBound:-1}]}]};";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -63,8 +66,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithMember() {
-		String script = "for(tag in e.tagcontext) {if(tag.template.startsWith('ram:')) {tag.template = templatepath;}}";
+	public void testStructOfArray() {
+		String script = "var someStrucsArry = {stru:[{funk:'wee'},{funk2:'wee2'}], stro:[{funk:'wee'},{funk2:'wee2'}]};";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -74,14 +77,26 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithMemberEmpty() {
-		String script = "for(tag in e.tagcontext) {}";
+	public void testParseNestedStructsAndArrays() {
+		String path = "";
+		try {
+			path = new URL("file:test/data/cfml/NestedArraysStructs.cfc").getPath();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
+		try {
+			scriptStatement = fCfmlParser.parseScriptFile(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("whoops! " + e.getMessage());
+		}
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
+		
+		System.out.println(scriptStatement.toString());
 		assertNotNull(scriptStatement);
 	}
-	
 }

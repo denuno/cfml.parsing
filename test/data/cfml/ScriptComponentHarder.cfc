@@ -1,4 +1,4 @@
-component {
+component moshen:displayLabel="${courseNumber} ${shortName}" {
 
 	string function headSpin(required anything, area="elavator") {
 		var toot = "se5ee6yye67tutuityit69t9imfuihki";

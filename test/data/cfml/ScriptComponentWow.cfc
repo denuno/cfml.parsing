@@ -10,11 +10,11 @@ component output="false" persistent="false" {
 		variables._info = [];
 		var action = (fileExists(destfile)) ? " (overwritten)" : " (created)";
 
-		savecontent variable="renderedcontent"{
+		savecontent variable="renderedcontent" {
 			model = duplicate(_model);
 			metadata = duplicate(_model);
-			include template="/ram/#randName#";
-		}
+			include "/ram/#randName#";
+		};
 		
 		recursiveDecentParse(dir=basedir,overwrite=overwrite,createdirs=createdirs);
 		for(daform in model.getViews()) {

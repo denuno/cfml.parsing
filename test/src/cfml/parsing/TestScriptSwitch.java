@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import cfml.parsing.cfscript.script.CFScriptStatement;
 
-public class TestScriptParserForLoop {
+public class TestScriptSwitch {
 	
 	private CFMLParser fCfmlParser;
 	
@@ -30,8 +30,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForIn() {
-		String script = "for(widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
+	public void testSwitch() {
+		String script = "switch(prop.getType()) {case 'date' : case 'datetime' : kronk=sqronk; break; default: flur;}";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -41,8 +41,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithVar() {
-		String script = "for(var widget in thingWithWidgets.getWidgets()) { writeOutput(widget); };";
+	public void testSwitchEmpty() {
+		String script = "switch(prop) {case 'trunk' : case 'pleck' : break; case 'strunk' : break;}";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
@@ -52,30 +52,8 @@ public class TestScriptParserForLoop {
 	}
 	
 	@Test
-	public void testForInWithPropVar() {
-		String script = "for(var prop in displayFields) {}";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
-		if (fCfmlParser.getMessages().size() > 0) {
-			fail("whoops! " + fCfmlParser.getMessages());
-		}
-		assertNotNull(scriptStatement);
-	}
-	
-	@Test
-	public void testForInWithMember() {
-		String script = "for(tag in e.tagcontext) {if(tag.template.startsWith('ram:')) {tag.template = templatepath;}}";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
-		if (fCfmlParser.getMessages().size() > 0) {
-			fail("whoops! " + fCfmlParser.getMessages());
-		}
-		assertNotNull(scriptStatement);
-	}
-	
-	@Test
-	public void testForInWithMemberEmpty() {
-		String script = "for(tag in e.tagcontext) {}";
+	public void testCfmlFunctionStatement() {
+		String script = "savecontent variable='renderedcontent' {model = duplicate(_model);metadata = duplicate(_model);};";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
