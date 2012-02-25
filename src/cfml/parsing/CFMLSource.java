@@ -101,7 +101,11 @@ public class CFMLSource {
 	}
 	
 	public ParserTag getEnclosingTag(int i) {
-		return makeParserTag(fSource.getEnclosingTag(i));
+		Tag tag = fSource.getEnclosingTag(i);
+		if (tag == null) {
+			return null;
+		}
+		return makeParserTag(tag);
 	}
 	
 	public ParserTag getNextTag(int i) {

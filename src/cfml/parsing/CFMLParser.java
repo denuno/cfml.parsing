@@ -15,11 +15,15 @@ import java.util.Set;
 import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.StartTag;
 
+import org.antlr.runtime.BitSet;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.IntStream;
 import org.antlr.runtime.ParserRuleReturnScope;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
+import org.antlr.runtime.tree.DOTTreeGenerator;
+import org.antlr.stringtemplate.StringTemplate;
 
 import cfml.dictionary.DictionaryManager;
 import cfml.dictionary.Parameter;
@@ -30,6 +34,7 @@ import cfml.parsing.cfscript.CFParseException;
 import cfml.parsing.cfscript.CFScriptLexer;
 import cfml.parsing.cfscript.CFScriptParser;
 import cfml.parsing.cfscript.CFScriptTree;
+import cfml.parsing.cfscript.IErrorReporter;
 import cfml.parsing.cfscript.ParseException;
 import cfml.parsing.cfscript.poundSignFilterStream;
 import cfml.parsing.cfscript.poundSignFilterStreamException;
@@ -68,8 +73,10 @@ public class CFMLParser {
 		}
 	}
 	
-	public CFMLParser(String dictionary) {
-		DictionaryManager.initDictionaries();
+	public CFMLParser(String dictionariesPath, String dictionary) {
+		fDictPrefs.setDictionaryDir(dictionariesPath);
+		fDictPrefs.setCFDictionary(dictionary);
+		DictionaryManager.initDictionaries(fDictPrefs);
 		cfdic = DictionaryManager.getDictionaryByVersion(dictionary);
 		if (cfdic == null) {
 			throw new IllegalArgumentException("The syntax dictionary could not be loaded!");
@@ -246,33 +253,83 @@ public class CFMLParser {
 		
 	}
 	
+	public class StdErrReporter implements IErrorReporter {
+		public void reportError(String error) {
+			System.err.println(error);
+			addMessage(new ParseError(0, 0, 0, error, error));
+		}
+		
+		public void reportError(RecognitionException re) {
+			if (re.token != null) {
+				System.out.println("Token line:" + re.token.getLine());
+				System.out.println("Token text:" + re.token.getText());
+			}
+			re.printStackTrace();
+			System.err.println(re.getMessage());
+			addMessage(new ParseError(re.line, re.charPositionInLine, re.charPositionInLine, re.getMessage(),
+					re.getMessage()));
+		}
+		
+		public void reportError(String[] tokenNames, RecognitionException re) {
+			System.out.println("Token line:" + re.token.getLine());
+			System.out.println("Token text:" + re.token.getText());
+			System.err.println(tokenNames);
+			System.err.println(re.getMessage());
+			addMessage(new ParseError(re.line, re.charPositionInLine, re.charPositionInLine, tokenNames.toString(),
+					re.getMessage()));
+			re.printStackTrace();
+		}
+		
+		public void reportError(IntStream input, RecognitionException re, BitSet follow) {
+			System.out.println("Token line:" + re.token.getLine());
+			System.out.println("Token text:" + re.token.getText());
+			addMessage(new ParseError(re.line, re.charPositionInLine, re.charPositionInLine, re.getMessage(),
+					re.getMessage()));
+			System.err.println(re.getMessage());
+		}
+		
+	}
+	
+	public CFScriptStatement parseScriptFile(String file) throws ParseException, IOException {
+		return parseScript(readFileAsString(file));
+	}
+	
 	public CFScriptStatement parseScript(String cfscript) throws ParseException, IOException {
 		CFScriptStatement scriptStatement = null;
 		char[] scriptWithEndTag = cfscript.toCharArray();
 		
 		poundSignFilterStream psfstream = new poundSignFilterStream(new CharArrayReader(scriptWithEndTag));
 		ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(psfstream); // +
+		// ANTLRNoCaseReaderStream input = new ANTLRNoCaseReaderStream(new CharArrayReader(scriptWithEndTag)); // +
 		CFScriptLexer lexer = new CFScriptLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		CFScriptParser parser = new CFScriptParser(tokens);
+		StdErrReporter errorReporter = new StdErrReporter();
+		lexer.setErrorReporter(errorReporter);
+		parser.setErrorReporter(errorReporter);
 		try {
 			// "</CFSCRIPT>")
 			// )
 			// );
 			ParserRuleReturnScope r = parser.scriptBlock();
 			CommonTree tree = (CommonTree) r.getTree();
-			System.out.println(parser.getSourceName());
-			System.out.println(parser.getNumberOfSyntaxErrors());
+			DOTTreeGenerator gen = new DOTTreeGenerator();
+			StringTemplate st = gen.toDOT(tree);
+			System.out.println(st);
 			
+			/*
+ */
+			System.out.println(parser.getNumberOfSyntaxErrors());
 			CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 			System.out.println(nodes.getTreeAdaptor().getChildCount(tree));
 			nodes.setTokenStream(tokens);
 			CFScriptTree p2 = new CFScriptTree(nodes);
+			p2.setErrorReporter(errorReporter);
 			scriptStatement = p2.scriptBlock();
-			
 			// find special cases of "#varName#"="value";
 			sourceReader sr = new sourceReader(new BufferedReader(new CharArrayReader(cfscript.toCharArray())));
 			scriptStatement.checkIndirectAssignments(sr.getLines());
+			
 		} catch (CFParseException e) {
 			addMessage(new ParseError(e.line, e.charPositionInLine, e.charPositionInLine,
 					e.getSourceException().input.toString(), e.getMessage()));
@@ -288,7 +345,8 @@ public class CFMLParser {
 			// + cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
 			// e.printStackTrace();
 		} catch (RecognitionException e) {
-			throw new ParseException(e.token, "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'");
+			throw new ParseException(e.token, "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\' ("
+					+ e.token.getText() + ")");
 			// addMessage(new ParseError(e.line, e.charPositionInLine, e.charPositionInLine, parser
 			// .getTokenErrorDisplay(e.token), "Unexpected \'" + parser.getTokenErrorDisplay(e.token) + "\'"));
 			// parser.displayRecognitionError(parser.getTokenNames(), e);
@@ -298,8 +356,6 @@ public class CFMLParser {
 			// + parser.getTokenErrorDisplay(e.token) + e.token.getTokenIndex() + e.getUnexpectedType()
 			// + cfscript.charAt(e.charPositionInLine) + tokens.get(e.index - 1).toString());
 			// e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (poundSignFilterStreamException e) {
 			e.printStackTrace();
 		}
