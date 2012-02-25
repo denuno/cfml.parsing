@@ -8,13 +8,13 @@ package cfml.parsing.cfscript;
 package cfml.parsing.cfscript;
 }
 
-
 comment : ( author )* ;
 
 author : '@author' ID {System.out.println("author "+$ID.text);} ;
 
 ID : ('a'..'z'|'A'..'Z')+
         ;
+
 
 /** When the javadoc parser sees end-of-comment it just says 'I'm done', which
  * consumes the tokens and forces this javadoc parser (feeding

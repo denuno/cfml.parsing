@@ -27,7 +27,7 @@ options
 {
   output=AST;
 }
-
+ 
 tokens
 {
   CFTAG;

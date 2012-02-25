@@ -35,7 +35,6 @@ options {
   backtrack=true;
 }
 
-
 @header {
   package cfml.parsing.cfscript;
 

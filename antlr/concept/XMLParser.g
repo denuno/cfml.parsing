@@ -1,14 +1,14 @@
-grammar XML;
+parser grammar XMLParser;
 
 options {       
-k=1;
-  backtrack=true;
+  tokenVocab=XMLLexer;
   output=AST;
   ASTLabelType=CommonTree;
 }
 
 tokens {
 TAG;
+TRY;
  ASSIGN;
  ELEMENT;
  ATTRIBUTE;
@@ -54,41 +54,39 @@ import java.util.LinkedList;
 
 }
 
-@lexer::header {
-package cfml.parsing.cfml.antlr;
-}
-
-@lexer::members {
-    boolean tagMode = false;
-    boolean internalTagMode = false;
-}
-
 compilationUnit : tag;
 
 tag: element*;
 
 element
 scope ElementScope;
-    : ( startTag^
+    : ( (startTag^)
             (element
             | PCDATA
             )*
-            endTag
+            endTag!
         | emptyElement
         )
     ;
 
 startTag
-    : el=TAG_START_OPEN tname=GENERIC_ID attribute*
-            {$ElementScope::currentElementName = $GENERIC_ID.text;}
-        -> ^(ELEMENT[$el] TAGNAME[$tname] attribute*)
+    : el=TAG_START_OPEN name=GENERIC_ID attribute* TAG_CLOSE
+            {$ElementScope::currentElementName = $name.text;}
+            { System.out.println("current Tag:"+$name.text); }
+        -> ^(ELEMENT[$name] attribute*)
+
     ; 
 
 attribute : aname=GENERIC_ID ATTR_EQ ATTR_VALUE -> ^(ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE) ;
 
 endTag!
-    : { $ElementScope::currentElementName.equals(input.LT(2).getText()) }?
-      TAG_END_OPEN GENERIC_ID 
+      
+    : {
+    System.out.println(input.LT(1).getText() + input.LT(1).getType());
+    System.out.println(input.LT(2).getText()+ input.LT(2).getType());
+    System.out.println(input.LT(3).getText()+ input.LT(3).getType());} 
+      { $ElementScope::currentElementName.equals(input.LT(2).getText())}?
+      TAG_END_OPEN GENERIC_ID
     ;
 catch [FailedPredicateException fpe] {
     String hdr = getErrorHeader(fpe);
@@ -101,55 +99,6 @@ catch [FailedPredicateException fpe] {
     input.consume();
 }
 
-emptyElement : el=TAG_START_OPEN tname=GENERIC_ID attribute* TAG_EMPTY_CLOSE
-        -> ^(ELEMENT[$el] GENERIC_ID[$tname] attribute*)
-    ;
-    
-    
-TAG_START_OPEN : ('<' CFTAG_ID { tagMode = true; }) ;
-TAG_END_OPEN : ('</' CFTAG_ID { tagMode = true; } );
-TAG_CLOSE : { tagMode }?=> '>' { tagMode = false; } ;
-TAG_EMPTY_CLOSE : { tagMode }?=> '/>' { tagMode = false; } ;
-
-ATTR_EQ : { tagMode }?=> '=' ;
-
-ATTR_VALUE : { tagMode }?=>
-        ( '"' (~'"')* '"'
-        | '\'' (~'\'')* '\''
-        )
-    ;
-
-
-fragment PCDATA : { !tagMode }?=> (~'<')+ ;
-
-fragment CFTAG_ID
-    : 
-      'cf' ID
-    ;
-
-fragment
-ID  :   ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
-    ;
-
-
-GENERIC_ID
-    : { tagMode }?=>
-      ( LETTER | '_' | ':') (NAMECHAR)*
-    ;
-
-fragment NAMECHAR
-    : LETTER | DIGIT | '.' | '-' | '_' | ':'
-    ;
-
-fragment DIGIT
-    :    '0'..'9'
-    ;
-
-fragment LETTER
-    : 'a'..'z'
-    | 'A'..'Z'
-    ;
-
-WS  :  { tagMode }?=>
-       (' '|'\r'|'\t'|'\u000C'|'\n') {$channel=99;}
+emptyElement : el=TAG_START_OPEN attribute* TAG_EMPTY_CLOSE
+        -> ^(ELEMENT[$el] attribute*)
     ;

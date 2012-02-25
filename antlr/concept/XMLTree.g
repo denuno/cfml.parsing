@@ -2,7 +2,7 @@ tree grammar XMLTree;
 
 
 options {
-  tokenVocab=XML;
+  tokenVocab=XML2;
   ASTLabelType=CommonTree;
 }
 

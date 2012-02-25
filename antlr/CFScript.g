@@ -77,7 +77,6 @@ tokens {
 
 @lexer::header { package cfml.parsing.cfscript;}
  
-
 @members { public boolean scriptMode = true; 
 
   private IErrorReporter errorReporter = null;
