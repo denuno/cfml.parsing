@@ -274,7 +274,7 @@ public class TreeBuilder extends JPanel implements MouseListener, ActionListener
 			XMLLexer lex = new XMLLexer(new ANTLRStringStream(fileCotent));
 			TokenRewriteStream tokens = new TokenRewriteStream(lex);
 			XMLParser g = new XMLParser(tokens);
-			g.setTreeBuilder(this);
+			// g.setTreeBuilder(this);
 			this.setCurrentParent(root);
 			g.compilationUnit();
 			// if (g.getNumberOfSyntaxErrors() != 0) {

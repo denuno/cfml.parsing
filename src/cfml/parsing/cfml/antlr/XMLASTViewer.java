@@ -48,6 +48,7 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.Token;
+import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTree;
 
 import cfml.parsing.cfml.DefaultCFMLDictionary;
@@ -55,6 +56,10 @@ import cfml.parsing.cfml.ICFMLDictionary;
 import cfml.parsing.cfscript.ANTLRNoCaseStringStream;
 
 public class XMLASTViewer extends JPanel implements MouseListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JFrame window;
 	private JTextArea text;
 	private JTextArea log;
@@ -154,9 +159,12 @@ public class XMLASTViewer extends JPanel implements MouseListener {
 			
 			log.append(cfml + "\n");
 			CharStream input = new ANTLRNoCaseStringStream(cfml);
+			// /CharStream input = new
+			// ANTLRFileStream("/Users/valliant/programs/eclipse-inst/workspaces/pde/fart/src/input");
 			XMLLexer lexer = new XMLLexer(input);
 			
-			CommonTokenStream tokens = new CommonTokenStream(lexer);
+			// CommonTokenStream tokens = new CommonTokenStream(lexer);
+			TokenStream tokens = new CommonTokenStream(lexer);
 			XMLParser parser = new XMLParser(tokens);
 			
 			// XMLParser.script_return root = parser.script();
@@ -201,23 +209,35 @@ public class XMLASTViewer extends JPanel implements MouseListener {
 	}
 	
 	private TreeNode displayNode(CommonTree t) {
-		String tokenType = getTokenType(t.getType());
 		int startIndex = -1, stopIndex = -1;
-		
-		String str = "[" + tokenType + "] ";
-		str += t.getText();
-		str += " (line:" + t.getLine() + ", pos: " + t.getCharPositionInLine() + " startind:" + t.getTokenStartIndex()
-				+ " stopind:" + t.getTokenStopIndex() + " stopline:" + t.getChildCount() + ")";
-		CommonToken tokenStart = (CommonToken) t.getToken();
-		CommonToken tokenEnd = tokenStart;
-		if (t.getChildCount() != 0) {
-			CommonTree lastChild = (CommonTree) t.getChild(t.getChildCount() - 1);
-			tokenEnd = (CommonToken) lastChild.getToken();
+		String str = "Nada!";
+		if (t == null) {
+			System.err.println("There ain't a damn thing there dude: noTokenException");
+		} else {
+			
+			String tokenType = getTokenType(t.getType());
+			
+			str = "[" + tokenType + "] ";
+			str += t.getText();
+			str += " (line:" + t.getLine() + ", pos: " + t.getCharPositionInLine() + " startind:"
+					+ t.getTokenStartIndex() + " stopind:" + t.getTokenStopIndex() + " stopline:" + t.getChildCount()
+					+ ")";
+			CommonToken tokenStart = (CommonToken) t.getToken();
+			CommonToken tokenEnd = tokenStart;
+			if (t.getChildCount() != 0) {
+				CommonTree lastChild = (CommonTree) t.getChild(t.getChildCount() - 1);
+				tokenEnd = (CommonToken) lastChild.getToken();
+			}
+			if (tokenStart == null) {
+				System.err.println(str);
+				str += "err: ";
+			} else {
+				startIndex = tokenStart.getStartIndex();
+				stopIndex = tokenEnd.getStopIndex();
+			}
+			// return new DefaultMutableTreeNode(str);
 		}
-		startIndex = tokenStart.getStartIndex();
-		stopIndex = tokenEnd.getStopIndex();
-		// return new DefaultMutableTreeNode(str);
-		return new TreeNode(str, new TextRange(tokenStart.getStartIndex(), tokenEnd.getStopIndex()));
+		return new TreeNode(str, new TextRange(startIndex, stopIndex));
 	}
 	
 	private void initCFMLTokenTypes() {

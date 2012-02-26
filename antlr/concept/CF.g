@@ -1,5 +1,6 @@
 grammar CF;
 
+
 options {
   output=AST;
   ASTLabelType=CommonTree;

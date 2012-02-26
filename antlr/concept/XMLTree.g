@@ -1,6 +1,5 @@
 tree grammar XMLTree;
 
-
 options {
   tokenVocab=XML2;
   ASTLabelType=CommonTree;

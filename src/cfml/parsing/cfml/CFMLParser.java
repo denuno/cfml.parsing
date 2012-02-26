@@ -126,7 +126,7 @@ public class CFMLParser extends cfml.parsing.cfml.antlr.CFMLParser implements IE
 	protected Tree parseCFScript(Token start, Token stop) {
 		Tree ast = null;
 		org.antlr.runtime.BitSet bit = new org.antlr.runtime.BitSet();
-		bit.add(OTHER);
+		// bit.add(OTHER);
 		List tokens = ((CommonTokenStream) input).getTokens(start.getTokenIndex(), stop.getTokenIndex(), bit);
 		
 		// in case something goes wrong.

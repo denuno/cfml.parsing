@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g 2012-02-23 01:34:17
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g 2012-02-25 16:31:51
  package cfml.parsing.cfscript;
 
 import org.antlr.runtime.*;
@@ -223,15 +223,15 @@ public class CFScriptLexer extends Lexer {
     public CFScriptLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "/Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g"; }
+    public String getGrammarFileName() { return "/Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g"; }
 
     // $ANTLR start "T__149"
     public final void mT__149() throws RecognitionException {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:52:8: ( '!=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:52:10: '!='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:52:8: ( '!=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:52:10: '!='
             {
             match("!="); 
 
@@ -253,8 +253,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:53:8: ( '#' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:53:10: '#'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:53:8: ( '#' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:53:10: '#'
             {
             match('#'); 
 
@@ -274,8 +274,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:54:8: ( ',' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:54:10: ','
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:54:8: ( ',' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:54:10: ','
             {
             match(','); 
 
@@ -295,8 +295,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:55:8: ( '<' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:55:10: '<'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:55:8: ( '<' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:55:10: '<'
             {
             match('<'); 
 
@@ -316,8 +316,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:56:8: ( '<=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:56:10: '<='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:56:8: ( '<=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:56:10: '<='
             {
             match("<="); 
 
@@ -339,8 +339,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:57:8: ( '>' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:57:10: '>'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:57:8: ( '>' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:57:10: '>'
             {
             match('>'); 
 
@@ -360,8 +360,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:58:8: ( '>=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:58:10: '>='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:58:8: ( '>=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:58:10: '>='
             {
             match(">="); 
 
@@ -383,10 +383,10 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:208:4: ( ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:208:6: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:206:4: ( ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:206:6: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:208:6: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:206:6: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
             int cnt1=0;
             loop1:
             do {
@@ -400,7 +400,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||(input.LA(1) >= '\f' && input.LA(1) <= '\r')||input.LA(1)==' ' ) {
             	        input.consume();
@@ -443,14 +443,14 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:210:14: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' ( '\\n' )? )? )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:211:13: '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' ( '\\n' )? )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:208:14: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' ( '\\n' )? )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:209:13: '//' (~ ( '\\n' | '\\r' ) )* ( '\\n' | '\\r' ( '\\n' )? )?
             {
             match("//"); 
 
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:212:13: (~ ( '\\n' | '\\r' ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:210:13: (~ ( '\\n' | '\\r' ) )*
             loop2:
             do {
                 int alt2=2;
@@ -463,7 +463,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             	    {
             	    if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
             	        input.consume();
@@ -484,7 +484,7 @@ public class CFScriptLexer extends Lexer {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:213:13: ( '\\n' | '\\r' ( '\\n' )? )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:211:13: ( '\\n' | '\\r' ( '\\n' )? )?
             int alt4=3;
             int LA4_0 = input.LA(1);
 
@@ -496,18 +496,18 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:213:15: '\\n'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:211:15: '\\n'
                     {
                     match('\n'); 
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:213:20: '\\r' ( '\\n' )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:211:20: '\\r' ( '\\n' )?
                     {
                     match('\r'); 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:213:24: ( '\\n' )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:211:24: ( '\\n' )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -516,7 +516,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:213:25: '\\n'
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:211:25: '\\n'
                             {
                             match('\n'); 
 
@@ -550,8 +550,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = JAVADOC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:216:9: ( '/**' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:216:11: '/**'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:214:9: ( '/**' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:214:11: '/**'
             {
             match("/**"); 
 
@@ -587,14 +587,14 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:234:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:234:9: '/*' ( options {greedy=false; } : . )* '*/'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:232:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:232:9: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:234:14: ( options {greedy=false; } : . )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:232:14: ( options {greedy=false; } : . )*
             loop5:
             do {
                 int alt5=2;
@@ -619,7 +619,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:234:41: .
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:232:41: .
             	    {
             	    matchAny(); 
 
@@ -654,7 +654,7 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = BOOLEAN_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:238:2: ( 'TRUE' | 'FALSE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:236:2: ( 'TRUE' | 'FALSE' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -673,7 +673,7 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:238:4: 'TRUE'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:236:4: 'TRUE'
                     {
                     match("TRUE"); 
 
@@ -682,7 +682,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:239:4: 'FALSE'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:237:4: 'FALSE'
                     {
                     match("FALSE"); 
 
@@ -706,7 +706,7 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = STRING_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:243:2: ( '\"' ( DoubleStringCharacter )* '\"' | '\\'' ( SingleStringCharacter )* '\\'' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:241:2: ( '\"' ( DoubleStringCharacter )* '\"' | '\\'' ( SingleStringCharacter )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -725,11 +725,11 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:243:4: '\"' ( DoubleStringCharacter )* '\"'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:241:4: '\"' ( DoubleStringCharacter )* '\"'
                     {
                     match('\"'); 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:243:8: ( DoubleStringCharacter )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:241:8: ( DoubleStringCharacter )*
                     loop7:
                     do {
                         int alt7=2;
@@ -751,7 +751,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:243:8: DoubleStringCharacter
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:241:8: DoubleStringCharacter
                     	    {
                     	    mDoubleStringCharacter(); 
 
@@ -770,11 +770,11 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:244:4: '\\'' ( SingleStringCharacter )* '\\''
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:242:4: '\\'' ( SingleStringCharacter )* '\\''
                     {
                     match('\''); 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:244:9: ( SingleStringCharacter )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:242:9: ( SingleStringCharacter )*
                     loop8:
                     do {
                         int alt8=2;
@@ -796,7 +796,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:244:9: SingleStringCharacter
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:242:9: SingleStringCharacter
                     	    {
                     	    mSingleStringCharacter(); 
 
@@ -828,7 +828,7 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "DoubleStringCharacter"
     public final void mDoubleStringCharacter() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:248:2: (~ ( '\"' ) | '\"\"' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:246:2: (~ ( '\"' ) | '\"\"' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -847,7 +847,7 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:248:4: ~ ( '\"' )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:246:4: ~ ( '\"' )
                     {
                     if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '\uFFFF') ) {
                         input.consume();
@@ -862,7 +862,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:249:4: '\"\"'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:247:4: '\"\"'
                     {
                     match("\"\""); 
 
@@ -883,7 +883,7 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "SingleStringCharacter"
     public final void mSingleStringCharacter() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:253:2: (~ ( '\\'' ) | '\\'\\'' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:251:2: (~ ( '\\'' ) | '\\'\\'' )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -902,7 +902,7 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:253:4: ~ ( '\\'' )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:251:4: ~ ( '\\'' )
                     {
                     if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '\uFFFF') ) {
                         input.consume();
@@ -917,7 +917,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:254:4: '\\'\\''
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:252:4: '\\'\\''
                     {
                     match("''"); 
 
@@ -938,8 +938,8 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "LETTER"
     public final void mLETTER() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:258:2: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:256:2: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z')||(input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6')||(input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6')||(input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF')||(input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F')||(input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F')||(input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D')||(input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF')||(input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) {
                 input.consume();
@@ -964,8 +964,8 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:274:2: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:272:2: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= '\u0660' && input.LA(1) <= '\u0669')||(input.LA(1) >= '\u06F0' && input.LA(1) <= '\u06F9')||(input.LA(1) >= '\u0966' && input.LA(1) <= '\u096F')||(input.LA(1) >= '\u09E6' && input.LA(1) <= '\u09EF')||(input.LA(1) >= '\u0A66' && input.LA(1) <= '\u0A6F')||(input.LA(1) >= '\u0AE6' && input.LA(1) <= '\u0AEF')||(input.LA(1) >= '\u0B66' && input.LA(1) <= '\u0B6F')||(input.LA(1) >= '\u0BE7' && input.LA(1) <= '\u0BEF')||(input.LA(1) >= '\u0C66' && input.LA(1) <= '\u0C6F')||(input.LA(1) >= '\u0CE6' && input.LA(1) <= '\u0CEF')||(input.LA(1) >= '\u0D66' && input.LA(1) <= '\u0D6F')||(input.LA(1) >= '\u0E50' && input.LA(1) <= '\u0E59')||(input.LA(1) >= '\u0ED0' && input.LA(1) <= '\u0ED9')||(input.LA(1) >= '\u1040' && input.LA(1) <= '\u1049') ) {
                 input.consume();
@@ -992,8 +992,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:292:5: ( 'NULL' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:292:7: 'NULL'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:290:5: ( 'NULL' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:290:7: 'NULL'
             {
             match("NULL"); 
 
@@ -1015,8 +1015,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CONTAINS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:295:9: ( 'CONTAINS' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:295:11: 'CONTAINS'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:293:9: ( 'CONTAINS' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:293:11: 'CONTAINS'
             {
             match("CONTAINS"); 
 
@@ -1038,8 +1038,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CONTAIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:296:8: ( 'CONTAIN' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:296:10: 'CONTAIN'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:294:8: ( 'CONTAIN' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:294:10: 'CONTAIN'
             {
             match("CONTAIN"); 
 
@@ -1061,8 +1061,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = DOES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:297:5: ( 'DOES' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:297:7: 'DOES'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:295:5: ( 'DOES' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:295:7: 'DOES'
             {
             match("DOES"); 
 
@@ -1084,8 +1084,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:298:3: ( 'IS' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:298:5: 'IS'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:296:3: ( 'IS' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:296:5: 'IS'
             {
             match("IS"); 
 
@@ -1107,8 +1107,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:299:3: ( 'GT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:299:5: 'GT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:297:3: ( 'GT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:297:5: 'GT'
             {
             match("GT"); 
 
@@ -1130,8 +1130,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = GE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:300:3: ( 'GE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:300:5: 'GE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:298:3: ( 'GE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:298:5: 'GE'
             {
             match("GE"); 
 
@@ -1153,8 +1153,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = GTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:301:4: ( 'GTE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:301:6: 'GTE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:299:4: ( 'GTE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:299:6: 'GTE'
             {
             match("GTE"); 
 
@@ -1176,8 +1176,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:302:4: ( 'LTE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:302:6: 'LTE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:300:4: ( 'LTE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:300:6: 'LTE'
             {
             match("LTE"); 
 
@@ -1199,8 +1199,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:303:3: ( 'LT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:303:5: 'LT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:301:3: ( 'LT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:301:5: 'LT'
             {
             match("LT"); 
 
@@ -1222,8 +1222,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:304:3: ( 'LE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:304:5: 'LE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:302:3: ( 'LE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:302:5: 'LE'
             {
             match("LE"); 
 
@@ -1245,8 +1245,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:305:3: ( 'EQ' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:305:5: 'EQ'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:303:3: ( 'EQ' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:303:5: 'EQ'
             {
             match("EQ"); 
 
@@ -1268,8 +1268,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:306:6: ( 'EQUAL' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:306:8: 'EQUAL'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:304:6: ( 'EQUAL' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:304:8: 'EQUAL'
             {
             match("EQUAL"); 
 
@@ -1291,8 +1291,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:307:7: ( 'EQUALS' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:307:9: 'EQUALS'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:305:7: ( 'EQUALS' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:305:9: 'EQUALS'
             {
             match("EQUALS"); 
 
@@ -1314,8 +1314,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = NEQ;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:308:4: ( 'NEQ' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:308:6: 'NEQ'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:306:4: ( 'NEQ' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:306:6: 'NEQ'
             {
             match("NEQ"); 
 
@@ -1337,8 +1337,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:309:5: ( 'LESS' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:309:7: 'LESS'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:307:5: ( 'LESS' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:307:7: 'LESS'
             {
             match("LESS"); 
 
@@ -1360,8 +1360,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = THAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:310:5: ( 'THAN' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:310:7: 'THAN'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:308:5: ( 'THAN' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:308:7: 'THAN'
             {
             match("THAN"); 
 
@@ -1383,8 +1383,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:311:8: ( 'GREATER' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:311:10: 'GREATER'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:309:8: ( 'GREATER' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:309:10: 'GREATER'
             {
             match("GREATER"); 
 
@@ -1406,8 +1406,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:312:3: ( 'OR' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:312:5: 'OR'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:310:3: ( 'OR' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:310:5: 'OR'
             {
             match("OR"); 
 
@@ -1429,8 +1429,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = TO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:313:3: ( 'TO' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:313:5: 'TO'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:311:3: ( 'TO' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:311:5: 'TO'
             {
             match("TO"); 
 
@@ -1452,8 +1452,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:314:4: ( 'IMP' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:314:6: 'IMP'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:312:4: ( 'IMP' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:312:6: 'IMP'
             {
             match("IMP"); 
 
@@ -1475,8 +1475,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQV;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:315:4: ( 'EQV' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:315:6: 'EQV'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:313:4: ( 'EQV' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:313:6: 'EQV'
             {
             match("EQV"); 
 
@@ -1498,8 +1498,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = XOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:316:4: ( 'XOR' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:316:6: 'XOR'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:314:4: ( 'XOR' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:314:6: 'XOR'
             {
             match("XOR"); 
 
@@ -1521,8 +1521,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:317:4: ( 'AND' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:317:6: 'AND'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:315:4: ( 'AND' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:315:6: 'AND'
             {
             match("AND"); 
 
@@ -1544,8 +1544,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:318:4: ( 'NOT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:318:6: 'NOT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:316:4: ( 'NOT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:316:6: 'NOT'
             {
             match("NOT"); 
 
@@ -1567,8 +1567,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:319:4: ( 'MOD' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:319:6: 'MOD'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:317:4: ( 'MOD' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:317:6: 'MOD'
             {
             match("MOD"); 
 
@@ -1590,8 +1590,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = VAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:320:4: ( 'VAR' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:320:6: 'VAR'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:318:4: ( 'VAR' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:318:6: 'VAR'
             {
             match("VAR"); 
 
@@ -1613,8 +1613,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = NEW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:321:4: ( 'NEW' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:321:6: 'NEW'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:319:4: ( 'NEW' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:319:6: 'NEW'
             {
             match("NEW"); 
 
@@ -1636,8 +1636,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:324:3: ( 'IF' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:324:5: 'IF'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:322:3: ( 'IF' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:322:5: 'IF'
             {
             match("IF"); 
 
@@ -1659,8 +1659,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:325:5: ( 'ELSE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:325:7: 'ELSE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:323:5: ( 'ELSE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:323:7: 'ELSE'
             {
             match("ELSE"); 
 
@@ -1682,8 +1682,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = BREAK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:326:6: ( 'BREAK' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:326:8: 'BREAK'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:324:6: ( 'BREAK' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:324:8: 'BREAK'
             {
             match("BREAK"); 
 
@@ -1705,8 +1705,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CONTINUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:327:9: ( 'CONTINUE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:327:11: 'CONTINUE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:325:9: ( 'CONTINUE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:325:11: 'CONTINUE'
             {
             match("CONTINUE"); 
 
@@ -1728,8 +1728,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = FUNCTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:328:9: ( 'FUNCTION' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:328:11: 'FUNCTION'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:326:9: ( 'FUNCTION' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:326:11: 'FUNCTION'
             {
             match("FUNCTION"); 
 
@@ -1751,8 +1751,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = RETURN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:329:7: ( 'RETURN' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:329:9: 'RETURN'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:327:7: ( 'RETURN' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:327:9: 'RETURN'
             {
             match("RETURN"); 
 
@@ -1774,8 +1774,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = WHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:330:6: ( 'WHILE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:330:8: 'WHILE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:328:6: ( 'WHILE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:328:8: 'WHILE'
             {
             match("WHILE"); 
 
@@ -1797,8 +1797,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = DO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:331:3: ( 'DO' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:331:5: 'DO'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:329:3: ( 'DO' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:329:5: 'DO'
             {
             match("DO"); 
 
@@ -1820,8 +1820,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:332:4: ( 'FOR' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:332:6: 'FOR'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:330:4: ( 'FOR' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:330:6: 'FOR'
             {
             match("FOR"); 
 
@@ -1843,8 +1843,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:333:3: ( 'IN' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:333:5: 'IN'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:331:3: ( 'IN' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:331:5: 'IN'
             {
             match("IN"); 
 
@@ -1866,8 +1866,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = TRY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:334:4: ( 'TRY' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:334:6: 'TRY'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:332:4: ( 'TRY' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:332:6: 'TRY'
             {
             match("TRY"); 
 
@@ -1889,8 +1889,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CATCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:335:6: ( 'CATCH' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:335:8: 'CATCH'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:333:6: ( 'CATCH' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:333:8: 'CATCH'
             {
             match("CATCH"); 
 
@@ -1912,8 +1912,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SWITCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:336:7: ( 'SWITCH' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:336:9: 'SWITCH'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:334:7: ( 'SWITCH' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:334:9: 'SWITCH'
             {
             match("SWITCH"); 
 
@@ -1935,8 +1935,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CASE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:337:5: ( 'CASE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:337:7: 'CASE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:335:5: ( 'CASE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:335:7: 'CASE'
             {
             match("CASE"); 
 
@@ -1958,8 +1958,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = DEFAULT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:338:8: ( 'DEFAULT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:338:10: 'DEFAULT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:336:8: ( 'DEFAULT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:336:10: 'DEFAULT'
             {
             match("DEFAULT"); 
 
@@ -1981,8 +1981,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = FINALLY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:339:8: ( 'FINALLY' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:339:10: 'FINALLY'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:337:8: ( 'FINALLY' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:337:10: 'FINALLY'
             {
             match("FINALLY"); 
 
@@ -2004,8 +2004,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SCRIPTCLOSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:341:12: ( '</CFSCRIPT>' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:341:14: '</CFSCRIPT>'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:339:12: ( '</CFSCRIPT>' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:339:14: '</CFSCRIPT>'
             {
             match("</CFSCRIPT>"); 
 
@@ -2027,8 +2027,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:344:4: ( '.' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:344:6: '.'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:342:4: ( '.' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:342:6: '.'
             {
             match('.'); 
 
@@ -2048,8 +2048,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:345:5: ( '*' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:345:7: '*'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:343:5: ( '*' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:343:7: '*'
             {
             match('*'); 
 
@@ -2069,8 +2069,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:346:6: ( '/' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:346:8: '/'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:344:6: ( '/' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:344:8: '/'
             {
             match('/'); 
 
@@ -2090,8 +2090,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = BSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:347:7: ( '\\\\' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:347:9: '\\\\'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:345:7: ( '\\\\' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:345:9: '\\\\'
             {
             match('\\'); 
 
@@ -2111,8 +2111,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = POWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:348:6: ( '^' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:348:8: '^'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:346:6: ( '^' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:346:8: '^'
             {
             match('^'); 
 
@@ -2132,8 +2132,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:349:5: ( '+' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:349:7: '+'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:347:5: ( '+' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:347:7: '+'
             {
             match('+'); 
 
@@ -2153,8 +2153,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PLUSPLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:350:9: ( '++' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:350:11: '++'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:348:9: ( '++' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:348:11: '++'
             {
             match("++"); 
 
@@ -2176,8 +2176,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:351:6: ( '-' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:351:8: '-'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:349:6: ( '-' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:349:8: '-'
             {
             match('-'); 
 
@@ -2197,8 +2197,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MINUSMINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:352:11: ( '--' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:352:13: '--'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:350:11: ( '--' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:350:13: '--'
             {
             match("--"); 
 
@@ -2220,8 +2220,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MODOPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:353:12: ( '%' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:353:14: '%'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:351:12: ( '%' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:351:14: '%'
             {
             match('%'); 
 
@@ -2241,8 +2241,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CONCAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:354:7: ( '&' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:354:9: '&'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:352:7: ( '&' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:352:9: '&'
             {
             match('&'); 
 
@@ -2262,8 +2262,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQUALSEQUALSOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:355:15: ( '==' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:355:17: '=='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:353:15: ( '==' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:353:17: '=='
             {
             match("=="); 
 
@@ -2285,8 +2285,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EQUALSOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:356:9: ( '=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:356:11: '='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:354:9: ( '=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:354:11: '='
             {
             match('='); 
 
@@ -2306,8 +2306,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PLUSEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:357:11: ( '+=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:357:13: '+='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:355:11: ( '+=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:355:13: '+='
             {
             match("+="); 
 
@@ -2329,8 +2329,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MINUSEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:358:12: ( '-=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:358:14: '-='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:356:12: ( '-=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:356:14: '-='
             {
             match("-="); 
 
@@ -2352,8 +2352,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = STAREQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:359:11: ( '*=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:359:13: '*='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:357:11: ( '*=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:357:13: '*='
             {
             match("*="); 
 
@@ -2375,8 +2375,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SLASHEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:360:12: ( '/=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:360:14: '/='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:358:12: ( '/=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:358:14: '/='
             {
             match("/="); 
 
@@ -2398,8 +2398,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = MODEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:361:10: ( '%=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:361:12: '%='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:359:10: ( '%=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:359:12: '%='
             {
             match("%="); 
 
@@ -2421,8 +2421,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = CONCATEQUALS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:362:13: ( '&=' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:362:15: '&='
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:360:13: ( '&=' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:360:15: '&='
             {
             match("&="); 
 
@@ -2444,8 +2444,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:363:6: ( ':' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:363:8: ':'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:361:6: ( ':' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:361:8: ':'
             {
             match(':'); 
 
@@ -2465,8 +2465,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = NOTOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:364:6: ( '!' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:364:8: '!'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:362:6: ( '!' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:362:8: '!'
             {
             match('!'); 
 
@@ -2486,8 +2486,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SEMICOLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:365:10: ( ';' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:365:12: ';'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:363:10: ( ';' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:363:12: ';'
             {
             match(';'); 
 
@@ -2507,8 +2507,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = OROPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:366:11: ( '||' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:366:13: '||'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:364:11: ( '||' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:364:13: '||'
             {
             match("||"); 
 
@@ -2530,8 +2530,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = ANDOPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:367:12: ( '&&' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:367:14: '&&'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:365:12: ( '&&' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:365:14: '&&'
             {
             match("&&"); 
 
@@ -2553,8 +2553,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LEFTBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:368:12: ( '[' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:368:14: '['
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:366:12: ( '[' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:366:14: '['
             {
             match('['); 
 
@@ -2574,8 +2574,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = RIGHTBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:369:13: ( ']' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:369:15: ']'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:367:13: ( ']' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:367:15: ']'
             {
             match(']'); 
 
@@ -2595,8 +2595,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LEFTPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:370:10: ( '(' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:370:12: '('
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:368:10: ( '(' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:368:12: '('
             {
             match('('); 
 
@@ -2616,8 +2616,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = RIGHTPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:371:11: ( ')' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:371:13: ')'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:369:11: ( ')' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:369:13: ')'
             {
             match(')'); 
 
@@ -2637,8 +2637,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LEFTCURLYBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:372:17: ( '{' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:372:19: '{'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:370:17: ( '{' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:370:19: '{'
             {
             match('{'); 
 
@@ -2658,8 +2658,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = RIGHTCURLYBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:373:18: ( '}' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:373:20: '}'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:371:18: ( '}' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:371:20: '}'
             {
             match('}'); 
 
@@ -2679,8 +2679,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = QUESTIONMARK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:374:13: ( '?' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:374:15: '?'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:372:13: ( '?' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:372:15: '?'
             {
             match('?'); 
 
@@ -2700,8 +2700,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = INCLUDE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:377:8: ( 'INCLUDE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:377:10: 'INCLUDE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:375:8: ( 'INCLUDE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:375:10: 'INCLUDE'
             {
             match("INCLUDE"); 
 
@@ -2723,8 +2723,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IMPORT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:378:7: ( 'IMPORT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:378:9: 'IMPORT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:376:7: ( 'IMPORT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:376:9: 'IMPORT'
             {
             match("IMPORT"); 
 
@@ -2746,8 +2746,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = ABORT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:379:6: ( 'ABORT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:379:8: 'ABORT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:377:6: ( 'ABORT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:377:8: 'ABORT'
             {
             match("ABORT"); 
 
@@ -2769,8 +2769,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = THROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:380:6: ( 'THROW' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:380:8: 'THROW'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:378:6: ( 'THROW' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:378:8: 'THROW'
             {
             match("THROW"); 
 
@@ -2792,8 +2792,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = RETHROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:381:8: ( 'RETHROW' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:381:10: 'RETHROW'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:379:8: ( 'RETHROW' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:379:10: 'RETHROW'
             {
             match("RETHROW"); 
 
@@ -2815,8 +2815,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = EXIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:382:5: ( 'EXIT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:382:7: 'EXIT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:380:5: ( 'EXIT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:380:7: 'EXIT'
             {
             match("EXIT"); 
 
@@ -2838,8 +2838,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PARAM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:383:6: ( 'PARAM' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:383:8: 'PARAM'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:381:6: ( 'PARAM' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:381:8: 'PARAM'
             {
             match("PARAM"); 
 
@@ -2861,8 +2861,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PROPERTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:384:9: ( 'PROPERTY' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:384:11: 'PROPERTY'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:382:9: ( 'PROPERTY' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:382:11: 'PROPERTY'
             {
             match("PROPERTY"); 
 
@@ -2884,8 +2884,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LOCK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:385:5: ( 'LOCK' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:385:7: 'LOCK'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:383:5: ( 'LOCK' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:383:7: 'LOCK'
             {
             match("LOCK"); 
 
@@ -2907,8 +2907,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = THREAD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:386:7: ( 'THREAD' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:386:9: 'THREAD'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:384:7: ( 'THREAD' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:384:9: 'THREAD'
             {
             match("THREAD"); 
 
@@ -2930,8 +2930,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = TRANSACTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:387:12: ( 'TRANSACTION' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:387:14: 'TRANSACTION'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:385:12: ( 'TRANSACTION' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:385:14: 'TRANSACTION'
             {
             match("TRANSACTION"); 
 
@@ -2953,8 +2953,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LOCATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:390:9: ( 'LOCATION' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:390:11: 'LOCATION'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:388:9: ( 'LOCATION' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:388:11: 'LOCATION'
             {
             match("LOCATION"); 
 
@@ -2976,8 +2976,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SAVECONTENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:391:12: ( 'SAVECONTENT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:391:14: 'SAVECONTENT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:389:12: ( 'SAVECONTENT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:389:14: 'SAVECONTENT'
             {
             match("SAVECONTENT"); 
 
@@ -2999,8 +2999,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = HTTP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:392:5: ( 'HTTP' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:392:7: 'HTTP'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:390:5: ( 'HTTP' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:390:7: 'HTTP'
             {
             match("HTTP"); 
 
@@ -3022,8 +3022,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = FILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:393:5: ( 'FILE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:393:7: 'FILE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:391:5: ( 'FILE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:391:7: 'FILE'
             {
             match("FILE"); 
 
@@ -3045,8 +3045,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = DIRECTORY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:394:10: ( 'DIRECTORY' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:394:12: 'DIRECTORY'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:392:10: ( 'DIRECTORY' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:392:12: 'DIRECTORY'
             {
             match("DIRECTORY"); 
 
@@ -3068,8 +3068,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:395:5: ( 'LOOP' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:395:7: 'LOOP'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:393:5: ( 'LOOP' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:393:7: 'LOOP'
             {
             match("LOOP"); 
 
@@ -3091,8 +3091,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = SETTING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:396:8: ( 'SETTING' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:396:10: 'SETTING'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:394:8: ( 'SETTING' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:394:10: 'SETTING'
             {
             match("SETTING"); 
 
@@ -3114,8 +3114,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = QUERY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:397:6: ( 'QUERY' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:397:8: 'QUERY'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:395:6: ( 'QUERY' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:395:8: 'QUERY'
             {
             match("QUERY"); 
 
@@ -3137,8 +3137,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PRIVATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:400:8: ( 'PRIVATE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:400:10: 'PRIVATE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:398:8: ( 'PRIVATE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:398:10: 'PRIVATE'
             {
             match("PRIVATE"); 
 
@@ -3160,8 +3160,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PUBLIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:401:7: ( 'PUBLIC' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:401:9: 'PUBLIC'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:399:7: ( 'PUBLIC' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:399:9: 'PUBLIC'
             {
             match("PUBLIC"); 
 
@@ -3183,8 +3183,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = REMOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:402:7: ( 'REMOTE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:402:9: 'REMOTE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:400:7: ( 'REMOTE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:400:9: 'REMOTE'
             {
             match("REMOTE"); 
 
@@ -3206,8 +3206,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = PACKAGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:403:8: ( 'PACKAGE' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:403:10: 'PACKAGE'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:401:8: ( 'PACKAGE' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:401:10: 'PACKAGE'
             {
             match("PACKAGE"); 
 
@@ -3229,8 +3229,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = REQUIRED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:404:9: ( 'REQUIRED' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:404:11: 'REQUIRED'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:402:9: ( 'REQUIRED' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:402:11: 'REQUIRED'
             {
             match("REQUIRED"); 
 
@@ -3252,8 +3252,8 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = COMPONENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:405:10: ( 'COMPONENT' )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:405:12: 'COMPONENT'
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:403:10: ( 'COMPONENT' )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:403:12: 'COMPONENT'
             {
             match("COMPONENT"); 
 
@@ -3275,13 +3275,13 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = IDENTIFIER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:408:2: ( LETTER ( LETTER | DIGIT )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:408:4: LETTER ( LETTER | DIGIT )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:406:2: ( LETTER ( LETTER | DIGIT )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:406:4: LETTER ( LETTER | DIGIT )*
             {
             mLETTER(); 
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:408:11: ( LETTER | DIGIT )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:406:11: ( LETTER | DIGIT )*
             loop12:
             do {
                 int alt12=2;
@@ -3294,7 +3294,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             	    {
             	    if ( input.LA(1)=='$'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z')||(input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6')||(input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6')||(input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF')||(input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F')||(input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F')||(input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D')||(input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF')||(input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) {
             	        input.consume();
@@ -3331,10 +3331,10 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = INTEGER_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:411:3: ( ( DecimalDigit )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:411:5: ( DecimalDigit )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:409:3: ( ( DecimalDigit )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:409:5: ( DecimalDigit )+
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:411:5: ( DecimalDigit )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:409:5: ( DecimalDigit )+
             int cnt13=0;
             loop13:
             do {
@@ -3348,7 +3348,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             	    {
             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
             	        input.consume();
@@ -3387,8 +3387,8 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "DecimalDigit"
     public final void mDecimalDigit() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:416:3: ( ( '0' .. '9' ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:414:3: ( ( '0' .. '9' ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                 input.consume();
@@ -3415,14 +3415,14 @@ public class CFScriptLexer extends Lexer {
         try {
             int _type = FLOATING_POINT_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:3: ( ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | ( DecimalDigit )+ ( ExponentPart )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:3: ( ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | ( DecimalDigit )+ ( ExponentPart )? )
             int alt21=3;
             alt21 = dfa21.predict(input);
             switch (alt21) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:5: ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:5: ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )?
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:5: ( DecimalDigit )+
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:5: ( DecimalDigit )+
                     int cnt14=0;
                     loop14:
                     do {
@@ -3436,7 +3436,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                     	        input.consume();
@@ -3463,7 +3463,7 @@ public class CFScriptLexer extends Lexer {
 
                     match('.'); 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:23: ( DecimalDigit )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:23: ( DecimalDigit )*
                     loop15:
                     do {
                         int alt15=2;
@@ -3476,7 +3476,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                     	        input.consume();
@@ -3497,7 +3497,7 @@ public class CFScriptLexer extends Lexer {
                     } while (true);
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:37: ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:37: ( ExponentPart )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -3506,7 +3506,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:420:37: ExponentPart
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:418:37: ExponentPart
                             {
                             mExponentPart(); 
 
@@ -3520,11 +3520,11 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:421:5: '.' ( DecimalDigit )+ ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:419:5: '.' ( DecimalDigit )+ ( ExponentPart )?
                     {
                     match('.'); 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:421:9: ( DecimalDigit )+
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:419:9: ( DecimalDigit )+
                     int cnt17=0;
                     loop17:
                     do {
@@ -3538,7 +3538,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                     	        input.consume();
@@ -3563,7 +3563,7 @@ public class CFScriptLexer extends Lexer {
                     } while (true);
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:421:23: ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:419:23: ( ExponentPart )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -3572,7 +3572,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:421:23: ExponentPart
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:419:23: ExponentPart
                             {
                             mExponentPart(); 
 
@@ -3586,9 +3586,9 @@ public class CFScriptLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:422:5: ( DecimalDigit )+ ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:420:5: ( DecimalDigit )+ ( ExponentPart )?
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:422:5: ( DecimalDigit )+
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:420:5: ( DecimalDigit )+
                     int cnt19=0;
                     loop19:
                     do {
@@ -3602,7 +3602,7 @@ public class CFScriptLexer extends Lexer {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
                     	    {
                     	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
                     	        input.consume();
@@ -3627,7 +3627,7 @@ public class CFScriptLexer extends Lexer {
                     } while (true);
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:422:19: ( ExponentPart )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:420:19: ( ExponentPart )?
                     int alt20=2;
                     int LA20_0 = input.LA(1);
 
@@ -3636,7 +3636,7 @@ public class CFScriptLexer extends Lexer {
                     }
                     switch (alt20) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:422:19: ExponentPart
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:420:19: ExponentPart
                             {
                             mExponentPart(); 
 
@@ -3663,8 +3663,8 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR start "ExponentPart"
     public final void mExponentPart() throws RecognitionException {
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:426:3: ( ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:426:5: ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:424:3: ( ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:424:5: ( 'e' | 'E' ) ( '+' | '-' )? ( DecimalDigit )+
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -3676,7 +3676,7 @@ public class CFScriptLexer extends Lexer {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:426:15: ( '+' | '-' )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:424:15: ( '+' | '-' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -3685,7 +3685,7 @@ public class CFScriptLexer extends Lexer {
             }
             switch (alt22) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
                     {
                     if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
                         input.consume();
@@ -3703,7 +3703,7 @@ public class CFScriptLexer extends Lexer {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:426:26: ( DecimalDigit )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:424:26: ( DecimalDigit )+
             int cnt23=0;
             loop23:
             do {
@@ -3717,7 +3717,7 @@ public class CFScriptLexer extends Lexer {
 
                 switch (alt23) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             	    {
             	    if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
             	        input.consume();
@@ -3753,12 +3753,12 @@ public class CFScriptLexer extends Lexer {
     // $ANTLR end "ExponentPart"
 
     public void mTokens() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:8: ( T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | WS | LINE_COMMENT | JAVADOC | ML_COMMENT | BOOLEAN_LITERAL | STRING_LITERAL | NULL | CONTAINS | CONTAIN | DOES | IS | GT | GE | GTE | LTE | LT | LE | EQ | EQUAL | EQUALS | NEQ | LESS | THAN | GREATER | OR | TO | IMP | EQV | XOR | AND | NOT | MOD | VAR | NEW | IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | FINALLY | SCRIPTCLOSE | DOT | STAR | SLASH | BSLASH | POWER | PLUS | PLUSPLUS | MINUS | MINUSMINUS | MODOPERATOR | CONCAT | EQUALSEQUALSOP | EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS | COLON | NOTOP | SEMICOLON | OROPERATOR | ANDOPERATOR | LEFTBRACKET | RIGHTBRACKET | LEFTPAREN | RIGHTPAREN | LEFTCURLYBRACKET | RIGHTCURLYBRACKET | QUESTIONMARK | INCLUDE | IMPORT | ABORT | THROW | RETHROW | EXIT | PARAM | PROPERTY | LOCK | THREAD | TRANSACTION | LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY | PRIVATE | PUBLIC | REMOTE | PACKAGE | REQUIRED | COMPONENT | IDENTIFIER | INTEGER_LITERAL | FLOATING_POINT_LITERAL )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:8: ( T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | WS | LINE_COMMENT | JAVADOC | ML_COMMENT | BOOLEAN_LITERAL | STRING_LITERAL | NULL | CONTAINS | CONTAIN | DOES | IS | GT | GE | GTE | LTE | LT | LE | EQ | EQUAL | EQUALS | NEQ | LESS | THAN | GREATER | OR | TO | IMP | EQV | XOR | AND | NOT | MOD | VAR | NEW | IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | FINALLY | SCRIPTCLOSE | DOT | STAR | SLASH | BSLASH | POWER | PLUS | PLUSPLUS | MINUS | MINUSMINUS | MODOPERATOR | CONCAT | EQUALSEQUALSOP | EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS | COLON | NOTOP | SEMICOLON | OROPERATOR | ANDOPERATOR | LEFTBRACKET | RIGHTBRACKET | LEFTPAREN | RIGHTPAREN | LEFTCURLYBRACKET | RIGHTCURLYBRACKET | QUESTIONMARK | INCLUDE | IMPORT | ABORT | THROW | RETHROW | EXIT | PARAM | PROPERTY | LOCK | THREAD | TRANSACTION | LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY | PRIVATE | PUBLIC | REMOTE | PACKAGE | REQUIRED | COMPONENT | IDENTIFIER | INTEGER_LITERAL | FLOATING_POINT_LITERAL )
         int alt24=117;
         alt24 = dfa24.predict(input);
         switch (alt24) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:10: T__149
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:10: T__149
                 {
                 mT__149(); 
 
@@ -3766,7 +3766,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:17: T__150
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:17: T__150
                 {
                 mT__150(); 
 
@@ -3774,7 +3774,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:24: T__151
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:24: T__151
                 {
                 mT__151(); 
 
@@ -3782,7 +3782,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:31: T__152
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:31: T__152
                 {
                 mT__152(); 
 
@@ -3790,7 +3790,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:38: T__153
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:38: T__153
                 {
                 mT__153(); 
 
@@ -3798,7 +3798,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 6 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:45: T__154
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:45: T__154
                 {
                 mT__154(); 
 
@@ -3806,7 +3806,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 7 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:52: T__155
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:52: T__155
                 {
                 mT__155(); 
 
@@ -3814,7 +3814,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 8 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:59: WS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:59: WS
                 {
                 mWS(); 
 
@@ -3822,7 +3822,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 9 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:62: LINE_COMMENT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:62: LINE_COMMENT
                 {
                 mLINE_COMMENT(); 
 
@@ -3830,7 +3830,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 10 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:75: JAVADOC
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:75: JAVADOC
                 {
                 mJAVADOC(); 
 
@@ -3838,7 +3838,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 11 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:83: ML_COMMENT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:83: ML_COMMENT
                 {
                 mML_COMMENT(); 
 
@@ -3846,7 +3846,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 12 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:94: BOOLEAN_LITERAL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:94: BOOLEAN_LITERAL
                 {
                 mBOOLEAN_LITERAL(); 
 
@@ -3854,7 +3854,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:110: STRING_LITERAL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:110: STRING_LITERAL
                 {
                 mSTRING_LITERAL(); 
 
@@ -3862,7 +3862,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 14 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:125: NULL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:125: NULL
                 {
                 mNULL(); 
 
@@ -3870,7 +3870,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 15 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:130: CONTAINS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:130: CONTAINS
                 {
                 mCONTAINS(); 
 
@@ -3878,7 +3878,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 16 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:139: CONTAIN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:139: CONTAIN
                 {
                 mCONTAIN(); 
 
@@ -3886,7 +3886,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:147: DOES
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:147: DOES
                 {
                 mDOES(); 
 
@@ -3894,7 +3894,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 18 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:152: IS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:152: IS
                 {
                 mIS(); 
 
@@ -3902,7 +3902,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 19 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:155: GT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:155: GT
                 {
                 mGT(); 
 
@@ -3910,7 +3910,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 20 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:158: GE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:158: GE
                 {
                 mGE(); 
 
@@ -3918,7 +3918,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 21 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:161: GTE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:161: GTE
                 {
                 mGTE(); 
 
@@ -3926,7 +3926,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 22 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:165: LTE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:165: LTE
                 {
                 mLTE(); 
 
@@ -3934,7 +3934,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 23 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:169: LT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:169: LT
                 {
                 mLT(); 
 
@@ -3942,7 +3942,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 24 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:172: LE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:172: LE
                 {
                 mLE(); 
 
@@ -3950,7 +3950,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 25 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:175: EQ
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:175: EQ
                 {
                 mEQ(); 
 
@@ -3958,7 +3958,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 26 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:178: EQUAL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:178: EQUAL
                 {
                 mEQUAL(); 
 
@@ -3966,7 +3966,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 27 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:184: EQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:184: EQUALS
                 {
                 mEQUALS(); 
 
@@ -3974,7 +3974,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 28 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:191: NEQ
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:191: NEQ
                 {
                 mNEQ(); 
 
@@ -3982,7 +3982,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 29 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:195: LESS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:195: LESS
                 {
                 mLESS(); 
 
@@ -3990,7 +3990,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 30 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:200: THAN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:200: THAN
                 {
                 mTHAN(); 
 
@@ -3998,7 +3998,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 31 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:205: GREATER
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:205: GREATER
                 {
                 mGREATER(); 
 
@@ -4006,7 +4006,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 32 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:213: OR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:213: OR
                 {
                 mOR(); 
 
@@ -4014,7 +4014,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 33 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:216: TO
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:216: TO
                 {
                 mTO(); 
 
@@ -4022,7 +4022,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 34 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:219: IMP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:219: IMP
                 {
                 mIMP(); 
 
@@ -4030,7 +4030,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 35 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:223: EQV
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:223: EQV
                 {
                 mEQV(); 
 
@@ -4038,7 +4038,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 36 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:227: XOR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:227: XOR
                 {
                 mXOR(); 
 
@@ -4046,7 +4046,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 37 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:231: AND
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:231: AND
                 {
                 mAND(); 
 
@@ -4054,7 +4054,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 38 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:235: NOT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:235: NOT
                 {
                 mNOT(); 
 
@@ -4062,7 +4062,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 39 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:239: MOD
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:239: MOD
                 {
                 mMOD(); 
 
@@ -4070,7 +4070,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 40 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:243: VAR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:243: VAR
                 {
                 mVAR(); 
 
@@ -4078,7 +4078,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 41 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:247: NEW
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:247: NEW
                 {
                 mNEW(); 
 
@@ -4086,7 +4086,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 42 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:251: IF
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:251: IF
                 {
                 mIF(); 
 
@@ -4094,7 +4094,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 43 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:254: ELSE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:254: ELSE
                 {
                 mELSE(); 
 
@@ -4102,7 +4102,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 44 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:259: BREAK
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:259: BREAK
                 {
                 mBREAK(); 
 
@@ -4110,7 +4110,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 45 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:265: CONTINUE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:265: CONTINUE
                 {
                 mCONTINUE(); 
 
@@ -4118,7 +4118,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 46 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:274: FUNCTION
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:274: FUNCTION
                 {
                 mFUNCTION(); 
 
@@ -4126,7 +4126,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 47 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:283: RETURN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:283: RETURN
                 {
                 mRETURN(); 
 
@@ -4134,7 +4134,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 48 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:290: WHILE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:290: WHILE
                 {
                 mWHILE(); 
 
@@ -4142,7 +4142,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 49 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:296: DO
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:296: DO
                 {
                 mDO(); 
 
@@ -4150,7 +4150,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 50 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:299: FOR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:299: FOR
                 {
                 mFOR(); 
 
@@ -4158,7 +4158,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 51 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:303: IN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:303: IN
                 {
                 mIN(); 
 
@@ -4166,7 +4166,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 52 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:306: TRY
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:306: TRY
                 {
                 mTRY(); 
 
@@ -4174,7 +4174,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 53 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:310: CATCH
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:310: CATCH
                 {
                 mCATCH(); 
 
@@ -4182,7 +4182,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 54 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:316: SWITCH
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:316: SWITCH
                 {
                 mSWITCH(); 
 
@@ -4190,7 +4190,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 55 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:323: CASE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:323: CASE
                 {
                 mCASE(); 
 
@@ -4198,7 +4198,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 56 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:328: DEFAULT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:328: DEFAULT
                 {
                 mDEFAULT(); 
 
@@ -4206,7 +4206,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 57 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:336: FINALLY
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:336: FINALLY
                 {
                 mFINALLY(); 
 
@@ -4214,7 +4214,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 58 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:344: SCRIPTCLOSE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:344: SCRIPTCLOSE
                 {
                 mSCRIPTCLOSE(); 
 
@@ -4222,7 +4222,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 59 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:356: DOT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:356: DOT
                 {
                 mDOT(); 
 
@@ -4230,7 +4230,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 60 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:360: STAR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:360: STAR
                 {
                 mSTAR(); 
 
@@ -4238,7 +4238,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 61 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:365: SLASH
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:365: SLASH
                 {
                 mSLASH(); 
 
@@ -4246,7 +4246,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 62 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:371: BSLASH
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:371: BSLASH
                 {
                 mBSLASH(); 
 
@@ -4254,7 +4254,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 63 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:378: POWER
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:378: POWER
                 {
                 mPOWER(); 
 
@@ -4262,7 +4262,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 64 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:384: PLUS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:384: PLUS
                 {
                 mPLUS(); 
 
@@ -4270,7 +4270,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 65 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:389: PLUSPLUS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:389: PLUSPLUS
                 {
                 mPLUSPLUS(); 
 
@@ -4278,7 +4278,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 66 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:398: MINUS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:398: MINUS
                 {
                 mMINUS(); 
 
@@ -4286,7 +4286,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 67 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:404: MINUSMINUS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:404: MINUSMINUS
                 {
                 mMINUSMINUS(); 
 
@@ -4294,7 +4294,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 68 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:415: MODOPERATOR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:415: MODOPERATOR
                 {
                 mMODOPERATOR(); 
 
@@ -4302,7 +4302,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 69 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:427: CONCAT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:427: CONCAT
                 {
                 mCONCAT(); 
 
@@ -4310,7 +4310,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 70 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:434: EQUALSEQUALSOP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:434: EQUALSEQUALSOP
                 {
                 mEQUALSEQUALSOP(); 
 
@@ -4318,7 +4318,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 71 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:449: EQUALSOP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:449: EQUALSOP
                 {
                 mEQUALSOP(); 
 
@@ -4326,7 +4326,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 72 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:458: PLUSEQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:458: PLUSEQUALS
                 {
                 mPLUSEQUALS(); 
 
@@ -4334,7 +4334,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 73 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:469: MINUSEQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:469: MINUSEQUALS
                 {
                 mMINUSEQUALS(); 
 
@@ -4342,7 +4342,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 74 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:481: STAREQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:481: STAREQUALS
                 {
                 mSTAREQUALS(); 
 
@@ -4350,7 +4350,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 75 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:492: SLASHEQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:492: SLASHEQUALS
                 {
                 mSLASHEQUALS(); 
 
@@ -4358,7 +4358,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 76 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:504: MODEQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:504: MODEQUALS
                 {
                 mMODEQUALS(); 
 
@@ -4366,7 +4366,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 77 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:514: CONCATEQUALS
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:514: CONCATEQUALS
                 {
                 mCONCATEQUALS(); 
 
@@ -4374,7 +4374,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 78 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:527: COLON
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:527: COLON
                 {
                 mCOLON(); 
 
@@ -4382,7 +4382,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 79 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:533: NOTOP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:533: NOTOP
                 {
                 mNOTOP(); 
 
@@ -4390,7 +4390,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 80 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:539: SEMICOLON
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:539: SEMICOLON
                 {
                 mSEMICOLON(); 
 
@@ -4398,7 +4398,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 81 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:549: OROPERATOR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:549: OROPERATOR
                 {
                 mOROPERATOR(); 
 
@@ -4406,7 +4406,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 82 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:560: ANDOPERATOR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:560: ANDOPERATOR
                 {
                 mANDOPERATOR(); 
 
@@ -4414,7 +4414,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 83 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:572: LEFTBRACKET
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:572: LEFTBRACKET
                 {
                 mLEFTBRACKET(); 
 
@@ -4422,7 +4422,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 84 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:584: RIGHTBRACKET
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:584: RIGHTBRACKET
                 {
                 mRIGHTBRACKET(); 
 
@@ -4430,7 +4430,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 85 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:597: LEFTPAREN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:597: LEFTPAREN
                 {
                 mLEFTPAREN(); 
 
@@ -4438,7 +4438,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 86 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:607: RIGHTPAREN
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:607: RIGHTPAREN
                 {
                 mRIGHTPAREN(); 
 
@@ -4446,7 +4446,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 87 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:618: LEFTCURLYBRACKET
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:618: LEFTCURLYBRACKET
                 {
                 mLEFTCURLYBRACKET(); 
 
@@ -4454,7 +4454,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 88 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:635: RIGHTCURLYBRACKET
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:635: RIGHTCURLYBRACKET
                 {
                 mRIGHTCURLYBRACKET(); 
 
@@ -4462,7 +4462,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 89 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:653: QUESTIONMARK
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:653: QUESTIONMARK
                 {
                 mQUESTIONMARK(); 
 
@@ -4470,7 +4470,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 90 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:666: INCLUDE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:666: INCLUDE
                 {
                 mINCLUDE(); 
 
@@ -4478,7 +4478,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 91 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:674: IMPORT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:674: IMPORT
                 {
                 mIMPORT(); 
 
@@ -4486,7 +4486,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 92 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:681: ABORT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:681: ABORT
                 {
                 mABORT(); 
 
@@ -4494,7 +4494,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 93 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:687: THROW
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:687: THROW
                 {
                 mTHROW(); 
 
@@ -4502,7 +4502,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 94 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:693: RETHROW
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:693: RETHROW
                 {
                 mRETHROW(); 
 
@@ -4510,7 +4510,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 95 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:701: EXIT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:701: EXIT
                 {
                 mEXIT(); 
 
@@ -4518,7 +4518,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 96 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:706: PARAM
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:706: PARAM
                 {
                 mPARAM(); 
 
@@ -4526,7 +4526,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 97 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:712: PROPERTY
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:712: PROPERTY
                 {
                 mPROPERTY(); 
 
@@ -4534,7 +4534,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 98 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:721: LOCK
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:721: LOCK
                 {
                 mLOCK(); 
 
@@ -4542,7 +4542,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 99 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:726: THREAD
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:726: THREAD
                 {
                 mTHREAD(); 
 
@@ -4550,7 +4550,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 100 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:733: TRANSACTION
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:733: TRANSACTION
                 {
                 mTRANSACTION(); 
 
@@ -4558,7 +4558,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 101 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:745: LOCATION
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:745: LOCATION
                 {
                 mLOCATION(); 
 
@@ -4566,7 +4566,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 102 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:754: SAVECONTENT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:754: SAVECONTENT
                 {
                 mSAVECONTENT(); 
 
@@ -4574,7 +4574,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 103 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:766: HTTP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:766: HTTP
                 {
                 mHTTP(); 
 
@@ -4582,7 +4582,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 104 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:771: FILE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:771: FILE
                 {
                 mFILE(); 
 
@@ -4590,7 +4590,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 105 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:776: DIRECTORY
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:776: DIRECTORY
                 {
                 mDIRECTORY(); 
 
@@ -4598,7 +4598,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 106 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:786: LOOP
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:786: LOOP
                 {
                 mLOOP(); 
 
@@ -4606,7 +4606,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 107 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:791: SETTING
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:791: SETTING
                 {
                 mSETTING(); 
 
@@ -4614,7 +4614,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 108 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:799: QUERY
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:799: QUERY
                 {
                 mQUERY(); 
 
@@ -4622,7 +4622,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 109 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:805: PRIVATE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:805: PRIVATE
                 {
                 mPRIVATE(); 
 
@@ -4630,7 +4630,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 110 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:813: PUBLIC
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:813: PUBLIC
                 {
                 mPUBLIC(); 
 
@@ -4638,7 +4638,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 111 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:820: REMOTE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:820: REMOTE
                 {
                 mREMOTE(); 
 
@@ -4646,7 +4646,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 112 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:827: PACKAGE
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:827: PACKAGE
                 {
                 mPACKAGE(); 
 
@@ -4654,7 +4654,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 113 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:835: REQUIRED
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:835: REQUIRED
                 {
                 mREQUIRED(); 
 
@@ -4662,7 +4662,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 114 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:844: COMPONENT
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:844: COMPONENT
                 {
                 mCOMPONENT(); 
 
@@ -4670,7 +4670,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 115 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:854: IDENTIFIER
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:854: IDENTIFIER
                 {
                 mIDENTIFIER(); 
 
@@ -4678,7 +4678,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 116 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:865: INTEGER_LITERAL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:865: INTEGER_LITERAL
                 {
                 mINTEGER_LITERAL(); 
 
@@ -4686,7 +4686,7 @@ public class CFScriptLexer extends Lexer {
                 }
                 break;
             case 117 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfscript/CFScript.g:1:881: FLOATING_POINT_LITERAL
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:1:881: FLOATING_POINT_LITERAL
                 {
                 mFLOATING_POINT_LITERAL(); 
 
@@ -4751,7 +4751,7 @@ public class CFScriptLexer extends Lexer {
             this.transition = DFA21_transition;
         }
         public String getDescription() {
-            return "419:1: FLOATING_POINT_LITERAL : ( ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | ( DecimalDigit )+ ( ExponentPart )? );";
+            return "417:1: FLOATING_POINT_LITERAL : ( ( DecimalDigit )+ '.' ( DecimalDigit )* ( ExponentPart )? | '.' ( DecimalDigit )+ ( ExponentPart )? | ( DecimalDigit )+ ( ExponentPart )? );";
         }
     }
     static final String DFA24_eotS =

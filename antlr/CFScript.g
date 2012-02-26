@@ -1,6 +1,5 @@
 /* 
  *  Copyright (C) 2000 - 2010 TagServlet Ltd
- *
  *  This file is part of Open BlueDragon (OpenBD) CFML Server Engine.
  *  
  *  OpenBD is free software: you can redistribute it and/or modify
@@ -194,11 +193,11 @@ tokens {
 // Alter code generation so catch-clauses get replace with
 // this action.
 @parser::rulecatch {
-catch (RecognitionException e) {
-  //System.out.println("cfscript.g");
-  errorReporter.reportError(e);
-  recover(getTokenStream(),e);
-}
+	catch (RecognitionException e) {
+	  //System.out.println("cfscript.g");
+	  errorReporter.reportError(e);
+	  recover(getTokenStream(),e);
+	}
 }
 
 

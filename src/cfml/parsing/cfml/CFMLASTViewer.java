@@ -45,6 +45,7 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.Tree;
 
+import cfml.parsing.cfml.antlr.CFMLParser.scriptBlock_return;
 import cfml.parsing.cfscript.ANTLRNoCaseStringStream;
 
 public class CFMLASTViewer {
@@ -165,7 +166,7 @@ public class CFMLASTViewer {
 			parser.addObserver(observer);
 			
 			// CFMLParser.script_return root = parser.script();
-			CFMLParser.cfml_return root = parser.cfml();
+			scriptBlock_return root = parser.scriptBlock();
 			
 			Tree ast = (Tree) root.getTree();
 			

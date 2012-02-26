@@ -1,610 +1,943 @@
+/* 
+ *  Copyright (C) 2000 - 2010 TagServlet Ltd
+ *  This file is part of Open BlueDragon (OpenBD) CFML Server Engine.
+ *  
+ *  OpenBD is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  Free Software Foundation,version 3.
+ *  
+ *  OpenBD is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with OpenBD.  If not, see http://www.gnu.org/licenses/
+ *  
+ *  Additional permission under GNU GPL version 3 section 7
+ *  
+ *  If you modify this Program, or any covered work, by linking or combining 
+ *  it with any of the JARS listed in the README.txt (or a modified version of 
+ *  (that library), containing parts covered by the terms of that JAR, the 
+ *  licensors of this Program grant you additional permission to convey the 
+ *  resulting work. 
+ *  README.txt @ http://www.openbluedragon.org/license/README.txt
+ *  
+ *  http://www.openbluedragon.org/
+ */
+
 grammar CFML;
 
+options {
+	output=AST;
+	ASTLabelType=CommonTree;
+	backtrack=true;
+	memoize=true;
+}
+// imaginary tokens
+tokens {
+  DOESNOTCONTAIN; // 'does not contain' operator
+  VARLOCAL; // local assignment
+  FUNCTIONCALL; // function call
+  JAVAMETHODCALL; // java method call
+  EMPTYARGS; // empty list of arguments
+  TERNARY; // ternary operator
+  
+  COMPDECL; // component declaration
+  FUNCDECL; // function declaration
+  POSTMINUSMINUS; // '--' post-expression
+  POSTPLUSPLUS; // '++' post-expression
+  
+  IMPLICITSTRUCT; // implicit struct 
+  IMPLICITARRAY; // implicit struct
+  
+  ABORTSTATEMENT; // abort statement
+  EXITSTATEMENT; // exit statement
+  PARAMSTATEMENT;  // param statement
+  PROPERTYSTATEMENT;  // property statement
+  THROWSTATEMENT; // throw statement
+  RETHROWSTATEMENT; // rethrow statement
+  LOCKSTATEMENT; // lock statement
+  THREADSTATEMENT; // thread statement
+  TRANSACTIONSTATEMENT; // thread statement
+  
+  CFMLFUNCTIONSTATEMENT; // for calling functions in script (savecontent variable="wee" {} )
 
-/*
-Copyright (c) 2007 Mark Mandel, Mark Drew
+  FUNCTION_NAME; // function name (identifier token types may vary, thus this specific type)
+  FUNCTION_ACCESS; // function access
+  FUNCTION_PARAMETER; // function parameter
+  FUNCTION_RETURNTYPE; // function return type
+  FUNCTION_ATTRIBUTE; // the attributes of the function 
+  COMPONENT_ATTRIBUTE; // the attributes of the component 
+  PARAMETER_TYPE; // function parameter type
+}
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+@parser::header { 
+package cfml.parsing.cfml.antlr;
+import cfml.parsing.cfscript.CFParseException;
+import cfml.parsing.cfscript.IErrorReporter;
+} 
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-*/
-
-options
-{
-  output=AST;
+@lexer::header { 
+package cfml.parsing.cfml.antlr;
+import cfml.parsing.cfscript.CFParseException;
+import cfml.parsing.cfscript.IErrorReporter;
 }
  
-tokens
-{
-  CFTAG;
-  CUSTOMTAG;
-  IMPORTTAG;
-  STRING_LITERAL;
-  CFML_STATEMENT;
-}
+@members { public boolean scriptMode = true; 
 
-scope tagScope {
- String endTagName;
- String name;
-}
+  private cfml.parsing.cfscript.IErrorReporter errorReporter = null;
+  public void setErrorReporter(IErrorReporter errorReporter) {
+      this.errorReporter = errorReporter;
+  }
+  public void emitErrorMessage(String msg) {
+      errorReporter.reportError(msg);
+  }
 
-@parser::header 
-{
-package cfml.parsing.cfml.antlr;
 
 /*
-Copyright (c) 2007 Mark Mandel, Mark Drew
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-d
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. 
-*/  
-
-import java.util.LinkedList;
-
-}
-
-@lexer::header
-{
-package cfml.parsing.cfml.antlr;
-
-/*
-Copyright (c) 2007 Mark Mandel, Mark Drew
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. 
+	
+	public String getErrorMessage(RecognitionException e,
+	                                  String[] tokenNames)
+	    {
+	        List stack = getRuleInvocationStack(e, this.getClass().getName());
+	        String msg = null;
+	        String inputContext =
+	            input.LT(-3) == null ? "" : ((CommonToken)input.LT(-3)).getText()+" "+
+	            input.LT(-2) == null ? "" : ((CommonToken)input.LT(-2)).getText()+" "+
+	            input.LT(-1) == null ? "" : ((CommonToken)input.LT(-1)).getText()+" >>>"+
+	            ((CommonToken)input.LT(1)).getText()+"<<< "+
+	            ((CommonToken)input.LT(2)).getText()+" "+
+	            ((CommonToken)input.LT(3)).getText();
+	        if ( e instanceof NoViableAltException ) {
+	           NoViableAltException nvae = (NoViableAltException)e;
+	           msg = " no viable alt; token="+e.token+
+	              " (decision="+nvae.decisionNumber+
+	              " state "+nvae.stateNumber+")"+
+	              " decision=<<"+nvae.grammarDecisionDescription+">>";
+	        }
+	        else {
+	           msg = super.getErrorMessage(e, tokenNames);
+	        }
+	        return stack+" "+msg+" context=..."+inputContext+"...";
+	    }
+	    public String getTokenErrorDisplay(Token t) {
+	        return t.toString();
+	    }
 */
+	protected void mismatch( IntStream input, int ttype, BitSet follow ) throws RecognitionException {
+	  throw new MismatchedTokenException(ttype, input);
+	}
+		
+	public Object recoverFromMismatchedSet( IntStream input, RecognitionException e, BitSet follow ) throws RecognitionException{
+	  throw e;
+	}
+	
+	public Object recoverFromMismatchedToken( IntStream input, int ttype, BitSet follow ) throws RecognitionException{
+	  RecognitionException e = null;
+	  if ( mismatchIsUnwantedToken(input, ttype) ) {
+	    e = new UnwantedTokenException(ttype, input);
+	  }else if ( mismatchIsMissingToken(input, follow) ) {
+	    Object inserted = getMissingSymbol(input, e, ttype, follow);
+	    e = new MissingTokenException(ttype, input, inserted);
+	  }else{
+	    e = new MismatchedTokenException(ttype, input);
+	  }
+	  //TODO: get different token names
+	  throw new CFParseException( this.getErrorMessage( e, this.getTokenNames() ), e );
+	}
 }
 
 
-@lexer::members
-{
-  private static final int COMMENT_CHANNEL = 90;
-  private static final int TEXT_CHANNEL = 89;
-  
-  
-  private static int NONE_MODE = 0;
-  private static int ENDTAG_MODE = 1;
-  private static int STARTTAG_MODE = 2;
-  private static int DOUBLE_QUOTE_STRING_MODE = 3;
-  private static int SINGLE_QUOTE_STRING_MODE = 4;
-  private static int HASH_CFML_MODE = 5;
+@lexer::members {
 
-  private int mode;
-  
-  private int getMode()
-  {
-    return mode;
-  }
-  
-  private void setMode(int mode)
-  {
-    this.mode = mode;
-  }
-}
-
-@parser::members
-{
-  /**
-  * returns false.
-  */
-  protected boolean isColdFusionTag(String name)
-  {   
-    boolean isColdfusion = name.toLowerCase().startsWith("cf");
-    System.out.println("isColdFusion: " + name + " : " + isColdfusion);
-    return isColdfusion;
-  }
-
-  /**
-  * returns false.
-  */
-  protected boolean isCustomTag(String name)
-  {   
-    return false;
-  }
-
-  /**
-  * returns false.
-  */  
-  protected boolean isImportTag(String name)
-  {
-    return false;
-  }
-
-  /*
-  * returns false
-  */
-  protected boolean containsCFScript(String name)
-  {
-    return false;
-  }
-  
-  protected boolean allowsCFMLAssignment(String tagName)
-  {
-    boolean assign = tagName.toLowerCase().equals("cfset");
-    System.out.println("allowsCFMLAssignment : " + tagName + " : " + assign);
-    return assign;
-  }
-
-  protected boolean allowsCFMLCondition(String tagName)
-  {
-    return false;
-  }
-
-  protected boolean usesAttributes(String name)
-  {
-    boolean attrib = (name.toLowerCase().startsWith("cf") && !name.toLowerCase().equals("cfset"));
-    System.out.println("usesAttributes: " + name + " : " + attrib);
-    return attrib;
-  } 
-
-  /**
-  * reports an error
-  */  
-  protected void reportError(RecognitionException e, String errorMessage) 
-  {
-    System.err.println(errorMessage);
-  }
-  
-  private LinkedList<String> tagStack = new LinkedList<String>();
-  
-  private LinkedList<String> getTagStack()
-  {
-    return tagStack;
-  }
-  
-  private void setTagStack(LinkedList<String> stack)
-  {
-    tagStack = stack;
-  }
-    
-  protected Tree parseStringLiteral(Token start, Token stop)
-  {
-    return null;
-  }
-
-  protected Tree parseCFScript(Token start, Token stop)
-  {
-    return null;
-  }
-  
-  protected Tree parseCFMLCondition(Token start, Token stop)
-  {
-    return null;
-  }
-  
-  protected Tree parseCFMLAssignment(Token start, Token stop)
-  {
-    return null;
-  }
-}
-
-/* Parser */
-
-cfml
-  :
-  tag*
-  ;
-
-tag
-  :
-    startTag
-  ;
-
-startTag
-scope tagScope;
-  :
-  (
-  sto=START_TAG_OPEN 
-  {
-    String name = $sto.text.toLowerCase().substring(1);
-    $tagScope::name = name; 
-  }
-  
-  tagInnerValues?
-  
-  stc=START_TAG_CLOSE
-  {
-    if(!$stc.text.equals("/>"))   
-    {
-      System.out.println("push: " + name);
-      $tagScope::endTagName = name; 
-      getTagStack().push(name);
+  public static final int JAVADOC_CHANNEL = 1;
+  public Token nextToken() {
+    if ( state.token != null && state.token.getType() == SCRIPTCLOSE ){
+      return Token.EOF_TOKEN;
     }
-    else
-    {
-      $tagScope::endTagName = ""; 
-      System.out.println("close: " + $sto.text.toLowerCase().substring(1));
-    }
-  }
-  tc=tagContent
-    (
-    -> {isImportTag(name)}? ^(IMPORTTAG[$sto] tagInnerValues? START_TAG_CLOSE tagContent?)
-    -> {isCustomTag(name)}? ^(CUSTOMTAG[$sto] tagInnerValues? START_TAG_CLOSE tagContent?)    
-    -> {isColdFusionTag(name)}? ^(CFTAG[$sto] tagInnerValues? START_TAG_CLOSE   
-            {
-              (containsCFScript(name) ? parseCFScript(stc, tc.stop) : null)
-            }
-              tagContent?)
     
-    
-    -> ^(START_TAG_OPEN START_TAG_CLOSE tagInnerValues? tagContent?)
-    )
-  )
-  ;
-
-tagContent
-  :
-  hashCFML*
-  cfml
-    (
-    {
-      Token t = input.LT(1);
-      String name;
-      
-      if(t.getText() == null)
-      {
-        name = "*"; //never be a name       
+    while (true) {
+      state.token = null;
+      state.channel = Token.DEFAULT_CHANNEL;
+      state.tokenStartCharIndex = input.index();
+      state.tokenStartCharPositionInLine = input.getCharPositionInLine();
+      state.tokenStartLine = input.getLine();
+      state.text = null;
+      if ( input.LA(1)==CharStream.EOF ) {
+        return Token.EOF_TOKEN;
       }
-      else
-      {
-        name = t.getText().toLowerCase().substring(2);
+      try {
+        mTokens();
+        if ( state.token==null ) {
+          emit();
+        }
+        else if ( state.token==Token.SKIP_TOKEN ) {
+          continue;
+        }
+        return state.token;
+      } catch (NoViableAltException nva) {
+                errorReporter.reportError(nva);
+                recover(nva); // throw out current char and try again
+      }
+      catch (RecognitionException re) {
+        errorReporter.reportError(re);
+        return Token.EOF_TOKEN;
+        //throw new RuntimeException("Bailing out!"); // or throw Error
       }
     }
-    { $tagScope::endTagName.equals(name)}?=> 
-    (endTag)
-    )
-  ;
-catch [FailedPredicateException fpe]
-{
-  String text = input.LT(1).getText();
+  } 
 
-  System.out.println("caught: " + input.LT(1).getText());
-  retval.stop = input.LT(-1);
-  retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-  //adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-  
-  if(!(text == null || getTagStack().contains(text.toLowerCase().substring(2))))
-  {
-    //this is a bad error. Norti norti.
-    String msg = getErrorHeader(fpe);
-        msg += " end tag (" + text + ">" +
-                     ") cannot be matched to any start tag currently open";
-                     
-    reportError(fpe, msg);
+  private IErrorReporter errorReporter = null;
+  public void setErrorReporter(IErrorReporter errorReporter) {
+      this.errorReporter = errorReporter;
   }
+  public void emitErrorMessage(String msg) {
+      errorReporter.reportError("from lex" + msg);
+  }
+  
 }
 
-endTag
-  :
-  {
-    String name = input.LT(1).getText().toLowerCase().substring(2);
-    
-    //clear off the chaff
-    while(!name.equals(getTagStack().peek()))
-    {
-      String pastTagName = getTagStack().pop();
-      
-      System.out.println("popped: " + pastTagName);
-    }
-    
-    //pop off the last eleemnt
-    String pastTagName = getTagStack().pop();
-    System.out.println("finally popped: " + pastTagName);
-  } 
-  END_TAG_OPEN^ END_TAG_CLOSE
+// Alter code generation so catch-clauses get replace with
+// this action.
+@parser::rulecatch {
+	catch (RecognitionException e) {
+	  //System.out.println("cfscript.g");
+	  errorReporter.reportError(e);
+	  recover(getTokenStream(),e);
+	}
+}
+
+
+//Note: need case insensitive stream: http://www.antlr.org/wiki/pages/viewpage.action?pageId=1782
+
+WS	:	(' ' | '\t' | '\n' | '\r' | '\f' )+ {$channel=HIDDEN;};
+
+LINE_COMMENT :
+            '//'
+            ( ~('\n'|'\r') )*
+            ( '\n'|'\r'('\n')? )?
+      { $channel=HIDDEN; } ;
+
+ML_COMMENT
+    :   '/*' (options {greedy=false;} : .)* '*/' {$channel=HIDDEN;}
+    ;
+
+BOOLEAN_LITERAL
+	:	'TRUE'
+	|	'FALSE' 
+	;
+
+STRING_LITERAL
+	: '"' DoubleStringCharacter* '"'
+	| '\'' SingleStringCharacter* '\''
+	;
+ 
+fragment DoubleStringCharacter
+	: ~('"')
+	| '""'	
+	;
+
+fragment SingleStringCharacter
+	: ~('\'')
+	| '\'\''	
+	;
+
+fragment LETTER	
+	: '\u0024'
+	| '\u0041'..'\u005a'
+	| '\u005f'
+	| '\u0061'..'\u007a'
+	| '\u00c0'..'\u00d6'
+	| '\u00d8'..'\u00f6'
+	| '\u00f8'..'\u00ff'
+	| '\u0100'..'\u1fff'
+	| '\u3040'..'\u318f'
+	| '\u3300'..'\u337f'
+	| '\u3400'..'\u3d2d'
+	| '\u4e00'..'\u9fff'
+	| '\uf900'..'\ufaff';
+
+
+fragment DIGIT 	
+	: '\u0030'..'\u0039'
+	| '\u0660'..'\u0669'
+	| '\u06f0'..'\u06f9'
+	| '\u0966'..'\u096f'
+	| '\u09e6'..'\u09ef'
+	| '\u0a66'..'\u0a6f'
+	| '\u0ae6'..'\u0aef'
+	| '\u0b66'..'\u0b6f'
+	| '\u0be7'..'\u0bef'
+	| '\u0c66'..'\u0c6f'
+	| '\u0ce6'..'\u0cef'
+	| '\u0d66'..'\u0d6f'
+	| '\u0e50'..'\u0e59'
+	| '\u0ed0'..'\u0ed9'
+	| '\u1040'..'\u1049';
+
+// define all the operators/reserved words before the identifier
+
+NULL: 'NULL';
+
+// Operators
+CONTAINS:	'CONTAINS';
+CONTAIN: 'CONTAIN';
+DOES: 'DOES';
+IS:	'IS';
+GT: 'GT';
+GE: 'GE';
+GTE: 'GTE';
+LTE: 'LTE';
+LT: 'LT';
+LE: 'LE';
+EQ: 'EQ';
+EQUAL: 'EQUAL';
+EQUALS: 'EQUALS';
+NEQ: 'NEQ';
+LESS: 'LESS';
+THAN: 'THAN';
+GREATER: 'GREATER';
+OR: 'OR';
+TO: 'TO';
+IMP: 'IMP';
+EQV: 'EQV';
+XOR: 'XOR';
+AND: 'AND';
+NOT: 'NOT';
+MOD: 'MOD';
+VAR: 'VAR';
+NEW: 'NEW';
+
+// cfscript
+IF: 'IF';
+ELSE: 'ELSE';
+BREAK: 'BREAK';
+CONTINUE: 'CONTINUE';
+FUNCTION: 'FUNCTION';
+RETURN: 'RETURN';
+WHILE: 'WHILE';
+DO: 'DO';
+FOR: 'FOR';
+IN: 'IN';
+TRY: 'TRY';
+CATCH: 'CATCH';
+SWITCH: 'SWITCH';
+CASE: 'CASE';
+DEFAULT: 'DEFAULT';
+FINALLY: 'FINALLY';
+
+SCRIPTCLOSE: '</CFSCRIPT>'; 
+
+// operators
+DOT: '.';
+STAR: '*';
+SLASH: '/';
+BSLASH: '\\';
+POWER: '^';
+PLUS: '+';
+PLUSPLUS: '++';
+MINUS: '-';
+MINUSMINUS: '--';
+MODOPERATOR: '%';
+CONCAT: '&';
+EQUALSEQUALSOP: '==';
+EQUALSOP: '=';
+PLUSEQUALS: '+=';
+MINUSEQUALS: '-=';
+STAREQUALS: '*=';
+SLASHEQUALS: '/=';
+MODEQUALS: '%=';
+CONCATEQUALS: '&=';
+COLON: ':';
+NOTOP: '!'; 
+SEMICOLON: ';';
+OROPERATOR: '||';
+ANDOPERATOR: '&&';
+LEFTBRACKET: '[';
+RIGHTBRACKET: ']';
+LEFTPAREN: '(';
+RIGHTPAREN: ')';
+LEFTCURLYBRACKET: '{';
+RIGHTCURLYBRACKET: '}';
+QUESTIONMARK: '?';
+
+// tag operators
+INCLUDE: 'INCLUDE';
+IMPORT: 'IMPORT';
+ABORT: 'ABORT';
+THROW: 'THROW';
+RETHROW: 'RETHROW';
+EXIT: 'EXIT';
+PARAM: 'PARAM';
+PROPERTY: 'PROPERTY';
+LOCK: 'LOCK';
+THREAD: 'THREAD';
+TRANSACTION: 'TRANSACTION';
+
+// cfmlfunction (tags you can call from script)
+LOCATION: 'LOCATION';
+SAVECONTENT: 'SAVECONTENT';
+HTTP: 'HTTP';
+FILE: 'FILE';
+DIRECTORY: 'DIRECTORY';
+LOOP: 'LOOP'; 
+SETTING: 'SETTING';
+QUERY: 'QUERY';
+
+// function related
+PRIVATE: 'PRIVATE';
+PUBLIC: 'PUBLIC';
+REMOTE: 'REMOTE';
+PACKAGE: 'PACKAGE';
+REQUIRED: 'REQUIRED';
+COMPONENT: 'COMPONENT';
+
+IDENTIFIER 
+	:	LETTER (LETTER|DIGIT)*;
+	
+INTEGER_LITERAL
+  : DecimalDigit+
   ;
 
-tagInnerValues
-  :
-  (
-  {
-    (isColdFusionTag($tagScope::name) && usesAttributes($tagScope::name))
-    ||
-    (isCustomTag($tagScope::name))
-    ||
-    (isImportTag($tagScope::name))
-  }?=> tagAttribute*
-  )
-  |
-  (
-  {
+
+fragment DecimalDigit
+  : ('0'..'9')
+  ;
+
+FLOATING_POINT_LITERAL
+  : DecimalDigit+ '.' DecimalDigit* ExponentPart?
+  | '.' DecimalDigit+ ExponentPart?
+  | DecimalDigit+ ExponentPart?
+  ;
+
+fragment ExponentPart
+  : ('e'|'E') ('+'|'-')? DecimalDigit+
+  ;
+ 
+//--- cfscript grammar rules
+
+scriptBlock
+  : componentDeclaration
+  | ( element )* endOfScriptBlock
+  ; 
+
+componentDeclaration
+  : COMPONENT componentAttribute* componentGuts -> ^( COMPDECL componentAttribute* componentGuts)
+  ;
+
+endOfScriptBlock
+  : SCRIPTCLOSE 
+  | EOF
+  ;
+  
+element
+  : functionDeclaration
+  | statement
+  ;
+
+functionDeclaration
+  : (functionAccessType)? (functionReturnType)? lc=FUNCTION identifier LEFTPAREN (parameterList)? RIGHTPAREN functionAttribute* compoundStatement -> ^( FUNCDECL[$lc] (functionAccessType)? (functionReturnType)? ^(FUNCTION_NAME identifier) (parameterList)? functionAttribute* compoundStatement )
+  ;
+
+functionAccessType
+  //: (PUBLIC | PRIVATE | REMOTE | PACKAGE) (functionReturnType|identifier)
+  : (accessType functionReturnType? FUNCTION identifier) => accessType -> ^(FUNCTION_ACCESS accessType) 
+//  : ((PUBLIC | PRIVATE | REMOTE | PACKAGE) functionReturnType? FUNCTION identifier) => lc=(PUBLIC | PRIVATE | REMOTE | PACKAGE -> ^(FUNCTION_ACCESS[$lc])
+  ;
+
+functionReturnType
+  : (typeSpec FUNCTION) => typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec )
+  ;
+
+accessType
+	:PUBLIC | PRIVATE | REMOTE | PACKAGE
+	;
+
+typeSpec
+  : identifier ( DOT ( identifier | reservedWord ) )*
+  | STRING_LITERAL
+  ;
+  
+parameterList
+  : parameter ( ','! parameter )*
+  | 
+  ;
+  
+parameter
+  : (REQUIRED)? (parameterType)? identifier ( EQUALSOP impliesExpression )? -> ^(FUNCTION_PARAMETER (REQUIRED)? (parameterType)? identifier (EQUALSOP impliesExpression)? )
+  ;
+
+parameterType
+  : typeSpec -> ^( PARAMETER_TYPE typeSpec )
+  ;
+
+componentAttribute
+  : identifier (COLON identifier)? op=EQUALSOP impliesExpression -> ^(COMPONENT_ATTRIBUTE identifier (COLON identifier)? impliesExpression)
+  ;
+//i=identifier EQUALSOP^ v=impliesExpression
+  
+functionAttribute
+  : identifier op=EQUALSOP impliesExpression -> ^(FUNCTION_ATTRIBUTE[$op] identifier impliesExpression)
+  ;
+  
+compoundStatement
+  : LEFTCURLYBRACKET^ ( statement )* RIGHTCURLYBRACKET
+  ;
+  
+componentGuts
+  : LEFTCURLYBRACKET^ ( element )* RIGHTCURLYBRACKET
+  ;
+  
+statement
+  :   tryCatchStatement
+  |   ifStatement
+  |   whileStatement
+  |   doWhileStatement
+  |   forStatement
+  |   switchStatement
+  |   CONTINUE SEMICOLON!
+  |   BREAK SEMICOLON!
+  |   returnStatement
+  |   tagOperatorStatement
+  |   compoundStatement 
+  |   localAssignmentExpression SEMICOLON!
+//  |   localAssignmentExpression
+  |   SEMICOLON! // empty statement
+  ;
+   
+condition
+  : LEFTPAREN! localAssignmentExpression RIGHTPAREN!
+  ;
+  
+returnStatement
+  : RETURN SEMICOLON!
+  | RETURN assignmentExpression SEMICOLON!
+  ;
+  
+ifStatement
+  : IF^ condition statement ( ELSE statement )?
+  ;
+
+whileStatement
+  : WHILE^ condition statement
+  ;
+ 
+doWhileStatement
+  : DO^ statement WHILE condition SEMICOLON
+  ;
+  
+forStatement
+  : FOR^ LEFTPAREN! VAR? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON  ( assignmentExpression )? RIGHTPAREN! statement
+  | FOR^ LEFTPAREN! forInKey IN assignmentExpression RIGHTPAREN! statement
+  ;
+  
+forInKey
+  : VAR? identifier ( DOT ( identifier | reservedWord ) )*
+  ;
+
+tryCatchStatement
+  : TRY^ statement ( catchCondition )* finallyStatement?
+  ;
+  
+catchCondition
+  : CATCH^ LEFTPAREN! exceptionType identifier RIGHTPAREN! compoundStatement
+  ;
+
+finallyStatement
+  : FINALLY^ compoundStatement
+  ;
+
+exceptionType
+  : identifier ( DOT ( identifier | reservedWord ) )*
+  | STRING_LITERAL
+  ;
+  
+constantExpression
+  : LEFTPAREN constantExpression RIGHTPAREN
+  | MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL  )
+  | INTEGER_LITERAL
+  | FLOATING_POINT_LITERAL
+  | STRING_LITERAL
+  | BOOLEAN_LITERAL
+  | NULL
+  ;
+  
+switchStatement
+  : SWITCH^ condition LEFTCURLYBRACKET
+    ( 
+      caseStatement    
+    )* 
+    
+    RIGHTCURLYBRACKET
+  ;
+
+caseStatement
+  : ( CASE^ constantExpression COLON ( statement )* ) 
+    | 
+    ( DEFAULT^ COLON ( statement )* ) 
+  ;
+
+tagOperatorStatement
+  //: INCLUDE^ compoundStatement SEMICOLON!  (poundSignReader kills this :-/)
+  : includeStatement
+  | IMPORT^ componentPath SEMICOLON!
+  | abortStatement
+  | throwStatement
+  | RETHROW SEMICOLON -> ^(RETHROWSTATEMENT)
+  | exitStatement
+  | paramStatement
+  | propertyStatement
+  | lockStatement
+  | threadStatement
+  | transactionStatement
+  | cfmlfunctionStatement
+  ;
+
+// component  
+
+includeStatement
+  : INCLUDE impliesExpression* SEMICOLON  -> ^(INCLUDE  impliesExpression* ) 
+  ;
+
+transactionStatement
+  : lc=TRANSACTION p=paramStatementAttributes (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  ;
+  
+cfmlfunctionStatement
+  : cfmlFunction (param)* (compoundStatement)?-> ^(CFMLFUNCTIONSTATEMENT cfmlFunction (param)* (compoundStatement)?)
+  ;
+  
+cfmlFunction
+  : LOCATION
+  | SAVECONTENT
+  | HTTP 
+  | FILE 
+  | DIRECTORY
+  | LOOP 
+  | SETTING
+  | QUERY
+  ;
+
+/*
+
+cfmlfunctionStatement
+  : savecontentStatement
+  ;
+
+savecontentStatement
+  : lc=SAVECONTENT p=paramStatementAttributes cs=compoundStatement -> ^(CFMLFUNCTIONSTATEMENT[$lc] paramStatementAttributes compoundStatement)
+  ;
+*/
+
+lockStatement
+  : lc=LOCK p=paramStatementAttributes cs=compoundStatement -> ^(LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement)
+  ;
+
+threadStatement
+  : lc=THREAD p=paramStatementAttributes (compoundStatement)? -> ^(THREADSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  ;
+
+abortStatement
+  : lc=ABORT SEMICOLON -> ^(ABORTSTATEMENT[$lc])
+  | lc=ABORT memberExpression SEMICOLON -> ^(ABORTSTATEMENT[$lc] memberExpression)
+  ;
+
+throwStatement
+  : lc=THROW SEMICOLON -> ^(THROWSTATEMENT[$lc])
+  | lc=THROW memberExpression SEMICOLON -> ^(THROWSTATEMENT[$lc] memberExpression)
+  ;
+
+exitStatement
+  : lc=EXIT SEMICOLON -> ^(EXITSTATEMENT[$lc])
+  | lc=EXIT memberExpression SEMICOLON -> ^(EXITSTATEMENT[$lc] memberExpression)
+  ;
+
+paramStatement
+  : lc=PARAM paramStatementAttributes  -> ^(PARAMSTATEMENT[$lc] paramStatementAttributes)
+  ;
+  
+propertyStatement
+  : lc=PROPERTY paramStatementAttributes  -> ^(PROPERTYSTATEMENT[$lc] paramStatementAttributes)
+  ;
+  
+paramStatementAttributes
+  : ( param )+
+  ;
+  
+param
+  : i=identifier EQUALSOP^ v=impliesExpression
+  ;
+
+
+//--- expression engine grammar rules (a subset of the cfscript rules)
+  
+expression 
+	: localAssignmentExpression EOF!
+	;
+	
+localAssignmentExpression 
+	:	VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) 
+	|	assignmentExpression
+	;
+
+assignmentExpression 
+  : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS )^ impliesExpression )?
+  ;
+
+impliesExpression
+	:	ternary
+	| equivalentExpression ( IMP^ equivalentExpression )*
+	;
+
+ternary
+//   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(IF equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression)
+   : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^(TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression)
+   ;
+
+equivalentExpression
+	:	xorExpression ( EQV^ xorExpression )*
+	;
+
+xorExpression
+	:	orExpression ( XOR^ orExpression )*
+	;
+	
+orExpression
+	:	andExpression ( ( OR | OROPERATOR )^ andExpression )*
+	;
+	
+andExpression
+	:	notExpression ( ( AND | ANDOPERATOR )^ notExpression )*
+	;
+	
+notExpression
+	:	( NOT^ | NOTOP^ )? equalityExpression 
+	;
+
+equalityExpression
+    : concatenationExpression
+      ( ( equalityOperator5^ | equalityOperator3^ |  equalityOperator2^ | equalityOperator1^ ) concatenationExpression )* 
+    ;
+
+equalityOperator1
+    : 	IS -> ^(EQ)
+    |   EQUALSEQUALSOP -> ^(EQ)
+    |   LT -> ^(LT)
+    |   '<' -> ^(LT)
+    |   LTE -> ^(LTE)
+    |   '<=' -> ^(LTE)
+    |   LE -> ^(LTE)
+    |   GT -> ^(GT)
+    |   '>' -> ^(GT)
+    |   GTE -> ^(GTE)
+    |   '>=' -> ^(GTE)
+    |   GE -> ^(GTE)
+    |   EQ -> ^(EQ)
+    |   NEQ -> ^(NEQ)
+    |   '!=' -> ^(NEQ)
+    |   EQUAL -> ^(EQ)
+    |   EQUALS -> ^(EQ)
+    |   CONTAINS -> ^(CONTAINS)
+    ;
+    
+equalityOperator2
+    :   LESS THAN -> ^(LT)
+    |   GREATER THAN -> ^(GT)
+    |   NOT EQUAL  -> ^(NEQ)
+    |   IS NOT -> ^(NEQ)
+    ;
+
+equalityOperator3
+    :   lc=DOES NOT CONTAIN -> ^(DOESNOTCONTAIN[$lc])
+    ;
+
+equalityOperator5
+    :   LESS THAN OR EQUAL TO -> ^(LTE)
+    |   GREATER THAN OR EQUAL TO -> ^(GTE)
+    ;
+    
+concatenationExpression
+	:	additiveExpression ( CONCAT^ additiveExpression )*
+	;
+	
+additiveExpression
+	:	modExpression ( (PLUS^|MINUS^) modExpression )*
+	;
+
+modExpression
+	:	intDivisionExpression  ( (MOD|MODOPERATOR)^ intDivisionExpression )* 
+	;
+	
+intDivisionExpression
+	:	multiplicativeExpression ( BSLASH^ multiplicativeExpression )*
+	;
+
+multiplicativeExpression
+	:	powerOfExpression ( (STAR^|SLASH^) powerOfExpression )*
+	;
+	
+powerOfExpression
+	:	unaryExpression ( POWER^ unaryExpression )*
+	;
+	
+unaryExpression
+	: MINUS memberExpression -> ^(MINUS memberExpression)
+	| PLUS memberExpression -> ^(PLUS memberExpression)
+	| MINUSMINUS memberExpression -> ^(MINUSMINUS memberExpression) 
+	| PLUSPLUS memberExpression -> ^(PLUSPLUS memberExpression)
+	| newComponentExpression (DOT primaryExpressionIRW (LEFTPAREN argumentList ')')*)*
+  | memberExpression MINUSMINUS -> ^(POSTMINUSMINUS memberExpression)
+  | memberExpression PLUSPLUS -> ^(POSTPLUSPLUS memberExpression)
+  | memberExpression 
+	;
+	
+memberExpression
+	:	'#'! memberExpressionB '#'!
+	| memberExpressionB
+	;
+	
+memberExpressionB
+  : ( primaryExpression -> primaryExpression ) // set return tree to just primary
   ( 
-    isColdFusionTag($tagScope::name) 
-    && !usesAttributes($tagScope::name)
-    &&
-    (
-     allowsCFMLCondition($tagScope::name)
-     ||
-     allowsCFMLAssignment($tagScope::name)
-    )
-  )
-  }?=> script
-  )
-  |
-  (
-  {
-      !isColdFusionTag($tagScope::name)
-  }?=> tagAttribute*
-  )
-  ;
-
-tagAttribute
-  :
-  TAG_ATTRIBUTE EQUALS stringLiteral
+  : DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^(JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+    |  LEFTPAREN argumentList RIGHTPAREN -> ^(FUNCTIONCALL $memberExpressionB argumentList)
+    | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^(LEFTBRACKET $memberExpressionB impliesExpression)
+    | DOT primaryExpressionIRW -> ^(DOT $memberExpressionB primaryExpressionIRW)
+  )*
   ;
   
-stringLiteral
-  :
-  (
-    start=DOUBLE_QUOTE (ESCAPE_DOUBLE_QUOTE | DOUBLE_QUOTE_STRING)* end=DOUBLE_QUOTE
-    -> ^(STRING_LITERAL { (parseStringLiteral($start, $end)) })
-  )
-  |
-  (
-    start=SINGLE_QUOTE (ESCAPE_SINGLE_QUOTE | SINGLE_QUOTE_STRING)* end=SINGLE_QUOTE
-    -> ^(STRING_LITERAL { (parseStringLiteral($start, $end)) })
-  )
-  ;
-
-script
-  :
-  {
-  Token start = input.LT(1);
-  }
-  (TAG_ATTRIBUTE | stringLiteral | EQUALS | CFML)*
-  {
-  Token stop = input.LT(-1);
-  System.out.println("start: " + start.getText() + " stop: " + stop.getText());
-  }
-  -> { allowsCFMLCondition($tagScope::name) }? ^(CFML_STATEMENT { parseCFMLCondition(start, stop) })
-  -> ^(CFML_STATEMENT { parseCFMLAssignment(start, stop) })
-  ;
-
-hashCFML
-  :
-  HASH (ESCAPE_HASH | HASH_CFML)* HASH
-  ;
-
-/* Lexer */
-
-END_TAG_OPEN
-  :
-  {
-    getMode() == NONE_MODE
-  }?=>
-  {
-    setMode(ENDTAG_MODE);
-  } 
-  '</'TAG_NAME
-  ;
-
-END_TAG_CLOSE
-  :
-  {getMode() == ENDTAG_MODE}?=>
-  '>'
-  {setMode(NONE_MODE);}
-  ;
-
-START_TAG_OPEN
-  :
-  {
-    getMode() == NONE_MODE
-  }?=>
-  {
-    setMode(STARTTAG_MODE);
-  }
-  '<'TAG_NAME
-  ;
 
 
-START_TAG_CLOSE
-  :
-  {getMode() == STARTTAG_MODE}?=>
-  '/'?'>'
-  {setMode(NONE_MODE);}
+memberExpressionSuffix
+  : indexSuffix
+  | propertyReferenceSuffix
   ;
 
-TAG_ATTRIBUTE
-  :
-  {getMode() == STARTTAG_MODE}?=>
-  (LETTER | DIGIT | UNDERSCORE)+
-  ;
-  
-EQUALS
-  :
-  {getMode() == STARTTAG_MODE}?=>
-  '='
+propertyReferenceSuffix
+  : DOT LT!* identifier
   ;
 
-SINGLE_QUOTE
-  :
-  {getMode() == STARTTAG_MODE  || getMode() == SINGLE_QUOTE_STRING_MODE}?=>
-  '\''
-  {
-    if(getMode() == STARTTAG_MODE)
-    {
-      setMode(SINGLE_QUOTE_STRING_MODE);
-    }
-    else
-    {
-      setMode(STARTTAG_MODE);
-    }
-  }
-  ;
-  
-ESCAPE_SINGLE_QUOTE
-  :
-  { getMode() == SINGLE_QUOTE_STRING_MODE }?=>
-  '\'\''
-  ; 
-
-SINGLE_QUOTE_STRING
-  :
-  { getMode() == SINGLE_QUOTE_STRING_MODE }?=>
-  ~('\'')
-  ;
-
-DOUBLE_QUOTE
-  :
-  {getMode() == STARTTAG_MODE  || getMode() == DOUBLE_QUOTE_STRING_MODE}?=>
-  '"'
-  {
-    if(getMode() == STARTTAG_MODE)
-    {
-      setMode(DOUBLE_QUOTE_STRING_MODE);
-    }
-    else
-    {
-      setMode(STARTTAG_MODE);
-    }
-  }
-  ;
-
-ESCAPE_DOUBLE_QUOTE
-  :
-  { getMode() == DOUBLE_QUOTE_STRING_MODE }?=>
-  '""'
-  ;
-  
-DOUBLE_QUOTE_STRING
-  :
-  { getMode() == DOUBLE_QUOTE_STRING_MODE }?=>
-  ~('"')
-  ;
-  
-HASH
-  :
-  {getMode() == NONE_MODE  || getMode() == HASH_CFML_MODE}?=>
-  '#'
-  {
-    if(getMode() == NONE_MODE)
-    {
-      setMode(HASH_CFML_MODE);
-    }
-    else
-    {
-      setMode(NONE_MODE);
-    }
-  }
-  ;
-
-ESCAPE_HASH
-  :
-  { getMode() == HASH_CFML_MODE }?=>
-  '##'
-  ;
-  
-HASH_CFML
-  :
-  { getMode() == HASH_CFML_MODE }?=>
-  ~('#')
-  ; 
-
-CFML
-  : 
-  {getMode() == STARTTAG_MODE}?=>
-  ('*'|'.'|'+'|'('|')'|'%'|'['|']'|'^'|'&'|'\/'|'\\'|'-'|'#')
-  ;
-
-/* fragments */
-
-fragment TAG_NAME
-  :
-  (LETTER)(TAG_IDENT)((COLON)(TAG_IDENT))?
-  ;
-  
-fragment TAG_IDENT
-  :
-  (LETTER | DIGIT | UNDERSCORE)*
-  ;
-
-fragment DIGIT
-  :
-  '0'..'9'
-  ;
-
-fragment LETTER
-  :
-  'a'..'z' | 'A'..'Z'
-  ;
-  
-fragment UNDERSCORE
-  :
-  '_'
-  ;
-  
-fragment COLON
-  :
-  ':'
-  ;
-
-/* hidden tokens */
-
-WS  
-  :  
-  (' '|'\r'|'\t'|'\u000C'|'\n') 
-  {
-    $channel=HIDDEN;
-  }
-  ;
-
-COMMENT
-  :   
-  '<!---' ( options {greedy=false;} : . )* '--->'
-  {
-      $channel=COMMENT_CHANNEL; //90 is hte comment channel
-  }
+indexSuffix
+  : LEFTBRACKET  LT!* primaryExpression  LT!* ']'! 
   ; 
   
-OTHER
-  :
-  {getMode() == NONE_MODE}?=>
-  (options {greedy=false;} : . )
-  {
-    $channel=TEXT_CHANNEL; //test is on a seperate channel, in case you want it
-  } 
+primaryExpressionIRW
+	:	primaryExpression
+	| reservedWord
+	;
+	
+	
+reservedWord
+  : CONTAINS | IS | EQUAL 
+  | EQ | NEQ | GT | LT | GTE
+  | GE | LTE | LE | NOT | AND
+  | OR | XOR | EQV | IMP | MOD
+  | NULL | EQUALS
+  | cfscriptKeywords 
+  ;
+
+argumentList
+  : argument (','! argument)*
+  | -> ^(EMPTYARGS)
+  ;
+
+argument
+  : ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
+  | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
+  | impliesExpression 
+  ;
+
+identifier
+	:	IDENTIFIER
+  | DOES 
+  | CONTAIN
+  | GREATER 
+  | THAN 
+  | LESS 
+  | VAR
+  | TO
+  | DEFAULT // default is a cfscript keyword that's always allowed as a var name
+  | INCLUDE
+  | NEW
+  | ABORT
+  | THROW
+  | RETHROW
+  | PARAM
+  | EXIT
+  | THREAD
+  | LOCK
+  | TRANSACTION
+  | PUBLIC
+  | PRIVATE
+  | REMOTE
+  | PACKAGE
+  | REQUIRED
+  | cfmlFunction
+  | {!scriptMode}?=> cfscriptKeywords 
+	;
+
+cfscriptKeywords
+  : IF
+  | ELSE
+  | BREAK
+  | CONTINUE
+  | FUNCTION
+  | RETURN
+  | WHILE
+  | DO
+  | FOR
+  | IN
+  | TRY
+  | CATCH
+  | SWITCH
+  | CASE
+  | DEFAULT
+  | IMPORT
+  ;
+  
+primaryExpression
+	:	STRING_LITERAL
+	|	BOOLEAN_LITERAL
+	| FLOATING_POINT_LITERAL
+	|	INTEGER_LITERAL
+	| implicitArray
+	| implicitStruct
+	|	NULL
+	| '('! LT!* assignmentExpression LT!* ')'!
+	|	identifier
+	;
+
+implicitArray
+  : lc=LEFTBRACKET implicitArrayElements? RIGHTBRACKET -> ^(IMPLICITARRAY[$lc] implicitArrayElements?) 
+  ;
+  
+implicitArrayElements
+  : impliesExpression ( ','! impliesExpression )*
+  ;
+  
+implicitStruct
+  : lc=LEFTCURLYBRACKET implicitStructElements? RIGHTCURLYBRACKET -> ^(IMPLICITSTRUCT[$lc] implicitStructElements?)
+  ;
+  
+implicitStructElements
+  : implicitStructExpression ( ',' implicitStructExpression )*
+  ;
+
+implicitStructExpression
+  : implicitStructKeyExpression ( COLON | EQUALSOP )^ impliesExpression 
+  ;
+  
+implicitStructKeyExpression
+  : identifier ( DOT ( identifier | reservedWord ) )*
+  | STRING_LITERAL
+  ;
+
+newComponentExpression
+  : NEW^ componentPath LEFTPAREN argumentList ')'!
+  ;
+  
+componentPath
+  : STRING_LITERAL
+  | identifier ( DOT identifier )*
   ;

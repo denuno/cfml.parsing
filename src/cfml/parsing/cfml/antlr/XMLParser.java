@@ -1,10 +1,8 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g 2010-12-26 05:41:38
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g 2011-08-16 16:27:25
 
 package cfml.parsing.cfml.antlr;
 
 import java.util.LinkedList;
-import treetool.TreeBuilder;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 
 import org.antlr.runtime.*;
@@ -17,26 +15,35 @@ import org.antlr.runtime.tree.*;
 
 public class XMLParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "TAG", "ELEMENT", "ATTRIBUTE", "TAGNAME", "ATTRIBUTENAME", "PCDATA", "TAG_START_OPEN", "GENERIC_ID", "TAG_CLOSE", "ATTR_EQ", "ATTR_VALUE", "TAG_END_OPEN", "TAG_EMPTY_CLOSE", "LETTER", "NAMECHAR", "DIGIT", "WS"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "CFTAG_ID", "TAG_START_OPEN", "GENERIC_ID", "ATTR_EQ", "ATTR_VALUE", "ATTR", "STRING_LITERAL", "TAG_EMPTY_CLOSE", "TAG_CLOSE", "TAG_END_OPEN", "LETTER", "NAMECHAR", "DoubleStringCharacter", "SingleStringCharacter", "PCDATA", "ID", "TRY", "DIGIT", "WS", "TAG", "ASSIGN", "ELEMENT", "ATTRIBUTE", "CFMLTAG", "TAGNAME", "ATTRIBUTENAME"
     };
     public static final int EOF=-1;
-    public static final int TAG=4;
-    public static final int ELEMENT=5;
-    public static final int ATTRIBUTE=6;
-    public static final int TAGNAME=7;
-    public static final int ATTRIBUTENAME=8;
-    public static final int PCDATA=9;
-    public static final int TAG_START_OPEN=10;
-    public static final int GENERIC_ID=11;
+    public static final int CFTAG_ID=4;
+    public static final int TAG_START_OPEN=5;
+    public static final int GENERIC_ID=6;
+    public static final int ATTR_EQ=7;
+    public static final int ATTR_VALUE=8;
+    public static final int ATTR=9;
+    public static final int STRING_LITERAL=10;
+    public static final int TAG_EMPTY_CLOSE=11;
     public static final int TAG_CLOSE=12;
-    public static final int ATTR_EQ=13;
-    public static final int ATTR_VALUE=14;
-    public static final int TAG_END_OPEN=15;
-    public static final int TAG_EMPTY_CLOSE=16;
-    public static final int LETTER=17;
-    public static final int NAMECHAR=18;
-    public static final int DIGIT=19;
-    public static final int WS=20;
+    public static final int TAG_END_OPEN=13;
+    public static final int LETTER=14;
+    public static final int NAMECHAR=15;
+    public static final int DoubleStringCharacter=16;
+    public static final int SingleStringCharacter=17;
+    public static final int PCDATA=18;
+    public static final int ID=19;
+    public static final int TRY=20;
+    public static final int DIGIT=21;
+    public static final int WS=22;
+    public static final int TAG=23;
+    public static final int ASSIGN=24;
+    public static final int ELEMENT=25;
+    public static final int ATTRIBUTE=26;
+    public static final int CFMLTAG=27;
+    public static final int TAGNAME=28;
+    public static final int ATTRIBUTENAME=29;
 
     // delegates
     // delegators
@@ -67,14 +74,31 @@ public class XMLParser extends Parser {
     }
 
     public String[] getTokenNames() { return XMLParser.tokenNames; }
-    public String getGrammarFileName() { return "/Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g"; }
+    public String getGrammarFileName() { return "/Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g"; }
 
 
-        private TreeBuilder T;
-       // private DefaultMutableTreeNode oldNode;
-        public void setTreeBuilder(TreeBuilder T){
-            this.T = T;
-        }
+      protected boolean isColdFusionTag(String name)
+      {   
+        boolean isColdfusion = name.toLowerCase().startsWith("cf");
+        System.out.println("isColdFusion: " + name + " : " + isColdfusion);
+        return isColdfusion;
+      }
+
+      protected boolean isAssignmentTag(String name)
+      {   
+        boolean isSingle = name.toLowerCase().startsWith("cfset");
+        System.out.println("isColdFusion: " + name + " : " + isSingle);
+        return isSingle;
+      }
+
+      protected boolean isSingleTag(String name)
+      {   
+        boolean isSingle = name.toLowerCase().startsWith("cf");
+        System.out.println("isColdFusion: " + name + " : " + isSingle);
+        return isSingle;
+      }
+
+
 
 
     public static class compilationUnit_return extends ParserRuleReturnScope {
@@ -83,7 +107,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "compilationUnit"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:46:1: compilationUnit : tag ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:57:1: compilationUnit : tag ;
     public final XMLParser.compilationUnit_return compilationUnit() throws RecognitionException {
         XMLParser.compilationUnit_return retval = new XMLParser.compilationUnit_return();
         retval.start = input.LT(1);
@@ -95,12 +119,12 @@ public class XMLParser extends Parser {
 
 
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:46:17: ( tag )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:46:19: tag
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:57:17: ( tag )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:57:19: tag
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_tag_in_compilationUnit103);
+            pushFollow(FOLLOW_tag_in_compilationUnit105);
             tag1=tag();
 
             state._fsp--;
@@ -133,7 +157,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "tag"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:48:1: tag : ( element )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:59:1: tag : ( element )* ;
     public final XMLParser.tag_return tag() throws RecognitionException {
         XMLParser.tag_return retval = new XMLParser.tag_return();
         retval.start = input.LT(1);
@@ -145,12 +169,12 @@ public class XMLParser extends Parser {
 
 
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:48:4: ( ( element )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:48:6: ( element )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:59:4: ( ( element )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:59:6: ( element )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:48:6: ( element )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:59:6: ( element )*
             loop1:
             do {
                 int alt1=2;
@@ -163,9 +187,9 @@ public class XMLParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:48:6: element
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:59:6: element
             	    {
-            	    pushFollow(FOLLOW_element_in_tag110);
+            	    pushFollow(FOLLOW_element_in_tag112);
             	    element2=element();
 
             	    state._fsp--;
@@ -207,7 +231,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "element"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:50:1: element : ( startTag ( element | PCDATA )* endTag | emptyElement ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:61:1: element : ( ( startTag ) ( element | PCDATA )* endTag | emptyElement ) ;
     public final XMLParser.element_return element() throws RecognitionException {
         ElementScope_stack.push(new ElementScope_scope());
 
@@ -229,25 +253,67 @@ public class XMLParser extends Parser {
         CommonTree PCDATA5_tree=null;
 
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:52:5: ( ( startTag ( element | PCDATA )* endTag | emptyElement ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:52:7: ( startTag ( element | PCDATA )* endTag | emptyElement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:5: ( ( ( startTag ) ( element | PCDATA )* endTag | emptyElement ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:7: ( ( startTag ) ( element | PCDATA )* endTag | emptyElement )
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:52:7: ( startTag ( element | PCDATA )* endTag | emptyElement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:7: ( ( startTag ) ( element | PCDATA )* endTag | emptyElement )
             int alt3=2;
-            alt3 = dfa3.predict(input);
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==TAG_START_OPEN) ) {
+                int LA3_1 = input.LA(2);
+
+                if ( (LA3_1==GENERIC_ID) ) {
+                    int LA3_2 = input.LA(3);
+
+                    if ( (LA3_2==ATTR_EQ) ) {
+                        alt3=2;
+                    }
+                    else if ( (LA3_2==GENERIC_ID||LA3_2==TAG_CLOSE) ) {
+                        alt3=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 3, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else if ( (LA3_1==TAG_EMPTY_CLOSE) ) {
+                    alt3=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
             switch (alt3) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:52:9: startTag ( element | PCDATA )* endTag
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:9: ( startTag ) ( element | PCDATA )* endTag
                     {
-                    pushFollow(FOLLOW_startTag_in_element130);
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:9: ( startTag )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:63:10: startTag
+                    {
+                    pushFollow(FOLLOW_startTag_in_element133);
                     startTag3=startTag();
 
                     state._fsp--;
 
                     root_0 = (CommonTree)adaptor.becomeRoot(startTag3.getTree(), root_0);
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:53:13: ( element | PCDATA )*
+
+                    }
+
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:64:13: ( element | PCDATA )*
                     loop2:
                     do {
                         int alt2=3;
@@ -263,9 +329,9 @@ public class XMLParser extends Parser {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:53:14: element
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:64:14: element
                     	    {
-                    	    pushFollow(FOLLOW_element_in_element146);
+                    	    pushFollow(FOLLOW_element_in_element150);
                     	    element4=element();
 
                     	    state._fsp--;
@@ -275,9 +341,9 @@ public class XMLParser extends Parser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:54:15: PCDATA
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:65:15: PCDATA
                     	    {
-                    	    PCDATA5=(Token)match(input,PCDATA,FOLLOW_PCDATA_in_element162); 
+                    	    PCDATA5=(Token)match(input,PCDATA,FOLLOW_PCDATA_in_element166); 
                     	    PCDATA5_tree = (CommonTree)adaptor.create(PCDATA5);
                     	    adaptor.addChild(root_0, PCDATA5_tree);
 
@@ -290,19 +356,18 @@ public class XMLParser extends Parser {
                         }
                     } while (true);
 
-                    pushFollow(FOLLOW_endTag_in_element191);
+                    pushFollow(FOLLOW_endTag_in_element195);
                     endTag6=endTag();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, endTag6.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:57:11: emptyElement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:68:11: emptyElement
                     {
-                    pushFollow(FOLLOW_emptyElement_in_element203);
+                    pushFollow(FOLLOW_emptyElement_in_element208);
                     emptyElement7=emptyElement();
 
                     state._fsp--;
@@ -343,7 +408,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "startTag"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:61:1: startTag : el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT[$el] TAGNAME[$tname] ( attribute )* ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:72:1: startTag : el= TAG_START_OPEN name= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT[$name] ( attribute )* ) ;
     public final XMLParser.startTag_return startTag() throws RecognitionException {
         XMLParser.startTag_return retval = new XMLParser.startTag_return();
         retval.start = input.LT(1);
@@ -351,29 +416,29 @@ public class XMLParser extends Parser {
         CommonTree root_0 = null;
 
         Token el=null;
-        Token tname=null;
+        Token name=null;
         Token TAG_CLOSE9=null;
         XMLParser.attribute_return attribute8 = null;
 
 
         CommonTree el_tree=null;
-        CommonTree tname_tree=null;
+        CommonTree name_tree=null;
         CommonTree TAG_CLOSE9_tree=null;
         RewriteRuleTokenStream stream_TAG_CLOSE=new RewriteRuleTokenStream(adaptor,"token TAG_CLOSE");
         RewriteRuleTokenStream stream_TAG_START_OPEN=new RewriteRuleTokenStream(adaptor,"token TAG_START_OPEN");
         RewriteRuleTokenStream stream_GENERIC_ID=new RewriteRuleTokenStream(adaptor,"token GENERIC_ID");
         RewriteRuleSubtreeStream stream_attribute=new RewriteRuleSubtreeStream(adaptor,"rule attribute");
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:62:5: (el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT[$el] TAGNAME[$tname] ( attribute )* ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:62:7: el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_CLOSE
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:73:5: (el= TAG_START_OPEN name= GENERIC_ID ( attribute )* TAG_CLOSE -> ^( ELEMENT[$name] ( attribute )* ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:73:7: el= TAG_START_OPEN name= GENERIC_ID ( attribute )* TAG_CLOSE
             {
-            el=(Token)match(input,TAG_START_OPEN,FOLLOW_TAG_START_OPEN_in_startTag232);  
+            el=(Token)match(input,TAG_START_OPEN,FOLLOW_TAG_START_OPEN_in_startTag237);  
             stream_TAG_START_OPEN.add(el);
 
-            tname=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_startTag236);  
-            stream_GENERIC_ID.add(tname);
+            name=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_startTag241);  
+            stream_GENERIC_ID.add(name);
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:62:42: ( attribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:73:41: ( attribute )*
             loop4:
             do {
                 int alt4=2;
@@ -386,9 +451,9 @@ public class XMLParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:62:42: attribute
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:73:41: attribute
             	    {
-            	    pushFollow(FOLLOW_attribute_in_startTag238);
+            	    pushFollow(FOLLOW_attribute_in_startTag243);
             	    attribute8=attribute();
 
             	    state._fsp--;
@@ -403,10 +468,11 @@ public class XMLParser extends Parser {
                 }
             } while (true);
 
-            TAG_CLOSE9=(Token)match(input,TAG_CLOSE,FOLLOW_TAG_CLOSE_in_startTag241);  
+            TAG_CLOSE9=(Token)match(input,TAG_CLOSE,FOLLOW_TAG_CLOSE_in_startTag246);  
             stream_TAG_CLOSE.add(TAG_CLOSE9);
 
-            ((ElementScope_scope)ElementScope_stack.peek()).currentElementName = (tname!=null?tname.getText():null);
+            ((ElementScope_scope)ElementScope_stack.peek()).currentElementName = (name!=null?name.getText():null);
+             System.out.println("current Tag:"+(name!=null?name.getText():null)); 
 
 
             // AST REWRITE
@@ -420,15 +486,14 @@ public class XMLParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 64:9: -> ^( ELEMENT[$el] TAGNAME[$tname] ( attribute )* )
+            // 76:9: -> ^( ELEMENT[$name] ( attribute )* )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:64:12: ^( ELEMENT[$el] TAGNAME[$tname] ( attribute )* )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:76:12: ^( ELEMENT[$name] ( attribute )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
-                root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ELEMENT, el), root_1);
+                root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ELEMENT, name), root_1);
 
-                adaptor.addChild(root_1, (CommonTree)adaptor.create(TAGNAME, tname));
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:64:43: ( attribute )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:76:29: ( attribute )*
                 while ( stream_attribute.hasNext() ) {
                     adaptor.addChild(root_1, stream_attribute.nextTree());
 
@@ -467,7 +532,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "attribute"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:67:1: attribute : aname= GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:80:1: attribute : aname= GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE ) ;
     public final XMLParser.attribute_return attribute() throws RecognitionException {
         XMLParser.attribute_return retval = new XMLParser.attribute_return();
         retval.start = input.LT(1);
@@ -486,16 +551,16 @@ public class XMLParser extends Parser {
         RewriteRuleTokenStream stream_GENERIC_ID=new RewriteRuleTokenStream(adaptor,"token GENERIC_ID");
 
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:67:11: (aname= GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:67:13: aname= GENERIC_ID ATTR_EQ ATTR_VALUE
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:80:11: (aname= GENERIC_ID ATTR_EQ ATTR_VALUE -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:80:13: aname= GENERIC_ID ATTR_EQ ATTR_VALUE
             {
-            aname=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_attribute292);  
+            aname=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_attribute309);  
             stream_GENERIC_ID.add(aname);
 
-            ATTR_EQ10=(Token)match(input,ATTR_EQ,FOLLOW_ATTR_EQ_in_attribute294);  
+            ATTR_EQ10=(Token)match(input,ATTR_EQ,FOLLOW_ATTR_EQ_in_attribute311);  
             stream_ATTR_EQ.add(ATTR_EQ10);
 
-            ATTR_VALUE11=(Token)match(input,ATTR_VALUE,FOLLOW_ATTR_VALUE_in_attribute296);  
+            ATTR_VALUE11=(Token)match(input,ATTR_VALUE,FOLLOW_ATTR_VALUE_in_attribute313);  
             stream_ATTR_VALUE.add(ATTR_VALUE11);
 
 
@@ -511,9 +576,9 @@ public class XMLParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 67:49: -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE )
+            // 80:49: -> ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:67:52: ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:80:52: ^( ATTRIBUTE[$aname] ATTRIBUTENAME[$aname] ATTR_VALUE )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ATTRIBUTE, aname), root_1);
@@ -553,7 +618,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "endTag"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:69:1: endTag : {...}? TAG_END_OPEN GENERIC_ID TAG_CLOSE ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:82:1: endTag : {...}? TAG_END_OPEN GENERIC_ID ;
     public final XMLParser.endTag_return endTag() throws RecognitionException {
         XMLParser.endTag_return retval = new XMLParser.endTag_return();
         retval.start = input.LT(1);
@@ -562,32 +627,30 @@ public class XMLParser extends Parser {
 
         Token TAG_END_OPEN12=null;
         Token GENERIC_ID13=null;
-        Token TAG_CLOSE14=null;
 
         CommonTree TAG_END_OPEN12_tree=null;
         CommonTree GENERIC_ID13_tree=null;
-        CommonTree TAG_CLOSE14_tree=null;
 
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:70:5: ({...}? TAG_END_OPEN GENERIC_ID TAG_CLOSE )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:70:7: {...}? TAG_END_OPEN GENERIC_ID TAG_CLOSE
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:84:5: ({...}? TAG_END_OPEN GENERIC_ID )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:84:7: {...}? TAG_END_OPEN GENERIC_ID
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            if ( !(( ((ElementScope_scope)ElementScope_stack.peek()).currentElementName.equals(input.LT(2).getText()) )) ) {
-                throw new FailedPredicateException(input, "endTag", " $ElementScope::currentElementName.equals(input.LT(2).getText()) ");
+
+                System.out.println(input.LT(1).getText() + input.LT(1).getType());
+                System.out.println(input.LT(2).getText()+ input.LT(2).getType());
+                System.out.println(input.LT(3).getText()+ input.LT(3).getType());
+            if ( !(( ((ElementScope_scope)ElementScope_stack.peek()).currentElementName.equals(input.LT(2).getText()))) ) {
+                throw new FailedPredicateException(input, "endTag", " $ElementScope::currentElementName.equals(input.LT(2).getText())");
             }
-            TAG_END_OPEN12=(Token)match(input,TAG_END_OPEN,FOLLOW_TAG_END_OPEN_in_endTag330); 
+            TAG_END_OPEN12=(Token)match(input,TAG_END_OPEN,FOLLOW_TAG_END_OPEN_in_endTag363); 
             TAG_END_OPEN12_tree = (CommonTree)adaptor.create(TAG_END_OPEN12);
             adaptor.addChild(root_0, TAG_END_OPEN12_tree);
 
-            GENERIC_ID13=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_endTag332); 
+            GENERIC_ID13=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_endTag365); 
             GENERIC_ID13_tree = (CommonTree)adaptor.create(GENERIC_ID13);
             adaptor.addChild(root_0, GENERIC_ID13_tree);
-
-            TAG_CLOSE14=(Token)match(input,TAG_CLOSE,FOLLOW_TAG_CLOSE_in_endTag334); 
-            TAG_CLOSE14_tree = (CommonTree)adaptor.create(TAG_CLOSE14);
-            adaptor.addChild(root_0, TAG_CLOSE14_tree);
 
 
             }
@@ -622,7 +685,7 @@ public class XMLParser extends Parser {
     };
 
     // $ANTLR start "emptyElement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:1: emptyElement : el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT[$el] GENERIC_ID[$tname] ( attribute )* ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:102:1: emptyElement : el= TAG_START_OPEN ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT[$el] ( attribute )* ) ;
     public final XMLParser.emptyElement_return emptyElement() throws RecognitionException {
         XMLParser.emptyElement_return retval = new XMLParser.emptyElement_return();
         retval.start = input.LT(1);
@@ -630,29 +693,23 @@ public class XMLParser extends Parser {
         CommonTree root_0 = null;
 
         Token el=null;
-        Token tname=null;
-        Token TAG_EMPTY_CLOSE16=null;
-        XMLParser.attribute_return attribute15 = null;
+        Token TAG_EMPTY_CLOSE15=null;
+        XMLParser.attribute_return attribute14 = null;
 
 
         CommonTree el_tree=null;
-        CommonTree tname_tree=null;
-        CommonTree TAG_EMPTY_CLOSE16_tree=null;
+        CommonTree TAG_EMPTY_CLOSE15_tree=null;
         RewriteRuleTokenStream stream_TAG_EMPTY_CLOSE=new RewriteRuleTokenStream(adaptor,"token TAG_EMPTY_CLOSE");
         RewriteRuleTokenStream stream_TAG_START_OPEN=new RewriteRuleTokenStream(adaptor,"token TAG_START_OPEN");
-        RewriteRuleTokenStream stream_GENERIC_ID=new RewriteRuleTokenStream(adaptor,"token GENERIC_ID");
         RewriteRuleSubtreeStream stream_attribute=new RewriteRuleSubtreeStream(adaptor,"rule attribute");
         try {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:14: (el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT[$el] GENERIC_ID[$tname] ( attribute )* ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:16: el= TAG_START_OPEN tname= GENERIC_ID ( attribute )* TAG_EMPTY_CLOSE
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:102:14: (el= TAG_START_OPEN ( attribute )* TAG_EMPTY_CLOSE -> ^( ELEMENT[$el] ( attribute )* ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:102:16: el= TAG_START_OPEN ( attribute )* TAG_EMPTY_CLOSE
             {
-            el=(Token)match(input,TAG_START_OPEN,FOLLOW_TAG_START_OPEN_in_emptyElement355);  
+            el=(Token)match(input,TAG_START_OPEN,FOLLOW_TAG_START_OPEN_in_emptyElement386);  
             stream_TAG_START_OPEN.add(el);
 
-            tname=(Token)match(input,GENERIC_ID,FOLLOW_GENERIC_ID_in_emptyElement359);  
-            stream_GENERIC_ID.add(tname);
-
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:51: ( attribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:102:34: ( attribute )*
             loop5:
             do {
                 int alt5=2;
@@ -665,14 +722,14 @@ public class XMLParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:84:51: attribute
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:102:34: attribute
             	    {
-            	    pushFollow(FOLLOW_attribute_in_emptyElement361);
-            	    attribute15=attribute();
+            	    pushFollow(FOLLOW_attribute_in_emptyElement388);
+            	    attribute14=attribute();
 
             	    state._fsp--;
 
-            	    stream_attribute.add(attribute15.getTree());
+            	    stream_attribute.add(attribute14.getTree());
 
             	    }
             	    break;
@@ -682,13 +739,13 @@ public class XMLParser extends Parser {
                 }
             } while (true);
 
-            TAG_EMPTY_CLOSE16=(Token)match(input,TAG_EMPTY_CLOSE,FOLLOW_TAG_EMPTY_CLOSE_in_emptyElement364);  
-            stream_TAG_EMPTY_CLOSE.add(TAG_EMPTY_CLOSE16);
+            TAG_EMPTY_CLOSE15=(Token)match(input,TAG_EMPTY_CLOSE,FOLLOW_TAG_EMPTY_CLOSE_in_emptyElement391);  
+            stream_TAG_EMPTY_CLOSE.add(TAG_EMPTY_CLOSE15);
 
 
 
             // AST REWRITE
-            // elements: GENERIC_ID, attribute
+            // elements: attribute
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -698,15 +755,14 @@ public class XMLParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 85:9: -> ^( ELEMENT[$el] GENERIC_ID[$tname] ( attribute )* )
+            // 103:9: -> ^( ELEMENT[$el] ( attribute )* )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:85:12: ^( ELEMENT[$el] GENERIC_ID[$tname] ( attribute )* )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:103:12: ^( ELEMENT[$el] ( attribute )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ELEMENT, el), root_1);
 
-                adaptor.addChild(root_1, (CommonTree)adaptor.create(GENERIC_ID, tname));
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XML.g:85:46: ( attribute )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/src/cfml/parsing/cfml/antlr/XMLParser.g:103:27: ( attribute )*
                 while ( stream_attribute.hasNext() ) {
                     adaptor.addChild(root_1, stream_attribute.nextTree());
 
@@ -742,85 +798,26 @@ public class XMLParser extends Parser {
     // Delegated rules
 
 
-    protected DFA3 dfa3 = new DFA3(this);
-    static final String DFA3_eotS =
-        "\10\uffff";
-    static final String DFA3_eofS =
-        "\10\uffff";
-    static final String DFA3_minS =
-        "\1\12\2\13\1\15\2\uffff\1\16\1\13";
-    static final String DFA3_maxS =
-        "\1\12\1\13\1\20\1\15\2\uffff\1\16\1\20";
-    static final String DFA3_acceptS =
-        "\4\uffff\1\1\1\2\2\uffff";
-    static final String DFA3_specialS =
-        "\10\uffff}>";
-    static final String[] DFA3_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3\1\4\3\uffff\1\5",
-            "\1\6",
-            "",
-            "",
-            "\1\7",
-            "\1\3\1\4\3\uffff\1\5"
-    };
-
-    static final short[] DFA3_eot = DFA.unpackEncodedString(DFA3_eotS);
-    static final short[] DFA3_eof = DFA.unpackEncodedString(DFA3_eofS);
-    static final char[] DFA3_min = DFA.unpackEncodedStringToUnsignedChars(DFA3_minS);
-    static final char[] DFA3_max = DFA.unpackEncodedStringToUnsignedChars(DFA3_maxS);
-    static final short[] DFA3_accept = DFA.unpackEncodedString(DFA3_acceptS);
-    static final short[] DFA3_special = DFA.unpackEncodedString(DFA3_specialS);
-    static final short[][] DFA3_transition;
-
-    static {
-        int numStates = DFA3_transitionS.length;
-        DFA3_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA3_transition[i] = DFA.unpackEncodedString(DFA3_transitionS[i]);
-        }
-    }
-
-    class DFA3 extends DFA {
-
-        public DFA3(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 3;
-            this.eot = DFA3_eot;
-            this.eof = DFA3_eof;
-            this.min = DFA3_min;
-            this.max = DFA3_max;
-            this.accept = DFA3_accept;
-            this.special = DFA3_special;
-            this.transition = DFA3_transition;
-        }
-        public String getDescription() {
-            return "52:7: ( startTag ( element | PCDATA )* endTag | emptyElement )";
-        }
-    }
  
 
-    public static final BitSet FOLLOW_tag_in_compilationUnit103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_element_in_tag110 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_startTag_in_element130 = new BitSet(new long[]{0x0000000000008600L});
-    public static final BitSet FOLLOW_element_in_element146 = new BitSet(new long[]{0x0000000000008600L});
-    public static final BitSet FOLLOW_PCDATA_in_element162 = new BitSet(new long[]{0x0000000000008600L});
-    public static final BitSet FOLLOW_endTag_in_element191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_emptyElement_in_element203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAG_START_OPEN_in_startTag232 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_GENERIC_ID_in_startTag236 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_attribute_in_startTag238 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_TAG_CLOSE_in_startTag241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GENERIC_ID_in_attribute292 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_ATTR_EQ_in_attribute294 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_ATTR_VALUE_in_attribute296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAG_END_OPEN_in_endTag330 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_GENERIC_ID_in_endTag332 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_TAG_CLOSE_in_endTag334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TAG_START_OPEN_in_emptyElement355 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_GENERIC_ID_in_emptyElement359 = new BitSet(new long[]{0x0000000000010800L});
-    public static final BitSet FOLLOW_attribute_in_emptyElement361 = new BitSet(new long[]{0x0000000000010800L});
-    public static final BitSet FOLLOW_TAG_EMPTY_CLOSE_in_emptyElement364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_tag_in_compilationUnit105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_element_in_tag112 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_startTag_in_element133 = new BitSet(new long[]{0x0000000000042020L});
+    public static final BitSet FOLLOW_element_in_element150 = new BitSet(new long[]{0x0000000000042020L});
+    public static final BitSet FOLLOW_PCDATA_in_element166 = new BitSet(new long[]{0x0000000000042020L});
+    public static final BitSet FOLLOW_endTag_in_element195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_emptyElement_in_element208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAG_START_OPEN_in_startTag237 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_GENERIC_ID_in_startTag241 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_attribute_in_startTag243 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_TAG_CLOSE_in_startTag246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GENERIC_ID_in_attribute309 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_ATTR_EQ_in_attribute311 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_ATTR_VALUE_in_attribute313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAG_END_OPEN_in_endTag363 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_GENERIC_ID_in_endTag365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TAG_START_OPEN_in_emptyElement386 = new BitSet(new long[]{0x0000000000000840L});
+    public static final BitSet FOLLOW_attribute_in_emptyElement388 = new BitSet(new long[]{0x0000000000000840L});
+    public static final BitSet FOLLOW_TAG_EMPTY_CLOSE_in_emptyElement391 = new BitSet(new long[]{0x0000000000000002L});
 
 }
