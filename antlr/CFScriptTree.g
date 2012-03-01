@@ -297,7 +297,7 @@ parameterType returns [String image]
   
 tagOperatorStatement returns [CFScriptStatement e]
   : ^(t1=INCLUDE e1=memberExpression ){ e = new CFIncludeStatement( t1.getToken(), e1 ); }
-  | ^(t1=IMPORT e2=componentPath){ importPaths.add( e2 ); e = new CFImportStatement( t1.getToken(), e2 ); }
+  | ^(t1=IMPORT e2=componentPath (DOT '*')?){ importPaths.add( e2 ); e = new CFImportStatement( t1.getToken(), e2 ); }
   | ^(t1=ABORTSTATEMENT (s1=memberExpression)? ){ if ( s1 == null ) e = new CFAbortStatement( t1.getToken() ); else e = new CFAbortStatement( t1.getToken(), s1 ); }
   | ^(t1=THROWSTATEMENT (s1=memberExpression)? ){ if ( s1 == null ) e = new CFThrowStatement( t1.getToken(), null ); else e = new CFThrowStatement( t1.getToken(), s1 ); }
   | ^(t1=EXITSTATEMENT (s1=memberExpression)? ){ if ( s1 == null ) e = new CFExitStatement( t1.getToken(), null ); else e = new CFExitStatement( t1.getToken(), s1 ); }
@@ -306,7 +306,7 @@ tagOperatorStatement returns [CFScriptStatement e]
   | ^(t1=PROPERTYSTATEMENT attr=paramStatementAttributes){ e = new CFPropertyStatement( t1.getToken(), attr ); }
   | ^(t1=LOCKSTATEMENT attr=paramStatementAttributes body=compoundStatement){ e = new CFLockStatement( t1.getToken(), attr, body ); }
   | ^(t1=THREADSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFThreadStatement( t1.getToken(), attr, body ); }
-  | ^(t1=TRANSACTIONSTATEMENT attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
+  | ^(t1=TRANSACTIONSTATEMENT (attr=paramStatementAttributes)* (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
   | ^(t1=CFMLFUNCTIONSTATEMENT fs=cfmlFunction attr=paramStatementAttributes (body=compoundStatement)?){ e = new CFTransactionStatement( t1.getToken(), attr, body ); }
   ;
 

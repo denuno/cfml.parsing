@@ -103,6 +103,17 @@ public class TestCFMLFunctionStatement {
 	}
 	
 	@Test
+	public void testLongFuncStatement() {
+		String script = "var wee = load_resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(\"*\", XMIResourceFactoryImpl);";
+		CFScriptStatement scriptStatement = null;
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testLocationStatement() {
 		String script = "location url=\"/some/url\";";
 		CFScriptStatement scriptStatement = null;
@@ -114,9 +125,33 @@ public class TestCFMLFunctionStatement {
 	}
 	
 	@Test
-	public void testIncludeWithTemplateStatement() {
+	public void testIncludeWithTemplateStatementFail() {
 		/* need to check if this is valid in OBD/ACF */
 		String script = "include template=\"/ram/#randName#\";";
+		CFScriptStatement scriptStatement = null;
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() == 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testTransactionStatement() {
+		/* need to check if this is valid in OBD/ACF */
+		String script = "transaction {}";
+		CFScriptStatement scriptStatement = null;
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testImportStatement() {
+		/* need to check if this is valid in OBD/ACF */
+		String script = "import projectshen.core.*;";
 		CFScriptStatement scriptStatement = null;
 		scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {

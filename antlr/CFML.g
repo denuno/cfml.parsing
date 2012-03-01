@@ -78,6 +78,7 @@ import cfml.parsing.cfscript.CFParseException;
 import cfml.parsing.cfscript.IErrorReporter;
 } 
 
+
 @lexer::header { 
 package cfml.parsing.cfml.antlr;
 import cfml.parsing.cfscript.CFParseException;

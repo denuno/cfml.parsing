@@ -590,7 +590,7 @@ caseStatement
 tagOperatorStatement
   //: INCLUDE^ compoundStatement SEMICOLON!  (poundSignReader kills this :-/)
   : includeStatement
-  | IMPORT^ componentPath SEMICOLON!
+  | IMPORT^ componentPath (DOT '*')? SEMICOLON!
   | abortStatement
   | throwStatement
   | RETHROW SEMICOLON -> ^(RETHROWSTATEMENT)
@@ -610,7 +610,7 @@ includeStatement
   ;
 
 transactionStatement
-  : lc=TRANSACTION p=paramStatementAttributes (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] paramStatementAttributes (compoundStatement)?)
+  : lc=TRANSACTION (paramStatementAttributes)* (compoundStatement)? -> ^(TRANSACTIONSTATEMENT[$lc] (paramStatementAttributes)* (compoundStatement)?)
   ;
   
 cfmlfunctionStatement
