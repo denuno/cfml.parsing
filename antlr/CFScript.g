@@ -590,7 +590,7 @@ caseStatement
 tagOperatorStatement
   //: INCLUDE^ compoundStatement SEMICOLON!  (poundSignReader kills this :-/)
   : includeStatement
-  | IMPORT^ componentPath (DOT '*')? SEMICOLON!
+  | importStatement
   | abortStatement
   | throwStatement
   | RETHROW SEMICOLON -> ^(RETHROWSTATEMENT)
@@ -607,6 +607,10 @@ tagOperatorStatement
 
 includeStatement
   : INCLUDE impliesExpression* SEMICOLON  -> ^(INCLUDE  impliesExpression* ) 
+  ;
+
+importStatement
+  : IMPORT^ componentPath (DOT '*')? SEMICOLON! 
   ;
 
 transactionStatement
@@ -858,7 +862,8 @@ argument
   ;
 
 identifier
-	:	IDENTIFIER
+	:	COMPONENT
+	| IDENTIFIER
   | DOES 
   | CONTAIN
   | GREATER 

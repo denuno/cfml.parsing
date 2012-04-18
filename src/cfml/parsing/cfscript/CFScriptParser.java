@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g 2012-02-29 23:56:28
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g 2012-04-18 12:20:44
  package cfml.parsing.cfscript;
 
 import org.antlr.runtime.*;
@@ -184,7 +184,7 @@ public class CFScriptParser extends Parser {
     }
     public CFScriptParser(TokenStream input, RecognizerSharedState state) {
         super(input, state);
-        this.state.ruleMemo = new HashMap[336+1];
+        this.state.ruleMemo = new HashMap[338+1];
          
 
     }
@@ -296,7 +296,198 @@ public TreeAdaptor getTreeAdaptor() {
             int LA2_0 = input.LA(1);
 
             if ( (LA2_0==COMPONENT) ) {
-                alt2=1;
+                switch ( input.LA(2) ) {
+                case ABORT:
+                case BREAK:
+                case CASE:
+                case CATCH:
+                case COMPONENT:
+                case CONTAIN:
+                case CONTINUE:
+                case DEFAULT:
+                case DIRECTORY:
+                case DO:
+                case ELSE:
+                case EXIT:
+                case FILE:
+                case FOR:
+                case HTTP:
+                case IDENTIFIER:
+                case IF:
+                case IMPORT:
+                case IN:
+                case INCLUDE:
+                case LEFTCURLYBRACKET:
+                case LOCATION:
+                case LOCK:
+                case LOOP:
+                case NEW:
+                case PACKAGE:
+                case PARAM:
+                case PRIVATE:
+                case PUBLIC:
+                case QUERY:
+                case REMOTE:
+                case REQUIRED:
+                case RETHROW:
+                case RETURN:
+                case SAVECONTENT:
+                case SETTING:
+                case SWITCH:
+                case THAN:
+                case THREAD:
+                case THROW:
+                case TO:
+                case TRANSACTION:
+                case TRY:
+                case VAR:
+                case WHILE:
+                    {
+                    alt2=1;
+                    }
+                    break;
+                case DOES:
+                    {
+                    int LA2_6 = input.LA(3);
+
+                    if ( (LA2_6==NOT) ) {
+                        alt2=2;
+                    }
+                    else if ( (LA2_6==COLON||LA2_6==EQUALSOP) ) {
+                        alt2=1;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 2, 6, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
+                case GREATER:
+                    {
+                    int LA2_7 = input.LA(3);
+
+                    if ( (LA2_7==THAN) ) {
+                        alt2=2;
+                    }
+                    else if ( (LA2_7==COLON||LA2_7==EQUALSOP) ) {
+                        alt2=1;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 2, 7, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
+                case LESS:
+                    {
+                    int LA2_8 = input.LA(3);
+
+                    if ( (LA2_8==THAN) ) {
+                        alt2=2;
+                    }
+                    else if ( (LA2_8==COLON||LA2_8==EQUALSOP) ) {
+                        alt2=1;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 2, 8, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
+                case FUNCTION:
+                    {
+                    int LA2_9 = input.LA(3);
+
+                    if ( (LA2_9==COLON||LA2_9==EQUALSOP) ) {
+                        alt2=1;
+                    }
+                    else if ( (LA2_9==ABORT||LA2_9==BREAK||(LA2_9 >= CASE && LA2_9 <= CATCH)||LA2_9==COMPONENT||LA2_9==CONTAIN||(LA2_9 >= CONTINUE && LA2_9 <= DEFAULT)||(LA2_9 >= DIRECTORY && LA2_9 <= DOES)||LA2_9==ELSE||LA2_9==EXIT||LA2_9==FILE||LA2_9==FOR||LA2_9==FUNCTION||LA2_9==GREATER||(LA2_9 >= HTTP && LA2_9 <= IF)||(LA2_9 >= IMPORT && LA2_9 <= INCLUDE)||LA2_9==LESS||(LA2_9 >= LOCATION && LA2_9 <= LOCK)||LA2_9==LOOP||LA2_9==NEW||(LA2_9 >= PACKAGE && LA2_9 <= PARAM)||LA2_9==PRIVATE||(LA2_9 >= PUBLIC && LA2_9 <= QUERY)||(LA2_9 >= REMOTE && LA2_9 <= RETHROW)||LA2_9==RETURN||LA2_9==SAVECONTENT||LA2_9==SETTING||LA2_9==SWITCH||(LA2_9 >= THAN && LA2_9 <= THREAD)||LA2_9==THROW||(LA2_9 >= TO && LA2_9 <= TRANSACTION)||(LA2_9 >= TRY && LA2_9 <= VAR)||LA2_9==WHILE) ) {
+                        alt2=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 2, 9, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
+                case AND:
+                case ANDOPERATOR:
+                case BSLASH:
+                case CONCAT:
+                case CONCATEQUALS:
+                case CONTAINS:
+                case DOT:
+                case EQ:
+                case EQUAL:
+                case EQUALS:
+                case EQUALSEQUALSOP:
+                case EQUALSOP:
+                case EQV:
+                case GE:
+                case GT:
+                case GTE:
+                case IMP:
+                case IS:
+                case LE:
+                case LEFTBRACKET:
+                case LEFTPAREN:
+                case LT:
+                case LTE:
+                case MINUS:
+                case MINUSEQUALS:
+                case MINUSMINUS:
+                case MOD:
+                case MODEQUALS:
+                case MODOPERATOR:
+                case NEQ:
+                case NOT:
+                case OR:
+                case OROPERATOR:
+                case PLUS:
+                case PLUSEQUALS:
+                case PLUSPLUS:
+                case POWER:
+                case QUESTIONMARK:
+                case SEMICOLON:
+                case SLASH:
+                case SLASHEQUALS:
+                case STAR:
+                case STAREQUALS:
+                case XOR:
+                case 149:
+                case 152:
+                case 153:
+                case 154:
+                case 155:
+                    {
+                    alt2=2;
+                    }
+                    break;
+                default:
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 1, input);
+
+                    throw nvae;
+
+                }
+
             }
             else if ( (LA2_0==ABORT||LA2_0==BREAK||LA2_0==CONTAIN||(LA2_0 >= CONTINUE && LA2_0 <= DEFAULT)||(LA2_0 >= DIRECTORY && LA2_0 <= DOES)||LA2_0==EXIT||LA2_0==FILE||LA2_0==FOR||LA2_0==FUNCTION||LA2_0==GREATER||(LA2_0 >= HTTP && LA2_0 <= IF)||LA2_0==IMPORT||LA2_0==INCLUDE||LA2_0==LESS||(LA2_0 >= LOCATION && LA2_0 <= LOCK)||LA2_0==LOOP||LA2_0==NEW||(LA2_0 >= PACKAGE && LA2_0 <= PARAM)||LA2_0==PRIVATE||(LA2_0 >= PUBLIC && LA2_0 <= QUERY)||(LA2_0 >= REMOTE && LA2_0 <= RETHROW)||LA2_0==RETURN||LA2_0==SAVECONTENT||LA2_0==SETTING||(LA2_0 >= STRING_LITERAL && LA2_0 <= SWITCH)||(LA2_0 >= THAN && LA2_0 <= THREAD)||LA2_0==THROW||(LA2_0 >= TO && LA2_0 <= TRANSACTION)||(LA2_0 >= TRY && LA2_0 <= VAR)||LA2_0==WHILE) ) {
                 alt2=2;
@@ -343,7 +534,7 @@ public TreeAdaptor getTreeAdaptor() {
                         int alt1=2;
                         int LA1_0 = input.LA(1);
 
-                        if ( (LA1_0==ABORT||(LA1_0 >= BOOLEAN_LITERAL && LA1_0 <= BREAK)||(LA1_0 >= CASE && LA1_0 <= CATCH)||LA1_0==CONTAIN||(LA1_0 >= CONTINUE && LA1_0 <= DEFAULT)||(LA1_0 >= DIRECTORY && LA1_0 <= DOES)||LA1_0==ELSE||LA1_0==EXIT||LA1_0==FILE||(LA1_0 >= FLOATING_POINT_LITERAL && LA1_0 <= FOR)||LA1_0==FUNCTION||LA1_0==GREATER||(LA1_0 >= HTTP && LA1_0 <= IF)||(LA1_0 >= IMPORT && LA1_0 <= INTEGER_LITERAL)||(LA1_0 >= LEFTBRACKET && LA1_0 <= LESS)||(LA1_0 >= LOCATION && LA1_0 <= LOCK)||LA1_0==LOOP||LA1_0==MINUS||LA1_0==MINUSMINUS||(LA1_0 >= NEW && LA1_0 <= NULL)||(LA1_0 >= PACKAGE && LA1_0 <= PARAM)||LA1_0==PLUS||LA1_0==PLUSPLUS||(LA1_0 >= PRIVATE && LA1_0 <= PROPERTY)||(LA1_0 >= PUBLIC && LA1_0 <= QUERY)||(LA1_0 >= REMOTE && LA1_0 <= RETHROW)||LA1_0==RETURN||LA1_0==SAVECONTENT||(LA1_0 >= SEMICOLON && LA1_0 <= SETTING)||(LA1_0 >= STRING_LITERAL && LA1_0 <= SWITCH)||(LA1_0 >= THAN && LA1_0 <= THREAD)||LA1_0==THROW||(LA1_0 >= TO && LA1_0 <= TRANSACTION)||(LA1_0 >= TRY && LA1_0 <= VAR)||LA1_0==WHILE||LA1_0==150) ) {
+                        if ( (LA1_0==ABORT||(LA1_0 >= BOOLEAN_LITERAL && LA1_0 <= BREAK)||(LA1_0 >= CASE && LA1_0 <= CATCH)||LA1_0==COMPONENT||LA1_0==CONTAIN||(LA1_0 >= CONTINUE && LA1_0 <= DEFAULT)||(LA1_0 >= DIRECTORY && LA1_0 <= DOES)||LA1_0==ELSE||LA1_0==EXIT||LA1_0==FILE||(LA1_0 >= FLOATING_POINT_LITERAL && LA1_0 <= FOR)||LA1_0==FUNCTION||LA1_0==GREATER||(LA1_0 >= HTTP && LA1_0 <= IF)||(LA1_0 >= IMPORT && LA1_0 <= INTEGER_LITERAL)||(LA1_0 >= LEFTBRACKET && LA1_0 <= LESS)||(LA1_0 >= LOCATION && LA1_0 <= LOCK)||LA1_0==LOOP||LA1_0==MINUS||LA1_0==MINUSMINUS||(LA1_0 >= NEW && LA1_0 <= NULL)||(LA1_0 >= PACKAGE && LA1_0 <= PARAM)||LA1_0==PLUS||LA1_0==PLUSPLUS||(LA1_0 >= PRIVATE && LA1_0 <= PROPERTY)||(LA1_0 >= PUBLIC && LA1_0 <= QUERY)||(LA1_0 >= REMOTE && LA1_0 <= RETHROW)||LA1_0==RETURN||LA1_0==SAVECONTENT||(LA1_0 >= SEMICOLON && LA1_0 <= SETTING)||(LA1_0 >= STRING_LITERAL && LA1_0 <= SWITCH)||(LA1_0 >= THAN && LA1_0 <= THREAD)||LA1_0==THROW||(LA1_0 >= TO && LA1_0 <= TRANSACTION)||(LA1_0 >= TRY && LA1_0 <= VAR)||LA1_0==WHILE||LA1_0==150) ) {
                             alt1=1;
                         }
 
@@ -447,7 +638,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==ABORT||LA3_0==BREAK||(LA3_0 >= CASE && LA3_0 <= CATCH)||LA3_0==CONTAIN||(LA3_0 >= CONTINUE && LA3_0 <= DEFAULT)||(LA3_0 >= DIRECTORY && LA3_0 <= DOES)||LA3_0==ELSE||LA3_0==EXIT||LA3_0==FILE||LA3_0==FOR||LA3_0==FUNCTION||LA3_0==GREATER||(LA3_0 >= HTTP && LA3_0 <= IF)||(LA3_0 >= IMPORT && LA3_0 <= INCLUDE)||LA3_0==LESS||(LA3_0 >= LOCATION && LA3_0 <= LOCK)||LA3_0==LOOP||LA3_0==NEW||(LA3_0 >= PACKAGE && LA3_0 <= PARAM)||LA3_0==PRIVATE||(LA3_0 >= PUBLIC && LA3_0 <= QUERY)||(LA3_0 >= REMOTE && LA3_0 <= RETHROW)||LA3_0==RETURN||LA3_0==SAVECONTENT||LA3_0==SETTING||LA3_0==SWITCH||(LA3_0 >= THAN && LA3_0 <= THREAD)||LA3_0==THROW||(LA3_0 >= TO && LA3_0 <= TRANSACTION)||(LA3_0 >= TRY && LA3_0 <= VAR)||LA3_0==WHILE) ) {
+                if ( (LA3_0==ABORT||LA3_0==BREAK||(LA3_0 >= CASE && LA3_0 <= CATCH)||LA3_0==COMPONENT||LA3_0==CONTAIN||(LA3_0 >= CONTINUE && LA3_0 <= DEFAULT)||(LA3_0 >= DIRECTORY && LA3_0 <= DOES)||LA3_0==ELSE||LA3_0==EXIT||LA3_0==FILE||LA3_0==FOR||LA3_0==FUNCTION||LA3_0==GREATER||(LA3_0 >= HTTP && LA3_0 <= IF)||(LA3_0 >= IMPORT && LA3_0 <= INCLUDE)||LA3_0==LESS||(LA3_0 >= LOCATION && LA3_0 <= LOCK)||LA3_0==LOOP||LA3_0==NEW||(LA3_0 >= PACKAGE && LA3_0 <= PARAM)||LA3_0==PRIVATE||(LA3_0 >= PUBLIC && LA3_0 <= QUERY)||(LA3_0 >= REMOTE && LA3_0 <= RETHROW)||LA3_0==RETURN||LA3_0==SAVECONTENT||LA3_0==SETTING||LA3_0==SWITCH||(LA3_0 >= THAN && LA3_0 <= THREAD)||LA3_0==THROW||(LA3_0 >= TO && LA3_0 <= TRANSACTION)||(LA3_0 >= TRY && LA3_0 <= VAR)||LA3_0==WHILE) ) {
                     alt3=1;
                 }
 
@@ -668,7 +859,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==IDENTIFIER) ) {
+            else if ( (LA4_0==COMPONENT) ) {
                 int LA4_2 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -686,7 +877,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==DOES) ) {
+            else if ( (LA4_0==IDENTIFIER) ) {
                 int LA4_3 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -704,7 +895,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==CONTAIN) ) {
+            else if ( (LA4_0==DOES) ) {
                 int LA4_4 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -722,7 +913,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==GREATER) ) {
+            else if ( (LA4_0==CONTAIN) ) {
                 int LA4_5 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -740,7 +931,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==THAN) ) {
+            else if ( (LA4_0==GREATER) ) {
                 int LA4_6 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -758,7 +949,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==LESS) ) {
+            else if ( (LA4_0==THAN) ) {
                 int LA4_7 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -776,7 +967,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==VAR) ) {
+            else if ( (LA4_0==LESS) ) {
                 int LA4_8 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -794,7 +985,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==TO) ) {
+            else if ( (LA4_0==VAR) ) {
                 int LA4_9 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -812,7 +1003,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==DEFAULT) ) {
+            else if ( (LA4_0==TO) ) {
                 int LA4_10 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -830,7 +1021,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==INCLUDE) ) {
+            else if ( (LA4_0==DEFAULT) ) {
                 int LA4_11 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -848,7 +1039,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==NEW) ) {
+            else if ( (LA4_0==INCLUDE) ) {
                 int LA4_12 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -866,7 +1057,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==ABORT) ) {
+            else if ( (LA4_0==NEW) ) {
                 int LA4_13 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -884,7 +1075,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==THROW) ) {
+            else if ( (LA4_0==ABORT) ) {
                 int LA4_14 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -902,7 +1093,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==RETHROW) ) {
+            else if ( (LA4_0==THROW) ) {
                 int LA4_15 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -920,7 +1111,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==PARAM) ) {
+            else if ( (LA4_0==RETHROW) ) {
                 int LA4_16 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -938,7 +1129,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==EXIT) ) {
+            else if ( (LA4_0==PARAM) ) {
                 int LA4_17 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -956,7 +1147,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==THREAD) ) {
+            else if ( (LA4_0==EXIT) ) {
                 int LA4_18 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -974,7 +1165,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==LOCK) ) {
+            else if ( (LA4_0==THREAD) ) {
                 int LA4_19 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -992,7 +1183,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==TRANSACTION) ) {
+            else if ( (LA4_0==LOCK) ) {
                 int LA4_20 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1010,7 +1201,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==PRIVATE) ) {
+            else if ( (LA4_0==TRANSACTION) ) {
                 int LA4_21 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1028,7 +1219,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==REMOTE) ) {
+            else if ( (LA4_0==PRIVATE) ) {
                 int LA4_22 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1046,7 +1237,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==PACKAGE) ) {
+            else if ( (LA4_0==REMOTE) ) {
                 int LA4_23 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1064,7 +1255,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==REQUIRED) ) {
+            else if ( (LA4_0==PACKAGE) ) {
                 int LA4_24 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1082,7 +1273,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==DIRECTORY||LA4_0==FILE||LA4_0==HTTP||LA4_0==LOCATION||LA4_0==LOOP||LA4_0==QUERY||LA4_0==SAVECONTENT||LA4_0==SETTING) ) {
+            else if ( (LA4_0==REQUIRED) ) {
                 int LA4_25 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
@@ -1100,13 +1291,13 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==FUNCTION) ) {
+            else if ( (LA4_0==DIRECTORY||LA4_0==FILE||LA4_0==HTTP||LA4_0==LOCATION||LA4_0==LOOP||LA4_0==QUERY||LA4_0==SAVECONTENT||LA4_0==SETTING) ) {
                 int LA4_26 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
                     alt4=1;
                 }
-                else if ( ((!scriptMode)) ) {
+                else if ( (true) ) {
                     alt4=2;
                 }
                 else {
@@ -1118,13 +1309,13 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==STRING_LITERAL) ) {
+            else if ( (LA4_0==FUNCTION) ) {
                 int LA4_27 = input.LA(2);
 
                 if ( (synpred5_CFScript()) ) {
                     alt4=1;
                 }
-                else if ( (true) ) {
+                else if ( ((!scriptMode)) ) {
                     alt4=2;
                 }
                 else {
@@ -1136,10 +1327,10 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==TRY) ) {
+            else if ( (LA4_0==STRING_LITERAL) ) {
                 int LA4_28 = input.LA(2);
 
-                if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
+                if ( (synpred5_CFScript()) ) {
                     alt4=1;
                 }
                 else if ( (true) ) {
@@ -1154,7 +1345,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==IF) ) {
+            else if ( (LA4_0==TRY) ) {
                 int LA4_29 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1172,7 +1363,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==WHILE) ) {
+            else if ( (LA4_0==IF) ) {
                 int LA4_30 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1190,7 +1381,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==DO) ) {
+            else if ( (LA4_0==WHILE) ) {
                 int LA4_31 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1208,7 +1399,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==FOR) ) {
+            else if ( (LA4_0==DO) ) {
                 int LA4_32 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1226,7 +1417,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==SWITCH) ) {
+            else if ( (LA4_0==FOR) ) {
                 int LA4_33 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1244,7 +1435,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==CONTINUE) ) {
+            else if ( (LA4_0==SWITCH) ) {
                 int LA4_34 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1262,7 +1453,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==BREAK) ) {
+            else if ( (LA4_0==CONTINUE) ) {
                 int LA4_35 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1280,7 +1471,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==RETURN) ) {
+            else if ( (LA4_0==BREAK) ) {
                 int LA4_36 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1298,7 +1489,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA4_0==IMPORT) ) {
+            else if ( (LA4_0==RETURN) ) {
                 int LA4_37 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
@@ -1316,8 +1507,26 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( ((LA4_0 >= CASE && LA4_0 <= CATCH)||LA4_0==ELSE||LA4_0==IN) && ((!scriptMode))) {
+            else if ( (LA4_0==IMPORT) ) {
                 int LA4_38 = input.LA(2);
+
+                if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
+                    alt4=1;
+                }
+                else if ( (true) ) {
+                    alt4=2;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 38, input);
+
+                    throw nvae;
+
+                }
+            }
+            else if ( ((LA4_0 >= CASE && LA4_0 <= CATCH)||LA4_0==ELSE||LA4_0==IN) && ((!scriptMode))) {
+                int LA4_39 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred5_CFScript())) ) {
                     alt4=1;
@@ -1328,7 +1537,7 @@ public TreeAdaptor getTreeAdaptor() {
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 4, 38, input);
+                        new NoViableAltException("", 4, 39, input);
 
                     throw nvae;
 
@@ -1516,7 +1725,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==ABORT||LA6_0==BREAK||(LA6_0 >= CASE && LA6_0 <= CATCH)||LA6_0==CONTAIN||(LA6_0 >= CONTINUE && LA6_0 <= DEFAULT)||(LA6_0 >= DIRECTORY && LA6_0 <= DOES)||LA6_0==ELSE||LA6_0==EXIT||LA6_0==FILE||LA6_0==FOR||LA6_0==GREATER||(LA6_0 >= HTTP && LA6_0 <= IF)||(LA6_0 >= IMPORT && LA6_0 <= INCLUDE)||LA6_0==LESS||(LA6_0 >= LOCATION && LA6_0 <= LOCK)||LA6_0==LOOP||LA6_0==NEW||(LA6_0 >= PACKAGE && LA6_0 <= PARAM)||LA6_0==PRIVATE||(LA6_0 >= PUBLIC && LA6_0 <= QUERY)||(LA6_0 >= REMOTE && LA6_0 <= RETHROW)||LA6_0==RETURN||LA6_0==SAVECONTENT||LA6_0==SETTING||(LA6_0 >= STRING_LITERAL && LA6_0 <= SWITCH)||(LA6_0 >= THAN && LA6_0 <= THREAD)||LA6_0==THROW||(LA6_0 >= TO && LA6_0 <= TRANSACTION)||(LA6_0 >= TRY && LA6_0 <= VAR)||LA6_0==WHILE) ) {
+            if ( (LA6_0==ABORT||LA6_0==BREAK||(LA6_0 >= CASE && LA6_0 <= CATCH)||LA6_0==COMPONENT||LA6_0==CONTAIN||(LA6_0 >= CONTINUE && LA6_0 <= DEFAULT)||(LA6_0 >= DIRECTORY && LA6_0 <= DOES)||LA6_0==ELSE||LA6_0==EXIT||LA6_0==FILE||LA6_0==FOR||LA6_0==GREATER||(LA6_0 >= HTTP && LA6_0 <= IF)||(LA6_0 >= IMPORT && LA6_0 <= INCLUDE)||LA6_0==LESS||(LA6_0 >= LOCATION && LA6_0 <= LOCK)||LA6_0==LOOP||LA6_0==NEW||(LA6_0 >= PACKAGE && LA6_0 <= PARAM)||LA6_0==PRIVATE||(LA6_0 >= PUBLIC && LA6_0 <= QUERY)||(LA6_0 >= REMOTE && LA6_0 <= RETHROW)||LA6_0==RETURN||LA6_0==SAVECONTENT||LA6_0==SETTING||(LA6_0 >= STRING_LITERAL && LA6_0 <= SWITCH)||(LA6_0 >= THAN && LA6_0 <= THREAD)||LA6_0==THROW||(LA6_0 >= TO && LA6_0 <= TRANSACTION)||(LA6_0 >= TRY && LA6_0 <= VAR)||LA6_0==WHILE) ) {
                 alt6=1;
             }
             else if ( (LA6_0==FUNCTION) ) {
@@ -1528,7 +1737,7 @@ public TreeAdaptor getTreeAdaptor() {
                 else if ( (LA6_2==FUNCTION) ) {
                     int LA6_3 = input.LA(3);
 
-                    if ( (LA6_3==ABORT||LA6_3==BREAK||(LA6_3 >= CASE && LA6_3 <= CATCH)||LA6_3==CONTAIN||(LA6_3 >= CONTINUE && LA6_3 <= DEFAULT)||(LA6_3 >= DIRECTORY && LA6_3 <= DOES)||LA6_3==ELSE||LA6_3==EXIT||LA6_3==FILE||LA6_3==FOR||LA6_3==FUNCTION||LA6_3==GREATER||(LA6_3 >= HTTP && LA6_3 <= IF)||(LA6_3 >= IMPORT && LA6_3 <= INCLUDE)||LA6_3==LESS||(LA6_3 >= LOCATION && LA6_3 <= LOCK)||LA6_3==LOOP||LA6_3==NEW||(LA6_3 >= PACKAGE && LA6_3 <= PARAM)||LA6_3==PRIVATE||(LA6_3 >= PUBLIC && LA6_3 <= QUERY)||(LA6_3 >= REMOTE && LA6_3 <= RETHROW)||LA6_3==RETURN||LA6_3==SAVECONTENT||LA6_3==SETTING||LA6_3==SWITCH||(LA6_3 >= THAN && LA6_3 <= THREAD)||LA6_3==THROW||(LA6_3 >= TO && LA6_3 <= TRANSACTION)||(LA6_3 >= TRY && LA6_3 <= VAR)||LA6_3==WHILE) ) {
+                    if ( (LA6_3==ABORT||LA6_3==BREAK||(LA6_3 >= CASE && LA6_3 <= CATCH)||LA6_3==COMPONENT||LA6_3==CONTAIN||(LA6_3 >= CONTINUE && LA6_3 <= DEFAULT)||(LA6_3 >= DIRECTORY && LA6_3 <= DOES)||LA6_3==ELSE||LA6_3==EXIT||LA6_3==FILE||LA6_3==FOR||LA6_3==FUNCTION||LA6_3==GREATER||(LA6_3 >= HTTP && LA6_3 <= IF)||(LA6_3 >= IMPORT && LA6_3 <= INCLUDE)||LA6_3==LESS||(LA6_3 >= LOCATION && LA6_3 <= LOCK)||LA6_3==LOOP||LA6_3==NEW||(LA6_3 >= PACKAGE && LA6_3 <= PARAM)||LA6_3==PRIVATE||(LA6_3 >= PUBLIC && LA6_3 <= QUERY)||(LA6_3 >= REMOTE && LA6_3 <= RETHROW)||LA6_3==RETURN||LA6_3==SAVECONTENT||LA6_3==SETTING||LA6_3==SWITCH||(LA6_3 >= THAN && LA6_3 <= THREAD)||LA6_3==THROW||(LA6_3 >= TO && LA6_3 <= TRANSACTION)||(LA6_3 >= TRY && LA6_3 <= VAR)||LA6_3==WHILE) ) {
                         alt6=1;
                     }
                 }
@@ -1569,7 +1778,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==ABORT||LA7_0==BREAK||(LA7_0 >= CASE && LA7_0 <= CATCH)||LA7_0==CONTAIN||(LA7_0 >= CONTINUE && LA7_0 <= DEFAULT)||(LA7_0 >= DIRECTORY && LA7_0 <= DOES)||LA7_0==ELSE||LA7_0==EXIT||LA7_0==FILE||LA7_0==FOR||LA7_0==FUNCTION||LA7_0==GREATER||(LA7_0 >= HTTP && LA7_0 <= IF)||(LA7_0 >= IMPORT && LA7_0 <= INCLUDE)||LA7_0==LESS||(LA7_0 >= LOCATION && LA7_0 <= LOCK)||LA7_0==LOOP||LA7_0==NEW||(LA7_0 >= PACKAGE && LA7_0 <= PARAM)||LA7_0==PRIVATE||(LA7_0 >= PUBLIC && LA7_0 <= QUERY)||(LA7_0 >= REMOTE && LA7_0 <= RETHROW)||LA7_0==RETURN||LA7_0==SAVECONTENT||LA7_0==SETTING||(LA7_0 >= STRING_LITERAL && LA7_0 <= SWITCH)||(LA7_0 >= THAN && LA7_0 <= THREAD)||LA7_0==THROW||(LA7_0 >= TO && LA7_0 <= TRANSACTION)||(LA7_0 >= TRY && LA7_0 <= VAR)||LA7_0==WHILE) ) {
+            if ( (LA7_0==ABORT||LA7_0==BREAK||(LA7_0 >= CASE && LA7_0 <= CATCH)||LA7_0==COMPONENT||LA7_0==CONTAIN||(LA7_0 >= CONTINUE && LA7_0 <= DEFAULT)||(LA7_0 >= DIRECTORY && LA7_0 <= DOES)||LA7_0==ELSE||LA7_0==EXIT||LA7_0==FILE||LA7_0==FOR||LA7_0==FUNCTION||LA7_0==GREATER||(LA7_0 >= HTTP && LA7_0 <= IF)||(LA7_0 >= IMPORT && LA7_0 <= INCLUDE)||LA7_0==LESS||(LA7_0 >= LOCATION && LA7_0 <= LOCK)||LA7_0==LOOP||LA7_0==NEW||(LA7_0 >= PACKAGE && LA7_0 <= PARAM)||LA7_0==PRIVATE||(LA7_0 >= PUBLIC && LA7_0 <= QUERY)||(LA7_0 >= REMOTE && LA7_0 <= RETHROW)||LA7_0==RETURN||LA7_0==SAVECONTENT||LA7_0==SETTING||(LA7_0 >= STRING_LITERAL && LA7_0 <= SWITCH)||(LA7_0 >= THAN && LA7_0 <= THREAD)||LA7_0==THROW||(LA7_0 >= TO && LA7_0 <= TRANSACTION)||(LA7_0 >= TRY && LA7_0 <= VAR)||LA7_0==WHILE) ) {
                 alt7=1;
             }
             else if ( (LA7_0==RIGHTPAREN) ) {
@@ -1606,7 +1815,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==ABORT||LA8_0==BREAK||(LA8_0 >= CASE && LA8_0 <= CATCH)||LA8_0==CONTAIN||(LA8_0 >= CONTINUE && LA8_0 <= DEFAULT)||(LA8_0 >= DIRECTORY && LA8_0 <= DOES)||LA8_0==ELSE||LA8_0==EXIT||LA8_0==FILE||LA8_0==FOR||LA8_0==FUNCTION||LA8_0==GREATER||(LA8_0 >= HTTP && LA8_0 <= IF)||(LA8_0 >= IMPORT && LA8_0 <= INCLUDE)||LA8_0==LESS||(LA8_0 >= LOCATION && LA8_0 <= LOCK)||LA8_0==LOOP||LA8_0==NEW||(LA8_0 >= PACKAGE && LA8_0 <= PARAM)||LA8_0==PRIVATE||(LA8_0 >= PUBLIC && LA8_0 <= QUERY)||(LA8_0 >= REMOTE && LA8_0 <= RETHROW)||LA8_0==RETURN||LA8_0==SAVECONTENT||LA8_0==SETTING||LA8_0==SWITCH||(LA8_0 >= THAN && LA8_0 <= THREAD)||LA8_0==THROW||(LA8_0 >= TO && LA8_0 <= TRANSACTION)||(LA8_0 >= TRY && LA8_0 <= VAR)||LA8_0==WHILE) ) {
+                if ( (LA8_0==ABORT||LA8_0==BREAK||(LA8_0 >= CASE && LA8_0 <= CATCH)||LA8_0==COMPONENT||LA8_0==CONTAIN||(LA8_0 >= CONTINUE && LA8_0 <= DEFAULT)||(LA8_0 >= DIRECTORY && LA8_0 <= DOES)||LA8_0==ELSE||LA8_0==EXIT||LA8_0==FILE||LA8_0==FOR||LA8_0==FUNCTION||LA8_0==GREATER||(LA8_0 >= HTTP && LA8_0 <= IF)||(LA8_0 >= IMPORT && LA8_0 <= INCLUDE)||LA8_0==LESS||(LA8_0 >= LOCATION && LA8_0 <= LOCK)||LA8_0==LOOP||LA8_0==NEW||(LA8_0 >= PACKAGE && LA8_0 <= PARAM)||LA8_0==PRIVATE||(LA8_0 >= PUBLIC && LA8_0 <= QUERY)||(LA8_0 >= REMOTE && LA8_0 <= RETHROW)||LA8_0==RETURN||LA8_0==SAVECONTENT||LA8_0==SETTING||LA8_0==SWITCH||(LA8_0 >= THAN && LA8_0 <= THREAD)||LA8_0==THROW||(LA8_0 >= TO && LA8_0 <= TRANSACTION)||(LA8_0 >= TRY && LA8_0 <= VAR)||LA8_0==WHILE) ) {
                     alt8=1;
                 }
 
@@ -1639,7 +1848,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement17.getTree());
 
             // AST REWRITE
-            // elements: parameterList, functionReturnType, identifier, compoundStatement, functionAttribute, functionAccessType
+            // elements: functionAttribute, functionAccessType, identifier, parameterList, compoundStatement, functionReturnType
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2036,7 +2245,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==ABORT||LA11_0==BREAK||(LA11_0 >= CASE && LA11_0 <= CATCH)||LA11_0==CONTAIN||(LA11_0 >= CONTINUE && LA11_0 <= DEFAULT)||(LA11_0 >= DIRECTORY && LA11_0 <= DOES)||LA11_0==ELSE||LA11_0==EXIT||LA11_0==FILE||LA11_0==FOR||LA11_0==FUNCTION||LA11_0==GREATER||(LA11_0 >= HTTP && LA11_0 <= IF)||(LA11_0 >= IMPORT && LA11_0 <= INCLUDE)||LA11_0==LESS||(LA11_0 >= LOCATION && LA11_0 <= LOCK)||LA11_0==LOOP||LA11_0==NEW||(LA11_0 >= PACKAGE && LA11_0 <= PARAM)||LA11_0==PRIVATE||(LA11_0 >= PUBLIC && LA11_0 <= QUERY)||(LA11_0 >= REMOTE && LA11_0 <= RETHROW)||LA11_0==RETURN||LA11_0==SAVECONTENT||LA11_0==SETTING||LA11_0==SWITCH||(LA11_0 >= THAN && LA11_0 <= THREAD)||LA11_0==THROW||(LA11_0 >= TO && LA11_0 <= TRANSACTION)||(LA11_0 >= TRY && LA11_0 <= VAR)||LA11_0==WHILE) ) {
+            if ( (LA11_0==ABORT||LA11_0==BREAK||(LA11_0 >= CASE && LA11_0 <= CATCH)||LA11_0==COMPONENT||LA11_0==CONTAIN||(LA11_0 >= CONTINUE && LA11_0 <= DEFAULT)||(LA11_0 >= DIRECTORY && LA11_0 <= DOES)||LA11_0==ELSE||LA11_0==EXIT||LA11_0==FILE||LA11_0==FOR||LA11_0==FUNCTION||LA11_0==GREATER||(LA11_0 >= HTTP && LA11_0 <= IF)||(LA11_0 >= IMPORT && LA11_0 <= INCLUDE)||LA11_0==LESS||(LA11_0 >= LOCATION && LA11_0 <= LOCK)||LA11_0==LOOP||LA11_0==NEW||(LA11_0 >= PACKAGE && LA11_0 <= PARAM)||LA11_0==PRIVATE||(LA11_0 >= PUBLIC && LA11_0 <= QUERY)||(LA11_0 >= REMOTE && LA11_0 <= RETHROW)||LA11_0==RETURN||LA11_0==SAVECONTENT||LA11_0==SETTING||LA11_0==SWITCH||(LA11_0 >= THAN && LA11_0 <= THREAD)||LA11_0==THROW||(LA11_0 >= TO && LA11_0 <= TRANSACTION)||(LA11_0 >= TRY && LA11_0 <= VAR)||LA11_0==WHILE) ) {
                 alt11=1;
             }
             else if ( (LA11_0==STRING_LITERAL) ) {
@@ -2091,6 +2300,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	    int alt9=2;
                     	    switch ( input.LA(1) ) {
                     	    case ABORT:
+                    	    case COMPONENT:
                     	    case CONTAIN:
                     	    case DIRECTORY:
                     	    case DOES:
@@ -2327,7 +2537,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==ABORT||LA13_0==BREAK||(LA13_0 >= CASE && LA13_0 <= CATCH)||LA13_0==CONTAIN||(LA13_0 >= CONTINUE && LA13_0 <= DEFAULT)||(LA13_0 >= DIRECTORY && LA13_0 <= DOES)||LA13_0==ELSE||LA13_0==EXIT||LA13_0==FILE||LA13_0==FOR||LA13_0==FUNCTION||LA13_0==GREATER||(LA13_0 >= HTTP && LA13_0 <= IF)||(LA13_0 >= IMPORT && LA13_0 <= INCLUDE)||LA13_0==LESS||(LA13_0 >= LOCATION && LA13_0 <= LOCK)||LA13_0==LOOP||LA13_0==NEW||(LA13_0 >= PACKAGE && LA13_0 <= PARAM)||LA13_0==PRIVATE||(LA13_0 >= PUBLIC && LA13_0 <= QUERY)||(LA13_0 >= REMOTE && LA13_0 <= RETHROW)||LA13_0==RETURN||LA13_0==SAVECONTENT||LA13_0==SETTING||(LA13_0 >= STRING_LITERAL && LA13_0 <= SWITCH)||(LA13_0 >= THAN && LA13_0 <= THREAD)||LA13_0==THROW||(LA13_0 >= TO && LA13_0 <= TRANSACTION)||(LA13_0 >= TRY && LA13_0 <= VAR)||LA13_0==WHILE) ) {
+            if ( (LA13_0==ABORT||LA13_0==BREAK||(LA13_0 >= CASE && LA13_0 <= CATCH)||LA13_0==COMPONENT||LA13_0==CONTAIN||(LA13_0 >= CONTINUE && LA13_0 <= DEFAULT)||(LA13_0 >= DIRECTORY && LA13_0 <= DOES)||LA13_0==ELSE||LA13_0==EXIT||LA13_0==FILE||LA13_0==FOR||LA13_0==FUNCTION||LA13_0==GREATER||(LA13_0 >= HTTP && LA13_0 <= IF)||(LA13_0 >= IMPORT && LA13_0 <= INCLUDE)||LA13_0==LESS||(LA13_0 >= LOCATION && LA13_0 <= LOCK)||LA13_0==LOOP||LA13_0==NEW||(LA13_0 >= PACKAGE && LA13_0 <= PARAM)||LA13_0==PRIVATE||(LA13_0 >= PUBLIC && LA13_0 <= QUERY)||(LA13_0 >= REMOTE && LA13_0 <= RETHROW)||LA13_0==RETURN||LA13_0==SAVECONTENT||LA13_0==SETTING||(LA13_0 >= STRING_LITERAL && LA13_0 <= SWITCH)||(LA13_0 >= THAN && LA13_0 <= THREAD)||LA13_0==THROW||(LA13_0 >= TO && LA13_0 <= TRANSACTION)||(LA13_0 >= TRY && LA13_0 <= VAR)||LA13_0==WHILE) ) {
                 alt13=1;
             }
             else if ( (LA13_0==EOF||LA13_0==RIGHTPAREN) ) {
@@ -2493,185 +2703,192 @@ public TreeAdaptor getTreeAdaptor() {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==IDENTIFIER) ) {
+            if ( (LA15_0==COMPONENT) ) {
                 int LA15_1 = input.LA(2);
 
-                if ( (LA15_1==ABORT||LA15_1==BREAK||(LA15_1 >= CASE && LA15_1 <= CATCH)||LA15_1==CONTAIN||(LA15_1 >= CONTINUE && LA15_1 <= DEFAULT)||(LA15_1 >= DIRECTORY && LA15_1 <= DOES)||LA15_1==DOT||LA15_1==ELSE||LA15_1==EXIT||LA15_1==FILE||LA15_1==FOR||LA15_1==FUNCTION||LA15_1==GREATER||(LA15_1 >= HTTP && LA15_1 <= IF)||(LA15_1 >= IMPORT && LA15_1 <= INCLUDE)||LA15_1==LESS||(LA15_1 >= LOCATION && LA15_1 <= LOCK)||LA15_1==LOOP||LA15_1==NEW||(LA15_1 >= PACKAGE && LA15_1 <= PARAM)||LA15_1==PRIVATE||(LA15_1 >= PUBLIC && LA15_1 <= QUERY)||(LA15_1 >= REMOTE && LA15_1 <= RETHROW)||LA15_1==RETURN||LA15_1==SAVECONTENT||LA15_1==SETTING||LA15_1==SWITCH||(LA15_1 >= THAN && LA15_1 <= THREAD)||LA15_1==THROW||(LA15_1 >= TO && LA15_1 <= TRANSACTION)||(LA15_1 >= TRY && LA15_1 <= VAR)||LA15_1==WHILE) ) {
+                if ( (LA15_1==ABORT||LA15_1==BREAK||(LA15_1 >= CASE && LA15_1 <= CATCH)||LA15_1==COMPONENT||LA15_1==CONTAIN||(LA15_1 >= CONTINUE && LA15_1 <= DEFAULT)||(LA15_1 >= DIRECTORY && LA15_1 <= DOES)||LA15_1==DOT||LA15_1==ELSE||LA15_1==EXIT||LA15_1==FILE||LA15_1==FOR||LA15_1==FUNCTION||LA15_1==GREATER||(LA15_1 >= HTTP && LA15_1 <= IF)||(LA15_1 >= IMPORT && LA15_1 <= INCLUDE)||LA15_1==LESS||(LA15_1 >= LOCATION && LA15_1 <= LOCK)||LA15_1==LOOP||LA15_1==NEW||(LA15_1 >= PACKAGE && LA15_1 <= PARAM)||LA15_1==PRIVATE||(LA15_1 >= PUBLIC && LA15_1 <= QUERY)||(LA15_1 >= REMOTE && LA15_1 <= RETHROW)||LA15_1==RETURN||LA15_1==SAVECONTENT||LA15_1==SETTING||LA15_1==SWITCH||(LA15_1 >= THAN && LA15_1 <= THREAD)||LA15_1==THROW||(LA15_1 >= TO && LA15_1 <= TRANSACTION)||(LA15_1 >= TRY && LA15_1 <= VAR)||LA15_1==WHILE) ) {
+                    alt15=1;
+                }
+            }
+            else if ( (LA15_0==IDENTIFIER) ) {
+                int LA15_2 = input.LA(2);
+
+                if ( (LA15_2==ABORT||LA15_2==BREAK||(LA15_2 >= CASE && LA15_2 <= CATCH)||LA15_2==COMPONENT||LA15_2==CONTAIN||(LA15_2 >= CONTINUE && LA15_2 <= DEFAULT)||(LA15_2 >= DIRECTORY && LA15_2 <= DOES)||LA15_2==DOT||LA15_2==ELSE||LA15_2==EXIT||LA15_2==FILE||LA15_2==FOR||LA15_2==FUNCTION||LA15_2==GREATER||(LA15_2 >= HTTP && LA15_2 <= IF)||(LA15_2 >= IMPORT && LA15_2 <= INCLUDE)||LA15_2==LESS||(LA15_2 >= LOCATION && LA15_2 <= LOCK)||LA15_2==LOOP||LA15_2==NEW||(LA15_2 >= PACKAGE && LA15_2 <= PARAM)||LA15_2==PRIVATE||(LA15_2 >= PUBLIC && LA15_2 <= QUERY)||(LA15_2 >= REMOTE && LA15_2 <= RETHROW)||LA15_2==RETURN||LA15_2==SAVECONTENT||LA15_2==SETTING||LA15_2==SWITCH||(LA15_2 >= THAN && LA15_2 <= THREAD)||LA15_2==THROW||(LA15_2 >= TO && LA15_2 <= TRANSACTION)||(LA15_2 >= TRY && LA15_2 <= VAR)||LA15_2==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==DOES) ) {
-                int LA15_2 = input.LA(2);
+                int LA15_3 = input.LA(2);
 
-                if ( (LA15_2==ABORT||LA15_2==BREAK||(LA15_2 >= CASE && LA15_2 <= CATCH)||LA15_2==CONTAIN||(LA15_2 >= CONTINUE && LA15_2 <= DEFAULT)||(LA15_2 >= DIRECTORY && LA15_2 <= DOES)||LA15_2==DOT||LA15_2==ELSE||LA15_2==EXIT||LA15_2==FILE||LA15_2==FOR||LA15_2==FUNCTION||LA15_2==GREATER||(LA15_2 >= HTTP && LA15_2 <= IF)||(LA15_2 >= IMPORT && LA15_2 <= INCLUDE)||LA15_2==LESS||(LA15_2 >= LOCATION && LA15_2 <= LOCK)||LA15_2==LOOP||LA15_2==NEW||(LA15_2 >= PACKAGE && LA15_2 <= PARAM)||LA15_2==PRIVATE||(LA15_2 >= PUBLIC && LA15_2 <= QUERY)||(LA15_2 >= REMOTE && LA15_2 <= RETHROW)||LA15_2==RETURN||LA15_2==SAVECONTENT||LA15_2==SETTING||LA15_2==SWITCH||(LA15_2 >= THAN && LA15_2 <= THREAD)||LA15_2==THROW||(LA15_2 >= TO && LA15_2 <= TRANSACTION)||(LA15_2 >= TRY && LA15_2 <= VAR)||LA15_2==WHILE) ) {
+                if ( (LA15_3==ABORT||LA15_3==BREAK||(LA15_3 >= CASE && LA15_3 <= CATCH)||LA15_3==COMPONENT||LA15_3==CONTAIN||(LA15_3 >= CONTINUE && LA15_3 <= DEFAULT)||(LA15_3 >= DIRECTORY && LA15_3 <= DOES)||LA15_3==DOT||LA15_3==ELSE||LA15_3==EXIT||LA15_3==FILE||LA15_3==FOR||LA15_3==FUNCTION||LA15_3==GREATER||(LA15_3 >= HTTP && LA15_3 <= IF)||(LA15_3 >= IMPORT && LA15_3 <= INCLUDE)||LA15_3==LESS||(LA15_3 >= LOCATION && LA15_3 <= LOCK)||LA15_3==LOOP||LA15_3==NEW||(LA15_3 >= PACKAGE && LA15_3 <= PARAM)||LA15_3==PRIVATE||(LA15_3 >= PUBLIC && LA15_3 <= QUERY)||(LA15_3 >= REMOTE && LA15_3 <= RETHROW)||LA15_3==RETURN||LA15_3==SAVECONTENT||LA15_3==SETTING||LA15_3==SWITCH||(LA15_3 >= THAN && LA15_3 <= THREAD)||LA15_3==THROW||(LA15_3 >= TO && LA15_3 <= TRANSACTION)||(LA15_3 >= TRY && LA15_3 <= VAR)||LA15_3==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==CONTAIN) ) {
-                int LA15_3 = input.LA(2);
+                int LA15_4 = input.LA(2);
 
-                if ( (LA15_3==ABORT||LA15_3==BREAK||(LA15_3 >= CASE && LA15_3 <= CATCH)||LA15_3==CONTAIN||(LA15_3 >= CONTINUE && LA15_3 <= DEFAULT)||(LA15_3 >= DIRECTORY && LA15_3 <= DOES)||LA15_3==DOT||LA15_3==ELSE||LA15_3==EXIT||LA15_3==FILE||LA15_3==FOR||LA15_3==FUNCTION||LA15_3==GREATER||(LA15_3 >= HTTP && LA15_3 <= IF)||(LA15_3 >= IMPORT && LA15_3 <= INCLUDE)||LA15_3==LESS||(LA15_3 >= LOCATION && LA15_3 <= LOCK)||LA15_3==LOOP||LA15_3==NEW||(LA15_3 >= PACKAGE && LA15_3 <= PARAM)||LA15_3==PRIVATE||(LA15_3 >= PUBLIC && LA15_3 <= QUERY)||(LA15_3 >= REMOTE && LA15_3 <= RETHROW)||LA15_3==RETURN||LA15_3==SAVECONTENT||LA15_3==SETTING||LA15_3==SWITCH||(LA15_3 >= THAN && LA15_3 <= THREAD)||LA15_3==THROW||(LA15_3 >= TO && LA15_3 <= TRANSACTION)||(LA15_3 >= TRY && LA15_3 <= VAR)||LA15_3==WHILE) ) {
+                if ( (LA15_4==ABORT||LA15_4==BREAK||(LA15_4 >= CASE && LA15_4 <= CATCH)||LA15_4==COMPONENT||LA15_4==CONTAIN||(LA15_4 >= CONTINUE && LA15_4 <= DEFAULT)||(LA15_4 >= DIRECTORY && LA15_4 <= DOES)||LA15_4==DOT||LA15_4==ELSE||LA15_4==EXIT||LA15_4==FILE||LA15_4==FOR||LA15_4==FUNCTION||LA15_4==GREATER||(LA15_4 >= HTTP && LA15_4 <= IF)||(LA15_4 >= IMPORT && LA15_4 <= INCLUDE)||LA15_4==LESS||(LA15_4 >= LOCATION && LA15_4 <= LOCK)||LA15_4==LOOP||LA15_4==NEW||(LA15_4 >= PACKAGE && LA15_4 <= PARAM)||LA15_4==PRIVATE||(LA15_4 >= PUBLIC && LA15_4 <= QUERY)||(LA15_4 >= REMOTE && LA15_4 <= RETHROW)||LA15_4==RETURN||LA15_4==SAVECONTENT||LA15_4==SETTING||LA15_4==SWITCH||(LA15_4 >= THAN && LA15_4 <= THREAD)||LA15_4==THROW||(LA15_4 >= TO && LA15_4 <= TRANSACTION)||(LA15_4 >= TRY && LA15_4 <= VAR)||LA15_4==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==GREATER) ) {
-                int LA15_4 = input.LA(2);
+                int LA15_5 = input.LA(2);
 
-                if ( (LA15_4==ABORT||LA15_4==BREAK||(LA15_4 >= CASE && LA15_4 <= CATCH)||LA15_4==CONTAIN||(LA15_4 >= CONTINUE && LA15_4 <= DEFAULT)||(LA15_4 >= DIRECTORY && LA15_4 <= DOES)||LA15_4==DOT||LA15_4==ELSE||LA15_4==EXIT||LA15_4==FILE||LA15_4==FOR||LA15_4==FUNCTION||LA15_4==GREATER||(LA15_4 >= HTTP && LA15_4 <= IF)||(LA15_4 >= IMPORT && LA15_4 <= INCLUDE)||LA15_4==LESS||(LA15_4 >= LOCATION && LA15_4 <= LOCK)||LA15_4==LOOP||LA15_4==NEW||(LA15_4 >= PACKAGE && LA15_4 <= PARAM)||LA15_4==PRIVATE||(LA15_4 >= PUBLIC && LA15_4 <= QUERY)||(LA15_4 >= REMOTE && LA15_4 <= RETHROW)||LA15_4==RETURN||LA15_4==SAVECONTENT||LA15_4==SETTING||LA15_4==SWITCH||(LA15_4 >= THAN && LA15_4 <= THREAD)||LA15_4==THROW||(LA15_4 >= TO && LA15_4 <= TRANSACTION)||(LA15_4 >= TRY && LA15_4 <= VAR)||LA15_4==WHILE) ) {
+                if ( (LA15_5==ABORT||LA15_5==BREAK||(LA15_5 >= CASE && LA15_5 <= CATCH)||LA15_5==COMPONENT||LA15_5==CONTAIN||(LA15_5 >= CONTINUE && LA15_5 <= DEFAULT)||(LA15_5 >= DIRECTORY && LA15_5 <= DOES)||LA15_5==DOT||LA15_5==ELSE||LA15_5==EXIT||LA15_5==FILE||LA15_5==FOR||LA15_5==FUNCTION||LA15_5==GREATER||(LA15_5 >= HTTP && LA15_5 <= IF)||(LA15_5 >= IMPORT && LA15_5 <= INCLUDE)||LA15_5==LESS||(LA15_5 >= LOCATION && LA15_5 <= LOCK)||LA15_5==LOOP||LA15_5==NEW||(LA15_5 >= PACKAGE && LA15_5 <= PARAM)||LA15_5==PRIVATE||(LA15_5 >= PUBLIC && LA15_5 <= QUERY)||(LA15_5 >= REMOTE && LA15_5 <= RETHROW)||LA15_5==RETURN||LA15_5==SAVECONTENT||LA15_5==SETTING||LA15_5==SWITCH||(LA15_5 >= THAN && LA15_5 <= THREAD)||LA15_5==THROW||(LA15_5 >= TO && LA15_5 <= TRANSACTION)||(LA15_5 >= TRY && LA15_5 <= VAR)||LA15_5==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==THAN) ) {
-                int LA15_5 = input.LA(2);
+                int LA15_6 = input.LA(2);
 
-                if ( (LA15_5==ABORT||LA15_5==BREAK||(LA15_5 >= CASE && LA15_5 <= CATCH)||LA15_5==CONTAIN||(LA15_5 >= CONTINUE && LA15_5 <= DEFAULT)||(LA15_5 >= DIRECTORY && LA15_5 <= DOES)||LA15_5==DOT||LA15_5==ELSE||LA15_5==EXIT||LA15_5==FILE||LA15_5==FOR||LA15_5==FUNCTION||LA15_5==GREATER||(LA15_5 >= HTTP && LA15_5 <= IF)||(LA15_5 >= IMPORT && LA15_5 <= INCLUDE)||LA15_5==LESS||(LA15_5 >= LOCATION && LA15_5 <= LOCK)||LA15_5==LOOP||LA15_5==NEW||(LA15_5 >= PACKAGE && LA15_5 <= PARAM)||LA15_5==PRIVATE||(LA15_5 >= PUBLIC && LA15_5 <= QUERY)||(LA15_5 >= REMOTE && LA15_5 <= RETHROW)||LA15_5==RETURN||LA15_5==SAVECONTENT||LA15_5==SETTING||LA15_5==SWITCH||(LA15_5 >= THAN && LA15_5 <= THREAD)||LA15_5==THROW||(LA15_5 >= TO && LA15_5 <= TRANSACTION)||(LA15_5 >= TRY && LA15_5 <= VAR)||LA15_5==WHILE) ) {
+                if ( (LA15_6==ABORT||LA15_6==BREAK||(LA15_6 >= CASE && LA15_6 <= CATCH)||LA15_6==COMPONENT||LA15_6==CONTAIN||(LA15_6 >= CONTINUE && LA15_6 <= DEFAULT)||(LA15_6 >= DIRECTORY && LA15_6 <= DOES)||LA15_6==DOT||LA15_6==ELSE||LA15_6==EXIT||LA15_6==FILE||LA15_6==FOR||LA15_6==FUNCTION||LA15_6==GREATER||(LA15_6 >= HTTP && LA15_6 <= IF)||(LA15_6 >= IMPORT && LA15_6 <= INCLUDE)||LA15_6==LESS||(LA15_6 >= LOCATION && LA15_6 <= LOCK)||LA15_6==LOOP||LA15_6==NEW||(LA15_6 >= PACKAGE && LA15_6 <= PARAM)||LA15_6==PRIVATE||(LA15_6 >= PUBLIC && LA15_6 <= QUERY)||(LA15_6 >= REMOTE && LA15_6 <= RETHROW)||LA15_6==RETURN||LA15_6==SAVECONTENT||LA15_6==SETTING||LA15_6==SWITCH||(LA15_6 >= THAN && LA15_6 <= THREAD)||LA15_6==THROW||(LA15_6 >= TO && LA15_6 <= TRANSACTION)||(LA15_6 >= TRY && LA15_6 <= VAR)||LA15_6==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==LESS) ) {
-                int LA15_6 = input.LA(2);
+                int LA15_7 = input.LA(2);
 
-                if ( (LA15_6==ABORT||LA15_6==BREAK||(LA15_6 >= CASE && LA15_6 <= CATCH)||LA15_6==CONTAIN||(LA15_6 >= CONTINUE && LA15_6 <= DEFAULT)||(LA15_6 >= DIRECTORY && LA15_6 <= DOES)||LA15_6==DOT||LA15_6==ELSE||LA15_6==EXIT||LA15_6==FILE||LA15_6==FOR||LA15_6==FUNCTION||LA15_6==GREATER||(LA15_6 >= HTTP && LA15_6 <= IF)||(LA15_6 >= IMPORT && LA15_6 <= INCLUDE)||LA15_6==LESS||(LA15_6 >= LOCATION && LA15_6 <= LOCK)||LA15_6==LOOP||LA15_6==NEW||(LA15_6 >= PACKAGE && LA15_6 <= PARAM)||LA15_6==PRIVATE||(LA15_6 >= PUBLIC && LA15_6 <= QUERY)||(LA15_6 >= REMOTE && LA15_6 <= RETHROW)||LA15_6==RETURN||LA15_6==SAVECONTENT||LA15_6==SETTING||LA15_6==SWITCH||(LA15_6 >= THAN && LA15_6 <= THREAD)||LA15_6==THROW||(LA15_6 >= TO && LA15_6 <= TRANSACTION)||(LA15_6 >= TRY && LA15_6 <= VAR)||LA15_6==WHILE) ) {
+                if ( (LA15_7==ABORT||LA15_7==BREAK||(LA15_7 >= CASE && LA15_7 <= CATCH)||LA15_7==COMPONENT||LA15_7==CONTAIN||(LA15_7 >= CONTINUE && LA15_7 <= DEFAULT)||(LA15_7 >= DIRECTORY && LA15_7 <= DOES)||LA15_7==DOT||LA15_7==ELSE||LA15_7==EXIT||LA15_7==FILE||LA15_7==FOR||LA15_7==FUNCTION||LA15_7==GREATER||(LA15_7 >= HTTP && LA15_7 <= IF)||(LA15_7 >= IMPORT && LA15_7 <= INCLUDE)||LA15_7==LESS||(LA15_7 >= LOCATION && LA15_7 <= LOCK)||LA15_7==LOOP||LA15_7==NEW||(LA15_7 >= PACKAGE && LA15_7 <= PARAM)||LA15_7==PRIVATE||(LA15_7 >= PUBLIC && LA15_7 <= QUERY)||(LA15_7 >= REMOTE && LA15_7 <= RETHROW)||LA15_7==RETURN||LA15_7==SAVECONTENT||LA15_7==SETTING||LA15_7==SWITCH||(LA15_7 >= THAN && LA15_7 <= THREAD)||LA15_7==THROW||(LA15_7 >= TO && LA15_7 <= TRANSACTION)||(LA15_7 >= TRY && LA15_7 <= VAR)||LA15_7==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==VAR) ) {
-                int LA15_7 = input.LA(2);
+                int LA15_8 = input.LA(2);
 
-                if ( (LA15_7==ABORT||LA15_7==BREAK||(LA15_7 >= CASE && LA15_7 <= CATCH)||LA15_7==CONTAIN||(LA15_7 >= CONTINUE && LA15_7 <= DEFAULT)||(LA15_7 >= DIRECTORY && LA15_7 <= DOES)||LA15_7==DOT||LA15_7==ELSE||LA15_7==EXIT||LA15_7==FILE||LA15_7==FOR||LA15_7==FUNCTION||LA15_7==GREATER||(LA15_7 >= HTTP && LA15_7 <= IF)||(LA15_7 >= IMPORT && LA15_7 <= INCLUDE)||LA15_7==LESS||(LA15_7 >= LOCATION && LA15_7 <= LOCK)||LA15_7==LOOP||LA15_7==NEW||(LA15_7 >= PACKAGE && LA15_7 <= PARAM)||LA15_7==PRIVATE||(LA15_7 >= PUBLIC && LA15_7 <= QUERY)||(LA15_7 >= REMOTE && LA15_7 <= RETHROW)||LA15_7==RETURN||LA15_7==SAVECONTENT||LA15_7==SETTING||LA15_7==SWITCH||(LA15_7 >= THAN && LA15_7 <= THREAD)||LA15_7==THROW||(LA15_7 >= TO && LA15_7 <= TRANSACTION)||(LA15_7 >= TRY && LA15_7 <= VAR)||LA15_7==WHILE) ) {
+                if ( (LA15_8==ABORT||LA15_8==BREAK||(LA15_8 >= CASE && LA15_8 <= CATCH)||LA15_8==COMPONENT||LA15_8==CONTAIN||(LA15_8 >= CONTINUE && LA15_8 <= DEFAULT)||(LA15_8 >= DIRECTORY && LA15_8 <= DOES)||LA15_8==DOT||LA15_8==ELSE||LA15_8==EXIT||LA15_8==FILE||LA15_8==FOR||LA15_8==FUNCTION||LA15_8==GREATER||(LA15_8 >= HTTP && LA15_8 <= IF)||(LA15_8 >= IMPORT && LA15_8 <= INCLUDE)||LA15_8==LESS||(LA15_8 >= LOCATION && LA15_8 <= LOCK)||LA15_8==LOOP||LA15_8==NEW||(LA15_8 >= PACKAGE && LA15_8 <= PARAM)||LA15_8==PRIVATE||(LA15_8 >= PUBLIC && LA15_8 <= QUERY)||(LA15_8 >= REMOTE && LA15_8 <= RETHROW)||LA15_8==RETURN||LA15_8==SAVECONTENT||LA15_8==SETTING||LA15_8==SWITCH||(LA15_8 >= THAN && LA15_8 <= THREAD)||LA15_8==THROW||(LA15_8 >= TO && LA15_8 <= TRANSACTION)||(LA15_8 >= TRY && LA15_8 <= VAR)||LA15_8==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==TO) ) {
-                int LA15_8 = input.LA(2);
+                int LA15_9 = input.LA(2);
 
-                if ( (LA15_8==ABORT||LA15_8==BREAK||(LA15_8 >= CASE && LA15_8 <= CATCH)||LA15_8==CONTAIN||(LA15_8 >= CONTINUE && LA15_8 <= DEFAULT)||(LA15_8 >= DIRECTORY && LA15_8 <= DOES)||LA15_8==DOT||LA15_8==ELSE||LA15_8==EXIT||LA15_8==FILE||LA15_8==FOR||LA15_8==FUNCTION||LA15_8==GREATER||(LA15_8 >= HTTP && LA15_8 <= IF)||(LA15_8 >= IMPORT && LA15_8 <= INCLUDE)||LA15_8==LESS||(LA15_8 >= LOCATION && LA15_8 <= LOCK)||LA15_8==LOOP||LA15_8==NEW||(LA15_8 >= PACKAGE && LA15_8 <= PARAM)||LA15_8==PRIVATE||(LA15_8 >= PUBLIC && LA15_8 <= QUERY)||(LA15_8 >= REMOTE && LA15_8 <= RETHROW)||LA15_8==RETURN||LA15_8==SAVECONTENT||LA15_8==SETTING||LA15_8==SWITCH||(LA15_8 >= THAN && LA15_8 <= THREAD)||LA15_8==THROW||(LA15_8 >= TO && LA15_8 <= TRANSACTION)||(LA15_8 >= TRY && LA15_8 <= VAR)||LA15_8==WHILE) ) {
+                if ( (LA15_9==ABORT||LA15_9==BREAK||(LA15_9 >= CASE && LA15_9 <= CATCH)||LA15_9==COMPONENT||LA15_9==CONTAIN||(LA15_9 >= CONTINUE && LA15_9 <= DEFAULT)||(LA15_9 >= DIRECTORY && LA15_9 <= DOES)||LA15_9==DOT||LA15_9==ELSE||LA15_9==EXIT||LA15_9==FILE||LA15_9==FOR||LA15_9==FUNCTION||LA15_9==GREATER||(LA15_9 >= HTTP && LA15_9 <= IF)||(LA15_9 >= IMPORT && LA15_9 <= INCLUDE)||LA15_9==LESS||(LA15_9 >= LOCATION && LA15_9 <= LOCK)||LA15_9==LOOP||LA15_9==NEW||(LA15_9 >= PACKAGE && LA15_9 <= PARAM)||LA15_9==PRIVATE||(LA15_9 >= PUBLIC && LA15_9 <= QUERY)||(LA15_9 >= REMOTE && LA15_9 <= RETHROW)||LA15_9==RETURN||LA15_9==SAVECONTENT||LA15_9==SETTING||LA15_9==SWITCH||(LA15_9 >= THAN && LA15_9 <= THREAD)||LA15_9==THROW||(LA15_9 >= TO && LA15_9 <= TRANSACTION)||(LA15_9 >= TRY && LA15_9 <= VAR)||LA15_9==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==DEFAULT) ) {
-                int LA15_9 = input.LA(2);
+                int LA15_10 = input.LA(2);
 
-                if ( (LA15_9==ABORT||LA15_9==BREAK||(LA15_9 >= CASE && LA15_9 <= CATCH)||LA15_9==CONTAIN||(LA15_9 >= CONTINUE && LA15_9 <= DEFAULT)||(LA15_9 >= DIRECTORY && LA15_9 <= DOES)||LA15_9==DOT||LA15_9==ELSE||LA15_9==EXIT||LA15_9==FILE||LA15_9==FOR||LA15_9==FUNCTION||LA15_9==GREATER||(LA15_9 >= HTTP && LA15_9 <= IF)||(LA15_9 >= IMPORT && LA15_9 <= INCLUDE)||LA15_9==LESS||(LA15_9 >= LOCATION && LA15_9 <= LOCK)||LA15_9==LOOP||LA15_9==NEW||(LA15_9 >= PACKAGE && LA15_9 <= PARAM)||LA15_9==PRIVATE||(LA15_9 >= PUBLIC && LA15_9 <= QUERY)||(LA15_9 >= REMOTE && LA15_9 <= RETHROW)||LA15_9==RETURN||LA15_9==SAVECONTENT||LA15_9==SETTING||LA15_9==SWITCH||(LA15_9 >= THAN && LA15_9 <= THREAD)||LA15_9==THROW||(LA15_9 >= TO && LA15_9 <= TRANSACTION)||(LA15_9 >= TRY && LA15_9 <= VAR)||LA15_9==WHILE) ) {
+                if ( (LA15_10==ABORT||LA15_10==BREAK||(LA15_10 >= CASE && LA15_10 <= CATCH)||LA15_10==COMPONENT||LA15_10==CONTAIN||(LA15_10 >= CONTINUE && LA15_10 <= DEFAULT)||(LA15_10 >= DIRECTORY && LA15_10 <= DOES)||LA15_10==DOT||LA15_10==ELSE||LA15_10==EXIT||LA15_10==FILE||LA15_10==FOR||LA15_10==FUNCTION||LA15_10==GREATER||(LA15_10 >= HTTP && LA15_10 <= IF)||(LA15_10 >= IMPORT && LA15_10 <= INCLUDE)||LA15_10==LESS||(LA15_10 >= LOCATION && LA15_10 <= LOCK)||LA15_10==LOOP||LA15_10==NEW||(LA15_10 >= PACKAGE && LA15_10 <= PARAM)||LA15_10==PRIVATE||(LA15_10 >= PUBLIC && LA15_10 <= QUERY)||(LA15_10 >= REMOTE && LA15_10 <= RETHROW)||LA15_10==RETURN||LA15_10==SAVECONTENT||LA15_10==SETTING||LA15_10==SWITCH||(LA15_10 >= THAN && LA15_10 <= THREAD)||LA15_10==THROW||(LA15_10 >= TO && LA15_10 <= TRANSACTION)||(LA15_10 >= TRY && LA15_10 <= VAR)||LA15_10==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==INCLUDE) ) {
-                int LA15_10 = input.LA(2);
+                int LA15_11 = input.LA(2);
 
-                if ( (LA15_10==ABORT||LA15_10==BREAK||(LA15_10 >= CASE && LA15_10 <= CATCH)||LA15_10==CONTAIN||(LA15_10 >= CONTINUE && LA15_10 <= DEFAULT)||(LA15_10 >= DIRECTORY && LA15_10 <= DOES)||LA15_10==DOT||LA15_10==ELSE||LA15_10==EXIT||LA15_10==FILE||LA15_10==FOR||LA15_10==FUNCTION||LA15_10==GREATER||(LA15_10 >= HTTP && LA15_10 <= IF)||(LA15_10 >= IMPORT && LA15_10 <= INCLUDE)||LA15_10==LESS||(LA15_10 >= LOCATION && LA15_10 <= LOCK)||LA15_10==LOOP||LA15_10==NEW||(LA15_10 >= PACKAGE && LA15_10 <= PARAM)||LA15_10==PRIVATE||(LA15_10 >= PUBLIC && LA15_10 <= QUERY)||(LA15_10 >= REMOTE && LA15_10 <= RETHROW)||LA15_10==RETURN||LA15_10==SAVECONTENT||LA15_10==SETTING||LA15_10==SWITCH||(LA15_10 >= THAN && LA15_10 <= THREAD)||LA15_10==THROW||(LA15_10 >= TO && LA15_10 <= TRANSACTION)||(LA15_10 >= TRY && LA15_10 <= VAR)||LA15_10==WHILE) ) {
+                if ( (LA15_11==ABORT||LA15_11==BREAK||(LA15_11 >= CASE && LA15_11 <= CATCH)||LA15_11==COMPONENT||LA15_11==CONTAIN||(LA15_11 >= CONTINUE && LA15_11 <= DEFAULT)||(LA15_11 >= DIRECTORY && LA15_11 <= DOES)||LA15_11==DOT||LA15_11==ELSE||LA15_11==EXIT||LA15_11==FILE||LA15_11==FOR||LA15_11==FUNCTION||LA15_11==GREATER||(LA15_11 >= HTTP && LA15_11 <= IF)||(LA15_11 >= IMPORT && LA15_11 <= INCLUDE)||LA15_11==LESS||(LA15_11 >= LOCATION && LA15_11 <= LOCK)||LA15_11==LOOP||LA15_11==NEW||(LA15_11 >= PACKAGE && LA15_11 <= PARAM)||LA15_11==PRIVATE||(LA15_11 >= PUBLIC && LA15_11 <= QUERY)||(LA15_11 >= REMOTE && LA15_11 <= RETHROW)||LA15_11==RETURN||LA15_11==SAVECONTENT||LA15_11==SETTING||LA15_11==SWITCH||(LA15_11 >= THAN && LA15_11 <= THREAD)||LA15_11==THROW||(LA15_11 >= TO && LA15_11 <= TRANSACTION)||(LA15_11 >= TRY && LA15_11 <= VAR)||LA15_11==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==NEW) ) {
-                int LA15_11 = input.LA(2);
+                int LA15_12 = input.LA(2);
 
-                if ( (LA15_11==ABORT||LA15_11==BREAK||(LA15_11 >= CASE && LA15_11 <= CATCH)||LA15_11==CONTAIN||(LA15_11 >= CONTINUE && LA15_11 <= DEFAULT)||(LA15_11 >= DIRECTORY && LA15_11 <= DOES)||LA15_11==DOT||LA15_11==ELSE||LA15_11==EXIT||LA15_11==FILE||LA15_11==FOR||LA15_11==FUNCTION||LA15_11==GREATER||(LA15_11 >= HTTP && LA15_11 <= IF)||(LA15_11 >= IMPORT && LA15_11 <= INCLUDE)||LA15_11==LESS||(LA15_11 >= LOCATION && LA15_11 <= LOCK)||LA15_11==LOOP||LA15_11==NEW||(LA15_11 >= PACKAGE && LA15_11 <= PARAM)||LA15_11==PRIVATE||(LA15_11 >= PUBLIC && LA15_11 <= QUERY)||(LA15_11 >= REMOTE && LA15_11 <= RETHROW)||LA15_11==RETURN||LA15_11==SAVECONTENT||LA15_11==SETTING||LA15_11==SWITCH||(LA15_11 >= THAN && LA15_11 <= THREAD)||LA15_11==THROW||(LA15_11 >= TO && LA15_11 <= TRANSACTION)||(LA15_11 >= TRY && LA15_11 <= VAR)||LA15_11==WHILE) ) {
+                if ( (LA15_12==ABORT||LA15_12==BREAK||(LA15_12 >= CASE && LA15_12 <= CATCH)||LA15_12==COMPONENT||LA15_12==CONTAIN||(LA15_12 >= CONTINUE && LA15_12 <= DEFAULT)||(LA15_12 >= DIRECTORY && LA15_12 <= DOES)||LA15_12==DOT||LA15_12==ELSE||LA15_12==EXIT||LA15_12==FILE||LA15_12==FOR||LA15_12==FUNCTION||LA15_12==GREATER||(LA15_12 >= HTTP && LA15_12 <= IF)||(LA15_12 >= IMPORT && LA15_12 <= INCLUDE)||LA15_12==LESS||(LA15_12 >= LOCATION && LA15_12 <= LOCK)||LA15_12==LOOP||LA15_12==NEW||(LA15_12 >= PACKAGE && LA15_12 <= PARAM)||LA15_12==PRIVATE||(LA15_12 >= PUBLIC && LA15_12 <= QUERY)||(LA15_12 >= REMOTE && LA15_12 <= RETHROW)||LA15_12==RETURN||LA15_12==SAVECONTENT||LA15_12==SETTING||LA15_12==SWITCH||(LA15_12 >= THAN && LA15_12 <= THREAD)||LA15_12==THROW||(LA15_12 >= TO && LA15_12 <= TRANSACTION)||(LA15_12 >= TRY && LA15_12 <= VAR)||LA15_12==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==ABORT) ) {
-                int LA15_12 = input.LA(2);
+                int LA15_13 = input.LA(2);
 
-                if ( (LA15_12==ABORT||LA15_12==BREAK||(LA15_12 >= CASE && LA15_12 <= CATCH)||LA15_12==CONTAIN||(LA15_12 >= CONTINUE && LA15_12 <= DEFAULT)||(LA15_12 >= DIRECTORY && LA15_12 <= DOES)||LA15_12==DOT||LA15_12==ELSE||LA15_12==EXIT||LA15_12==FILE||LA15_12==FOR||LA15_12==FUNCTION||LA15_12==GREATER||(LA15_12 >= HTTP && LA15_12 <= IF)||(LA15_12 >= IMPORT && LA15_12 <= INCLUDE)||LA15_12==LESS||(LA15_12 >= LOCATION && LA15_12 <= LOCK)||LA15_12==LOOP||LA15_12==NEW||(LA15_12 >= PACKAGE && LA15_12 <= PARAM)||LA15_12==PRIVATE||(LA15_12 >= PUBLIC && LA15_12 <= QUERY)||(LA15_12 >= REMOTE && LA15_12 <= RETHROW)||LA15_12==RETURN||LA15_12==SAVECONTENT||LA15_12==SETTING||LA15_12==SWITCH||(LA15_12 >= THAN && LA15_12 <= THREAD)||LA15_12==THROW||(LA15_12 >= TO && LA15_12 <= TRANSACTION)||(LA15_12 >= TRY && LA15_12 <= VAR)||LA15_12==WHILE) ) {
+                if ( (LA15_13==ABORT||LA15_13==BREAK||(LA15_13 >= CASE && LA15_13 <= CATCH)||LA15_13==COMPONENT||LA15_13==CONTAIN||(LA15_13 >= CONTINUE && LA15_13 <= DEFAULT)||(LA15_13 >= DIRECTORY && LA15_13 <= DOES)||LA15_13==DOT||LA15_13==ELSE||LA15_13==EXIT||LA15_13==FILE||LA15_13==FOR||LA15_13==FUNCTION||LA15_13==GREATER||(LA15_13 >= HTTP && LA15_13 <= IF)||(LA15_13 >= IMPORT && LA15_13 <= INCLUDE)||LA15_13==LESS||(LA15_13 >= LOCATION && LA15_13 <= LOCK)||LA15_13==LOOP||LA15_13==NEW||(LA15_13 >= PACKAGE && LA15_13 <= PARAM)||LA15_13==PRIVATE||(LA15_13 >= PUBLIC && LA15_13 <= QUERY)||(LA15_13 >= REMOTE && LA15_13 <= RETHROW)||LA15_13==RETURN||LA15_13==SAVECONTENT||LA15_13==SETTING||LA15_13==SWITCH||(LA15_13 >= THAN && LA15_13 <= THREAD)||LA15_13==THROW||(LA15_13 >= TO && LA15_13 <= TRANSACTION)||(LA15_13 >= TRY && LA15_13 <= VAR)||LA15_13==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==THROW) ) {
-                int LA15_13 = input.LA(2);
+                int LA15_14 = input.LA(2);
 
-                if ( (LA15_13==ABORT||LA15_13==BREAK||(LA15_13 >= CASE && LA15_13 <= CATCH)||LA15_13==CONTAIN||(LA15_13 >= CONTINUE && LA15_13 <= DEFAULT)||(LA15_13 >= DIRECTORY && LA15_13 <= DOES)||LA15_13==DOT||LA15_13==ELSE||LA15_13==EXIT||LA15_13==FILE||LA15_13==FOR||LA15_13==FUNCTION||LA15_13==GREATER||(LA15_13 >= HTTP && LA15_13 <= IF)||(LA15_13 >= IMPORT && LA15_13 <= INCLUDE)||LA15_13==LESS||(LA15_13 >= LOCATION && LA15_13 <= LOCK)||LA15_13==LOOP||LA15_13==NEW||(LA15_13 >= PACKAGE && LA15_13 <= PARAM)||LA15_13==PRIVATE||(LA15_13 >= PUBLIC && LA15_13 <= QUERY)||(LA15_13 >= REMOTE && LA15_13 <= RETHROW)||LA15_13==RETURN||LA15_13==SAVECONTENT||LA15_13==SETTING||LA15_13==SWITCH||(LA15_13 >= THAN && LA15_13 <= THREAD)||LA15_13==THROW||(LA15_13 >= TO && LA15_13 <= TRANSACTION)||(LA15_13 >= TRY && LA15_13 <= VAR)||LA15_13==WHILE) ) {
+                if ( (LA15_14==ABORT||LA15_14==BREAK||(LA15_14 >= CASE && LA15_14 <= CATCH)||LA15_14==COMPONENT||LA15_14==CONTAIN||(LA15_14 >= CONTINUE && LA15_14 <= DEFAULT)||(LA15_14 >= DIRECTORY && LA15_14 <= DOES)||LA15_14==DOT||LA15_14==ELSE||LA15_14==EXIT||LA15_14==FILE||LA15_14==FOR||LA15_14==FUNCTION||LA15_14==GREATER||(LA15_14 >= HTTP && LA15_14 <= IF)||(LA15_14 >= IMPORT && LA15_14 <= INCLUDE)||LA15_14==LESS||(LA15_14 >= LOCATION && LA15_14 <= LOCK)||LA15_14==LOOP||LA15_14==NEW||(LA15_14 >= PACKAGE && LA15_14 <= PARAM)||LA15_14==PRIVATE||(LA15_14 >= PUBLIC && LA15_14 <= QUERY)||(LA15_14 >= REMOTE && LA15_14 <= RETHROW)||LA15_14==RETURN||LA15_14==SAVECONTENT||LA15_14==SETTING||LA15_14==SWITCH||(LA15_14 >= THAN && LA15_14 <= THREAD)||LA15_14==THROW||(LA15_14 >= TO && LA15_14 <= TRANSACTION)||(LA15_14 >= TRY && LA15_14 <= VAR)||LA15_14==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==RETHROW) ) {
-                int LA15_14 = input.LA(2);
+                int LA15_15 = input.LA(2);
 
-                if ( (LA15_14==ABORT||LA15_14==BREAK||(LA15_14 >= CASE && LA15_14 <= CATCH)||LA15_14==CONTAIN||(LA15_14 >= CONTINUE && LA15_14 <= DEFAULT)||(LA15_14 >= DIRECTORY && LA15_14 <= DOES)||LA15_14==DOT||LA15_14==ELSE||LA15_14==EXIT||LA15_14==FILE||LA15_14==FOR||LA15_14==FUNCTION||LA15_14==GREATER||(LA15_14 >= HTTP && LA15_14 <= IF)||(LA15_14 >= IMPORT && LA15_14 <= INCLUDE)||LA15_14==LESS||(LA15_14 >= LOCATION && LA15_14 <= LOCK)||LA15_14==LOOP||LA15_14==NEW||(LA15_14 >= PACKAGE && LA15_14 <= PARAM)||LA15_14==PRIVATE||(LA15_14 >= PUBLIC && LA15_14 <= QUERY)||(LA15_14 >= REMOTE && LA15_14 <= RETHROW)||LA15_14==RETURN||LA15_14==SAVECONTENT||LA15_14==SETTING||LA15_14==SWITCH||(LA15_14 >= THAN && LA15_14 <= THREAD)||LA15_14==THROW||(LA15_14 >= TO && LA15_14 <= TRANSACTION)||(LA15_14 >= TRY && LA15_14 <= VAR)||LA15_14==WHILE) ) {
+                if ( (LA15_15==ABORT||LA15_15==BREAK||(LA15_15 >= CASE && LA15_15 <= CATCH)||LA15_15==COMPONENT||LA15_15==CONTAIN||(LA15_15 >= CONTINUE && LA15_15 <= DEFAULT)||(LA15_15 >= DIRECTORY && LA15_15 <= DOES)||LA15_15==DOT||LA15_15==ELSE||LA15_15==EXIT||LA15_15==FILE||LA15_15==FOR||LA15_15==FUNCTION||LA15_15==GREATER||(LA15_15 >= HTTP && LA15_15 <= IF)||(LA15_15 >= IMPORT && LA15_15 <= INCLUDE)||LA15_15==LESS||(LA15_15 >= LOCATION && LA15_15 <= LOCK)||LA15_15==LOOP||LA15_15==NEW||(LA15_15 >= PACKAGE && LA15_15 <= PARAM)||LA15_15==PRIVATE||(LA15_15 >= PUBLIC && LA15_15 <= QUERY)||(LA15_15 >= REMOTE && LA15_15 <= RETHROW)||LA15_15==RETURN||LA15_15==SAVECONTENT||LA15_15==SETTING||LA15_15==SWITCH||(LA15_15 >= THAN && LA15_15 <= THREAD)||LA15_15==THROW||(LA15_15 >= TO && LA15_15 <= TRANSACTION)||(LA15_15 >= TRY && LA15_15 <= VAR)||LA15_15==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==PARAM) ) {
-                int LA15_15 = input.LA(2);
+                int LA15_16 = input.LA(2);
 
-                if ( (LA15_15==ABORT||LA15_15==BREAK||(LA15_15 >= CASE && LA15_15 <= CATCH)||LA15_15==CONTAIN||(LA15_15 >= CONTINUE && LA15_15 <= DEFAULT)||(LA15_15 >= DIRECTORY && LA15_15 <= DOES)||LA15_15==DOT||LA15_15==ELSE||LA15_15==EXIT||LA15_15==FILE||LA15_15==FOR||LA15_15==FUNCTION||LA15_15==GREATER||(LA15_15 >= HTTP && LA15_15 <= IF)||(LA15_15 >= IMPORT && LA15_15 <= INCLUDE)||LA15_15==LESS||(LA15_15 >= LOCATION && LA15_15 <= LOCK)||LA15_15==LOOP||LA15_15==NEW||(LA15_15 >= PACKAGE && LA15_15 <= PARAM)||LA15_15==PRIVATE||(LA15_15 >= PUBLIC && LA15_15 <= QUERY)||(LA15_15 >= REMOTE && LA15_15 <= RETHROW)||LA15_15==RETURN||LA15_15==SAVECONTENT||LA15_15==SETTING||LA15_15==SWITCH||(LA15_15 >= THAN && LA15_15 <= THREAD)||LA15_15==THROW||(LA15_15 >= TO && LA15_15 <= TRANSACTION)||(LA15_15 >= TRY && LA15_15 <= VAR)||LA15_15==WHILE) ) {
+                if ( (LA15_16==ABORT||LA15_16==BREAK||(LA15_16 >= CASE && LA15_16 <= CATCH)||LA15_16==COMPONENT||LA15_16==CONTAIN||(LA15_16 >= CONTINUE && LA15_16 <= DEFAULT)||(LA15_16 >= DIRECTORY && LA15_16 <= DOES)||LA15_16==DOT||LA15_16==ELSE||LA15_16==EXIT||LA15_16==FILE||LA15_16==FOR||LA15_16==FUNCTION||LA15_16==GREATER||(LA15_16 >= HTTP && LA15_16 <= IF)||(LA15_16 >= IMPORT && LA15_16 <= INCLUDE)||LA15_16==LESS||(LA15_16 >= LOCATION && LA15_16 <= LOCK)||LA15_16==LOOP||LA15_16==NEW||(LA15_16 >= PACKAGE && LA15_16 <= PARAM)||LA15_16==PRIVATE||(LA15_16 >= PUBLIC && LA15_16 <= QUERY)||(LA15_16 >= REMOTE && LA15_16 <= RETHROW)||LA15_16==RETURN||LA15_16==SAVECONTENT||LA15_16==SETTING||LA15_16==SWITCH||(LA15_16 >= THAN && LA15_16 <= THREAD)||LA15_16==THROW||(LA15_16 >= TO && LA15_16 <= TRANSACTION)||(LA15_16 >= TRY && LA15_16 <= VAR)||LA15_16==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==EXIT) ) {
-                int LA15_16 = input.LA(2);
+                int LA15_17 = input.LA(2);
 
-                if ( (LA15_16==ABORT||LA15_16==BREAK||(LA15_16 >= CASE && LA15_16 <= CATCH)||LA15_16==CONTAIN||(LA15_16 >= CONTINUE && LA15_16 <= DEFAULT)||(LA15_16 >= DIRECTORY && LA15_16 <= DOES)||LA15_16==DOT||LA15_16==ELSE||LA15_16==EXIT||LA15_16==FILE||LA15_16==FOR||LA15_16==FUNCTION||LA15_16==GREATER||(LA15_16 >= HTTP && LA15_16 <= IF)||(LA15_16 >= IMPORT && LA15_16 <= INCLUDE)||LA15_16==LESS||(LA15_16 >= LOCATION && LA15_16 <= LOCK)||LA15_16==LOOP||LA15_16==NEW||(LA15_16 >= PACKAGE && LA15_16 <= PARAM)||LA15_16==PRIVATE||(LA15_16 >= PUBLIC && LA15_16 <= QUERY)||(LA15_16 >= REMOTE && LA15_16 <= RETHROW)||LA15_16==RETURN||LA15_16==SAVECONTENT||LA15_16==SETTING||LA15_16==SWITCH||(LA15_16 >= THAN && LA15_16 <= THREAD)||LA15_16==THROW||(LA15_16 >= TO && LA15_16 <= TRANSACTION)||(LA15_16 >= TRY && LA15_16 <= VAR)||LA15_16==WHILE) ) {
+                if ( (LA15_17==ABORT||LA15_17==BREAK||(LA15_17 >= CASE && LA15_17 <= CATCH)||LA15_17==COMPONENT||LA15_17==CONTAIN||(LA15_17 >= CONTINUE && LA15_17 <= DEFAULT)||(LA15_17 >= DIRECTORY && LA15_17 <= DOES)||LA15_17==DOT||LA15_17==ELSE||LA15_17==EXIT||LA15_17==FILE||LA15_17==FOR||LA15_17==FUNCTION||LA15_17==GREATER||(LA15_17 >= HTTP && LA15_17 <= IF)||(LA15_17 >= IMPORT && LA15_17 <= INCLUDE)||LA15_17==LESS||(LA15_17 >= LOCATION && LA15_17 <= LOCK)||LA15_17==LOOP||LA15_17==NEW||(LA15_17 >= PACKAGE && LA15_17 <= PARAM)||LA15_17==PRIVATE||(LA15_17 >= PUBLIC && LA15_17 <= QUERY)||(LA15_17 >= REMOTE && LA15_17 <= RETHROW)||LA15_17==RETURN||LA15_17==SAVECONTENT||LA15_17==SETTING||LA15_17==SWITCH||(LA15_17 >= THAN && LA15_17 <= THREAD)||LA15_17==THROW||(LA15_17 >= TO && LA15_17 <= TRANSACTION)||(LA15_17 >= TRY && LA15_17 <= VAR)||LA15_17==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==THREAD) ) {
-                int LA15_17 = input.LA(2);
+                int LA15_18 = input.LA(2);
 
-                if ( (LA15_17==ABORT||LA15_17==BREAK||(LA15_17 >= CASE && LA15_17 <= CATCH)||LA15_17==CONTAIN||(LA15_17 >= CONTINUE && LA15_17 <= DEFAULT)||(LA15_17 >= DIRECTORY && LA15_17 <= DOES)||LA15_17==DOT||LA15_17==ELSE||LA15_17==EXIT||LA15_17==FILE||LA15_17==FOR||LA15_17==FUNCTION||LA15_17==GREATER||(LA15_17 >= HTTP && LA15_17 <= IF)||(LA15_17 >= IMPORT && LA15_17 <= INCLUDE)||LA15_17==LESS||(LA15_17 >= LOCATION && LA15_17 <= LOCK)||LA15_17==LOOP||LA15_17==NEW||(LA15_17 >= PACKAGE && LA15_17 <= PARAM)||LA15_17==PRIVATE||(LA15_17 >= PUBLIC && LA15_17 <= QUERY)||(LA15_17 >= REMOTE && LA15_17 <= RETHROW)||LA15_17==RETURN||LA15_17==SAVECONTENT||LA15_17==SETTING||LA15_17==SWITCH||(LA15_17 >= THAN && LA15_17 <= THREAD)||LA15_17==THROW||(LA15_17 >= TO && LA15_17 <= TRANSACTION)||(LA15_17 >= TRY && LA15_17 <= VAR)||LA15_17==WHILE) ) {
+                if ( (LA15_18==ABORT||LA15_18==BREAK||(LA15_18 >= CASE && LA15_18 <= CATCH)||LA15_18==COMPONENT||LA15_18==CONTAIN||(LA15_18 >= CONTINUE && LA15_18 <= DEFAULT)||(LA15_18 >= DIRECTORY && LA15_18 <= DOES)||LA15_18==DOT||LA15_18==ELSE||LA15_18==EXIT||LA15_18==FILE||LA15_18==FOR||LA15_18==FUNCTION||LA15_18==GREATER||(LA15_18 >= HTTP && LA15_18 <= IF)||(LA15_18 >= IMPORT && LA15_18 <= INCLUDE)||LA15_18==LESS||(LA15_18 >= LOCATION && LA15_18 <= LOCK)||LA15_18==LOOP||LA15_18==NEW||(LA15_18 >= PACKAGE && LA15_18 <= PARAM)||LA15_18==PRIVATE||(LA15_18 >= PUBLIC && LA15_18 <= QUERY)||(LA15_18 >= REMOTE && LA15_18 <= RETHROW)||LA15_18==RETURN||LA15_18==SAVECONTENT||LA15_18==SETTING||LA15_18==SWITCH||(LA15_18 >= THAN && LA15_18 <= THREAD)||LA15_18==THROW||(LA15_18 >= TO && LA15_18 <= TRANSACTION)||(LA15_18 >= TRY && LA15_18 <= VAR)||LA15_18==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==LOCK) ) {
-                int LA15_18 = input.LA(2);
+                int LA15_19 = input.LA(2);
 
-                if ( (LA15_18==ABORT||LA15_18==BREAK||(LA15_18 >= CASE && LA15_18 <= CATCH)||LA15_18==CONTAIN||(LA15_18 >= CONTINUE && LA15_18 <= DEFAULT)||(LA15_18 >= DIRECTORY && LA15_18 <= DOES)||LA15_18==DOT||LA15_18==ELSE||LA15_18==EXIT||LA15_18==FILE||LA15_18==FOR||LA15_18==FUNCTION||LA15_18==GREATER||(LA15_18 >= HTTP && LA15_18 <= IF)||(LA15_18 >= IMPORT && LA15_18 <= INCLUDE)||LA15_18==LESS||(LA15_18 >= LOCATION && LA15_18 <= LOCK)||LA15_18==LOOP||LA15_18==NEW||(LA15_18 >= PACKAGE && LA15_18 <= PARAM)||LA15_18==PRIVATE||(LA15_18 >= PUBLIC && LA15_18 <= QUERY)||(LA15_18 >= REMOTE && LA15_18 <= RETHROW)||LA15_18==RETURN||LA15_18==SAVECONTENT||LA15_18==SETTING||LA15_18==SWITCH||(LA15_18 >= THAN && LA15_18 <= THREAD)||LA15_18==THROW||(LA15_18 >= TO && LA15_18 <= TRANSACTION)||(LA15_18 >= TRY && LA15_18 <= VAR)||LA15_18==WHILE) ) {
+                if ( (LA15_19==ABORT||LA15_19==BREAK||(LA15_19 >= CASE && LA15_19 <= CATCH)||LA15_19==COMPONENT||LA15_19==CONTAIN||(LA15_19 >= CONTINUE && LA15_19 <= DEFAULT)||(LA15_19 >= DIRECTORY && LA15_19 <= DOES)||LA15_19==DOT||LA15_19==ELSE||LA15_19==EXIT||LA15_19==FILE||LA15_19==FOR||LA15_19==FUNCTION||LA15_19==GREATER||(LA15_19 >= HTTP && LA15_19 <= IF)||(LA15_19 >= IMPORT && LA15_19 <= INCLUDE)||LA15_19==LESS||(LA15_19 >= LOCATION && LA15_19 <= LOCK)||LA15_19==LOOP||LA15_19==NEW||(LA15_19 >= PACKAGE && LA15_19 <= PARAM)||LA15_19==PRIVATE||(LA15_19 >= PUBLIC && LA15_19 <= QUERY)||(LA15_19 >= REMOTE && LA15_19 <= RETHROW)||LA15_19==RETURN||LA15_19==SAVECONTENT||LA15_19==SETTING||LA15_19==SWITCH||(LA15_19 >= THAN && LA15_19 <= THREAD)||LA15_19==THROW||(LA15_19 >= TO && LA15_19 <= TRANSACTION)||(LA15_19 >= TRY && LA15_19 <= VAR)||LA15_19==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==TRANSACTION) ) {
-                int LA15_19 = input.LA(2);
+                int LA15_20 = input.LA(2);
 
-                if ( (LA15_19==ABORT||LA15_19==BREAK||(LA15_19 >= CASE && LA15_19 <= CATCH)||LA15_19==CONTAIN||(LA15_19 >= CONTINUE && LA15_19 <= DEFAULT)||(LA15_19 >= DIRECTORY && LA15_19 <= DOES)||LA15_19==DOT||LA15_19==ELSE||LA15_19==EXIT||LA15_19==FILE||LA15_19==FOR||LA15_19==FUNCTION||LA15_19==GREATER||(LA15_19 >= HTTP && LA15_19 <= IF)||(LA15_19 >= IMPORT && LA15_19 <= INCLUDE)||LA15_19==LESS||(LA15_19 >= LOCATION && LA15_19 <= LOCK)||LA15_19==LOOP||LA15_19==NEW||(LA15_19 >= PACKAGE && LA15_19 <= PARAM)||LA15_19==PRIVATE||(LA15_19 >= PUBLIC && LA15_19 <= QUERY)||(LA15_19 >= REMOTE && LA15_19 <= RETHROW)||LA15_19==RETURN||LA15_19==SAVECONTENT||LA15_19==SETTING||LA15_19==SWITCH||(LA15_19 >= THAN && LA15_19 <= THREAD)||LA15_19==THROW||(LA15_19 >= TO && LA15_19 <= TRANSACTION)||(LA15_19 >= TRY && LA15_19 <= VAR)||LA15_19==WHILE) ) {
+                if ( (LA15_20==ABORT||LA15_20==BREAK||(LA15_20 >= CASE && LA15_20 <= CATCH)||LA15_20==COMPONENT||LA15_20==CONTAIN||(LA15_20 >= CONTINUE && LA15_20 <= DEFAULT)||(LA15_20 >= DIRECTORY && LA15_20 <= DOES)||LA15_20==DOT||LA15_20==ELSE||LA15_20==EXIT||LA15_20==FILE||LA15_20==FOR||LA15_20==FUNCTION||LA15_20==GREATER||(LA15_20 >= HTTP && LA15_20 <= IF)||(LA15_20 >= IMPORT && LA15_20 <= INCLUDE)||LA15_20==LESS||(LA15_20 >= LOCATION && LA15_20 <= LOCK)||LA15_20==LOOP||LA15_20==NEW||(LA15_20 >= PACKAGE && LA15_20 <= PARAM)||LA15_20==PRIVATE||(LA15_20 >= PUBLIC && LA15_20 <= QUERY)||(LA15_20 >= REMOTE && LA15_20 <= RETHROW)||LA15_20==RETURN||LA15_20==SAVECONTENT||LA15_20==SETTING||LA15_20==SWITCH||(LA15_20 >= THAN && LA15_20 <= THREAD)||LA15_20==THROW||(LA15_20 >= TO && LA15_20 <= TRANSACTION)||(LA15_20 >= TRY && LA15_20 <= VAR)||LA15_20==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==PUBLIC) ) {
-                int LA15_20 = input.LA(2);
+                int LA15_21 = input.LA(2);
 
-                if ( (LA15_20==ABORT||LA15_20==BREAK||(LA15_20 >= CASE && LA15_20 <= CATCH)||LA15_20==CONTAIN||(LA15_20 >= CONTINUE && LA15_20 <= DEFAULT)||(LA15_20 >= DIRECTORY && LA15_20 <= DOES)||LA15_20==DOT||LA15_20==ELSE||LA15_20==EXIT||LA15_20==FILE||LA15_20==FOR||LA15_20==FUNCTION||LA15_20==GREATER||(LA15_20 >= HTTP && LA15_20 <= IF)||(LA15_20 >= IMPORT && LA15_20 <= INCLUDE)||LA15_20==LESS||(LA15_20 >= LOCATION && LA15_20 <= LOCK)||LA15_20==LOOP||LA15_20==NEW||(LA15_20 >= PACKAGE && LA15_20 <= PARAM)||LA15_20==PRIVATE||(LA15_20 >= PUBLIC && LA15_20 <= QUERY)||(LA15_20 >= REMOTE && LA15_20 <= RETHROW)||LA15_20==RETURN||LA15_20==SAVECONTENT||LA15_20==SETTING||LA15_20==SWITCH||(LA15_20 >= THAN && LA15_20 <= THREAD)||LA15_20==THROW||(LA15_20 >= TO && LA15_20 <= TRANSACTION)||(LA15_20 >= TRY && LA15_20 <= VAR)||LA15_20==WHILE) ) {
+                if ( (LA15_21==ABORT||LA15_21==BREAK||(LA15_21 >= CASE && LA15_21 <= CATCH)||LA15_21==COMPONENT||LA15_21==CONTAIN||(LA15_21 >= CONTINUE && LA15_21 <= DEFAULT)||(LA15_21 >= DIRECTORY && LA15_21 <= DOES)||LA15_21==DOT||LA15_21==ELSE||LA15_21==EXIT||LA15_21==FILE||LA15_21==FOR||LA15_21==FUNCTION||LA15_21==GREATER||(LA15_21 >= HTTP && LA15_21 <= IF)||(LA15_21 >= IMPORT && LA15_21 <= INCLUDE)||LA15_21==LESS||(LA15_21 >= LOCATION && LA15_21 <= LOCK)||LA15_21==LOOP||LA15_21==NEW||(LA15_21 >= PACKAGE && LA15_21 <= PARAM)||LA15_21==PRIVATE||(LA15_21 >= PUBLIC && LA15_21 <= QUERY)||(LA15_21 >= REMOTE && LA15_21 <= RETHROW)||LA15_21==RETURN||LA15_21==SAVECONTENT||LA15_21==SETTING||LA15_21==SWITCH||(LA15_21 >= THAN && LA15_21 <= THREAD)||LA15_21==THROW||(LA15_21 >= TO && LA15_21 <= TRANSACTION)||(LA15_21 >= TRY && LA15_21 <= VAR)||LA15_21==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==PRIVATE) ) {
-                int LA15_21 = input.LA(2);
+                int LA15_22 = input.LA(2);
 
-                if ( (LA15_21==ABORT||LA15_21==BREAK||(LA15_21 >= CASE && LA15_21 <= CATCH)||LA15_21==CONTAIN||(LA15_21 >= CONTINUE && LA15_21 <= DEFAULT)||(LA15_21 >= DIRECTORY && LA15_21 <= DOES)||LA15_21==DOT||LA15_21==ELSE||LA15_21==EXIT||LA15_21==FILE||LA15_21==FOR||LA15_21==FUNCTION||LA15_21==GREATER||(LA15_21 >= HTTP && LA15_21 <= IF)||(LA15_21 >= IMPORT && LA15_21 <= INCLUDE)||LA15_21==LESS||(LA15_21 >= LOCATION && LA15_21 <= LOCK)||LA15_21==LOOP||LA15_21==NEW||(LA15_21 >= PACKAGE && LA15_21 <= PARAM)||LA15_21==PRIVATE||(LA15_21 >= PUBLIC && LA15_21 <= QUERY)||(LA15_21 >= REMOTE && LA15_21 <= RETHROW)||LA15_21==RETURN||LA15_21==SAVECONTENT||LA15_21==SETTING||LA15_21==SWITCH||(LA15_21 >= THAN && LA15_21 <= THREAD)||LA15_21==THROW||(LA15_21 >= TO && LA15_21 <= TRANSACTION)||(LA15_21 >= TRY && LA15_21 <= VAR)||LA15_21==WHILE) ) {
+                if ( (LA15_22==ABORT||LA15_22==BREAK||(LA15_22 >= CASE && LA15_22 <= CATCH)||LA15_22==COMPONENT||LA15_22==CONTAIN||(LA15_22 >= CONTINUE && LA15_22 <= DEFAULT)||(LA15_22 >= DIRECTORY && LA15_22 <= DOES)||LA15_22==DOT||LA15_22==ELSE||LA15_22==EXIT||LA15_22==FILE||LA15_22==FOR||LA15_22==FUNCTION||LA15_22==GREATER||(LA15_22 >= HTTP && LA15_22 <= IF)||(LA15_22 >= IMPORT && LA15_22 <= INCLUDE)||LA15_22==LESS||(LA15_22 >= LOCATION && LA15_22 <= LOCK)||LA15_22==LOOP||LA15_22==NEW||(LA15_22 >= PACKAGE && LA15_22 <= PARAM)||LA15_22==PRIVATE||(LA15_22 >= PUBLIC && LA15_22 <= QUERY)||(LA15_22 >= REMOTE && LA15_22 <= RETHROW)||LA15_22==RETURN||LA15_22==SAVECONTENT||LA15_22==SETTING||LA15_22==SWITCH||(LA15_22 >= THAN && LA15_22 <= THREAD)||LA15_22==THROW||(LA15_22 >= TO && LA15_22 <= TRANSACTION)||(LA15_22 >= TRY && LA15_22 <= VAR)||LA15_22==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==REMOTE) ) {
-                int LA15_22 = input.LA(2);
+                int LA15_23 = input.LA(2);
 
-                if ( (LA15_22==ABORT||LA15_22==BREAK||(LA15_22 >= CASE && LA15_22 <= CATCH)||LA15_22==CONTAIN||(LA15_22 >= CONTINUE && LA15_22 <= DEFAULT)||(LA15_22 >= DIRECTORY && LA15_22 <= DOES)||LA15_22==DOT||LA15_22==ELSE||LA15_22==EXIT||LA15_22==FILE||LA15_22==FOR||LA15_22==FUNCTION||LA15_22==GREATER||(LA15_22 >= HTTP && LA15_22 <= IF)||(LA15_22 >= IMPORT && LA15_22 <= INCLUDE)||LA15_22==LESS||(LA15_22 >= LOCATION && LA15_22 <= LOCK)||LA15_22==LOOP||LA15_22==NEW||(LA15_22 >= PACKAGE && LA15_22 <= PARAM)||LA15_22==PRIVATE||(LA15_22 >= PUBLIC && LA15_22 <= QUERY)||(LA15_22 >= REMOTE && LA15_22 <= RETHROW)||LA15_22==RETURN||LA15_22==SAVECONTENT||LA15_22==SETTING||LA15_22==SWITCH||(LA15_22 >= THAN && LA15_22 <= THREAD)||LA15_22==THROW||(LA15_22 >= TO && LA15_22 <= TRANSACTION)||(LA15_22 >= TRY && LA15_22 <= VAR)||LA15_22==WHILE) ) {
+                if ( (LA15_23==ABORT||LA15_23==BREAK||(LA15_23 >= CASE && LA15_23 <= CATCH)||LA15_23==COMPONENT||LA15_23==CONTAIN||(LA15_23 >= CONTINUE && LA15_23 <= DEFAULT)||(LA15_23 >= DIRECTORY && LA15_23 <= DOES)||LA15_23==DOT||LA15_23==ELSE||LA15_23==EXIT||LA15_23==FILE||LA15_23==FOR||LA15_23==FUNCTION||LA15_23==GREATER||(LA15_23 >= HTTP && LA15_23 <= IF)||(LA15_23 >= IMPORT && LA15_23 <= INCLUDE)||LA15_23==LESS||(LA15_23 >= LOCATION && LA15_23 <= LOCK)||LA15_23==LOOP||LA15_23==NEW||(LA15_23 >= PACKAGE && LA15_23 <= PARAM)||LA15_23==PRIVATE||(LA15_23 >= PUBLIC && LA15_23 <= QUERY)||(LA15_23 >= REMOTE && LA15_23 <= RETHROW)||LA15_23==RETURN||LA15_23==SAVECONTENT||LA15_23==SETTING||LA15_23==SWITCH||(LA15_23 >= THAN && LA15_23 <= THREAD)||LA15_23==THROW||(LA15_23 >= TO && LA15_23 <= TRANSACTION)||(LA15_23 >= TRY && LA15_23 <= VAR)||LA15_23==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==PACKAGE) ) {
-                int LA15_23 = input.LA(2);
+                int LA15_24 = input.LA(2);
 
-                if ( (LA15_23==ABORT||LA15_23==BREAK||(LA15_23 >= CASE && LA15_23 <= CATCH)||LA15_23==CONTAIN||(LA15_23 >= CONTINUE && LA15_23 <= DEFAULT)||(LA15_23 >= DIRECTORY && LA15_23 <= DOES)||LA15_23==DOT||LA15_23==ELSE||LA15_23==EXIT||LA15_23==FILE||LA15_23==FOR||LA15_23==FUNCTION||LA15_23==GREATER||(LA15_23 >= HTTP && LA15_23 <= IF)||(LA15_23 >= IMPORT && LA15_23 <= INCLUDE)||LA15_23==LESS||(LA15_23 >= LOCATION && LA15_23 <= LOCK)||LA15_23==LOOP||LA15_23==NEW||(LA15_23 >= PACKAGE && LA15_23 <= PARAM)||LA15_23==PRIVATE||(LA15_23 >= PUBLIC && LA15_23 <= QUERY)||(LA15_23 >= REMOTE && LA15_23 <= RETHROW)||LA15_23==RETURN||LA15_23==SAVECONTENT||LA15_23==SETTING||LA15_23==SWITCH||(LA15_23 >= THAN && LA15_23 <= THREAD)||LA15_23==THROW||(LA15_23 >= TO && LA15_23 <= TRANSACTION)||(LA15_23 >= TRY && LA15_23 <= VAR)||LA15_23==WHILE) ) {
+                if ( (LA15_24==ABORT||LA15_24==BREAK||(LA15_24 >= CASE && LA15_24 <= CATCH)||LA15_24==COMPONENT||LA15_24==CONTAIN||(LA15_24 >= CONTINUE && LA15_24 <= DEFAULT)||(LA15_24 >= DIRECTORY && LA15_24 <= DOES)||LA15_24==DOT||LA15_24==ELSE||LA15_24==EXIT||LA15_24==FILE||LA15_24==FOR||LA15_24==FUNCTION||LA15_24==GREATER||(LA15_24 >= HTTP && LA15_24 <= IF)||(LA15_24 >= IMPORT && LA15_24 <= INCLUDE)||LA15_24==LESS||(LA15_24 >= LOCATION && LA15_24 <= LOCK)||LA15_24==LOOP||LA15_24==NEW||(LA15_24 >= PACKAGE && LA15_24 <= PARAM)||LA15_24==PRIVATE||(LA15_24 >= PUBLIC && LA15_24 <= QUERY)||(LA15_24 >= REMOTE && LA15_24 <= RETHROW)||LA15_24==RETURN||LA15_24==SAVECONTENT||LA15_24==SETTING||LA15_24==SWITCH||(LA15_24 >= THAN && LA15_24 <= THREAD)||LA15_24==THROW||(LA15_24 >= TO && LA15_24 <= TRANSACTION)||(LA15_24 >= TRY && LA15_24 <= VAR)||LA15_24==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==REQUIRED) ) {
-                int LA15_24 = input.LA(2);
+                int LA15_25 = input.LA(2);
 
-                if ( (LA15_24==ABORT||LA15_24==BREAK||(LA15_24 >= CASE && LA15_24 <= CATCH)||LA15_24==CONTAIN||(LA15_24 >= CONTINUE && LA15_24 <= DEFAULT)||(LA15_24 >= DIRECTORY && LA15_24 <= DOES)||LA15_24==DOT||LA15_24==ELSE||LA15_24==EXIT||LA15_24==FILE||LA15_24==FOR||LA15_24==FUNCTION||LA15_24==GREATER||(LA15_24 >= HTTP && LA15_24 <= IF)||(LA15_24 >= IMPORT && LA15_24 <= INCLUDE)||LA15_24==LESS||(LA15_24 >= LOCATION && LA15_24 <= LOCK)||LA15_24==LOOP||LA15_24==NEW||(LA15_24 >= PACKAGE && LA15_24 <= PARAM)||LA15_24==PRIVATE||(LA15_24 >= PUBLIC && LA15_24 <= QUERY)||(LA15_24 >= REMOTE && LA15_24 <= RETHROW)||LA15_24==RETURN||LA15_24==SAVECONTENT||LA15_24==SETTING||LA15_24==SWITCH||(LA15_24 >= THAN && LA15_24 <= THREAD)||LA15_24==THROW||(LA15_24 >= TO && LA15_24 <= TRANSACTION)||(LA15_24 >= TRY && LA15_24 <= VAR)||LA15_24==WHILE) ) {
+                if ( (LA15_25==ABORT||LA15_25==BREAK||(LA15_25 >= CASE && LA15_25 <= CATCH)||LA15_25==COMPONENT||LA15_25==CONTAIN||(LA15_25 >= CONTINUE && LA15_25 <= DEFAULT)||(LA15_25 >= DIRECTORY && LA15_25 <= DOES)||LA15_25==DOT||LA15_25==ELSE||LA15_25==EXIT||LA15_25==FILE||LA15_25==FOR||LA15_25==FUNCTION||LA15_25==GREATER||(LA15_25 >= HTTP && LA15_25 <= IF)||(LA15_25 >= IMPORT && LA15_25 <= INCLUDE)||LA15_25==LESS||(LA15_25 >= LOCATION && LA15_25 <= LOCK)||LA15_25==LOOP||LA15_25==NEW||(LA15_25 >= PACKAGE && LA15_25 <= PARAM)||LA15_25==PRIVATE||(LA15_25 >= PUBLIC && LA15_25 <= QUERY)||(LA15_25 >= REMOTE && LA15_25 <= RETHROW)||LA15_25==RETURN||LA15_25==SAVECONTENT||LA15_25==SETTING||LA15_25==SWITCH||(LA15_25 >= THAN && LA15_25 <= THREAD)||LA15_25==THROW||(LA15_25 >= TO && LA15_25 <= TRANSACTION)||(LA15_25 >= TRY && LA15_25 <= VAR)||LA15_25==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==DIRECTORY||LA15_0==FILE||LA15_0==HTTP||LA15_0==LOCATION||LA15_0==LOOP||LA15_0==QUERY||LA15_0==SAVECONTENT||LA15_0==SETTING) ) {
-                int LA15_25 = input.LA(2);
+                int LA15_26 = input.LA(2);
 
-                if ( (LA15_25==ABORT||LA15_25==BREAK||(LA15_25 >= CASE && LA15_25 <= CATCH)||LA15_25==CONTAIN||(LA15_25 >= CONTINUE && LA15_25 <= DEFAULT)||(LA15_25 >= DIRECTORY && LA15_25 <= DOES)||LA15_25==DOT||LA15_25==ELSE||LA15_25==EXIT||LA15_25==FILE||LA15_25==FOR||LA15_25==FUNCTION||LA15_25==GREATER||(LA15_25 >= HTTP && LA15_25 <= IF)||(LA15_25 >= IMPORT && LA15_25 <= INCLUDE)||LA15_25==LESS||(LA15_25 >= LOCATION && LA15_25 <= LOCK)||LA15_25==LOOP||LA15_25==NEW||(LA15_25 >= PACKAGE && LA15_25 <= PARAM)||LA15_25==PRIVATE||(LA15_25 >= PUBLIC && LA15_25 <= QUERY)||(LA15_25 >= REMOTE && LA15_25 <= RETHROW)||LA15_25==RETURN||LA15_25==SAVECONTENT||LA15_25==SETTING||LA15_25==SWITCH||(LA15_25 >= THAN && LA15_25 <= THREAD)||LA15_25==THROW||(LA15_25 >= TO && LA15_25 <= TRANSACTION)||(LA15_25 >= TRY && LA15_25 <= VAR)||LA15_25==WHILE) ) {
+                if ( (LA15_26==ABORT||LA15_26==BREAK||(LA15_26 >= CASE && LA15_26 <= CATCH)||LA15_26==COMPONENT||LA15_26==CONTAIN||(LA15_26 >= CONTINUE && LA15_26 <= DEFAULT)||(LA15_26 >= DIRECTORY && LA15_26 <= DOES)||LA15_26==DOT||LA15_26==ELSE||LA15_26==EXIT||LA15_26==FILE||LA15_26==FOR||LA15_26==FUNCTION||LA15_26==GREATER||(LA15_26 >= HTTP && LA15_26 <= IF)||(LA15_26 >= IMPORT && LA15_26 <= INCLUDE)||LA15_26==LESS||(LA15_26 >= LOCATION && LA15_26 <= LOCK)||LA15_26==LOOP||LA15_26==NEW||(LA15_26 >= PACKAGE && LA15_26 <= PARAM)||LA15_26==PRIVATE||(LA15_26 >= PUBLIC && LA15_26 <= QUERY)||(LA15_26 >= REMOTE && LA15_26 <= RETHROW)||LA15_26==RETURN||LA15_26==SAVECONTENT||LA15_26==SETTING||LA15_26==SWITCH||(LA15_26 >= THAN && LA15_26 <= THREAD)||LA15_26==THROW||(LA15_26 >= TO && LA15_26 <= TRANSACTION)||(LA15_26 >= TRY && LA15_26 <= VAR)||LA15_26==WHILE) ) {
                     alt15=1;
                 }
             }
             else if ( (LA15_0==BREAK||(LA15_0 >= CASE && LA15_0 <= CATCH)||LA15_0==CONTINUE||LA15_0==DO||LA15_0==ELSE||LA15_0==FOR||LA15_0==FUNCTION||LA15_0==IF||(LA15_0 >= IMPORT && LA15_0 <= IN)||LA15_0==RETURN||LA15_0==SWITCH||LA15_0==TRY||LA15_0==WHILE) && ((!scriptMode))) {
-                int LA15_26 = input.LA(2);
+                int LA15_27 = input.LA(2);
 
-                if ( (LA15_26==ABORT||LA15_26==BREAK||(LA15_26 >= CASE && LA15_26 <= CATCH)||LA15_26==CONTAIN||(LA15_26 >= CONTINUE && LA15_26 <= DEFAULT)||(LA15_26 >= DIRECTORY && LA15_26 <= DOES)||LA15_26==DOT||LA15_26==ELSE||LA15_26==EXIT||LA15_26==FILE||LA15_26==FOR||LA15_26==FUNCTION||LA15_26==GREATER||(LA15_26 >= HTTP && LA15_26 <= IF)||(LA15_26 >= IMPORT && LA15_26 <= INCLUDE)||LA15_26==LESS||(LA15_26 >= LOCATION && LA15_26 <= LOCK)||LA15_26==LOOP||LA15_26==NEW||(LA15_26 >= PACKAGE && LA15_26 <= PARAM)||LA15_26==PRIVATE||(LA15_26 >= PUBLIC && LA15_26 <= QUERY)||(LA15_26 >= REMOTE && LA15_26 <= RETHROW)||LA15_26==RETURN||LA15_26==SAVECONTENT||LA15_26==SETTING||LA15_26==SWITCH||(LA15_26 >= THAN && LA15_26 <= THREAD)||LA15_26==THROW||(LA15_26 >= TO && LA15_26 <= TRANSACTION)||(LA15_26 >= TRY && LA15_26 <= VAR)||LA15_26==WHILE) ) {
+                if ( (LA15_27==ABORT||LA15_27==BREAK||(LA15_27 >= CASE && LA15_27 <= CATCH)||LA15_27==COMPONENT||LA15_27==CONTAIN||(LA15_27 >= CONTINUE && LA15_27 <= DEFAULT)||(LA15_27 >= DIRECTORY && LA15_27 <= DOES)||LA15_27==DOT||LA15_27==ELSE||LA15_27==EXIT||LA15_27==FILE||LA15_27==FOR||LA15_27==FUNCTION||LA15_27==GREATER||(LA15_27 >= HTTP && LA15_27 <= IF)||(LA15_27 >= IMPORT && LA15_27 <= INCLUDE)||LA15_27==LESS||(LA15_27 >= LOCATION && LA15_27 <= LOCK)||LA15_27==LOOP||LA15_27==NEW||(LA15_27 >= PACKAGE && LA15_27 <= PARAM)||LA15_27==PRIVATE||(LA15_27 >= PUBLIC && LA15_27 <= QUERY)||(LA15_27 >= REMOTE && LA15_27 <= RETHROW)||LA15_27==RETURN||LA15_27==SAVECONTENT||LA15_27==SETTING||LA15_27==SWITCH||(LA15_27 >= THAN && LA15_27 <= THREAD)||LA15_27==THROW||(LA15_27 >= TO && LA15_27 <= TRANSACTION)||(LA15_27 >= TRY && LA15_27 <= VAR)||LA15_27==WHILE) ) {
                     alt15=1;
                 }
             }
@@ -2731,7 +2948,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: REQUIRED, EQUALSOP, identifier, parameterType, impliesExpression
+            // elements: parameterType, impliesExpression, EQUALSOP, identifier, REQUIRED
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2771,7 +2988,7 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, stream_identifier.nextTree());
 
                 // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:141: ( EQUALSOP impliesExpression )?
-                if ( stream_EQUALSOP.hasNext()||stream_impliesExpression.hasNext() ) {
+                if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_EQUALSOP.nextNode()
                     );
@@ -2779,8 +2996,8 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
                 }
-                stream_EQUALSOP.reset();
                 stream_impliesExpression.reset();
+                stream_EQUALSOP.reset();
 
                 adaptor.addChild(root_0, root_1);
                 }
@@ -2997,7 +3214,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression38.getTree());
 
             // AST REWRITE
-            // elements: impliesExpression, COLON, identifier, identifier
+            // elements: identifier, identifier, impliesExpression, COLON
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3021,7 +3238,7 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, stream_identifier.nextTree());
 
                 // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:485:102: ( COLON identifier )?
-                if ( stream_COLON.hasNext()||stream_identifier.hasNext() ) {
+                if ( stream_identifier.hasNext()||stream_COLON.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_COLON.nextNode()
                     );
@@ -3029,8 +3246,8 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_1, stream_identifier.nextTree());
 
                 }
-                stream_COLON.reset();
                 stream_identifier.reset();
+                stream_COLON.reset();
 
                 adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
@@ -3122,7 +3339,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression40.getTree());
 
             // AST REWRITE
-            // elements: identifier, impliesExpression
+            // elements: impliesExpression, identifier
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3231,7 +3448,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==ABORT||(LA18_0 >= BOOLEAN_LITERAL && LA18_0 <= BREAK)||(LA18_0 >= CASE && LA18_0 <= CATCH)||LA18_0==CONTAIN||(LA18_0 >= CONTINUE && LA18_0 <= DEFAULT)||(LA18_0 >= DIRECTORY && LA18_0 <= DOES)||LA18_0==ELSE||LA18_0==EXIT||LA18_0==FILE||(LA18_0 >= FLOATING_POINT_LITERAL && LA18_0 <= FOR)||LA18_0==FUNCTION||LA18_0==GREATER||(LA18_0 >= HTTP && LA18_0 <= IF)||(LA18_0 >= IMPORT && LA18_0 <= INTEGER_LITERAL)||(LA18_0 >= LEFTBRACKET && LA18_0 <= LESS)||(LA18_0 >= LOCATION && LA18_0 <= LOCK)||LA18_0==LOOP||LA18_0==MINUS||LA18_0==MINUSMINUS||(LA18_0 >= NEW && LA18_0 <= NULL)||(LA18_0 >= PACKAGE && LA18_0 <= PARAM)||LA18_0==PLUS||LA18_0==PLUSPLUS||(LA18_0 >= PRIVATE && LA18_0 <= PROPERTY)||(LA18_0 >= PUBLIC && LA18_0 <= QUERY)||(LA18_0 >= REMOTE && LA18_0 <= RETHROW)||LA18_0==RETURN||LA18_0==SAVECONTENT||(LA18_0 >= SEMICOLON && LA18_0 <= SETTING)||(LA18_0 >= STRING_LITERAL && LA18_0 <= SWITCH)||(LA18_0 >= THAN && LA18_0 <= THREAD)||LA18_0==THROW||(LA18_0 >= TO && LA18_0 <= TRANSACTION)||(LA18_0 >= TRY && LA18_0 <= VAR)||LA18_0==WHILE||LA18_0==150) ) {
+                if ( (LA18_0==ABORT||(LA18_0 >= BOOLEAN_LITERAL && LA18_0 <= BREAK)||(LA18_0 >= CASE && LA18_0 <= CATCH)||LA18_0==COMPONENT||LA18_0==CONTAIN||(LA18_0 >= CONTINUE && LA18_0 <= DEFAULT)||(LA18_0 >= DIRECTORY && LA18_0 <= DOES)||LA18_0==ELSE||LA18_0==EXIT||LA18_0==FILE||(LA18_0 >= FLOATING_POINT_LITERAL && LA18_0 <= FOR)||LA18_0==FUNCTION||LA18_0==GREATER||(LA18_0 >= HTTP && LA18_0 <= IF)||(LA18_0 >= IMPORT && LA18_0 <= INTEGER_LITERAL)||(LA18_0 >= LEFTBRACKET && LA18_0 <= LESS)||(LA18_0 >= LOCATION && LA18_0 <= LOCK)||LA18_0==LOOP||LA18_0==MINUS||LA18_0==MINUSMINUS||(LA18_0 >= NEW && LA18_0 <= NULL)||(LA18_0 >= PACKAGE && LA18_0 <= PARAM)||LA18_0==PLUS||LA18_0==PLUSPLUS||(LA18_0 >= PRIVATE && LA18_0 <= PROPERTY)||(LA18_0 >= PUBLIC && LA18_0 <= QUERY)||(LA18_0 >= REMOTE && LA18_0 <= RETHROW)||LA18_0==RETURN||LA18_0==SAVECONTENT||(LA18_0 >= SEMICOLON && LA18_0 <= SETTING)||(LA18_0 >= STRING_LITERAL && LA18_0 <= SWITCH)||(LA18_0 >= THAN && LA18_0 <= THREAD)||LA18_0==THROW||(LA18_0 >= TO && LA18_0 <= TRANSACTION)||(LA18_0 >= TRY && LA18_0 <= VAR)||LA18_0==WHILE||LA18_0==150) ) {
                     alt18=1;
                 }
 
@@ -3339,7 +3556,7 @@ public TreeAdaptor getTreeAdaptor() {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( (LA19_0==ABORT||(LA19_0 >= BOOLEAN_LITERAL && LA19_0 <= BREAK)||(LA19_0 >= CASE && LA19_0 <= CATCH)||LA19_0==CONTAIN||(LA19_0 >= CONTINUE && LA19_0 <= DEFAULT)||(LA19_0 >= DIRECTORY && LA19_0 <= DOES)||LA19_0==ELSE||LA19_0==EXIT||LA19_0==FILE||(LA19_0 >= FLOATING_POINT_LITERAL && LA19_0 <= FOR)||LA19_0==FUNCTION||LA19_0==GREATER||(LA19_0 >= HTTP && LA19_0 <= IF)||(LA19_0 >= IMPORT && LA19_0 <= INTEGER_LITERAL)||(LA19_0 >= LEFTBRACKET && LA19_0 <= LESS)||(LA19_0 >= LOCATION && LA19_0 <= LOCK)||LA19_0==LOOP||LA19_0==MINUS||LA19_0==MINUSMINUS||(LA19_0 >= NEW && LA19_0 <= NULL)||(LA19_0 >= PACKAGE && LA19_0 <= PARAM)||LA19_0==PLUS||LA19_0==PLUSPLUS||(LA19_0 >= PRIVATE && LA19_0 <= PROPERTY)||(LA19_0 >= PUBLIC && LA19_0 <= QUERY)||(LA19_0 >= REMOTE && LA19_0 <= RETHROW)||LA19_0==RETURN||LA19_0==SAVECONTENT||(LA19_0 >= SEMICOLON && LA19_0 <= SETTING)||(LA19_0 >= STRING_LITERAL && LA19_0 <= SWITCH)||(LA19_0 >= THAN && LA19_0 <= THREAD)||LA19_0==THROW||(LA19_0 >= TO && LA19_0 <= TRANSACTION)||(LA19_0 >= TRY && LA19_0 <= VAR)||LA19_0==WHILE||LA19_0==150) ) {
+                if ( (LA19_0==ABORT||(LA19_0 >= BOOLEAN_LITERAL && LA19_0 <= BREAK)||(LA19_0 >= CASE && LA19_0 <= CATCH)||LA19_0==COMPONENT||LA19_0==CONTAIN||(LA19_0 >= CONTINUE && LA19_0 <= DEFAULT)||(LA19_0 >= DIRECTORY && LA19_0 <= DOES)||LA19_0==ELSE||LA19_0==EXIT||LA19_0==FILE||(LA19_0 >= FLOATING_POINT_LITERAL && LA19_0 <= FOR)||LA19_0==FUNCTION||LA19_0==GREATER||(LA19_0 >= HTTP && LA19_0 <= IF)||(LA19_0 >= IMPORT && LA19_0 <= INTEGER_LITERAL)||(LA19_0 >= LEFTBRACKET && LA19_0 <= LESS)||(LA19_0 >= LOCATION && LA19_0 <= LOCK)||LA19_0==LOOP||LA19_0==MINUS||LA19_0==MINUSMINUS||(LA19_0 >= NEW && LA19_0 <= NULL)||(LA19_0 >= PACKAGE && LA19_0 <= PARAM)||LA19_0==PLUS||LA19_0==PLUSPLUS||(LA19_0 >= PRIVATE && LA19_0 <= PROPERTY)||(LA19_0 >= PUBLIC && LA19_0 <= QUERY)||(LA19_0 >= REMOTE && LA19_0 <= RETHROW)||LA19_0==RETURN||LA19_0==SAVECONTENT||(LA19_0 >= SEMICOLON && LA19_0 <= SETTING)||(LA19_0 >= STRING_LITERAL && LA19_0 <= SWITCH)||(LA19_0 >= THAN && LA19_0 <= THREAD)||LA19_0==THROW||(LA19_0 >= TO && LA19_0 <= TRANSACTION)||(LA19_0 >= TRY && LA19_0 <= VAR)||LA19_0==WHILE||LA19_0==150) ) {
                     alt19=1;
                 }
 
@@ -3796,7 +4013,7 @@ public TreeAdaptor getTreeAdaptor() {
                 if ( (LA21_1==SEMICOLON) ) {
                     alt21=1;
                 }
-                else if ( (LA21_1==ABORT||(LA21_1 >= BOOLEAN_LITERAL && LA21_1 <= BREAK)||(LA21_1 >= CASE && LA21_1 <= CATCH)||LA21_1==CONTAIN||(LA21_1 >= CONTINUE && LA21_1 <= DEFAULT)||(LA21_1 >= DIRECTORY && LA21_1 <= DOES)||LA21_1==ELSE||LA21_1==EXIT||LA21_1==FILE||(LA21_1 >= FLOATING_POINT_LITERAL && LA21_1 <= FOR)||LA21_1==FUNCTION||LA21_1==GREATER||(LA21_1 >= HTTP && LA21_1 <= IF)||(LA21_1 >= IMPORT && LA21_1 <= INTEGER_LITERAL)||(LA21_1 >= LEFTBRACKET && LA21_1 <= LESS)||(LA21_1 >= LOCATION && LA21_1 <= LOCK)||LA21_1==LOOP||LA21_1==MINUS||LA21_1==MINUSMINUS||(LA21_1 >= NEW && LA21_1 <= NULL)||(LA21_1 >= PACKAGE && LA21_1 <= PARAM)||LA21_1==PLUS||LA21_1==PLUSPLUS||LA21_1==PRIVATE||(LA21_1 >= PUBLIC && LA21_1 <= QUERY)||(LA21_1 >= REMOTE && LA21_1 <= RETHROW)||LA21_1==RETURN||LA21_1==SAVECONTENT||LA21_1==SETTING||(LA21_1 >= STRING_LITERAL && LA21_1 <= SWITCH)||(LA21_1 >= THAN && LA21_1 <= THREAD)||LA21_1==THROW||(LA21_1 >= TO && LA21_1 <= TRANSACTION)||(LA21_1 >= TRY && LA21_1 <= VAR)||LA21_1==WHILE||LA21_1==150) ) {
+                else if ( (LA21_1==ABORT||(LA21_1 >= BOOLEAN_LITERAL && LA21_1 <= BREAK)||(LA21_1 >= CASE && LA21_1 <= CATCH)||LA21_1==COMPONENT||LA21_1==CONTAIN||(LA21_1 >= CONTINUE && LA21_1 <= DEFAULT)||(LA21_1 >= DIRECTORY && LA21_1 <= DOES)||LA21_1==ELSE||LA21_1==EXIT||LA21_1==FILE||(LA21_1 >= FLOATING_POINT_LITERAL && LA21_1 <= FOR)||LA21_1==FUNCTION||LA21_1==GREATER||(LA21_1 >= HTTP && LA21_1 <= IF)||(LA21_1 >= IMPORT && LA21_1 <= INTEGER_LITERAL)||(LA21_1 >= LEFTBRACKET && LA21_1 <= LESS)||(LA21_1 >= LOCATION && LA21_1 <= LOCK)||LA21_1==LOOP||LA21_1==MINUS||LA21_1==MINUSMINUS||(LA21_1 >= NEW && LA21_1 <= NULL)||(LA21_1 >= PACKAGE && LA21_1 <= PARAM)||LA21_1==PLUS||LA21_1==PLUSPLUS||LA21_1==PRIVATE||(LA21_1 >= PUBLIC && LA21_1 <= QUERY)||(LA21_1 >= REMOTE && LA21_1 <= RETHROW)||LA21_1==RETURN||LA21_1==SAVECONTENT||LA21_1==SETTING||(LA21_1 >= STRING_LITERAL && LA21_1 <= SWITCH)||(LA21_1 >= THAN && LA21_1 <= THREAD)||LA21_1==THROW||(LA21_1 >= TO && LA21_1 <= TRANSACTION)||(LA21_1 >= TRY && LA21_1 <= VAR)||LA21_1==WHILE||LA21_1==150) ) {
                     alt21=2;
                 }
                 else {
@@ -4332,7 +4549,7 @@ public TreeAdaptor getTreeAdaptor() {
                     int alt24=2;
                     int LA24_0 = input.LA(1);
 
-                    if ( (LA24_0==ABORT||(LA24_0 >= BOOLEAN_LITERAL && LA24_0 <= BREAK)||(LA24_0 >= CASE && LA24_0 <= CATCH)||LA24_0==CONTAIN||(LA24_0 >= CONTINUE && LA24_0 <= DEFAULT)||(LA24_0 >= DIRECTORY && LA24_0 <= DOES)||LA24_0==ELSE||LA24_0==EXIT||LA24_0==FILE||(LA24_0 >= FLOATING_POINT_LITERAL && LA24_0 <= FOR)||LA24_0==FUNCTION||LA24_0==GREATER||(LA24_0 >= HTTP && LA24_0 <= IF)||(LA24_0 >= IMPORT && LA24_0 <= INTEGER_LITERAL)||(LA24_0 >= LEFTBRACKET && LA24_0 <= LESS)||(LA24_0 >= LOCATION && LA24_0 <= LOCK)||LA24_0==LOOP||LA24_0==MINUS||LA24_0==MINUSMINUS||(LA24_0 >= NEW && LA24_0 <= NULL)||(LA24_0 >= PACKAGE && LA24_0 <= PARAM)||LA24_0==PLUS||LA24_0==PLUSPLUS||LA24_0==PRIVATE||(LA24_0 >= PUBLIC && LA24_0 <= QUERY)||(LA24_0 >= REMOTE && LA24_0 <= RETHROW)||LA24_0==RETURN||LA24_0==SAVECONTENT||LA24_0==SETTING||(LA24_0 >= STRING_LITERAL && LA24_0 <= SWITCH)||(LA24_0 >= THAN && LA24_0 <= THREAD)||LA24_0==THROW||(LA24_0 >= TO && LA24_0 <= TRANSACTION)||(LA24_0 >= TRY && LA24_0 <= VAR)||LA24_0==WHILE||LA24_0==150) ) {
+                    if ( (LA24_0==ABORT||(LA24_0 >= BOOLEAN_LITERAL && LA24_0 <= BREAK)||(LA24_0 >= CASE && LA24_0 <= CATCH)||LA24_0==COMPONENT||LA24_0==CONTAIN||(LA24_0 >= CONTINUE && LA24_0 <= DEFAULT)||(LA24_0 >= DIRECTORY && LA24_0 <= DOES)||LA24_0==ELSE||LA24_0==EXIT||LA24_0==FILE||(LA24_0 >= FLOATING_POINT_LITERAL && LA24_0 <= FOR)||LA24_0==FUNCTION||LA24_0==GREATER||(LA24_0 >= HTTP && LA24_0 <= IF)||(LA24_0 >= IMPORT && LA24_0 <= INTEGER_LITERAL)||(LA24_0 >= LEFTBRACKET && LA24_0 <= LESS)||(LA24_0 >= LOCATION && LA24_0 <= LOCK)||LA24_0==LOOP||LA24_0==MINUS||LA24_0==MINUSMINUS||(LA24_0 >= NEW && LA24_0 <= NULL)||(LA24_0 >= PACKAGE && LA24_0 <= PARAM)||LA24_0==PLUS||LA24_0==PLUSPLUS||LA24_0==PRIVATE||(LA24_0 >= PUBLIC && LA24_0 <= QUERY)||(LA24_0 >= REMOTE && LA24_0 <= RETHROW)||LA24_0==RETURN||LA24_0==SAVECONTENT||LA24_0==SETTING||(LA24_0 >= STRING_LITERAL && LA24_0 <= SWITCH)||(LA24_0 >= THAN && LA24_0 <= THREAD)||LA24_0==THROW||(LA24_0 >= TO && LA24_0 <= TRANSACTION)||(LA24_0 >= TRY && LA24_0 <= VAR)||LA24_0==WHILE||LA24_0==150) ) {
                         alt24=1;
                     }
                     switch (alt24) {
@@ -4364,7 +4581,7 @@ public TreeAdaptor getTreeAdaptor() {
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
-                    if ( (LA25_0==ABORT||(LA25_0 >= BOOLEAN_LITERAL && LA25_0 <= BREAK)||(LA25_0 >= CASE && LA25_0 <= CATCH)||LA25_0==CONTAIN||(LA25_0 >= CONTINUE && LA25_0 <= DEFAULT)||(LA25_0 >= DIRECTORY && LA25_0 <= DOES)||LA25_0==ELSE||LA25_0==EXIT||LA25_0==FILE||(LA25_0 >= FLOATING_POINT_LITERAL && LA25_0 <= FOR)||LA25_0==FUNCTION||LA25_0==GREATER||(LA25_0 >= HTTP && LA25_0 <= IF)||(LA25_0 >= IMPORT && LA25_0 <= INTEGER_LITERAL)||(LA25_0 >= LEFTBRACKET && LA25_0 <= LESS)||(LA25_0 >= LOCATION && LA25_0 <= LOCK)||LA25_0==LOOP||LA25_0==MINUS||LA25_0==MINUSMINUS||(LA25_0 >= NEW && LA25_0 <= NULL)||(LA25_0 >= PACKAGE && LA25_0 <= PARAM)||LA25_0==PLUS||LA25_0==PLUSPLUS||LA25_0==PRIVATE||(LA25_0 >= PUBLIC && LA25_0 <= QUERY)||(LA25_0 >= REMOTE && LA25_0 <= RETHROW)||LA25_0==RETURN||LA25_0==SAVECONTENT||LA25_0==SETTING||(LA25_0 >= STRING_LITERAL && LA25_0 <= SWITCH)||(LA25_0 >= THAN && LA25_0 <= THREAD)||LA25_0==THROW||(LA25_0 >= TO && LA25_0 <= TRANSACTION)||(LA25_0 >= TRY && LA25_0 <= VAR)||LA25_0==WHILE||LA25_0==150) ) {
+                    if ( (LA25_0==ABORT||(LA25_0 >= BOOLEAN_LITERAL && LA25_0 <= BREAK)||(LA25_0 >= CASE && LA25_0 <= CATCH)||LA25_0==COMPONENT||LA25_0==CONTAIN||(LA25_0 >= CONTINUE && LA25_0 <= DEFAULT)||(LA25_0 >= DIRECTORY && LA25_0 <= DOES)||LA25_0==ELSE||LA25_0==EXIT||LA25_0==FILE||(LA25_0 >= FLOATING_POINT_LITERAL && LA25_0 <= FOR)||LA25_0==FUNCTION||LA25_0==GREATER||(LA25_0 >= HTTP && LA25_0 <= IF)||(LA25_0 >= IMPORT && LA25_0 <= INTEGER_LITERAL)||(LA25_0 >= LEFTBRACKET && LA25_0 <= LESS)||(LA25_0 >= LOCATION && LA25_0 <= LOCK)||LA25_0==LOOP||LA25_0==MINUS||LA25_0==MINUSMINUS||(LA25_0 >= NEW && LA25_0 <= NULL)||(LA25_0 >= PACKAGE && LA25_0 <= PARAM)||LA25_0==PLUS||LA25_0==PLUSPLUS||LA25_0==PRIVATE||(LA25_0 >= PUBLIC && LA25_0 <= QUERY)||(LA25_0 >= REMOTE && LA25_0 <= RETHROW)||LA25_0==RETURN||LA25_0==SAVECONTENT||LA25_0==SETTING||(LA25_0 >= STRING_LITERAL && LA25_0 <= SWITCH)||(LA25_0 >= THAN && LA25_0 <= THREAD)||LA25_0==THROW||(LA25_0 >= TO && LA25_0 <= TRANSACTION)||(LA25_0 >= TRY && LA25_0 <= VAR)||LA25_0==WHILE||LA25_0==150) ) {
                         alt25=1;
                     }
                     switch (alt25) {
@@ -4396,7 +4613,7 @@ public TreeAdaptor getTreeAdaptor() {
                     int alt26=2;
                     int LA26_0 = input.LA(1);
 
-                    if ( (LA26_0==ABORT||(LA26_0 >= BOOLEAN_LITERAL && LA26_0 <= BREAK)||(LA26_0 >= CASE && LA26_0 <= CATCH)||LA26_0==CONTAIN||(LA26_0 >= CONTINUE && LA26_0 <= DEFAULT)||(LA26_0 >= DIRECTORY && LA26_0 <= DOES)||LA26_0==ELSE||LA26_0==EXIT||LA26_0==FILE||(LA26_0 >= FLOATING_POINT_LITERAL && LA26_0 <= FOR)||LA26_0==FUNCTION||LA26_0==GREATER||(LA26_0 >= HTTP && LA26_0 <= IF)||(LA26_0 >= IMPORT && LA26_0 <= INTEGER_LITERAL)||(LA26_0 >= LEFTBRACKET && LA26_0 <= LESS)||(LA26_0 >= LOCATION && LA26_0 <= LOCK)||LA26_0==LOOP||LA26_0==MINUS||LA26_0==MINUSMINUS||(LA26_0 >= NEW && LA26_0 <= NULL)||(LA26_0 >= PACKAGE && LA26_0 <= PARAM)||LA26_0==PLUS||LA26_0==PLUSPLUS||LA26_0==PRIVATE||(LA26_0 >= PUBLIC && LA26_0 <= QUERY)||(LA26_0 >= REMOTE && LA26_0 <= RETHROW)||LA26_0==RETURN||LA26_0==SAVECONTENT||LA26_0==SETTING||(LA26_0 >= STRING_LITERAL && LA26_0 <= SWITCH)||(LA26_0 >= THAN && LA26_0 <= THREAD)||LA26_0==THROW||(LA26_0 >= TO && LA26_0 <= TRANSACTION)||(LA26_0 >= TRY && LA26_0 <= VAR)||LA26_0==WHILE||LA26_0==150) ) {
+                    if ( (LA26_0==ABORT||(LA26_0 >= BOOLEAN_LITERAL && LA26_0 <= BREAK)||(LA26_0 >= CASE && LA26_0 <= CATCH)||LA26_0==COMPONENT||LA26_0==CONTAIN||(LA26_0 >= CONTINUE && LA26_0 <= DEFAULT)||(LA26_0 >= DIRECTORY && LA26_0 <= DOES)||LA26_0==ELSE||LA26_0==EXIT||LA26_0==FILE||(LA26_0 >= FLOATING_POINT_LITERAL && LA26_0 <= FOR)||LA26_0==FUNCTION||LA26_0==GREATER||(LA26_0 >= HTTP && LA26_0 <= IF)||(LA26_0 >= IMPORT && LA26_0 <= INTEGER_LITERAL)||(LA26_0 >= LEFTBRACKET && LA26_0 <= LESS)||(LA26_0 >= LOCATION && LA26_0 <= LOCK)||LA26_0==LOOP||LA26_0==MINUS||LA26_0==MINUSMINUS||(LA26_0 >= NEW && LA26_0 <= NULL)||(LA26_0 >= PACKAGE && LA26_0 <= PARAM)||LA26_0==PLUS||LA26_0==PLUSPLUS||LA26_0==PRIVATE||(LA26_0 >= PUBLIC && LA26_0 <= QUERY)||(LA26_0 >= REMOTE && LA26_0 <= RETHROW)||LA26_0==RETURN||LA26_0==SAVECONTENT||LA26_0==SETTING||(LA26_0 >= STRING_LITERAL && LA26_0 <= SWITCH)||(LA26_0 >= THAN && LA26_0 <= THREAD)||LA26_0==THROW||(LA26_0 >= TO && LA26_0 <= TRANSACTION)||(LA26_0 >= TRY && LA26_0 <= VAR)||LA26_0==WHILE||LA26_0==150) ) {
                         alt26=1;
                     }
                     switch (alt26) {
@@ -4604,6 +4821,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    int alt29=2;
             	    switch ( input.LA(1) ) {
             	    case ABORT:
+            	    case COMPONENT:
             	    case CONTAIN:
             	    case DIRECTORY:
             	    case DOES:
@@ -5143,7 +5361,7 @@ public TreeAdaptor getTreeAdaptor() {
             int alt35=2;
             int LA35_0 = input.LA(1);
 
-            if ( (LA35_0==ABORT||LA35_0==BREAK||(LA35_0 >= CASE && LA35_0 <= CATCH)||LA35_0==CONTAIN||(LA35_0 >= CONTINUE && LA35_0 <= DEFAULT)||(LA35_0 >= DIRECTORY && LA35_0 <= DOES)||LA35_0==ELSE||LA35_0==EXIT||LA35_0==FILE||LA35_0==FOR||LA35_0==FUNCTION||LA35_0==GREATER||(LA35_0 >= HTTP && LA35_0 <= IF)||(LA35_0 >= IMPORT && LA35_0 <= INCLUDE)||LA35_0==LESS||(LA35_0 >= LOCATION && LA35_0 <= LOCK)||LA35_0==LOOP||LA35_0==NEW||(LA35_0 >= PACKAGE && LA35_0 <= PARAM)||LA35_0==PRIVATE||(LA35_0 >= PUBLIC && LA35_0 <= QUERY)||(LA35_0 >= REMOTE && LA35_0 <= RETHROW)||LA35_0==RETURN||LA35_0==SAVECONTENT||LA35_0==SETTING||LA35_0==SWITCH||(LA35_0 >= THAN && LA35_0 <= THREAD)||LA35_0==THROW||(LA35_0 >= TO && LA35_0 <= TRANSACTION)||(LA35_0 >= TRY && LA35_0 <= VAR)||LA35_0==WHILE) ) {
+            if ( (LA35_0==ABORT||LA35_0==BREAK||(LA35_0 >= CASE && LA35_0 <= CATCH)||LA35_0==COMPONENT||LA35_0==CONTAIN||(LA35_0 >= CONTINUE && LA35_0 <= DEFAULT)||(LA35_0 >= DIRECTORY && LA35_0 <= DOES)||LA35_0==ELSE||LA35_0==EXIT||LA35_0==FILE||LA35_0==FOR||LA35_0==FUNCTION||LA35_0==GREATER||(LA35_0 >= HTTP && LA35_0 <= IF)||(LA35_0 >= IMPORT && LA35_0 <= INCLUDE)||LA35_0==LESS||(LA35_0 >= LOCATION && LA35_0 <= LOCK)||LA35_0==LOOP||LA35_0==NEW||(LA35_0 >= PACKAGE && LA35_0 <= PARAM)||LA35_0==PRIVATE||(LA35_0 >= PUBLIC && LA35_0 <= QUERY)||(LA35_0 >= REMOTE && LA35_0 <= RETHROW)||LA35_0==RETURN||LA35_0==SAVECONTENT||LA35_0==SETTING||LA35_0==SWITCH||(LA35_0 >= THAN && LA35_0 <= THREAD)||LA35_0==THROW||(LA35_0 >= TO && LA35_0 <= TRANSACTION)||(LA35_0 >= TRY && LA35_0 <= VAR)||LA35_0==WHILE) ) {
                 alt35=1;
             }
             else if ( (LA35_0==STRING_LITERAL) ) {
@@ -5198,6 +5416,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	    int alt33=2;
                     	    switch ( input.LA(1) ) {
                     	    case ABORT:
+                    	    case COMPONENT:
                     	    case CONTAIN:
                     	    case DIRECTORY:
                     	    case DOES:
@@ -5908,6 +6127,7 @@ public TreeAdaptor getTreeAdaptor() {
                         case BOOLEAN_LITERAL:
                         case BREAK:
                         case CATCH:
+                        case COMPONENT:
                         case CONTAIN:
                         case CONTINUE:
                         case DIRECTORY:
@@ -6054,6 +6274,7 @@ public TreeAdaptor getTreeAdaptor() {
                         case BOOLEAN_LITERAL:
                         case BREAK:
                         case CATCH:
+                        case COMPONENT:
                         case CONTAIN:
                         case CONTINUE:
                         case DIRECTORY:
@@ -6179,7 +6400,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "tagOperatorStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:590:1: tagOperatorStatement : ( includeStatement | IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !| abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:590:1: tagOperatorStatement : ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement );
     public final CFScriptParser.tagOperatorStatement_return tagOperatorStatement() throws RecognitionException {
         CFScriptParser.tagOperatorStatement_return retval = new CFScriptParser.tagOperatorStatement_return();
         retval.start = input.LT(1);
@@ -6188,103 +6409,95 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IMPORT146=null;
-        Token DOT148=null;
-        Token char_literal149=null;
+        Token RETHROW149=null;
         Token SEMICOLON150=null;
-        Token RETHROW153=null;
-        Token SEMICOLON154=null;
         CFScriptParser.includeStatement_return includeStatement145 =null;
 
-        CFScriptParser.componentPath_return componentPath147 =null;
+        CFScriptParser.importStatement_return importStatement146 =null;
 
-        CFScriptParser.abortStatement_return abortStatement151 =null;
+        CFScriptParser.abortStatement_return abortStatement147 =null;
 
-        CFScriptParser.throwStatement_return throwStatement152 =null;
+        CFScriptParser.throwStatement_return throwStatement148 =null;
 
-        CFScriptParser.exitStatement_return exitStatement155 =null;
+        CFScriptParser.exitStatement_return exitStatement151 =null;
 
-        CFScriptParser.paramStatement_return paramStatement156 =null;
+        CFScriptParser.paramStatement_return paramStatement152 =null;
 
-        CFScriptParser.propertyStatement_return propertyStatement157 =null;
+        CFScriptParser.propertyStatement_return propertyStatement153 =null;
 
-        CFScriptParser.lockStatement_return lockStatement158 =null;
+        CFScriptParser.lockStatement_return lockStatement154 =null;
 
-        CFScriptParser.threadStatement_return threadStatement159 =null;
+        CFScriptParser.threadStatement_return threadStatement155 =null;
 
-        CFScriptParser.transactionStatement_return transactionStatement160 =null;
+        CFScriptParser.transactionStatement_return transactionStatement156 =null;
 
-        CFScriptParser.cfmlfunctionStatement_return cfmlfunctionStatement161 =null;
+        CFScriptParser.cfmlfunctionStatement_return cfmlfunctionStatement157 =null;
 
 
-        CommonTree IMPORT146_tree=null;
-        CommonTree DOT148_tree=null;
-        CommonTree char_literal149_tree=null;
+        CommonTree RETHROW149_tree=null;
         CommonTree SEMICOLON150_tree=null;
-        CommonTree RETHROW153_tree=null;
-        CommonTree SEMICOLON154_tree=null;
         RewriteRuleTokenStream stream_SEMICOLON=new RewriteRuleTokenStream(adaptor,"token SEMICOLON");
         RewriteRuleTokenStream stream_RETHROW=new RewriteRuleTokenStream(adaptor,"token RETHROW");
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 32) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:592:3: ( includeStatement | IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !| abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement )
-            int alt42=12;
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:592:3: ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement )
+            int alt41=12;
             switch ( input.LA(1) ) {
             case INCLUDE:
                 {
-                alt42=1;
+                alt41=1;
                 }
                 break;
             case IMPORT:
                 {
-                alt42=2;
+                alt41=2;
                 }
                 break;
             case ABORT:
                 {
-                alt42=3;
+                alt41=3;
                 }
                 break;
             case THROW:
                 {
-                alt42=4;
+                alt41=4;
                 }
                 break;
             case RETHROW:
                 {
-                alt42=5;
+                alt41=5;
                 }
                 break;
             case EXIT:
                 {
-                alt42=6;
+                alt41=6;
                 }
                 break;
             case PARAM:
                 {
-                alt42=7;
+                alt41=7;
                 }
                 break;
             case PROPERTY:
                 {
-                alt42=8;
+                alt41=8;
                 }
                 break;
             case LOCK:
                 {
-                alt42=9;
+                alt41=9;
                 }
                 break;
             case THREAD:
                 {
-                alt42=10;
+                alt41=10;
                 }
                 break;
             case TRANSACTION:
                 {
-                alt42=11;
+                alt41=11;
                 }
                 break;
             case DIRECTORY:
@@ -6296,19 +6509,19 @@ public TreeAdaptor getTreeAdaptor() {
             case SAVECONTENT:
             case SETTING:
                 {
-                alt42=12;
+                alt41=12;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 41, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt42) {
+            switch (alt41) {
                 case 1 :
                     // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:592:5: includeStatement
                     {
@@ -6325,60 +6538,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:593:5: IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:593:5: importStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    IMPORT146=(Token)match(input,IMPORT,FOLLOW_IMPORT_in_tagOperatorStatement2705); if (state.failed) return retval;
-                    if ( state.backtracking==0 ) {
-                    IMPORT146_tree = 
-                    (CommonTree)adaptor.create(IMPORT146)
-                    ;
-                    root_0 = (CommonTree)adaptor.becomeRoot(IMPORT146_tree, root_0);
-                    }
-
-                    pushFollow(FOLLOW_componentPath_in_tagOperatorStatement2708);
-                    componentPath147=componentPath();
+                    pushFollow(FOLLOW_importStatement_in_tagOperatorStatement2705);
+                    importStatement146=importStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, componentPath147.getTree());
-
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:593:27: ( DOT '*' )?
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
-
-                    if ( (LA41_0==DOT) ) {
-                        alt41=1;
-                    }
-                    switch (alt41) {
-                        case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:593:28: DOT '*'
-                            {
-                            DOT148=(Token)match(input,DOT,FOLLOW_DOT_in_tagOperatorStatement2711); if (state.failed) return retval;
-                            if ( state.backtracking==0 ) {
-                            DOT148_tree = 
-                            (CommonTree)adaptor.create(DOT148)
-                            ;
-                            adaptor.addChild(root_0, DOT148_tree);
-                            }
-
-                            char_literal149=(Token)match(input,STAR,FOLLOW_STAR_in_tagOperatorStatement2713); if (state.failed) return retval;
-                            if ( state.backtracking==0 ) {
-                            char_literal149_tree = 
-                            (CommonTree)adaptor.create(char_literal149)
-                            ;
-                            adaptor.addChild(root_0, char_literal149_tree);
-                            }
-
-                            }
-                            break;
-
-                    }
-
-
-                    SEMICOLON150=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_tagOperatorStatement2717); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, importStatement146.getTree());
 
                     }
                     break;
@@ -6388,12 +6558,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_abortStatement_in_tagOperatorStatement2724);
-                    abortStatement151=abortStatement();
+                    pushFollow(FOLLOW_abortStatement_in_tagOperatorStatement2711);
+                    abortStatement147=abortStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, abortStatement151.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, abortStatement147.getTree());
 
                     }
                     break;
@@ -6403,24 +6573,24 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_throwStatement_in_tagOperatorStatement2730);
-                    throwStatement152=throwStatement();
+                    pushFollow(FOLLOW_throwStatement_in_tagOperatorStatement2717);
+                    throwStatement148=throwStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, throwStatement152.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, throwStatement148.getTree());
 
                     }
                     break;
                 case 5 :
                     // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:5: RETHROW SEMICOLON
                     {
-                    RETHROW153=(Token)match(input,RETHROW,FOLLOW_RETHROW_in_tagOperatorStatement2736); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_RETHROW.add(RETHROW153);
+                    RETHROW149=(Token)match(input,RETHROW,FOLLOW_RETHROW_in_tagOperatorStatement2723); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_RETHROW.add(RETHROW149);
 
 
-                    SEMICOLON154=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_tagOperatorStatement2738); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON154);
+                    SEMICOLON150=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_tagOperatorStatement2725); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON150);
 
 
                     // AST REWRITE
@@ -6462,12 +6632,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_exitStatement_in_tagOperatorStatement2750);
-                    exitStatement155=exitStatement();
+                    pushFollow(FOLLOW_exitStatement_in_tagOperatorStatement2737);
+                    exitStatement151=exitStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, exitStatement155.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, exitStatement151.getTree());
 
                     }
                     break;
@@ -6477,12 +6647,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_paramStatement_in_tagOperatorStatement2756);
-                    paramStatement156=paramStatement();
+                    pushFollow(FOLLOW_paramStatement_in_tagOperatorStatement2743);
+                    paramStatement152=paramStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, paramStatement156.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, paramStatement152.getTree());
 
                     }
                     break;
@@ -6492,12 +6662,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_propertyStatement_in_tagOperatorStatement2762);
-                    propertyStatement157=propertyStatement();
+                    pushFollow(FOLLOW_propertyStatement_in_tagOperatorStatement2749);
+                    propertyStatement153=propertyStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, propertyStatement157.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, propertyStatement153.getTree());
 
                     }
                     break;
@@ -6507,12 +6677,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_lockStatement_in_tagOperatorStatement2768);
-                    lockStatement158=lockStatement();
+                    pushFollow(FOLLOW_lockStatement_in_tagOperatorStatement2755);
+                    lockStatement154=lockStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, lockStatement158.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, lockStatement154.getTree());
 
                     }
                     break;
@@ -6522,12 +6692,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_threadStatement_in_tagOperatorStatement2774);
-                    threadStatement159=threadStatement();
+                    pushFollow(FOLLOW_threadStatement_in_tagOperatorStatement2761);
+                    threadStatement155=threadStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, threadStatement159.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, threadStatement155.getTree());
 
                     }
                     break;
@@ -6537,12 +6707,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_transactionStatement_in_tagOperatorStatement2780);
-                    transactionStatement160=transactionStatement();
+                    pushFollow(FOLLOW_transactionStatement_in_tagOperatorStatement2767);
+                    transactionStatement156=transactionStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, transactionStatement160.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, transactionStatement156.getTree());
 
                     }
                     break;
@@ -6552,12 +6722,12 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_cfmlfunctionStatement_in_tagOperatorStatement2786);
-                    cfmlfunctionStatement161=cfmlfunctionStatement();
+                    pushFollow(FOLLOW_cfmlfunctionStatement_in_tagOperatorStatement2773);
+                    cfmlfunctionStatement157=cfmlfunctionStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfmlfunctionStatement161.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfmlfunctionStatement157.getTree());
 
                     }
                     break;
@@ -6605,13 +6775,13 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token INCLUDE162=null;
-        Token SEMICOLON164=null;
-        CFScriptParser.impliesExpression_return impliesExpression163 =null;
+        Token INCLUDE158=null;
+        Token SEMICOLON160=null;
+        CFScriptParser.impliesExpression_return impliesExpression159 =null;
 
 
-        CommonTree INCLUDE162_tree=null;
-        CommonTree SEMICOLON164_tree=null;
+        CommonTree INCLUDE158_tree=null;
+        CommonTree SEMICOLON160_tree=null;
         RewriteRuleTokenStream stream_SEMICOLON=new RewriteRuleTokenStream(adaptor,"token SEMICOLON");
         RewriteRuleTokenStream stream_INCLUDE=new RewriteRuleTokenStream(adaptor,"token INCLUDE");
         RewriteRuleSubtreeStream stream_impliesExpression=new RewriteRuleSubtreeStream(adaptor,"rule impliesExpression");
@@ -6621,47 +6791,47 @@ public TreeAdaptor getTreeAdaptor() {
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:3: ( INCLUDE ( impliesExpression )* SEMICOLON -> ^( INCLUDE ( impliesExpression )* ) )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:5: INCLUDE ( impliesExpression )* SEMICOLON
             {
-            INCLUDE162=(Token)match(input,INCLUDE,FOLLOW_INCLUDE_in_includeStatement2801); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_INCLUDE.add(INCLUDE162);
+            INCLUDE158=(Token)match(input,INCLUDE,FOLLOW_INCLUDE_in_includeStatement2788); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_INCLUDE.add(INCLUDE158);
 
 
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:13: ( impliesExpression )*
-            loop43:
+            loop42:
             do {
-                int alt43=2;
-                int LA43_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( (LA43_0==ABORT||(LA43_0 >= BOOLEAN_LITERAL && LA43_0 <= BREAK)||(LA43_0 >= CASE && LA43_0 <= CATCH)||LA43_0==CONTAIN||(LA43_0 >= CONTINUE && LA43_0 <= DEFAULT)||(LA43_0 >= DIRECTORY && LA43_0 <= DOES)||LA43_0==ELSE||LA43_0==EXIT||LA43_0==FILE||(LA43_0 >= FLOATING_POINT_LITERAL && LA43_0 <= FOR)||LA43_0==FUNCTION||LA43_0==GREATER||(LA43_0 >= HTTP && LA43_0 <= IF)||(LA43_0 >= IMPORT && LA43_0 <= INTEGER_LITERAL)||(LA43_0 >= LEFTBRACKET && LA43_0 <= LESS)||(LA43_0 >= LOCATION && LA43_0 <= LOCK)||LA43_0==LOOP||LA43_0==MINUS||LA43_0==MINUSMINUS||(LA43_0 >= NEW && LA43_0 <= NULL)||(LA43_0 >= PACKAGE && LA43_0 <= PARAM)||LA43_0==PLUS||LA43_0==PLUSPLUS||LA43_0==PRIVATE||(LA43_0 >= PUBLIC && LA43_0 <= QUERY)||(LA43_0 >= REMOTE && LA43_0 <= RETHROW)||LA43_0==RETURN||LA43_0==SAVECONTENT||LA43_0==SETTING||(LA43_0 >= STRING_LITERAL && LA43_0 <= SWITCH)||(LA43_0 >= THAN && LA43_0 <= THREAD)||LA43_0==THROW||(LA43_0 >= TO && LA43_0 <= TRANSACTION)||(LA43_0 >= TRY && LA43_0 <= VAR)||LA43_0==WHILE||LA43_0==150) ) {
-                    alt43=1;
+                if ( (LA42_0==ABORT||(LA42_0 >= BOOLEAN_LITERAL && LA42_0 <= BREAK)||(LA42_0 >= CASE && LA42_0 <= CATCH)||LA42_0==COMPONENT||LA42_0==CONTAIN||(LA42_0 >= CONTINUE && LA42_0 <= DEFAULT)||(LA42_0 >= DIRECTORY && LA42_0 <= DOES)||LA42_0==ELSE||LA42_0==EXIT||LA42_0==FILE||(LA42_0 >= FLOATING_POINT_LITERAL && LA42_0 <= FOR)||LA42_0==FUNCTION||LA42_0==GREATER||(LA42_0 >= HTTP && LA42_0 <= IF)||(LA42_0 >= IMPORT && LA42_0 <= INTEGER_LITERAL)||(LA42_0 >= LEFTBRACKET && LA42_0 <= LESS)||(LA42_0 >= LOCATION && LA42_0 <= LOCK)||LA42_0==LOOP||LA42_0==MINUS||LA42_0==MINUSMINUS||(LA42_0 >= NEW && LA42_0 <= NULL)||(LA42_0 >= PACKAGE && LA42_0 <= PARAM)||LA42_0==PLUS||LA42_0==PLUSPLUS||LA42_0==PRIVATE||(LA42_0 >= PUBLIC && LA42_0 <= QUERY)||(LA42_0 >= REMOTE && LA42_0 <= RETHROW)||LA42_0==RETURN||LA42_0==SAVECONTENT||LA42_0==SETTING||(LA42_0 >= STRING_LITERAL && LA42_0 <= SWITCH)||(LA42_0 >= THAN && LA42_0 <= THREAD)||LA42_0==THROW||(LA42_0 >= TO && LA42_0 <= TRANSACTION)||(LA42_0 >= TRY && LA42_0 <= VAR)||LA42_0==WHILE||LA42_0==150) ) {
+                    alt42=1;
                 }
 
 
-                switch (alt43) {
+                switch (alt42) {
             	case 1 :
             	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:13: impliesExpression
             	    {
-            	    pushFollow(FOLLOW_impliesExpression_in_includeStatement2803);
-            	    impliesExpression163=impliesExpression();
+            	    pushFollow(FOLLOW_impliesExpression_in_includeStatement2790);
+            	    impliesExpression159=impliesExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression163.getTree());
+            	    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression159.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop43;
+            	    break loop42;
                 }
             } while (true);
 
 
-            SEMICOLON164=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_includeStatement2806); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON164);
+            SEMICOLON160=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_includeStatement2793); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON160);
 
 
             // AST REWRITE
-            // elements: impliesExpression, INCLUDE
+            // elements: INCLUDE, impliesExpression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6726,6 +6896,121 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "includeStatement"
 
 
+    public static class importStatement_return extends ParserRuleReturnScope {
+        CommonTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "importStatement"
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:612:1: importStatement : IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !;
+    public final CFScriptParser.importStatement_return importStatement() throws RecognitionException {
+        CFScriptParser.importStatement_return retval = new CFScriptParser.importStatement_return();
+        retval.start = input.LT(1);
+
+        int importStatement_StartIndex = input.index();
+
+        CommonTree root_0 = null;
+
+        Token IMPORT161=null;
+        Token DOT163=null;
+        Token char_literal164=null;
+        Token SEMICOLON165=null;
+        CFScriptParser.componentPath_return componentPath162 =null;
+
+
+        CommonTree IMPORT161_tree=null;
+        CommonTree DOT163_tree=null;
+        CommonTree char_literal164_tree=null;
+        CommonTree SEMICOLON165_tree=null;
+
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 34) ) { return retval; }
+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:3: ( IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:5: IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !
+            {
+            root_0 = (CommonTree)adaptor.nil();
+
+
+            IMPORT161=(Token)match(input,IMPORT,FOLLOW_IMPORT_in_importStatement2819); if (state.failed) return retval;
+            if ( state.backtracking==0 ) {
+            IMPORT161_tree = 
+            (CommonTree)adaptor.create(IMPORT161)
+            ;
+            root_0 = (CommonTree)adaptor.becomeRoot(IMPORT161_tree, root_0);
+            }
+
+            pushFollow(FOLLOW_componentPath_in_importStatement2822);
+            componentPath162=componentPath();
+
+            state._fsp--;
+            if (state.failed) return retval;
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, componentPath162.getTree());
+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:27: ( DOT '*' )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0==DOT) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:28: DOT '*'
+                    {
+                    DOT163=(Token)match(input,DOT,FOLLOW_DOT_in_importStatement2825); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    DOT163_tree = 
+                    (CommonTree)adaptor.create(DOT163)
+                    ;
+                    adaptor.addChild(root_0, DOT163_tree);
+                    }
+
+                    char_literal164=(Token)match(input,STAR,FOLLOW_STAR_in_importStatement2827); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    char_literal164_tree = 
+                    (CommonTree)adaptor.create(char_literal164)
+                    ;
+                    adaptor.addChild(root_0, char_literal164_tree);
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            SEMICOLON165=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_importStatement2831); if (state.failed) return retval;
+
+            }
+
+            retval.stop = input.LT(-1);
+
+
+            if ( state.backtracking==0 ) {
+
+            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+            }
+        }
+
+        	catch (RecognitionException e) {
+        	  //System.out.println("cfscript.g");
+        	  errorReporter.reportError(e);
+        	  recover(getTokenStream(),e);
+        	}
+
+        finally {
+        	// do for sure before leaving
+            if ( state.backtracking>0 ) { memoize(input, 34, importStatement_StartIndex); }
+
+        }
+        return retval;
+    }
+    // $ANTLR end "importStatement"
+
+
     public static class transactionStatement_return extends ParserRuleReturnScope {
         CommonTree tree;
         public Object getTree() { return tree; }
@@ -6733,7 +7018,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "transactionStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:612:1: transactionStatement : lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:616:1: transactionStatement : lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) ;
     public final CFScriptParser.transactionStatement_return transactionStatement() throws RecognitionException {
         CFScriptParser.transactionStatement_return retval = new CFScriptParser.transactionStatement_return();
         retval.start = input.LT(1);
@@ -6743,9 +7028,9 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        CFScriptParser.paramStatementAttributes_return paramStatementAttributes165 =null;
+        CFScriptParser.paramStatementAttributes_return paramStatementAttributes166 =null;
 
-        CFScriptParser.compoundStatement_return compoundStatement166 =null;
+        CFScriptParser.compoundStatement_return compoundStatement167 =null;
 
 
         CommonTree lc_tree=null;
@@ -6753,30 +7038,30 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_compoundStatement=new RewriteRuleSubtreeStream(adaptor,"rule compoundStatement");
         RewriteRuleSubtreeStream stream_paramStatementAttributes=new RewriteRuleSubtreeStream(adaptor,"rule paramStatementAttributes");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 34) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:3: (lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:5: lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:3: (lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:5: lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )?
             {
-            lc=(Token)match(input,TRANSACTION,FOLLOW_TRANSACTION_in_transactionStatement2834); if (state.failed) return retval; 
+            lc=(Token)match(input,TRANSACTION,FOLLOW_TRANSACTION_in_transactionStatement2848); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_TRANSACTION.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:20: ( paramStatementAttributes )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:20: ( paramStatementAttributes )*
             loop44:
             do {
                 int alt44=2;
                 alt44 = dfa44.predict(input);
                 switch (alt44) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:21: paramStatementAttributes
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:21: paramStatementAttributes
             	    {
-            	    pushFollow(FOLLOW_paramStatementAttributes_in_transactionStatement2837);
-            	    paramStatementAttributes165=paramStatementAttributes();
+            	    pushFollow(FOLLOW_paramStatementAttributes_in_transactionStatement2851);
+            	    paramStatementAttributes166=paramStatementAttributes();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes165.getTree());
+            	    if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes166.getTree());
 
             	    }
             	    break;
@@ -6787,19 +7072,19 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:48: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:48: ( compoundStatement )?
             int alt45=2;
             alt45 = dfa45.predict(input);
             switch (alt45) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:49: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:49: compoundStatement
                     {
-                    pushFollow(FOLLOW_compoundStatement_in_transactionStatement2842);
-                    compoundStatement166=compoundStatement();
+                    pushFollow(FOLLOW_compoundStatement_in_transactionStatement2856);
+                    compoundStatement167=compoundStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement166.getTree());
+                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement167.getTree());
 
                     }
                     break;
@@ -6820,23 +7105,23 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 613:69: -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
+            // 617:69: -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:72: ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:72: ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(TRANSACTIONSTATEMENT, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:100: ( paramStatementAttributes )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:100: ( paramStatementAttributes )*
                 while ( stream_paramStatementAttributes.hasNext() ) {
                     adaptor.addChild(root_1, stream_paramStatementAttributes.nextTree());
 
                 }
                 stream_paramStatementAttributes.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:128: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:128: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -6872,7 +7157,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 34, transactionStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 35, transactionStatement_StartIndex); }
 
         }
         return retval;
@@ -6887,7 +7172,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfmlfunctionStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:616:1: cfmlfunctionStatement : cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:1: cfmlfunctionStatement : cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) ;
     public final CFScriptParser.cfmlfunctionStatement_return cfmlfunctionStatement() throws RecognitionException {
         CFScriptParser.cfmlfunctionStatement_return retval = new CFScriptParser.cfmlfunctionStatement_return();
         retval.start = input.LT(1);
@@ -6896,44 +7181,44 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        CFScriptParser.cfmlFunction_return cfmlFunction167 =null;
+        CFScriptParser.cfmlFunction_return cfmlFunction168 =null;
 
-        CFScriptParser.param_return param168 =null;
+        CFScriptParser.param_return param169 =null;
 
-        CFScriptParser.compoundStatement_return compoundStatement169 =null;
+        CFScriptParser.compoundStatement_return compoundStatement170 =null;
 
 
         RewriteRuleSubtreeStream stream_compoundStatement=new RewriteRuleSubtreeStream(adaptor,"rule compoundStatement");
         RewriteRuleSubtreeStream stream_param=new RewriteRuleSubtreeStream(adaptor,"rule param");
         RewriteRuleSubtreeStream stream_cfmlFunction=new RewriteRuleSubtreeStream(adaptor,"rule cfmlFunction");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:3: ( cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:5: cfmlFunction ( param )* ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:3: ( cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:5: cfmlFunction ( param )* ( compoundStatement )?
             {
-            pushFollow(FOLLOW_cfmlFunction_in_cfmlfunctionStatement2876);
-            cfmlFunction167=cfmlFunction();
+            pushFollow(FOLLOW_cfmlFunction_in_cfmlfunctionStatement2890);
+            cfmlFunction168=cfmlFunction();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_cfmlFunction.add(cfmlFunction167.getTree());
+            if ( state.backtracking==0 ) stream_cfmlFunction.add(cfmlFunction168.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:18: ( param )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:18: ( param )*
             loop46:
             do {
                 int alt46=2;
                 alt46 = dfa46.predict(input);
                 switch (alt46) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:19: param
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:19: param
             	    {
-            	    pushFollow(FOLLOW_param_in_cfmlfunctionStatement2879);
-            	    param168=param();
+            	    pushFollow(FOLLOW_param_in_cfmlfunctionStatement2893);
+            	    param169=param();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_param.add(param168.getTree());
+            	    if ( state.backtracking==0 ) stream_param.add(param169.getTree());
 
             	    }
             	    break;
@@ -6944,19 +7229,19 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:27: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:27: ( compoundStatement )?
             int alt47=2;
             alt47 = dfa47.predict(input);
             switch (alt47) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:28: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:28: compoundStatement
                     {
-                    pushFollow(FOLLOW_compoundStatement_in_cfmlfunctionStatement2884);
-                    compoundStatement169=compoundStatement();
+                    pushFollow(FOLLOW_compoundStatement_in_cfmlfunctionStatement2898);
+                    compoundStatement170=compoundStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement169.getTree());
+                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement170.getTree());
 
                     }
                     break;
@@ -6977,9 +7262,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 617:47: -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
+            // 621:47: -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:50: ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:50: ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -6988,14 +7273,14 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_cfmlFunction.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:87: ( param )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:87: ( param )*
                 while ( stream_param.hasNext() ) {
                     adaptor.addChild(root_1, stream_param.nextTree());
 
                 }
                 stream_param.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:96: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:96: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -7031,7 +7316,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 35, cfmlfunctionStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 36, cfmlfunctionStatement_StartIndex); }
 
         }
         return retval;
@@ -7046,7 +7331,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfmlFunction"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:1: cfmlFunction : ( LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:1: cfmlFunction : ( LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY );
     public final CFScriptParser.cfmlFunction_return cfmlFunction() throws RecognitionException {
         CFScriptParser.cfmlFunction_return retval = new CFScriptParser.cfmlFunction_return();
         retval.start = input.LT(1);
@@ -7055,25 +7340,25 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set170=null;
+        Token set171=null;
 
-        CommonTree set170_tree=null;
+        CommonTree set171_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:3: ( LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:625:3: ( LOCATION | SAVECONTENT | HTTP | FILE | DIRECTORY | LOOP | SETTING | QUERY )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            set170=(Token)input.LT(1);
+            set171=(Token)input.LT(1);
 
             if ( input.LA(1)==DIRECTORY||input.LA(1)==FILE||input.LA(1)==HTTP||input.LA(1)==LOCATION||input.LA(1)==LOOP||input.LA(1)==QUERY||input.LA(1)==SAVECONTENT||input.LA(1)==SETTING ) {
                 input.consume();
                 if ( state.backtracking==0 ) adaptor.addChild(root_0, 
-                (CommonTree)adaptor.create(set170)
+                (CommonTree)adaptor.create(set171)
                 );
                 state.errorRecovery=false;
                 state.failed=false;
@@ -7105,7 +7390,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 36, cfmlFunction_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 37, cfmlFunction_StartIndex); }
 
         }
         return retval;
@@ -7120,7 +7405,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "lockStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:642:1: lockStatement : lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:646:1: lockStatement : lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) ;
     public final CFScriptParser.lockStatement_return lockStatement() throws RecognitionException {
         CFScriptParser.lockStatement_return retval = new CFScriptParser.lockStatement_return();
         retval.start = input.LT(1);
@@ -7140,23 +7425,23 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_compoundStatement=new RewriteRuleSubtreeStream(adaptor,"rule compoundStatement");
         RewriteRuleSubtreeStream stream_paramStatementAttributes=new RewriteRuleSubtreeStream(adaptor,"rule paramStatementAttributes");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 38) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:643:3: (lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:643:5: lc= LOCK p= paramStatementAttributes cs= compoundStatement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:3: (lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:5: lc= LOCK p= paramStatementAttributes cs= compoundStatement
             {
-            lc=(Token)match(input,LOCK,FOLLOW_LOCK_in_lockStatement2981); if (state.failed) return retval; 
+            lc=(Token)match(input,LOCK,FOLLOW_LOCK_in_lockStatement2995); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LOCK.add(lc);
 
 
-            pushFollow(FOLLOW_paramStatementAttributes_in_lockStatement2985);
+            pushFollow(FOLLOW_paramStatementAttributes_in_lockStatement2999);
             p=paramStatementAttributes();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_paramStatementAttributes.add(p.getTree());
 
-            pushFollow(FOLLOW_compoundStatement_in_lockStatement2989);
+            pushFollow(FOLLOW_compoundStatement_in_lockStatement3003);
             cs=compoundStatement();
 
             state._fsp--;
@@ -7176,9 +7461,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 643:61: -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
+            // 647:61: -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:643:64: ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:64: ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7218,7 +7503,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 37, lockStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 38, lockStatement_StartIndex); }
 
         }
         return retval;
@@ -7233,7 +7518,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "threadStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:646:1: threadStatement : lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:650:1: threadStatement : lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) ;
     public final CFScriptParser.threadStatement_return threadStatement() throws RecognitionException {
         CFScriptParser.threadStatement_return retval = new CFScriptParser.threadStatement_return();
         retval.start = input.LT(1);
@@ -7245,7 +7530,7 @@ public TreeAdaptor getTreeAdaptor() {
         Token lc=null;
         CFScriptParser.paramStatementAttributes_return p =null;
 
-        CFScriptParser.compoundStatement_return compoundStatement171 =null;
+        CFScriptParser.compoundStatement_return compoundStatement172 =null;
 
 
         CommonTree lc_tree=null;
@@ -7253,35 +7538,35 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_compoundStatement=new RewriteRuleSubtreeStream(adaptor,"rule compoundStatement");
         RewriteRuleSubtreeStream stream_paramStatementAttributes=new RewriteRuleSubtreeStream(adaptor,"rule paramStatementAttributes");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 38) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:3: (lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:5: lc= THREAD p= paramStatementAttributes ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:3: (lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:5: lc= THREAD p= paramStatementAttributes ( compoundStatement )?
             {
-            lc=(Token)match(input,THREAD,FOLLOW_THREAD_in_threadStatement3015); if (state.failed) return retval; 
+            lc=(Token)match(input,THREAD,FOLLOW_THREAD_in_threadStatement3029); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_THREAD.add(lc);
 
 
-            pushFollow(FOLLOW_paramStatementAttributes_in_threadStatement3019);
+            pushFollow(FOLLOW_paramStatementAttributes_in_threadStatement3033);
             p=paramStatementAttributes();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_paramStatementAttributes.add(p.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:42: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:42: ( compoundStatement )?
             int alt48=2;
             alt48 = dfa48.predict(input);
             switch (alt48) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:43: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:43: compoundStatement
                     {
-                    pushFollow(FOLLOW_compoundStatement_in_threadStatement3022);
-                    compoundStatement171=compoundStatement();
+                    pushFollow(FOLLOW_compoundStatement_in_threadStatement3036);
+                    compoundStatement172=compoundStatement();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement171.getTree());
+                    if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement172.getTree());
 
                     }
                     break;
@@ -7302,9 +7587,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 647:63: -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
+            // 651:63: -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:66: ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:66: ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7313,7 +7598,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_paramStatementAttributes.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:114: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:114: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -7349,7 +7634,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 38, threadStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 39, threadStatement_StartIndex); }
 
         }
         return retval;
@@ -7364,7 +7649,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "abortStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:650:1: abortStatement : (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:654:1: abortStatement : (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.abortStatement_return abortStatement() throws RecognitionException {
         CFScriptParser.abortStatement_return retval = new CFScriptParser.abortStatement_return();
         retval.start = input.LT(1);
@@ -7374,21 +7659,21 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token SEMICOLON172=null;
-        Token SEMICOLON174=null;
-        CFScriptParser.memberExpression_return memberExpression173 =null;
+        Token SEMICOLON173=null;
+        Token SEMICOLON175=null;
+        CFScriptParser.memberExpression_return memberExpression174 =null;
 
 
         CommonTree lc_tree=null;
-        CommonTree SEMICOLON172_tree=null;
-        CommonTree SEMICOLON174_tree=null;
+        CommonTree SEMICOLON173_tree=null;
+        CommonTree SEMICOLON175_tree=null;
         RewriteRuleTokenStream stream_SEMICOLON=new RewriteRuleTokenStream(adaptor,"token SEMICOLON");
         RewriteRuleTokenStream stream_ABORT=new RewriteRuleTokenStream(adaptor,"token ABORT");
         RewriteRuleSubtreeStream stream_memberExpression=new RewriteRuleSubtreeStream(adaptor,"rule memberExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:3: (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:655:3: (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) )
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -7398,7 +7683,7 @@ public TreeAdaptor getTreeAdaptor() {
                 if ( (LA49_1==SEMICOLON) ) {
                     alt49=1;
                 }
-                else if ( (LA49_1==ABORT||(LA49_1 >= BOOLEAN_LITERAL && LA49_1 <= BREAK)||(LA49_1 >= CASE && LA49_1 <= CATCH)||LA49_1==CONTAIN||(LA49_1 >= CONTINUE && LA49_1 <= DEFAULT)||(LA49_1 >= DIRECTORY && LA49_1 <= DOES)||LA49_1==ELSE||LA49_1==EXIT||LA49_1==FILE||(LA49_1 >= FLOATING_POINT_LITERAL && LA49_1 <= FOR)||LA49_1==FUNCTION||LA49_1==GREATER||(LA49_1 >= HTTP && LA49_1 <= IF)||(LA49_1 >= IMPORT && LA49_1 <= INTEGER_LITERAL)||(LA49_1 >= LEFTBRACKET && LA49_1 <= LESS)||(LA49_1 >= LOCATION && LA49_1 <= LOCK)||LA49_1==LOOP||LA49_1==NEW||LA49_1==NULL||(LA49_1 >= PACKAGE && LA49_1 <= PARAM)||LA49_1==PRIVATE||(LA49_1 >= PUBLIC && LA49_1 <= QUERY)||(LA49_1 >= REMOTE && LA49_1 <= RETHROW)||LA49_1==RETURN||LA49_1==SAVECONTENT||LA49_1==SETTING||(LA49_1 >= STRING_LITERAL && LA49_1 <= SWITCH)||(LA49_1 >= THAN && LA49_1 <= THREAD)||LA49_1==THROW||(LA49_1 >= TO && LA49_1 <= TRANSACTION)||(LA49_1 >= TRY && LA49_1 <= VAR)||LA49_1==WHILE||LA49_1==150) ) {
+                else if ( (LA49_1==ABORT||(LA49_1 >= BOOLEAN_LITERAL && LA49_1 <= BREAK)||(LA49_1 >= CASE && LA49_1 <= CATCH)||LA49_1==COMPONENT||LA49_1==CONTAIN||(LA49_1 >= CONTINUE && LA49_1 <= DEFAULT)||(LA49_1 >= DIRECTORY && LA49_1 <= DOES)||LA49_1==ELSE||LA49_1==EXIT||LA49_1==FILE||(LA49_1 >= FLOATING_POINT_LITERAL && LA49_1 <= FOR)||LA49_1==FUNCTION||LA49_1==GREATER||(LA49_1 >= HTTP && LA49_1 <= IF)||(LA49_1 >= IMPORT && LA49_1 <= INTEGER_LITERAL)||(LA49_1 >= LEFTBRACKET && LA49_1 <= LESS)||(LA49_1 >= LOCATION && LA49_1 <= LOCK)||LA49_1==LOOP||LA49_1==NEW||LA49_1==NULL||(LA49_1 >= PACKAGE && LA49_1 <= PARAM)||LA49_1==PRIVATE||(LA49_1 >= PUBLIC && LA49_1 <= QUERY)||(LA49_1 >= REMOTE && LA49_1 <= RETHROW)||LA49_1==RETURN||LA49_1==SAVECONTENT||LA49_1==SETTING||(LA49_1 >= STRING_LITERAL && LA49_1 <= SWITCH)||(LA49_1 >= THAN && LA49_1 <= THREAD)||LA49_1==THROW||(LA49_1 >= TO && LA49_1 <= TRANSACTION)||(LA49_1 >= TRY && LA49_1 <= VAR)||LA49_1==WHILE||LA49_1==150) ) {
                     alt49=2;
                 }
                 else {
@@ -7420,14 +7705,14 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt49) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:5: lc= ABORT SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:655:5: lc= ABORT SEMICOLON
                     {
-                    lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3053); if (state.failed) return retval; 
+                    lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3067); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ABORT.add(lc);
 
 
-                    SEMICOLON172=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_abortStatement3055); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON172);
+                    SEMICOLON173=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_abortStatement3069); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON173);
 
 
                     // AST REWRITE
@@ -7443,9 +7728,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 651:24: -> ^( ABORTSTATEMENT[$lc] )
+                    // 655:24: -> ^( ABORTSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:27: ^( ABORTSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:655:27: ^( ABORTSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7464,21 +7749,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:652:5: lc= ABORT memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:656:5: lc= ABORT memberExpression SEMICOLON
                     {
-                    lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3070); if (state.failed) return retval; 
+                    lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3084); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ABORT.add(lc);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_abortStatement3072);
-                    memberExpression173=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_abortStatement3086);
+                    memberExpression174=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression173.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression174.getTree());
 
-                    SEMICOLON174=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_abortStatement3074); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON174);
+                    SEMICOLON175=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_abortStatement3088); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON175);
 
 
                     // AST REWRITE
@@ -7494,9 +7779,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 652:41: -> ^( ABORTSTATEMENT[$lc] memberExpression )
+                    // 656:41: -> ^( ABORTSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:652:44: ^( ABORTSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:656:44: ^( ABORTSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7536,7 +7821,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 39, abortStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 40, abortStatement_StartIndex); }
 
         }
         return retval;
@@ -7551,7 +7836,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "throwStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:655:1: throwStatement : (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:659:1: throwStatement : (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.throwStatement_return throwStatement() throws RecognitionException {
         CFScriptParser.throwStatement_return retval = new CFScriptParser.throwStatement_return();
         retval.start = input.LT(1);
@@ -7561,21 +7846,21 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token SEMICOLON175=null;
-        Token SEMICOLON177=null;
-        CFScriptParser.memberExpression_return memberExpression176 =null;
+        Token SEMICOLON176=null;
+        Token SEMICOLON178=null;
+        CFScriptParser.memberExpression_return memberExpression177 =null;
 
 
         CommonTree lc_tree=null;
-        CommonTree SEMICOLON175_tree=null;
-        CommonTree SEMICOLON177_tree=null;
+        CommonTree SEMICOLON176_tree=null;
+        CommonTree SEMICOLON178_tree=null;
         RewriteRuleTokenStream stream_SEMICOLON=new RewriteRuleTokenStream(adaptor,"token SEMICOLON");
         RewriteRuleTokenStream stream_THROW=new RewriteRuleTokenStream(adaptor,"token THROW");
         RewriteRuleSubtreeStream stream_memberExpression=new RewriteRuleSubtreeStream(adaptor,"rule memberExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:656:3: (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:660:3: (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) )
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -7585,7 +7870,7 @@ public TreeAdaptor getTreeAdaptor() {
                 if ( (LA50_1==SEMICOLON) ) {
                     alt50=1;
                 }
-                else if ( (LA50_1==ABORT||(LA50_1 >= BOOLEAN_LITERAL && LA50_1 <= BREAK)||(LA50_1 >= CASE && LA50_1 <= CATCH)||LA50_1==CONTAIN||(LA50_1 >= CONTINUE && LA50_1 <= DEFAULT)||(LA50_1 >= DIRECTORY && LA50_1 <= DOES)||LA50_1==ELSE||LA50_1==EXIT||LA50_1==FILE||(LA50_1 >= FLOATING_POINT_LITERAL && LA50_1 <= FOR)||LA50_1==FUNCTION||LA50_1==GREATER||(LA50_1 >= HTTP && LA50_1 <= IF)||(LA50_1 >= IMPORT && LA50_1 <= INTEGER_LITERAL)||(LA50_1 >= LEFTBRACKET && LA50_1 <= LESS)||(LA50_1 >= LOCATION && LA50_1 <= LOCK)||LA50_1==LOOP||LA50_1==NEW||LA50_1==NULL||(LA50_1 >= PACKAGE && LA50_1 <= PARAM)||LA50_1==PRIVATE||(LA50_1 >= PUBLIC && LA50_1 <= QUERY)||(LA50_1 >= REMOTE && LA50_1 <= RETHROW)||LA50_1==RETURN||LA50_1==SAVECONTENT||LA50_1==SETTING||(LA50_1 >= STRING_LITERAL && LA50_1 <= SWITCH)||(LA50_1 >= THAN && LA50_1 <= THREAD)||LA50_1==THROW||(LA50_1 >= TO && LA50_1 <= TRANSACTION)||(LA50_1 >= TRY && LA50_1 <= VAR)||LA50_1==WHILE||LA50_1==150) ) {
+                else if ( (LA50_1==ABORT||(LA50_1 >= BOOLEAN_LITERAL && LA50_1 <= BREAK)||(LA50_1 >= CASE && LA50_1 <= CATCH)||LA50_1==COMPONENT||LA50_1==CONTAIN||(LA50_1 >= CONTINUE && LA50_1 <= DEFAULT)||(LA50_1 >= DIRECTORY && LA50_1 <= DOES)||LA50_1==ELSE||LA50_1==EXIT||LA50_1==FILE||(LA50_1 >= FLOATING_POINT_LITERAL && LA50_1 <= FOR)||LA50_1==FUNCTION||LA50_1==GREATER||(LA50_1 >= HTTP && LA50_1 <= IF)||(LA50_1 >= IMPORT && LA50_1 <= INTEGER_LITERAL)||(LA50_1 >= LEFTBRACKET && LA50_1 <= LESS)||(LA50_1 >= LOCATION && LA50_1 <= LOCK)||LA50_1==LOOP||LA50_1==NEW||LA50_1==NULL||(LA50_1 >= PACKAGE && LA50_1 <= PARAM)||LA50_1==PRIVATE||(LA50_1 >= PUBLIC && LA50_1 <= QUERY)||(LA50_1 >= REMOTE && LA50_1 <= RETHROW)||LA50_1==RETURN||LA50_1==SAVECONTENT||LA50_1==SETTING||(LA50_1 >= STRING_LITERAL && LA50_1 <= SWITCH)||(LA50_1 >= THAN && LA50_1 <= THREAD)||LA50_1==THROW||(LA50_1 >= TO && LA50_1 <= TRANSACTION)||(LA50_1 >= TRY && LA50_1 <= VAR)||LA50_1==WHILE||LA50_1==150) ) {
                     alt50=2;
                 }
                 else {
@@ -7607,14 +7892,14 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt50) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:656:5: lc= THROW SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:660:5: lc= THROW SEMICOLON
                     {
-                    lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3098); if (state.failed) return retval; 
+                    lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3112); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THROW.add(lc);
 
 
-                    SEMICOLON175=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_throwStatement3100); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON175);
+                    SEMICOLON176=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_throwStatement3114); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON176);
 
 
                     // AST REWRITE
@@ -7630,9 +7915,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 656:24: -> ^( THROWSTATEMENT[$lc] )
+                    // 660:24: -> ^( THROWSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:656:27: ^( THROWSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:660:27: ^( THROWSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7651,21 +7936,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:657:5: lc= THROW memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:5: lc= THROW memberExpression SEMICOLON
                     {
-                    lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3115); if (state.failed) return retval; 
+                    lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3129); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THROW.add(lc);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_throwStatement3117);
-                    memberExpression176=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_throwStatement3131);
+                    memberExpression177=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression176.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression177.getTree());
 
-                    SEMICOLON177=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_throwStatement3119); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON177);
+                    SEMICOLON178=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_throwStatement3133); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON178);
 
 
                     // AST REWRITE
@@ -7681,9 +7966,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 657:41: -> ^( THROWSTATEMENT[$lc] memberExpression )
+                    // 661:41: -> ^( THROWSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:657:44: ^( THROWSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:44: ^( THROWSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7723,7 +8008,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 40, throwStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 41, throwStatement_StartIndex); }
 
         }
         return retval;
@@ -7738,7 +8023,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "exitStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:660:1: exitStatement : (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:664:1: exitStatement : (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.exitStatement_return exitStatement() throws RecognitionException {
         CFScriptParser.exitStatement_return retval = new CFScriptParser.exitStatement_return();
         retval.start = input.LT(1);
@@ -7748,21 +8033,21 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token SEMICOLON178=null;
-        Token SEMICOLON180=null;
-        CFScriptParser.memberExpression_return memberExpression179 =null;
+        Token SEMICOLON179=null;
+        Token SEMICOLON181=null;
+        CFScriptParser.memberExpression_return memberExpression180 =null;
 
 
         CommonTree lc_tree=null;
-        CommonTree SEMICOLON178_tree=null;
-        CommonTree SEMICOLON180_tree=null;
+        CommonTree SEMICOLON179_tree=null;
+        CommonTree SEMICOLON181_tree=null;
         RewriteRuleTokenStream stream_EXIT=new RewriteRuleTokenStream(adaptor,"token EXIT");
         RewriteRuleTokenStream stream_SEMICOLON=new RewriteRuleTokenStream(adaptor,"token SEMICOLON");
         RewriteRuleSubtreeStream stream_memberExpression=new RewriteRuleSubtreeStream(adaptor,"rule memberExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:3: (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:3: (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) )
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -7772,7 +8057,7 @@ public TreeAdaptor getTreeAdaptor() {
                 if ( (LA51_1==SEMICOLON) ) {
                     alt51=1;
                 }
-                else if ( (LA51_1==ABORT||(LA51_1 >= BOOLEAN_LITERAL && LA51_1 <= BREAK)||(LA51_1 >= CASE && LA51_1 <= CATCH)||LA51_1==CONTAIN||(LA51_1 >= CONTINUE && LA51_1 <= DEFAULT)||(LA51_1 >= DIRECTORY && LA51_1 <= DOES)||LA51_1==ELSE||LA51_1==EXIT||LA51_1==FILE||(LA51_1 >= FLOATING_POINT_LITERAL && LA51_1 <= FOR)||LA51_1==FUNCTION||LA51_1==GREATER||(LA51_1 >= HTTP && LA51_1 <= IF)||(LA51_1 >= IMPORT && LA51_1 <= INTEGER_LITERAL)||(LA51_1 >= LEFTBRACKET && LA51_1 <= LESS)||(LA51_1 >= LOCATION && LA51_1 <= LOCK)||LA51_1==LOOP||LA51_1==NEW||LA51_1==NULL||(LA51_1 >= PACKAGE && LA51_1 <= PARAM)||LA51_1==PRIVATE||(LA51_1 >= PUBLIC && LA51_1 <= QUERY)||(LA51_1 >= REMOTE && LA51_1 <= RETHROW)||LA51_1==RETURN||LA51_1==SAVECONTENT||LA51_1==SETTING||(LA51_1 >= STRING_LITERAL && LA51_1 <= SWITCH)||(LA51_1 >= THAN && LA51_1 <= THREAD)||LA51_1==THROW||(LA51_1 >= TO && LA51_1 <= TRANSACTION)||(LA51_1 >= TRY && LA51_1 <= VAR)||LA51_1==WHILE||LA51_1==150) ) {
+                else if ( (LA51_1==ABORT||(LA51_1 >= BOOLEAN_LITERAL && LA51_1 <= BREAK)||(LA51_1 >= CASE && LA51_1 <= CATCH)||LA51_1==COMPONENT||LA51_1==CONTAIN||(LA51_1 >= CONTINUE && LA51_1 <= DEFAULT)||(LA51_1 >= DIRECTORY && LA51_1 <= DOES)||LA51_1==ELSE||LA51_1==EXIT||LA51_1==FILE||(LA51_1 >= FLOATING_POINT_LITERAL && LA51_1 <= FOR)||LA51_1==FUNCTION||LA51_1==GREATER||(LA51_1 >= HTTP && LA51_1 <= IF)||(LA51_1 >= IMPORT && LA51_1 <= INTEGER_LITERAL)||(LA51_1 >= LEFTBRACKET && LA51_1 <= LESS)||(LA51_1 >= LOCATION && LA51_1 <= LOCK)||LA51_1==LOOP||LA51_1==NEW||LA51_1==NULL||(LA51_1 >= PACKAGE && LA51_1 <= PARAM)||LA51_1==PRIVATE||(LA51_1 >= PUBLIC && LA51_1 <= QUERY)||(LA51_1 >= REMOTE && LA51_1 <= RETHROW)||LA51_1==RETURN||LA51_1==SAVECONTENT||LA51_1==SETTING||(LA51_1 >= STRING_LITERAL && LA51_1 <= SWITCH)||(LA51_1 >= THAN && LA51_1 <= THREAD)||LA51_1==THROW||(LA51_1 >= TO && LA51_1 <= TRANSACTION)||(LA51_1 >= TRY && LA51_1 <= VAR)||LA51_1==WHILE||LA51_1==150) ) {
                     alt51=2;
                 }
                 else {
@@ -7794,14 +8079,14 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt51) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:5: lc= EXIT SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:5: lc= EXIT SEMICOLON
                     {
-                    lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3143); if (state.failed) return retval; 
+                    lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3157); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EXIT.add(lc);
 
 
-                    SEMICOLON178=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_exitStatement3145); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON178);
+                    SEMICOLON179=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_exitStatement3159); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON179);
 
 
                     // AST REWRITE
@@ -7817,9 +8102,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 661:23: -> ^( EXITSTATEMENT[$lc] )
+                    // 665:23: -> ^( EXITSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:26: ^( EXITSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:26: ^( EXITSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7838,21 +8123,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:5: lc= EXIT memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:5: lc= EXIT memberExpression SEMICOLON
                     {
-                    lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3160); if (state.failed) return retval; 
+                    lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3174); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EXIT.add(lc);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_exitStatement3162);
-                    memberExpression179=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_exitStatement3176);
+                    memberExpression180=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression179.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression180.getTree());
 
-                    SEMICOLON180=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_exitStatement3164); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON180);
+                    SEMICOLON181=(Token)match(input,SEMICOLON,FOLLOW_SEMICOLON_in_exitStatement3178); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEMICOLON.add(SEMICOLON181);
 
 
                     // AST REWRITE
@@ -7868,9 +8153,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 662:40: -> ^( EXITSTATEMENT[$lc] memberExpression )
+                    // 666:40: -> ^( EXITSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:43: ^( EXITSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:43: ^( EXITSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7910,7 +8195,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 41, exitStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 42, exitStatement_StartIndex); }
 
         }
         return retval;
@@ -7925,7 +8210,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:1: paramStatement : lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:669:1: paramStatement : lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) ;
     public final CFScriptParser.paramStatement_return paramStatement() throws RecognitionException {
         CFScriptParser.paramStatement_return retval = new CFScriptParser.paramStatement_return();
         retval.start = input.LT(1);
@@ -7935,28 +8220,28 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        CFScriptParser.paramStatementAttributes_return paramStatementAttributes181 =null;
+        CFScriptParser.paramStatementAttributes_return paramStatementAttributes182 =null;
 
 
         CommonTree lc_tree=null;
         RewriteRuleTokenStream stream_PARAM=new RewriteRuleTokenStream(adaptor,"token PARAM");
         RewriteRuleSubtreeStream stream_paramStatementAttributes=new RewriteRuleSubtreeStream(adaptor,"rule paramStatementAttributes");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:3: (lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:5: lc= PARAM paramStatementAttributes
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:3: (lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:5: lc= PARAM paramStatementAttributes
             {
-            lc=(Token)match(input,PARAM,FOLLOW_PARAM_in_paramStatement3188); if (state.failed) return retval; 
+            lc=(Token)match(input,PARAM,FOLLOW_PARAM_in_paramStatement3202); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_PARAM.add(lc);
 
 
-            pushFollow(FOLLOW_paramStatementAttributes_in_paramStatement3190);
-            paramStatementAttributes181=paramStatementAttributes();
+            pushFollow(FOLLOW_paramStatementAttributes_in_paramStatement3204);
+            paramStatementAttributes182=paramStatementAttributes();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes181.getTree());
+            if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes182.getTree());
 
             // AST REWRITE
             // elements: paramStatementAttributes
@@ -7971,9 +8256,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 666:40: -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
+            // 670:40: -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:43: ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:43: ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8011,7 +8296,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 42, paramStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 43, paramStatement_StartIndex); }
 
         }
         return retval;
@@ -8026,7 +8311,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "propertyStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:669:1: propertyStatement : lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:673:1: propertyStatement : lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) ;
     public final CFScriptParser.propertyStatement_return propertyStatement() throws RecognitionException {
         CFScriptParser.propertyStatement_return retval = new CFScriptParser.propertyStatement_return();
         retval.start = input.LT(1);
@@ -8036,28 +8321,28 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        CFScriptParser.paramStatementAttributes_return paramStatementAttributes182 =null;
+        CFScriptParser.paramStatementAttributes_return paramStatementAttributes183 =null;
 
 
         CommonTree lc_tree=null;
         RewriteRuleTokenStream stream_PROPERTY=new RewriteRuleTokenStream(adaptor,"token PROPERTY");
         RewriteRuleSubtreeStream stream_paramStatementAttributes=new RewriteRuleSubtreeStream(adaptor,"rule paramStatementAttributes");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:3: (lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:5: lc= PROPERTY paramStatementAttributes
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:3: (lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:5: lc= PROPERTY paramStatementAttributes
             {
-            lc=(Token)match(input,PROPERTY,FOLLOW_PROPERTY_in_propertyStatement3217); if (state.failed) return retval; 
+            lc=(Token)match(input,PROPERTY,FOLLOW_PROPERTY_in_propertyStatement3231); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_PROPERTY.add(lc);
 
 
-            pushFollow(FOLLOW_paramStatementAttributes_in_propertyStatement3219);
-            paramStatementAttributes182=paramStatementAttributes();
+            pushFollow(FOLLOW_paramStatementAttributes_in_propertyStatement3233);
+            paramStatementAttributes183=paramStatementAttributes();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes182.getTree());
+            if ( state.backtracking==0 ) stream_paramStatementAttributes.add(paramStatementAttributes183.getTree());
 
             // AST REWRITE
             // elements: paramStatementAttributes
@@ -8072,9 +8357,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 670:43: -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
+            // 674:43: -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:46: ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:46: ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8112,7 +8397,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 43, propertyStatement_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 44, propertyStatement_StartIndex); }
 
         }
         return retval;
@@ -8127,7 +8412,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramStatementAttributes"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:673:1: paramStatementAttributes : ( param )+ ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:677:1: paramStatementAttributes : ( param )+ ;
     public final CFScriptParser.paramStatementAttributes_return paramStatementAttributes() throws RecognitionException {
         CFScriptParser.paramStatementAttributes_return retval = new CFScriptParser.paramStatementAttributes_return();
         retval.start = input.LT(1);
@@ -8136,20 +8421,20 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        CFScriptParser.param_return param183 =null;
+        CFScriptParser.param_return param184 =null;
 
 
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:3: ( ( param )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:5: ( param )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:3: ( ( param )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:5: ( param )+
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:5: ( param )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:5: ( param )+
             int cnt52=0;
             loop52:
             do {
@@ -8165,7 +8450,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==IDENTIFIER) ) {
+                else if ( (LA52_0==COMPONENT) ) {
                     int LA52_3 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8174,7 +8459,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==DOES) ) {
+                else if ( (LA52_0==IDENTIFIER) ) {
                     int LA52_4 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8183,7 +8468,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==CONTAIN) ) {
+                else if ( (LA52_0==DOES) ) {
                     int LA52_5 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8192,7 +8477,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==GREATER) ) {
+                else if ( (LA52_0==CONTAIN) ) {
                     int LA52_6 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8201,7 +8486,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==THAN) ) {
+                else if ( (LA52_0==GREATER) ) {
                     int LA52_7 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8210,7 +8495,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==LESS) ) {
+                else if ( (LA52_0==THAN) ) {
                     int LA52_8 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8219,7 +8504,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==VAR) ) {
+                else if ( (LA52_0==LESS) ) {
                     int LA52_9 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8228,7 +8513,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==TO) ) {
+                else if ( (LA52_0==VAR) ) {
                     int LA52_10 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8237,7 +8522,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==DEFAULT) ) {
+                else if ( (LA52_0==TO) ) {
                     int LA52_11 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8246,7 +8531,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==INCLUDE) ) {
+                else if ( (LA52_0==DEFAULT) ) {
                     int LA52_12 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8255,7 +8540,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==NEW) ) {
+                else if ( (LA52_0==INCLUDE) ) {
                     int LA52_13 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8264,7 +8549,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==ABORT) ) {
+                else if ( (LA52_0==NEW) ) {
                     int LA52_14 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8273,7 +8558,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==THROW) ) {
+                else if ( (LA52_0==ABORT) ) {
                     int LA52_15 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8282,7 +8567,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==RETHROW) ) {
+                else if ( (LA52_0==THROW) ) {
                     int LA52_16 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8291,7 +8576,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==PARAM) ) {
+                else if ( (LA52_0==RETHROW) ) {
                     int LA52_17 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8300,7 +8585,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==EXIT) ) {
+                else if ( (LA52_0==PARAM) ) {
                     int LA52_18 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8309,7 +8594,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==THREAD) ) {
+                else if ( (LA52_0==EXIT) ) {
                     int LA52_19 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8318,7 +8603,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==LOCK) ) {
+                else if ( (LA52_0==THREAD) ) {
                     int LA52_20 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8327,7 +8612,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==TRANSACTION) ) {
+                else if ( (LA52_0==LOCK) ) {
                     int LA52_21 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8336,7 +8621,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==PRIVATE) ) {
+                else if ( (LA52_0==TRANSACTION) ) {
                     int LA52_22 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8345,7 +8630,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==REMOTE) ) {
+                else if ( (LA52_0==PRIVATE) ) {
                     int LA52_23 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8354,7 +8639,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==PACKAGE) ) {
+                else if ( (LA52_0==REMOTE) ) {
                     int LA52_24 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8363,7 +8648,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==REQUIRED) ) {
+                else if ( (LA52_0==PACKAGE) ) {
                     int LA52_25 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8372,7 +8657,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==DIRECTORY||LA52_0==FILE||LA52_0==HTTP||LA52_0==LOCATION||LA52_0==LOOP||LA52_0==QUERY||LA52_0==SAVECONTENT||LA52_0==SETTING) ) {
+                else if ( (LA52_0==REQUIRED) ) {
                     int LA52_26 = input.LA(2);
 
                     if ( (synpred93_CFScript()) ) {
@@ -8381,16 +8666,16 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==FUNCTION) ) {
+                else if ( (LA52_0==DIRECTORY||LA52_0==FILE||LA52_0==HTTP||LA52_0==LOCATION||LA52_0==LOOP||LA52_0==QUERY||LA52_0==SAVECONTENT||LA52_0==SETTING) ) {
                     int LA52_27 = input.LA(2);
 
-                    if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
+                    if ( (synpred93_CFScript()) ) {
                         alt52=1;
                     }
 
 
                 }
-                else if ( (LA52_0==TRY) ) {
+                else if ( (LA52_0==FUNCTION) ) {
                     int LA52_28 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8399,7 +8684,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==IF) ) {
+                else if ( (LA52_0==TRY) ) {
                     int LA52_29 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8408,7 +8693,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==WHILE) ) {
+                else if ( (LA52_0==IF) ) {
                     int LA52_30 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8417,7 +8702,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==DO) ) {
+                else if ( (LA52_0==WHILE) ) {
                     int LA52_31 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8426,7 +8711,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==FOR) ) {
+                else if ( (LA52_0==DO) ) {
                     int LA52_32 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8435,7 +8720,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==SWITCH) ) {
+                else if ( (LA52_0==FOR) ) {
                     int LA52_33 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8444,7 +8729,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==CONTINUE) ) {
+                else if ( (LA52_0==SWITCH) ) {
                     int LA52_34 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8453,7 +8738,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==BREAK) ) {
+                else if ( (LA52_0==CONTINUE) ) {
                     int LA52_35 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8462,7 +8747,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==RETURN) ) {
+                else if ( (LA52_0==BREAK) ) {
                     int LA52_36 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8471,7 +8756,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==IMPORT) ) {
+                else if ( (LA52_0==RETURN) ) {
                     int LA52_37 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8480,7 +8765,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==ELSE) ) {
+                else if ( (LA52_0==IMPORT) ) {
                     int LA52_38 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8489,7 +8774,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==CATCH) ) {
+                else if ( (LA52_0==ELSE) ) {
                     int LA52_39 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8498,7 +8783,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==CASE) ) {
+                else if ( (LA52_0==CATCH) ) {
                     int LA52_40 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
@@ -8507,8 +8792,17 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                 }
-                else if ( (LA52_0==IN) && ((!scriptMode))) {
+                else if ( (LA52_0==CASE) ) {
                     int LA52_41 = input.LA(2);
+
+                    if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
+                        alt52=1;
+                    }
+
+
+                }
+                else if ( (LA52_0==IN) && ((!scriptMode))) {
+                    int LA52_42 = input.LA(2);
 
                     if ( ((((!scriptMode)&&(!scriptMode))&&synpred93_CFScript())) ) {
                         alt52=1;
@@ -8520,14 +8814,14 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt52) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:7: param
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:7: param
             	    {
-            	    pushFollow(FOLLOW_param_in_paramStatementAttributes3246);
-            	    param183=param();
+            	    pushFollow(FOLLOW_param_in_paramStatementAttributes3260);
+            	    param184=param();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, param183.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, param184.getTree());
 
             	    }
             	    break;
@@ -8563,7 +8857,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 44, paramStatementAttributes_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 45, paramStatementAttributes_StartIndex); }
 
         }
         return retval;
@@ -8578,7 +8872,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "param"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:677:1: param : i= identifier EQUALSOP ^v= impliesExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:1: param : i= identifier EQUALSOP ^v= impliesExpression ;
     public final CFScriptParser.param_return param() throws RecognitionException {
         CFScriptParser.param_return retval = new CFScriptParser.param_return();
         retval.start = input.LT(1);
@@ -8587,39 +8881,39 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token EQUALSOP184=null;
+        Token EQUALSOP185=null;
         CFScriptParser.identifier_return i =null;
 
         CFScriptParser.impliesExpression_return v =null;
 
 
-        CommonTree EQUALSOP184_tree=null;
+        CommonTree EQUALSOP185_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:3: (i= identifier EQUALSOP ^v= impliesExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:5: i= identifier EQUALSOP ^v= impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:682:3: (i= identifier EQUALSOP ^v= impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:682:5: i= identifier EQUALSOP ^v= impliesExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_identifier_in_param3266);
+            pushFollow(FOLLOW_identifier_in_param3280);
             i=identifier();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, i.getTree());
 
-            EQUALSOP184=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_param3268); if (state.failed) return retval;
+            EQUALSOP185=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_param3282); if (state.failed) return retval;
             if ( state.backtracking==0 ) {
-            EQUALSOP184_tree = 
-            (CommonTree)adaptor.create(EQUALSOP184)
+            EQUALSOP185_tree = 
+            (CommonTree)adaptor.create(EQUALSOP185)
             ;
-            root_0 = (CommonTree)adaptor.becomeRoot(EQUALSOP184_tree, root_0);
+            root_0 = (CommonTree)adaptor.becomeRoot(EQUALSOP185_tree, root_0);
             }
 
-            pushFollow(FOLLOW_impliesExpression_in_param3273);
+            pushFollow(FOLLOW_impliesExpression_in_param3287);
             v=impliesExpression();
 
             state._fsp--;
@@ -8646,7 +8940,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 45, param_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 46, param_StartIndex); }
 
         }
         return retval;
@@ -8661,7 +8955,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:684:1: expression : localAssignmentExpression EOF !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:688:1: expression : localAssignmentExpression EOF !;
     public final CFScriptParser.expression_return expression() throws RecognitionException {
         CFScriptParser.expression_return retval = new CFScriptParser.expression_return();
         retval.start = input.LT(1);
@@ -8670,29 +8964,29 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token EOF186=null;
-        CFScriptParser.localAssignmentExpression_return localAssignmentExpression185 =null;
+        Token EOF187=null;
+        CFScriptParser.localAssignmentExpression_return localAssignmentExpression186 =null;
 
 
-        CommonTree EOF186_tree=null;
+        CommonTree EOF187_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:2: ( localAssignmentExpression EOF !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:4: localAssignmentExpression EOF !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:2: ( localAssignmentExpression EOF !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:4: localAssignmentExpression EOF !
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_localAssignmentExpression_in_expression3291);
-            localAssignmentExpression185=localAssignmentExpression();
+            pushFollow(FOLLOW_localAssignmentExpression_in_expression3305);
+            localAssignmentExpression186=localAssignmentExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, localAssignmentExpression185.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, localAssignmentExpression186.getTree());
 
-            EOF186=(Token)match(input,EOF,FOLLOW_EOF_in_expression3293); if (state.failed) return retval;
+            EOF187=(Token)match(input,EOF,FOLLOW_EOF_in_expression3307); if (state.failed) return retval;
 
             }
 
@@ -8714,7 +9008,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 46, expression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 47, expression_StartIndex); }
 
         }
         return retval;
@@ -8729,7 +9023,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "localAssignmentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:688:1: localAssignmentExpression : ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:692:1: localAssignmentExpression : ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression );
     public final CFScriptParser.localAssignmentExpression_return localAssignmentExpression() throws RecognitionException {
         CFScriptParser.localAssignmentExpression_return retval = new CFScriptParser.localAssignmentExpression_return();
         retval.start = input.LT(1);
@@ -8738,31 +9032,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token VAR187=null;
-        Token EQUALSOP189=null;
-        CFScriptParser.identifier_return identifier188 =null;
+        Token VAR188=null;
+        Token EQUALSOP190=null;
+        CFScriptParser.identifier_return identifier189 =null;
 
-        CFScriptParser.impliesExpression_return impliesExpression190 =null;
+        CFScriptParser.impliesExpression_return impliesExpression191 =null;
 
-        CFScriptParser.assignmentExpression_return assignmentExpression191 =null;
+        CFScriptParser.assignmentExpression_return assignmentExpression192 =null;
 
 
-        CommonTree VAR187_tree=null;
-        CommonTree EQUALSOP189_tree=null;
+        CommonTree VAR188_tree=null;
+        CommonTree EQUALSOP190_tree=null;
         RewriteRuleTokenStream stream_VAR=new RewriteRuleTokenStream(adaptor,"token VAR");
         RewriteRuleTokenStream stream_EQUALSOP=new RewriteRuleTokenStream(adaptor,"token EQUALSOP");
         RewriteRuleSubtreeStream stream_identifier=new RewriteRuleSubtreeStream(adaptor,"rule identifier");
         RewriteRuleSubtreeStream stream_impliesExpression=new RewriteRuleSubtreeStream(adaptor,"rule impliesExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:2: ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:2: ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression )
             int alt54=2;
             int LA54_0 = input.LA(1);
 
             if ( (LA54_0==VAR) ) {
                 switch ( input.LA(2) ) {
-                case IDENTIFIER:
+                case COMPONENT:
                     {
                     int LA54_4 = input.LA(3);
 
@@ -8782,7 +9076,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case DOES:
+                case IDENTIFIER:
                     {
                     int LA54_5 = input.LA(3);
 
@@ -8802,7 +9096,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case CONTAIN:
+                case DOES:
                     {
                     int LA54_6 = input.LA(3);
 
@@ -8822,7 +9116,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case GREATER:
+                case CONTAIN:
                     {
                     int LA54_7 = input.LA(3);
 
@@ -8842,7 +9136,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case THAN:
+                case GREATER:
                     {
                     int LA54_8 = input.LA(3);
 
@@ -8862,7 +9156,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case LESS:
+                case THAN:
                     {
                     int LA54_9 = input.LA(3);
 
@@ -8882,7 +9176,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case VAR:
+                case LESS:
                     {
                     int LA54_10 = input.LA(3);
 
@@ -8902,7 +9196,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case TO:
+                case VAR:
                     {
                     int LA54_11 = input.LA(3);
 
@@ -8922,7 +9216,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case DEFAULT:
+                case TO:
                     {
                     int LA54_12 = input.LA(3);
 
@@ -8942,7 +9236,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case INCLUDE:
+                case DEFAULT:
                     {
                     int LA54_13 = input.LA(3);
 
@@ -8962,7 +9256,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case NEW:
+                case INCLUDE:
                     {
                     int LA54_14 = input.LA(3);
 
@@ -8982,7 +9276,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case ABORT:
+                case NEW:
                     {
                     int LA54_15 = input.LA(3);
 
@@ -9002,7 +9296,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case THROW:
+                case ABORT:
                     {
                     int LA54_16 = input.LA(3);
 
@@ -9022,7 +9316,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case RETHROW:
+                case THROW:
                     {
                     int LA54_17 = input.LA(3);
 
@@ -9042,7 +9336,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case PARAM:
+                case RETHROW:
                     {
                     int LA54_18 = input.LA(3);
 
@@ -9062,7 +9356,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case EXIT:
+                case PARAM:
                     {
                     int LA54_19 = input.LA(3);
 
@@ -9082,7 +9376,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case THREAD:
+                case EXIT:
                     {
                     int LA54_20 = input.LA(3);
 
@@ -9102,7 +9396,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case LOCK:
+                case THREAD:
                     {
                     int LA54_21 = input.LA(3);
 
@@ -9122,7 +9416,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case TRANSACTION:
+                case LOCK:
                     {
                     int LA54_22 = input.LA(3);
 
@@ -9142,7 +9436,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case PUBLIC:
+                case TRANSACTION:
                     {
                     int LA54_23 = input.LA(3);
 
@@ -9162,7 +9456,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case PRIVATE:
+                case PUBLIC:
                     {
                     int LA54_24 = input.LA(3);
 
@@ -9182,7 +9476,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case REMOTE:
+                case PRIVATE:
                     {
                     int LA54_25 = input.LA(3);
 
@@ -9202,7 +9496,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case PACKAGE:
+                case REMOTE:
                     {
                     int LA54_26 = input.LA(3);
 
@@ -9222,7 +9516,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case REQUIRED:
+                case PACKAGE:
                     {
                     int LA54_27 = input.LA(3);
 
@@ -9242,14 +9536,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case DIRECTORY:
-                case FILE:
-                case HTTP:
-                case LOCATION:
-                case LOOP:
-                case QUERY:
-                case SAVECONTENT:
-                case SETTING:
+                case REQUIRED:
                     {
                     int LA54_28 = input.LA(3);
 
@@ -9269,7 +9556,14 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case FUNCTION:
+                case DIRECTORY:
+                case FILE:
+                case HTTP:
+                case LOCATION:
+                case LOOP:
+                case QUERY:
+                case SAVECONTENT:
+                case SETTING:
                     {
                     int LA54_29 = input.LA(3);
 
@@ -9283,6 +9577,26 @@ public TreeAdaptor getTreeAdaptor() {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
                             new NoViableAltException("", 54, 29, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
+                case FUNCTION:
+                    {
+                    int LA54_30 = input.LA(3);
+
+                    if ( (synpred95_CFScript()) ) {
+                        alt54=1;
+                    }
+                    else if ( (true) ) {
+                        alt54=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 54, 30, input);
 
                         throw nvae;
 
@@ -9361,26 +9675,6 @@ public TreeAdaptor getTreeAdaptor() {
                     break;
                 case TRY:
                     {
-                    int LA54_31 = input.LA(3);
-
-                    if ( (synpred95_CFScript()) ) {
-                        alt54=1;
-                    }
-                    else if ( (true) ) {
-                        alt54=2;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 54, 31, input);
-
-                        throw nvae;
-
-                    }
-                    }
-                    break;
-                case IF:
-                    {
                     int LA54_32 = input.LA(3);
 
                     if ( (synpred95_CFScript()) ) {
@@ -9399,7 +9693,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case WHILE:
+                case IF:
                     {
                     int LA54_33 = input.LA(3);
 
@@ -9419,7 +9713,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case DO:
+                case WHILE:
                     {
                     int LA54_34 = input.LA(3);
 
@@ -9439,7 +9733,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case FOR:
+                case DO:
                     {
                     int LA54_35 = input.LA(3);
 
@@ -9459,7 +9753,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case SWITCH:
+                case FOR:
                     {
                     int LA54_36 = input.LA(3);
 
@@ -9479,7 +9773,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case CONTINUE:
+                case SWITCH:
                     {
                     int LA54_37 = input.LA(3);
 
@@ -9499,7 +9793,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case BREAK:
+                case CONTINUE:
                     {
                     int LA54_38 = input.LA(3);
 
@@ -9519,7 +9813,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case RETURN:
+                case BREAK:
                     {
                     int LA54_39 = input.LA(3);
 
@@ -9539,7 +9833,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case IMPORT:
+                case RETURN:
                     {
                     int LA54_40 = input.LA(3);
 
@@ -9559,7 +9853,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case ELSE:
+                case IMPORT:
                     {
                     int LA54_41 = input.LA(3);
 
@@ -9579,7 +9873,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case CATCH:
+                case ELSE:
                     {
                     int LA54_42 = input.LA(3);
 
@@ -9599,7 +9893,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case CASE:
+                case CATCH:
                     {
                     int LA54_43 = input.LA(3);
 
@@ -9619,7 +9913,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
-                case IN:
+                case CASE:
                     {
                     int LA54_44 = input.LA(3);
 
@@ -9639,6 +9933,26 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     }
                     break;
+                case IN:
+                    {
+                    int LA54_45 = input.LA(3);
+
+                    if ( (synpred95_CFScript()) ) {
+                        alt54=1;
+                    }
+                    else if ( (true) ) {
+                        alt54=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 54, 45, input);
+
+                        throw nvae;
+
+                    }
+                    }
+                    break;
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
@@ -9649,7 +9963,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA54_0==ABORT||LA54_0==BOOLEAN_LITERAL||LA54_0==CONTAIN||LA54_0==DEFAULT||LA54_0==DIRECTORY||LA54_0==DOES||LA54_0==EXIT||LA54_0==FILE||LA54_0==FLOATING_POINT_LITERAL||LA54_0==GREATER||(LA54_0 >= HTTP && LA54_0 <= IDENTIFIER)||(LA54_0 >= INCLUDE && LA54_0 <= INTEGER_LITERAL)||(LA54_0 >= LEFTBRACKET && LA54_0 <= LESS)||(LA54_0 >= LOCATION && LA54_0 <= LOCK)||LA54_0==LOOP||LA54_0==MINUS||LA54_0==MINUSMINUS||(LA54_0 >= NEW && LA54_0 <= NULL)||(LA54_0 >= PACKAGE && LA54_0 <= PARAM)||LA54_0==PLUS||LA54_0==PLUSPLUS||LA54_0==PRIVATE||(LA54_0 >= PUBLIC && LA54_0 <= QUERY)||(LA54_0 >= REMOTE && LA54_0 <= RETHROW)||LA54_0==SAVECONTENT||LA54_0==SETTING||LA54_0==STRING_LITERAL||(LA54_0 >= THAN && LA54_0 <= THREAD)||LA54_0==THROW||(LA54_0 >= TO && LA54_0 <= TRANSACTION)||LA54_0==150) ) {
+            else if ( (LA54_0==ABORT||LA54_0==BOOLEAN_LITERAL||LA54_0==COMPONENT||LA54_0==CONTAIN||LA54_0==DEFAULT||LA54_0==DIRECTORY||LA54_0==DOES||LA54_0==EXIT||LA54_0==FILE||LA54_0==FLOATING_POINT_LITERAL||LA54_0==GREATER||(LA54_0 >= HTTP && LA54_0 <= IDENTIFIER)||(LA54_0 >= INCLUDE && LA54_0 <= INTEGER_LITERAL)||(LA54_0 >= LEFTBRACKET && LA54_0 <= LESS)||(LA54_0 >= LOCATION && LA54_0 <= LOCK)||LA54_0==LOOP||LA54_0==MINUS||LA54_0==MINUSMINUS||(LA54_0 >= NEW && LA54_0 <= NULL)||(LA54_0 >= PACKAGE && LA54_0 <= PARAM)||LA54_0==PLUS||LA54_0==PLUSPLUS||LA54_0==PRIVATE||(LA54_0 >= PUBLIC && LA54_0 <= QUERY)||(LA54_0 >= REMOTE && LA54_0 <= RETHROW)||LA54_0==SAVECONTENT||LA54_0==SETTING||LA54_0==STRING_LITERAL||(LA54_0 >= THAN && LA54_0 <= THREAD)||LA54_0==THROW||(LA54_0 >= TO && LA54_0 <= TRANSACTION)||LA54_0==150) ) {
                 alt54=2;
             }
             else if ( (LA54_0==BREAK||(LA54_0 >= CASE && LA54_0 <= CATCH)||LA54_0==CONTINUE||LA54_0==DO||LA54_0==ELSE||LA54_0==FOR||LA54_0==FUNCTION||LA54_0==IF||(LA54_0 >= IMPORT && LA54_0 <= IN)||LA54_0==RETURN||LA54_0==SWITCH||LA54_0==TRY||LA54_0==WHILE) && ((!scriptMode))) {
@@ -9665,36 +9979,36 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt54) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:4: VAR identifier ( EQUALSOP impliesExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:4: VAR identifier ( EQUALSOP impliesExpression )?
                     {
-                    VAR187=(Token)match(input,VAR,FOLLOW_VAR_in_localAssignmentExpression3307); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_VAR.add(VAR187);
+                    VAR188=(Token)match(input,VAR,FOLLOW_VAR_in_localAssignmentExpression3321); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_VAR.add(VAR188);
 
 
-                    pushFollow(FOLLOW_identifier_in_localAssignmentExpression3309);
-                    identifier188=identifier();
+                    pushFollow(FOLLOW_identifier_in_localAssignmentExpression3323);
+                    identifier189=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_identifier.add(identifier188.getTree());
+                    if ( state.backtracking==0 ) stream_identifier.add(identifier189.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:19: ( EQUALSOP impliesExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:19: ( EQUALSOP impliesExpression )?
                     int alt53=2;
                     alt53 = dfa53.predict(input);
                     switch (alt53) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:21: EQUALSOP impliesExpression
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:21: EQUALSOP impliesExpression
                             {
-                            EQUALSOP189=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_localAssignmentExpression3313); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP189);
+                            EQUALSOP190=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_localAssignmentExpression3327); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP190);
 
 
-                            pushFollow(FOLLOW_impliesExpression_in_localAssignmentExpression3315);
-                            impliesExpression190=impliesExpression();
+                            pushFollow(FOLLOW_impliesExpression_in_localAssignmentExpression3329);
+                            impliesExpression191=impliesExpression();
 
                             state._fsp--;
                             if (state.failed) return retval;
-                            if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression190.getTree());
+                            if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression191.getTree());
 
                             }
                             break;
@@ -9715,9 +10029,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 689:51: -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
+                    // 693:51: -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:54: ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:54: ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -9726,7 +10040,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         adaptor.addChild(root_1, stream_identifier.nextTree());
 
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:77: ( EQUALSOP impliesExpression )?
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:77: ( EQUALSOP impliesExpression )?
                         if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
                             adaptor.addChild(root_1, 
                             stream_EQUALSOP.nextNode()
@@ -9750,17 +10064,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:690:4: assignmentExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:4: assignmentExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_assignmentExpression_in_localAssignmentExpression3343);
-                    assignmentExpression191=assignmentExpression();
+                    pushFollow(FOLLOW_assignmentExpression_in_localAssignmentExpression3357);
+                    assignmentExpression192=assignmentExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, assignmentExpression191.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, assignmentExpression192.getTree());
 
                     }
                     break;
@@ -9784,7 +10098,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 47, localAssignmentExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 48, localAssignmentExpression_StartIndex); }
 
         }
         return retval;
@@ -9799,7 +10113,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "assignmentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:1: assignmentExpression : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:697:1: assignmentExpression : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? ;
     public final CFScriptParser.assignmentExpression_return assignmentExpression() throws RecognitionException {
         CFScriptParser.assignmentExpression_return retval = new CFScriptParser.assignmentExpression_return();
         retval.start = input.LT(1);
@@ -9808,31 +10122,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set193=null;
-        CFScriptParser.impliesExpression_return impliesExpression192 =null;
+        Token set194=null;
+        CFScriptParser.impliesExpression_return impliesExpression193 =null;
 
-        CFScriptParser.impliesExpression_return impliesExpression194 =null;
+        CFScriptParser.impliesExpression_return impliesExpression195 =null;
 
 
-        CommonTree set193_tree=null;
+        CommonTree set194_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:3: ( impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:5: impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:3: ( impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:5: impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_impliesExpression_in_assignmentExpression3356);
-            impliesExpression192=impliesExpression();
+            pushFollow(FOLLOW_impliesExpression_in_assignmentExpression3370);
+            impliesExpression193=impliesExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression192.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression193.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:23: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:23: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -9845,16 +10159,16 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt55) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression
                     {
-                    set193=(Token)input.LT(1);
+                    set194=(Token)input.LT(1);
 
-                    set193=(Token)input.LT(1);
+                    set194=(Token)input.LT(1);
 
                     if ( input.LA(1)==CONCATEQUALS||input.LA(1)==EQUALSOP||input.LA(1)==MINUSEQUALS||input.LA(1)==MODEQUALS||input.LA(1)==PLUSEQUALS||input.LA(1)==SLASHEQUALS||input.LA(1)==STAREQUALS ) {
                         input.consume();
                         if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(
-                        (CommonTree)adaptor.create(set193)
+                        (CommonTree)adaptor.create(set194)
                         , root_0);
                         state.errorRecovery=false;
                         state.failed=false;
@@ -9866,12 +10180,12 @@ public TreeAdaptor getTreeAdaptor() {
                     }
 
 
-                    pushFollow(FOLLOW_impliesExpression_in_assignmentExpression3391);
-                    impliesExpression194=impliesExpression();
+                    pushFollow(FOLLOW_impliesExpression_in_assignmentExpression3405);
+                    impliesExpression195=impliesExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression194.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression195.getTree());
 
                     }
                     break;
@@ -9899,7 +10213,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 48, assignmentExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 49, assignmentExpression_StartIndex); }
 
         }
         return retval;
@@ -9914,7 +10228,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "impliesExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:697:1: impliesExpression : ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:701:1: impliesExpression : ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* );
     public final CFScriptParser.impliesExpression_return impliesExpression() throws RecognitionException {
         CFScriptParser.impliesExpression_return retval = new CFScriptParser.impliesExpression_return();
         retval.start = input.LT(1);
@@ -9923,20 +10237,20 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IMP197=null;
-        CFScriptParser.ternary_return ternary195 =null;
+        Token IMP198=null;
+        CFScriptParser.ternary_return ternary196 =null;
 
-        CFScriptParser.equivalentExpression_return equivalentExpression196 =null;
+        CFScriptParser.equivalentExpression_return equivalentExpression197 =null;
 
-        CFScriptParser.equivalentExpression_return equivalentExpression198 =null;
+        CFScriptParser.equivalentExpression_return equivalentExpression199 =null;
 
 
-        CommonTree IMP197_tree=null;
+        CommonTree IMP198_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:2: ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:702:2: ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* )
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -10228,7 +10542,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==IDENTIFIER) ) {
+            else if ( (LA57_0==COMPONENT) ) {
                 int LA57_17 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10246,7 +10560,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==DOES) ) {
+            else if ( (LA57_0==IDENTIFIER) ) {
                 int LA57_18 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10264,7 +10578,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==CONTAIN) ) {
+            else if ( (LA57_0==DOES) ) {
                 int LA57_19 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10282,7 +10596,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==GREATER) ) {
+            else if ( (LA57_0==CONTAIN) ) {
                 int LA57_20 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10300,7 +10614,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==THAN) ) {
+            else if ( (LA57_0==GREATER) ) {
                 int LA57_21 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10318,7 +10632,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==LESS) ) {
+            else if ( (LA57_0==THAN) ) {
                 int LA57_22 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10336,7 +10650,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==VAR) ) {
+            else if ( (LA57_0==LESS) ) {
                 int LA57_23 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10354,7 +10668,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==TO) ) {
+            else if ( (LA57_0==VAR) ) {
                 int LA57_24 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10372,7 +10686,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==DEFAULT) ) {
+            else if ( (LA57_0==TO) ) {
                 int LA57_25 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10390,7 +10704,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==INCLUDE) ) {
+            else if ( (LA57_0==DEFAULT) ) {
                 int LA57_26 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10408,7 +10722,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==ABORT) ) {
+            else if ( (LA57_0==INCLUDE) ) {
                 int LA57_27 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10426,7 +10740,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==THROW) ) {
+            else if ( (LA57_0==ABORT) ) {
                 int LA57_28 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10444,7 +10758,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==RETHROW) ) {
+            else if ( (LA57_0==THROW) ) {
                 int LA57_29 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10462,7 +10776,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==PARAM) ) {
+            else if ( (LA57_0==RETHROW) ) {
                 int LA57_30 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10480,7 +10794,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==EXIT) ) {
+            else if ( (LA57_0==PARAM) ) {
                 int LA57_31 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10498,7 +10812,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==THREAD) ) {
+            else if ( (LA57_0==EXIT) ) {
                 int LA57_32 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10516,7 +10830,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==LOCK) ) {
+            else if ( (LA57_0==THREAD) ) {
                 int LA57_33 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10534,7 +10848,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==TRANSACTION) ) {
+            else if ( (LA57_0==LOCK) ) {
                 int LA57_34 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10552,7 +10866,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==PUBLIC) ) {
+            else if ( (LA57_0==TRANSACTION) ) {
                 int LA57_35 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10570,7 +10884,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==PRIVATE) ) {
+            else if ( (LA57_0==PUBLIC) ) {
                 int LA57_36 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10588,7 +10902,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==REMOTE) ) {
+            else if ( (LA57_0==PRIVATE) ) {
                 int LA57_37 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10606,7 +10920,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==PACKAGE) ) {
+            else if ( (LA57_0==REMOTE) ) {
                 int LA57_38 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10624,7 +10938,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==REQUIRED) ) {
+            else if ( (LA57_0==PACKAGE) ) {
                 int LA57_39 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10642,7 +10956,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==DIRECTORY||LA57_0==FILE||LA57_0==HTTP||LA57_0==LOCATION||LA57_0==LOOP||LA57_0==QUERY||LA57_0==SAVECONTENT||LA57_0==SETTING) ) {
+            else if ( (LA57_0==REQUIRED) ) {
                 int LA57_40 = input.LA(2);
 
                 if ( (synpred103_CFScript()) ) {
@@ -10660,8 +10974,26 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA57_0==BREAK||(LA57_0 >= CASE && LA57_0 <= CATCH)||LA57_0==CONTINUE||LA57_0==DO||LA57_0==ELSE||LA57_0==FOR||LA57_0==FUNCTION||LA57_0==IF||(LA57_0 >= IMPORT && LA57_0 <= IN)||LA57_0==RETURN||LA57_0==SWITCH||LA57_0==TRY||LA57_0==WHILE) && ((!scriptMode))) {
+            else if ( (LA57_0==DIRECTORY||LA57_0==FILE||LA57_0==HTTP||LA57_0==LOCATION||LA57_0==LOOP||LA57_0==QUERY||LA57_0==SAVECONTENT||LA57_0==SETTING) ) {
                 int LA57_41 = input.LA(2);
+
+                if ( (synpred103_CFScript()) ) {
+                    alt57=1;
+                }
+                else if ( (true) ) {
+                    alt57=2;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 57, 41, input);
+
+                    throw nvae;
+
+                }
+            }
+            else if ( (LA57_0==BREAK||(LA57_0 >= CASE && LA57_0 <= CATCH)||LA57_0==CONTINUE||LA57_0==DO||LA57_0==ELSE||LA57_0==FOR||LA57_0==FUNCTION||LA57_0==IF||(LA57_0 >= IMPORT && LA57_0 <= IN)||LA57_0==RETURN||LA57_0==SWITCH||LA57_0==TRY||LA57_0==WHILE) && ((!scriptMode))) {
+                int LA57_42 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred103_CFScript())) ) {
                     alt57=1;
@@ -10672,7 +11004,7 @@ public TreeAdaptor getTreeAdaptor() {
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 57, 41, input);
+                        new NoViableAltException("", 57, 42, input);
 
                     throw nvae;
 
@@ -10688,34 +11020,34 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt57) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:4: ternary
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:702:4: ternary
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_ternary_in_impliesExpression3406);
-                    ternary195=ternary();
+                    pushFollow(FOLLOW_ternary_in_impliesExpression3420);
+                    ternary196=ternary();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, ternary195.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, ternary196.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:699:4: equivalentExpression ( IMP ^ equivalentExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:703:4: equivalentExpression ( IMP ^ equivalentExpression )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_equivalentExpression_in_impliesExpression3411);
-                    equivalentExpression196=equivalentExpression();
+                    pushFollow(FOLLOW_equivalentExpression_in_impliesExpression3425);
+                    equivalentExpression197=equivalentExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, equivalentExpression196.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, equivalentExpression197.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:699:25: ( IMP ^ equivalentExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:703:25: ( IMP ^ equivalentExpression )*
                     loop56:
                     do {
                         int alt56=2;
@@ -10728,22 +11060,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt56) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:699:27: IMP ^ equivalentExpression
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:703:27: IMP ^ equivalentExpression
                     	    {
-                    	    IMP197=(Token)match(input,IMP,FOLLOW_IMP_in_impliesExpression3415); if (state.failed) return retval;
+                    	    IMP198=(Token)match(input,IMP,FOLLOW_IMP_in_impliesExpression3429); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
-                    	    IMP197_tree = 
-                    	    (CommonTree)adaptor.create(IMP197)
+                    	    IMP198_tree = 
+                    	    (CommonTree)adaptor.create(IMP198)
                     	    ;
-                    	    root_0 = (CommonTree)adaptor.becomeRoot(IMP197_tree, root_0);
+                    	    root_0 = (CommonTree)adaptor.becomeRoot(IMP198_tree, root_0);
                     	    }
 
-                    	    pushFollow(FOLLOW_equivalentExpression_in_impliesExpression3418);
-                    	    equivalentExpression198=equivalentExpression();
+                    	    pushFollow(FOLLOW_equivalentExpression_in_impliesExpression3432);
+                    	    equivalentExpression199=equivalentExpression();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, equivalentExpression198.getTree());
+                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, equivalentExpression199.getTree());
 
                     	    }
                     	    break;
@@ -10776,7 +11108,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 49, impliesExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 50, impliesExpression_StartIndex); }
 
         }
         return retval;
@@ -10791,7 +11123,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "ternary"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:702:1: ternary : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:706:1: ternary : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) ;
     public final CFScriptParser.ternary_return ternary() throws RecognitionException {
         CFScriptParser.ternary_return retval = new CFScriptParser.ternary_return();
         retval.start = input.LT(1);
@@ -10800,58 +11132,58 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token QUESTIONMARK200=null;
-        Token COLON202=null;
-        CFScriptParser.equivalentExpression_return equivalentExpression199 =null;
+        Token QUESTIONMARK201=null;
+        Token COLON203=null;
+        CFScriptParser.equivalentExpression_return equivalentExpression200 =null;
 
-        CFScriptParser.localAssignmentExpression_return localAssignmentExpression201 =null;
+        CFScriptParser.localAssignmentExpression_return localAssignmentExpression202 =null;
 
-        CFScriptParser.localAssignmentExpression_return localAssignmentExpression203 =null;
+        CFScriptParser.localAssignmentExpression_return localAssignmentExpression204 =null;
 
 
-        CommonTree QUESTIONMARK200_tree=null;
-        CommonTree COLON202_tree=null;
+        CommonTree QUESTIONMARK201_tree=null;
+        CommonTree COLON203_tree=null;
         RewriteRuleTokenStream stream_COLON=new RewriteRuleTokenStream(adaptor,"token COLON");
         RewriteRuleTokenStream stream_QUESTIONMARK=new RewriteRuleTokenStream(adaptor,"token QUESTIONMARK");
         RewriteRuleSubtreeStream stream_localAssignmentExpression=new RewriteRuleSubtreeStream(adaptor,"rule localAssignmentExpression");
         RewriteRuleSubtreeStream stream_equivalentExpression=new RewriteRuleSubtreeStream(adaptor,"rule equivalentExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:4: ( equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:6: equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:4: ( equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:6: equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
             {
-            pushFollow(FOLLOW_equivalentExpression_in_ternary3435);
-            equivalentExpression199=equivalentExpression();
+            pushFollow(FOLLOW_equivalentExpression_in_ternary3449);
+            equivalentExpression200=equivalentExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_equivalentExpression.add(equivalentExpression199.getTree());
+            if ( state.backtracking==0 ) stream_equivalentExpression.add(equivalentExpression200.getTree());
 
-            QUESTIONMARK200=(Token)match(input,QUESTIONMARK,FOLLOW_QUESTIONMARK_in_ternary3437); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_QUESTIONMARK.add(QUESTIONMARK200);
-
-
-            pushFollow(FOLLOW_localAssignmentExpression_in_ternary3439);
-            localAssignmentExpression201=localAssignmentExpression();
-
-            state._fsp--;
-            if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression201.getTree());
-
-            COLON202=(Token)match(input,COLON,FOLLOW_COLON_in_ternary3441); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_COLON.add(COLON202);
+            QUESTIONMARK201=(Token)match(input,QUESTIONMARK,FOLLOW_QUESTIONMARK_in_ternary3451); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_QUESTIONMARK.add(QUESTIONMARK201);
 
 
-            pushFollow(FOLLOW_localAssignmentExpression_in_ternary3443);
-            localAssignmentExpression203=localAssignmentExpression();
+            pushFollow(FOLLOW_localAssignmentExpression_in_ternary3453);
+            localAssignmentExpression202=localAssignmentExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression203.getTree());
+            if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression202.getTree());
+
+            COLON203=(Token)match(input,COLON,FOLLOW_COLON_in_ternary3455); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_COLON.add(COLON203);
+
+
+            pushFollow(FOLLOW_localAssignmentExpression_in_ternary3457);
+            localAssignmentExpression204=localAssignmentExpression();
+
+            state._fsp--;
+            if (state.failed) return retval;
+            if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression204.getTree());
 
             // AST REWRITE
-            // elements: equivalentExpression, localAssignmentExpression, localAssignmentExpression
+            // elements: localAssignmentExpression, equivalentExpression, localAssignmentExpression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -10863,9 +11195,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 704:98: -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
+            // 708:98: -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:101: ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:101: ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -10907,7 +11239,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 50, ternary_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 51, ternary_StartIndex); }
 
         }
         return retval;
@@ -10922,7 +11254,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equivalentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:707:1: equivalentExpression : xorExpression ( EQV ^ xorExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:711:1: equivalentExpression : xorExpression ( EQV ^ xorExpression )* ;
     public final CFScriptParser.equivalentExpression_return equivalentExpression() throws RecognitionException {
         CFScriptParser.equivalentExpression_return retval = new CFScriptParser.equivalentExpression_return();
         retval.start = input.LT(1);
@@ -10931,31 +11263,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token EQV205=null;
-        CFScriptParser.xorExpression_return xorExpression204 =null;
+        Token EQV206=null;
+        CFScriptParser.xorExpression_return xorExpression205 =null;
 
-        CFScriptParser.xorExpression_return xorExpression206 =null;
+        CFScriptParser.xorExpression_return xorExpression207 =null;
 
 
-        CommonTree EQV205_tree=null;
+        CommonTree EQV206_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:2: ( xorExpression ( EQV ^ xorExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:4: xorExpression ( EQV ^ xorExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:2: ( xorExpression ( EQV ^ xorExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:4: xorExpression ( EQV ^ xorExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_xorExpression_in_equivalentExpression3468);
-            xorExpression204=xorExpression();
+            pushFollow(FOLLOW_xorExpression_in_equivalentExpression3482);
+            xorExpression205=xorExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, xorExpression204.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, xorExpression205.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:18: ( EQV ^ xorExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:18: ( EQV ^ xorExpression )*
             loop58:
             do {
                 int alt58=2;
@@ -10968,22 +11300,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt58) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:20: EQV ^ xorExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:20: EQV ^ xorExpression
             	    {
-            	    EQV205=(Token)match(input,EQV,FOLLOW_EQV_in_equivalentExpression3472); if (state.failed) return retval;
+            	    EQV206=(Token)match(input,EQV,FOLLOW_EQV_in_equivalentExpression3486); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    EQV205_tree = 
-            	    (CommonTree)adaptor.create(EQV205)
+            	    EQV206_tree = 
+            	    (CommonTree)adaptor.create(EQV206)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(EQV205_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(EQV206_tree, root_0);
             	    }
 
-            	    pushFollow(FOLLOW_xorExpression_in_equivalentExpression3475);
-            	    xorExpression206=xorExpression();
+            	    pushFollow(FOLLOW_xorExpression_in_equivalentExpression3489);
+            	    xorExpression207=xorExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, xorExpression206.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, xorExpression207.getTree());
 
             	    }
             	    break;
@@ -11014,7 +11346,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 51, equivalentExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 52, equivalentExpression_StartIndex); }
 
         }
         return retval;
@@ -11029,7 +11361,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "xorExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:711:1: xorExpression : orExpression ( XOR ^ orExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:715:1: xorExpression : orExpression ( XOR ^ orExpression )* ;
     public final CFScriptParser.xorExpression_return xorExpression() throws RecognitionException {
         CFScriptParser.xorExpression_return retval = new CFScriptParser.xorExpression_return();
         retval.start = input.LT(1);
@@ -11038,31 +11370,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token XOR208=null;
-        CFScriptParser.orExpression_return orExpression207 =null;
+        Token XOR209=null;
+        CFScriptParser.orExpression_return orExpression208 =null;
 
-        CFScriptParser.orExpression_return orExpression209 =null;
+        CFScriptParser.orExpression_return orExpression210 =null;
 
 
-        CommonTree XOR208_tree=null;
+        CommonTree XOR209_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:2: ( orExpression ( XOR ^ orExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:4: orExpression ( XOR ^ orExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:2: ( orExpression ( XOR ^ orExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:4: orExpression ( XOR ^ orExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_orExpression_in_xorExpression3489);
-            orExpression207=orExpression();
+            pushFollow(FOLLOW_orExpression_in_xorExpression3503);
+            orExpression208=orExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, orExpression207.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, orExpression208.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:17: ( XOR ^ orExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:17: ( XOR ^ orExpression )*
             loop59:
             do {
                 int alt59=2;
@@ -11075,22 +11407,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt59) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:19: XOR ^ orExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:19: XOR ^ orExpression
             	    {
-            	    XOR208=(Token)match(input,XOR,FOLLOW_XOR_in_xorExpression3493); if (state.failed) return retval;
+            	    XOR209=(Token)match(input,XOR,FOLLOW_XOR_in_xorExpression3507); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    XOR208_tree = 
-            	    (CommonTree)adaptor.create(XOR208)
+            	    XOR209_tree = 
+            	    (CommonTree)adaptor.create(XOR209)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(XOR208_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(XOR209_tree, root_0);
             	    }
 
-            	    pushFollow(FOLLOW_orExpression_in_xorExpression3496);
-            	    orExpression209=orExpression();
+            	    pushFollow(FOLLOW_orExpression_in_xorExpression3510);
+            	    orExpression210=orExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, orExpression209.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, orExpression210.getTree());
 
             	    }
             	    break;
@@ -11121,7 +11453,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 52, xorExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 53, xorExpression_StartIndex); }
 
         }
         return retval;
@@ -11136,7 +11468,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "orExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:715:1: orExpression : andExpression ( ( OR | OROPERATOR ) ^ andExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:719:1: orExpression : andExpression ( ( OR | OROPERATOR ) ^ andExpression )* ;
     public final CFScriptParser.orExpression_return orExpression() throws RecognitionException {
         CFScriptParser.orExpression_return retval = new CFScriptParser.orExpression_return();
         retval.start = input.LT(1);
@@ -11145,31 +11477,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set211=null;
-        CFScriptParser.andExpression_return andExpression210 =null;
+        Token set212=null;
+        CFScriptParser.andExpression_return andExpression211 =null;
 
-        CFScriptParser.andExpression_return andExpression212 =null;
+        CFScriptParser.andExpression_return andExpression213 =null;
 
 
-        CommonTree set211_tree=null;
+        CommonTree set212_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:2: ( andExpression ( ( OR | OROPERATOR ) ^ andExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:4: andExpression ( ( OR | OROPERATOR ) ^ andExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:2: ( andExpression ( ( OR | OROPERATOR ) ^ andExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:4: andExpression ( ( OR | OROPERATOR ) ^ andExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_andExpression_in_orExpression3511);
-            andExpression210=andExpression();
+            pushFollow(FOLLOW_andExpression_in_orExpression3525);
+            andExpression211=andExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression210.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression211.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:18: ( ( OR | OROPERATOR ) ^ andExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:18: ( ( OR | OROPERATOR ) ^ andExpression )*
             loop60:
             do {
                 int alt60=2;
@@ -11182,16 +11514,16 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt60) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:20: ( OR | OROPERATOR ) ^ andExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:20: ( OR | OROPERATOR ) ^ andExpression
             	    {
-            	    set211=(Token)input.LT(1);
+            	    set212=(Token)input.LT(1);
 
-            	    set211=(Token)input.LT(1);
+            	    set212=(Token)input.LT(1);
 
             	    if ( (input.LA(1) >= OR && input.LA(1) <= OROPERATOR) ) {
             	        input.consume();
             	        if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(
-            	        (CommonTree)adaptor.create(set211)
+            	        (CommonTree)adaptor.create(set212)
             	        , root_0);
             	        state.errorRecovery=false;
             	        state.failed=false;
@@ -11203,12 +11535,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_andExpression_in_orExpression3526);
-            	    andExpression212=andExpression();
+            	    pushFollow(FOLLOW_andExpression_in_orExpression3540);
+            	    andExpression213=andExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression212.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression213.getTree());
 
             	    }
             	    break;
@@ -11239,7 +11571,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 53, orExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 54, orExpression_StartIndex); }
 
         }
         return retval;
@@ -11254,7 +11586,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "andExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:719:1: andExpression : notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:1: andExpression : notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* ;
     public final CFScriptParser.andExpression_return andExpression() throws RecognitionException {
         CFScriptParser.andExpression_return retval = new CFScriptParser.andExpression_return();
         retval.start = input.LT(1);
@@ -11263,31 +11595,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set214=null;
-        CFScriptParser.notExpression_return notExpression213 =null;
+        Token set215=null;
+        CFScriptParser.notExpression_return notExpression214 =null;
 
-        CFScriptParser.notExpression_return notExpression215 =null;
+        CFScriptParser.notExpression_return notExpression216 =null;
 
 
-        CommonTree set214_tree=null;
+        CommonTree set215_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:2: ( notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:4: notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:2: ( notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:4: notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_notExpression_in_andExpression3541);
-            notExpression213=notExpression();
+            pushFollow(FOLLOW_notExpression_in_andExpression3555);
+            notExpression214=notExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, notExpression213.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, notExpression214.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:18: ( ( AND | ANDOPERATOR ) ^ notExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:18: ( ( AND | ANDOPERATOR ) ^ notExpression )*
             loop61:
             do {
                 int alt61=2;
@@ -11300,16 +11632,16 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt61) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:720:20: ( AND | ANDOPERATOR ) ^ notExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:20: ( AND | ANDOPERATOR ) ^ notExpression
             	    {
-            	    set214=(Token)input.LT(1);
+            	    set215=(Token)input.LT(1);
 
-            	    set214=(Token)input.LT(1);
+            	    set215=(Token)input.LT(1);
 
             	    if ( (input.LA(1) >= AND && input.LA(1) <= ANDOPERATOR) ) {
             	        input.consume();
             	        if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(
-            	        (CommonTree)adaptor.create(set214)
+            	        (CommonTree)adaptor.create(set215)
             	        , root_0);
             	        state.errorRecovery=false;
             	        state.failed=false;
@@ -11321,12 +11653,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_notExpression_in_andExpression3556);
-            	    notExpression215=notExpression();
+            	    pushFollow(FOLLOW_notExpression_in_andExpression3570);
+            	    notExpression216=notExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, notExpression215.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, notExpression216.getTree());
 
             	    }
             	    break;
@@ -11357,7 +11689,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 54, andExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 55, andExpression_StartIndex); }
 
         }
         return retval;
@@ -11372,7 +11704,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "notExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:1: notExpression : ( NOT ^| NOTOP ^)? equalityExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:1: notExpression : ( NOT ^| NOTOP ^)? equalityExpression ;
     public final CFScriptParser.notExpression_return notExpression() throws RecognitionException {
         CFScriptParser.notExpression_return retval = new CFScriptParser.notExpression_return();
         retval.start = input.LT(1);
@@ -11381,24 +11713,24 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token NOT216=null;
-        Token NOTOP217=null;
-        CFScriptParser.equalityExpression_return equalityExpression218 =null;
+        Token NOT217=null;
+        Token NOTOP218=null;
+        CFScriptParser.equalityExpression_return equalityExpression219 =null;
 
 
-        CommonTree NOT216_tree=null;
-        CommonTree NOTOP217_tree=null;
+        CommonTree NOT217_tree=null;
+        CommonTree NOTOP218_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:2: ( ( NOT ^| NOTOP ^)? equalityExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:4: ( NOT ^| NOTOP ^)? equalityExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:2: ( ( NOT ^| NOTOP ^)? equalityExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:4: ( NOT ^| NOTOP ^)? equalityExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:4: ( NOT ^| NOTOP ^)?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:4: ( NOT ^| NOTOP ^)?
             int alt62=3;
             int LA62_0 = input.LA(1);
 
@@ -11410,27 +11742,27 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt62) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:6: NOT ^
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:6: NOT ^
                     {
-                    NOT216=(Token)match(input,NOT,FOLLOW_NOT_in_notExpression3573); if (state.failed) return retval;
+                    NOT217=(Token)match(input,NOT,FOLLOW_NOT_in_notExpression3587); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NOT216_tree = 
-                    (CommonTree)adaptor.create(NOT216)
+                    NOT217_tree = 
+                    (CommonTree)adaptor.create(NOT217)
                     ;
-                    root_0 = (CommonTree)adaptor.becomeRoot(NOT216_tree, root_0);
+                    root_0 = (CommonTree)adaptor.becomeRoot(NOT217_tree, root_0);
                     }
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:724:13: NOTOP ^
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:13: NOTOP ^
                     {
-                    NOTOP217=(Token)match(input,NOTOP,FOLLOW_NOTOP_in_notExpression3578); if (state.failed) return retval;
+                    NOTOP218=(Token)match(input,NOTOP,FOLLOW_NOTOP_in_notExpression3592); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NOTOP217_tree = 
-                    (CommonTree)adaptor.create(NOTOP217)
+                    NOTOP218_tree = 
+                    (CommonTree)adaptor.create(NOTOP218)
                     ;
-                    root_0 = (CommonTree)adaptor.becomeRoot(NOTOP217_tree, root_0);
+                    root_0 = (CommonTree)adaptor.becomeRoot(NOTOP218_tree, root_0);
                     }
 
                     }
@@ -11439,12 +11771,12 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            pushFollow(FOLLOW_equalityExpression_in_notExpression3584);
-            equalityExpression218=equalityExpression();
+            pushFollow(FOLLOW_equalityExpression_in_notExpression3598);
+            equalityExpression219=equalityExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, equalityExpression218.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, equalityExpression219.getTree());
 
             }
 
@@ -11466,7 +11798,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 55, notExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 56, notExpression_StartIndex); }
 
         }
         return retval;
@@ -11481,7 +11813,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:1: equalityExpression : concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:1: equalityExpression : concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* ;
     public final CFScriptParser.equalityExpression_return equalityExpression() throws RecognitionException {
         CFScriptParser.equalityExpression_return retval = new CFScriptParser.equalityExpression_return();
         retval.start = input.LT(1);
@@ -11490,46 +11822,46 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        CFScriptParser.concatenationExpression_return concatenationExpression219 =null;
+        CFScriptParser.concatenationExpression_return concatenationExpression220 =null;
 
-        CFScriptParser.equalityOperator5_return equalityOperator5220 =null;
+        CFScriptParser.equalityOperator5_return equalityOperator5221 =null;
 
-        CFScriptParser.equalityOperator3_return equalityOperator3221 =null;
+        CFScriptParser.equalityOperator3_return equalityOperator3222 =null;
 
-        CFScriptParser.equalityOperator2_return equalityOperator2222 =null;
+        CFScriptParser.equalityOperator2_return equalityOperator2223 =null;
 
-        CFScriptParser.equalityOperator1_return equalityOperator1223 =null;
+        CFScriptParser.equalityOperator1_return equalityOperator1224 =null;
 
-        CFScriptParser.concatenationExpression_return concatenationExpression224 =null;
+        CFScriptParser.concatenationExpression_return concatenationExpression225 =null;
 
 
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:5: ( concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:728:7: concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:732:5: ( concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:732:7: concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_concatenationExpression_in_equalityExpression3599);
-            concatenationExpression219=concatenationExpression();
+            pushFollow(FOLLOW_concatenationExpression_in_equalityExpression3613);
+            concatenationExpression220=concatenationExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, concatenationExpression219.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, concatenationExpression220.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
             loop64:
             do {
                 int alt64=2;
                 alt64 = dfa64.predict(input);
                 switch (alt64) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^)
             	    int alt63=4;
             	    switch ( input.LA(1) ) {
             	    case LESS:
@@ -11542,7 +11874,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            if ( (LA63_7==OR) ) {
             	                alt63=1;
             	            }
-            	            else if ( (LA63_7==ABORT||(LA63_7 >= BOOLEAN_LITERAL && LA63_7 <= BREAK)||(LA63_7 >= CASE && LA63_7 <= CATCH)||LA63_7==CONTAIN||(LA63_7 >= CONTINUE && LA63_7 <= DEFAULT)||(LA63_7 >= DIRECTORY && LA63_7 <= DOES)||LA63_7==ELSE||LA63_7==EXIT||LA63_7==FILE||(LA63_7 >= FLOATING_POINT_LITERAL && LA63_7 <= FOR)||LA63_7==FUNCTION||LA63_7==GREATER||(LA63_7 >= HTTP && LA63_7 <= IF)||(LA63_7 >= IMPORT && LA63_7 <= INTEGER_LITERAL)||(LA63_7 >= LEFTBRACKET && LA63_7 <= LESS)||(LA63_7 >= LOCATION && LA63_7 <= LOCK)||LA63_7==LOOP||LA63_7==MINUS||LA63_7==MINUSMINUS||LA63_7==NEW||LA63_7==NULL||(LA63_7 >= PACKAGE && LA63_7 <= PARAM)||LA63_7==PLUS||LA63_7==PLUSPLUS||LA63_7==PRIVATE||(LA63_7 >= PUBLIC && LA63_7 <= QUERY)||(LA63_7 >= REMOTE && LA63_7 <= RETHROW)||LA63_7==RETURN||LA63_7==SAVECONTENT||LA63_7==SETTING||(LA63_7 >= STRING_LITERAL && LA63_7 <= SWITCH)||(LA63_7 >= THAN && LA63_7 <= THREAD)||LA63_7==THROW||(LA63_7 >= TO && LA63_7 <= TRANSACTION)||(LA63_7 >= TRY && LA63_7 <= VAR)||LA63_7==WHILE||LA63_7==150) ) {
+            	            else if ( (LA63_7==ABORT||(LA63_7 >= BOOLEAN_LITERAL && LA63_7 <= BREAK)||(LA63_7 >= CASE && LA63_7 <= CATCH)||LA63_7==COMPONENT||LA63_7==CONTAIN||(LA63_7 >= CONTINUE && LA63_7 <= DEFAULT)||(LA63_7 >= DIRECTORY && LA63_7 <= DOES)||LA63_7==ELSE||LA63_7==EXIT||LA63_7==FILE||(LA63_7 >= FLOATING_POINT_LITERAL && LA63_7 <= FOR)||LA63_7==FUNCTION||LA63_7==GREATER||(LA63_7 >= HTTP && LA63_7 <= IF)||(LA63_7 >= IMPORT && LA63_7 <= INTEGER_LITERAL)||(LA63_7 >= LEFTBRACKET && LA63_7 <= LESS)||(LA63_7 >= LOCATION && LA63_7 <= LOCK)||LA63_7==LOOP||LA63_7==MINUS||LA63_7==MINUSMINUS||LA63_7==NEW||LA63_7==NULL||(LA63_7 >= PACKAGE && LA63_7 <= PARAM)||LA63_7==PLUS||LA63_7==PLUSPLUS||LA63_7==PRIVATE||(LA63_7 >= PUBLIC && LA63_7 <= QUERY)||(LA63_7 >= REMOTE && LA63_7 <= RETHROW)||LA63_7==RETURN||LA63_7==SAVECONTENT||LA63_7==SETTING||(LA63_7 >= STRING_LITERAL && LA63_7 <= SWITCH)||(LA63_7 >= THAN && LA63_7 <= THREAD)||LA63_7==THROW||(LA63_7 >= TO && LA63_7 <= TRANSACTION)||(LA63_7 >= TRY && LA63_7 <= VAR)||LA63_7==WHILE||LA63_7==150) ) {
             	                alt63=3;
             	            }
             	            else {
@@ -11574,7 +11906,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            if ( (LA63_8==OR) ) {
             	                alt63=1;
             	            }
-            	            else if ( (LA63_8==ABORT||(LA63_8 >= BOOLEAN_LITERAL && LA63_8 <= BREAK)||(LA63_8 >= CASE && LA63_8 <= CATCH)||LA63_8==CONTAIN||(LA63_8 >= CONTINUE && LA63_8 <= DEFAULT)||(LA63_8 >= DIRECTORY && LA63_8 <= DOES)||LA63_8==ELSE||LA63_8==EXIT||LA63_8==FILE||(LA63_8 >= FLOATING_POINT_LITERAL && LA63_8 <= FOR)||LA63_8==FUNCTION||LA63_8==GREATER||(LA63_8 >= HTTP && LA63_8 <= IF)||(LA63_8 >= IMPORT && LA63_8 <= INTEGER_LITERAL)||(LA63_8 >= LEFTBRACKET && LA63_8 <= LESS)||(LA63_8 >= LOCATION && LA63_8 <= LOCK)||LA63_8==LOOP||LA63_8==MINUS||LA63_8==MINUSMINUS||LA63_8==NEW||LA63_8==NULL||(LA63_8 >= PACKAGE && LA63_8 <= PARAM)||LA63_8==PLUS||LA63_8==PLUSPLUS||LA63_8==PRIVATE||(LA63_8 >= PUBLIC && LA63_8 <= QUERY)||(LA63_8 >= REMOTE && LA63_8 <= RETHROW)||LA63_8==RETURN||LA63_8==SAVECONTENT||LA63_8==SETTING||(LA63_8 >= STRING_LITERAL && LA63_8 <= SWITCH)||(LA63_8 >= THAN && LA63_8 <= THREAD)||LA63_8==THROW||(LA63_8 >= TO && LA63_8 <= TRANSACTION)||(LA63_8 >= TRY && LA63_8 <= VAR)||LA63_8==WHILE||LA63_8==150) ) {
+            	            else if ( (LA63_8==ABORT||(LA63_8 >= BOOLEAN_LITERAL && LA63_8 <= BREAK)||(LA63_8 >= CASE && LA63_8 <= CATCH)||LA63_8==COMPONENT||LA63_8==CONTAIN||(LA63_8 >= CONTINUE && LA63_8 <= DEFAULT)||(LA63_8 >= DIRECTORY && LA63_8 <= DOES)||LA63_8==ELSE||LA63_8==EXIT||LA63_8==FILE||(LA63_8 >= FLOATING_POINT_LITERAL && LA63_8 <= FOR)||LA63_8==FUNCTION||LA63_8==GREATER||(LA63_8 >= HTTP && LA63_8 <= IF)||(LA63_8 >= IMPORT && LA63_8 <= INTEGER_LITERAL)||(LA63_8 >= LEFTBRACKET && LA63_8 <= LESS)||(LA63_8 >= LOCATION && LA63_8 <= LOCK)||LA63_8==LOOP||LA63_8==MINUS||LA63_8==MINUSMINUS||LA63_8==NEW||LA63_8==NULL||(LA63_8 >= PACKAGE && LA63_8 <= PARAM)||LA63_8==PLUS||LA63_8==PLUSPLUS||LA63_8==PRIVATE||(LA63_8 >= PUBLIC && LA63_8 <= QUERY)||(LA63_8 >= REMOTE && LA63_8 <= RETHROW)||LA63_8==RETURN||LA63_8==SAVECONTENT||LA63_8==SETTING||(LA63_8 >= STRING_LITERAL && LA63_8 <= SWITCH)||(LA63_8 >= THAN && LA63_8 <= THREAD)||LA63_8==THROW||(LA63_8 >= TO && LA63_8 <= TRANSACTION)||(LA63_8 >= TRY && LA63_8 <= VAR)||LA63_8==WHILE||LA63_8==150) ) {
             	                alt63=3;
             	            }
             	            else {
@@ -11613,7 +11945,7 @@ public TreeAdaptor getTreeAdaptor() {
             	        if ( (LA63_5==NOT) ) {
             	            alt63=3;
             	        }
-            	        else if ( (LA63_5==ABORT||(LA63_5 >= BOOLEAN_LITERAL && LA63_5 <= BREAK)||(LA63_5 >= CASE && LA63_5 <= CATCH)||LA63_5==CONTAIN||(LA63_5 >= CONTINUE && LA63_5 <= DEFAULT)||(LA63_5 >= DIRECTORY && LA63_5 <= DOES)||LA63_5==ELSE||LA63_5==EXIT||LA63_5==FILE||(LA63_5 >= FLOATING_POINT_LITERAL && LA63_5 <= FOR)||LA63_5==FUNCTION||LA63_5==GREATER||(LA63_5 >= HTTP && LA63_5 <= IF)||(LA63_5 >= IMPORT && LA63_5 <= INTEGER_LITERAL)||(LA63_5 >= LEFTBRACKET && LA63_5 <= LESS)||(LA63_5 >= LOCATION && LA63_5 <= LOCK)||LA63_5==LOOP||LA63_5==MINUS||LA63_5==MINUSMINUS||LA63_5==NEW||LA63_5==NULL||(LA63_5 >= PACKAGE && LA63_5 <= PARAM)||LA63_5==PLUS||LA63_5==PLUSPLUS||LA63_5==PRIVATE||(LA63_5 >= PUBLIC && LA63_5 <= QUERY)||(LA63_5 >= REMOTE && LA63_5 <= RETHROW)||LA63_5==RETURN||LA63_5==SAVECONTENT||LA63_5==SETTING||(LA63_5 >= STRING_LITERAL && LA63_5 <= SWITCH)||(LA63_5 >= THAN && LA63_5 <= THREAD)||LA63_5==THROW||(LA63_5 >= TO && LA63_5 <= TRANSACTION)||(LA63_5 >= TRY && LA63_5 <= VAR)||LA63_5==WHILE||LA63_5==150) ) {
+            	        else if ( (LA63_5==ABORT||(LA63_5 >= BOOLEAN_LITERAL && LA63_5 <= BREAK)||(LA63_5 >= CASE && LA63_5 <= CATCH)||LA63_5==COMPONENT||LA63_5==CONTAIN||(LA63_5 >= CONTINUE && LA63_5 <= DEFAULT)||(LA63_5 >= DIRECTORY && LA63_5 <= DOES)||LA63_5==ELSE||LA63_5==EXIT||LA63_5==FILE||(LA63_5 >= FLOATING_POINT_LITERAL && LA63_5 <= FOR)||LA63_5==FUNCTION||LA63_5==GREATER||(LA63_5 >= HTTP && LA63_5 <= IF)||(LA63_5 >= IMPORT && LA63_5 <= INTEGER_LITERAL)||(LA63_5 >= LEFTBRACKET && LA63_5 <= LESS)||(LA63_5 >= LOCATION && LA63_5 <= LOCK)||LA63_5==LOOP||LA63_5==MINUS||LA63_5==MINUSMINUS||LA63_5==NEW||LA63_5==NULL||(LA63_5 >= PACKAGE && LA63_5 <= PARAM)||LA63_5==PLUS||LA63_5==PLUSPLUS||LA63_5==PRIVATE||(LA63_5 >= PUBLIC && LA63_5 <= QUERY)||(LA63_5 >= REMOTE && LA63_5 <= RETHROW)||LA63_5==RETURN||LA63_5==SAVECONTENT||LA63_5==SETTING||(LA63_5 >= STRING_LITERAL && LA63_5 <= SWITCH)||(LA63_5 >= THAN && LA63_5 <= THREAD)||LA63_5==THROW||(LA63_5 >= TO && LA63_5 <= TRANSACTION)||(LA63_5 >= TRY && LA63_5 <= VAR)||LA63_5==WHILE||LA63_5==150) ) {
             	            alt63=4;
             	        }
             	        else {
@@ -11658,50 +11990,50 @@ public TreeAdaptor getTreeAdaptor() {
 
             	    switch (alt63) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:11: equalityOperator5 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:11: equalityOperator5 ^
             	            {
-            	            pushFollow(FOLLOW_equalityOperator5_in_equalityExpression3611);
-            	            equalityOperator5220=equalityOperator5();
+            	            pushFollow(FOLLOW_equalityOperator5_in_equalityExpression3625);
+            	            equalityOperator5221=equalityOperator5();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator5220.getTree(), root_0);
+            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator5221.getTree(), root_0);
 
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:32: equalityOperator3 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:32: equalityOperator3 ^
             	            {
-            	            pushFollow(FOLLOW_equalityOperator3_in_equalityExpression3616);
-            	            equalityOperator3221=equalityOperator3();
+            	            pushFollow(FOLLOW_equalityOperator3_in_equalityExpression3630);
+            	            equalityOperator3222=equalityOperator3();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator3221.getTree(), root_0);
+            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator3222.getTree(), root_0);
 
             	            }
             	            break;
             	        case 3 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:54: equalityOperator2 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:54: equalityOperator2 ^
             	            {
-            	            pushFollow(FOLLOW_equalityOperator2_in_equalityExpression3622);
-            	            equalityOperator2222=equalityOperator2();
+            	            pushFollow(FOLLOW_equalityOperator2_in_equalityExpression3636);
+            	            equalityOperator2223=equalityOperator2();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator2222.getTree(), root_0);
+            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator2223.getTree(), root_0);
 
             	            }
             	            break;
             	        case 4 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:75: equalityOperator1 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:75: equalityOperator1 ^
             	            {
-            	            pushFollow(FOLLOW_equalityOperator1_in_equalityExpression3627);
-            	            equalityOperator1223=equalityOperator1();
+            	            pushFollow(FOLLOW_equalityOperator1_in_equalityExpression3641);
+            	            equalityOperator1224=equalityOperator1();
 
             	            state._fsp--;
             	            if (state.failed) return retval;
-            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator1223.getTree(), root_0);
+            	            if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(equalityOperator1224.getTree(), root_0);
 
             	            }
             	            break;
@@ -11709,12 +12041,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_concatenationExpression_in_equalityExpression3632);
-            	    concatenationExpression224=concatenationExpression();
+            	    pushFollow(FOLLOW_concatenationExpression_in_equalityExpression3646);
+            	    concatenationExpression225=concatenationExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, concatenationExpression224.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, concatenationExpression225.getTree());
 
             	    }
             	    break;
@@ -11745,7 +12077,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 56, equalityExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 57, equalityExpression_StartIndex); }
 
         }
         return retval;
@@ -11760,7 +12092,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator1"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:732:1: equalityOperator1 : ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:736:1: equalityOperator1 : ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) );
     public final CFScriptParser.equalityOperator1_return equalityOperator1() throws RecognitionException {
         CFScriptParser.equalityOperator1_return retval = new CFScriptParser.equalityOperator1_return();
         retval.start = input.LT(1);
@@ -11769,43 +12101,43 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IS225=null;
-        Token EQUALSEQUALSOP226=null;
-        Token LT227=null;
-        Token char_literal228=null;
-        Token LTE229=null;
-        Token string_literal230=null;
-        Token LE231=null;
-        Token GT232=null;
-        Token char_literal233=null;
-        Token GTE234=null;
-        Token string_literal235=null;
-        Token GE236=null;
-        Token EQ237=null;
-        Token NEQ238=null;
-        Token string_literal239=null;
-        Token EQUAL240=null;
-        Token EQUALS241=null;
-        Token CONTAINS242=null;
+        Token IS226=null;
+        Token EQUALSEQUALSOP227=null;
+        Token LT228=null;
+        Token char_literal229=null;
+        Token LTE230=null;
+        Token string_literal231=null;
+        Token LE232=null;
+        Token GT233=null;
+        Token char_literal234=null;
+        Token GTE235=null;
+        Token string_literal236=null;
+        Token GE237=null;
+        Token EQ238=null;
+        Token NEQ239=null;
+        Token string_literal240=null;
+        Token EQUAL241=null;
+        Token EQUALS242=null;
+        Token CONTAINS243=null;
 
-        CommonTree IS225_tree=null;
-        CommonTree EQUALSEQUALSOP226_tree=null;
-        CommonTree LT227_tree=null;
-        CommonTree char_literal228_tree=null;
-        CommonTree LTE229_tree=null;
-        CommonTree string_literal230_tree=null;
-        CommonTree LE231_tree=null;
-        CommonTree GT232_tree=null;
-        CommonTree char_literal233_tree=null;
-        CommonTree GTE234_tree=null;
-        CommonTree string_literal235_tree=null;
-        CommonTree GE236_tree=null;
-        CommonTree EQ237_tree=null;
-        CommonTree NEQ238_tree=null;
-        CommonTree string_literal239_tree=null;
-        CommonTree EQUAL240_tree=null;
-        CommonTree EQUALS241_tree=null;
-        CommonTree CONTAINS242_tree=null;
+        CommonTree IS226_tree=null;
+        CommonTree EQUALSEQUALSOP227_tree=null;
+        CommonTree LT228_tree=null;
+        CommonTree char_literal229_tree=null;
+        CommonTree LTE230_tree=null;
+        CommonTree string_literal231_tree=null;
+        CommonTree LE232_tree=null;
+        CommonTree GT233_tree=null;
+        CommonTree char_literal234_tree=null;
+        CommonTree GTE235_tree=null;
+        CommonTree string_literal236_tree=null;
+        CommonTree GE237_tree=null;
+        CommonTree EQ238_tree=null;
+        CommonTree NEQ239_tree=null;
+        CommonTree string_literal240_tree=null;
+        CommonTree EQUAL241_tree=null;
+        CommonTree EQUALS242_tree=null;
+        CommonTree CONTAINS243_tree=null;
         RewriteRuleTokenStream stream_GE=new RewriteRuleTokenStream(adaptor,"token GE");
         RewriteRuleTokenStream stream_LT=new RewriteRuleTokenStream(adaptor,"token LT");
         RewriteRuleTokenStream stream_NEQ=new RewriteRuleTokenStream(adaptor,"token NEQ");
@@ -11826,9 +12158,9 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_LE=new RewriteRuleTokenStream(adaptor,"token LE");
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:5: ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:737:5: ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) )
             int alt65=18;
             switch ( input.LA(1) ) {
             case IS:
@@ -11932,10 +12264,10 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt65) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:8: IS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:737:8: IS
                     {
-                    IS225=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator13654); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_IS.add(IS225);
+                    IS226=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator13668); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_IS.add(IS226);
 
 
                     // AST REWRITE
@@ -11951,9 +12283,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 733:11: -> ^( EQ )
+                    // 737:11: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:14: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:737:14: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -11972,10 +12304,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:734:9: EQUALSEQUALSOP
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:9: EQUALSEQUALSOP
                     {
-                    EQUALSEQUALSOP226=(Token)match(input,EQUALSEQUALSOP,FOLLOW_EQUALSEQUALSOP_in_equalityOperator13670); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUALSEQUALSOP.add(EQUALSEQUALSOP226);
+                    EQUALSEQUALSOP227=(Token)match(input,EQUALSEQUALSOP,FOLLOW_EQUALSEQUALSOP_in_equalityOperator13684); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUALSEQUALSOP.add(EQUALSEQUALSOP227);
 
 
                     // AST REWRITE
@@ -11991,9 +12323,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 734:24: -> ^( EQ )
+                    // 738:24: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:734:27: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:27: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12012,10 +12344,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:9: LT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:9: LT
                     {
-                    LT227=(Token)match(input,LT,FOLLOW_LT_in_equalityOperator13686); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LT.add(LT227);
+                    LT228=(Token)match(input,LT,FOLLOW_LT_in_equalityOperator13700); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_LT.add(LT228);
 
 
                     // AST REWRITE
@@ -12031,9 +12363,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 735:12: -> ^( LT )
+                    // 739:12: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:15: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:15: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12052,10 +12384,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:736:9: '<'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:740:9: '<'
                     {
-                    char_literal228=(Token)match(input,152,FOLLOW_152_in_equalityOperator13702); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_152.add(char_literal228);
+                    char_literal229=(Token)match(input,152,FOLLOW_152_in_equalityOperator13716); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_152.add(char_literal229);
 
 
                     // AST REWRITE
@@ -12071,9 +12403,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 736:13: -> ^( LT )
+                    // 740:13: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:736:16: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:740:16: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12092,10 +12424,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:737:9: LTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:741:9: LTE
                     {
-                    LTE229=(Token)match(input,LTE,FOLLOW_LTE_in_equalityOperator13718); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LTE.add(LTE229);
+                    LTE230=(Token)match(input,LTE,FOLLOW_LTE_in_equalityOperator13732); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_LTE.add(LTE230);
 
 
                     // AST REWRITE
@@ -12111,9 +12443,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 737:13: -> ^( LTE )
+                    // 741:13: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:737:16: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:741:16: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12132,10 +12464,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:9: '<='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:9: '<='
                     {
-                    string_literal230=(Token)match(input,153,FOLLOW_153_in_equalityOperator13734); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_153.add(string_literal230);
+                    string_literal231=(Token)match(input,153,FOLLOW_153_in_equalityOperator13748); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_153.add(string_literal231);
 
 
                     // AST REWRITE
@@ -12151,9 +12483,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 738:14: -> ^( LTE )
+                    // 742:14: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:17: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:17: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12172,10 +12504,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:9: LE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:9: LE
                     {
-                    LE231=(Token)match(input,LE,FOLLOW_LE_in_equalityOperator13750); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LE.add(LE231);
+                    LE232=(Token)match(input,LE,FOLLOW_LE_in_equalityOperator13764); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_LE.add(LE232);
 
 
                     // AST REWRITE
@@ -12191,9 +12523,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 739:12: -> ^( LTE )
+                    // 743:12: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:15: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:15: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12212,10 +12544,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:740:9: GT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: GT
                     {
-                    GT232=(Token)match(input,GT,FOLLOW_GT_in_equalityOperator13766); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_GT.add(GT232);
+                    GT233=(Token)match(input,GT,FOLLOW_GT_in_equalityOperator13780); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_GT.add(GT233);
 
 
                     // AST REWRITE
@@ -12231,9 +12563,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 740:12: -> ^( GT )
+                    // 744:12: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:740:15: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:15: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12252,10 +12584,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:741:9: '>'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:745:9: '>'
                     {
-                    char_literal233=(Token)match(input,154,FOLLOW_154_in_equalityOperator13782); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_154.add(char_literal233);
+                    char_literal234=(Token)match(input,154,FOLLOW_154_in_equalityOperator13796); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_154.add(char_literal234);
 
 
                     // AST REWRITE
@@ -12271,9 +12603,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 741:13: -> ^( GT )
+                    // 745:13: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:741:16: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:745:16: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12292,10 +12624,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:9: GTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:746:9: GTE
                     {
-                    GTE234=(Token)match(input,GTE,FOLLOW_GTE_in_equalityOperator13798); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_GTE.add(GTE234);
+                    GTE235=(Token)match(input,GTE,FOLLOW_GTE_in_equalityOperator13812); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_GTE.add(GTE235);
 
 
                     // AST REWRITE
@@ -12311,9 +12643,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 742:13: -> ^( GTE )
+                    // 746:13: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:16: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:746:16: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12332,10 +12664,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:9: '>='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:9: '>='
                     {
-                    string_literal235=(Token)match(input,155,FOLLOW_155_in_equalityOperator13814); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_155.add(string_literal235);
+                    string_literal236=(Token)match(input,155,FOLLOW_155_in_equalityOperator13828); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_155.add(string_literal236);
 
 
                     // AST REWRITE
@@ -12351,9 +12683,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 743:14: -> ^( GTE )
+                    // 747:14: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:17: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:17: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12372,10 +12704,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: GE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: GE
                     {
-                    GE236=(Token)match(input,GE,FOLLOW_GE_in_equalityOperator13830); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_GE.add(GE236);
+                    GE237=(Token)match(input,GE,FOLLOW_GE_in_equalityOperator13844); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_GE.add(GE237);
 
 
                     // AST REWRITE
@@ -12391,9 +12723,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 744:12: -> ^( GTE )
+                    // 748:12: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:15: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:15: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12412,10 +12744,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:745:9: EQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:9: EQ
                     {
-                    EQ237=(Token)match(input,EQ,FOLLOW_EQ_in_equalityOperator13846); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQ.add(EQ237);
+                    EQ238=(Token)match(input,EQ,FOLLOW_EQ_in_equalityOperator13860); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQ.add(EQ238);
 
 
                     // AST REWRITE
@@ -12431,9 +12763,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 745:12: -> ^( EQ )
+                    // 749:12: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:745:15: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:15: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12452,10 +12784,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:746:9: NEQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:9: NEQ
                     {
-                    NEQ238=(Token)match(input,NEQ,FOLLOW_NEQ_in_equalityOperator13862); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NEQ.add(NEQ238);
+                    NEQ239=(Token)match(input,NEQ,FOLLOW_NEQ_in_equalityOperator13876); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NEQ.add(NEQ239);
 
 
                     // AST REWRITE
@@ -12471,9 +12803,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 746:13: -> ^( NEQ )
+                    // 750:13: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:746:16: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:16: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12492,10 +12824,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:9: '!='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:751:9: '!='
                     {
-                    string_literal239=(Token)match(input,149,FOLLOW_149_in_equalityOperator13878); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_149.add(string_literal239);
+                    string_literal240=(Token)match(input,149,FOLLOW_149_in_equalityOperator13892); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_149.add(string_literal240);
 
 
                     // AST REWRITE
@@ -12511,9 +12843,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 747:14: -> ^( NEQ )
+                    // 751:14: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:17: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:751:17: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12532,10 +12864,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:9: EQUAL
                     {
-                    EQUAL240=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator13894); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL240);
+                    EQUAL241=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator13908); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL241);
 
 
                     // AST REWRITE
@@ -12551,9 +12883,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 748:15: -> ^( EQ )
+                    // 752:15: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:18: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:18: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12572,10 +12904,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:9: EQUALS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:9: EQUALS
                     {
-                    EQUALS241=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_equalityOperator13910); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUALS.add(EQUALS241);
+                    EQUALS242=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_equalityOperator13924); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUALS.add(EQUALS242);
 
 
                     // AST REWRITE
@@ -12591,9 +12923,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 749:16: -> ^( EQ )
+                    // 753:16: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:19: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:19: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12612,10 +12944,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:9: CONTAINS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:9: CONTAINS
                     {
-                    CONTAINS242=(Token)match(input,CONTAINS,FOLLOW_CONTAINS_in_equalityOperator13926); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_CONTAINS.add(CONTAINS242);
+                    CONTAINS243=(Token)match(input,CONTAINS,FOLLOW_CONTAINS_in_equalityOperator13940); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_CONTAINS.add(CONTAINS243);
 
 
                     // AST REWRITE
@@ -12631,9 +12963,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 750:18: -> ^( CONTAINS )
+                    // 754:18: -> ^( CONTAINS )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:21: ^( CONTAINS )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:21: ^( CONTAINS )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12671,7 +13003,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 57, equalityOperator1_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 58, equalityOperator1_StartIndex); }
 
         }
         return retval;
@@ -12686,7 +13018,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator2"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:1: equalityOperator2 : ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:1: equalityOperator2 : ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) );
     public final CFScriptParser.equalityOperator2_return equalityOperator2() throws RecognitionException {
         CFScriptParser.equalityOperator2_return retval = new CFScriptParser.equalityOperator2_return();
         retval.start = input.LT(1);
@@ -12695,23 +13027,23 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token LESS243=null;
-        Token THAN244=null;
-        Token GREATER245=null;
-        Token THAN246=null;
-        Token NOT247=null;
-        Token EQUAL248=null;
-        Token IS249=null;
-        Token NOT250=null;
+        Token LESS244=null;
+        Token THAN245=null;
+        Token GREATER246=null;
+        Token THAN247=null;
+        Token NOT248=null;
+        Token EQUAL249=null;
+        Token IS250=null;
+        Token NOT251=null;
 
-        CommonTree LESS243_tree=null;
-        CommonTree THAN244_tree=null;
-        CommonTree GREATER245_tree=null;
-        CommonTree THAN246_tree=null;
-        CommonTree NOT247_tree=null;
-        CommonTree EQUAL248_tree=null;
-        CommonTree IS249_tree=null;
-        CommonTree NOT250_tree=null;
+        CommonTree LESS244_tree=null;
+        CommonTree THAN245_tree=null;
+        CommonTree GREATER246_tree=null;
+        CommonTree THAN247_tree=null;
+        CommonTree NOT248_tree=null;
+        CommonTree EQUAL249_tree=null;
+        CommonTree IS250_tree=null;
+        CommonTree NOT251_tree=null;
         RewriteRuleTokenStream stream_GREATER=new RewriteRuleTokenStream(adaptor,"token GREATER");
         RewriteRuleTokenStream stream_THAN=new RewriteRuleTokenStream(adaptor,"token THAN");
         RewriteRuleTokenStream stream_NOT=new RewriteRuleTokenStream(adaptor,"token NOT");
@@ -12720,9 +13052,9 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_LESS=new RewriteRuleTokenStream(adaptor,"token LESS");
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:5: ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:5: ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) )
             int alt66=4;
             switch ( input.LA(1) ) {
             case LESS:
@@ -12756,14 +13088,14 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt66) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:9: LESS THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:9: LESS THAN
                     {
-                    LESS243=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator23955); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LESS.add(LESS243);
+                    LESS244=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator23969); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_LESS.add(LESS244);
 
 
-                    THAN244=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator23957); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THAN.add(THAN244);
+                    THAN245=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator23971); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THAN.add(THAN245);
 
 
                     // AST REWRITE
@@ -12779,9 +13111,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 754:19: -> ^( LT )
+                    // 758:19: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:22: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:22: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12800,14 +13132,14 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:9: GREATER THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:9: GREATER THAN
                     {
-                    GREATER245=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator23973); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_GREATER.add(GREATER245);
+                    GREATER246=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator23987); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_GREATER.add(GREATER246);
 
 
-                    THAN246=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator23975); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THAN.add(THAN246);
+                    THAN247=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator23989); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THAN.add(THAN247);
 
 
                     // AST REWRITE
@@ -12823,9 +13155,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 755:22: -> ^( GT )
+                    // 759:22: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:25: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:25: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12844,14 +13176,14 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:9: NOT EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:9: NOT EQUAL
                     {
-                    NOT247=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator23991); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NOT.add(NOT247);
+                    NOT248=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator24005); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NOT.add(NOT248);
 
 
-                    EQUAL248=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator23993); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL248);
+                    EQUAL249=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator24007); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL249);
 
 
                     // AST REWRITE
@@ -12867,9 +13199,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 756:20: -> ^( NEQ )
+                    // 760:20: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:23: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:23: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12888,14 +13220,14 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:9: IS NOT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:9: IS NOT
                     {
-                    IS249=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator24010); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_IS.add(IS249);
+                    IS250=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator24024); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_IS.add(IS250);
 
 
-                    NOT250=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator24012); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NOT.add(NOT250);
+                    NOT251=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator24026); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NOT.add(NOT251);
 
 
                     // AST REWRITE
@@ -12911,9 +13243,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 757:16: -> ^( NEQ )
+                    // 761:16: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:19: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:19: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12951,7 +13283,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 58, equalityOperator2_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 59, equalityOperator2_StartIndex); }
 
         }
         return retval;
@@ -12966,7 +13298,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator3"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:1: equalityOperator3 : lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:1: equalityOperator3 : lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) ;
     public final CFScriptParser.equalityOperator3_return equalityOperator3() throws RecognitionException {
         CFScriptParser.equalityOperator3_return retval = new CFScriptParser.equalityOperator3_return();
         retval.start = input.LT(1);
@@ -12976,32 +13308,32 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token NOT251=null;
-        Token CONTAIN252=null;
+        Token NOT252=null;
+        Token CONTAIN253=null;
 
         CommonTree lc_tree=null;
-        CommonTree NOT251_tree=null;
-        CommonTree CONTAIN252_tree=null;
+        CommonTree NOT252_tree=null;
+        CommonTree CONTAIN253_tree=null;
         RewriteRuleTokenStream stream_CONTAIN=new RewriteRuleTokenStream(adaptor,"token CONTAIN");
         RewriteRuleTokenStream stream_NOT=new RewriteRuleTokenStream(adaptor,"token NOT");
         RewriteRuleTokenStream stream_DOES=new RewriteRuleTokenStream(adaptor,"token DOES");
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:5: (lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:9: lc= DOES NOT CONTAIN
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:5: (lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:9: lc= DOES NOT CONTAIN
             {
-            lc=(Token)match(input,DOES,FOLLOW_DOES_in_equalityOperator34039); if (state.failed) return retval; 
+            lc=(Token)match(input,DOES,FOLLOW_DOES_in_equalityOperator34053); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_DOES.add(lc);
 
 
-            NOT251=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator34041); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_NOT.add(NOT251);
+            NOT252=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator34055); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_NOT.add(NOT252);
 
 
-            CONTAIN252=(Token)match(input,CONTAIN,FOLLOW_CONTAIN_in_equalityOperator34043); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_CONTAIN.add(CONTAIN252);
+            CONTAIN253=(Token)match(input,CONTAIN,FOLLOW_CONTAIN_in_equalityOperator34057); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_CONTAIN.add(CONTAIN253);
 
 
             // AST REWRITE
@@ -13017,9 +13349,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 761:29: -> ^( DOESNOTCONTAIN[$lc] )
+            // 765:29: -> ^( DOESNOTCONTAIN[$lc] )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:32: ^( DOESNOTCONTAIN[$lc] )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:32: ^( DOESNOTCONTAIN[$lc] )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13055,7 +13387,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 59, equalityOperator3_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 60, equalityOperator3_StartIndex); }
 
         }
         return retval;
@@ -13070,7 +13402,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator5"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:1: equalityOperator5 : ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:768:1: equalityOperator5 : ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) );
     public final CFScriptParser.equalityOperator5_return equalityOperator5() throws RecognitionException {
         CFScriptParser.equalityOperator5_return retval = new CFScriptParser.equalityOperator5_return();
         retval.start = input.LT(1);
@@ -13079,27 +13411,27 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token LESS253=null;
-        Token THAN254=null;
-        Token OR255=null;
-        Token EQUAL256=null;
-        Token TO257=null;
-        Token GREATER258=null;
-        Token THAN259=null;
-        Token OR260=null;
-        Token EQUAL261=null;
-        Token TO262=null;
+        Token LESS254=null;
+        Token THAN255=null;
+        Token OR256=null;
+        Token EQUAL257=null;
+        Token TO258=null;
+        Token GREATER259=null;
+        Token THAN260=null;
+        Token OR261=null;
+        Token EQUAL262=null;
+        Token TO263=null;
 
-        CommonTree LESS253_tree=null;
-        CommonTree THAN254_tree=null;
-        CommonTree OR255_tree=null;
-        CommonTree EQUAL256_tree=null;
-        CommonTree TO257_tree=null;
-        CommonTree GREATER258_tree=null;
-        CommonTree THAN259_tree=null;
-        CommonTree OR260_tree=null;
-        CommonTree EQUAL261_tree=null;
-        CommonTree TO262_tree=null;
+        CommonTree LESS254_tree=null;
+        CommonTree THAN255_tree=null;
+        CommonTree OR256_tree=null;
+        CommonTree EQUAL257_tree=null;
+        CommonTree TO258_tree=null;
+        CommonTree GREATER259_tree=null;
+        CommonTree THAN260_tree=null;
+        CommonTree OR261_tree=null;
+        CommonTree EQUAL262_tree=null;
+        CommonTree TO263_tree=null;
         RewriteRuleTokenStream stream_GREATER=new RewriteRuleTokenStream(adaptor,"token GREATER");
         RewriteRuleTokenStream stream_THAN=new RewriteRuleTokenStream(adaptor,"token THAN");
         RewriteRuleTokenStream stream_TO=new RewriteRuleTokenStream(adaptor,"token TO");
@@ -13108,9 +13440,9 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleTokenStream stream_LESS=new RewriteRuleTokenStream(adaptor,"token LESS");
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:5: ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:5: ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) )
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -13130,26 +13462,26 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt67) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:9: LESS THAN OR EQUAL TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:9: LESS THAN OR EQUAL TO
                     {
-                    LESS253=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator54069); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LESS.add(LESS253);
+                    LESS254=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator54083); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_LESS.add(LESS254);
 
 
-                    THAN254=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator54071); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THAN.add(THAN254);
+                    THAN255=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator54085); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THAN.add(THAN255);
 
 
-                    OR255=(Token)match(input,OR,FOLLOW_OR_in_equalityOperator54073); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR255);
+                    OR256=(Token)match(input,OR,FOLLOW_OR_in_equalityOperator54087); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR256);
 
 
-                    EQUAL256=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator54075); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL256);
+                    EQUAL257=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator54089); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL257);
 
 
-                    TO257=(Token)match(input,TO,FOLLOW_TO_in_equalityOperator54077); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TO.add(TO257);
+                    TO258=(Token)match(input,TO,FOLLOW_TO_in_equalityOperator54091); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TO.add(TO258);
 
 
                     // AST REWRITE
@@ -13165,9 +13497,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 765:31: -> ^( LTE )
+                    // 769:31: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:34: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:34: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13186,26 +13518,26 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:766:9: GREATER THAN OR EQUAL TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:9: GREATER THAN OR EQUAL TO
                     {
-                    GREATER258=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator54093); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_GREATER.add(GREATER258);
+                    GREATER259=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator54107); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_GREATER.add(GREATER259);
 
 
-                    THAN259=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator54095); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THAN.add(THAN259);
+                    THAN260=(Token)match(input,THAN,FOLLOW_THAN_in_equalityOperator54109); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THAN.add(THAN260);
 
 
-                    OR260=(Token)match(input,OR,FOLLOW_OR_in_equalityOperator54097); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR260);
+                    OR261=(Token)match(input,OR,FOLLOW_OR_in_equalityOperator54111); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR261);
 
 
-                    EQUAL261=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator54099); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL261);
+                    EQUAL262=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator54113); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL262);
 
 
-                    TO262=(Token)match(input,TO,FOLLOW_TO_in_equalityOperator54101); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TO.add(TO262);
+                    TO263=(Token)match(input,TO,FOLLOW_TO_in_equalityOperator54115); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TO.add(TO263);
 
 
                     // AST REWRITE
@@ -13221,9 +13553,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 766:34: -> ^( GTE )
+                    // 770:34: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:766:37: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:37: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13261,7 +13593,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 60, equalityOperator5_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 61, equalityOperator5_StartIndex); }
 
         }
         return retval;
@@ -13276,7 +13608,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "concatenationExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:1: concatenationExpression : additiveExpression ( CONCAT ^ additiveExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:773:1: concatenationExpression : additiveExpression ( CONCAT ^ additiveExpression )* ;
     public final CFScriptParser.concatenationExpression_return concatenationExpression() throws RecognitionException {
         CFScriptParser.concatenationExpression_return retval = new CFScriptParser.concatenationExpression_return();
         retval.start = input.LT(1);
@@ -13285,31 +13617,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token CONCAT264=null;
-        CFScriptParser.additiveExpression_return additiveExpression263 =null;
+        Token CONCAT265=null;
+        CFScriptParser.additiveExpression_return additiveExpression264 =null;
 
-        CFScriptParser.additiveExpression_return additiveExpression265 =null;
+        CFScriptParser.additiveExpression_return additiveExpression266 =null;
 
 
-        CommonTree CONCAT264_tree=null;
+        CommonTree CONCAT265_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:2: ( additiveExpression ( CONCAT ^ additiveExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:4: additiveExpression ( CONCAT ^ additiveExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:2: ( additiveExpression ( CONCAT ^ additiveExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:4: additiveExpression ( CONCAT ^ additiveExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_additiveExpression_in_concatenationExpression4125);
-            additiveExpression263=additiveExpression();
+            pushFollow(FOLLOW_additiveExpression_in_concatenationExpression4139);
+            additiveExpression264=additiveExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression263.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression264.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:23: ( CONCAT ^ additiveExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:23: ( CONCAT ^ additiveExpression )*
             loop68:
             do {
                 int alt68=2;
@@ -13322,22 +13654,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt68) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:25: CONCAT ^ additiveExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:25: CONCAT ^ additiveExpression
             	    {
-            	    CONCAT264=(Token)match(input,CONCAT,FOLLOW_CONCAT_in_concatenationExpression4129); if (state.failed) return retval;
+            	    CONCAT265=(Token)match(input,CONCAT,FOLLOW_CONCAT_in_concatenationExpression4143); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    CONCAT264_tree = 
-            	    (CommonTree)adaptor.create(CONCAT264)
+            	    CONCAT265_tree = 
+            	    (CommonTree)adaptor.create(CONCAT265)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(CONCAT264_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(CONCAT265_tree, root_0);
             	    }
 
-            	    pushFollow(FOLLOW_additiveExpression_in_concatenationExpression4132);
-            	    additiveExpression265=additiveExpression();
+            	    pushFollow(FOLLOW_additiveExpression_in_concatenationExpression4146);
+            	    additiveExpression266=additiveExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression265.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression266.getTree());
 
             	    }
             	    break;
@@ -13368,7 +13700,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 61, concatenationExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 62, concatenationExpression_StartIndex); }
 
         }
         return retval;
@@ -13383,7 +13715,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "additiveExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:773:1: additiveExpression : modExpression ( ( PLUS ^| MINUS ^) modExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:777:1: additiveExpression : modExpression ( ( PLUS ^| MINUS ^) modExpression )* ;
     public final CFScriptParser.additiveExpression_return additiveExpression() throws RecognitionException {
         CFScriptParser.additiveExpression_return retval = new CFScriptParser.additiveExpression_return();
         retval.start = input.LT(1);
@@ -13392,42 +13724,42 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token PLUS267=null;
-        Token MINUS268=null;
-        CFScriptParser.modExpression_return modExpression266 =null;
+        Token PLUS268=null;
+        Token MINUS269=null;
+        CFScriptParser.modExpression_return modExpression267 =null;
 
-        CFScriptParser.modExpression_return modExpression269 =null;
+        CFScriptParser.modExpression_return modExpression270 =null;
 
 
-        CommonTree PLUS267_tree=null;
-        CommonTree MINUS268_tree=null;
+        CommonTree PLUS268_tree=null;
+        CommonTree MINUS269_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:2: ( modExpression ( ( PLUS ^| MINUS ^) modExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:4: modExpression ( ( PLUS ^| MINUS ^) modExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:2: ( modExpression ( ( PLUS ^| MINUS ^) modExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:4: modExpression ( ( PLUS ^| MINUS ^) modExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_modExpression_in_additiveExpression4147);
-            modExpression266=modExpression();
+            pushFollow(FOLLOW_modExpression_in_additiveExpression4161);
+            modExpression267=modExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, modExpression266.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, modExpression267.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:18: ( ( PLUS ^| MINUS ^) modExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:18: ( ( PLUS ^| MINUS ^) modExpression )*
             loop70:
             do {
                 int alt70=2;
                 alt70 = dfa70.predict(input);
                 switch (alt70) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:20: ( PLUS ^| MINUS ^) modExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:20: ( PLUS ^| MINUS ^) modExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:20: ( PLUS ^| MINUS ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:20: ( PLUS ^| MINUS ^)
             	    int alt69=2;
             	    int LA69_0 = input.LA(1);
 
@@ -13447,27 +13779,27 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    switch (alt69) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:21: PLUS ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:21: PLUS ^
             	            {
-            	            PLUS267=(Token)match(input,PLUS,FOLLOW_PLUS_in_additiveExpression4152); if (state.failed) return retval;
+            	            PLUS268=(Token)match(input,PLUS,FOLLOW_PLUS_in_additiveExpression4166); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
-            	            PLUS267_tree = 
-            	            (CommonTree)adaptor.create(PLUS267)
+            	            PLUS268_tree = 
+            	            (CommonTree)adaptor.create(PLUS268)
             	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(PLUS267_tree, root_0);
+            	            root_0 = (CommonTree)adaptor.becomeRoot(PLUS268_tree, root_0);
             	            }
 
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:27: MINUS ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:27: MINUS ^
             	            {
-            	            MINUS268=(Token)match(input,MINUS,FOLLOW_MINUS_in_additiveExpression4155); if (state.failed) return retval;
+            	            MINUS269=(Token)match(input,MINUS,FOLLOW_MINUS_in_additiveExpression4169); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
-            	            MINUS268_tree = 
-            	            (CommonTree)adaptor.create(MINUS268)
+            	            MINUS269_tree = 
+            	            (CommonTree)adaptor.create(MINUS269)
             	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(MINUS268_tree, root_0);
+            	            root_0 = (CommonTree)adaptor.becomeRoot(MINUS269_tree, root_0);
             	            }
 
             	            }
@@ -13476,12 +13808,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_modExpression_in_additiveExpression4159);
-            	    modExpression269=modExpression();
+            	    pushFollow(FOLLOW_modExpression_in_additiveExpression4173);
+            	    modExpression270=modExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, modExpression269.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, modExpression270.getTree());
 
             	    }
             	    break;
@@ -13512,7 +13844,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 62, additiveExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 63, additiveExpression_StartIndex); }
 
         }
         return retval;
@@ -13527,7 +13859,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "modExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:777:1: modExpression : intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:781:1: modExpression : intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* ;
     public final CFScriptParser.modExpression_return modExpression() throws RecognitionException {
         CFScriptParser.modExpression_return retval = new CFScriptParser.modExpression_return();
         retval.start = input.LT(1);
@@ -13536,31 +13868,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set271=null;
-        CFScriptParser.intDivisionExpression_return intDivisionExpression270 =null;
+        Token set272=null;
+        CFScriptParser.intDivisionExpression_return intDivisionExpression271 =null;
 
-        CFScriptParser.intDivisionExpression_return intDivisionExpression272 =null;
+        CFScriptParser.intDivisionExpression_return intDivisionExpression273 =null;
 
 
-        CommonTree set271_tree=null;
+        CommonTree set272_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:2: ( intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:4: intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:2: ( intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:4: intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_intDivisionExpression_in_modExpression4173);
-            intDivisionExpression270=intDivisionExpression();
+            pushFollow(FOLLOW_intDivisionExpression_in_modExpression4187);
+            intDivisionExpression271=intDivisionExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, intDivisionExpression270.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, intDivisionExpression271.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:27: ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:27: ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
             loop71:
             do {
                 int alt71=2;
@@ -13573,16 +13905,16 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt71) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:29: ( MOD | MODOPERATOR ) ^ intDivisionExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:29: ( MOD | MODOPERATOR ) ^ intDivisionExpression
             	    {
-            	    set271=(Token)input.LT(1);
+            	    set272=(Token)input.LT(1);
 
-            	    set271=(Token)input.LT(1);
+            	    set272=(Token)input.LT(1);
 
             	    if ( input.LA(1)==MOD||input.LA(1)==MODOPERATOR ) {
             	        input.consume();
             	        if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(
-            	        (CommonTree)adaptor.create(set271)
+            	        (CommonTree)adaptor.create(set272)
             	        , root_0);
             	        state.errorRecovery=false;
             	        state.failed=false;
@@ -13594,12 +13926,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_intDivisionExpression_in_modExpression4185);
-            	    intDivisionExpression272=intDivisionExpression();
+            	    pushFollow(FOLLOW_intDivisionExpression_in_modExpression4199);
+            	    intDivisionExpression273=intDivisionExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, intDivisionExpression272.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, intDivisionExpression273.getTree());
 
             	    }
             	    break;
@@ -13630,7 +13962,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 63, modExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 64, modExpression_StartIndex); }
 
         }
         return retval;
@@ -13645,7 +13977,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "intDivisionExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:781:1: intDivisionExpression : multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:1: intDivisionExpression : multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* ;
     public final CFScriptParser.intDivisionExpression_return intDivisionExpression() throws RecognitionException {
         CFScriptParser.intDivisionExpression_return retval = new CFScriptParser.intDivisionExpression_return();
         retval.start = input.LT(1);
@@ -13654,31 +13986,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token BSLASH274=null;
-        CFScriptParser.multiplicativeExpression_return multiplicativeExpression273 =null;
+        Token BSLASH275=null;
+        CFScriptParser.multiplicativeExpression_return multiplicativeExpression274 =null;
 
-        CFScriptParser.multiplicativeExpression_return multiplicativeExpression275 =null;
+        CFScriptParser.multiplicativeExpression_return multiplicativeExpression276 =null;
 
 
-        CommonTree BSLASH274_tree=null;
+        CommonTree BSLASH275_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:2: ( multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:4: multiplicativeExpression ( BSLASH ^ multiplicativeExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:2: ( multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:4: multiplicativeExpression ( BSLASH ^ multiplicativeExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_multiplicativeExpression_in_intDivisionExpression4201);
-            multiplicativeExpression273=multiplicativeExpression();
+            pushFollow(FOLLOW_multiplicativeExpression_in_intDivisionExpression4215);
+            multiplicativeExpression274=multiplicativeExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression273.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression274.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:29: ( BSLASH ^ multiplicativeExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:29: ( BSLASH ^ multiplicativeExpression )*
             loop72:
             do {
                 int alt72=2;
@@ -13691,22 +14023,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt72) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:782:31: BSLASH ^ multiplicativeExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:31: BSLASH ^ multiplicativeExpression
             	    {
-            	    BSLASH274=(Token)match(input,BSLASH,FOLLOW_BSLASH_in_intDivisionExpression4205); if (state.failed) return retval;
+            	    BSLASH275=(Token)match(input,BSLASH,FOLLOW_BSLASH_in_intDivisionExpression4219); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    BSLASH274_tree = 
-            	    (CommonTree)adaptor.create(BSLASH274)
+            	    BSLASH275_tree = 
+            	    (CommonTree)adaptor.create(BSLASH275)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(BSLASH274_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(BSLASH275_tree, root_0);
             	    }
 
-            	    pushFollow(FOLLOW_multiplicativeExpression_in_intDivisionExpression4208);
-            	    multiplicativeExpression275=multiplicativeExpression();
+            	    pushFollow(FOLLOW_multiplicativeExpression_in_intDivisionExpression4222);
+            	    multiplicativeExpression276=multiplicativeExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression275.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression276.getTree());
 
             	    }
             	    break;
@@ -13737,7 +14069,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 64, intDivisionExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 65, intDivisionExpression_StartIndex); }
 
         }
         return retval;
@@ -13752,7 +14084,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:1: multiplicativeExpression : powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:1: multiplicativeExpression : powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* ;
     public final CFScriptParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
         CFScriptParser.multiplicativeExpression_return retval = new CFScriptParser.multiplicativeExpression_return();
         retval.start = input.LT(1);
@@ -13761,33 +14093,33 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token STAR277=null;
-        Token SLASH278=null;
-        CFScriptParser.powerOfExpression_return powerOfExpression276 =null;
+        Token STAR278=null;
+        Token SLASH279=null;
+        CFScriptParser.powerOfExpression_return powerOfExpression277 =null;
 
-        CFScriptParser.powerOfExpression_return powerOfExpression279 =null;
+        CFScriptParser.powerOfExpression_return powerOfExpression280 =null;
 
 
-        CommonTree STAR277_tree=null;
-        CommonTree SLASH278_tree=null;
+        CommonTree STAR278_tree=null;
+        CommonTree SLASH279_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:2: ( powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:4: powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:2: ( powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:4: powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_powerOfExpression_in_multiplicativeExpression4222);
-            powerOfExpression276=powerOfExpression();
+            pushFollow(FOLLOW_powerOfExpression_in_multiplicativeExpression4236);
+            powerOfExpression277=powerOfExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, powerOfExpression276.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, powerOfExpression277.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:22: ( ( STAR ^| SLASH ^) powerOfExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:22: ( ( STAR ^| SLASH ^) powerOfExpression )*
             loop74:
             do {
                 int alt74=2;
@@ -13800,9 +14132,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt74) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:24: ( STAR ^| SLASH ^) powerOfExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:24: ( STAR ^| SLASH ^) powerOfExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:24: ( STAR ^| SLASH ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:24: ( STAR ^| SLASH ^)
             	    int alt73=2;
             	    int LA73_0 = input.LA(1);
 
@@ -13822,27 +14154,27 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    switch (alt73) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:25: STAR ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:25: STAR ^
             	            {
-            	            STAR277=(Token)match(input,STAR,FOLLOW_STAR_in_multiplicativeExpression4227); if (state.failed) return retval;
+            	            STAR278=(Token)match(input,STAR,FOLLOW_STAR_in_multiplicativeExpression4241); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
-            	            STAR277_tree = 
-            	            (CommonTree)adaptor.create(STAR277)
+            	            STAR278_tree = 
+            	            (CommonTree)adaptor.create(STAR278)
             	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(STAR277_tree, root_0);
+            	            root_0 = (CommonTree)adaptor.becomeRoot(STAR278_tree, root_0);
             	            }
 
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:786:31: SLASH ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:31: SLASH ^
             	            {
-            	            SLASH278=(Token)match(input,SLASH,FOLLOW_SLASH_in_multiplicativeExpression4230); if (state.failed) return retval;
+            	            SLASH279=(Token)match(input,SLASH,FOLLOW_SLASH_in_multiplicativeExpression4244); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
-            	            SLASH278_tree = 
-            	            (CommonTree)adaptor.create(SLASH278)
+            	            SLASH279_tree = 
+            	            (CommonTree)adaptor.create(SLASH279)
             	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(SLASH278_tree, root_0);
+            	            root_0 = (CommonTree)adaptor.becomeRoot(SLASH279_tree, root_0);
             	            }
 
             	            }
@@ -13851,12 +14183,12 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_powerOfExpression_in_multiplicativeExpression4234);
-            	    powerOfExpression279=powerOfExpression();
+            	    pushFollow(FOLLOW_powerOfExpression_in_multiplicativeExpression4248);
+            	    powerOfExpression280=powerOfExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, powerOfExpression279.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, powerOfExpression280.getTree());
 
             	    }
             	    break;
@@ -13887,7 +14219,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 65, multiplicativeExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 66, multiplicativeExpression_StartIndex); }
 
         }
         return retval;
@@ -13902,7 +14234,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "powerOfExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:1: powerOfExpression : unaryExpression ( POWER ^ unaryExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:1: powerOfExpression : unaryExpression ( POWER ^ unaryExpression )* ;
     public final CFScriptParser.powerOfExpression_return powerOfExpression() throws RecognitionException {
         CFScriptParser.powerOfExpression_return retval = new CFScriptParser.powerOfExpression_return();
         retval.start = input.LT(1);
@@ -13911,31 +14243,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token POWER281=null;
-        CFScriptParser.unaryExpression_return unaryExpression280 =null;
+        Token POWER282=null;
+        CFScriptParser.unaryExpression_return unaryExpression281 =null;
 
-        CFScriptParser.unaryExpression_return unaryExpression282 =null;
+        CFScriptParser.unaryExpression_return unaryExpression283 =null;
 
 
-        CommonTree POWER281_tree=null;
+        CommonTree POWER282_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:2: ( unaryExpression ( POWER ^ unaryExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:4: unaryExpression ( POWER ^ unaryExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:2: ( unaryExpression ( POWER ^ unaryExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:4: unaryExpression ( POWER ^ unaryExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_unaryExpression_in_powerOfExpression4249);
-            unaryExpression280=unaryExpression();
+            pushFollow(FOLLOW_unaryExpression_in_powerOfExpression4263);
+            unaryExpression281=unaryExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression280.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression281.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:20: ( POWER ^ unaryExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:20: ( POWER ^ unaryExpression )*
             loop75:
             do {
                 int alt75=2;
@@ -13948,22 +14280,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt75) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:790:22: POWER ^ unaryExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:22: POWER ^ unaryExpression
             	    {
-            	    POWER281=(Token)match(input,POWER,FOLLOW_POWER_in_powerOfExpression4253); if (state.failed) return retval;
+            	    POWER282=(Token)match(input,POWER,FOLLOW_POWER_in_powerOfExpression4267); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    POWER281_tree = 
-            	    (CommonTree)adaptor.create(POWER281)
+            	    POWER282_tree = 
+            	    (CommonTree)adaptor.create(POWER282)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(POWER281_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(POWER282_tree, root_0);
             	    }
 
-            	    pushFollow(FOLLOW_unaryExpression_in_powerOfExpression4256);
-            	    unaryExpression282=unaryExpression();
+            	    pushFollow(FOLLOW_unaryExpression_in_powerOfExpression4270);
+            	    unaryExpression283=unaryExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression282.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression283.getTree());
 
             	    }
             	    break;
@@ -13994,7 +14326,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 66, powerOfExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 67, powerOfExpression_StartIndex); }
 
         }
         return retval;
@@ -14009,7 +14341,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "unaryExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:1: unaryExpression : ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:1: unaryExpression : ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression );
     public final CFScriptParser.unaryExpression_return unaryExpression() throws RecognitionException {
         CFScriptParser.unaryExpression_return retval = new CFScriptParser.unaryExpression_return();
         retval.start = input.LT(1);
@@ -14018,54 +14350,54 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token MINUS283=null;
-        Token PLUS285=null;
-        Token MINUSMINUS287=null;
-        Token PLUSPLUS289=null;
-        Token DOT292=null;
-        Token LEFTPAREN294=null;
-        Token char_literal296=null;
-        Token MINUSMINUS298=null;
-        Token PLUSPLUS300=null;
-        CFScriptParser.memberExpression_return memberExpression284 =null;
+        Token MINUS284=null;
+        Token PLUS286=null;
+        Token MINUSMINUS288=null;
+        Token PLUSPLUS290=null;
+        Token DOT293=null;
+        Token LEFTPAREN295=null;
+        Token char_literal297=null;
+        Token MINUSMINUS299=null;
+        Token PLUSPLUS301=null;
+        CFScriptParser.memberExpression_return memberExpression285 =null;
 
-        CFScriptParser.memberExpression_return memberExpression286 =null;
+        CFScriptParser.memberExpression_return memberExpression287 =null;
 
-        CFScriptParser.memberExpression_return memberExpression288 =null;
+        CFScriptParser.memberExpression_return memberExpression289 =null;
 
-        CFScriptParser.memberExpression_return memberExpression290 =null;
+        CFScriptParser.memberExpression_return memberExpression291 =null;
 
-        CFScriptParser.newComponentExpression_return newComponentExpression291 =null;
+        CFScriptParser.newComponentExpression_return newComponentExpression292 =null;
 
-        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW293 =null;
+        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW294 =null;
 
-        CFScriptParser.argumentList_return argumentList295 =null;
+        CFScriptParser.argumentList_return argumentList296 =null;
 
-        CFScriptParser.memberExpression_return memberExpression297 =null;
+        CFScriptParser.memberExpression_return memberExpression298 =null;
 
-        CFScriptParser.memberExpression_return memberExpression299 =null;
+        CFScriptParser.memberExpression_return memberExpression300 =null;
 
-        CFScriptParser.memberExpression_return memberExpression301 =null;
+        CFScriptParser.memberExpression_return memberExpression302 =null;
 
 
-        CommonTree MINUS283_tree=null;
-        CommonTree PLUS285_tree=null;
-        CommonTree MINUSMINUS287_tree=null;
-        CommonTree PLUSPLUS289_tree=null;
-        CommonTree DOT292_tree=null;
-        CommonTree LEFTPAREN294_tree=null;
-        CommonTree char_literal296_tree=null;
-        CommonTree MINUSMINUS298_tree=null;
-        CommonTree PLUSPLUS300_tree=null;
+        CommonTree MINUS284_tree=null;
+        CommonTree PLUS286_tree=null;
+        CommonTree MINUSMINUS288_tree=null;
+        CommonTree PLUSPLUS290_tree=null;
+        CommonTree DOT293_tree=null;
+        CommonTree LEFTPAREN295_tree=null;
+        CommonTree char_literal297_tree=null;
+        CommonTree MINUSMINUS299_tree=null;
+        CommonTree PLUSPLUS301_tree=null;
         RewriteRuleTokenStream stream_MINUSMINUS=new RewriteRuleTokenStream(adaptor,"token MINUSMINUS");
         RewriteRuleTokenStream stream_PLUS=new RewriteRuleTokenStream(adaptor,"token PLUS");
         RewriteRuleTokenStream stream_MINUS=new RewriteRuleTokenStream(adaptor,"token MINUS");
         RewriteRuleTokenStream stream_PLUSPLUS=new RewriteRuleTokenStream(adaptor,"token PLUSPLUS");
         RewriteRuleSubtreeStream stream_memberExpression=new RewriteRuleSubtreeStream(adaptor,"rule memberExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:2: ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:2: ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression )
             int alt78=8;
             int LA78_0 = input.LA(1);
 
@@ -14294,7 +14626,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==IDENTIFIER) ) {
+            else if ( (LA78_0==COMPONENT) ) {
                 int LA78_15 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14315,7 +14647,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==DOES) ) {
+            else if ( (LA78_0==IDENTIFIER) ) {
                 int LA78_16 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14336,7 +14668,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==CONTAIN) ) {
+            else if ( (LA78_0==DOES) ) {
                 int LA78_17 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14357,7 +14689,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==GREATER) ) {
+            else if ( (LA78_0==CONTAIN) ) {
                 int LA78_18 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14378,7 +14710,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==THAN) ) {
+            else if ( (LA78_0==GREATER) ) {
                 int LA78_19 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14399,7 +14731,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==LESS) ) {
+            else if ( (LA78_0==THAN) ) {
                 int LA78_20 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14420,7 +14752,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==VAR) ) {
+            else if ( (LA78_0==LESS) ) {
                 int LA78_21 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14441,7 +14773,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==TO) ) {
+            else if ( (LA78_0==VAR) ) {
                 int LA78_22 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14462,7 +14794,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==DEFAULT) ) {
+            else if ( (LA78_0==TO) ) {
                 int LA78_23 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14483,7 +14815,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==INCLUDE) ) {
+            else if ( (LA78_0==DEFAULT) ) {
                 int LA78_24 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14504,7 +14836,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==ABORT) ) {
+            else if ( (LA78_0==INCLUDE) ) {
                 int LA78_25 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14525,7 +14857,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==THROW) ) {
+            else if ( (LA78_0==ABORT) ) {
                 int LA78_26 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14546,7 +14878,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==RETHROW) ) {
+            else if ( (LA78_0==THROW) ) {
                 int LA78_27 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14567,7 +14899,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==PARAM) ) {
+            else if ( (LA78_0==RETHROW) ) {
                 int LA78_28 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14588,7 +14920,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==EXIT) ) {
+            else if ( (LA78_0==PARAM) ) {
                 int LA78_29 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14609,7 +14941,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==THREAD) ) {
+            else if ( (LA78_0==EXIT) ) {
                 int LA78_30 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14630,7 +14962,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==LOCK) ) {
+            else if ( (LA78_0==THREAD) ) {
                 int LA78_31 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14651,7 +14983,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==TRANSACTION) ) {
+            else if ( (LA78_0==LOCK) ) {
                 int LA78_32 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14672,7 +15004,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==PUBLIC) ) {
+            else if ( (LA78_0==TRANSACTION) ) {
                 int LA78_33 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14693,7 +15025,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==PRIVATE) ) {
+            else if ( (LA78_0==PUBLIC) ) {
                 int LA78_34 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14714,7 +15046,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==REMOTE) ) {
+            else if ( (LA78_0==PRIVATE) ) {
                 int LA78_35 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14735,7 +15067,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==PACKAGE) ) {
+            else if ( (LA78_0==REMOTE) ) {
                 int LA78_36 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14756,7 +15088,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==REQUIRED) ) {
+            else if ( (LA78_0==PACKAGE) ) {
                 int LA78_37 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14777,7 +15109,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==DIRECTORY||LA78_0==FILE||LA78_0==HTTP||LA78_0==LOCATION||LA78_0==LOOP||LA78_0==QUERY||LA78_0==SAVECONTENT||LA78_0==SETTING) ) {
+            else if ( (LA78_0==REQUIRED) ) {
                 int LA78_38 = input.LA(2);
 
                 if ( (synpred154_CFScript()) ) {
@@ -14798,8 +15130,29 @@ public TreeAdaptor getTreeAdaptor() {
 
                 }
             }
-            else if ( (LA78_0==BREAK||(LA78_0 >= CASE && LA78_0 <= CATCH)||LA78_0==CONTINUE||LA78_0==DO||LA78_0==ELSE||LA78_0==FOR||LA78_0==FUNCTION||LA78_0==IF||(LA78_0 >= IMPORT && LA78_0 <= IN)||LA78_0==RETURN||LA78_0==SWITCH||LA78_0==TRY||LA78_0==WHILE) && ((!scriptMode))) {
+            else if ( (LA78_0==DIRECTORY||LA78_0==FILE||LA78_0==HTTP||LA78_0==LOCATION||LA78_0==LOOP||LA78_0==QUERY||LA78_0==SAVECONTENT||LA78_0==SETTING) ) {
                 int LA78_39 = input.LA(2);
+
+                if ( (synpred154_CFScript()) ) {
+                    alt78=6;
+                }
+                else if ( (synpred155_CFScript()) ) {
+                    alt78=7;
+                }
+                else if ( (true) ) {
+                    alt78=8;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 78, 39, input);
+
+                    throw nvae;
+
+                }
+            }
+            else if ( (LA78_0==BREAK||(LA78_0 >= CASE && LA78_0 <= CATCH)||LA78_0==CONTINUE||LA78_0==DO||LA78_0==ELSE||LA78_0==FOR||LA78_0==FUNCTION||LA78_0==IF||(LA78_0 >= IMPORT && LA78_0 <= IN)||LA78_0==RETURN||LA78_0==SWITCH||LA78_0==TRY||LA78_0==WHILE) && ((!scriptMode))) {
+                int LA78_40 = input.LA(2);
 
                 if ( ((((!scriptMode)&&(!scriptMode))&&synpred154_CFScript())) ) {
                     alt78=6;
@@ -14813,7 +15166,7 @@ public TreeAdaptor getTreeAdaptor() {
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 78, 39, input);
+                        new NoViableAltException("", 78, 40, input);
 
                     throw nvae;
 
@@ -14829,21 +15182,21 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt78) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:4: MINUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:4: MINUS memberExpression
                     {
-                    MINUS283=(Token)match(input,MINUS,FOLLOW_MINUS_in_unaryExpression4271); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MINUS.add(MINUS283);
+                    MINUS284=(Token)match(input,MINUS,FOLLOW_MINUS_in_unaryExpression4285); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MINUS.add(MINUS284);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4273);
-                    memberExpression284=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4287);
+                    memberExpression285=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression284.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression285.getTree());
 
                     // AST REWRITE
-                    // elements: MINUS, memberExpression
+                    // elements: memberExpression, MINUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14855,9 +15208,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 794:27: -> ^( MINUS memberExpression )
+                    // 798:27: -> ^( MINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:794:30: ^( MINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:30: ^( MINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -14878,21 +15231,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:795:4: PLUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:4: PLUS memberExpression
                     {
-                    PLUS285=(Token)match(input,PLUS,FOLLOW_PLUS_in_unaryExpression4286); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PLUS.add(PLUS285);
+                    PLUS286=(Token)match(input,PLUS,FOLLOW_PLUS_in_unaryExpression4300); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PLUS.add(PLUS286);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4288);
-                    memberExpression286=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4302);
+                    memberExpression287=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression286.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression287.getTree());
 
                     // AST REWRITE
-                    // elements: memberExpression, PLUS
+                    // elements: PLUS, memberExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14904,9 +15257,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 795:26: -> ^( PLUS memberExpression )
+                    // 799:26: -> ^( PLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:795:29: ^( PLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:29: ^( PLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -14927,21 +15280,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:796:4: MINUSMINUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:4: MINUSMINUS memberExpression
                     {
-                    MINUSMINUS287=(Token)match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_unaryExpression4301); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MINUSMINUS.add(MINUSMINUS287);
+                    MINUSMINUS288=(Token)match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_unaryExpression4315); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MINUSMINUS.add(MINUSMINUS288);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4303);
-                    memberExpression288=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4317);
+                    memberExpression289=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression288.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression289.getTree());
 
                     // AST REWRITE
-                    // elements: MINUSMINUS, memberExpression
+                    // elements: memberExpression, MINUSMINUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14953,9 +15306,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 796:32: -> ^( MINUSMINUS memberExpression )
+                    // 800:32: -> ^( MINUSMINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:796:35: ^( MINUSMINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:35: ^( MINUSMINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -14976,21 +15329,21 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:4: PLUSPLUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:4: PLUSPLUS memberExpression
                     {
-                    PLUSPLUS289=(Token)match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_unaryExpression4317); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PLUSPLUS.add(PLUSPLUS289);
+                    PLUSPLUS290=(Token)match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_unaryExpression4331); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PLUSPLUS.add(PLUSPLUS290);
 
 
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4319);
-                    memberExpression290=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4333);
+                    memberExpression291=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression290.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression291.getTree());
 
                     // AST REWRITE
-                    // elements: PLUSPLUS, memberExpression
+                    // elements: memberExpression, PLUSPLUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -15002,9 +15355,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 797:30: -> ^( PLUSPLUS memberExpression )
+                    // 801:30: -> ^( PLUSPLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:33: ^( PLUSPLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:33: ^( PLUSPLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15025,19 +15378,19 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_newComponentExpression_in_unaryExpression4332);
-                    newComponentExpression291=newComponentExpression();
+                    pushFollow(FOLLOW_newComponentExpression_in_unaryExpression4346);
+                    newComponentExpression292=newComponentExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, newComponentExpression291.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, newComponentExpression292.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
                     loop77:
                     do {
                         int alt77=2;
@@ -15050,53 +15403,53 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt77) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
                     	    {
-                    	    DOT292=(Token)match(input,DOT,FOLLOW_DOT_in_unaryExpression4335); if (state.failed) return retval;
+                    	    DOT293=(Token)match(input,DOT,FOLLOW_DOT_in_unaryExpression4349); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
-                    	    DOT292_tree = 
-                    	    (CommonTree)adaptor.create(DOT292)
+                    	    DOT293_tree = 
+                    	    (CommonTree)adaptor.create(DOT293)
                     	    ;
-                    	    adaptor.addChild(root_0, DOT292_tree);
+                    	    adaptor.addChild(root_0, DOT293_tree);
                     	    }
 
-                    	    pushFollow(FOLLOW_primaryExpressionIRW_in_unaryExpression4337);
-                    	    primaryExpressionIRW293=primaryExpressionIRW();
+                    	    pushFollow(FOLLOW_primaryExpressionIRW_in_unaryExpression4351);
+                    	    primaryExpressionIRW294=primaryExpressionIRW();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpressionIRW293.getTree());
+                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpressionIRW294.getTree());
 
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:53: ( LEFTPAREN argumentList ')' )*
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:53: ( LEFTPAREN argumentList ')' )*
                     	    loop76:
                     	    do {
                     	        int alt76=2;
                     	        alt76 = dfa76.predict(input);
                     	        switch (alt76) {
                     	    	case 1 :
-                    	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:54: LEFTPAREN argumentList ')'
+                    	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:54: LEFTPAREN argumentList ')'
                     	    	    {
-                    	    	    LEFTPAREN294=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_unaryExpression4340); if (state.failed) return retval;
+                    	    	    LEFTPAREN295=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_unaryExpression4354); if (state.failed) return retval;
                     	    	    if ( state.backtracking==0 ) {
-                    	    	    LEFTPAREN294_tree = 
-                    	    	    (CommonTree)adaptor.create(LEFTPAREN294)
+                    	    	    LEFTPAREN295_tree = 
+                    	    	    (CommonTree)adaptor.create(LEFTPAREN295)
                     	    	    ;
-                    	    	    adaptor.addChild(root_0, LEFTPAREN294_tree);
+                    	    	    adaptor.addChild(root_0, LEFTPAREN295_tree);
                     	    	    }
 
-                    	    	    pushFollow(FOLLOW_argumentList_in_unaryExpression4342);
-                    	    	    argumentList295=argumentList();
+                    	    	    pushFollow(FOLLOW_argumentList_in_unaryExpression4356);
+                    	    	    argumentList296=argumentList();
 
                     	    	    state._fsp--;
                     	    	    if (state.failed) return retval;
-                    	    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, argumentList295.getTree());
+                    	    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, argumentList296.getTree());
 
-                    	    	    char_literal296=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_unaryExpression4344); if (state.failed) return retval;
+                    	    	    char_literal297=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_unaryExpression4358); if (state.failed) return retval;
                     	    	    if ( state.backtracking==0 ) {
-                    	    	    char_literal296_tree = 
-                    	    	    (CommonTree)adaptor.create(char_literal296)
+                    	    	    char_literal297_tree = 
+                    	    	    (CommonTree)adaptor.create(char_literal297)
                     	    	    ;
-                    	    	    adaptor.addChild(root_0, char_literal296_tree);
+                    	    	    adaptor.addChild(root_0, char_literal297_tree);
                     	    	    }
 
                     	    	    }
@@ -15120,17 +15473,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:5: memberExpression MINUSMINUS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:803:5: memberExpression MINUSMINUS
                     {
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4354);
-                    memberExpression297=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4368);
+                    memberExpression298=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression297.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression298.getTree());
 
-                    MINUSMINUS298=(Token)match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_unaryExpression4356); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MINUSMINUS.add(MINUSMINUS298);
+                    MINUSMINUS299=(Token)match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_unaryExpression4370); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MINUSMINUS.add(MINUSMINUS299);
 
 
                     // AST REWRITE
@@ -15146,9 +15499,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 799:33: -> ^( POSTMINUSMINUS memberExpression )
+                    // 803:33: -> ^( POSTMINUSMINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:36: ^( POSTMINUSMINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:803:36: ^( POSTMINUSMINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15169,17 +15522,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:5: memberExpression PLUSPLUS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:5: memberExpression PLUSPLUS
                     {
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4370);
-                    memberExpression299=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4384);
+                    memberExpression300=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression299.getTree());
+                    if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression300.getTree());
 
-                    PLUSPLUS300=(Token)match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_unaryExpression4372); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PLUSPLUS.add(PLUSPLUS300);
+                    PLUSPLUS301=(Token)match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_unaryExpression4386); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PLUSPLUS.add(PLUSPLUS301);
 
 
                     // AST REWRITE
@@ -15195,9 +15548,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 800:31: -> ^( POSTPLUSPLUS memberExpression )
+                    // 804:31: -> ^( POSTPLUSPLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:34: ^( POSTPLUSPLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:34: ^( POSTPLUSPLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15218,17 +15571,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:5: memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:5: memberExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4386);
-                    memberExpression301=memberExpression();
+                    pushFollow(FOLLOW_memberExpression_in_unaryExpression4400);
+                    memberExpression302=memberExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpression301.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpression302.getTree());
 
                     }
                     break;
@@ -15252,7 +15605,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 67, unaryExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 68, unaryExpression_StartIndex); }
 
         }
         return retval;
@@ -15267,7 +15620,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:1: memberExpression : ( '#' ! memberExpressionB '#' !| memberExpressionB );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:808:1: memberExpression : ( '#' ! memberExpressionB '#' !| memberExpressionB );
     public final CFScriptParser.memberExpression_return memberExpression() throws RecognitionException {
         CFScriptParser.memberExpression_return retval = new CFScriptParser.memberExpression_return();
         retval.start = input.LT(1);
@@ -15276,27 +15629,27 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal302=null;
-        Token char_literal304=null;
-        CFScriptParser.memberExpressionB_return memberExpressionB303 =null;
+        Token char_literal303=null;
+        Token char_literal305=null;
+        CFScriptParser.memberExpressionB_return memberExpressionB304 =null;
 
-        CFScriptParser.memberExpressionB_return memberExpressionB305 =null;
+        CFScriptParser.memberExpressionB_return memberExpressionB306 =null;
 
 
-        CommonTree char_literal302_tree=null;
-        CommonTree char_literal304_tree=null;
+        CommonTree char_literal303_tree=null;
+        CommonTree char_literal305_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:2: ( '#' ! memberExpressionB '#' !| memberExpressionB )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:2: ( '#' ! memberExpressionB '#' !| memberExpressionB )
             int alt79=2;
             int LA79_0 = input.LA(1);
 
             if ( (LA79_0==150) ) {
                 alt79=1;
             }
-            else if ( (LA79_0==ABORT||LA79_0==BOOLEAN_LITERAL||LA79_0==CONTAIN||LA79_0==DEFAULT||LA79_0==DIRECTORY||LA79_0==DOES||LA79_0==EXIT||LA79_0==FILE||LA79_0==FLOATING_POINT_LITERAL||LA79_0==GREATER||(LA79_0 >= HTTP && LA79_0 <= IDENTIFIER)||(LA79_0 >= INCLUDE && LA79_0 <= INTEGER_LITERAL)||(LA79_0 >= LEFTBRACKET && LA79_0 <= LESS)||(LA79_0 >= LOCATION && LA79_0 <= LOCK)||LA79_0==LOOP||LA79_0==NEW||LA79_0==NULL||(LA79_0 >= PACKAGE && LA79_0 <= PARAM)||LA79_0==PRIVATE||(LA79_0 >= PUBLIC && LA79_0 <= QUERY)||(LA79_0 >= REMOTE && LA79_0 <= RETHROW)||LA79_0==SAVECONTENT||LA79_0==SETTING||LA79_0==STRING_LITERAL||(LA79_0 >= THAN && LA79_0 <= THREAD)||LA79_0==THROW||(LA79_0 >= TO && LA79_0 <= TRANSACTION)||LA79_0==VAR) ) {
+            else if ( (LA79_0==ABORT||LA79_0==BOOLEAN_LITERAL||LA79_0==COMPONENT||LA79_0==CONTAIN||LA79_0==DEFAULT||LA79_0==DIRECTORY||LA79_0==DOES||LA79_0==EXIT||LA79_0==FILE||LA79_0==FLOATING_POINT_LITERAL||LA79_0==GREATER||(LA79_0 >= HTTP && LA79_0 <= IDENTIFIER)||(LA79_0 >= INCLUDE && LA79_0 <= INTEGER_LITERAL)||(LA79_0 >= LEFTBRACKET && LA79_0 <= LESS)||(LA79_0 >= LOCATION && LA79_0 <= LOCK)||LA79_0==LOOP||LA79_0==NEW||LA79_0==NULL||(LA79_0 >= PACKAGE && LA79_0 <= PARAM)||LA79_0==PRIVATE||(LA79_0 >= PUBLIC && LA79_0 <= QUERY)||(LA79_0 >= REMOTE && LA79_0 <= RETHROW)||LA79_0==SAVECONTENT||LA79_0==SETTING||LA79_0==STRING_LITERAL||(LA79_0 >= THAN && LA79_0 <= THREAD)||LA79_0==THROW||(LA79_0 >= TO && LA79_0 <= TRANSACTION)||LA79_0==VAR) ) {
                 alt79=2;
             }
             else if ( (LA79_0==BREAK||(LA79_0 >= CASE && LA79_0 <= CATCH)||LA79_0==CONTINUE||LA79_0==DO||LA79_0==ELSE||LA79_0==FOR||LA79_0==FUNCTION||LA79_0==IF||(LA79_0 >= IMPORT && LA79_0 <= IN)||LA79_0==RETURN||LA79_0==SWITCH||LA79_0==TRY||LA79_0==WHILE) && ((!scriptMode))) {
@@ -15312,36 +15665,36 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt79) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:4: '#' ! memberExpressionB '#' !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:4: '#' ! memberExpressionB '#' !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    char_literal302=(Token)match(input,150,FOLLOW_150_in_memberExpression4399); if (state.failed) return retval;
+                    char_literal303=(Token)match(input,150,FOLLOW_150_in_memberExpression4413); if (state.failed) return retval;
 
-                    pushFollow(FOLLOW_memberExpressionB_in_memberExpression4402);
-                    memberExpressionB303=memberExpressionB();
+                    pushFollow(FOLLOW_memberExpressionB_in_memberExpression4416);
+                    memberExpressionB304=memberExpressionB();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpressionB303.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpressionB304.getTree());
 
-                    char_literal304=(Token)match(input,150,FOLLOW_150_in_memberExpression4404); if (state.failed) return retval;
+                    char_literal305=(Token)match(input,150,FOLLOW_150_in_memberExpression4418); if (state.failed) return retval;
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:806:4: memberExpressionB
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:4: memberExpressionB
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_memberExpressionB_in_memberExpression4410);
-                    memberExpressionB305=memberExpressionB();
+                    pushFollow(FOLLOW_memberExpressionB_in_memberExpression4424);
+                    memberExpressionB306=memberExpressionB();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpressionB305.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, memberExpressionB306.getTree());
 
                     }
                     break;
@@ -15365,7 +15718,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 68, memberExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 69, memberExpression_StartIndex); }
 
         }
         return retval;
@@ -15380,7 +15733,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpressionB"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:1: memberExpressionB : ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:1: memberExpressionB : ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* ;
     public final CFScriptParser.memberExpressionB_return memberExpressionB() throws RecognitionException {
         CFScriptParser.memberExpressionB_return retval = new CFScriptParser.memberExpressionB_return();
         retval.start = input.LT(1);
@@ -15389,35 +15742,35 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token DOT307=null;
-        Token LEFTPAREN309=null;
-        Token char_literal311=null;
-        Token LEFTPAREN312=null;
-        Token RIGHTPAREN314=null;
-        Token LEFTBRACKET315=null;
-        Token RIGHTBRACKET317=null;
-        Token DOT318=null;
-        CFScriptParser.primaryExpression_return primaryExpression306 =null;
+        Token DOT308=null;
+        Token LEFTPAREN310=null;
+        Token char_literal312=null;
+        Token LEFTPAREN313=null;
+        Token RIGHTPAREN315=null;
+        Token LEFTBRACKET316=null;
+        Token RIGHTBRACKET318=null;
+        Token DOT319=null;
+        CFScriptParser.primaryExpression_return primaryExpression307 =null;
 
-        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW308 =null;
+        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW309 =null;
 
-        CFScriptParser.argumentList_return argumentList310 =null;
+        CFScriptParser.argumentList_return argumentList311 =null;
 
-        CFScriptParser.argumentList_return argumentList313 =null;
+        CFScriptParser.argumentList_return argumentList314 =null;
 
-        CFScriptParser.impliesExpression_return impliesExpression316 =null;
+        CFScriptParser.impliesExpression_return impliesExpression317 =null;
 
-        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW319 =null;
+        CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW320 =null;
 
 
-        CommonTree DOT307_tree=null;
-        CommonTree LEFTPAREN309_tree=null;
-        CommonTree char_literal311_tree=null;
-        CommonTree LEFTPAREN312_tree=null;
-        CommonTree RIGHTPAREN314_tree=null;
-        CommonTree LEFTBRACKET315_tree=null;
-        CommonTree RIGHTBRACKET317_tree=null;
-        CommonTree DOT318_tree=null;
+        CommonTree DOT308_tree=null;
+        CommonTree LEFTPAREN310_tree=null;
+        CommonTree char_literal312_tree=null;
+        CommonTree LEFTPAREN313_tree=null;
+        CommonTree RIGHTPAREN315_tree=null;
+        CommonTree LEFTBRACKET316_tree=null;
+        CommonTree RIGHTBRACKET318_tree=null;
+        CommonTree DOT319_tree=null;
         RewriteRuleTokenStream stream_RIGHTBRACKET=new RewriteRuleTokenStream(adaptor,"token RIGHTBRACKET");
         RewriteRuleTokenStream stream_LEFTPAREN=new RewriteRuleTokenStream(adaptor,"token LEFTPAREN");
         RewriteRuleTokenStream stream_DOT=new RewriteRuleTokenStream(adaptor,"token DOT");
@@ -15428,20 +15781,20 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleSubtreeStream stream_primaryExpressionIRW=new RewriteRuleSubtreeStream(adaptor,"rule primaryExpressionIRW");
         RewriteRuleSubtreeStream stream_impliesExpression=new RewriteRuleSubtreeStream(adaptor,"rule impliesExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:3: ( ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:5: ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:3: ( ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:5: ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:5: ( primaryExpression -> primaryExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:7: primaryExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:5: ( primaryExpression -> primaryExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:7: primaryExpression
             {
-            pushFollow(FOLLOW_primaryExpression_in_memberExpressionB4425);
-            primaryExpression306=primaryExpression();
+            pushFollow(FOLLOW_primaryExpression_in_memberExpressionB4439);
+            primaryExpression307=primaryExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_primaryExpression.add(primaryExpression306.getTree());
+            if ( state.backtracking==0 ) stream_primaryExpression.add(primaryExpression307.getTree());
 
             // AST REWRITE
             // elements: primaryExpression
@@ -15456,7 +15809,7 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 810:25: -> primaryExpression
+            // 814:25: -> primaryExpression
             {
                 adaptor.addChild(root_0, stream_primaryExpression.nextTree());
 
@@ -15469,43 +15822,43 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:811:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
             loop80:
             do {
                 int alt80=5;
                 alt80 = dfa80.predict(input);
                 switch (alt80) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
             	    {
-            	    DOT307=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4443); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_DOT.add(DOT307);
+            	    DOT308=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4457); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_DOT.add(DOT308);
 
 
-            	    pushFollow(FOLLOW_primaryExpressionIRW_in_memberExpressionB4445);
-            	    primaryExpressionIRW308=primaryExpressionIRW();
-
-            	    state._fsp--;
-            	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW308.getTree());
-
-            	    LEFTPAREN309=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_memberExpressionB4447); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN309);
-
-
-            	    pushFollow(FOLLOW_argumentList_in_memberExpressionB4449);
-            	    argumentList310=argumentList();
+            	    pushFollow(FOLLOW_primaryExpressionIRW_in_memberExpressionB4459);
+            	    primaryExpressionIRW309=primaryExpressionIRW();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_argumentList.add(argumentList310.getTree());
+            	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW309.getTree());
 
-            	    char_literal311=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_memberExpressionB4451); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_RIGHTPAREN.add(char_literal311);
+            	    LEFTPAREN310=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_memberExpressionB4461); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN310);
+
+
+            	    pushFollow(FOLLOW_argumentList_in_memberExpressionB4463);
+            	    argumentList311=argumentList();
+
+            	    state._fsp--;
+            	    if (state.failed) return retval;
+            	    if ( state.backtracking==0 ) stream_argumentList.add(argumentList311.getTree());
+
+            	    char_literal312=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_memberExpressionB4465); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_RIGHTPAREN.add(char_literal312);
 
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, argumentList, primaryExpressionIRW
+            	    // elements: argumentList, memberExpressionB, primaryExpressionIRW
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15517,9 +15870,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 812:57: -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+            	    // 816:57: -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:60: ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:60: ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15544,21 +15897,21 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 2 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:8: LEFTPAREN argumentList RIGHTPAREN
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:8: LEFTPAREN argumentList RIGHTPAREN
             	    {
-            	    LEFTPAREN312=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_memberExpressionB4474); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN312);
+            	    LEFTPAREN313=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_memberExpressionB4488); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN313);
 
 
-            	    pushFollow(FOLLOW_argumentList_in_memberExpressionB4476);
-            	    argumentList313=argumentList();
+            	    pushFollow(FOLLOW_argumentList_in_memberExpressionB4490);
+            	    argumentList314=argumentList();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_argumentList.add(argumentList313.getTree());
+            	    if ( state.backtracking==0 ) stream_argumentList.add(argumentList314.getTree());
 
-            	    RIGHTPAREN314=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_memberExpressionB4478); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_RIGHTPAREN.add(RIGHTPAREN314);
+            	    RIGHTPAREN315=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_memberExpressionB4492); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_RIGHTPAREN.add(RIGHTPAREN315);
 
 
             	    // AST REWRITE
@@ -15574,9 +15927,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 813:42: -> ^( FUNCTIONCALL $memberExpressionB argumentList )
+            	    // 817:42: -> ^( FUNCTIONCALL $memberExpressionB argumentList )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:45: ^( FUNCTIONCALL $memberExpressionB argumentList )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:45: ^( FUNCTIONCALL $memberExpressionB argumentList )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15599,25 +15952,25 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 3 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:7: LEFTBRACKET impliesExpression RIGHTBRACKET
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:7: LEFTBRACKET impliesExpression RIGHTBRACKET
             	    {
-            	    LEFTBRACKET315=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_memberExpressionB4497); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_LEFTBRACKET.add(LEFTBRACKET315);
+            	    LEFTBRACKET316=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_memberExpressionB4511); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_LEFTBRACKET.add(LEFTBRACKET316);
 
 
-            	    pushFollow(FOLLOW_impliesExpression_in_memberExpressionB4499);
-            	    impliesExpression316=impliesExpression();
+            	    pushFollow(FOLLOW_impliesExpression_in_memberExpressionB4513);
+            	    impliesExpression317=impliesExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression316.getTree());
+            	    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression317.getTree());
 
-            	    RIGHTBRACKET317=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_memberExpressionB4501); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_RIGHTBRACKET.add(RIGHTBRACKET317);
+            	    RIGHTBRACKET318=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_memberExpressionB4515); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_RIGHTBRACKET.add(RIGHTBRACKET318);
 
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, LEFTBRACKET, impliesExpression
+            	    // elements: impliesExpression, memberExpressionB, LEFTBRACKET
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15629,9 +15982,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 814:50: -> ^( LEFTBRACKET $memberExpressionB impliesExpression )
+            	    // 818:50: -> ^( LEFTBRACKET $memberExpressionB impliesExpression )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:53: ^( LEFTBRACKET $memberExpressionB impliesExpression )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:53: ^( LEFTBRACKET $memberExpressionB impliesExpression )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15654,21 +16007,21 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 4 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:7: DOT primaryExpressionIRW
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:7: DOT primaryExpressionIRW
             	    {
-            	    DOT318=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4520); if (state.failed) return retval; 
-            	    if ( state.backtracking==0 ) stream_DOT.add(DOT318);
+            	    DOT319=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4534); if (state.failed) return retval; 
+            	    if ( state.backtracking==0 ) stream_DOT.add(DOT319);
 
 
-            	    pushFollow(FOLLOW_primaryExpressionIRW_in_memberExpressionB4522);
-            	    primaryExpressionIRW319=primaryExpressionIRW();
+            	    pushFollow(FOLLOW_primaryExpressionIRW_in_memberExpressionB4536);
+            	    primaryExpressionIRW320=primaryExpressionIRW();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW319.getTree());
+            	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW320.getTree());
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, DOT, primaryExpressionIRW
+            	    // elements: memberExpressionB, primaryExpressionIRW, DOT
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15680,9 +16033,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 815:32: -> ^( DOT $memberExpressionB primaryExpressionIRW )
+            	    // 819:32: -> ^( DOT $memberExpressionB primaryExpressionIRW )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:35: ^( DOT $memberExpressionB primaryExpressionIRW )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:35: ^( DOT $memberExpressionB primaryExpressionIRW )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15731,7 +16084,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 69, memberExpressionB_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 70, memberExpressionB_StartIndex); }
 
         }
         return retval;
@@ -15746,7 +16099,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpressionSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:821:1: memberExpressionSuffix : ( indexSuffix | propertyReferenceSuffix );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:1: memberExpressionSuffix : ( indexSuffix | propertyReferenceSuffix );
     public final CFScriptParser.memberExpressionSuffix_return memberExpressionSuffix() throws RecognitionException {
         CFScriptParser.memberExpressionSuffix_return retval = new CFScriptParser.memberExpressionSuffix_return();
         retval.start = input.LT(1);
@@ -15755,16 +16108,16 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        CFScriptParser.indexSuffix_return indexSuffix320 =null;
+        CFScriptParser.indexSuffix_return indexSuffix321 =null;
 
-        CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix321 =null;
+        CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix322 =null;
 
 
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:822:3: ( indexSuffix | propertyReferenceSuffix )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:826:3: ( indexSuffix | propertyReferenceSuffix )
             int alt81=2;
             int LA81_0 = input.LA(1);
 
@@ -15784,32 +16137,32 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt81) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:822:5: indexSuffix
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:826:5: indexSuffix
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_indexSuffix_in_memberExpressionSuffix4555);
-                    indexSuffix320=indexSuffix();
+                    pushFollow(FOLLOW_indexSuffix_in_memberExpressionSuffix4569);
+                    indexSuffix321=indexSuffix();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, indexSuffix320.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, indexSuffix321.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:823:5: propertyReferenceSuffix
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:5: propertyReferenceSuffix
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_propertyReferenceSuffix_in_memberExpressionSuffix4561);
-                    propertyReferenceSuffix321=propertyReferenceSuffix();
+                    pushFollow(FOLLOW_propertyReferenceSuffix_in_memberExpressionSuffix4575);
+                    propertyReferenceSuffix322=propertyReferenceSuffix();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, propertyReferenceSuffix321.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, propertyReferenceSuffix322.getTree());
 
                     }
                     break;
@@ -15833,7 +16186,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 70, memberExpressionSuffix_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 71, memberExpressionSuffix_StartIndex); }
 
         }
         return retval;
@@ -15848,7 +16201,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "propertyReferenceSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:826:1: propertyReferenceSuffix : DOT ( LT !)* identifier ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:1: propertyReferenceSuffix : DOT ( LT !)* identifier ;
     public final CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix() throws RecognitionException {
         CFScriptParser.propertyReferenceSuffix_return retval = new CFScriptParser.propertyReferenceSuffix_return();
         retval.start = input.LT(1);
@@ -15857,32 +16210,32 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token DOT322=null;
-        Token LT323=null;
-        CFScriptParser.identifier_return identifier324 =null;
+        Token DOT323=null;
+        Token LT324=null;
+        CFScriptParser.identifier_return identifier325 =null;
 
 
-        CommonTree DOT322_tree=null;
-        CommonTree LT323_tree=null;
+        CommonTree DOT323_tree=null;
+        CommonTree LT324_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:3: ( DOT ( LT !)* identifier )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:5: DOT ( LT !)* identifier
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:3: ( DOT ( LT !)* identifier )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:5: DOT ( LT !)* identifier
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            DOT322=(Token)match(input,DOT,FOLLOW_DOT_in_propertyReferenceSuffix4574); if (state.failed) return retval;
+            DOT323=(Token)match(input,DOT,FOLLOW_DOT_in_propertyReferenceSuffix4588); if (state.failed) return retval;
             if ( state.backtracking==0 ) {
-            DOT322_tree = 
-            (CommonTree)adaptor.create(DOT322)
+            DOT323_tree = 
+            (CommonTree)adaptor.create(DOT323)
             ;
-            adaptor.addChild(root_0, DOT322_tree);
+            adaptor.addChild(root_0, DOT323_tree);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:11: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:11: ( LT !)*
             loop82:
             do {
                 int alt82=2;
@@ -15895,9 +16248,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt82) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:11: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:11: LT !
             	    {
-            	    LT323=(Token)match(input,LT,FOLLOW_LT_in_propertyReferenceSuffix4576); if (state.failed) return retval;
+            	    LT324=(Token)match(input,LT,FOLLOW_LT_in_propertyReferenceSuffix4590); if (state.failed) return retval;
 
             	    }
             	    break;
@@ -15908,12 +16261,12 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            pushFollow(FOLLOW_identifier_in_propertyReferenceSuffix4580);
-            identifier324=identifier();
+            pushFollow(FOLLOW_identifier_in_propertyReferenceSuffix4594);
+            identifier325=identifier();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier324.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier325.getTree());
 
             }
 
@@ -15935,7 +16288,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 71, propertyReferenceSuffix_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 72, propertyReferenceSuffix_StartIndex); }
 
         }
         return retval;
@@ -15950,7 +16303,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "indexSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:1: indexSuffix : LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:1: indexSuffix : LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !;
     public final CFScriptParser.indexSuffix_return indexSuffix() throws RecognitionException {
         CFScriptParser.indexSuffix_return retval = new CFScriptParser.indexSuffix_return();
         retval.start = input.LT(1);
@@ -15959,36 +16312,36 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token LEFTBRACKET325=null;
-        Token LT326=null;
-        Token LT328=null;
-        Token char_literal329=null;
-        CFScriptParser.primaryExpression_return primaryExpression327 =null;
+        Token LEFTBRACKET326=null;
+        Token LT327=null;
+        Token LT329=null;
+        Token char_literal330=null;
+        CFScriptParser.primaryExpression_return primaryExpression328 =null;
 
 
-        CommonTree LEFTBRACKET325_tree=null;
-        CommonTree LT326_tree=null;
-        CommonTree LT328_tree=null;
-        CommonTree char_literal329_tree=null;
+        CommonTree LEFTBRACKET326_tree=null;
+        CommonTree LT327_tree=null;
+        CommonTree LT329_tree=null;
+        CommonTree char_literal330_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:3: ( LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:5: LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:3: ( LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:5: LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            LEFTBRACKET325=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_indexSuffix4593); if (state.failed) return retval;
+            LEFTBRACKET326=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_indexSuffix4607); if (state.failed) return retval;
             if ( state.backtracking==0 ) {
-            LEFTBRACKET325_tree = 
-            (CommonTree)adaptor.create(LEFTBRACKET325)
+            LEFTBRACKET326_tree = 
+            (CommonTree)adaptor.create(LEFTBRACKET326)
             ;
-            adaptor.addChild(root_0, LEFTBRACKET325_tree);
+            adaptor.addChild(root_0, LEFTBRACKET326_tree);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:20: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:20: ( LT !)*
             loop83:
             do {
                 int alt83=2;
@@ -16001,9 +16354,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt83) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:20: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:20: LT !
             	    {
-            	    LT326=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4596); if (state.failed) return retval;
+            	    LT327=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4610); if (state.failed) return retval;
 
             	    }
             	    break;
@@ -16014,14 +16367,14 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            pushFollow(FOLLOW_primaryExpression_in_indexSuffix4600);
-            primaryExpression327=primaryExpression();
+            pushFollow(FOLLOW_primaryExpression_in_indexSuffix4614);
+            primaryExpression328=primaryExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpression327.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpression328.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:44: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:44: ( LT !)*
             loop84:
             do {
                 int alt84=2;
@@ -16034,9 +16387,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt84) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:44: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:44: LT !
             	    {
-            	    LT328=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4603); if (state.failed) return retval;
+            	    LT329=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4617); if (state.failed) return retval;
 
             	    }
             	    break;
@@ -16047,7 +16400,7 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal329=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_indexSuffix4607); if (state.failed) return retval;
+            char_literal330=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_indexSuffix4621); if (state.failed) return retval;
 
             }
 
@@ -16069,7 +16422,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 72, indexSuffix_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 73, indexSuffix_StartIndex); }
 
         }
         return retval;
@@ -16084,7 +16437,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "primaryExpressionIRW"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:1: primaryExpressionIRW : ( primaryExpression | reservedWord );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:838:1: primaryExpressionIRW : ( primaryExpression | reservedWord );
     public final CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW() throws RecognitionException {
         CFScriptParser.primaryExpressionIRW_return retval = new CFScriptParser.primaryExpressionIRW_return();
         retval.start = input.LT(1);
@@ -16093,20 +16446,21 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        CFScriptParser.primaryExpression_return primaryExpression330 =null;
+        CFScriptParser.primaryExpression_return primaryExpression331 =null;
 
-        CFScriptParser.reservedWord_return reservedWord331 =null;
+        CFScriptParser.reservedWord_return reservedWord332 =null;
 
 
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:2: ( primaryExpression | reservedWord )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:839:2: ( primaryExpression | reservedWord )
             int alt85=2;
             switch ( input.LA(1) ) {
             case ABORT:
             case BOOLEAN_LITERAL:
+            case COMPONENT:
             case CONTAIN:
             case DIRECTORY:
             case DOES:
@@ -16255,32 +16609,32 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt85) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:4: primaryExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:839:4: primaryExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_primaryExpression_in_primaryExpressionIRW4624);
-                    primaryExpression330=primaryExpression();
+                    pushFollow(FOLLOW_primaryExpression_in_primaryExpressionIRW4638);
+                    primaryExpression331=primaryExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpression330.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpression331.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:836:4: reservedWord
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:840:4: reservedWord
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_reservedWord_in_primaryExpressionIRW4629);
-                    reservedWord331=reservedWord();
+                    pushFollow(FOLLOW_reservedWord_in_primaryExpressionIRW4643);
+                    reservedWord332=reservedWord();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, reservedWord331.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, reservedWord332.getTree());
 
                     }
                     break;
@@ -16304,7 +16658,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 73, primaryExpressionIRW_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 74, primaryExpressionIRW_StartIndex); }
 
         }
         return retval;
@@ -16319,7 +16673,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "reservedWord"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:840:1: reservedWord : ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | NULL | EQUALS | cfscriptKeywords );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:1: reservedWord : ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | NULL | EQUALS | cfscriptKeywords );
     public final CFScriptParser.reservedWord_return reservedWord() throws RecognitionException {
         CFScriptParser.reservedWord_return retval = new CFScriptParser.reservedWord_return();
         retval.start = input.LT(1);
@@ -16328,54 +16682,54 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token CONTAINS332=null;
-        Token IS333=null;
-        Token EQUAL334=null;
-        Token EQ335=null;
-        Token NEQ336=null;
-        Token GT337=null;
-        Token LT338=null;
-        Token GTE339=null;
-        Token GE340=null;
-        Token LTE341=null;
-        Token LE342=null;
-        Token NOT343=null;
-        Token AND344=null;
-        Token OR345=null;
-        Token XOR346=null;
-        Token EQV347=null;
-        Token IMP348=null;
-        Token MOD349=null;
-        Token NULL350=null;
-        Token EQUALS351=null;
-        CFScriptParser.cfscriptKeywords_return cfscriptKeywords352 =null;
+        Token CONTAINS333=null;
+        Token IS334=null;
+        Token EQUAL335=null;
+        Token EQ336=null;
+        Token NEQ337=null;
+        Token GT338=null;
+        Token LT339=null;
+        Token GTE340=null;
+        Token GE341=null;
+        Token LTE342=null;
+        Token LE343=null;
+        Token NOT344=null;
+        Token AND345=null;
+        Token OR346=null;
+        Token XOR347=null;
+        Token EQV348=null;
+        Token IMP349=null;
+        Token MOD350=null;
+        Token NULL351=null;
+        Token EQUALS352=null;
+        CFScriptParser.cfscriptKeywords_return cfscriptKeywords353 =null;
 
 
-        CommonTree CONTAINS332_tree=null;
-        CommonTree IS333_tree=null;
-        CommonTree EQUAL334_tree=null;
-        CommonTree EQ335_tree=null;
-        CommonTree NEQ336_tree=null;
-        CommonTree GT337_tree=null;
-        CommonTree LT338_tree=null;
-        CommonTree GTE339_tree=null;
-        CommonTree GE340_tree=null;
-        CommonTree LTE341_tree=null;
-        CommonTree LE342_tree=null;
-        CommonTree NOT343_tree=null;
-        CommonTree AND344_tree=null;
-        CommonTree OR345_tree=null;
-        CommonTree XOR346_tree=null;
-        CommonTree EQV347_tree=null;
-        CommonTree IMP348_tree=null;
-        CommonTree MOD349_tree=null;
-        CommonTree NULL350_tree=null;
-        CommonTree EQUALS351_tree=null;
+        CommonTree CONTAINS333_tree=null;
+        CommonTree IS334_tree=null;
+        CommonTree EQUAL335_tree=null;
+        CommonTree EQ336_tree=null;
+        CommonTree NEQ337_tree=null;
+        CommonTree GT338_tree=null;
+        CommonTree LT339_tree=null;
+        CommonTree GTE340_tree=null;
+        CommonTree GE341_tree=null;
+        CommonTree LTE342_tree=null;
+        CommonTree LE343_tree=null;
+        CommonTree NOT344_tree=null;
+        CommonTree AND345_tree=null;
+        CommonTree OR346_tree=null;
+        CommonTree XOR347_tree=null;
+        CommonTree EQV348_tree=null;
+        CommonTree IMP349_tree=null;
+        CommonTree MOD350_tree=null;
+        CommonTree NULL351_tree=null;
+        CommonTree EQUALS352_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:3: ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | NULL | EQUALS | cfscriptKeywords )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:3: ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | NULL | EQUALS | cfscriptKeywords )
             int alt86=21;
             switch ( input.LA(1) ) {
             case CONTAINS:
@@ -16509,337 +16863,337 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt86) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:5: CONTAINS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:5: CONTAINS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    CONTAINS332=(Token)match(input,CONTAINS,FOLLOW_CONTAINS_in_reservedWord4644); if (state.failed) return retval;
+                    CONTAINS333=(Token)match(input,CONTAINS,FOLLOW_CONTAINS_in_reservedWord4658); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    CONTAINS332_tree = 
-                    (CommonTree)adaptor.create(CONTAINS332)
+                    CONTAINS333_tree = 
+                    (CommonTree)adaptor.create(CONTAINS333)
                     ;
-                    adaptor.addChild(root_0, CONTAINS332_tree);
+                    adaptor.addChild(root_0, CONTAINS333_tree);
                     }
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:16: IS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:16: IS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    IS333=(Token)match(input,IS,FOLLOW_IS_in_reservedWord4648); if (state.failed) return retval;
+                    IS334=(Token)match(input,IS,FOLLOW_IS_in_reservedWord4662); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    IS333_tree = 
-                    (CommonTree)adaptor.create(IS333)
+                    IS334_tree = 
+                    (CommonTree)adaptor.create(IS334)
                     ;
-                    adaptor.addChild(root_0, IS333_tree);
+                    adaptor.addChild(root_0, IS334_tree);
                     }
 
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:21: EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:21: EQUAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    EQUAL334=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_reservedWord4652); if (state.failed) return retval;
+                    EQUAL335=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_reservedWord4666); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    EQUAL334_tree = 
-                    (CommonTree)adaptor.create(EQUAL334)
+                    EQUAL335_tree = 
+                    (CommonTree)adaptor.create(EQUAL335)
                     ;
-                    adaptor.addChild(root_0, EQUAL334_tree);
+                    adaptor.addChild(root_0, EQUAL335_tree);
                     }
 
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:5: EQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:5: EQ
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    EQ335=(Token)match(input,EQ,FOLLOW_EQ_in_reservedWord4659); if (state.failed) return retval;
+                    EQ336=(Token)match(input,EQ,FOLLOW_EQ_in_reservedWord4673); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    EQ335_tree = 
-                    (CommonTree)adaptor.create(EQ335)
+                    EQ336_tree = 
+                    (CommonTree)adaptor.create(EQ336)
                     ;
-                    adaptor.addChild(root_0, EQ335_tree);
+                    adaptor.addChild(root_0, EQ336_tree);
                     }
 
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:10: NEQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:10: NEQ
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    NEQ336=(Token)match(input,NEQ,FOLLOW_NEQ_in_reservedWord4663); if (state.failed) return retval;
+                    NEQ337=(Token)match(input,NEQ,FOLLOW_NEQ_in_reservedWord4677); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NEQ336_tree = 
-                    (CommonTree)adaptor.create(NEQ336)
+                    NEQ337_tree = 
+                    (CommonTree)adaptor.create(NEQ337)
                     ;
-                    adaptor.addChild(root_0, NEQ336_tree);
+                    adaptor.addChild(root_0, NEQ337_tree);
                     }
 
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:16: GT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:16: GT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    GT337=(Token)match(input,GT,FOLLOW_GT_in_reservedWord4667); if (state.failed) return retval;
+                    GT338=(Token)match(input,GT,FOLLOW_GT_in_reservedWord4681); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    GT337_tree = 
-                    (CommonTree)adaptor.create(GT337)
+                    GT338_tree = 
+                    (CommonTree)adaptor.create(GT338)
                     ;
-                    adaptor.addChild(root_0, GT337_tree);
+                    adaptor.addChild(root_0, GT338_tree);
                     }
 
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:21: LT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:21: LT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    LT338=(Token)match(input,LT,FOLLOW_LT_in_reservedWord4671); if (state.failed) return retval;
+                    LT339=(Token)match(input,LT,FOLLOW_LT_in_reservedWord4685); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    LT338_tree = 
-                    (CommonTree)adaptor.create(LT338)
+                    LT339_tree = 
+                    (CommonTree)adaptor.create(LT339)
                     ;
-                    adaptor.addChild(root_0, LT338_tree);
+                    adaptor.addChild(root_0, LT339_tree);
                     }
 
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:26: GTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:26: GTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    GTE339=(Token)match(input,GTE,FOLLOW_GTE_in_reservedWord4675); if (state.failed) return retval;
+                    GTE340=(Token)match(input,GTE,FOLLOW_GTE_in_reservedWord4689); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    GTE339_tree = 
-                    (CommonTree)adaptor.create(GTE339)
+                    GTE340_tree = 
+                    (CommonTree)adaptor.create(GTE340)
                     ;
-                    adaptor.addChild(root_0, GTE339_tree);
+                    adaptor.addChild(root_0, GTE340_tree);
                     }
 
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:843:5: GE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:847:5: GE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    GE340=(Token)match(input,GE,FOLLOW_GE_in_reservedWord4681); if (state.failed) return retval;
+                    GE341=(Token)match(input,GE,FOLLOW_GE_in_reservedWord4695); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    GE340_tree = 
-                    (CommonTree)adaptor.create(GE340)
+                    GE341_tree = 
+                    (CommonTree)adaptor.create(GE341)
                     ;
-                    adaptor.addChild(root_0, GE340_tree);
+                    adaptor.addChild(root_0, GE341_tree);
                     }
 
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:843:10: LTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:847:10: LTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    LTE341=(Token)match(input,LTE,FOLLOW_LTE_in_reservedWord4685); if (state.failed) return retval;
+                    LTE342=(Token)match(input,LTE,FOLLOW_LTE_in_reservedWord4699); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    LTE341_tree = 
-                    (CommonTree)adaptor.create(LTE341)
+                    LTE342_tree = 
+                    (CommonTree)adaptor.create(LTE342)
                     ;
-                    adaptor.addChild(root_0, LTE341_tree);
+                    adaptor.addChild(root_0, LTE342_tree);
                     }
 
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:843:16: LE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:847:16: LE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    LE342=(Token)match(input,LE,FOLLOW_LE_in_reservedWord4689); if (state.failed) return retval;
+                    LE343=(Token)match(input,LE,FOLLOW_LE_in_reservedWord4703); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    LE342_tree = 
-                    (CommonTree)adaptor.create(LE342)
+                    LE343_tree = 
+                    (CommonTree)adaptor.create(LE343)
                     ;
-                    adaptor.addChild(root_0, LE342_tree);
+                    adaptor.addChild(root_0, LE343_tree);
                     }
 
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:843:21: NOT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:847:21: NOT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    NOT343=(Token)match(input,NOT,FOLLOW_NOT_in_reservedWord4693); if (state.failed) return retval;
+                    NOT344=(Token)match(input,NOT,FOLLOW_NOT_in_reservedWord4707); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NOT343_tree = 
-                    (CommonTree)adaptor.create(NOT343)
+                    NOT344_tree = 
+                    (CommonTree)adaptor.create(NOT344)
                     ;
-                    adaptor.addChild(root_0, NOT343_tree);
+                    adaptor.addChild(root_0, NOT344_tree);
                     }
 
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:843:27: AND
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:847:27: AND
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    AND344=(Token)match(input,AND,FOLLOW_AND_in_reservedWord4697); if (state.failed) return retval;
+                    AND345=(Token)match(input,AND,FOLLOW_AND_in_reservedWord4711); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    AND344_tree = 
-                    (CommonTree)adaptor.create(AND344)
+                    AND345_tree = 
+                    (CommonTree)adaptor.create(AND345)
                     ;
-                    adaptor.addChild(root_0, AND344_tree);
+                    adaptor.addChild(root_0, AND345_tree);
                     }
 
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:5: OR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:848:5: OR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    OR345=(Token)match(input,OR,FOLLOW_OR_in_reservedWord4703); if (state.failed) return retval;
+                    OR346=(Token)match(input,OR,FOLLOW_OR_in_reservedWord4717); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    OR345_tree = 
-                    (CommonTree)adaptor.create(OR345)
+                    OR346_tree = 
+                    (CommonTree)adaptor.create(OR346)
                     ;
-                    adaptor.addChild(root_0, OR345_tree);
+                    adaptor.addChild(root_0, OR346_tree);
                     }
 
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:10: XOR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:848:10: XOR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    XOR346=(Token)match(input,XOR,FOLLOW_XOR_in_reservedWord4707); if (state.failed) return retval;
+                    XOR347=(Token)match(input,XOR,FOLLOW_XOR_in_reservedWord4721); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    XOR346_tree = 
-                    (CommonTree)adaptor.create(XOR346)
+                    XOR347_tree = 
+                    (CommonTree)adaptor.create(XOR347)
                     ;
-                    adaptor.addChild(root_0, XOR346_tree);
+                    adaptor.addChild(root_0, XOR347_tree);
                     }
 
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:16: EQV
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:848:16: EQV
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    EQV347=(Token)match(input,EQV,FOLLOW_EQV_in_reservedWord4711); if (state.failed) return retval;
+                    EQV348=(Token)match(input,EQV,FOLLOW_EQV_in_reservedWord4725); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    EQV347_tree = 
-                    (CommonTree)adaptor.create(EQV347)
+                    EQV348_tree = 
+                    (CommonTree)adaptor.create(EQV348)
                     ;
-                    adaptor.addChild(root_0, EQV347_tree);
+                    adaptor.addChild(root_0, EQV348_tree);
                     }
 
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:22: IMP
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:848:22: IMP
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    IMP348=(Token)match(input,IMP,FOLLOW_IMP_in_reservedWord4715); if (state.failed) return retval;
+                    IMP349=(Token)match(input,IMP,FOLLOW_IMP_in_reservedWord4729); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    IMP348_tree = 
-                    (CommonTree)adaptor.create(IMP348)
+                    IMP349_tree = 
+                    (CommonTree)adaptor.create(IMP349)
                     ;
-                    adaptor.addChild(root_0, IMP348_tree);
+                    adaptor.addChild(root_0, IMP349_tree);
                     }
 
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:844:28: MOD
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:848:28: MOD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    MOD349=(Token)match(input,MOD,FOLLOW_MOD_in_reservedWord4719); if (state.failed) return retval;
+                    MOD350=(Token)match(input,MOD,FOLLOW_MOD_in_reservedWord4733); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    MOD349_tree = 
-                    (CommonTree)adaptor.create(MOD349)
+                    MOD350_tree = 
+                    (CommonTree)adaptor.create(MOD350)
                     ;
-                    adaptor.addChild(root_0, MOD349_tree);
+                    adaptor.addChild(root_0, MOD350_tree);
                     }
 
                     }
                     break;
                 case 19 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:5: NULL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:849:5: NULL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    NULL350=(Token)match(input,NULL,FOLLOW_NULL_in_reservedWord4725); if (state.failed) return retval;
+                    NULL351=(Token)match(input,NULL,FOLLOW_NULL_in_reservedWord4739); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NULL350_tree = 
-                    (CommonTree)adaptor.create(NULL350)
+                    NULL351_tree = 
+                    (CommonTree)adaptor.create(NULL351)
                     ;
-                    adaptor.addChild(root_0, NULL350_tree);
+                    adaptor.addChild(root_0, NULL351_tree);
                     }
 
                     }
                     break;
                 case 20 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:12: EQUALS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:849:12: EQUALS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    EQUALS351=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_reservedWord4729); if (state.failed) return retval;
+                    EQUALS352=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_reservedWord4743); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    EQUALS351_tree = 
-                    (CommonTree)adaptor.create(EQUALS351)
+                    EQUALS352_tree = 
+                    (CommonTree)adaptor.create(EQUALS352)
                     ;
-                    adaptor.addChild(root_0, EQUALS351_tree);
+                    adaptor.addChild(root_0, EQUALS352_tree);
                     }
 
                     }
                     break;
                 case 21 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:5: cfscriptKeywords
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:5: cfscriptKeywords
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_cfscriptKeywords_in_reservedWord4735);
-                    cfscriptKeywords352=cfscriptKeywords();
+                    pushFollow(FOLLOW_cfscriptKeywords_in_reservedWord4749);
+                    cfscriptKeywords353=cfscriptKeywords();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfscriptKeywords352.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfscriptKeywords353.getTree());
 
                     }
                     break;
@@ -16863,7 +17217,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 74, reservedWord_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 75, reservedWord_StartIndex); }
 
         }
         return retval;
@@ -16878,7 +17232,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "argumentList"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:849:1: argumentList : ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:853:1: argumentList : ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) );
     public final CFScriptParser.argumentList_return argumentList() throws RecognitionException {
         CFScriptParser.argumentList_return retval = new CFScriptParser.argumentList_return();
         retval.start = input.LT(1);
@@ -16887,22 +17241,22 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal354=null;
-        CFScriptParser.argument_return argument353 =null;
+        Token char_literal355=null;
+        CFScriptParser.argument_return argument354 =null;
 
-        CFScriptParser.argument_return argument355 =null;
+        CFScriptParser.argument_return argument356 =null;
 
 
-        CommonTree char_literal354_tree=null;
+        CommonTree char_literal355_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:3: ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:3: ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) )
             int alt88=2;
             int LA88_0 = input.LA(1);
 
-            if ( (LA88_0==ABORT||(LA88_0 >= BOOLEAN_LITERAL && LA88_0 <= BREAK)||(LA88_0 >= CASE && LA88_0 <= CATCH)||LA88_0==CONTAIN||(LA88_0 >= CONTINUE && LA88_0 <= DEFAULT)||(LA88_0 >= DIRECTORY && LA88_0 <= DOES)||LA88_0==ELSE||LA88_0==EXIT||LA88_0==FILE||(LA88_0 >= FLOATING_POINT_LITERAL && LA88_0 <= FOR)||LA88_0==FUNCTION||LA88_0==GREATER||(LA88_0 >= HTTP && LA88_0 <= IF)||(LA88_0 >= IMPORT && LA88_0 <= INTEGER_LITERAL)||(LA88_0 >= LEFTBRACKET && LA88_0 <= LESS)||(LA88_0 >= LOCATION && LA88_0 <= LOCK)||LA88_0==LOOP||LA88_0==MINUS||LA88_0==MINUSMINUS||(LA88_0 >= NEW && LA88_0 <= NULL)||(LA88_0 >= PACKAGE && LA88_0 <= PARAM)||LA88_0==PLUS||LA88_0==PLUSPLUS||LA88_0==PRIVATE||(LA88_0 >= PUBLIC && LA88_0 <= QUERY)||(LA88_0 >= REMOTE && LA88_0 <= RETHROW)||LA88_0==RETURN||LA88_0==SAVECONTENT||LA88_0==SETTING||(LA88_0 >= STRING_LITERAL && LA88_0 <= SWITCH)||(LA88_0 >= THAN && LA88_0 <= THREAD)||LA88_0==THROW||(LA88_0 >= TO && LA88_0 <= TRANSACTION)||(LA88_0 >= TRY && LA88_0 <= VAR)||LA88_0==WHILE||LA88_0==150) ) {
+            if ( (LA88_0==ABORT||(LA88_0 >= BOOLEAN_LITERAL && LA88_0 <= BREAK)||(LA88_0 >= CASE && LA88_0 <= CATCH)||LA88_0==COMPONENT||LA88_0==CONTAIN||(LA88_0 >= CONTINUE && LA88_0 <= DEFAULT)||(LA88_0 >= DIRECTORY && LA88_0 <= DOES)||LA88_0==ELSE||LA88_0==EXIT||LA88_0==FILE||(LA88_0 >= FLOATING_POINT_LITERAL && LA88_0 <= FOR)||LA88_0==FUNCTION||LA88_0==GREATER||(LA88_0 >= HTTP && LA88_0 <= IF)||(LA88_0 >= IMPORT && LA88_0 <= INTEGER_LITERAL)||(LA88_0 >= LEFTBRACKET && LA88_0 <= LESS)||(LA88_0 >= LOCATION && LA88_0 <= LOCK)||LA88_0==LOOP||LA88_0==MINUS||LA88_0==MINUSMINUS||(LA88_0 >= NEW && LA88_0 <= NULL)||(LA88_0 >= PACKAGE && LA88_0 <= PARAM)||LA88_0==PLUS||LA88_0==PLUSPLUS||LA88_0==PRIVATE||(LA88_0 >= PUBLIC && LA88_0 <= QUERY)||(LA88_0 >= REMOTE && LA88_0 <= RETHROW)||LA88_0==RETURN||LA88_0==SAVECONTENT||LA88_0==SETTING||(LA88_0 >= STRING_LITERAL && LA88_0 <= SWITCH)||(LA88_0 >= THAN && LA88_0 <= THREAD)||LA88_0==THROW||(LA88_0 >= TO && LA88_0 <= TRANSACTION)||(LA88_0 >= TRY && LA88_0 <= VAR)||LA88_0==WHILE||LA88_0==150) ) {
                 alt88=1;
             }
             else if ( (LA88_0==RIGHTPAREN) ) {
@@ -16918,19 +17272,19 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt88) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:5: argument ( ',' ! argument )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:5: argument ( ',' ! argument )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_argument_in_argumentList4749);
-                    argument353=argument();
+                    pushFollow(FOLLOW_argument_in_argumentList4763);
+                    argument354=argument();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, argument353.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, argument354.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:14: ( ',' ! argument )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:14: ( ',' ! argument )*
                     loop87:
                     do {
                         int alt87=2;
@@ -16943,16 +17297,16 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt87) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:15: ',' ! argument
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:15: ',' ! argument
                     	    {
-                    	    char_literal354=(Token)match(input,151,FOLLOW_151_in_argumentList4752); if (state.failed) return retval;
+                    	    char_literal355=(Token)match(input,151,FOLLOW_151_in_argumentList4766); if (state.failed) return retval;
 
-                    	    pushFollow(FOLLOW_argument_in_argumentList4755);
-                    	    argument355=argument();
+                    	    pushFollow(FOLLOW_argument_in_argumentList4769);
+                    	    argument356=argument();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, argument355.getTree());
+                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, argument356.getTree());
 
                     	    }
                     	    break;
@@ -16966,7 +17320,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:851:5: 
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:5: 
                     {
                     // AST REWRITE
                     // elements: 
@@ -16981,9 +17335,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 851:5: -> ^( EMPTYARGS )
+                    // 855:5: -> ^( EMPTYARGS )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:851:8: ^( EMPTYARGS )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:8: ^( EMPTYARGS )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -17021,7 +17375,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 75, argumentList_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 76, argumentList_StartIndex); }
 
         }
         return retval;
@@ -17036,7 +17390,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "argument"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:1: argument : ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:1: argument : ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression );
     public final CFScriptParser.argument_return argument() throws RecognitionException {
         CFScriptParser.argument_return retval = new CFScriptParser.argument_return();
         retval.start = input.LT(1);
@@ -17045,33 +17399,33 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token COLON357=null;
-        Token EQUALSOP360=null;
-        CFScriptParser.identifier_return identifier356 =null;
+        Token COLON358=null;
+        Token EQUALSOP361=null;
+        CFScriptParser.identifier_return identifier357 =null;
 
-        CFScriptParser.impliesExpression_return impliesExpression358 =null;
+        CFScriptParser.impliesExpression_return impliesExpression359 =null;
 
-        CFScriptParser.identifier_return identifier359 =null;
-
-        CFScriptParser.impliesExpression_return impliesExpression361 =null;
+        CFScriptParser.identifier_return identifier360 =null;
 
         CFScriptParser.impliesExpression_return impliesExpression362 =null;
 
+        CFScriptParser.impliesExpression_return impliesExpression363 =null;
 
-        CommonTree COLON357_tree=null;
-        CommonTree EQUALSOP360_tree=null;
+
+        CommonTree COLON358_tree=null;
+        CommonTree EQUALSOP361_tree=null;
         RewriteRuleTokenStream stream_COLON=new RewriteRuleTokenStream(adaptor,"token COLON");
         RewriteRuleTokenStream stream_EQUALSOP=new RewriteRuleTokenStream(adaptor,"token EQUALSOP");
         RewriteRuleSubtreeStream stream_identifier=new RewriteRuleSubtreeStream(adaptor,"rule identifier");
         RewriteRuleSubtreeStream stream_impliesExpression=new RewriteRuleSubtreeStream(adaptor,"rule impliesExpression");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:3: ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:3: ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression )
             int alt89=3;
             int LA89_0 = input.LA(1);
 
-            if ( (LA89_0==IDENTIFIER) ) {
+            if ( (LA89_0==COMPONENT) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17144,7 +17498,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==DOES) ) {
+            else if ( (LA89_0==IDENTIFIER) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17217,7 +17571,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==CONTAIN) ) {
+            else if ( (LA89_0==DOES) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17290,7 +17644,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==GREATER) ) {
+            else if ( (LA89_0==CONTAIN) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17363,7 +17717,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==THAN) ) {
+            else if ( (LA89_0==GREATER) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17436,7 +17790,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==LESS) ) {
+            else if ( (LA89_0==THAN) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17509,7 +17863,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==VAR) ) {
+            else if ( (LA89_0==LESS) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17582,7 +17936,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==TO) ) {
+            else if ( (LA89_0==VAR) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17655,7 +18009,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==DEFAULT) ) {
+            else if ( (LA89_0==TO) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17728,7 +18082,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
-            else if ( (LA89_0==INCLUDE) ) {
+            else if ( (LA89_0==DEFAULT) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
                     {
@@ -17801,6 +18155,79 @@ public TreeAdaptor getTreeAdaptor() {
                 }
 
             }
+            else if ( (LA89_0==INCLUDE) ) {
+                switch ( input.LA(2) ) {
+                case COLON:
+                    {
+                    alt89=1;
+                    }
+                    break;
+                case EQUALSOP:
+                    {
+                    alt89=2;
+                    }
+                    break;
+                case EOF:
+                case AND:
+                case ANDOPERATOR:
+                case BSLASH:
+                case CONCAT:
+                case CONTAINS:
+                case DOES:
+                case DOT:
+                case EQ:
+                case EQUAL:
+                case EQUALS:
+                case EQUALSEQUALSOP:
+                case EQV:
+                case GE:
+                case GREATER:
+                case GT:
+                case GTE:
+                case IMP:
+                case IS:
+                case LE:
+                case LEFTBRACKET:
+                case LEFTPAREN:
+                case LESS:
+                case LT:
+                case LTE:
+                case MINUS:
+                case MINUSMINUS:
+                case MOD:
+                case MODOPERATOR:
+                case NEQ:
+                case NOT:
+                case OR:
+                case OROPERATOR:
+                case PLUS:
+                case PLUSPLUS:
+                case POWER:
+                case QUESTIONMARK:
+                case RIGHTPAREN:
+                case SLASH:
+                case STAR:
+                case XOR:
+                case 149:
+                case 151:
+                case 152:
+                case 153:
+                case 154:
+                case 155:
+                    {
+                    alt89=3;
+                    }
+                    break;
+                default:
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 89, 11, input);
+
+                    throw nvae;
+
+                }
+
+            }
             else if ( (LA89_0==NEW) ) {
                 switch ( input.LA(2) ) {
                 case COLON:
@@ -17821,6 +18248,7 @@ public TreeAdaptor getTreeAdaptor() {
                 case BSLASH:
                 case CASE:
                 case CATCH:
+                case COMPONENT:
                 case CONCAT:
                 case CONTAIN:
                 case CONTAINS:
@@ -17912,7 +18340,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 11, input);
+                        new NoViableAltException("", 89, 12, input);
 
                     throw nvae;
 
@@ -17985,7 +18413,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 12, input);
+                        new NoViableAltException("", 89, 13, input);
 
                     throw nvae;
 
@@ -18058,7 +18486,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 13, input);
+                        new NoViableAltException("", 89, 14, input);
 
                     throw nvae;
 
@@ -18131,7 +18559,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 14, input);
+                        new NoViableAltException("", 89, 15, input);
 
                     throw nvae;
 
@@ -18204,7 +18632,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 15, input);
+                        new NoViableAltException("", 89, 16, input);
 
                     throw nvae;
 
@@ -18277,7 +18705,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 16, input);
+                        new NoViableAltException("", 89, 17, input);
 
                     throw nvae;
 
@@ -18350,7 +18778,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 17, input);
+                        new NoViableAltException("", 89, 18, input);
 
                     throw nvae;
 
@@ -18423,7 +18851,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 18, input);
+                        new NoViableAltException("", 89, 19, input);
 
                     throw nvae;
 
@@ -18496,7 +18924,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 19, input);
+                        new NoViableAltException("", 89, 20, input);
 
                     throw nvae;
 
@@ -18569,7 +18997,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 20, input);
+                        new NoViableAltException("", 89, 21, input);
 
                     throw nvae;
 
@@ -18642,7 +19070,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 21, input);
+                        new NoViableAltException("", 89, 22, input);
 
                     throw nvae;
 
@@ -18715,7 +19143,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 22, input);
+                        new NoViableAltException("", 89, 23, input);
 
                     throw nvae;
 
@@ -18788,7 +19216,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 23, input);
+                        new NoViableAltException("", 89, 24, input);
 
                     throw nvae;
 
@@ -18861,7 +19289,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 24, input);
+                        new NoViableAltException("", 89, 25, input);
 
                     throw nvae;
 
@@ -18934,7 +19362,7 @@ public TreeAdaptor getTreeAdaptor() {
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 25, input);
+                        new NoViableAltException("", 89, 26, input);
 
                     throw nvae;
 
@@ -18942,21 +19370,21 @@ public TreeAdaptor getTreeAdaptor() {
 
             }
             else if ( (LA89_0==BREAK||(LA89_0 >= CASE && LA89_0 <= CATCH)||LA89_0==CONTINUE||LA89_0==DO||LA89_0==ELSE||LA89_0==FOR||LA89_0==FUNCTION||LA89_0==IF||(LA89_0 >= IMPORT && LA89_0 <= IN)||LA89_0==RETURN||LA89_0==SWITCH||LA89_0==TRY||LA89_0==WHILE) && ((!scriptMode))) {
-                int LA89_26 = input.LA(2);
+                int LA89_27 = input.LA(2);
 
-                if ( (LA89_26==COLON) ) {
+                if ( (LA89_27==COLON) ) {
                     alt89=1;
                 }
-                else if ( (LA89_26==EQUALSOP) ) {
+                else if ( (LA89_27==EQUALSOP) ) {
                     alt89=2;
                 }
-                else if ( (LA89_26==EOF||(LA89_26 >= AND && LA89_26 <= ANDOPERATOR)||LA89_26==BSLASH||LA89_26==CONCAT||LA89_26==CONTAINS||LA89_26==DOES||LA89_26==DOT||(LA89_26 >= EQ && LA89_26 <= EQUALSEQUALSOP)||LA89_26==EQV||(LA89_26 >= GE && LA89_26 <= GTE)||LA89_26==IMP||LA89_26==IS||(LA89_26 >= LE && LA89_26 <= LEFTBRACKET)||(LA89_26 >= LEFTPAREN && LA89_26 <= LESS)||(LA89_26 >= LT && LA89_26 <= MINUS)||LA89_26==MINUSMINUS||LA89_26==MOD||(LA89_26 >= MODOPERATOR && LA89_26 <= NEQ)||LA89_26==NOT||(LA89_26 >= OR && LA89_26 <= OROPERATOR)||LA89_26==PLUS||LA89_26==PLUSPLUS||LA89_26==POWER||LA89_26==QUESTIONMARK||LA89_26==RIGHTPAREN||LA89_26==SLASH||LA89_26==STAR||(LA89_26 >= XOR && LA89_26 <= 149)||(LA89_26 >= 151 && LA89_26 <= 155)) && ((!scriptMode))) {
+                else if ( (LA89_27==EOF||(LA89_27 >= AND && LA89_27 <= ANDOPERATOR)||LA89_27==BSLASH||LA89_27==CONCAT||LA89_27==CONTAINS||LA89_27==DOES||LA89_27==DOT||(LA89_27 >= EQ && LA89_27 <= EQUALSEQUALSOP)||LA89_27==EQV||(LA89_27 >= GE && LA89_27 <= GTE)||LA89_27==IMP||LA89_27==IS||(LA89_27 >= LE && LA89_27 <= LEFTBRACKET)||(LA89_27 >= LEFTPAREN && LA89_27 <= LESS)||(LA89_27 >= LT && LA89_27 <= MINUS)||LA89_27==MINUSMINUS||LA89_27==MOD||(LA89_27 >= MODOPERATOR && LA89_27 <= NEQ)||LA89_27==NOT||(LA89_27 >= OR && LA89_27 <= OROPERATOR)||LA89_27==PLUS||LA89_27==PLUSPLUS||LA89_27==POWER||LA89_27==QUESTIONMARK||LA89_27==RIGHTPAREN||LA89_27==SLASH||LA89_27==STAR||(LA89_27 >= XOR && LA89_27 <= 149)||(LA89_27 >= 151 && LA89_27 <= 155)) && ((!scriptMode))) {
                     alt89=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 26, input);
+                        new NoViableAltException("", 89, 27, input);
 
                     throw nvae;
 
@@ -18975,31 +19403,31 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt89) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:7: identifier COLON impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:7: identifier COLON impliesExpression
                     {
-                    pushFollow(FOLLOW_identifier_in_argument4782);
-                    identifier356=identifier();
+                    pushFollow(FOLLOW_identifier_in_argument4796);
+                    identifier357=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_identifier.add(identifier356.getTree());
+                    if ( state.backtracking==0 ) stream_identifier.add(identifier357.getTree());
 
-                    COLON357=(Token)match(input,COLON,FOLLOW_COLON_in_argument4784); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_COLON.add(COLON357);
+                    COLON358=(Token)match(input,COLON,FOLLOW_COLON_in_argument4798); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_COLON.add(COLON358);
 
 
-                    pushFollow(FOLLOW_impliesExpression_in_argument4786);
-                    impliesExpression358=impliesExpression();
+                    pushFollow(FOLLOW_impliesExpression_in_argument4800);
+                    impliesExpression359=impliesExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression358.getTree());
+                    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression359.getTree());
 
                     // AST REWRITE
-                    // elements: COLON, identifier, impliesExpression
+                    // elements: impliesExpression, identifier, COLON
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -19011,9 +19439,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 855:42: -> ^( COLON identifier impliesExpression )
+                    // 859:42: -> ^( COLON identifier impliesExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:45: ^( COLON identifier impliesExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:45: ^( COLON identifier impliesExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -19039,31 +19467,31 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:7: identifier EQUALSOP impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:7: identifier EQUALSOP impliesExpression
                     {
-                    pushFollow(FOLLOW_identifier_in_argument4808);
-                    identifier359=identifier();
+                    pushFollow(FOLLOW_identifier_in_argument4822);
+                    identifier360=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_identifier.add(identifier359.getTree());
+                    if ( state.backtracking==0 ) stream_identifier.add(identifier360.getTree());
 
-                    EQUALSOP360=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_argument4810); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP360);
+                    EQUALSOP361=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_argument4824); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP361);
 
 
-                    pushFollow(FOLLOW_impliesExpression_in_argument4812);
-                    impliesExpression361=impliesExpression();
+                    pushFollow(FOLLOW_impliesExpression_in_argument4826);
+                    impliesExpression362=impliesExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression361.getTree());
+                    if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression362.getTree());
 
                     // AST REWRITE
-                    // elements: impliesExpression, identifier
+                    // elements: identifier, impliesExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -19075,9 +19503,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 856:45: -> ^( COLON identifier impliesExpression )
+                    // 860:45: -> ^( COLON identifier impliesExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:48: ^( COLON identifier impliesExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:48: ^( COLON identifier impliesExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -19103,17 +19531,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:5: impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:5: impliesExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_impliesExpression_in_argument4832);
-                    impliesExpression362=impliesExpression();
+                    pushFollow(FOLLOW_impliesExpression_in_argument4846);
+                    impliesExpression363=impliesExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression362.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression363.getTree());
 
                     }
                     break;
@@ -19137,7 +19565,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 76, argument_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 77, argument_StartIndex); }
 
         }
         return retval;
@@ -19152,7 +19580,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "identifier"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:1: identifier : ( IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:864:1: identifier : ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords );
     public final CFScriptParser.identifier_return identifier() throws RecognitionException {
         CFScriptParser.identifier_return retval = new CFScriptParser.identifier_return();
         retval.start = input.LT(1);
@@ -19161,159 +19589,164 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IDENTIFIER363=null;
-        Token DOES364=null;
-        Token CONTAIN365=null;
-        Token GREATER366=null;
-        Token THAN367=null;
-        Token LESS368=null;
-        Token VAR369=null;
-        Token TO370=null;
-        Token DEFAULT371=null;
-        Token INCLUDE372=null;
-        Token NEW373=null;
-        Token ABORT374=null;
-        Token THROW375=null;
-        Token RETHROW376=null;
-        Token PARAM377=null;
-        Token EXIT378=null;
-        Token THREAD379=null;
-        Token LOCK380=null;
-        Token TRANSACTION381=null;
-        Token PUBLIC382=null;
-        Token PRIVATE383=null;
-        Token REMOTE384=null;
-        Token PACKAGE385=null;
-        Token REQUIRED386=null;
-        CFScriptParser.cfmlFunction_return cfmlFunction387 =null;
+        Token COMPONENT364=null;
+        Token IDENTIFIER365=null;
+        Token DOES366=null;
+        Token CONTAIN367=null;
+        Token GREATER368=null;
+        Token THAN369=null;
+        Token LESS370=null;
+        Token VAR371=null;
+        Token TO372=null;
+        Token DEFAULT373=null;
+        Token INCLUDE374=null;
+        Token NEW375=null;
+        Token ABORT376=null;
+        Token THROW377=null;
+        Token RETHROW378=null;
+        Token PARAM379=null;
+        Token EXIT380=null;
+        Token THREAD381=null;
+        Token LOCK382=null;
+        Token TRANSACTION383=null;
+        Token PUBLIC384=null;
+        Token PRIVATE385=null;
+        Token REMOTE386=null;
+        Token PACKAGE387=null;
+        Token REQUIRED388=null;
+        CFScriptParser.cfmlFunction_return cfmlFunction389 =null;
 
-        CFScriptParser.cfscriptKeywords_return cfscriptKeywords388 =null;
+        CFScriptParser.cfscriptKeywords_return cfscriptKeywords390 =null;
 
 
-        CommonTree IDENTIFIER363_tree=null;
-        CommonTree DOES364_tree=null;
-        CommonTree CONTAIN365_tree=null;
-        CommonTree GREATER366_tree=null;
-        CommonTree THAN367_tree=null;
-        CommonTree LESS368_tree=null;
-        CommonTree VAR369_tree=null;
-        CommonTree TO370_tree=null;
-        CommonTree DEFAULT371_tree=null;
-        CommonTree INCLUDE372_tree=null;
-        CommonTree NEW373_tree=null;
-        CommonTree ABORT374_tree=null;
-        CommonTree THROW375_tree=null;
-        CommonTree RETHROW376_tree=null;
-        CommonTree PARAM377_tree=null;
-        CommonTree EXIT378_tree=null;
-        CommonTree THREAD379_tree=null;
-        CommonTree LOCK380_tree=null;
-        CommonTree TRANSACTION381_tree=null;
-        CommonTree PUBLIC382_tree=null;
-        CommonTree PRIVATE383_tree=null;
-        CommonTree REMOTE384_tree=null;
-        CommonTree PACKAGE385_tree=null;
-        CommonTree REQUIRED386_tree=null;
+        CommonTree COMPONENT364_tree=null;
+        CommonTree IDENTIFIER365_tree=null;
+        CommonTree DOES366_tree=null;
+        CommonTree CONTAIN367_tree=null;
+        CommonTree GREATER368_tree=null;
+        CommonTree THAN369_tree=null;
+        CommonTree LESS370_tree=null;
+        CommonTree VAR371_tree=null;
+        CommonTree TO372_tree=null;
+        CommonTree DEFAULT373_tree=null;
+        CommonTree INCLUDE374_tree=null;
+        CommonTree NEW375_tree=null;
+        CommonTree ABORT376_tree=null;
+        CommonTree THROW377_tree=null;
+        CommonTree RETHROW378_tree=null;
+        CommonTree PARAM379_tree=null;
+        CommonTree EXIT380_tree=null;
+        CommonTree THREAD381_tree=null;
+        CommonTree LOCK382_tree=null;
+        CommonTree TRANSACTION383_tree=null;
+        CommonTree PUBLIC384_tree=null;
+        CommonTree PRIVATE385_tree=null;
+        CommonTree REMOTE386_tree=null;
+        CommonTree PACKAGE387_tree=null;
+        CommonTree REQUIRED388_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:2: ( IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords )
-            int alt90=26;
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:865:2: ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords )
+            int alt90=27;
             int LA90_0 = input.LA(1);
 
-            if ( (LA90_0==IDENTIFIER) ) {
+            if ( (LA90_0==COMPONENT) ) {
                 alt90=1;
             }
-            else if ( (LA90_0==DOES) ) {
+            else if ( (LA90_0==IDENTIFIER) ) {
                 alt90=2;
             }
-            else if ( (LA90_0==CONTAIN) ) {
+            else if ( (LA90_0==DOES) ) {
                 alt90=3;
             }
-            else if ( (LA90_0==GREATER) ) {
+            else if ( (LA90_0==CONTAIN) ) {
                 alt90=4;
             }
-            else if ( (LA90_0==THAN) ) {
+            else if ( (LA90_0==GREATER) ) {
                 alt90=5;
             }
-            else if ( (LA90_0==LESS) ) {
+            else if ( (LA90_0==THAN) ) {
                 alt90=6;
             }
-            else if ( (LA90_0==VAR) ) {
+            else if ( (LA90_0==LESS) ) {
                 alt90=7;
             }
-            else if ( (LA90_0==TO) ) {
+            else if ( (LA90_0==VAR) ) {
                 alt90=8;
             }
+            else if ( (LA90_0==TO) ) {
+                alt90=9;
+            }
             else if ( (LA90_0==DEFAULT) ) {
-                int LA90_9 = input.LA(2);
+                int LA90_10 = input.LA(2);
 
-                if ( (synpred198_CFScript()) ) {
-                    alt90=9;
+                if ( (synpred199_CFScript()) ) {
+                    alt90=10;
                 }
                 else if ( ((!scriptMode)) ) {
-                    alt90=26;
+                    alt90=27;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 90, 9, input);
+                        new NoViableAltException("", 90, 10, input);
 
                     throw nvae;
 
                 }
             }
             else if ( (LA90_0==INCLUDE) ) {
-                alt90=10;
-            }
-            else if ( (LA90_0==NEW) ) {
                 alt90=11;
             }
-            else if ( (LA90_0==ABORT) ) {
+            else if ( (LA90_0==NEW) ) {
                 alt90=12;
             }
-            else if ( (LA90_0==THROW) ) {
+            else if ( (LA90_0==ABORT) ) {
                 alt90=13;
             }
-            else if ( (LA90_0==RETHROW) ) {
+            else if ( (LA90_0==THROW) ) {
                 alt90=14;
             }
-            else if ( (LA90_0==PARAM) ) {
+            else if ( (LA90_0==RETHROW) ) {
                 alt90=15;
             }
-            else if ( (LA90_0==EXIT) ) {
+            else if ( (LA90_0==PARAM) ) {
                 alt90=16;
             }
-            else if ( (LA90_0==THREAD) ) {
+            else if ( (LA90_0==EXIT) ) {
                 alt90=17;
             }
-            else if ( (LA90_0==LOCK) ) {
+            else if ( (LA90_0==THREAD) ) {
                 alt90=18;
             }
-            else if ( (LA90_0==TRANSACTION) ) {
+            else if ( (LA90_0==LOCK) ) {
                 alt90=19;
             }
-            else if ( (LA90_0==PUBLIC) ) {
+            else if ( (LA90_0==TRANSACTION) ) {
                 alt90=20;
             }
-            else if ( (LA90_0==PRIVATE) ) {
+            else if ( (LA90_0==PUBLIC) ) {
                 alt90=21;
             }
-            else if ( (LA90_0==REMOTE) ) {
+            else if ( (LA90_0==PRIVATE) ) {
                 alt90=22;
             }
-            else if ( (LA90_0==PACKAGE) ) {
+            else if ( (LA90_0==REMOTE) ) {
                 alt90=23;
             }
-            else if ( (LA90_0==REQUIRED) ) {
+            else if ( (LA90_0==PACKAGE) ) {
                 alt90=24;
             }
-            else if ( (LA90_0==DIRECTORY||LA90_0==FILE||LA90_0==HTTP||LA90_0==LOCATION||LA90_0==LOOP||LA90_0==QUERY||LA90_0==SAVECONTENT||LA90_0==SETTING) ) {
+            else if ( (LA90_0==REQUIRED) ) {
                 alt90=25;
             }
-            else if ( (LA90_0==BREAK||(LA90_0 >= CASE && LA90_0 <= CATCH)||LA90_0==CONTINUE||LA90_0==DO||LA90_0==ELSE||LA90_0==FOR||LA90_0==FUNCTION||LA90_0==IF||(LA90_0 >= IMPORT && LA90_0 <= IN)||LA90_0==RETURN||LA90_0==SWITCH||LA90_0==TRY||LA90_0==WHILE) && ((!scriptMode))) {
+            else if ( (LA90_0==DIRECTORY||LA90_0==FILE||LA90_0==HTTP||LA90_0==LOCATION||LA90_0==LOOP||LA90_0==QUERY||LA90_0==SAVECONTENT||LA90_0==SETTING) ) {
                 alt90=26;
+            }
+            else if ( (LA90_0==BREAK||(LA90_0 >= CASE && LA90_0 <= CATCH)||LA90_0==CONTINUE||LA90_0==DO||LA90_0==ELSE||LA90_0==FOR||LA90_0==FUNCTION||LA90_0==IF||(LA90_0 >= IMPORT && LA90_0 <= IN)||LA90_0==RETURN||LA90_0==SWITCH||LA90_0==TRY||LA90_0==WHILE) && ((!scriptMode))) {
+                alt90=27;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
@@ -19325,406 +19758,422 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt90) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:4: IDENTIFIER
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:865:4: COMPONENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    IDENTIFIER363=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_identifier4845); if (state.failed) return retval;
+                    COMPONENT364=(Token)match(input,COMPONENT,FOLLOW_COMPONENT_in_identifier4859); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    IDENTIFIER363_tree = 
-                    (CommonTree)adaptor.create(IDENTIFIER363)
+                    COMPONENT364_tree = 
+                    (CommonTree)adaptor.create(COMPONENT364)
                     ;
-                    adaptor.addChild(root_0, IDENTIFIER363_tree);
+                    adaptor.addChild(root_0, COMPONENT364_tree);
                     }
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:5: DOES
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:4: IDENTIFIER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    DOES364=(Token)match(input,DOES,FOLLOW_DOES_in_identifier4851); if (state.failed) return retval;
+                    IDENTIFIER365=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_identifier4864); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    DOES364_tree = 
-                    (CommonTree)adaptor.create(DOES364)
+                    IDENTIFIER365_tree = 
+                    (CommonTree)adaptor.create(IDENTIFIER365)
                     ;
-                    adaptor.addChild(root_0, DOES364_tree);
+                    adaptor.addChild(root_0, IDENTIFIER365_tree);
                     }
 
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:5: CONTAIN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:867:5: DOES
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    CONTAIN365=(Token)match(input,CONTAIN,FOLLOW_CONTAIN_in_identifier4858); if (state.failed) return retval;
+                    DOES366=(Token)match(input,DOES,FOLLOW_DOES_in_identifier4870); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    CONTAIN365_tree = 
-                    (CommonTree)adaptor.create(CONTAIN365)
+                    DOES366_tree = 
+                    (CommonTree)adaptor.create(DOES366)
                     ;
-                    adaptor.addChild(root_0, CONTAIN365_tree);
+                    adaptor.addChild(root_0, DOES366_tree);
                     }
 
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:864:5: GREATER
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:868:5: CONTAIN
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    GREATER366=(Token)match(input,GREATER,FOLLOW_GREATER_in_identifier4864); if (state.failed) return retval;
+                    CONTAIN367=(Token)match(input,CONTAIN,FOLLOW_CONTAIN_in_identifier4877); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    GREATER366_tree = 
-                    (CommonTree)adaptor.create(GREATER366)
+                    CONTAIN367_tree = 
+                    (CommonTree)adaptor.create(CONTAIN367)
                     ;
-                    adaptor.addChild(root_0, GREATER366_tree);
+                    adaptor.addChild(root_0, CONTAIN367_tree);
                     }
 
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:865:5: THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:869:5: GREATER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    THAN367=(Token)match(input,THAN,FOLLOW_THAN_in_identifier4871); if (state.failed) return retval;
+                    GREATER368=(Token)match(input,GREATER,FOLLOW_GREATER_in_identifier4883); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    THAN367_tree = 
-                    (CommonTree)adaptor.create(THAN367)
+                    GREATER368_tree = 
+                    (CommonTree)adaptor.create(GREATER368)
                     ;
-                    adaptor.addChild(root_0, THAN367_tree);
+                    adaptor.addChild(root_0, GREATER368_tree);
                     }
 
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:5: LESS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:5: THAN
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    LESS368=(Token)match(input,LESS,FOLLOW_LESS_in_identifier4878); if (state.failed) return retval;
+                    THAN369=(Token)match(input,THAN,FOLLOW_THAN_in_identifier4890); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    LESS368_tree = 
-                    (CommonTree)adaptor.create(LESS368)
+                    THAN369_tree = 
+                    (CommonTree)adaptor.create(THAN369)
                     ;
-                    adaptor.addChild(root_0, LESS368_tree);
+                    adaptor.addChild(root_0, THAN369_tree);
                     }
 
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:867:5: VAR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:5: LESS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    VAR369=(Token)match(input,VAR,FOLLOW_VAR_in_identifier4885); if (state.failed) return retval;
+                    LESS370=(Token)match(input,LESS,FOLLOW_LESS_in_identifier4897); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    VAR369_tree = 
-                    (CommonTree)adaptor.create(VAR369)
+                    LESS370_tree = 
+                    (CommonTree)adaptor.create(LESS370)
                     ;
-                    adaptor.addChild(root_0, VAR369_tree);
+                    adaptor.addChild(root_0, LESS370_tree);
                     }
 
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:868:5: TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:5: VAR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    TO370=(Token)match(input,TO,FOLLOW_TO_in_identifier4891); if (state.failed) return retval;
+                    VAR371=(Token)match(input,VAR,FOLLOW_VAR_in_identifier4904); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    TO370_tree = 
-                    (CommonTree)adaptor.create(TO370)
+                    VAR371_tree = 
+                    (CommonTree)adaptor.create(VAR371)
                     ;
-                    adaptor.addChild(root_0, TO370_tree);
+                    adaptor.addChild(root_0, VAR371_tree);
                     }
 
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:869:5: DEFAULT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:873:5: TO
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    DEFAULT371=(Token)match(input,DEFAULT,FOLLOW_DEFAULT_in_identifier4897); if (state.failed) return retval;
+                    TO372=(Token)match(input,TO,FOLLOW_TO_in_identifier4910); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    DEFAULT371_tree = 
-                    (CommonTree)adaptor.create(DEFAULT371)
+                    TO372_tree = 
+                    (CommonTree)adaptor.create(TO372)
                     ;
-                    adaptor.addChild(root_0, DEFAULT371_tree);
+                    adaptor.addChild(root_0, TO372_tree);
                     }
 
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:5: INCLUDE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:874:5: DEFAULT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    INCLUDE372=(Token)match(input,INCLUDE,FOLLOW_INCLUDE_in_identifier4904); if (state.failed) return retval;
+                    DEFAULT373=(Token)match(input,DEFAULT,FOLLOW_DEFAULT_in_identifier4916); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    INCLUDE372_tree = 
-                    (CommonTree)adaptor.create(INCLUDE372)
+                    DEFAULT373_tree = 
+                    (CommonTree)adaptor.create(DEFAULT373)
                     ;
-                    adaptor.addChild(root_0, INCLUDE372_tree);
+                    adaptor.addChild(root_0, DEFAULT373_tree);
                     }
 
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:5: NEW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:5: INCLUDE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    NEW373=(Token)match(input,NEW,FOLLOW_NEW_in_identifier4910); if (state.failed) return retval;
+                    INCLUDE374=(Token)match(input,INCLUDE,FOLLOW_INCLUDE_in_identifier4923); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NEW373_tree = 
-                    (CommonTree)adaptor.create(NEW373)
+                    INCLUDE374_tree = 
+                    (CommonTree)adaptor.create(INCLUDE374)
                     ;
-                    adaptor.addChild(root_0, NEW373_tree);
+                    adaptor.addChild(root_0, INCLUDE374_tree);
                     }
 
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:5: ABORT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:5: NEW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    ABORT374=(Token)match(input,ABORT,FOLLOW_ABORT_in_identifier4916); if (state.failed) return retval;
+                    NEW375=(Token)match(input,NEW,FOLLOW_NEW_in_identifier4929); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    ABORT374_tree = 
-                    (CommonTree)adaptor.create(ABORT374)
+                    NEW375_tree = 
+                    (CommonTree)adaptor.create(NEW375)
                     ;
-                    adaptor.addChild(root_0, ABORT374_tree);
+                    adaptor.addChild(root_0, NEW375_tree);
                     }
 
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:873:5: THROW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:877:5: ABORT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    THROW375=(Token)match(input,THROW,FOLLOW_THROW_in_identifier4922); if (state.failed) return retval;
+                    ABORT376=(Token)match(input,ABORT,FOLLOW_ABORT_in_identifier4935); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    THROW375_tree = 
-                    (CommonTree)adaptor.create(THROW375)
+                    ABORT376_tree = 
+                    (CommonTree)adaptor.create(ABORT376)
                     ;
-                    adaptor.addChild(root_0, THROW375_tree);
+                    adaptor.addChild(root_0, ABORT376_tree);
                     }
 
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:874:5: RETHROW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:878:5: THROW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    RETHROW376=(Token)match(input,RETHROW,FOLLOW_RETHROW_in_identifier4928); if (state.failed) return retval;
+                    THROW377=(Token)match(input,THROW,FOLLOW_THROW_in_identifier4941); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    RETHROW376_tree = 
-                    (CommonTree)adaptor.create(RETHROW376)
+                    THROW377_tree = 
+                    (CommonTree)adaptor.create(THROW377)
                     ;
-                    adaptor.addChild(root_0, RETHROW376_tree);
+                    adaptor.addChild(root_0, THROW377_tree);
                     }
 
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:5: PARAM
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:879:5: RETHROW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    PARAM377=(Token)match(input,PARAM,FOLLOW_PARAM_in_identifier4934); if (state.failed) return retval;
+                    RETHROW378=(Token)match(input,RETHROW,FOLLOW_RETHROW_in_identifier4947); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    PARAM377_tree = 
-                    (CommonTree)adaptor.create(PARAM377)
+                    RETHROW378_tree = 
+                    (CommonTree)adaptor.create(RETHROW378)
                     ;
-                    adaptor.addChild(root_0, PARAM377_tree);
+                    adaptor.addChild(root_0, RETHROW378_tree);
                     }
 
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:5: EXIT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:880:5: PARAM
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    EXIT378=(Token)match(input,EXIT,FOLLOW_EXIT_in_identifier4940); if (state.failed) return retval;
+                    PARAM379=(Token)match(input,PARAM,FOLLOW_PARAM_in_identifier4953); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    EXIT378_tree = 
-                    (CommonTree)adaptor.create(EXIT378)
+                    PARAM379_tree = 
+                    (CommonTree)adaptor.create(PARAM379)
                     ;
-                    adaptor.addChild(root_0, EXIT378_tree);
+                    adaptor.addChild(root_0, PARAM379_tree);
                     }
 
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:877:5: THREAD
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:881:5: EXIT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    THREAD379=(Token)match(input,THREAD,FOLLOW_THREAD_in_identifier4946); if (state.failed) return retval;
+                    EXIT380=(Token)match(input,EXIT,FOLLOW_EXIT_in_identifier4959); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    THREAD379_tree = 
-                    (CommonTree)adaptor.create(THREAD379)
+                    EXIT380_tree = 
+                    (CommonTree)adaptor.create(EXIT380)
                     ;
-                    adaptor.addChild(root_0, THREAD379_tree);
+                    adaptor.addChild(root_0, EXIT380_tree);
                     }
 
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:878:5: LOCK
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:882:5: THREAD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    LOCK380=(Token)match(input,LOCK,FOLLOW_LOCK_in_identifier4952); if (state.failed) return retval;
+                    THREAD381=(Token)match(input,THREAD,FOLLOW_THREAD_in_identifier4965); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    LOCK380_tree = 
-                    (CommonTree)adaptor.create(LOCK380)
+                    THREAD381_tree = 
+                    (CommonTree)adaptor.create(THREAD381)
                     ;
-                    adaptor.addChild(root_0, LOCK380_tree);
+                    adaptor.addChild(root_0, THREAD381_tree);
                     }
 
                     }
                     break;
                 case 19 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:879:5: TRANSACTION
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:883:5: LOCK
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    TRANSACTION381=(Token)match(input,TRANSACTION,FOLLOW_TRANSACTION_in_identifier4958); if (state.failed) return retval;
+                    LOCK382=(Token)match(input,LOCK,FOLLOW_LOCK_in_identifier4971); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    TRANSACTION381_tree = 
-                    (CommonTree)adaptor.create(TRANSACTION381)
+                    LOCK382_tree = 
+                    (CommonTree)adaptor.create(LOCK382)
                     ;
-                    adaptor.addChild(root_0, TRANSACTION381_tree);
+                    adaptor.addChild(root_0, LOCK382_tree);
                     }
 
                     }
                     break;
                 case 20 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:880:5: PUBLIC
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:884:5: TRANSACTION
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    PUBLIC382=(Token)match(input,PUBLIC,FOLLOW_PUBLIC_in_identifier4964); if (state.failed) return retval;
+                    TRANSACTION383=(Token)match(input,TRANSACTION,FOLLOW_TRANSACTION_in_identifier4977); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    PUBLIC382_tree = 
-                    (CommonTree)adaptor.create(PUBLIC382)
+                    TRANSACTION383_tree = 
+                    (CommonTree)adaptor.create(TRANSACTION383)
                     ;
-                    adaptor.addChild(root_0, PUBLIC382_tree);
+                    adaptor.addChild(root_0, TRANSACTION383_tree);
                     }
 
                     }
                     break;
                 case 21 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:881:5: PRIVATE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:885:5: PUBLIC
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    PRIVATE383=(Token)match(input,PRIVATE,FOLLOW_PRIVATE_in_identifier4970); if (state.failed) return retval;
+                    PUBLIC384=(Token)match(input,PUBLIC,FOLLOW_PUBLIC_in_identifier4983); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    PRIVATE383_tree = 
-                    (CommonTree)adaptor.create(PRIVATE383)
+                    PUBLIC384_tree = 
+                    (CommonTree)adaptor.create(PUBLIC384)
                     ;
-                    adaptor.addChild(root_0, PRIVATE383_tree);
+                    adaptor.addChild(root_0, PUBLIC384_tree);
                     }
 
                     }
                     break;
                 case 22 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:882:5: REMOTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: PRIVATE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    REMOTE384=(Token)match(input,REMOTE,FOLLOW_REMOTE_in_identifier4976); if (state.failed) return retval;
+                    PRIVATE385=(Token)match(input,PRIVATE,FOLLOW_PRIVATE_in_identifier4989); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    REMOTE384_tree = 
-                    (CommonTree)adaptor.create(REMOTE384)
+                    PRIVATE385_tree = 
+                    (CommonTree)adaptor.create(PRIVATE385)
                     ;
-                    adaptor.addChild(root_0, REMOTE384_tree);
+                    adaptor.addChild(root_0, PRIVATE385_tree);
                     }
 
                     }
                     break;
                 case 23 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:883:5: PACKAGE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:887:5: REMOTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    PACKAGE385=(Token)match(input,PACKAGE,FOLLOW_PACKAGE_in_identifier4982); if (state.failed) return retval;
+                    REMOTE386=(Token)match(input,REMOTE,FOLLOW_REMOTE_in_identifier4995); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    PACKAGE385_tree = 
-                    (CommonTree)adaptor.create(PACKAGE385)
+                    REMOTE386_tree = 
+                    (CommonTree)adaptor.create(REMOTE386)
                     ;
-                    adaptor.addChild(root_0, PACKAGE385_tree);
+                    adaptor.addChild(root_0, REMOTE386_tree);
                     }
 
                     }
                     break;
                 case 24 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:884:5: REQUIRED
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:888:5: PACKAGE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    REQUIRED386=(Token)match(input,REQUIRED,FOLLOW_REQUIRED_in_identifier4988); if (state.failed) return retval;
+                    PACKAGE387=(Token)match(input,PACKAGE,FOLLOW_PACKAGE_in_identifier5001); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    REQUIRED386_tree = 
-                    (CommonTree)adaptor.create(REQUIRED386)
+                    PACKAGE387_tree = 
+                    (CommonTree)adaptor.create(PACKAGE387)
                     ;
-                    adaptor.addChild(root_0, REQUIRED386_tree);
+                    adaptor.addChild(root_0, PACKAGE387_tree);
                     }
 
                     }
                     break;
                 case 25 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:885:5: cfmlFunction
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:889:5: REQUIRED
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_cfmlFunction_in_identifier4994);
-                    cfmlFunction387=cfmlFunction();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfmlFunction387.getTree());
+                    REQUIRED388=(Token)match(input,REQUIRED,FOLLOW_REQUIRED_in_identifier5007); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    REQUIRED388_tree = 
+                    (CommonTree)adaptor.create(REQUIRED388)
+                    ;
+                    adaptor.addChild(root_0, REQUIRED388_tree);
+                    }
 
                     }
                     break;
                 case 26 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: {...}? => cfscriptKeywords
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:5: cfmlFunction
+                    {
+                    root_0 = (CommonTree)adaptor.nil();
+
+
+                    pushFollow(FOLLOW_cfmlFunction_in_identifier5013);
+                    cfmlFunction389=cfmlFunction();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfmlFunction389.getTree());
+
+                    }
+                    break;
+                case 27 :
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:891:5: {...}? => cfscriptKeywords
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -19734,12 +20183,12 @@ public TreeAdaptor getTreeAdaptor() {
                         throw new FailedPredicateException(input, "identifier", "!scriptMode");
                     }
 
-                    pushFollow(FOLLOW_cfscriptKeywords_in_identifier5003);
-                    cfscriptKeywords388=cfscriptKeywords();
+                    pushFollow(FOLLOW_cfscriptKeywords_in_identifier5022);
+                    cfscriptKeywords390=cfscriptKeywords();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfscriptKeywords388.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, cfscriptKeywords390.getTree());
 
                     }
                     break;
@@ -19763,7 +20212,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 77, identifier_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 78, identifier_StartIndex); }
 
         }
         return retval;
@@ -19778,7 +20227,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfscriptKeywords"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:889:1: cfscriptKeywords : ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | IMPORT );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:894:1: cfscriptKeywords : ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | IMPORT );
     public final CFScriptParser.cfscriptKeywords_return cfscriptKeywords() throws RecognitionException {
         CFScriptParser.cfscriptKeywords_return retval = new CFScriptParser.cfscriptKeywords_return();
         retval.start = input.LT(1);
@@ -19787,25 +20236,25 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set389=null;
+        Token set391=null;
 
-        CommonTree set389_tree=null;
+        CommonTree set391_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:3: ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | IMPORT )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:895:3: ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | SWITCH | CASE | DEFAULT | IMPORT )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            set389=(Token)input.LT(1);
+            set391=(Token)input.LT(1);
 
             if ( input.LA(1)==BREAK||(input.LA(1) >= CASE && input.LA(1) <= CATCH)||(input.LA(1) >= CONTINUE && input.LA(1) <= DEFAULT)||input.LA(1)==DO||input.LA(1)==ELSE||input.LA(1)==FOR||input.LA(1)==FUNCTION||input.LA(1)==IF||(input.LA(1) >= IMPORT && input.LA(1) <= IN)||input.LA(1)==RETURN||input.LA(1)==SWITCH||input.LA(1)==TRY||input.LA(1)==WHILE ) {
                 input.consume();
                 if ( state.backtracking==0 ) adaptor.addChild(root_0, 
-                (CommonTree)adaptor.create(set389)
+                (CommonTree)adaptor.create(set391)
                 );
                 state.errorRecovery=false;
                 state.failed=false;
@@ -19837,7 +20286,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 78, cfscriptKeywords_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 79, cfscriptKeywords_StartIndex); }
 
         }
         return retval;
@@ -19852,7 +20301,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "primaryExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:908:1: primaryExpression : ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | NULL | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:913:1: primaryExpression : ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | NULL | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier );
     public final CFScriptParser.primaryExpression_return primaryExpression() throws RecognitionException {
         CFScriptParser.primaryExpression_return retval = new CFScriptParser.primaryExpression_return();
         retval.start = input.LT(1);
@@ -19861,38 +20310,38 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token STRING_LITERAL390=null;
-        Token BOOLEAN_LITERAL391=null;
-        Token FLOATING_POINT_LITERAL392=null;
-        Token INTEGER_LITERAL393=null;
-        Token NULL396=null;
-        Token char_literal397=null;
-        Token LT398=null;
+        Token STRING_LITERAL392=null;
+        Token BOOLEAN_LITERAL393=null;
+        Token FLOATING_POINT_LITERAL394=null;
+        Token INTEGER_LITERAL395=null;
+        Token NULL398=null;
+        Token char_literal399=null;
         Token LT400=null;
-        Token char_literal401=null;
-        CFScriptParser.implicitArray_return implicitArray394 =null;
+        Token LT402=null;
+        Token char_literal403=null;
+        CFScriptParser.implicitArray_return implicitArray396 =null;
 
-        CFScriptParser.implicitStruct_return implicitStruct395 =null;
+        CFScriptParser.implicitStruct_return implicitStruct397 =null;
 
-        CFScriptParser.assignmentExpression_return assignmentExpression399 =null;
+        CFScriptParser.assignmentExpression_return assignmentExpression401 =null;
 
-        CFScriptParser.identifier_return identifier402 =null;
+        CFScriptParser.identifier_return identifier404 =null;
 
 
-        CommonTree STRING_LITERAL390_tree=null;
-        CommonTree BOOLEAN_LITERAL391_tree=null;
-        CommonTree FLOATING_POINT_LITERAL392_tree=null;
-        CommonTree INTEGER_LITERAL393_tree=null;
-        CommonTree NULL396_tree=null;
-        CommonTree char_literal397_tree=null;
-        CommonTree LT398_tree=null;
+        CommonTree STRING_LITERAL392_tree=null;
+        CommonTree BOOLEAN_LITERAL393_tree=null;
+        CommonTree FLOATING_POINT_LITERAL394_tree=null;
+        CommonTree INTEGER_LITERAL395_tree=null;
+        CommonTree NULL398_tree=null;
+        CommonTree char_literal399_tree=null;
         CommonTree LT400_tree=null;
-        CommonTree char_literal401_tree=null;
+        CommonTree LT402_tree=null;
+        CommonTree char_literal403_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:909:2: ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | NULL | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:914:2: ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | NULL | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier )
             int alt93=9;
             int LA93_0 = input.LA(1);
 
@@ -19920,7 +20369,7 @@ public TreeAdaptor getTreeAdaptor() {
             else if ( (LA93_0==LEFTPAREN) ) {
                 alt93=8;
             }
-            else if ( (LA93_0==ABORT||LA93_0==CONTAIN||LA93_0==DEFAULT||LA93_0==DIRECTORY||LA93_0==DOES||LA93_0==EXIT||LA93_0==FILE||LA93_0==GREATER||(LA93_0 >= HTTP && LA93_0 <= IDENTIFIER)||LA93_0==INCLUDE||LA93_0==LESS||(LA93_0 >= LOCATION && LA93_0 <= LOCK)||LA93_0==LOOP||LA93_0==NEW||(LA93_0 >= PACKAGE && LA93_0 <= PARAM)||LA93_0==PRIVATE||(LA93_0 >= PUBLIC && LA93_0 <= QUERY)||(LA93_0 >= REMOTE && LA93_0 <= RETHROW)||LA93_0==SAVECONTENT||LA93_0==SETTING||(LA93_0 >= THAN && LA93_0 <= THREAD)||LA93_0==THROW||(LA93_0 >= TO && LA93_0 <= TRANSACTION)||LA93_0==VAR) ) {
+            else if ( (LA93_0==ABORT||LA93_0==COMPONENT||LA93_0==CONTAIN||LA93_0==DEFAULT||LA93_0==DIRECTORY||LA93_0==DOES||LA93_0==EXIT||LA93_0==FILE||LA93_0==GREATER||(LA93_0 >= HTTP && LA93_0 <= IDENTIFIER)||LA93_0==INCLUDE||LA93_0==LESS||(LA93_0 >= LOCATION && LA93_0 <= LOCK)||LA93_0==LOOP||LA93_0==NEW||(LA93_0 >= PACKAGE && LA93_0 <= PARAM)||LA93_0==PRIVATE||(LA93_0 >= PUBLIC && LA93_0 <= QUERY)||(LA93_0 >= REMOTE && LA93_0 <= RETHROW)||LA93_0==SAVECONTENT||LA93_0==SETTING||(LA93_0 >= THAN && LA93_0 <= THREAD)||LA93_0==THROW||(LA93_0 >= TO && LA93_0 <= TRANSACTION)||LA93_0==VAR) ) {
                 alt93=9;
             }
             else if ( (LA93_0==BREAK||(LA93_0 >= CASE && LA93_0 <= CATCH)||LA93_0==CONTINUE||LA93_0==DO||LA93_0==ELSE||LA93_0==FOR||LA93_0==FUNCTION||LA93_0==IF||(LA93_0 >= IMPORT && LA93_0 <= IN)||LA93_0==RETURN||LA93_0==SWITCH||LA93_0==TRY||LA93_0==WHILE) && ((!scriptMode))) {
@@ -19936,124 +20385,124 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt93) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:909:4: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:914:4: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    STRING_LITERAL390=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_primaryExpression5120); if (state.failed) return retval;
+                    STRING_LITERAL392=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_primaryExpression5139); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    STRING_LITERAL390_tree = 
-                    (CommonTree)adaptor.create(STRING_LITERAL390)
+                    STRING_LITERAL392_tree = 
+                    (CommonTree)adaptor.create(STRING_LITERAL392)
                     ;
-                    adaptor.addChild(root_0, STRING_LITERAL390_tree);
+                    adaptor.addChild(root_0, STRING_LITERAL392_tree);
                     }
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:910:4: BOOLEAN_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:915:4: BOOLEAN_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    BOOLEAN_LITERAL391=(Token)match(input,BOOLEAN_LITERAL,FOLLOW_BOOLEAN_LITERAL_in_primaryExpression5125); if (state.failed) return retval;
+                    BOOLEAN_LITERAL393=(Token)match(input,BOOLEAN_LITERAL,FOLLOW_BOOLEAN_LITERAL_in_primaryExpression5144); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    BOOLEAN_LITERAL391_tree = 
-                    (CommonTree)adaptor.create(BOOLEAN_LITERAL391)
+                    BOOLEAN_LITERAL393_tree = 
+                    (CommonTree)adaptor.create(BOOLEAN_LITERAL393)
                     ;
-                    adaptor.addChild(root_0, BOOLEAN_LITERAL391_tree);
+                    adaptor.addChild(root_0, BOOLEAN_LITERAL393_tree);
                     }
 
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:911:4: FLOATING_POINT_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:4: FLOATING_POINT_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    FLOATING_POINT_LITERAL392=(Token)match(input,FLOATING_POINT_LITERAL,FOLLOW_FLOATING_POINT_LITERAL_in_primaryExpression5130); if (state.failed) return retval;
+                    FLOATING_POINT_LITERAL394=(Token)match(input,FLOATING_POINT_LITERAL,FOLLOW_FLOATING_POINT_LITERAL_in_primaryExpression5149); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    FLOATING_POINT_LITERAL392_tree = 
-                    (CommonTree)adaptor.create(FLOATING_POINT_LITERAL392)
+                    FLOATING_POINT_LITERAL394_tree = 
+                    (CommonTree)adaptor.create(FLOATING_POINT_LITERAL394)
                     ;
-                    adaptor.addChild(root_0, FLOATING_POINT_LITERAL392_tree);
+                    adaptor.addChild(root_0, FLOATING_POINT_LITERAL394_tree);
                     }
 
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:912:4: INTEGER_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:917:4: INTEGER_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    INTEGER_LITERAL393=(Token)match(input,INTEGER_LITERAL,FOLLOW_INTEGER_LITERAL_in_primaryExpression5135); if (state.failed) return retval;
+                    INTEGER_LITERAL395=(Token)match(input,INTEGER_LITERAL,FOLLOW_INTEGER_LITERAL_in_primaryExpression5154); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    INTEGER_LITERAL393_tree = 
-                    (CommonTree)adaptor.create(INTEGER_LITERAL393)
+                    INTEGER_LITERAL395_tree = 
+                    (CommonTree)adaptor.create(INTEGER_LITERAL395)
                     ;
-                    adaptor.addChild(root_0, INTEGER_LITERAL393_tree);
+                    adaptor.addChild(root_0, INTEGER_LITERAL395_tree);
                     }
 
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:913:4: implicitArray
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:918:4: implicitArray
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_implicitArray_in_primaryExpression5140);
-                    implicitArray394=implicitArray();
+                    pushFollow(FOLLOW_implicitArray_in_primaryExpression5159);
+                    implicitArray396=implicitArray();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitArray394.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitArray396.getTree());
 
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:914:4: implicitStruct
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:919:4: implicitStruct
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_implicitStruct_in_primaryExpression5145);
-                    implicitStruct395=implicitStruct();
+                    pushFollow(FOLLOW_implicitStruct_in_primaryExpression5164);
+                    implicitStruct397=implicitStruct();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStruct395.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStruct397.getTree());
 
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:915:4: NULL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:920:4: NULL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    NULL396=(Token)match(input,NULL,FOLLOW_NULL_in_primaryExpression5150); if (state.failed) return retval;
+                    NULL398=(Token)match(input,NULL,FOLLOW_NULL_in_primaryExpression5169); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    NULL396_tree = 
-                    (CommonTree)adaptor.create(NULL396)
+                    NULL398_tree = 
+                    (CommonTree)adaptor.create(NULL398)
                     ;
-                    adaptor.addChild(root_0, NULL396_tree);
+                    adaptor.addChild(root_0, NULL398_tree);
                     }
 
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:4: '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:4: '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    char_literal397=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_primaryExpression5155); if (state.failed) return retval;
+                    char_literal399=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_primaryExpression5174); if (state.failed) return retval;
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:11: ( LT !)*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:11: ( LT !)*
                     loop91:
                     do {
                         int alt91=2;
@@ -20066,9 +20515,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt91) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:11: LT !
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:11: LT !
                     	    {
-                    	    LT398=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5158); if (state.failed) return retval;
+                    	    LT400=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5177); if (state.failed) return retval;
 
                     	    }
                     	    break;
@@ -20079,14 +20528,14 @@ public TreeAdaptor getTreeAdaptor() {
                     } while (true);
 
 
-                    pushFollow(FOLLOW_assignmentExpression_in_primaryExpression5162);
-                    assignmentExpression399=assignmentExpression();
+                    pushFollow(FOLLOW_assignmentExpression_in_primaryExpression5181);
+                    assignmentExpression401=assignmentExpression();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, assignmentExpression399.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, assignmentExpression401.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:37: ( LT !)*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:37: ( LT !)*
                     loop92:
                     do {
                         int alt92=2;
@@ -20099,9 +20548,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt92) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:37: LT !
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:37: LT !
                     	    {
-                    	    LT400=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5164); if (state.failed) return retval;
+                    	    LT402=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5183); if (state.failed) return retval;
 
                     	    }
                     	    break;
@@ -20112,22 +20561,22 @@ public TreeAdaptor getTreeAdaptor() {
                     } while (true);
 
 
-                    char_literal401=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_primaryExpression5168); if (state.failed) return retval;
+                    char_literal403=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_primaryExpression5187); if (state.failed) return retval;
 
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:917:4: identifier
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:922:4: identifier
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_identifier_in_primaryExpression5174);
-                    identifier402=identifier();
+                    pushFollow(FOLLOW_identifier_in_primaryExpression5193);
+                    identifier404=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier402.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier404.getTree());
 
                     }
                     break;
@@ -20151,7 +20600,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 79, primaryExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 80, primaryExpression_StartIndex); }
 
         }
         return retval;
@@ -20166,7 +20615,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitArray"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:920:1: implicitArray : lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:925:1: implicitArray : lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) ;
     public final CFScriptParser.implicitArray_return implicitArray() throws RecognitionException {
         CFScriptParser.implicitArray_return retval = new CFScriptParser.implicitArray_return();
         retval.start = input.LT(1);
@@ -20176,42 +20625,42 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token RIGHTBRACKET404=null;
-        CFScriptParser.implicitArrayElements_return implicitArrayElements403 =null;
+        Token RIGHTBRACKET406=null;
+        CFScriptParser.implicitArrayElements_return implicitArrayElements405 =null;
 
 
         CommonTree lc_tree=null;
-        CommonTree RIGHTBRACKET404_tree=null;
+        CommonTree RIGHTBRACKET406_tree=null;
         RewriteRuleTokenStream stream_RIGHTBRACKET=new RewriteRuleTokenStream(adaptor,"token RIGHTBRACKET");
         RewriteRuleTokenStream stream_LEFTBRACKET=new RewriteRuleTokenStream(adaptor,"token LEFTBRACKET");
         RewriteRuleSubtreeStream stream_implicitArrayElements=new RewriteRuleSubtreeStream(adaptor,"rule implicitArrayElements");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:3: (lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:5: lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:3: (lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:5: lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET
             {
-            lc=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_implicitArray5188); if (state.failed) return retval; 
+            lc=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_implicitArray5207); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LEFTBRACKET.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:20: ( implicitArrayElements )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:20: ( implicitArrayElements )?
             int alt94=2;
             int LA94_0 = input.LA(1);
 
-            if ( (LA94_0==ABORT||(LA94_0 >= BOOLEAN_LITERAL && LA94_0 <= BREAK)||(LA94_0 >= CASE && LA94_0 <= CATCH)||LA94_0==CONTAIN||(LA94_0 >= CONTINUE && LA94_0 <= DEFAULT)||(LA94_0 >= DIRECTORY && LA94_0 <= DOES)||LA94_0==ELSE||LA94_0==EXIT||LA94_0==FILE||(LA94_0 >= FLOATING_POINT_LITERAL && LA94_0 <= FOR)||LA94_0==FUNCTION||LA94_0==GREATER||(LA94_0 >= HTTP && LA94_0 <= IF)||(LA94_0 >= IMPORT && LA94_0 <= INTEGER_LITERAL)||(LA94_0 >= LEFTBRACKET && LA94_0 <= LESS)||(LA94_0 >= LOCATION && LA94_0 <= LOCK)||LA94_0==LOOP||LA94_0==MINUS||LA94_0==MINUSMINUS||(LA94_0 >= NEW && LA94_0 <= NULL)||(LA94_0 >= PACKAGE && LA94_0 <= PARAM)||LA94_0==PLUS||LA94_0==PLUSPLUS||LA94_0==PRIVATE||(LA94_0 >= PUBLIC && LA94_0 <= QUERY)||(LA94_0 >= REMOTE && LA94_0 <= RETHROW)||LA94_0==RETURN||LA94_0==SAVECONTENT||LA94_0==SETTING||(LA94_0 >= STRING_LITERAL && LA94_0 <= SWITCH)||(LA94_0 >= THAN && LA94_0 <= THREAD)||LA94_0==THROW||(LA94_0 >= TO && LA94_0 <= TRANSACTION)||(LA94_0 >= TRY && LA94_0 <= VAR)||LA94_0==WHILE||LA94_0==150) ) {
+            if ( (LA94_0==ABORT||(LA94_0 >= BOOLEAN_LITERAL && LA94_0 <= BREAK)||(LA94_0 >= CASE && LA94_0 <= CATCH)||LA94_0==COMPONENT||LA94_0==CONTAIN||(LA94_0 >= CONTINUE && LA94_0 <= DEFAULT)||(LA94_0 >= DIRECTORY && LA94_0 <= DOES)||LA94_0==ELSE||LA94_0==EXIT||LA94_0==FILE||(LA94_0 >= FLOATING_POINT_LITERAL && LA94_0 <= FOR)||LA94_0==FUNCTION||LA94_0==GREATER||(LA94_0 >= HTTP && LA94_0 <= IF)||(LA94_0 >= IMPORT && LA94_0 <= INTEGER_LITERAL)||(LA94_0 >= LEFTBRACKET && LA94_0 <= LESS)||(LA94_0 >= LOCATION && LA94_0 <= LOCK)||LA94_0==LOOP||LA94_0==MINUS||LA94_0==MINUSMINUS||(LA94_0 >= NEW && LA94_0 <= NULL)||(LA94_0 >= PACKAGE && LA94_0 <= PARAM)||LA94_0==PLUS||LA94_0==PLUSPLUS||LA94_0==PRIVATE||(LA94_0 >= PUBLIC && LA94_0 <= QUERY)||(LA94_0 >= REMOTE && LA94_0 <= RETHROW)||LA94_0==RETURN||LA94_0==SAVECONTENT||LA94_0==SETTING||(LA94_0 >= STRING_LITERAL && LA94_0 <= SWITCH)||(LA94_0 >= THAN && LA94_0 <= THREAD)||LA94_0==THROW||(LA94_0 >= TO && LA94_0 <= TRANSACTION)||(LA94_0 >= TRY && LA94_0 <= VAR)||LA94_0==WHILE||LA94_0==150) ) {
                 alt94=1;
             }
             switch (alt94) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:20: implicitArrayElements
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:20: implicitArrayElements
                     {
-                    pushFollow(FOLLOW_implicitArrayElements_in_implicitArray5190);
-                    implicitArrayElements403=implicitArrayElements();
+                    pushFollow(FOLLOW_implicitArrayElements_in_implicitArray5209);
+                    implicitArrayElements405=implicitArrayElements();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_implicitArrayElements.add(implicitArrayElements403.getTree());
+                    if ( state.backtracking==0 ) stream_implicitArrayElements.add(implicitArrayElements405.getTree());
 
                     }
                     break;
@@ -20219,8 +20668,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            RIGHTBRACKET404=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_implicitArray5193); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_RIGHTBRACKET.add(RIGHTBRACKET404);
+            RIGHTBRACKET406=(Token)match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_implicitArray5212); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_RIGHTBRACKET.add(RIGHTBRACKET406);
 
 
             // AST REWRITE
@@ -20236,16 +20685,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 921:56: -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
+            // 926:56: -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:59: ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:59: ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(IMPLICITARRAY, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:80: ( implicitArrayElements )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:926:80: ( implicitArrayElements )?
                 if ( stream_implicitArrayElements.hasNext() ) {
                     adaptor.addChild(root_1, stream_implicitArrayElements.nextTree());
 
@@ -20281,7 +20730,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 80, implicitArray_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 81, implicitArray_StartIndex); }
 
         }
         return retval;
@@ -20296,7 +20745,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitArrayElements"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:924:1: implicitArrayElements : impliesExpression ( ',' ! impliesExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:1: implicitArrayElements : impliesExpression ( ',' ! impliesExpression )* ;
     public final CFScriptParser.implicitArrayElements_return implicitArrayElements() throws RecognitionException {
         CFScriptParser.implicitArrayElements_return retval = new CFScriptParser.implicitArrayElements_return();
         retval.start = input.LT(1);
@@ -20305,31 +20754,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal406=null;
-        CFScriptParser.impliesExpression_return impliesExpression405 =null;
-
+        Token char_literal408=null;
         CFScriptParser.impliesExpression_return impliesExpression407 =null;
 
+        CFScriptParser.impliesExpression_return impliesExpression409 =null;
 
-        CommonTree char_literal406_tree=null;
+
+        CommonTree char_literal408_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:925:3: ( impliesExpression ( ',' ! impliesExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:925:5: impliesExpression ( ',' ! impliesExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:930:3: ( impliesExpression ( ',' ! impliesExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:930:5: impliesExpression ( ',' ! impliesExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_impliesExpression_in_implicitArrayElements5219);
-            impliesExpression405=impliesExpression();
+            pushFollow(FOLLOW_impliesExpression_in_implicitArrayElements5238);
+            impliesExpression407=impliesExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression405.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression407.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:925:23: ( ',' ! impliesExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:930:23: ( ',' ! impliesExpression )*
             loop95:
             do {
                 int alt95=2;
@@ -20342,16 +20791,16 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt95) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:925:25: ',' ! impliesExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:930:25: ',' ! impliesExpression
             	    {
-            	    char_literal406=(Token)match(input,151,FOLLOW_151_in_implicitArrayElements5223); if (state.failed) return retval;
+            	    char_literal408=(Token)match(input,151,FOLLOW_151_in_implicitArrayElements5242); if (state.failed) return retval;
 
-            	    pushFollow(FOLLOW_impliesExpression_in_implicitArrayElements5226);
-            	    impliesExpression407=impliesExpression();
+            	    pushFollow(FOLLOW_impliesExpression_in_implicitArrayElements5245);
+            	    impliesExpression409=impliesExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression407.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression409.getTree());
 
             	    }
             	    break;
@@ -20382,7 +20831,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 81, implicitArrayElements_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 82, implicitArrayElements_StartIndex); }
 
         }
         return retval;
@@ -20397,7 +20846,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStruct"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:928:1: implicitStruct : lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:933:1: implicitStruct : lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) ;
     public final CFScriptParser.implicitStruct_return implicitStruct() throws RecognitionException {
         CFScriptParser.implicitStruct_return retval = new CFScriptParser.implicitStruct_return();
         retval.start = input.LT(1);
@@ -20407,42 +20856,42 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree root_0 = null;
 
         Token lc=null;
-        Token RIGHTCURLYBRACKET409=null;
-        CFScriptParser.implicitStructElements_return implicitStructElements408 =null;
+        Token RIGHTCURLYBRACKET411=null;
+        CFScriptParser.implicitStructElements_return implicitStructElements410 =null;
 
 
         CommonTree lc_tree=null;
-        CommonTree RIGHTCURLYBRACKET409_tree=null;
+        CommonTree RIGHTCURLYBRACKET411_tree=null;
         RewriteRuleTokenStream stream_RIGHTCURLYBRACKET=new RewriteRuleTokenStream(adaptor,"token RIGHTCURLYBRACKET");
         RewriteRuleTokenStream stream_LEFTCURLYBRACKET=new RewriteRuleTokenStream(adaptor,"token LEFTCURLYBRACKET");
         RewriteRuleSubtreeStream stream_implicitStructElements=new RewriteRuleSubtreeStream(adaptor,"rule implicitStructElements");
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:3: (lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:5: lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:3: (lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:5: lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET
             {
-            lc=(Token)match(input,LEFTCURLYBRACKET,FOLLOW_LEFTCURLYBRACKET_in_implicitStruct5246); if (state.failed) return retval; 
+            lc=(Token)match(input,LEFTCURLYBRACKET,FOLLOW_LEFTCURLYBRACKET_in_implicitStruct5265); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LEFTCURLYBRACKET.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:25: ( implicitStructElements )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:25: ( implicitStructElements )?
             int alt96=2;
             int LA96_0 = input.LA(1);
 
-            if ( (LA96_0==ABORT||LA96_0==BREAK||(LA96_0 >= CASE && LA96_0 <= CATCH)||LA96_0==CONTAIN||(LA96_0 >= CONTINUE && LA96_0 <= DEFAULT)||(LA96_0 >= DIRECTORY && LA96_0 <= DOES)||LA96_0==ELSE||LA96_0==EXIT||LA96_0==FILE||LA96_0==FOR||LA96_0==FUNCTION||LA96_0==GREATER||(LA96_0 >= HTTP && LA96_0 <= IF)||(LA96_0 >= IMPORT && LA96_0 <= INCLUDE)||LA96_0==LESS||(LA96_0 >= LOCATION && LA96_0 <= LOCK)||LA96_0==LOOP||LA96_0==NEW||(LA96_0 >= PACKAGE && LA96_0 <= PARAM)||LA96_0==PRIVATE||(LA96_0 >= PUBLIC && LA96_0 <= QUERY)||(LA96_0 >= REMOTE && LA96_0 <= RETHROW)||LA96_0==RETURN||LA96_0==SAVECONTENT||LA96_0==SETTING||(LA96_0 >= STRING_LITERAL && LA96_0 <= SWITCH)||(LA96_0 >= THAN && LA96_0 <= THREAD)||LA96_0==THROW||(LA96_0 >= TO && LA96_0 <= TRANSACTION)||(LA96_0 >= TRY && LA96_0 <= VAR)||LA96_0==WHILE) ) {
+            if ( (LA96_0==ABORT||LA96_0==BREAK||(LA96_0 >= CASE && LA96_0 <= CATCH)||LA96_0==COMPONENT||LA96_0==CONTAIN||(LA96_0 >= CONTINUE && LA96_0 <= DEFAULT)||(LA96_0 >= DIRECTORY && LA96_0 <= DOES)||LA96_0==ELSE||LA96_0==EXIT||LA96_0==FILE||LA96_0==FOR||LA96_0==FUNCTION||LA96_0==GREATER||(LA96_0 >= HTTP && LA96_0 <= IF)||(LA96_0 >= IMPORT && LA96_0 <= INCLUDE)||LA96_0==LESS||(LA96_0 >= LOCATION && LA96_0 <= LOCK)||LA96_0==LOOP||LA96_0==NEW||(LA96_0 >= PACKAGE && LA96_0 <= PARAM)||LA96_0==PRIVATE||(LA96_0 >= PUBLIC && LA96_0 <= QUERY)||(LA96_0 >= REMOTE && LA96_0 <= RETHROW)||LA96_0==RETURN||LA96_0==SAVECONTENT||LA96_0==SETTING||(LA96_0 >= STRING_LITERAL && LA96_0 <= SWITCH)||(LA96_0 >= THAN && LA96_0 <= THREAD)||LA96_0==THROW||(LA96_0 >= TO && LA96_0 <= TRANSACTION)||(LA96_0 >= TRY && LA96_0 <= VAR)||LA96_0==WHILE) ) {
                 alt96=1;
             }
             switch (alt96) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:25: implicitStructElements
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:25: implicitStructElements
                     {
-                    pushFollow(FOLLOW_implicitStructElements_in_implicitStruct5248);
-                    implicitStructElements408=implicitStructElements();
+                    pushFollow(FOLLOW_implicitStructElements_in_implicitStruct5267);
+                    implicitStructElements410=implicitStructElements();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_implicitStructElements.add(implicitStructElements408.getTree());
+                    if ( state.backtracking==0 ) stream_implicitStructElements.add(implicitStructElements410.getTree());
 
                     }
                     break;
@@ -20450,8 +20899,8 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            RIGHTCURLYBRACKET409=(Token)match(input,RIGHTCURLYBRACKET,FOLLOW_RIGHTCURLYBRACKET_in_implicitStruct5251); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_RIGHTCURLYBRACKET.add(RIGHTCURLYBRACKET409);
+            RIGHTCURLYBRACKET411=(Token)match(input,RIGHTCURLYBRACKET,FOLLOW_RIGHTCURLYBRACKET_in_implicitStruct5270); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_RIGHTCURLYBRACKET.add(RIGHTCURLYBRACKET411);
 
 
             // AST REWRITE
@@ -20467,16 +20916,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 929:67: -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
+            // 934:67: -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:70: ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:70: ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(IMPLICITSTRUCT, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:929:92: ( implicitStructElements )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:934:92: ( implicitStructElements )?
                 if ( stream_implicitStructElements.hasNext() ) {
                     adaptor.addChild(root_1, stream_implicitStructElements.nextTree());
 
@@ -20512,7 +20961,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 82, implicitStruct_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 83, implicitStruct_StartIndex); }
 
         }
         return retval;
@@ -20527,7 +20976,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructElements"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:932:1: implicitStructElements : implicitStructExpression ( ',' implicitStructExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:937:1: implicitStructElements : implicitStructExpression ( ',' implicitStructExpression )* ;
     public final CFScriptParser.implicitStructElements_return implicitStructElements() throws RecognitionException {
         CFScriptParser.implicitStructElements_return retval = new CFScriptParser.implicitStructElements_return();
         retval.start = input.LT(1);
@@ -20536,31 +20985,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal411=null;
-        CFScriptParser.implicitStructExpression_return implicitStructExpression410 =null;
-
+        Token char_literal413=null;
         CFScriptParser.implicitStructExpression_return implicitStructExpression412 =null;
 
+        CFScriptParser.implicitStructExpression_return implicitStructExpression414 =null;
 
-        CommonTree char_literal411_tree=null;
+
+        CommonTree char_literal413_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:933:3: ( implicitStructExpression ( ',' implicitStructExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:933:5: implicitStructExpression ( ',' implicitStructExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:938:3: ( implicitStructExpression ( ',' implicitStructExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:938:5: implicitStructExpression ( ',' implicitStructExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_implicitStructExpression_in_implicitStructElements5276);
-            implicitStructExpression410=implicitStructExpression();
+            pushFollow(FOLLOW_implicitStructExpression_in_implicitStructElements5295);
+            implicitStructExpression412=implicitStructExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructExpression410.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructExpression412.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:933:30: ( ',' implicitStructExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:938:30: ( ',' implicitStructExpression )*
             loop97:
             do {
                 int alt97=2;
@@ -20573,22 +21022,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt97) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:933:32: ',' implicitStructExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:938:32: ',' implicitStructExpression
             	    {
-            	    char_literal411=(Token)match(input,151,FOLLOW_151_in_implicitStructElements5280); if (state.failed) return retval;
+            	    char_literal413=(Token)match(input,151,FOLLOW_151_in_implicitStructElements5299); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
-            	    char_literal411_tree = 
-            	    (CommonTree)adaptor.create(char_literal411)
+            	    char_literal413_tree = 
+            	    (CommonTree)adaptor.create(char_literal413)
             	    ;
-            	    adaptor.addChild(root_0, char_literal411_tree);
+            	    adaptor.addChild(root_0, char_literal413_tree);
             	    }
 
-            	    pushFollow(FOLLOW_implicitStructExpression_in_implicitStructElements5282);
-            	    implicitStructExpression412=implicitStructExpression();
+            	    pushFollow(FOLLOW_implicitStructExpression_in_implicitStructElements5301);
+            	    implicitStructExpression414=implicitStructExpression();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
-            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructExpression412.getTree());
+            	    if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructExpression414.getTree());
 
             	    }
             	    break;
@@ -20619,7 +21068,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 83, implicitStructElements_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 84, implicitStructElements_StartIndex); }
 
         }
         return retval;
@@ -20634,7 +21083,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:936:1: implicitStructExpression : implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:1: implicitStructExpression : implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression ;
     public final CFScriptParser.implicitStructExpression_return implicitStructExpression() throws RecognitionException {
         CFScriptParser.implicitStructExpression_return retval = new CFScriptParser.implicitStructExpression_return();
         retval.start = input.LT(1);
@@ -20643,38 +21092,38 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set414=null;
-        CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression413 =null;
+        Token set416=null;
+        CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression415 =null;
 
-        CFScriptParser.impliesExpression_return impliesExpression415 =null;
+        CFScriptParser.impliesExpression_return impliesExpression417 =null;
 
 
-        CommonTree set414_tree=null;
+        CommonTree set416_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:937:3: ( implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:937:5: implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:942:3: ( implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:942:5: implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_implicitStructKeyExpression_in_implicitStructExpression5298);
-            implicitStructKeyExpression413=implicitStructKeyExpression();
+            pushFollow(FOLLOW_implicitStructKeyExpression_in_implicitStructExpression5317);
+            implicitStructKeyExpression415=implicitStructKeyExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructKeyExpression413.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructKeyExpression415.getTree());
 
-            set414=(Token)input.LT(1);
+            set416=(Token)input.LT(1);
 
-            set414=(Token)input.LT(1);
+            set416=(Token)input.LT(1);
 
             if ( input.LA(1)==COLON||input.LA(1)==EQUALSOP ) {
                 input.consume();
                 if ( state.backtracking==0 ) root_0 = (CommonTree)adaptor.becomeRoot(
-                (CommonTree)adaptor.create(set414)
+                (CommonTree)adaptor.create(set416)
                 , root_0);
                 state.errorRecovery=false;
                 state.failed=false;
@@ -20686,12 +21135,12 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            pushFollow(FOLLOW_impliesExpression_in_implicitStructExpression5311);
-            impliesExpression415=impliesExpression();
+            pushFollow(FOLLOW_impliesExpression_in_implicitStructExpression5330);
+            impliesExpression417=impliesExpression();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression415.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression417.getTree());
 
             }
 
@@ -20713,7 +21162,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 84, implicitStructExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 85, implicitStructExpression_StartIndex); }
 
         }
         return retval;
@@ -20728,7 +21177,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructKeyExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:940:1: implicitStructKeyExpression : ( identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:945:1: implicitStructKeyExpression : ( identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL );
     public final CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression() throws RecognitionException {
         CFScriptParser.implicitStructKeyExpression_return retval = new CFScriptParser.implicitStructKeyExpression_return();
         retval.start = input.LT(1);
@@ -20737,26 +21186,26 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token DOT417=null;
-        Token STRING_LITERAL420=null;
-        CFScriptParser.identifier_return identifier416 =null;
-
+        Token DOT419=null;
+        Token STRING_LITERAL422=null;
         CFScriptParser.identifier_return identifier418 =null;
 
-        CFScriptParser.reservedWord_return reservedWord419 =null;
+        CFScriptParser.identifier_return identifier420 =null;
+
+        CFScriptParser.reservedWord_return reservedWord421 =null;
 
 
-        CommonTree DOT417_tree=null;
-        CommonTree STRING_LITERAL420_tree=null;
+        CommonTree DOT419_tree=null;
+        CommonTree STRING_LITERAL422_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:3: ( identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:3: ( identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL )
             int alt100=2;
             int LA100_0 = input.LA(1);
 
-            if ( (LA100_0==ABORT||LA100_0==BREAK||(LA100_0 >= CASE && LA100_0 <= CATCH)||LA100_0==CONTAIN||(LA100_0 >= CONTINUE && LA100_0 <= DEFAULT)||(LA100_0 >= DIRECTORY && LA100_0 <= DOES)||LA100_0==ELSE||LA100_0==EXIT||LA100_0==FILE||LA100_0==FOR||LA100_0==FUNCTION||LA100_0==GREATER||(LA100_0 >= HTTP && LA100_0 <= IF)||(LA100_0 >= IMPORT && LA100_0 <= INCLUDE)||LA100_0==LESS||(LA100_0 >= LOCATION && LA100_0 <= LOCK)||LA100_0==LOOP||LA100_0==NEW||(LA100_0 >= PACKAGE && LA100_0 <= PARAM)||LA100_0==PRIVATE||(LA100_0 >= PUBLIC && LA100_0 <= QUERY)||(LA100_0 >= REMOTE && LA100_0 <= RETHROW)||LA100_0==RETURN||LA100_0==SAVECONTENT||LA100_0==SETTING||LA100_0==SWITCH||(LA100_0 >= THAN && LA100_0 <= THREAD)||LA100_0==THROW||(LA100_0 >= TO && LA100_0 <= TRANSACTION)||(LA100_0 >= TRY && LA100_0 <= VAR)||LA100_0==WHILE) ) {
+            if ( (LA100_0==ABORT||LA100_0==BREAK||(LA100_0 >= CASE && LA100_0 <= CATCH)||LA100_0==COMPONENT||LA100_0==CONTAIN||(LA100_0 >= CONTINUE && LA100_0 <= DEFAULT)||(LA100_0 >= DIRECTORY && LA100_0 <= DOES)||LA100_0==ELSE||LA100_0==EXIT||LA100_0==FILE||LA100_0==FOR||LA100_0==FUNCTION||LA100_0==GREATER||(LA100_0 >= HTTP && LA100_0 <= IF)||(LA100_0 >= IMPORT && LA100_0 <= INCLUDE)||LA100_0==LESS||(LA100_0 >= LOCATION && LA100_0 <= LOCK)||LA100_0==LOOP||LA100_0==NEW||(LA100_0 >= PACKAGE && LA100_0 <= PARAM)||LA100_0==PRIVATE||(LA100_0 >= PUBLIC && LA100_0 <= QUERY)||(LA100_0 >= REMOTE && LA100_0 <= RETHROW)||LA100_0==RETURN||LA100_0==SAVECONTENT||LA100_0==SETTING||LA100_0==SWITCH||(LA100_0 >= THAN && LA100_0 <= THREAD)||LA100_0==THROW||(LA100_0 >= TO && LA100_0 <= TRANSACTION)||(LA100_0 >= TRY && LA100_0 <= VAR)||LA100_0==WHILE) ) {
                 alt100=1;
             }
             else if ( (LA100_0==STRING_LITERAL) ) {
@@ -20772,19 +21221,19 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt100) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:5: identifier ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:5: identifier ( DOT ( identifier | reservedWord ) )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression5327);
-                    identifier416=identifier();
+                    pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression5346);
+                    identifier418=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier416.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier418.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:16: ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:16: ( DOT ( identifier | reservedWord ) )*
                     loop99:
                     do {
                         int alt99=2;
@@ -20797,20 +21246,21 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt99) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:18: DOT ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:18: DOT ( identifier | reservedWord )
                     	    {
-                    	    DOT417=(Token)match(input,DOT,FOLLOW_DOT_in_implicitStructKeyExpression5331); if (state.failed) return retval;
+                    	    DOT419=(Token)match(input,DOT,FOLLOW_DOT_in_implicitStructKeyExpression5350); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
-                    	    DOT417_tree = 
-                    	    (CommonTree)adaptor.create(DOT417)
+                    	    DOT419_tree = 
+                    	    (CommonTree)adaptor.create(DOT419)
                     	    ;
-                    	    adaptor.addChild(root_0, DOT417_tree);
+                    	    adaptor.addChild(root_0, DOT419_tree);
                     	    }
 
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:22: ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:22: ( identifier | reservedWord )
                     	    int alt98=2;
                     	    switch ( input.LA(1) ) {
                     	    case ABORT:
+                    	    case COMPONENT:
                     	    case CONTAIN:
                     	    case DIRECTORY:
                     	    case DOES:
@@ -20849,7 +21299,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	        {
                     	        int LA98_2 = input.LA(2);
 
-                    	        if ( (synpred245_CFScript()) ) {
+                    	        if ( (synpred246_CFScript()) ) {
                     	            alt98=1;
                     	        }
                     	        else if ( (true) ) {
@@ -20883,7 +21333,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	        {
                     	        int LA98_3 = input.LA(2);
 
-                    	        if ( ((((!scriptMode)&&(!scriptMode))&&synpred245_CFScript())) ) {
+                    	        if ( ((((!scriptMode)&&(!scriptMode))&&synpred246_CFScript())) ) {
                     	            alt98=1;
                     	        }
                     	        else if ( (true) ) {
@@ -20934,26 +21384,26 @@ public TreeAdaptor getTreeAdaptor() {
 
                     	    switch (alt98) {
                     	        case 1 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:24: identifier
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:24: identifier
                     	            {
-                    	            pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression5335);
-                    	            identifier418=identifier();
+                    	            pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression5354);
+                    	            identifier420=identifier();
 
                     	            state._fsp--;
                     	            if (state.failed) return retval;
-                    	            if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier418.getTree());
+                    	            if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier420.getTree());
 
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:37: reservedWord
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:37: reservedWord
                     	            {
-                    	            pushFollow(FOLLOW_reservedWord_in_implicitStructKeyExpression5339);
-                    	            reservedWord419=reservedWord();
+                    	            pushFollow(FOLLOW_reservedWord_in_implicitStructKeyExpression5358);
+                    	            reservedWord421=reservedWord();
 
                     	            state._fsp--;
                     	            if (state.failed) return retval;
-                    	            if ( state.backtracking==0 ) adaptor.addChild(root_0, reservedWord419.getTree());
+                    	            if ( state.backtracking==0 ) adaptor.addChild(root_0, reservedWord421.getTree());
 
                     	            }
                     	            break;
@@ -20973,17 +21423,17 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:942:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:947:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    STRING_LITERAL420=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_implicitStructKeyExpression5350); if (state.failed) return retval;
+                    STRING_LITERAL422=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_implicitStructKeyExpression5369); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    STRING_LITERAL420_tree = 
-                    (CommonTree)adaptor.create(STRING_LITERAL420)
+                    STRING_LITERAL422_tree = 
+                    (CommonTree)adaptor.create(STRING_LITERAL422)
                     ;
-                    adaptor.addChild(root_0, STRING_LITERAL420_tree);
+                    adaptor.addChild(root_0, STRING_LITERAL422_tree);
                     }
 
                     }
@@ -21008,7 +21458,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 85, implicitStructKeyExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 86, implicitStructKeyExpression_StartIndex); }
 
         }
         return retval;
@@ -21023,7 +21473,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "newComponentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:945:1: newComponentExpression : NEW ^ componentPath LEFTPAREN argumentList ')' !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:950:1: newComponentExpression : NEW ^ componentPath LEFTPAREN argumentList ')' !;
     public final CFScriptParser.newComponentExpression_return newComponentExpression() throws RecognitionException {
         CFScriptParser.newComponentExpression_return retval = new CFScriptParser.newComponentExpression_return();
         retval.start = input.LT(1);
@@ -21032,58 +21482,58 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token NEW421=null;
-        Token LEFTPAREN423=null;
-        Token char_literal425=null;
-        CFScriptParser.componentPath_return componentPath422 =null;
+        Token NEW423=null;
+        Token LEFTPAREN425=null;
+        Token char_literal427=null;
+        CFScriptParser.componentPath_return componentPath424 =null;
 
-        CFScriptParser.argumentList_return argumentList424 =null;
+        CFScriptParser.argumentList_return argumentList426 =null;
 
 
-        CommonTree NEW421_tree=null;
-        CommonTree LEFTPAREN423_tree=null;
-        CommonTree char_literal425_tree=null;
+        CommonTree NEW423_tree=null;
+        CommonTree LEFTPAREN425_tree=null;
+        CommonTree char_literal427_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:3: ( NEW ^ componentPath LEFTPAREN argumentList ')' !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:5: NEW ^ componentPath LEFTPAREN argumentList ')' !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:951:3: ( NEW ^ componentPath LEFTPAREN argumentList ')' !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:951:5: NEW ^ componentPath LEFTPAREN argumentList ')' !
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            NEW421=(Token)match(input,NEW,FOLLOW_NEW_in_newComponentExpression5363); if (state.failed) return retval;
+            NEW423=(Token)match(input,NEW,FOLLOW_NEW_in_newComponentExpression5382); if (state.failed) return retval;
             if ( state.backtracking==0 ) {
-            NEW421_tree = 
-            (CommonTree)adaptor.create(NEW421)
+            NEW423_tree = 
+            (CommonTree)adaptor.create(NEW423)
             ;
-            root_0 = (CommonTree)adaptor.becomeRoot(NEW421_tree, root_0);
+            root_0 = (CommonTree)adaptor.becomeRoot(NEW423_tree, root_0);
             }
 
-            pushFollow(FOLLOW_componentPath_in_newComponentExpression5366);
-            componentPath422=componentPath();
+            pushFollow(FOLLOW_componentPath_in_newComponentExpression5385);
+            componentPath424=componentPath();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, componentPath422.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, componentPath424.getTree());
 
-            LEFTPAREN423=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_newComponentExpression5368); if (state.failed) return retval;
+            LEFTPAREN425=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_newComponentExpression5387); if (state.failed) return retval;
             if ( state.backtracking==0 ) {
-            LEFTPAREN423_tree = 
-            (CommonTree)adaptor.create(LEFTPAREN423)
+            LEFTPAREN425_tree = 
+            (CommonTree)adaptor.create(LEFTPAREN425)
             ;
-            adaptor.addChild(root_0, LEFTPAREN423_tree);
+            adaptor.addChild(root_0, LEFTPAREN425_tree);
             }
 
-            pushFollow(FOLLOW_argumentList_in_newComponentExpression5370);
-            argumentList424=argumentList();
+            pushFollow(FOLLOW_argumentList_in_newComponentExpression5389);
+            argumentList426=argumentList();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, argumentList424.getTree());
+            if ( state.backtracking==0 ) adaptor.addChild(root_0, argumentList426.getTree());
 
-            char_literal425=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_newComponentExpression5372); if (state.failed) return retval;
+            char_literal427=(Token)match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_newComponentExpression5391); if (state.failed) return retval;
 
             }
 
@@ -21105,7 +21555,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 86, newComponentExpression_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 87, newComponentExpression_StartIndex); }
 
         }
         return retval;
@@ -21120,7 +21570,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "componentPath"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:1: componentPath : ( STRING_LITERAL | identifier ( DOT identifier )* );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:954:1: componentPath : ( STRING_LITERAL | identifier ( DOT identifier )* );
     public final CFScriptParser.componentPath_return componentPath() throws RecognitionException {
         CFScriptParser.componentPath_return retval = new CFScriptParser.componentPath_return();
         retval.start = input.LT(1);
@@ -21129,27 +21579,27 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token STRING_LITERAL426=null;
-        Token DOT428=null;
-        CFScriptParser.identifier_return identifier427 =null;
-
+        Token STRING_LITERAL428=null;
+        Token DOT430=null;
         CFScriptParser.identifier_return identifier429 =null;
 
+        CFScriptParser.identifier_return identifier431 =null;
 
-        CommonTree STRING_LITERAL426_tree=null;
-        CommonTree DOT428_tree=null;
+
+        CommonTree STRING_LITERAL428_tree=null;
+        CommonTree DOT430_tree=null;
 
         try {
-            if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
+            if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:950:3: ( STRING_LITERAL | identifier ( DOT identifier )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:955:3: ( STRING_LITERAL | identifier ( DOT identifier )* )
             int alt102=2;
             int LA102_0 = input.LA(1);
 
             if ( (LA102_0==STRING_LITERAL) ) {
                 alt102=1;
             }
-            else if ( (LA102_0==ABORT||LA102_0==CONTAIN||LA102_0==DEFAULT||LA102_0==DIRECTORY||LA102_0==DOES||LA102_0==EXIT||LA102_0==FILE||LA102_0==GREATER||(LA102_0 >= HTTP && LA102_0 <= IDENTIFIER)||LA102_0==INCLUDE||LA102_0==LESS||(LA102_0 >= LOCATION && LA102_0 <= LOCK)||LA102_0==LOOP||LA102_0==NEW||(LA102_0 >= PACKAGE && LA102_0 <= PARAM)||LA102_0==PRIVATE||(LA102_0 >= PUBLIC && LA102_0 <= QUERY)||(LA102_0 >= REMOTE && LA102_0 <= RETHROW)||LA102_0==SAVECONTENT||LA102_0==SETTING||(LA102_0 >= THAN && LA102_0 <= THREAD)||LA102_0==THROW||(LA102_0 >= TO && LA102_0 <= TRANSACTION)||LA102_0==VAR) ) {
+            else if ( (LA102_0==ABORT||LA102_0==COMPONENT||LA102_0==CONTAIN||LA102_0==DEFAULT||LA102_0==DIRECTORY||LA102_0==DOES||LA102_0==EXIT||LA102_0==FILE||LA102_0==GREATER||(LA102_0 >= HTTP && LA102_0 <= IDENTIFIER)||LA102_0==INCLUDE||LA102_0==LESS||(LA102_0 >= LOCATION && LA102_0 <= LOCK)||LA102_0==LOOP||LA102_0==NEW||(LA102_0 >= PACKAGE && LA102_0 <= PARAM)||LA102_0==PRIVATE||(LA102_0 >= PUBLIC && LA102_0 <= QUERY)||(LA102_0 >= REMOTE && LA102_0 <= RETHROW)||LA102_0==SAVECONTENT||LA102_0==SETTING||(LA102_0 >= THAN && LA102_0 <= THREAD)||LA102_0==THROW||(LA102_0 >= TO && LA102_0 <= TRANSACTION)||LA102_0==VAR) ) {
                 alt102=2;
             }
             else if ( (LA102_0==BREAK||(LA102_0 >= CASE && LA102_0 <= CATCH)||LA102_0==CONTINUE||LA102_0==DO||LA102_0==ELSE||LA102_0==FOR||LA102_0==FUNCTION||LA102_0==IF||(LA102_0 >= IMPORT && LA102_0 <= IN)||LA102_0==RETURN||LA102_0==SWITCH||LA102_0==TRY||LA102_0==WHILE) && ((!scriptMode))) {
@@ -21165,35 +21615,35 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt102) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:950:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:955:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    STRING_LITERAL426=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_componentPath5388); if (state.failed) return retval;
+                    STRING_LITERAL428=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_componentPath5407); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    STRING_LITERAL426_tree = 
-                    (CommonTree)adaptor.create(STRING_LITERAL426)
+                    STRING_LITERAL428_tree = 
+                    (CommonTree)adaptor.create(STRING_LITERAL428)
                     ;
-                    adaptor.addChild(root_0, STRING_LITERAL426_tree);
+                    adaptor.addChild(root_0, STRING_LITERAL428_tree);
                     }
 
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:951:5: identifier ( DOT identifier )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:956:5: identifier ( DOT identifier )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    pushFollow(FOLLOW_identifier_in_componentPath5394);
-                    identifier427=identifier();
+                    pushFollow(FOLLOW_identifier_in_componentPath5413);
+                    identifier429=identifier();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier427.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier429.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:951:16: ( DOT identifier )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:956:16: ( DOT identifier )*
                     loop101:
                     do {
                         int alt101=2;
@@ -21202,7 +21652,7 @@ public TreeAdaptor getTreeAdaptor() {
                         if ( (LA101_0==DOT) ) {
                             int LA101_1 = input.LA(2);
 
-                            if ( (LA101_1==ABORT||LA101_1==BREAK||(LA101_1 >= CASE && LA101_1 <= CATCH)||LA101_1==CONTAIN||(LA101_1 >= CONTINUE && LA101_1 <= DEFAULT)||(LA101_1 >= DIRECTORY && LA101_1 <= DOES)||LA101_1==ELSE||LA101_1==EXIT||LA101_1==FILE||LA101_1==FOR||LA101_1==FUNCTION||LA101_1==GREATER||(LA101_1 >= HTTP && LA101_1 <= IF)||(LA101_1 >= IMPORT && LA101_1 <= INCLUDE)||LA101_1==LESS||(LA101_1 >= LOCATION && LA101_1 <= LOCK)||LA101_1==LOOP||LA101_1==NEW||(LA101_1 >= PACKAGE && LA101_1 <= PARAM)||LA101_1==PRIVATE||(LA101_1 >= PUBLIC && LA101_1 <= QUERY)||(LA101_1 >= REMOTE && LA101_1 <= RETHROW)||LA101_1==RETURN||LA101_1==SAVECONTENT||LA101_1==SETTING||LA101_1==SWITCH||(LA101_1 >= THAN && LA101_1 <= THREAD)||LA101_1==THROW||(LA101_1 >= TO && LA101_1 <= TRANSACTION)||(LA101_1 >= TRY && LA101_1 <= VAR)||LA101_1==WHILE) ) {
+                            if ( (LA101_1==ABORT||LA101_1==BREAK||(LA101_1 >= CASE && LA101_1 <= CATCH)||LA101_1==COMPONENT||LA101_1==CONTAIN||(LA101_1 >= CONTINUE && LA101_1 <= DEFAULT)||(LA101_1 >= DIRECTORY && LA101_1 <= DOES)||LA101_1==ELSE||LA101_1==EXIT||LA101_1==FILE||LA101_1==FOR||LA101_1==FUNCTION||LA101_1==GREATER||(LA101_1 >= HTTP && LA101_1 <= IF)||(LA101_1 >= IMPORT && LA101_1 <= INCLUDE)||LA101_1==LESS||(LA101_1 >= LOCATION && LA101_1 <= LOCK)||LA101_1==LOOP||LA101_1==NEW||(LA101_1 >= PACKAGE && LA101_1 <= PARAM)||LA101_1==PRIVATE||(LA101_1 >= PUBLIC && LA101_1 <= QUERY)||(LA101_1 >= REMOTE && LA101_1 <= RETHROW)||LA101_1==RETURN||LA101_1==SAVECONTENT||LA101_1==SETTING||LA101_1==SWITCH||(LA101_1 >= THAN && LA101_1 <= THREAD)||LA101_1==THROW||(LA101_1 >= TO && LA101_1 <= TRANSACTION)||(LA101_1 >= TRY && LA101_1 <= VAR)||LA101_1==WHILE) ) {
                                 alt101=1;
                             }
 
@@ -21212,22 +21662,22 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt101) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:951:18: DOT identifier
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:956:18: DOT identifier
                     	    {
-                    	    DOT428=(Token)match(input,DOT,FOLLOW_DOT_in_componentPath5398); if (state.failed) return retval;
+                    	    DOT430=(Token)match(input,DOT,FOLLOW_DOT_in_componentPath5417); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
-                    	    DOT428_tree = 
-                    	    (CommonTree)adaptor.create(DOT428)
+                    	    DOT430_tree = 
+                    	    (CommonTree)adaptor.create(DOT430)
                     	    ;
-                    	    adaptor.addChild(root_0, DOT428_tree);
+                    	    adaptor.addChild(root_0, DOT430_tree);
                     	    }
 
-                    	    pushFollow(FOLLOW_identifier_in_componentPath5400);
-                    	    identifier429=identifier();
+                    	    pushFollow(FOLLOW_identifier_in_componentPath5419);
+                    	    identifier431=identifier();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier429.getTree());
+                    	    if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier431.getTree());
 
                     	    }
                     	    break;
@@ -21260,7 +21710,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         finally {
         	// do for sure before leaving
-            if ( state.backtracking>0 ) { memoize(input, 87, componentPath_StartIndex); }
+            if ( state.backtracking>0 ) { memoize(input, 88, componentPath_StartIndex); }
 
         }
         return retval;
@@ -21615,7 +22065,7 @@ public TreeAdaptor getTreeAdaptor() {
         int alt109=2;
         int LA109_0 = input.LA(1);
 
-        if ( (LA109_0==ABORT||(LA109_0 >= BOOLEAN_LITERAL && LA109_0 <= BREAK)||(LA109_0 >= CASE && LA109_0 <= CATCH)||LA109_0==CONTAIN||(LA109_0 >= CONTINUE && LA109_0 <= DEFAULT)||(LA109_0 >= DIRECTORY && LA109_0 <= DOES)||LA109_0==ELSE||LA109_0==EXIT||LA109_0==FILE||(LA109_0 >= FLOATING_POINT_LITERAL && LA109_0 <= FOR)||LA109_0==FUNCTION||LA109_0==GREATER||(LA109_0 >= HTTP && LA109_0 <= IF)||(LA109_0 >= IMPORT && LA109_0 <= INTEGER_LITERAL)||(LA109_0 >= LEFTBRACKET && LA109_0 <= LESS)||(LA109_0 >= LOCATION && LA109_0 <= LOCK)||LA109_0==LOOP||LA109_0==MINUS||LA109_0==MINUSMINUS||(LA109_0 >= NEW && LA109_0 <= NULL)||(LA109_0 >= PACKAGE && LA109_0 <= PARAM)||LA109_0==PLUS||LA109_0==PLUSPLUS||LA109_0==PRIVATE||(LA109_0 >= PUBLIC && LA109_0 <= QUERY)||(LA109_0 >= REMOTE && LA109_0 <= RETHROW)||LA109_0==RETURN||LA109_0==SAVECONTENT||LA109_0==SETTING||(LA109_0 >= STRING_LITERAL && LA109_0 <= SWITCH)||(LA109_0 >= THAN && LA109_0 <= THREAD)||LA109_0==THROW||(LA109_0 >= TO && LA109_0 <= TRANSACTION)||(LA109_0 >= TRY && LA109_0 <= VAR)||LA109_0==WHILE||LA109_0==150) ) {
+        if ( (LA109_0==ABORT||(LA109_0 >= BOOLEAN_LITERAL && LA109_0 <= BREAK)||(LA109_0 >= CASE && LA109_0 <= CATCH)||LA109_0==COMPONENT||LA109_0==CONTAIN||(LA109_0 >= CONTINUE && LA109_0 <= DEFAULT)||(LA109_0 >= DIRECTORY && LA109_0 <= DOES)||LA109_0==ELSE||LA109_0==EXIT||LA109_0==FILE||(LA109_0 >= FLOATING_POINT_LITERAL && LA109_0 <= FOR)||LA109_0==FUNCTION||LA109_0==GREATER||(LA109_0 >= HTTP && LA109_0 <= IF)||(LA109_0 >= IMPORT && LA109_0 <= INTEGER_LITERAL)||(LA109_0 >= LEFTBRACKET && LA109_0 <= LESS)||(LA109_0 >= LOCATION && LA109_0 <= LOCK)||LA109_0==LOOP||LA109_0==MINUS||LA109_0==MINUSMINUS||(LA109_0 >= NEW && LA109_0 <= NULL)||(LA109_0 >= PACKAGE && LA109_0 <= PARAM)||LA109_0==PLUS||LA109_0==PLUSPLUS||LA109_0==PRIVATE||(LA109_0 >= PUBLIC && LA109_0 <= QUERY)||(LA109_0 >= REMOTE && LA109_0 <= RETHROW)||LA109_0==RETURN||LA109_0==SAVECONTENT||LA109_0==SETTING||(LA109_0 >= STRING_LITERAL && LA109_0 <= SWITCH)||(LA109_0 >= THAN && LA109_0 <= THREAD)||LA109_0==THROW||(LA109_0 >= TO && LA109_0 <= TRANSACTION)||(LA109_0 >= TRY && LA109_0 <= VAR)||LA109_0==WHILE||LA109_0==150) ) {
             alt109=1;
         }
         switch (alt109) {
@@ -21640,7 +22090,7 @@ public TreeAdaptor getTreeAdaptor() {
         int alt110=2;
         int LA110_0 = input.LA(1);
 
-        if ( (LA110_0==ABORT||(LA110_0 >= BOOLEAN_LITERAL && LA110_0 <= BREAK)||(LA110_0 >= CASE && LA110_0 <= CATCH)||LA110_0==CONTAIN||(LA110_0 >= CONTINUE && LA110_0 <= DEFAULT)||(LA110_0 >= DIRECTORY && LA110_0 <= DOES)||LA110_0==ELSE||LA110_0==EXIT||LA110_0==FILE||(LA110_0 >= FLOATING_POINT_LITERAL && LA110_0 <= FOR)||LA110_0==FUNCTION||LA110_0==GREATER||(LA110_0 >= HTTP && LA110_0 <= IF)||(LA110_0 >= IMPORT && LA110_0 <= INTEGER_LITERAL)||(LA110_0 >= LEFTBRACKET && LA110_0 <= LESS)||(LA110_0 >= LOCATION && LA110_0 <= LOCK)||LA110_0==LOOP||LA110_0==MINUS||LA110_0==MINUSMINUS||(LA110_0 >= NEW && LA110_0 <= NULL)||(LA110_0 >= PACKAGE && LA110_0 <= PARAM)||LA110_0==PLUS||LA110_0==PLUSPLUS||LA110_0==PRIVATE||(LA110_0 >= PUBLIC && LA110_0 <= QUERY)||(LA110_0 >= REMOTE && LA110_0 <= RETHROW)||LA110_0==RETURN||LA110_0==SAVECONTENT||LA110_0==SETTING||(LA110_0 >= STRING_LITERAL && LA110_0 <= SWITCH)||(LA110_0 >= THAN && LA110_0 <= THREAD)||LA110_0==THROW||(LA110_0 >= TO && LA110_0 <= TRANSACTION)||(LA110_0 >= TRY && LA110_0 <= VAR)||LA110_0==WHILE||LA110_0==150) ) {
+        if ( (LA110_0==ABORT||(LA110_0 >= BOOLEAN_LITERAL && LA110_0 <= BREAK)||(LA110_0 >= CASE && LA110_0 <= CATCH)||LA110_0==COMPONENT||LA110_0==CONTAIN||(LA110_0 >= CONTINUE && LA110_0 <= DEFAULT)||(LA110_0 >= DIRECTORY && LA110_0 <= DOES)||LA110_0==ELSE||LA110_0==EXIT||LA110_0==FILE||(LA110_0 >= FLOATING_POINT_LITERAL && LA110_0 <= FOR)||LA110_0==FUNCTION||LA110_0==GREATER||(LA110_0 >= HTTP && LA110_0 <= IF)||(LA110_0 >= IMPORT && LA110_0 <= INTEGER_LITERAL)||(LA110_0 >= LEFTBRACKET && LA110_0 <= LESS)||(LA110_0 >= LOCATION && LA110_0 <= LOCK)||LA110_0==LOOP||LA110_0==MINUS||LA110_0==MINUSMINUS||(LA110_0 >= NEW && LA110_0 <= NULL)||(LA110_0 >= PACKAGE && LA110_0 <= PARAM)||LA110_0==PLUS||LA110_0==PLUSPLUS||LA110_0==PRIVATE||(LA110_0 >= PUBLIC && LA110_0 <= QUERY)||(LA110_0 >= REMOTE && LA110_0 <= RETHROW)||LA110_0==RETURN||LA110_0==SAVECONTENT||LA110_0==SETTING||(LA110_0 >= STRING_LITERAL && LA110_0 <= SWITCH)||(LA110_0 >= THAN && LA110_0 <= THREAD)||LA110_0==THROW||(LA110_0 >= TO && LA110_0 <= TRANSACTION)||(LA110_0 >= TRY && LA110_0 <= VAR)||LA110_0==WHILE||LA110_0==150) ) {
             alt110=1;
         }
         switch (alt110) {
@@ -21665,7 +22115,7 @@ public TreeAdaptor getTreeAdaptor() {
         int alt111=2;
         int LA111_0 = input.LA(1);
 
-        if ( (LA111_0==ABORT||(LA111_0 >= BOOLEAN_LITERAL && LA111_0 <= BREAK)||(LA111_0 >= CASE && LA111_0 <= CATCH)||LA111_0==CONTAIN||(LA111_0 >= CONTINUE && LA111_0 <= DEFAULT)||(LA111_0 >= DIRECTORY && LA111_0 <= DOES)||LA111_0==ELSE||LA111_0==EXIT||LA111_0==FILE||(LA111_0 >= FLOATING_POINT_LITERAL && LA111_0 <= FOR)||LA111_0==FUNCTION||LA111_0==GREATER||(LA111_0 >= HTTP && LA111_0 <= IF)||(LA111_0 >= IMPORT && LA111_0 <= INTEGER_LITERAL)||(LA111_0 >= LEFTBRACKET && LA111_0 <= LESS)||(LA111_0 >= LOCATION && LA111_0 <= LOCK)||LA111_0==LOOP||LA111_0==MINUS||LA111_0==MINUSMINUS||(LA111_0 >= NEW && LA111_0 <= NULL)||(LA111_0 >= PACKAGE && LA111_0 <= PARAM)||LA111_0==PLUS||LA111_0==PLUSPLUS||LA111_0==PRIVATE||(LA111_0 >= PUBLIC && LA111_0 <= QUERY)||(LA111_0 >= REMOTE && LA111_0 <= RETHROW)||LA111_0==RETURN||LA111_0==SAVECONTENT||LA111_0==SETTING||(LA111_0 >= STRING_LITERAL && LA111_0 <= SWITCH)||(LA111_0 >= THAN && LA111_0 <= THREAD)||LA111_0==THROW||(LA111_0 >= TO && LA111_0 <= TRANSACTION)||(LA111_0 >= TRY && LA111_0 <= VAR)||LA111_0==WHILE||LA111_0==150) ) {
+        if ( (LA111_0==ABORT||(LA111_0 >= BOOLEAN_LITERAL && LA111_0 <= BREAK)||(LA111_0 >= CASE && LA111_0 <= CATCH)||LA111_0==COMPONENT||LA111_0==CONTAIN||(LA111_0 >= CONTINUE && LA111_0 <= DEFAULT)||(LA111_0 >= DIRECTORY && LA111_0 <= DOES)||LA111_0==ELSE||LA111_0==EXIT||LA111_0==FILE||(LA111_0 >= FLOATING_POINT_LITERAL && LA111_0 <= FOR)||LA111_0==FUNCTION||LA111_0==GREATER||(LA111_0 >= HTTP && LA111_0 <= IF)||(LA111_0 >= IMPORT && LA111_0 <= INTEGER_LITERAL)||(LA111_0 >= LEFTBRACKET && LA111_0 <= LESS)||(LA111_0 >= LOCATION && LA111_0 <= LOCK)||LA111_0==LOOP||LA111_0==MINUS||LA111_0==MINUSMINUS||(LA111_0 >= NEW && LA111_0 <= NULL)||(LA111_0 >= PACKAGE && LA111_0 <= PARAM)||LA111_0==PLUS||LA111_0==PLUSPLUS||LA111_0==PRIVATE||(LA111_0 >= PUBLIC && LA111_0 <= QUERY)||(LA111_0 >= REMOTE && LA111_0 <= RETHROW)||LA111_0==RETURN||LA111_0==SAVECONTENT||LA111_0==SETTING||(LA111_0 >= STRING_LITERAL && LA111_0 <= SWITCH)||(LA111_0 >= THAN && LA111_0 <= THREAD)||LA111_0==THROW||(LA111_0 >= TO && LA111_0 <= TRANSACTION)||(LA111_0 >= TRY && LA111_0 <= VAR)||LA111_0==WHILE||LA111_0==150) ) {
             alt111=1;
         }
         switch (alt111) {
@@ -21807,10 +22257,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred78_CFScript
     public final void synpred78_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:21: ( paramStatementAttributes )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:21: paramStatementAttributes
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:21: ( paramStatementAttributes )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:21: paramStatementAttributes
         {
-        pushFollow(FOLLOW_paramStatementAttributes_in_synpred78_CFScript2837);
+        pushFollow(FOLLOW_paramStatementAttributes_in_synpred78_CFScript2851);
         paramStatementAttributes();
 
         state._fsp--;
@@ -21823,10 +22273,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred79_CFScript
     public final void synpred79_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:49: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:49: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:49: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:49: compoundStatement
         {
-        pushFollow(FOLLOW_compoundStatement_in_synpred79_CFScript2842);
+        pushFollow(FOLLOW_compoundStatement_in_synpred79_CFScript2856);
         compoundStatement();
 
         state._fsp--;
@@ -21839,10 +22289,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred80_CFScript
     public final void synpred80_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:19: ( param )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:19: param
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:19: ( param )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:19: param
         {
-        pushFollow(FOLLOW_param_in_synpred80_CFScript2879);
+        pushFollow(FOLLOW_param_in_synpred80_CFScript2893);
         param();
 
         state._fsp--;
@@ -21855,10 +22305,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred81_CFScript
     public final void synpred81_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:28: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:28: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:28: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:621:28: compoundStatement
         {
-        pushFollow(FOLLOW_compoundStatement_in_synpred81_CFScript2884);
+        pushFollow(FOLLOW_compoundStatement_in_synpred81_CFScript2898);
         compoundStatement();
 
         state._fsp--;
@@ -21871,10 +22321,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred89_CFScript
     public final void synpred89_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:43: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:647:43: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:43: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:651:43: compoundStatement
         {
-        pushFollow(FOLLOW_compoundStatement_in_synpred89_CFScript3022);
+        pushFollow(FOLLOW_compoundStatement_in_synpred89_CFScript3036);
         compoundStatement();
 
         state._fsp--;
@@ -21887,10 +22337,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred93_CFScript
     public final void synpred93_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:7: ( param )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:7: param
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:7: ( param )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:678:7: param
         {
-        pushFollow(FOLLOW_param_in_synpred93_CFScript3246);
+        pushFollow(FOLLOW_param_in_synpred93_CFScript3260);
         param();
 
         state._fsp--;
@@ -21903,12 +22353,12 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred94_CFScript
     public final void synpred94_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:21: ( EQUALSOP impliesExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:21: EQUALSOP impliesExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:21: ( EQUALSOP impliesExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:21: EQUALSOP impliesExpression
         {
-        match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred94_CFScript3313); if (state.failed) return ;
+        match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred94_CFScript3327); if (state.failed) return ;
 
-        pushFollow(FOLLOW_impliesExpression_in_synpred94_CFScript3315);
+        pushFollow(FOLLOW_impliesExpression_in_synpred94_CFScript3329);
         impliesExpression();
 
         state._fsp--;
@@ -21921,31 +22371,31 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred95_CFScript
     public final void synpred95_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:4: ( VAR identifier ( EQUALSOP impliesExpression )? )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:4: VAR identifier ( EQUALSOP impliesExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:4: ( VAR identifier ( EQUALSOP impliesExpression )? )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:4: VAR identifier ( EQUALSOP impliesExpression )?
         {
-        match(input,VAR,FOLLOW_VAR_in_synpred95_CFScript3307); if (state.failed) return ;
+        match(input,VAR,FOLLOW_VAR_in_synpred95_CFScript3321); if (state.failed) return ;
 
-        pushFollow(FOLLOW_identifier_in_synpred95_CFScript3309);
+        pushFollow(FOLLOW_identifier_in_synpred95_CFScript3323);
         identifier();
 
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:19: ( EQUALSOP impliesExpression )?
-        int alt118=2;
-        int LA118_0 = input.LA(1);
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:19: ( EQUALSOP impliesExpression )?
+        int alt117=2;
+        int LA117_0 = input.LA(1);
 
-        if ( (LA118_0==EQUALSOP) ) {
-            alt118=1;
+        if ( (LA117_0==EQUALSOP) ) {
+            alt117=1;
         }
-        switch (alt118) {
+        switch (alt117) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:21: EQUALSOP impliesExpression
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:21: EQUALSOP impliesExpression
                 {
-                match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred95_CFScript3313); if (state.failed) return ;
+                match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred95_CFScript3327); if (state.failed) return ;
 
-                pushFollow(FOLLOW_impliesExpression_in_synpred95_CFScript3315);
+                pushFollow(FOLLOW_impliesExpression_in_synpred95_CFScript3329);
                 impliesExpression();
 
                 state._fsp--;
@@ -21964,8 +22414,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred102_CFScript
     public final void synpred102_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:25: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:694:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:25: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression
         {
         if ( input.LA(1)==CONCATEQUALS||input.LA(1)==EQUALSOP||input.LA(1)==MINUSEQUALS||input.LA(1)==MODEQUALS||input.LA(1)==PLUSEQUALS||input.LA(1)==SLASHEQUALS||input.LA(1)==STAREQUALS ) {
             input.consume();
@@ -21979,7 +22429,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
 
 
-        pushFollow(FOLLOW_impliesExpression_in_synpred102_CFScript3391);
+        pushFollow(FOLLOW_impliesExpression_in_synpred102_CFScript3405);
         impliesExpression();
 
         state._fsp--;
@@ -21992,10 +22442,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred103_CFScript
     public final void synpred103_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:4: ( ternary )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:698:4: ternary
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:702:4: ( ternary )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:702:4: ternary
         {
-        pushFollow(FOLLOW_ternary_in_synpred103_CFScript3406);
+        pushFollow(FOLLOW_ternary_in_synpred103_CFScript3420);
         ternary();
 
         state._fsp--;
@@ -22008,29 +22458,29 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred116_CFScript
     public final void synpred116_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:9: ( ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:9: ( ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression
         {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 )
-        int alt119=4;
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 )
+        int alt118=4;
         switch ( input.LA(1) ) {
         case LESS:
             {
-            int LA119_1 = input.LA(2);
+            int LA118_1 = input.LA(2);
 
-            if ( (LA119_1==THAN) ) {
-                int LA119_7 = input.LA(3);
+            if ( (LA118_1==THAN) ) {
+                int LA118_7 = input.LA(3);
 
-                if ( (LA119_7==OR) ) {
-                    alt119=1;
+                if ( (LA118_7==OR) ) {
+                    alt118=1;
                 }
-                else if ( (LA119_7==ABORT||(LA119_7 >= BOOLEAN_LITERAL && LA119_7 <= BREAK)||(LA119_7 >= CASE && LA119_7 <= CATCH)||LA119_7==CONTAIN||(LA119_7 >= CONTINUE && LA119_7 <= DEFAULT)||(LA119_7 >= DIRECTORY && LA119_7 <= DOES)||LA119_7==ELSE||LA119_7==EXIT||LA119_7==FILE||(LA119_7 >= FLOATING_POINT_LITERAL && LA119_7 <= FOR)||LA119_7==FUNCTION||LA119_7==GREATER||(LA119_7 >= HTTP && LA119_7 <= IF)||(LA119_7 >= IMPORT && LA119_7 <= INTEGER_LITERAL)||(LA119_7 >= LEFTBRACKET && LA119_7 <= LESS)||(LA119_7 >= LOCATION && LA119_7 <= LOCK)||LA119_7==LOOP||LA119_7==MINUS||LA119_7==MINUSMINUS||LA119_7==NEW||LA119_7==NULL||(LA119_7 >= PACKAGE && LA119_7 <= PARAM)||LA119_7==PLUS||LA119_7==PLUSPLUS||LA119_7==PRIVATE||(LA119_7 >= PUBLIC && LA119_7 <= QUERY)||(LA119_7 >= REMOTE && LA119_7 <= RETHROW)||LA119_7==RETURN||LA119_7==SAVECONTENT||LA119_7==SETTING||(LA119_7 >= STRING_LITERAL && LA119_7 <= SWITCH)||(LA119_7 >= THAN && LA119_7 <= THREAD)||LA119_7==THROW||(LA119_7 >= TO && LA119_7 <= TRANSACTION)||(LA119_7 >= TRY && LA119_7 <= VAR)||LA119_7==WHILE||LA119_7==150) ) {
-                    alt119=3;
+                else if ( (LA118_7==ABORT||(LA118_7 >= BOOLEAN_LITERAL && LA118_7 <= BREAK)||(LA118_7 >= CASE && LA118_7 <= CATCH)||LA118_7==COMPONENT||LA118_7==CONTAIN||(LA118_7 >= CONTINUE && LA118_7 <= DEFAULT)||(LA118_7 >= DIRECTORY && LA118_7 <= DOES)||LA118_7==ELSE||LA118_7==EXIT||LA118_7==FILE||(LA118_7 >= FLOATING_POINT_LITERAL && LA118_7 <= FOR)||LA118_7==FUNCTION||LA118_7==GREATER||(LA118_7 >= HTTP && LA118_7 <= IF)||(LA118_7 >= IMPORT && LA118_7 <= INTEGER_LITERAL)||(LA118_7 >= LEFTBRACKET && LA118_7 <= LESS)||(LA118_7 >= LOCATION && LA118_7 <= LOCK)||LA118_7==LOOP||LA118_7==MINUS||LA118_7==MINUSMINUS||LA118_7==NEW||LA118_7==NULL||(LA118_7 >= PACKAGE && LA118_7 <= PARAM)||LA118_7==PLUS||LA118_7==PLUSPLUS||LA118_7==PRIVATE||(LA118_7 >= PUBLIC && LA118_7 <= QUERY)||(LA118_7 >= REMOTE && LA118_7 <= RETHROW)||LA118_7==RETURN||LA118_7==SAVECONTENT||LA118_7==SETTING||(LA118_7 >= STRING_LITERAL && LA118_7 <= SWITCH)||(LA118_7 >= THAN && LA118_7 <= THREAD)||LA118_7==THROW||(LA118_7 >= TO && LA118_7 <= TRANSACTION)||(LA118_7 >= TRY && LA118_7 <= VAR)||LA118_7==WHILE||LA118_7==150) ) {
+                    alt118=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 119, 7, input);
+                        new NoViableAltException("", 118, 7, input);
 
                     throw nvae;
 
@@ -22039,7 +22489,7 @@ public TreeAdaptor getTreeAdaptor() {
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 119, 1, input);
+                    new NoViableAltException("", 118, 1, input);
 
                 throw nvae;
 
@@ -22048,21 +22498,21 @@ public TreeAdaptor getTreeAdaptor() {
             break;
         case GREATER:
             {
-            int LA119_2 = input.LA(2);
+            int LA118_2 = input.LA(2);
 
-            if ( (LA119_2==THAN) ) {
-                int LA119_8 = input.LA(3);
+            if ( (LA118_2==THAN) ) {
+                int LA118_8 = input.LA(3);
 
-                if ( (LA119_8==OR) ) {
-                    alt119=1;
+                if ( (LA118_8==OR) ) {
+                    alt118=1;
                 }
-                else if ( (LA119_8==ABORT||(LA119_8 >= BOOLEAN_LITERAL && LA119_8 <= BREAK)||(LA119_8 >= CASE && LA119_8 <= CATCH)||LA119_8==CONTAIN||(LA119_8 >= CONTINUE && LA119_8 <= DEFAULT)||(LA119_8 >= DIRECTORY && LA119_8 <= DOES)||LA119_8==ELSE||LA119_8==EXIT||LA119_8==FILE||(LA119_8 >= FLOATING_POINT_LITERAL && LA119_8 <= FOR)||LA119_8==FUNCTION||LA119_8==GREATER||(LA119_8 >= HTTP && LA119_8 <= IF)||(LA119_8 >= IMPORT && LA119_8 <= INTEGER_LITERAL)||(LA119_8 >= LEFTBRACKET && LA119_8 <= LESS)||(LA119_8 >= LOCATION && LA119_8 <= LOCK)||LA119_8==LOOP||LA119_8==MINUS||LA119_8==MINUSMINUS||LA119_8==NEW||LA119_8==NULL||(LA119_8 >= PACKAGE && LA119_8 <= PARAM)||LA119_8==PLUS||LA119_8==PLUSPLUS||LA119_8==PRIVATE||(LA119_8 >= PUBLIC && LA119_8 <= QUERY)||(LA119_8 >= REMOTE && LA119_8 <= RETHROW)||LA119_8==RETURN||LA119_8==SAVECONTENT||LA119_8==SETTING||(LA119_8 >= STRING_LITERAL && LA119_8 <= SWITCH)||(LA119_8 >= THAN && LA119_8 <= THREAD)||LA119_8==THROW||(LA119_8 >= TO && LA119_8 <= TRANSACTION)||(LA119_8 >= TRY && LA119_8 <= VAR)||LA119_8==WHILE||LA119_8==150) ) {
-                    alt119=3;
+                else if ( (LA118_8==ABORT||(LA118_8 >= BOOLEAN_LITERAL && LA118_8 <= BREAK)||(LA118_8 >= CASE && LA118_8 <= CATCH)||LA118_8==COMPONENT||LA118_8==CONTAIN||(LA118_8 >= CONTINUE && LA118_8 <= DEFAULT)||(LA118_8 >= DIRECTORY && LA118_8 <= DOES)||LA118_8==ELSE||LA118_8==EXIT||LA118_8==FILE||(LA118_8 >= FLOATING_POINT_LITERAL && LA118_8 <= FOR)||LA118_8==FUNCTION||LA118_8==GREATER||(LA118_8 >= HTTP && LA118_8 <= IF)||(LA118_8 >= IMPORT && LA118_8 <= INTEGER_LITERAL)||(LA118_8 >= LEFTBRACKET && LA118_8 <= LESS)||(LA118_8 >= LOCATION && LA118_8 <= LOCK)||LA118_8==LOOP||LA118_8==MINUS||LA118_8==MINUSMINUS||LA118_8==NEW||LA118_8==NULL||(LA118_8 >= PACKAGE && LA118_8 <= PARAM)||LA118_8==PLUS||LA118_8==PLUSPLUS||LA118_8==PRIVATE||(LA118_8 >= PUBLIC && LA118_8 <= QUERY)||(LA118_8 >= REMOTE && LA118_8 <= RETHROW)||LA118_8==RETURN||LA118_8==SAVECONTENT||LA118_8==SETTING||(LA118_8 >= STRING_LITERAL && LA118_8 <= SWITCH)||(LA118_8 >= THAN && LA118_8 <= THREAD)||LA118_8==THROW||(LA118_8 >= TO && LA118_8 <= TRANSACTION)||(LA118_8 >= TRY && LA118_8 <= VAR)||LA118_8==WHILE||LA118_8==150) ) {
+                    alt118=3;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 119, 8, input);
+                        new NoViableAltException("", 118, 8, input);
 
                     throw nvae;
 
@@ -22071,7 +22521,7 @@ public TreeAdaptor getTreeAdaptor() {
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 119, 2, input);
+                    new NoViableAltException("", 118, 2, input);
 
                 throw nvae;
 
@@ -22080,28 +22530,28 @@ public TreeAdaptor getTreeAdaptor() {
             break;
         case DOES:
             {
-            alt119=2;
+            alt118=2;
             }
             break;
         case NOT:
             {
-            alt119=3;
+            alt118=3;
             }
             break;
         case IS:
             {
-            int LA119_5 = input.LA(2);
+            int LA118_5 = input.LA(2);
 
-            if ( (LA119_5==NOT) ) {
-                alt119=3;
+            if ( (LA118_5==NOT) ) {
+                alt118=3;
             }
-            else if ( (LA119_5==ABORT||(LA119_5 >= BOOLEAN_LITERAL && LA119_5 <= BREAK)||(LA119_5 >= CASE && LA119_5 <= CATCH)||LA119_5==CONTAIN||(LA119_5 >= CONTINUE && LA119_5 <= DEFAULT)||(LA119_5 >= DIRECTORY && LA119_5 <= DOES)||LA119_5==ELSE||LA119_5==EXIT||LA119_5==FILE||(LA119_5 >= FLOATING_POINT_LITERAL && LA119_5 <= FOR)||LA119_5==FUNCTION||LA119_5==GREATER||(LA119_5 >= HTTP && LA119_5 <= IF)||(LA119_5 >= IMPORT && LA119_5 <= INTEGER_LITERAL)||(LA119_5 >= LEFTBRACKET && LA119_5 <= LESS)||(LA119_5 >= LOCATION && LA119_5 <= LOCK)||LA119_5==LOOP||LA119_5==MINUS||LA119_5==MINUSMINUS||LA119_5==NEW||LA119_5==NULL||(LA119_5 >= PACKAGE && LA119_5 <= PARAM)||LA119_5==PLUS||LA119_5==PLUSPLUS||LA119_5==PRIVATE||(LA119_5 >= PUBLIC && LA119_5 <= QUERY)||(LA119_5 >= REMOTE && LA119_5 <= RETHROW)||LA119_5==RETURN||LA119_5==SAVECONTENT||LA119_5==SETTING||(LA119_5 >= STRING_LITERAL && LA119_5 <= SWITCH)||(LA119_5 >= THAN && LA119_5 <= THREAD)||LA119_5==THROW||(LA119_5 >= TO && LA119_5 <= TRANSACTION)||(LA119_5 >= TRY && LA119_5 <= VAR)||LA119_5==WHILE||LA119_5==150) ) {
-                alt119=4;
+            else if ( (LA118_5==ABORT||(LA118_5 >= BOOLEAN_LITERAL && LA118_5 <= BREAK)||(LA118_5 >= CASE && LA118_5 <= CATCH)||LA118_5==COMPONENT||LA118_5==CONTAIN||(LA118_5 >= CONTINUE && LA118_5 <= DEFAULT)||(LA118_5 >= DIRECTORY && LA118_5 <= DOES)||LA118_5==ELSE||LA118_5==EXIT||LA118_5==FILE||(LA118_5 >= FLOATING_POINT_LITERAL && LA118_5 <= FOR)||LA118_5==FUNCTION||LA118_5==GREATER||(LA118_5 >= HTTP && LA118_5 <= IF)||(LA118_5 >= IMPORT && LA118_5 <= INTEGER_LITERAL)||(LA118_5 >= LEFTBRACKET && LA118_5 <= LESS)||(LA118_5 >= LOCATION && LA118_5 <= LOCK)||LA118_5==LOOP||LA118_5==MINUS||LA118_5==MINUSMINUS||LA118_5==NEW||LA118_5==NULL||(LA118_5 >= PACKAGE && LA118_5 <= PARAM)||LA118_5==PLUS||LA118_5==PLUSPLUS||LA118_5==PRIVATE||(LA118_5 >= PUBLIC && LA118_5 <= QUERY)||(LA118_5 >= REMOTE && LA118_5 <= RETHROW)||LA118_5==RETURN||LA118_5==SAVECONTENT||LA118_5==SETTING||(LA118_5 >= STRING_LITERAL && LA118_5 <= SWITCH)||(LA118_5 >= THAN && LA118_5 <= THREAD)||LA118_5==THROW||(LA118_5 >= TO && LA118_5 <= TRANSACTION)||(LA118_5 >= TRY && LA118_5 <= VAR)||LA118_5==WHILE||LA118_5==150) ) {
+                alt118=4;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 119, 5, input);
+                    new NoViableAltException("", 118, 5, input);
 
                 throw nvae;
 
@@ -22126,23 +22576,23 @@ public TreeAdaptor getTreeAdaptor() {
         case 154:
         case 155:
             {
-            alt119=4;
+            alt118=4;
             }
             break;
         default:
             if (state.backtracking>0) {state.failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("", 119, 0, input);
+                new NoViableAltException("", 118, 0, input);
 
             throw nvae;
 
         }
 
-        switch (alt119) {
+        switch (alt118) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:11: equalityOperator5
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:11: equalityOperator5
                 {
-                pushFollow(FOLLOW_equalityOperator5_in_synpred116_CFScript3611);
+                pushFollow(FOLLOW_equalityOperator5_in_synpred116_CFScript3625);
                 equalityOperator5();
 
                 state._fsp--;
@@ -22151,9 +22601,9 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 2 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:32: equalityOperator3
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:32: equalityOperator3
                 {
-                pushFollow(FOLLOW_equalityOperator3_in_synpred116_CFScript3616);
+                pushFollow(FOLLOW_equalityOperator3_in_synpred116_CFScript3630);
                 equalityOperator3();
 
                 state._fsp--;
@@ -22162,9 +22612,9 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 3 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:54: equalityOperator2
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:54: equalityOperator2
                 {
-                pushFollow(FOLLOW_equalityOperator2_in_synpred116_CFScript3622);
+                pushFollow(FOLLOW_equalityOperator2_in_synpred116_CFScript3636);
                 equalityOperator2();
 
                 state._fsp--;
@@ -22173,9 +22623,9 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 4 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:729:75: equalityOperator1
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:733:75: equalityOperator1
                 {
-                pushFollow(FOLLOW_equalityOperator1_in_synpred116_CFScript3627);
+                pushFollow(FOLLOW_equalityOperator1_in_synpred116_CFScript3641);
                 equalityOperator1();
 
                 state._fsp--;
@@ -22187,7 +22637,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
 
 
-        pushFollow(FOLLOW_concatenationExpression_in_synpred116_CFScript3632);
+        pushFollow(FOLLOW_concatenationExpression_in_synpred116_CFScript3646);
         concatenationExpression();
 
         state._fsp--;
@@ -22200,8 +22650,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred140_CFScript
     public final void synpred140_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:20: ( ( PLUS | MINUS ) modExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:20: ( PLUS | MINUS ) modExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:20: ( ( PLUS | MINUS ) modExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:778:20: ( PLUS | MINUS ) modExpression
         {
         if ( input.LA(1)==MINUS||input.LA(1)==PLUS ) {
             input.consume();
@@ -22215,7 +22665,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
 
 
-        pushFollow(FOLLOW_modExpression_in_synpred140_CFScript4159);
+        pushFollow(FOLLOW_modExpression_in_synpred140_CFScript4173);
         modExpression();
 
         state._fsp--;
@@ -22228,18 +22678,18 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred151_CFScript
     public final void synpred151_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:54: ( LEFTPAREN argumentList ')' )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:54: LEFTPAREN argumentList ')'
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:54: ( LEFTPAREN argumentList ')' )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:54: LEFTPAREN argumentList ')'
         {
-        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred151_CFScript4340); if (state.failed) return ;
+        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred151_CFScript4354); if (state.failed) return ;
 
-        pushFollow(FOLLOW_argumentList_in_synpred151_CFScript4342);
+        pushFollow(FOLLOW_argumentList_in_synpred151_CFScript4356);
         argumentList();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred151_CFScript4344); if (state.failed) return ;
+        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred151_CFScript4358); if (state.failed) return ;
 
         }
 
@@ -22248,68 +22698,68 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred153_CFScript
     public final void synpred153_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:4: ( newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:4: ( newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
         {
-        pushFollow(FOLLOW_newComponentExpression_in_synpred153_CFScript4332);
+        pushFollow(FOLLOW_newComponentExpression_in_synpred153_CFScript4346);
         newComponentExpression();
 
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
-        loop122:
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+        loop121:
         do {
-            int alt122=2;
-            int LA122_0 = input.LA(1);
+            int alt121=2;
+            int LA121_0 = input.LA(1);
 
-            if ( (LA122_0==DOT) ) {
-                alt122=1;
+            if ( (LA121_0==DOT) ) {
+                alt121=1;
             }
 
 
-            switch (alt122) {
+            switch (alt121) {
         	case 1 :
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
         	    {
-        	    match(input,DOT,FOLLOW_DOT_in_synpred153_CFScript4335); if (state.failed) return ;
+        	    match(input,DOT,FOLLOW_DOT_in_synpred153_CFScript4349); if (state.failed) return ;
 
-        	    pushFollow(FOLLOW_primaryExpressionIRW_in_synpred153_CFScript4337);
+        	    pushFollow(FOLLOW_primaryExpressionIRW_in_synpred153_CFScript4351);
         	    primaryExpressionIRW();
 
         	    state._fsp--;
         	    if (state.failed) return ;
 
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:53: ( LEFTPAREN argumentList ')' )*
-        	    loop121:
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:53: ( LEFTPAREN argumentList ')' )*
+        	    loop120:
         	    do {
-        	        int alt121=2;
-        	        int LA121_0 = input.LA(1);
+        	        int alt120=2;
+        	        int LA120_0 = input.LA(1);
 
-        	        if ( (LA121_0==LEFTPAREN) ) {
-        	            alt121=1;
+        	        if ( (LA120_0==LEFTPAREN) ) {
+        	            alt120=1;
         	        }
 
 
-        	        switch (alt121) {
+        	        switch (alt120) {
         	    	case 1 :
-        	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:798:54: LEFTPAREN argumentList ')'
+        	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:802:54: LEFTPAREN argumentList ')'
         	    	    {
-        	    	    match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred153_CFScript4340); if (state.failed) return ;
+        	    	    match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred153_CFScript4354); if (state.failed) return ;
 
-        	    	    pushFollow(FOLLOW_argumentList_in_synpred153_CFScript4342);
+        	    	    pushFollow(FOLLOW_argumentList_in_synpred153_CFScript4356);
         	    	    argumentList();
 
         	    	    state._fsp--;
         	    	    if (state.failed) return ;
 
-        	    	    match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred153_CFScript4344); if (state.failed) return ;
+        	    	    match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred153_CFScript4358); if (state.failed) return ;
 
         	    	    }
         	    	    break;
 
         	    	default :
-        	    	    break loop121;
+        	    	    break loop120;
         	        }
         	    } while (true);
 
@@ -22318,7 +22768,7 @@ public TreeAdaptor getTreeAdaptor() {
         	    break;
 
         	default :
-        	    break loop122;
+        	    break loop121;
             }
         } while (true);
 
@@ -22330,16 +22780,16 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred154_CFScript
     public final void synpred154_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:5: ( memberExpression MINUSMINUS )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:799:5: memberExpression MINUSMINUS
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:803:5: ( memberExpression MINUSMINUS )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:803:5: memberExpression MINUSMINUS
         {
-        pushFollow(FOLLOW_memberExpression_in_synpred154_CFScript4354);
+        pushFollow(FOLLOW_memberExpression_in_synpred154_CFScript4368);
         memberExpression();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_synpred154_CFScript4356); if (state.failed) return ;
+        match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_synpred154_CFScript4370); if (state.failed) return ;
 
         }
 
@@ -22348,16 +22798,16 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred155_CFScript
     public final void synpred155_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:5: ( memberExpression PLUSPLUS )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:5: memberExpression PLUSPLUS
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:5: ( memberExpression PLUSPLUS )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:5: memberExpression PLUSPLUS
         {
-        pushFollow(FOLLOW_memberExpression_in_synpred155_CFScript4370);
+        pushFollow(FOLLOW_memberExpression_in_synpred155_CFScript4384);
         memberExpression();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_synpred155_CFScript4372); if (state.failed) return ;
+        match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_synpred155_CFScript4386); if (state.failed) return ;
 
         }
 
@@ -22366,26 +22816,26 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred157_CFScript
     public final void synpred157_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:5: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:5: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
         {
-        match(input,DOT,FOLLOW_DOT_in_synpred157_CFScript4443); if (state.failed) return ;
+        match(input,DOT,FOLLOW_DOT_in_synpred157_CFScript4457); if (state.failed) return ;
 
-        pushFollow(FOLLOW_primaryExpressionIRW_in_synpred157_CFScript4445);
+        pushFollow(FOLLOW_primaryExpressionIRW_in_synpred157_CFScript4459);
         primaryExpressionIRW();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred157_CFScript4447); if (state.failed) return ;
+        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred157_CFScript4461); if (state.failed) return ;
 
-        pushFollow(FOLLOW_argumentList_in_synpred157_CFScript4449);
+        pushFollow(FOLLOW_argumentList_in_synpred157_CFScript4463);
         argumentList();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred157_CFScript4451); if (state.failed) return ;
+        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred157_CFScript4465); if (state.failed) return ;
 
         }
 
@@ -22394,18 +22844,18 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred158_CFScript
     public final void synpred158_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:8: ( LEFTPAREN argumentList RIGHTPAREN )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:8: LEFTPAREN argumentList RIGHTPAREN
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:8: ( LEFTPAREN argumentList RIGHTPAREN )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:8: LEFTPAREN argumentList RIGHTPAREN
         {
-        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred158_CFScript4474); if (state.failed) return ;
+        match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred158_CFScript4488); if (state.failed) return ;
 
-        pushFollow(FOLLOW_argumentList_in_synpred158_CFScript4476);
+        pushFollow(FOLLOW_argumentList_in_synpred158_CFScript4490);
         argumentList();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred158_CFScript4478); if (state.failed) return ;
+        match(input,RIGHTPAREN,FOLLOW_RIGHTPAREN_in_synpred158_CFScript4492); if (state.failed) return ;
 
         }
 
@@ -22414,18 +22864,18 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred159_CFScript
     public final void synpred159_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:7: ( LEFTBRACKET impliesExpression RIGHTBRACKET )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:7: LEFTBRACKET impliesExpression RIGHTBRACKET
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:7: ( LEFTBRACKET impliesExpression RIGHTBRACKET )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:7: LEFTBRACKET impliesExpression RIGHTBRACKET
         {
-        match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_synpred159_CFScript4497); if (state.failed) return ;
+        match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_synpred159_CFScript4511); if (state.failed) return ;
 
-        pushFollow(FOLLOW_impliesExpression_in_synpred159_CFScript4499);
+        pushFollow(FOLLOW_impliesExpression_in_synpred159_CFScript4513);
         impliesExpression();
 
         state._fsp--;
         if (state.failed) return ;
 
-        match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_synpred159_CFScript4501); if (state.failed) return ;
+        match(input,RIGHTBRACKET,FOLLOW_RIGHTBRACKET_in_synpred159_CFScript4515); if (state.failed) return ;
 
         }
 
@@ -22434,12 +22884,12 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred160_CFScript
     public final void synpred160_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:7: ( DOT primaryExpressionIRW )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:7: DOT primaryExpressionIRW
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:7: ( DOT primaryExpressionIRW )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:7: DOT primaryExpressionIRW
         {
-        match(input,DOT,FOLLOW_DOT_in_synpred160_CFScript4520); if (state.failed) return ;
+        match(input,DOT,FOLLOW_DOT_in_synpred160_CFScript4534); if (state.failed) return ;
 
-        pushFollow(FOLLOW_primaryExpressionIRW_in_synpred160_CFScript4522);
+        pushFollow(FOLLOW_primaryExpressionIRW_in_synpred160_CFScript4536);
         primaryExpressionIRW();
 
         state._fsp--;
@@ -22452,10 +22902,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred165_CFScript
     public final void synpred165_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:4: ( primaryExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:835:4: primaryExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:839:4: ( primaryExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:839:4: primaryExpression
         {
-        pushFollow(FOLLOW_primaryExpression_in_synpred165_CFScript4624);
+        pushFollow(FOLLOW_primaryExpression_in_synpred165_CFScript4638);
         primaryExpression();
 
         state._fsp--;
@@ -22466,24 +22916,24 @@ public TreeAdaptor getTreeAdaptor() {
     }
     // $ANTLR end synpred165_CFScript
 
-    // $ANTLR start synpred198_CFScript
-    public final void synpred198_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:869:5: ( DEFAULT )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:869:5: DEFAULT
+    // $ANTLR start synpred199_CFScript
+    public final void synpred199_CFScript_fragment() throws RecognitionException {
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:874:5: ( DEFAULT )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:874:5: DEFAULT
         {
-        match(input,DEFAULT,FOLLOW_DEFAULT_in_synpred198_CFScript4897); if (state.failed) return ;
+        match(input,DEFAULT,FOLLOW_DEFAULT_in_synpred199_CFScript4916); if (state.failed) return ;
 
         }
 
     }
-    // $ANTLR end synpred198_CFScript
+    // $ANTLR end synpred199_CFScript
 
-    // $ANTLR start synpred245_CFScript
-    public final void synpred245_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:24: ( identifier )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:24: identifier
+    // $ANTLR start synpred246_CFScript
+    public final void synpred246_CFScript_fragment() throws RecognitionException {
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:24: ( identifier )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:24: identifier
         {
-        pushFollow(FOLLOW_identifier_in_synpred245_CFScript5335);
+        pushFollow(FOLLOW_identifier_in_synpred246_CFScript5354);
         identifier();
 
         state._fsp--;
@@ -22492,10 +22942,24 @@ public TreeAdaptor getTreeAdaptor() {
         }
 
     }
-    // $ANTLR end synpred245_CFScript
+    // $ANTLR end synpred246_CFScript
 
     // Delegated rules
 
+    public final boolean synpred246_CFScript() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred246_CFScript_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred40_CFScript() {
         state.backtracking++;
         int start = input.mark();
@@ -22529,20 +22993,6 @@ public TreeAdaptor getTreeAdaptor() {
         int start = input.mark();
         try {
             synpred64_CFScript_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred198_CFScript() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred198_CFScript_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22902,6 +23352,20 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
+    public final boolean synpred199_CFScript() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred199_CFScript_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred35_CFScript() {
         state.backtracking++;
         int start = input.mark();
@@ -23070,20 +23534,6 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred245_CFScript() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred245_CFScript_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred21_CFScript() {
         state.backtracking++;
         int start = input.mark();
@@ -23224,30 +23674,30 @@ public TreeAdaptor getTreeAdaptor() {
     protected DFA76 dfa76 = new DFA76(this);
     protected DFA80 dfa80 = new DFA80(this);
     static final String DFA20_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA20_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA20_minS =
-        "\1\4\20\0\1\uffff\5\0\51\uffff";
+        "\1\4\20\0\1\uffff\5\0\52\uffff";
     static final String DFA20_maxS =
-        "\1\u0096\20\0\1\uffff\5\0\51\uffff";
+        "\1\u0096\20\0\1\uffff\5\0\52\uffff";
     static final String DFA20_acceptS =
-        "\21\uffff\1\12\5\uffff\1\14\35\uffff\1\15\1\1\1\2\1\3\1\4\1\5\1"+
+        "\21\uffff\1\12\5\uffff\1\14\36\uffff\1\15\1\1\1\2\1\3\1\4\1\5\1"+
         "\6\1\7\1\10\1\11\1\13";
     static final String DFA20_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
-        "\1\15\1\16\1\17\1\uffff\1\20\1\21\1\22\1\23\1\24\51\uffff}>";
+        "\1\15\1\16\1\17\1\uffff\1\20\1\21\1\22\1\23\1\24\52\uffff}>";
     static final String[] DFA20_transitionS = {
-            "\1\14\3\uffff\1\27\1\10\1\uffff\2\27\7\uffff\1\27\1\uffff\1"+
-            "\7\1\27\1\uffff\1\25\1\4\1\27\4\uffff\1\27\7\uffff\1\17\2\uffff"+
-            "\1\25\1\uffff\1\27\1\5\1\uffff\1\27\7\uffff\1\27\2\uffff\1\25"+
-            "\1\27\1\2\3\uffff\1\13\1\27\1\12\1\27\4\uffff\1\27\1\26\2\27"+
-            "\2\uffff\1\25\1\22\1\uffff\1\25\2\uffff\1\27\1\uffff\1\27\5"+
-            "\uffff\4\27\2\uffff\1\27\1\20\2\uffff\1\27\1\uffff\1\27\3\uffff"+
-            "\1\27\1\21\1\uffff\1\27\1\25\1\uffff\2\27\1\16\1\uffff\1\11"+
-            "\3\uffff\1\25\1\uffff\1\65\1\25\4\uffff\1\27\1\6\2\uffff\1\27"+
-            "\1\23\1\uffff\1\15\1\uffff\1\27\1\24\1\uffff\1\1\1\27\1\uffff"+
-            "\1\3\3\uffff\1\27",
+            "\1\14\3\uffff\1\27\1\10\1\uffff\2\27\3\uffff\1\27\3\uffff\1"+
+            "\27\1\uffff\1\7\1\27\1\uffff\1\25\1\4\1\27\4\uffff\1\27\7\uffff"+
+            "\1\17\2\uffff\1\25\1\uffff\1\27\1\5\1\uffff\1\27\7\uffff\1\27"+
+            "\2\uffff\1\25\1\27\1\2\3\uffff\1\13\1\27\1\12\1\27\4\uffff\1"+
+            "\27\1\26\2\27\2\uffff\1\25\1\22\1\uffff\1\25\2\uffff\1\27\1"+
+            "\uffff\1\27\5\uffff\4\27\2\uffff\1\27\1\20\2\uffff\1\27\1\uffff"+
+            "\1\27\3\uffff\1\27\1\21\1\uffff\1\27\1\25\1\uffff\2\27\1\16"+
+            "\1\uffff\1\11\3\uffff\1\25\1\uffff\1\66\1\25\4\uffff\1\27\1"+
+            "\6\2\uffff\1\27\1\23\1\uffff\1\15\1\uffff\1\27\1\24\1\uffff"+
+            "\1\1\1\27\1\uffff\1\3\3\uffff\1\27",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -23270,6 +23720,7 @@ public TreeAdaptor getTreeAdaptor() {
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -23357,7 +23808,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred27_CFScript()) ) {s = 54;}
+                        if ( (synpred27_CFScript()) ) {s = 55;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23375,7 +23826,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred28_CFScript()) ) {s = 55;}
+                        if ( (synpred28_CFScript()) ) {s = 56;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23393,7 +23844,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred29_CFScript()) ) {s = 56;}
+                        if ( (synpred29_CFScript()) ) {s = 57;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23411,7 +23862,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred30_CFScript()) ) {s = 57;}
+                        if ( (synpred30_CFScript()) ) {s = 58;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23429,7 +23880,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred31_CFScript()) ) {s = 58;}
+                        if ( (synpred31_CFScript()) ) {s = 59;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23447,7 +23898,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred32_CFScript()) ) {s = 59;}
+                        if ( (synpred32_CFScript()) ) {s = 60;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23465,7 +23916,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred33_CFScript()) ) {s = 60;}
+                        if ( (synpred33_CFScript()) ) {s = 61;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23483,7 +23934,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred34_CFScript()) ) {s = 61;}
+                        if ( (synpred34_CFScript()) ) {s = 62;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23501,7 +23952,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred35_CFScript()) ) {s = 62;}
+                        if ( (synpred35_CFScript()) ) {s = 63;}
 
                         else if ( ((((!scriptMode)&&(!scriptMode))&&synpred38_CFScript())) ) {s = 23;}
 
@@ -23717,7 +24168,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred37_CFScript()) ) {s = 63;}
+                        if ( (synpred37_CFScript()) ) {s = 64;}
 
                         else if ( (synpred38_CFScript()) ) {s = 23;}
 
@@ -23737,33 +24188,34 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA44_eotS =
-        "\77\uffff";
+        "\100\uffff";
     static final String DFA44_eofS =
-        "\1\1\76\uffff";
+        "\1\1\77\uffff";
     static final String DFA44_minS =
-        "\1\4\2\uffff\32\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
+        "\1\4\2\uffff\33\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
     static final String DFA44_maxS =
-        "\1\u0096\2\uffff\32\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
+        "\1\u0096\2\uffff\33\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
     static final String DFA44_acceptS =
-        "\1\uffff\1\2\74\uffff\1\1";
+        "\1\uffff\1\2\75\uffff\1\1";
     static final String DFA44_specialS =
         "\1\0\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
-        "\1\32\1\uffff\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44"+
-        "\1\45\21\uffff\1\46\1\47\1\uffff\1\50\1\uffff}>";
+        "\1\32\1\33\1\uffff\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44"+
+        "\1\45\1\46\21\uffff\1\47\1\50\1\uffff\1\51\1\uffff}>";
     static final String[] DFA44_transitionS = {
-            "\1\17\3\uffff\1\1\1\45\1\uffff\1\73\1\72\7\uffff\1\6\1\uffff"+
-            "\1\44\1\14\1\uffff\1\33\1\41\1\5\4\uffff\1\50\7\uffff\1\23\2"+
-            "\uffff\1\33\2\1\1\42\1\uffff\1\34\7\uffff\1\7\2\uffff\1\33\1"+
-            "\4\1\37\3\uffff\1\47\1\75\1\15\1\1\4\uffff\3\1\1\11\2\uffff"+
-            "\1\33\1\25\1\uffff\1\33\2\uffff\1\1\1\uffff\1\1\5\uffff\1\16"+
-            "\3\1\2\uffff\1\31\1\22\2\uffff\1\1\1\uffff\1\1\3\uffff\1\27"+
-            "\1\1\1\uffff\1\3\1\33\1\uffff\1\30\1\32\1\21\1\uffff\1\46\1"+
-            "\uffff\1\1\1\uffff\1\33\2\1\1\33\4\uffff\1\1\1\43\2\uffff\1"+
-            "\10\1\24\1\uffff\1\20\1\uffff\1\13\1\26\1\uffff\1\36\1\12\1"+
-            "\uffff\1\40\3\uffff\1\1",
+            "\1\20\3\uffff\1\1\1\46\1\uffff\1\74\1\73\3\uffff\1\4\3\uffff"+
+            "\1\7\1\uffff\1\45\1\15\1\uffff\1\34\1\42\1\6\4\uffff\1\51\7"+
+            "\uffff\1\24\2\uffff\1\34\2\1\1\43\1\uffff\1\35\7\uffff\1\10"+
+            "\2\uffff\1\34\1\5\1\40\3\uffff\1\50\1\76\1\16\1\1\4\uffff\3"+
+            "\1\1\12\2\uffff\1\34\1\26\1\uffff\1\34\2\uffff\1\1\1\uffff\1"+
+            "\1\5\uffff\1\17\3\1\2\uffff\1\32\1\23\2\uffff\1\1\1\uffff\1"+
+            "\1\3\uffff\1\30\1\1\1\uffff\1\3\1\34\1\uffff\1\31\1\33\1\22"+
+            "\1\uffff\1\47\1\uffff\1\1\1\uffff\1\34\2\1\1\34\4\uffff\1\1"+
+            "\1\44\2\uffff\1\11\1\25\1\uffff\1\21\1\uffff\1\14\1\27\1\uffff"+
+            "\1\37\1\13\1\uffff\1\41\3\uffff\1\1",
             "",
             "",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -23856,7 +24308,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA44_transition;
         }
         public String getDescription() {
-            return "()* loopback of 613:20: ( paramStatementAttributes )*";
+            return "()* loopback of 617:20: ( paramStatementAttributes )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -23874,83 +24326,85 @@ public TreeAdaptor getTreeAdaptor() {
 
                         else if ( (LA44_0==PUBLIC) ) {s = 3;}
 
-                        else if ( (LA44_0==IDENTIFIER) ) {s = 4;}
+                        else if ( (LA44_0==COMPONENT) ) {s = 4;}
 
-                        else if ( (LA44_0==DOES) ) {s = 5;}
+                        else if ( (LA44_0==IDENTIFIER) ) {s = 5;}
 
-                        else if ( (LA44_0==CONTAIN) ) {s = 6;}
+                        else if ( (LA44_0==DOES) ) {s = 6;}
 
-                        else if ( (LA44_0==GREATER) ) {s = 7;}
+                        else if ( (LA44_0==CONTAIN) ) {s = 7;}
 
-                        else if ( (LA44_0==THAN) ) {s = 8;}
+                        else if ( (LA44_0==GREATER) ) {s = 8;}
 
-                        else if ( (LA44_0==LESS) ) {s = 9;}
+                        else if ( (LA44_0==THAN) ) {s = 9;}
 
-                        else if ( (LA44_0==VAR) ) {s = 10;}
+                        else if ( (LA44_0==LESS) ) {s = 10;}
 
-                        else if ( (LA44_0==TO) ) {s = 11;}
+                        else if ( (LA44_0==VAR) ) {s = 11;}
 
-                        else if ( (LA44_0==DEFAULT) ) {s = 12;}
+                        else if ( (LA44_0==TO) ) {s = 12;}
 
-                        else if ( (LA44_0==INCLUDE) ) {s = 13;}
+                        else if ( (LA44_0==DEFAULT) ) {s = 13;}
 
-                        else if ( (LA44_0==NEW) ) {s = 14;}
+                        else if ( (LA44_0==INCLUDE) ) {s = 14;}
 
-                        else if ( (LA44_0==ABORT) ) {s = 15;}
+                        else if ( (LA44_0==NEW) ) {s = 15;}
 
-                        else if ( (LA44_0==THROW) ) {s = 16;}
+                        else if ( (LA44_0==ABORT) ) {s = 16;}
 
-                        else if ( (LA44_0==RETHROW) ) {s = 17;}
+                        else if ( (LA44_0==THROW) ) {s = 17;}
 
-                        else if ( (LA44_0==PARAM) ) {s = 18;}
+                        else if ( (LA44_0==RETHROW) ) {s = 18;}
 
-                        else if ( (LA44_0==EXIT) ) {s = 19;}
+                        else if ( (LA44_0==PARAM) ) {s = 19;}
 
-                        else if ( (LA44_0==THREAD) ) {s = 20;}
+                        else if ( (LA44_0==EXIT) ) {s = 20;}
 
-                        else if ( (LA44_0==LOCK) ) {s = 21;}
+                        else if ( (LA44_0==THREAD) ) {s = 21;}
 
-                        else if ( (LA44_0==TRANSACTION) ) {s = 22;}
+                        else if ( (LA44_0==LOCK) ) {s = 22;}
 
-                        else if ( (LA44_0==PRIVATE) ) {s = 23;}
+                        else if ( (LA44_0==TRANSACTION) ) {s = 23;}
 
-                        else if ( (LA44_0==REMOTE) ) {s = 24;}
+                        else if ( (LA44_0==PRIVATE) ) {s = 24;}
 
-                        else if ( (LA44_0==PACKAGE) ) {s = 25;}
+                        else if ( (LA44_0==REMOTE) ) {s = 25;}
 
-                        else if ( (LA44_0==REQUIRED) ) {s = 26;}
+                        else if ( (LA44_0==PACKAGE) ) {s = 26;}
 
-                        else if ( (LA44_0==DIRECTORY||LA44_0==FILE||LA44_0==HTTP||LA44_0==LOCATION||LA44_0==LOOP||LA44_0==QUERY||LA44_0==SAVECONTENT||LA44_0==SETTING) ) {s = 27;}
+                        else if ( (LA44_0==REQUIRED) ) {s = 27;}
 
-                        else if ( (LA44_0==FUNCTION) ) {s = 28;}
+                        else if ( (LA44_0==DIRECTORY||LA44_0==FILE||LA44_0==HTTP||LA44_0==LOCATION||LA44_0==LOOP||LA44_0==QUERY||LA44_0==SAVECONTENT||LA44_0==SETTING) ) {s = 28;}
 
-                        else if ( (LA44_0==TRY) ) {s = 30;}
+                        else if ( (LA44_0==FUNCTION) ) {s = 29;}
 
-                        else if ( (LA44_0==IF) ) {s = 31;}
+                        else if ( (LA44_0==TRY) ) {s = 31;}
 
-                        else if ( (LA44_0==WHILE) ) {s = 32;}
+                        else if ( (LA44_0==IF) ) {s = 32;}
 
-                        else if ( (LA44_0==DO) ) {s = 33;}
+                        else if ( (LA44_0==WHILE) ) {s = 33;}
 
-                        else if ( (LA44_0==FOR) ) {s = 34;}
+                        else if ( (LA44_0==DO) ) {s = 34;}
 
-                        else if ( (LA44_0==SWITCH) ) {s = 35;}
+                        else if ( (LA44_0==FOR) ) {s = 35;}
 
-                        else if ( (LA44_0==CONTINUE) ) {s = 36;}
+                        else if ( (LA44_0==SWITCH) ) {s = 36;}
 
-                        else if ( (LA44_0==BREAK) ) {s = 37;}
+                        else if ( (LA44_0==CONTINUE) ) {s = 37;}
 
-                        else if ( (LA44_0==RETURN) ) {s = 38;}
+                        else if ( (LA44_0==BREAK) ) {s = 38;}
 
-                        else if ( (LA44_0==IMPORT) ) {s = 39;}
+                        else if ( (LA44_0==RETURN) ) {s = 39;}
 
-                        else if ( (LA44_0==ELSE) ) {s = 40;}
+                        else if ( (LA44_0==IMPORT) ) {s = 40;}
 
-                        else if ( (LA44_0==CATCH) ) {s = 58;}
+                        else if ( (LA44_0==ELSE) ) {s = 41;}
 
-                        else if ( (LA44_0==CASE) ) {s = 59;}
+                        else if ( (LA44_0==CATCH) ) {s = 59;}
 
-                        else if ( (LA44_0==IN) && ((!scriptMode))) {s = 61;}
+                        else if ( (LA44_0==CASE) ) {s = 60;}
+
+                        else if ( (LA44_0==IN) && ((!scriptMode))) {s = 62;}
 
                          
                         input.seek(index44_0);
@@ -23966,7 +24420,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -23984,7 +24438,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24002,7 +24456,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24020,7 +24474,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24038,7 +24492,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24056,7 +24510,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24074,7 +24528,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24092,7 +24546,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24110,7 +24564,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24128,7 +24582,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24146,7 +24600,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24164,7 +24618,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24182,7 +24636,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24200,7 +24654,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24218,7 +24672,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24236,7 +24690,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24254,7 +24708,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24272,7 +24726,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24290,7 +24744,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24308,7 +24762,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24326,7 +24780,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24344,7 +24798,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24362,7 +24816,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24380,7 +24834,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24398,7 +24852,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred78_CFScript()) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24416,7 +24870,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (synpred78_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24427,19 +24881,19 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 27 : 
-                        int LA44_30 = input.LA(1);
+                        int LA44_29 = input.LA(1);
 
                          
-                        int index44_30 = input.index();
+                        int index44_29 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index44_30);
+                        input.seek(index44_29);
 
                         if ( s>=0 ) return s;
                         break;
@@ -24452,7 +24906,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24470,7 +24924,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24488,7 +24942,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24506,7 +24960,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24524,7 +24978,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24542,7 +24996,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24560,7 +25014,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24578,7 +25032,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24596,7 +25050,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24614,7 +25068,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24625,19 +25079,19 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 38 : 
-                        int LA44_58 = input.LA(1);
+                        int LA44_41 = input.LA(1);
 
                          
-                        int index44_58 = input.index();
+                        int index44_41 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index44_58);
+                        input.seek(index44_41);
 
                         if ( s>=0 ) return s;
                         break;
@@ -24650,7 +25104,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -24661,19 +25115,37 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 40 : 
-                        int LA44_61 = input.LA(1);
+                        int LA44_60 = input.LA(1);
 
                          
-                        int index44_61 = input.index();
+                        int index44_60 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 62;}
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index44_60);
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 41 : 
+                        int LA44_62 = input.LA(1);
+
+                         
+                        int index44_62 = input.index();
+                        input.rewind();
+
+                        s = -1;
+                        if ( (((synpred78_CFScript()&&synpred78_CFScript())&&(!scriptMode))) ) {s = 63;}
 
                         else if ( ((!scriptMode)) ) {s = 1;}
 
                          
-                        input.seek(index44_61);
+                        input.seek(index44_62);
 
                         if ( s>=0 ) return s;
                         break;
@@ -24688,27 +25160,28 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA45_eotS =
-        "\77\uffff";
+        "\100\uffff";
     static final String DFA45_eofS =
-        "\1\2\76\uffff";
+        "\1\2\77\uffff";
     static final String DFA45_minS =
-        "\1\4\1\0\75\uffff";
+        "\1\4\1\0\76\uffff";
     static final String DFA45_maxS =
-        "\1\u0096\1\0\75\uffff";
+        "\1\u0096\1\0\76\uffff";
     static final String DFA45_acceptS =
-        "\2\uffff\1\2\72\uffff\1\2\1\1";
+        "\2\uffff\1\2\73\uffff\1\2\1\1";
     static final String DFA45_specialS =
-        "\1\0\1\1\75\uffff}>";
+        "\1\0\1\1\76\uffff}>";
     static final String[] DFA45_transitionS = {
-            "\1\2\3\uffff\2\2\1\uffff\2\2\7\uffff\1\2\1\uffff\2\2\1\uffff"+
-            "\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff\1\2\7\uffff"+
-            "\1\2\2\uffff\3\2\3\uffff\1\2\1\75\2\2\4\uffff\1\2\1\1\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5\uffff\4\2\2"+
-            "\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1\uffff\2\2\1"+
-            "\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4\uffff\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1\uffff\1\2\3"+
-            "\uffff\1\2",
+            "\1\2\3\uffff\2\2\1\uffff\2\2\3\uffff\1\2\3\uffff\1\2\1\uffff"+
+            "\2\2\1\uffff\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff"+
+            "\1\2\7\uffff\1\2\2\uffff\3\2\3\uffff\1\2\1\76\2\2\4\uffff\1"+
+            "\2\1\1\2\2\2\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5"+
+            "\uffff\4\2\2\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1"+
+            "\uffff\2\2\1\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4"+
+            "\uffff\2\2\2\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1"+
+            "\uffff\1\2\3\uffff\1\2",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -24802,7 +25275,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA45_transition;
         }
         public String getDescription() {
-            return "613:48: ( compoundStatement )?";
+            return "617:48: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -24818,9 +25291,9 @@ public TreeAdaptor getTreeAdaptor() {
                         s = -1;
                         if ( (LA45_0==LEFTCURLYBRACKET) ) {s = 1;}
 
-                        else if ( (LA45_0==EOF||LA45_0==ABORT||(LA45_0 >= BOOLEAN_LITERAL && LA45_0 <= BREAK)||(LA45_0 >= CASE && LA45_0 <= CATCH)||LA45_0==CONTAIN||(LA45_0 >= CONTINUE && LA45_0 <= DEFAULT)||(LA45_0 >= DIRECTORY && LA45_0 <= DOES)||LA45_0==ELSE||LA45_0==EXIT||(LA45_0 >= FILE && LA45_0 <= FOR)||LA45_0==FUNCTION||LA45_0==GREATER||(LA45_0 >= HTTP && LA45_0 <= IF)||LA45_0==IMPORT||(LA45_0 >= INCLUDE && LA45_0 <= INTEGER_LITERAL)||LA45_0==LEFTBRACKET||(LA45_0 >= LEFTPAREN && LA45_0 <= LESS)||(LA45_0 >= LOCATION && LA45_0 <= LOCK)||LA45_0==LOOP||LA45_0==MINUS||LA45_0==MINUSMINUS||(LA45_0 >= NEW && LA45_0 <= NULL)||(LA45_0 >= PACKAGE && LA45_0 <= PARAM)||LA45_0==PLUS||LA45_0==PLUSPLUS||(LA45_0 >= PRIVATE && LA45_0 <= PROPERTY)||(LA45_0 >= PUBLIC && LA45_0 <= QUERY)||(LA45_0 >= REMOTE && LA45_0 <= RETHROW)||LA45_0==RETURN||LA45_0==RIGHTCURLYBRACKET||(LA45_0 >= SAVECONTENT && LA45_0 <= SETTING)||(LA45_0 >= STRING_LITERAL && LA45_0 <= SWITCH)||(LA45_0 >= THAN && LA45_0 <= THREAD)||LA45_0==THROW||(LA45_0 >= TO && LA45_0 <= TRANSACTION)||(LA45_0 >= TRY && LA45_0 <= VAR)||LA45_0==WHILE||LA45_0==150) ) {s = 2;}
+                        else if ( (LA45_0==EOF||LA45_0==ABORT||(LA45_0 >= BOOLEAN_LITERAL && LA45_0 <= BREAK)||(LA45_0 >= CASE && LA45_0 <= CATCH)||LA45_0==COMPONENT||LA45_0==CONTAIN||(LA45_0 >= CONTINUE && LA45_0 <= DEFAULT)||(LA45_0 >= DIRECTORY && LA45_0 <= DOES)||LA45_0==ELSE||LA45_0==EXIT||(LA45_0 >= FILE && LA45_0 <= FOR)||LA45_0==FUNCTION||LA45_0==GREATER||(LA45_0 >= HTTP && LA45_0 <= IF)||LA45_0==IMPORT||(LA45_0 >= INCLUDE && LA45_0 <= INTEGER_LITERAL)||LA45_0==LEFTBRACKET||(LA45_0 >= LEFTPAREN && LA45_0 <= LESS)||(LA45_0 >= LOCATION && LA45_0 <= LOCK)||LA45_0==LOOP||LA45_0==MINUS||LA45_0==MINUSMINUS||(LA45_0 >= NEW && LA45_0 <= NULL)||(LA45_0 >= PACKAGE && LA45_0 <= PARAM)||LA45_0==PLUS||LA45_0==PLUSPLUS||(LA45_0 >= PRIVATE && LA45_0 <= PROPERTY)||(LA45_0 >= PUBLIC && LA45_0 <= QUERY)||(LA45_0 >= REMOTE && LA45_0 <= RETHROW)||LA45_0==RETURN||LA45_0==RIGHTCURLYBRACKET||(LA45_0 >= SAVECONTENT && LA45_0 <= SETTING)||(LA45_0 >= STRING_LITERAL && LA45_0 <= SWITCH)||(LA45_0 >= THAN && LA45_0 <= THREAD)||LA45_0==THROW||(LA45_0 >= TO && LA45_0 <= TRANSACTION)||(LA45_0 >= TRY && LA45_0 <= VAR)||LA45_0==WHILE||LA45_0==150) ) {s = 2;}
 
-                        else if ( (LA45_0==IN) && ((!scriptMode))) {s = 61;}
+                        else if ( (LA45_0==IN) && ((!scriptMode))) {s = 62;}
 
                          
                         input.seek(index45_0);
@@ -24836,9 +25309,9 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred79_CFScript()) ) {s = 62;}
+                        if ( (synpred79_CFScript()) ) {s = 63;}
 
-                        else if ( (true) ) {s = 61;}
+                        else if ( (true) ) {s = 62;}
 
                          
                         input.seek(index45_1);
@@ -24856,33 +25329,34 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA46_eotS =
-        "\77\uffff";
+        "\100\uffff";
     static final String DFA46_eofS =
-        "\1\1\76\uffff";
+        "\1\1\77\uffff";
     static final String DFA46_minS =
-        "\1\4\2\uffff\32\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
+        "\1\4\2\uffff\33\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
     static final String DFA46_maxS =
-        "\1\u0096\2\uffff\32\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
+        "\1\u0096\2\uffff\33\0\1\uffff\13\0\21\uffff\2\0\1\uffff\1\0\1\uffff";
     static final String DFA46_acceptS =
-        "\1\uffff\1\2\74\uffff\1\1";
+        "\1\uffff\1\2\75\uffff\1\1";
     static final String DFA46_specialS =
         "\1\0\2\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
-        "\1\32\1\uffff\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44"+
-        "\1\45\21\uffff\1\46\1\47\1\uffff\1\50\1\uffff}>";
+        "\1\32\1\33\1\uffff\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44"+
+        "\1\45\1\46\21\uffff\1\47\1\50\1\uffff\1\51\1\uffff}>";
     static final String[] DFA46_transitionS = {
-            "\1\17\3\uffff\1\1\1\45\1\uffff\1\73\1\72\7\uffff\1\6\1\uffff"+
-            "\1\44\1\14\1\uffff\1\33\1\41\1\5\4\uffff\1\50\7\uffff\1\23\2"+
-            "\uffff\1\33\2\1\1\42\1\uffff\1\34\7\uffff\1\7\2\uffff\1\33\1"+
-            "\4\1\37\3\uffff\1\47\1\75\1\15\1\1\4\uffff\3\1\1\11\2\uffff"+
-            "\1\33\1\25\1\uffff\1\33\2\uffff\1\1\1\uffff\1\1\5\uffff\1\16"+
-            "\3\1\2\uffff\1\31\1\22\2\uffff\1\1\1\uffff\1\1\3\uffff\1\27"+
-            "\1\1\1\uffff\1\3\1\33\1\uffff\1\30\1\32\1\21\1\uffff\1\46\1"+
-            "\uffff\1\1\1\uffff\1\33\2\1\1\33\4\uffff\1\1\1\43\2\uffff\1"+
-            "\10\1\24\1\uffff\1\20\1\uffff\1\13\1\26\1\uffff\1\36\1\12\1"+
-            "\uffff\1\40\3\uffff\1\1",
+            "\1\20\3\uffff\1\1\1\46\1\uffff\1\74\1\73\3\uffff\1\4\3\uffff"+
+            "\1\7\1\uffff\1\45\1\15\1\uffff\1\34\1\42\1\6\4\uffff\1\51\7"+
+            "\uffff\1\24\2\uffff\1\34\2\1\1\43\1\uffff\1\35\7\uffff\1\10"+
+            "\2\uffff\1\34\1\5\1\40\3\uffff\1\50\1\76\1\16\1\1\4\uffff\3"+
+            "\1\1\12\2\uffff\1\34\1\26\1\uffff\1\34\2\uffff\1\1\1\uffff\1"+
+            "\1\5\uffff\1\17\3\1\2\uffff\1\32\1\23\2\uffff\1\1\1\uffff\1"+
+            "\1\3\uffff\1\30\1\1\1\uffff\1\3\1\34\1\uffff\1\31\1\33\1\22"+
+            "\1\uffff\1\47\1\uffff\1\1\1\uffff\1\34\2\1\1\34\4\uffff\1\1"+
+            "\1\44\2\uffff\1\11\1\25\1\uffff\1\21\1\uffff\1\14\1\27\1\uffff"+
+            "\1\37\1\13\1\uffff\1\41\3\uffff\1\1",
             "",
             "",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -24975,7 +25449,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA46_transition;
         }
         public String getDescription() {
-            return "()* loopback of 617:18: ( param )*";
+            return "()* loopback of 621:18: ( param )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -24993,83 +25467,85 @@ public TreeAdaptor getTreeAdaptor() {
 
                         else if ( (LA46_0==PUBLIC) ) {s = 3;}
 
-                        else if ( (LA46_0==IDENTIFIER) ) {s = 4;}
+                        else if ( (LA46_0==COMPONENT) ) {s = 4;}
 
-                        else if ( (LA46_0==DOES) ) {s = 5;}
+                        else if ( (LA46_0==IDENTIFIER) ) {s = 5;}
 
-                        else if ( (LA46_0==CONTAIN) ) {s = 6;}
+                        else if ( (LA46_0==DOES) ) {s = 6;}
 
-                        else if ( (LA46_0==GREATER) ) {s = 7;}
+                        else if ( (LA46_0==CONTAIN) ) {s = 7;}
 
-                        else if ( (LA46_0==THAN) ) {s = 8;}
+                        else if ( (LA46_0==GREATER) ) {s = 8;}
 
-                        else if ( (LA46_0==LESS) ) {s = 9;}
+                        else if ( (LA46_0==THAN) ) {s = 9;}
 
-                        else if ( (LA46_0==VAR) ) {s = 10;}
+                        else if ( (LA46_0==LESS) ) {s = 10;}
 
-                        else if ( (LA46_0==TO) ) {s = 11;}
+                        else if ( (LA46_0==VAR) ) {s = 11;}
 
-                        else if ( (LA46_0==DEFAULT) ) {s = 12;}
+                        else if ( (LA46_0==TO) ) {s = 12;}
 
-                        else if ( (LA46_0==INCLUDE) ) {s = 13;}
+                        else if ( (LA46_0==DEFAULT) ) {s = 13;}
 
-                        else if ( (LA46_0==NEW) ) {s = 14;}
+                        else if ( (LA46_0==INCLUDE) ) {s = 14;}
 
-                        else if ( (LA46_0==ABORT) ) {s = 15;}
+                        else if ( (LA46_0==NEW) ) {s = 15;}
 
-                        else if ( (LA46_0==THROW) ) {s = 16;}
+                        else if ( (LA46_0==ABORT) ) {s = 16;}
 
-                        else if ( (LA46_0==RETHROW) ) {s = 17;}
+                        else if ( (LA46_0==THROW) ) {s = 17;}
 
-                        else if ( (LA46_0==PARAM) ) {s = 18;}
+                        else if ( (LA46_0==RETHROW) ) {s = 18;}
 
-                        else if ( (LA46_0==EXIT) ) {s = 19;}
+                        else if ( (LA46_0==PARAM) ) {s = 19;}
 
-                        else if ( (LA46_0==THREAD) ) {s = 20;}
+                        else if ( (LA46_0==EXIT) ) {s = 20;}
 
-                        else if ( (LA46_0==LOCK) ) {s = 21;}
+                        else if ( (LA46_0==THREAD) ) {s = 21;}
 
-                        else if ( (LA46_0==TRANSACTION) ) {s = 22;}
+                        else if ( (LA46_0==LOCK) ) {s = 22;}
 
-                        else if ( (LA46_0==PRIVATE) ) {s = 23;}
+                        else if ( (LA46_0==TRANSACTION) ) {s = 23;}
 
-                        else if ( (LA46_0==REMOTE) ) {s = 24;}
+                        else if ( (LA46_0==PRIVATE) ) {s = 24;}
 
-                        else if ( (LA46_0==PACKAGE) ) {s = 25;}
+                        else if ( (LA46_0==REMOTE) ) {s = 25;}
 
-                        else if ( (LA46_0==REQUIRED) ) {s = 26;}
+                        else if ( (LA46_0==PACKAGE) ) {s = 26;}
 
-                        else if ( (LA46_0==DIRECTORY||LA46_0==FILE||LA46_0==HTTP||LA46_0==LOCATION||LA46_0==LOOP||LA46_0==QUERY||LA46_0==SAVECONTENT||LA46_0==SETTING) ) {s = 27;}
+                        else if ( (LA46_0==REQUIRED) ) {s = 27;}
 
-                        else if ( (LA46_0==FUNCTION) ) {s = 28;}
+                        else if ( (LA46_0==DIRECTORY||LA46_0==FILE||LA46_0==HTTP||LA46_0==LOCATION||LA46_0==LOOP||LA46_0==QUERY||LA46_0==SAVECONTENT||LA46_0==SETTING) ) {s = 28;}
 
-                        else if ( (LA46_0==TRY) ) {s = 30;}
+                        else if ( (LA46_0==FUNCTION) ) {s = 29;}
 
-                        else if ( (LA46_0==IF) ) {s = 31;}
+                        else if ( (LA46_0==TRY) ) {s = 31;}
 
-                        else if ( (LA46_0==WHILE) ) {s = 32;}
+                        else if ( (LA46_0==IF) ) {s = 32;}
 
-                        else if ( (LA46_0==DO) ) {s = 33;}
+                        else if ( (LA46_0==WHILE) ) {s = 33;}
 
-                        else if ( (LA46_0==FOR) ) {s = 34;}
+                        else if ( (LA46_0==DO) ) {s = 34;}
 
-                        else if ( (LA46_0==SWITCH) ) {s = 35;}
+                        else if ( (LA46_0==FOR) ) {s = 35;}
 
-                        else if ( (LA46_0==CONTINUE) ) {s = 36;}
+                        else if ( (LA46_0==SWITCH) ) {s = 36;}
 
-                        else if ( (LA46_0==BREAK) ) {s = 37;}
+                        else if ( (LA46_0==CONTINUE) ) {s = 37;}
 
-                        else if ( (LA46_0==RETURN) ) {s = 38;}
+                        else if ( (LA46_0==BREAK) ) {s = 38;}
 
-                        else if ( (LA46_0==IMPORT) ) {s = 39;}
+                        else if ( (LA46_0==RETURN) ) {s = 39;}
 
-                        else if ( (LA46_0==ELSE) ) {s = 40;}
+                        else if ( (LA46_0==IMPORT) ) {s = 40;}
 
-                        else if ( (LA46_0==CATCH) ) {s = 58;}
+                        else if ( (LA46_0==ELSE) ) {s = 41;}
 
-                        else if ( (LA46_0==CASE) ) {s = 59;}
+                        else if ( (LA46_0==CATCH) ) {s = 59;}
 
-                        else if ( (LA46_0==IN) && ((!scriptMode))) {s = 61;}
+                        else if ( (LA46_0==CASE) ) {s = 60;}
+
+                        else if ( (LA46_0==IN) && ((!scriptMode))) {s = 62;}
 
                          
                         input.seek(index46_0);
@@ -25085,7 +25561,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25103,7 +25579,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25121,7 +25597,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25139,7 +25615,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25157,7 +25633,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25175,7 +25651,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25193,7 +25669,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25211,7 +25687,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25229,7 +25705,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25247,7 +25723,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25265,7 +25741,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25283,7 +25759,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25301,7 +25777,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25319,7 +25795,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25337,7 +25813,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25355,7 +25831,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25373,7 +25849,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25391,7 +25867,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25409,7 +25885,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25427,7 +25903,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25445,7 +25921,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25463,7 +25939,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25481,7 +25957,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25499,7 +25975,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25517,7 +25993,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred80_CFScript()) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25535,7 +26011,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( (synpred80_CFScript()) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25546,19 +26022,19 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 27 : 
-                        int LA46_30 = input.LA(1);
+                        int LA46_29 = input.LA(1);
 
                          
-                        int index46_30 = input.index();
+                        int index46_29 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index46_30);
+                        input.seek(index46_29);
 
                         if ( s>=0 ) return s;
                         break;
@@ -25571,7 +26047,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25589,7 +26065,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25607,7 +26083,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25625,7 +26101,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25643,7 +26119,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25661,7 +26137,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25679,7 +26155,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25697,7 +26173,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25715,7 +26191,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25733,7 +26209,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25744,19 +26220,19 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 38 : 
-                        int LA46_58 = input.LA(1);
+                        int LA46_41 = input.LA(1);
 
                          
-                        int index46_58 = input.index();
+                        int index46_41 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index46_58);
+                        input.seek(index46_41);
 
                         if ( s>=0 ) return s;
                         break;
@@ -25769,7 +26245,7 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( (true) ) {s = 1;}
 
@@ -25780,19 +26256,37 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 40 : 
-                        int LA46_61 = input.LA(1);
+                        int LA46_60 = input.LA(1);
 
                          
-                        int index46_61 = input.index();
+                        int index46_60 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 62;}
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index46_60);
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 41 : 
+                        int LA46_62 = input.LA(1);
+
+                         
+                        int index46_62 = input.index();
+                        input.rewind();
+
+                        s = -1;
+                        if ( ((((!scriptMode)&&(!scriptMode))&&synpred80_CFScript())) ) {s = 63;}
 
                         else if ( ((!scriptMode)) ) {s = 1;}
 
                          
-                        input.seek(index46_61);
+                        input.seek(index46_62);
 
                         if ( s>=0 ) return s;
                         break;
@@ -25807,27 +26301,28 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA47_eotS =
-        "\77\uffff";
+        "\100\uffff";
     static final String DFA47_eofS =
-        "\1\2\76\uffff";
+        "\1\2\77\uffff";
     static final String DFA47_minS =
-        "\1\4\1\0\75\uffff";
+        "\1\4\1\0\76\uffff";
     static final String DFA47_maxS =
-        "\1\u0096\1\0\75\uffff";
+        "\1\u0096\1\0\76\uffff";
     static final String DFA47_acceptS =
-        "\2\uffff\1\2\72\uffff\1\2\1\1";
+        "\2\uffff\1\2\73\uffff\1\2\1\1";
     static final String DFA47_specialS =
-        "\1\0\1\1\75\uffff}>";
+        "\1\0\1\1\76\uffff}>";
     static final String[] DFA47_transitionS = {
-            "\1\2\3\uffff\2\2\1\uffff\2\2\7\uffff\1\2\1\uffff\2\2\1\uffff"+
-            "\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff\1\2\7\uffff"+
-            "\1\2\2\uffff\3\2\3\uffff\1\2\1\75\2\2\4\uffff\1\2\1\1\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5\uffff\4\2\2"+
-            "\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1\uffff\2\2\1"+
-            "\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4\uffff\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1\uffff\1\2\3"+
-            "\uffff\1\2",
+            "\1\2\3\uffff\2\2\1\uffff\2\2\3\uffff\1\2\3\uffff\1\2\1\uffff"+
+            "\2\2\1\uffff\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff"+
+            "\1\2\7\uffff\1\2\2\uffff\3\2\3\uffff\1\2\1\76\2\2\4\uffff\1"+
+            "\2\1\1\2\2\2\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5"+
+            "\uffff\4\2\2\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1"+
+            "\uffff\2\2\1\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4"+
+            "\uffff\2\2\2\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1"+
+            "\uffff\1\2\3\uffff\1\2",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -25921,7 +26416,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA47_transition;
         }
         public String getDescription() {
-            return "617:27: ( compoundStatement )?";
+            return "621:27: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -25937,9 +26432,9 @@ public TreeAdaptor getTreeAdaptor() {
                         s = -1;
                         if ( (LA47_0==LEFTCURLYBRACKET) ) {s = 1;}
 
-                        else if ( (LA47_0==EOF||LA47_0==ABORT||(LA47_0 >= BOOLEAN_LITERAL && LA47_0 <= BREAK)||(LA47_0 >= CASE && LA47_0 <= CATCH)||LA47_0==CONTAIN||(LA47_0 >= CONTINUE && LA47_0 <= DEFAULT)||(LA47_0 >= DIRECTORY && LA47_0 <= DOES)||LA47_0==ELSE||LA47_0==EXIT||(LA47_0 >= FILE && LA47_0 <= FOR)||LA47_0==FUNCTION||LA47_0==GREATER||(LA47_0 >= HTTP && LA47_0 <= IF)||LA47_0==IMPORT||(LA47_0 >= INCLUDE && LA47_0 <= INTEGER_LITERAL)||LA47_0==LEFTBRACKET||(LA47_0 >= LEFTPAREN && LA47_0 <= LESS)||(LA47_0 >= LOCATION && LA47_0 <= LOCK)||LA47_0==LOOP||LA47_0==MINUS||LA47_0==MINUSMINUS||(LA47_0 >= NEW && LA47_0 <= NULL)||(LA47_0 >= PACKAGE && LA47_0 <= PARAM)||LA47_0==PLUS||LA47_0==PLUSPLUS||(LA47_0 >= PRIVATE && LA47_0 <= PROPERTY)||(LA47_0 >= PUBLIC && LA47_0 <= QUERY)||(LA47_0 >= REMOTE && LA47_0 <= RETHROW)||LA47_0==RETURN||LA47_0==RIGHTCURLYBRACKET||(LA47_0 >= SAVECONTENT && LA47_0 <= SETTING)||(LA47_0 >= STRING_LITERAL && LA47_0 <= SWITCH)||(LA47_0 >= THAN && LA47_0 <= THREAD)||LA47_0==THROW||(LA47_0 >= TO && LA47_0 <= TRANSACTION)||(LA47_0 >= TRY && LA47_0 <= VAR)||LA47_0==WHILE||LA47_0==150) ) {s = 2;}
+                        else if ( (LA47_0==EOF||LA47_0==ABORT||(LA47_0 >= BOOLEAN_LITERAL && LA47_0 <= BREAK)||(LA47_0 >= CASE && LA47_0 <= CATCH)||LA47_0==COMPONENT||LA47_0==CONTAIN||(LA47_0 >= CONTINUE && LA47_0 <= DEFAULT)||(LA47_0 >= DIRECTORY && LA47_0 <= DOES)||LA47_0==ELSE||LA47_0==EXIT||(LA47_0 >= FILE && LA47_0 <= FOR)||LA47_0==FUNCTION||LA47_0==GREATER||(LA47_0 >= HTTP && LA47_0 <= IF)||LA47_0==IMPORT||(LA47_0 >= INCLUDE && LA47_0 <= INTEGER_LITERAL)||LA47_0==LEFTBRACKET||(LA47_0 >= LEFTPAREN && LA47_0 <= LESS)||(LA47_0 >= LOCATION && LA47_0 <= LOCK)||LA47_0==LOOP||LA47_0==MINUS||LA47_0==MINUSMINUS||(LA47_0 >= NEW && LA47_0 <= NULL)||(LA47_0 >= PACKAGE && LA47_0 <= PARAM)||LA47_0==PLUS||LA47_0==PLUSPLUS||(LA47_0 >= PRIVATE && LA47_0 <= PROPERTY)||(LA47_0 >= PUBLIC && LA47_0 <= QUERY)||(LA47_0 >= REMOTE && LA47_0 <= RETHROW)||LA47_0==RETURN||LA47_0==RIGHTCURLYBRACKET||(LA47_0 >= SAVECONTENT && LA47_0 <= SETTING)||(LA47_0 >= STRING_LITERAL && LA47_0 <= SWITCH)||(LA47_0 >= THAN && LA47_0 <= THREAD)||LA47_0==THROW||(LA47_0 >= TO && LA47_0 <= TRANSACTION)||(LA47_0 >= TRY && LA47_0 <= VAR)||LA47_0==WHILE||LA47_0==150) ) {s = 2;}
 
-                        else if ( (LA47_0==IN) && ((!scriptMode))) {s = 61;}
+                        else if ( (LA47_0==IN) && ((!scriptMode))) {s = 62;}
 
                          
                         input.seek(index47_0);
@@ -25955,9 +26450,9 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred81_CFScript()) ) {s = 62;}
+                        if ( (synpred81_CFScript()) ) {s = 63;}
 
-                        else if ( (true) ) {s = 61;}
+                        else if ( (true) ) {s = 62;}
 
                          
                         input.seek(index47_1);
@@ -25975,27 +26470,28 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA48_eotS =
-        "\77\uffff";
+        "\100\uffff";
     static final String DFA48_eofS =
-        "\1\2\76\uffff";
+        "\1\2\77\uffff";
     static final String DFA48_minS =
-        "\1\4\1\0\75\uffff";
+        "\1\4\1\0\76\uffff";
     static final String DFA48_maxS =
-        "\1\u0096\1\0\75\uffff";
+        "\1\u0096\1\0\76\uffff";
     static final String DFA48_acceptS =
-        "\2\uffff\1\2\72\uffff\1\2\1\1";
+        "\2\uffff\1\2\73\uffff\1\2\1\1";
     static final String DFA48_specialS =
-        "\1\0\1\1\75\uffff}>";
+        "\1\0\1\1\76\uffff}>";
     static final String[] DFA48_transitionS = {
-            "\1\2\3\uffff\2\2\1\uffff\2\2\7\uffff\1\2\1\uffff\2\2\1\uffff"+
-            "\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff\1\2\7\uffff"+
-            "\1\2\2\uffff\3\2\3\uffff\1\2\1\75\2\2\4\uffff\1\2\1\1\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5\uffff\4\2\2"+
-            "\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1\uffff\2\2\1"+
-            "\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4\uffff\2\2\2"+
-            "\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1\uffff\1\2\3"+
-            "\uffff\1\2",
+            "\1\2\3\uffff\2\2\1\uffff\2\2\3\uffff\1\2\3\uffff\1\2\1\uffff"+
+            "\2\2\1\uffff\3\2\4\uffff\1\2\7\uffff\1\2\2\uffff\4\2\1\uffff"+
+            "\1\2\7\uffff\1\2\2\uffff\3\2\3\uffff\1\2\1\76\2\2\4\uffff\1"+
+            "\2\1\1\2\2\2\uffff\2\2\1\uffff\1\2\2\uffff\1\2\1\uffff\1\2\5"+
+            "\uffff\4\2\2\uffff\2\2\2\uffff\1\2\1\uffff\1\2\3\uffff\2\2\1"+
+            "\uffff\2\2\1\uffff\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\4\2\4"+
+            "\uffff\2\2\2\uffff\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1"+
+            "\uffff\1\2\3\uffff\1\2",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -26089,7 +26585,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA48_transition;
         }
         public String getDescription() {
-            return "647:42: ( compoundStatement )?";
+            return "651:42: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -26105,9 +26601,9 @@ public TreeAdaptor getTreeAdaptor() {
                         s = -1;
                         if ( (LA48_0==LEFTCURLYBRACKET) ) {s = 1;}
 
-                        else if ( (LA48_0==EOF||LA48_0==ABORT||(LA48_0 >= BOOLEAN_LITERAL && LA48_0 <= BREAK)||(LA48_0 >= CASE && LA48_0 <= CATCH)||LA48_0==CONTAIN||(LA48_0 >= CONTINUE && LA48_0 <= DEFAULT)||(LA48_0 >= DIRECTORY && LA48_0 <= DOES)||LA48_0==ELSE||LA48_0==EXIT||(LA48_0 >= FILE && LA48_0 <= FOR)||LA48_0==FUNCTION||LA48_0==GREATER||(LA48_0 >= HTTP && LA48_0 <= IF)||LA48_0==IMPORT||(LA48_0 >= INCLUDE && LA48_0 <= INTEGER_LITERAL)||LA48_0==LEFTBRACKET||(LA48_0 >= LEFTPAREN && LA48_0 <= LESS)||(LA48_0 >= LOCATION && LA48_0 <= LOCK)||LA48_0==LOOP||LA48_0==MINUS||LA48_0==MINUSMINUS||(LA48_0 >= NEW && LA48_0 <= NULL)||(LA48_0 >= PACKAGE && LA48_0 <= PARAM)||LA48_0==PLUS||LA48_0==PLUSPLUS||(LA48_0 >= PRIVATE && LA48_0 <= PROPERTY)||(LA48_0 >= PUBLIC && LA48_0 <= QUERY)||(LA48_0 >= REMOTE && LA48_0 <= RETHROW)||LA48_0==RETURN||LA48_0==RIGHTCURLYBRACKET||(LA48_0 >= SAVECONTENT && LA48_0 <= SETTING)||(LA48_0 >= STRING_LITERAL && LA48_0 <= SWITCH)||(LA48_0 >= THAN && LA48_0 <= THREAD)||LA48_0==THROW||(LA48_0 >= TO && LA48_0 <= TRANSACTION)||(LA48_0 >= TRY && LA48_0 <= VAR)||LA48_0==WHILE||LA48_0==150) ) {s = 2;}
+                        else if ( (LA48_0==EOF||LA48_0==ABORT||(LA48_0 >= BOOLEAN_LITERAL && LA48_0 <= BREAK)||(LA48_0 >= CASE && LA48_0 <= CATCH)||LA48_0==COMPONENT||LA48_0==CONTAIN||(LA48_0 >= CONTINUE && LA48_0 <= DEFAULT)||(LA48_0 >= DIRECTORY && LA48_0 <= DOES)||LA48_0==ELSE||LA48_0==EXIT||(LA48_0 >= FILE && LA48_0 <= FOR)||LA48_0==FUNCTION||LA48_0==GREATER||(LA48_0 >= HTTP && LA48_0 <= IF)||LA48_0==IMPORT||(LA48_0 >= INCLUDE && LA48_0 <= INTEGER_LITERAL)||LA48_0==LEFTBRACKET||(LA48_0 >= LEFTPAREN && LA48_0 <= LESS)||(LA48_0 >= LOCATION && LA48_0 <= LOCK)||LA48_0==LOOP||LA48_0==MINUS||LA48_0==MINUSMINUS||(LA48_0 >= NEW && LA48_0 <= NULL)||(LA48_0 >= PACKAGE && LA48_0 <= PARAM)||LA48_0==PLUS||LA48_0==PLUSPLUS||(LA48_0 >= PRIVATE && LA48_0 <= PROPERTY)||(LA48_0 >= PUBLIC && LA48_0 <= QUERY)||(LA48_0 >= REMOTE && LA48_0 <= RETHROW)||LA48_0==RETURN||LA48_0==RIGHTCURLYBRACKET||(LA48_0 >= SAVECONTENT && LA48_0 <= SETTING)||(LA48_0 >= STRING_LITERAL && LA48_0 <= SWITCH)||(LA48_0 >= THAN && LA48_0 <= THREAD)||LA48_0==THROW||(LA48_0 >= TO && LA48_0 <= TRANSACTION)||(LA48_0 >= TRY && LA48_0 <= VAR)||LA48_0==WHILE||LA48_0==150) ) {s = 2;}
 
-                        else if ( (LA48_0==IN) && ((!scriptMode))) {s = 61;}
+                        else if ( (LA48_0==IN) && ((!scriptMode))) {s = 62;}
 
                          
                         input.seek(index48_0);
@@ -26123,9 +26619,9 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred89_CFScript()) ) {s = 62;}
+                        if ( (synpred89_CFScript()) ) {s = 63;}
 
-                        else if ( (true) ) {s = 61;}
+                        else if ( (true) ) {s = 62;}
 
                          
                         input.seek(index48_1);
@@ -26143,27 +26639,29 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA53_eotS =
-        "\106\uffff";
+        "\107\uffff";
     static final String DFA53_eofS =
-        "\1\2\105\uffff";
+        "\1\2\106\uffff";
     static final String DFA53_minS =
-        "\1\4\1\0\104\uffff";
+        "\1\4\1\0\105\uffff";
     static final String DFA53_maxS =
-        "\1\u0097\1\0\104\uffff";
+        "\1\u0097\1\0\105\uffff";
     static final String DFA53_acceptS =
-        "\2\uffff\1\2\76\uffff\2\2\2\uffff\1\1";
+        "\2\uffff\1\2\77\uffff\2\2\2\uffff\1\1";
     static final String DFA53_specialS =
-        "\1\0\1\1\104\uffff}>";
+        "\1\0\1\1\105\uffff}>";
     static final String[] DFA53_transitionS = {
-            "\1\2\3\uffff\2\2\1\uffff\2\2\1\uffff\1\2\4\uffff\1\102\1\2\1"+
-            "\uffff\2\2\1\uffff\3\2\4\uffff\1\2\5\uffff\1\1\1\uffff\1\2\2"+
-            "\uffff\4\2\1\uffff\1\2\7\uffff\1\2\2\uffff\3\2\3\uffff\1\2\1"+
-            "\101\2\2\4\uffff\4\2\2\uffff\2\2\1\uffff\1\2\1\102\1\uffff\1"+
-            "\2\1\102\1\2\2\uffff\1\102\2\uffff\4\2\2\uffff\2\2\2\uffff\1"+
-            "\2\1\102\1\2\3\uffff\2\2\1\uffff\2\2\1\uffff\3\2\1\uffff\1\2"+
-            "\1\102\6\2\1\uffff\1\102\1\uffff\1\102\2\2\2\uffff\2\2\1\uffff"+
-            "\1\2\1\uffff\2\2\1\uffff\2\2\1\uffff\1\2\3\uffff\2\2",
+            "\1\2\3\uffff\2\2\1\uffff\2\2\1\uffff\1\2\1\uffff\1\2\2\uffff"+
+            "\1\103\1\2\1\uffff\2\2\1\uffff\3\2\4\uffff\1\2\5\uffff\1\1\1"+
+            "\uffff\1\2\2\uffff\4\2\1\uffff\1\2\7\uffff\1\2\2\uffff\3\2\3"+
+            "\uffff\1\2\1\102\2\2\4\uffff\4\2\2\uffff\2\2\1\uffff\1\2\1\103"+
+            "\1\uffff\1\2\1\103\1\2\2\uffff\1\103\2\uffff\4\2\2\uffff\2\2"+
+            "\2\uffff\1\2\1\103\1\2\3\uffff\2\2\1\uffff\2\2\1\uffff\3\2\1"+
+            "\uffff\1\2\1\103\6\2\1\uffff\1\103\1\uffff\1\103\2\2\2\uffff"+
+            "\2\2\1\uffff\1\2\1\uffff\2\2\1\uffff\2\2\1\uffff\1\2\3\uffff"+
+            "\2\2",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -26264,7 +26762,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA53_transition;
         }
         public String getDescription() {
-            return "689:19: ( EQUALSOP impliesExpression )?";
+            return "693:19: ( EQUALSOP impliesExpression )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -26280,11 +26778,11 @@ public TreeAdaptor getTreeAdaptor() {
                         s = -1;
                         if ( (LA53_0==EQUALSOP) ) {s = 1;}
 
-                        else if ( (LA53_0==EOF||LA53_0==ABORT||(LA53_0 >= BOOLEAN_LITERAL && LA53_0 <= BREAK)||(LA53_0 >= CASE && LA53_0 <= CATCH)||LA53_0==COLON||LA53_0==CONTAIN||(LA53_0 >= CONTINUE && LA53_0 <= DEFAULT)||(LA53_0 >= DIRECTORY && LA53_0 <= DOES)||LA53_0==ELSE||LA53_0==EXIT||(LA53_0 >= FILE && LA53_0 <= FOR)||LA53_0==FUNCTION||LA53_0==GREATER||(LA53_0 >= HTTP && LA53_0 <= IF)||LA53_0==IMPORT||(LA53_0 >= INCLUDE && LA53_0 <= INTEGER_LITERAL)||(LA53_0 >= LEFTBRACKET && LA53_0 <= LESS)||(LA53_0 >= LOCATION && LA53_0 <= LOCK)||LA53_0==LOOP||LA53_0==MINUS||LA53_0==MINUSMINUS||(LA53_0 >= NEW && LA53_0 <= NULL)||(LA53_0 >= PACKAGE && LA53_0 <= PARAM)||LA53_0==PLUS||LA53_0==PLUSPLUS||(LA53_0 >= PRIVATE && LA53_0 <= PROPERTY)||(LA53_0 >= PUBLIC && LA53_0 <= QUERY)||(LA53_0 >= REMOTE && LA53_0 <= RETHROW)||LA53_0==RETURN||(LA53_0 >= RIGHTCURLYBRACKET && LA53_0 <= SETTING)||(LA53_0 >= STRING_LITERAL && LA53_0 <= SWITCH)||(LA53_0 >= THAN && LA53_0 <= THREAD)||LA53_0==THROW||(LA53_0 >= TO && LA53_0 <= TRANSACTION)||(LA53_0 >= TRY && LA53_0 <= VAR)||LA53_0==WHILE||(LA53_0 >= 150 && LA53_0 <= 151)) ) {s = 2;}
+                        else if ( (LA53_0==EOF||LA53_0==ABORT||(LA53_0 >= BOOLEAN_LITERAL && LA53_0 <= BREAK)||(LA53_0 >= CASE && LA53_0 <= CATCH)||LA53_0==COLON||LA53_0==COMPONENT||LA53_0==CONTAIN||(LA53_0 >= CONTINUE && LA53_0 <= DEFAULT)||(LA53_0 >= DIRECTORY && LA53_0 <= DOES)||LA53_0==ELSE||LA53_0==EXIT||(LA53_0 >= FILE && LA53_0 <= FOR)||LA53_0==FUNCTION||LA53_0==GREATER||(LA53_0 >= HTTP && LA53_0 <= IF)||LA53_0==IMPORT||(LA53_0 >= INCLUDE && LA53_0 <= INTEGER_LITERAL)||(LA53_0 >= LEFTBRACKET && LA53_0 <= LESS)||(LA53_0 >= LOCATION && LA53_0 <= LOCK)||LA53_0==LOOP||LA53_0==MINUS||LA53_0==MINUSMINUS||(LA53_0 >= NEW && LA53_0 <= NULL)||(LA53_0 >= PACKAGE && LA53_0 <= PARAM)||LA53_0==PLUS||LA53_0==PLUSPLUS||(LA53_0 >= PRIVATE && LA53_0 <= PROPERTY)||(LA53_0 >= PUBLIC && LA53_0 <= QUERY)||(LA53_0 >= REMOTE && LA53_0 <= RETHROW)||LA53_0==RETURN||(LA53_0 >= RIGHTCURLYBRACKET && LA53_0 <= SETTING)||(LA53_0 >= STRING_LITERAL && LA53_0 <= SWITCH)||(LA53_0 >= THAN && LA53_0 <= THREAD)||LA53_0==THROW||(LA53_0 >= TO && LA53_0 <= TRANSACTION)||(LA53_0 >= TRY && LA53_0 <= VAR)||LA53_0==WHILE||(LA53_0 >= 150 && LA53_0 <= 151)) ) {s = 2;}
 
-                        else if ( (LA53_0==IN) && ((!scriptMode))) {s = 65;}
+                        else if ( (LA53_0==IN) && ((!scriptMode))) {s = 66;}
 
-                        else if ( (LA53_0==CONCATEQUALS||LA53_0==LT||LA53_0==MINUSEQUALS||LA53_0==MODEQUALS||LA53_0==PLUSEQUALS||LA53_0==RIGHTBRACKET||LA53_0==SLASHEQUALS||LA53_0==STAREQUALS) ) {s = 66;}
+                        else if ( (LA53_0==CONCATEQUALS||LA53_0==LT||LA53_0==MINUSEQUALS||LA53_0==MODEQUALS||LA53_0==PLUSEQUALS||LA53_0==RIGHTBRACKET||LA53_0==SLASHEQUALS||LA53_0==STAREQUALS) ) {s = 67;}
 
                          
                         input.seek(index53_0);
@@ -26300,9 +26798,9 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred94_CFScript()) ) {s = 69;}
+                        if ( (synpred94_CFScript()) ) {s = 70;}
 
-                        else if ( (true) ) {s = 66;}
+                        else if ( (true) ) {s = 67;}
 
                          
                         input.seek(index53_1);
@@ -26320,30 +26818,31 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA64_eotS =
-        "\133\uffff";
+        "\134\uffff";
     static final String DFA64_eofS =
-        "\1\1\132\uffff";
+        "\1\1\133\uffff";
     static final String DFA64_minS =
-        "\1\4\12\uffff\1\0\1\uffff\1\0\1\uffff\1\0\25\uffff\1\0\41\uffff"+
+        "\1\4\13\uffff\1\0\1\uffff\1\0\1\uffff\1\0\25\uffff\1\0\41\uffff"+
         "\1\0\23\uffff";
     static final String DFA64_maxS =
-        "\1\u009b\12\uffff\1\0\1\uffff\1\0\1\uffff\1\0\25\uffff\1\0\41\uffff"+
+        "\1\u009b\13\uffff\1\0\1\uffff\1\0\1\uffff\1\0\25\uffff\1\0\41\uffff"+
         "\1\0\23\uffff";
     static final String DFA64_acceptS =
-        "\1\uffff\1\2\102\uffff\2\2\4\uffff\1\1\20\uffff";
+        "\1\uffff\1\2\103\uffff\2\2\4\uffff\1\1\20\uffff";
     static final String DFA64_specialS =
-        "\1\0\12\uffff\1\1\1\uffff\1\2\1\uffff\1\3\25\uffff\1\4\41\uffff"+
+        "\1\0\13\uffff\1\1\1\uffff\1\2\1\uffff\1\3\25\uffff\1\4\41\uffff"+
         "\1\5\23\uffff}>";
     static final String[] DFA64_transitionS = {
-            "\1\1\1\uffff\4\1\1\uffff\2\1\1\uffff\1\105\4\uffff\1\105\1\1"+
-            "\1\112\2\1\1\uffff\2\1\1\13\4\uffff\1\1\1\uffff\4\112\1\105"+
-            "\2\1\2\uffff\4\1\1\uffff\1\1\6\uffff\1\112\1\15\2\112\4\1\2"+
-            "\uffff\1\1\1\104\2\1\1\112\2\uffff\1\112\3\1\1\17\2\uffff\2"+
-            "\1\1\uffff\1\1\1\107\1\112\1\1\1\105\1\1\2\uffff\1\105\1\uffff"+
-            "\1\112\1\1\1\45\6\1\2\uffff\1\1\1\105\1\1\3\uffff\2\1\1\uffff"+
-            "\2\1\1\105\3\1\1\uffff\1\1\1\105\6\1\1\uffff\1\105\1\uffff\1"+
-            "\105\2\1\2\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff"+
-            "\1\1\1\uffff\1\1\1\112\2\1\4\112",
+            "\1\1\1\uffff\4\1\1\uffff\2\1\1\uffff\1\106\1\uffff\1\1\2\uffff"+
+            "\1\106\1\1\1\113\2\1\1\uffff\2\1\1\14\4\uffff\1\1\1\uffff\4"+
+            "\113\1\106\2\1\2\uffff\4\1\1\uffff\1\1\6\uffff\1\113\1\16\2"+
+            "\113\4\1\2\uffff\1\1\1\105\2\1\1\113\2\uffff\1\113\3\1\1\20"+
+            "\2\uffff\2\1\1\uffff\1\1\1\110\1\113\1\1\1\106\1\1\2\uffff\1"+
+            "\106\1\uffff\1\113\1\1\1\46\6\1\2\uffff\1\1\1\106\1\1\3\uffff"+
+            "\2\1\1\uffff\2\1\1\106\3\1\1\uffff\1\1\1\106\6\1\1\uffff\1\106"+
+            "\1\uffff\1\106\2\1\2\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff"+
+            "\2\1\1\uffff\1\1\1\uffff\1\1\1\113\2\1\4\113",
+            "",
             "",
             "",
             "",
@@ -26466,7 +26965,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA64_transition;
         }
         public String getDescription() {
-            return "()* loopback of 729:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*";
+            return "()* loopback of 733:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -26480,23 +26979,23 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (LA64_0==EOF||LA64_0==ABORT||(LA64_0 >= AND && LA64_0 <= BREAK)||(LA64_0 >= CASE && LA64_0 <= CATCH)||LA64_0==CONTAIN||(LA64_0 >= CONTINUE && LA64_0 <= DEFAULT)||(LA64_0 >= DIRECTORY && LA64_0 <= DO)||LA64_0==ELSE||(LA64_0 >= EQV && LA64_0 <= EXIT)||(LA64_0 >= FILE && LA64_0 <= FOR)||LA64_0==FUNCTION||(LA64_0 >= HTTP && LA64_0 <= IMP)||LA64_0==IMPORT||(LA64_0 >= INCLUDE && LA64_0 <= INTEGER_LITERAL)||(LA64_0 >= LEFTBRACKET && LA64_0 <= LEFTPAREN)||(LA64_0 >= LOCATION && LA64_0 <= LOCK)||LA64_0==LOOP||LA64_0==MINUS||LA64_0==MINUSMINUS||LA64_0==NEW||(LA64_0 >= NOTOP && LA64_0 <= PARAM)||LA64_0==PLUS||LA64_0==PLUSPLUS||(LA64_0 >= PRIVATE && LA64_0 <= PROPERTY)||(LA64_0 >= PUBLIC && LA64_0 <= QUERY)||(LA64_0 >= REMOTE && LA64_0 <= RETHROW)||LA64_0==RETURN||(LA64_0 >= RIGHTCURLYBRACKET && LA64_0 <= SETTING)||(LA64_0 >= STRING_LITERAL && LA64_0 <= SWITCH)||(LA64_0 >= THAN && LA64_0 <= THREAD)||LA64_0==THROW||(LA64_0 >= TO && LA64_0 <= TRANSACTION)||(LA64_0 >= TRY && LA64_0 <= VAR)||LA64_0==WHILE||LA64_0==XOR||(LA64_0 >= 150 && LA64_0 <= 151)) ) {s = 1;}
+                        if ( (LA64_0==EOF||LA64_0==ABORT||(LA64_0 >= AND && LA64_0 <= BREAK)||(LA64_0 >= CASE && LA64_0 <= CATCH)||LA64_0==COMPONENT||LA64_0==CONTAIN||(LA64_0 >= CONTINUE && LA64_0 <= DEFAULT)||(LA64_0 >= DIRECTORY && LA64_0 <= DO)||LA64_0==ELSE||(LA64_0 >= EQV && LA64_0 <= EXIT)||(LA64_0 >= FILE && LA64_0 <= FOR)||LA64_0==FUNCTION||(LA64_0 >= HTTP && LA64_0 <= IMP)||LA64_0==IMPORT||(LA64_0 >= INCLUDE && LA64_0 <= INTEGER_LITERAL)||(LA64_0 >= LEFTBRACKET && LA64_0 <= LEFTPAREN)||(LA64_0 >= LOCATION && LA64_0 <= LOCK)||LA64_0==LOOP||LA64_0==MINUS||LA64_0==MINUSMINUS||LA64_0==NEW||(LA64_0 >= NOTOP && LA64_0 <= PARAM)||LA64_0==PLUS||LA64_0==PLUSPLUS||(LA64_0 >= PRIVATE && LA64_0 <= PROPERTY)||(LA64_0 >= PUBLIC && LA64_0 <= QUERY)||(LA64_0 >= REMOTE && LA64_0 <= RETHROW)||LA64_0==RETURN||(LA64_0 >= RIGHTCURLYBRACKET && LA64_0 <= SETTING)||(LA64_0 >= STRING_LITERAL && LA64_0 <= SWITCH)||(LA64_0 >= THAN && LA64_0 <= THREAD)||LA64_0==THROW||(LA64_0 >= TO && LA64_0 <= TRANSACTION)||(LA64_0 >= TRY && LA64_0 <= VAR)||LA64_0==WHILE||LA64_0==XOR||(LA64_0 >= 150 && LA64_0 <= 151)) ) {s = 1;}
 
-                        else if ( (LA64_0==DOES) ) {s = 11;}
+                        else if ( (LA64_0==DOES) ) {s = 12;}
 
-                        else if ( (LA64_0==GREATER) ) {s = 13;}
+                        else if ( (LA64_0==GREATER) ) {s = 14;}
 
-                        else if ( (LA64_0==LESS) ) {s = 15;}
+                        else if ( (LA64_0==LESS) ) {s = 16;}
 
-                        else if ( (LA64_0==NOT) ) {s = 37;}
+                        else if ( (LA64_0==NOT) ) {s = 38;}
 
-                        else if ( (LA64_0==IN) && ((!scriptMode))) {s = 68;}
+                        else if ( (LA64_0==IN) && ((!scriptMode))) {s = 69;}
 
-                        else if ( (LA64_0==COLON||LA64_0==CONCATEQUALS||LA64_0==EQUALSOP||LA64_0==MINUSEQUALS||LA64_0==MODEQUALS||LA64_0==PLUSEQUALS||LA64_0==QUESTIONMARK||LA64_0==RIGHTBRACKET||LA64_0==SLASHEQUALS||LA64_0==STAREQUALS) ) {s = 69;}
+                        else if ( (LA64_0==COLON||LA64_0==CONCATEQUALS||LA64_0==EQUALSOP||LA64_0==MINUSEQUALS||LA64_0==MODEQUALS||LA64_0==PLUSEQUALS||LA64_0==QUESTIONMARK||LA64_0==RIGHTBRACKET||LA64_0==SLASHEQUALS||LA64_0==STAREQUALS) ) {s = 70;}
 
-                        else if ( (LA64_0==LT) ) {s = 71;}
+                        else if ( (LA64_0==LT) ) {s = 72;}
 
-                        else if ( (LA64_0==CONTAINS||(LA64_0 >= EQ && LA64_0 <= EQUALSEQUALSOP)||LA64_0==GE||(LA64_0 >= GT && LA64_0 <= GTE)||LA64_0==IS||LA64_0==LE||LA64_0==LTE||LA64_0==NEQ||LA64_0==149||(LA64_0 >= 152 && LA64_0 <= 155)) ) {s = 74;}
+                        else if ( (LA64_0==CONTAINS||(LA64_0 >= EQ && LA64_0 <= EQUALSEQUALSOP)||LA64_0==GE||(LA64_0 >= GT && LA64_0 <= GTE)||LA64_0==IS||LA64_0==LE||LA64_0==LTE||LA64_0==NEQ||LA64_0==149||(LA64_0 >= 152 && LA64_0 <= 155)) ) {s = 75;}
 
                          
                         input.seek(index64_0);
@@ -26505,91 +27004,91 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 1 : 
-                        int LA64_11 = input.LA(1);
+                        int LA64_12 = input.LA(1);
 
                          
-                        int index64_11 = input.index();
+                        int index64_12 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred116_CFScript()) ) {s = 74;}
+                        if ( (synpred116_CFScript()) ) {s = 75;}
 
-                        else if ( (true) ) {s = 69;}
+                        else if ( (true) ) {s = 70;}
 
                          
-                        input.seek(index64_11);
+                        input.seek(index64_12);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 2 : 
-                        int LA64_13 = input.LA(1);
+                        int LA64_14 = input.LA(1);
 
                          
-                        int index64_13 = input.index();
+                        int index64_14 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred116_CFScript()) ) {s = 74;}
+                        if ( (synpred116_CFScript()) ) {s = 75;}
 
-                        else if ( (true) ) {s = 69;}
+                        else if ( (true) ) {s = 70;}
 
                          
-                        input.seek(index64_13);
+                        input.seek(index64_14);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 3 : 
-                        int LA64_15 = input.LA(1);
+                        int LA64_16 = input.LA(1);
 
                          
-                        int index64_15 = input.index();
+                        int index64_16 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred116_CFScript()) ) {s = 74;}
+                        if ( (synpred116_CFScript()) ) {s = 75;}
 
-                        else if ( (true) ) {s = 69;}
+                        else if ( (true) ) {s = 70;}
 
                          
-                        input.seek(index64_15);
+                        input.seek(index64_16);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 4 : 
-                        int LA64_37 = input.LA(1);
+                        int LA64_38 = input.LA(1);
 
                          
-                        int index64_37 = input.index();
+                        int index64_38 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred116_CFScript()) ) {s = 74;}
+                        if ( (synpred116_CFScript()) ) {s = 75;}
 
-                        else if ( (true) ) {s = 69;}
+                        else if ( (true) ) {s = 70;}
 
                          
-                        input.seek(index64_37);
+                        input.seek(index64_38);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 5 : 
-                        int LA64_71 = input.LA(1);
+                        int LA64_72 = input.LA(1);
 
                          
-                        int index64_71 = input.index();
+                        int index64_72 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred116_CFScript()) ) {s = 74;}
+                        if ( (synpred116_CFScript()) ) {s = 75;}
 
-                        else if ( (true) ) {s = 69;}
+                        else if ( (true) ) {s = 70;}
 
                          
-                        input.seek(index64_71);
+                        input.seek(index64_72);
 
                         if ( s>=0 ) return s;
                         break;
@@ -26604,26 +27103,27 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA70_eotS =
-        "\135\uffff";
+        "\136\uffff";
     static final String DFA70_eofS =
-        "\1\1\134\uffff";
+        "\1\1\135\uffff";
     static final String DFA70_minS =
-        "\1\4\71\uffff\2\0\41\uffff";
+        "\1\4\72\uffff\2\0\41\uffff";
     static final String DFA70_maxS =
-        "\1\u009b\71\uffff\2\0\41\uffff";
+        "\1\u009b\72\uffff\2\0\41\uffff";
     static final String DFA70_acceptS =
-        "\1\uffff\1\2\125\uffff\2\2\3\uffff\1\1";
+        "\1\uffff\1\2\126\uffff\2\2\3\uffff\1\1";
     static final String DFA70_specialS =
-        "\1\0\71\uffff\1\1\1\2\41\uffff}>";
+        "\1\0\72\uffff\1\1\1\2\41\uffff}>";
     static final String[] DFA70_transitionS = {
-            "\1\1\1\uffff\4\1\1\uffff\2\1\1\uffff\1\130\3\uffff\1\1\1\130"+
-            "\4\1\1\uffff\3\1\4\uffff\1\1\1\uffff\4\1\1\130\2\1\2\uffff\4"+
-            "\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\127\3\1\2\uffff\5"+
-            "\1\2\uffff\2\1\1\uffff\3\1\1\72\1\130\1\1\2\uffff\1\130\1\uffff"+
-            "\11\1\2\uffff\1\73\1\130\1\1\3\uffff\2\1\1\uffff\2\1\1\130\3"+
-            "\1\1\uffff\1\1\1\130\6\1\1\uffff\1\130\1\uffff\1\130\2\1\2\uffff"+
-            "\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff\1\1\1\uffff"+
-            "\10\1",
+            "\1\1\1\uffff\4\1\1\uffff\2\1\1\uffff\1\131\1\uffff\1\1\1\uffff"+
+            "\1\1\1\131\4\1\1\uffff\3\1\4\uffff\1\1\1\uffff\4\1\1\131\2\1"+
+            "\2\uffff\4\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\130\3\1"+
+            "\2\uffff\5\1\2\uffff\2\1\1\uffff\3\1\1\73\1\131\1\1\2\uffff"+
+            "\1\131\1\uffff\11\1\2\uffff\1\74\1\131\1\1\3\uffff\2\1\1\uffff"+
+            "\2\1\1\131\3\1\1\uffff\1\1\1\131\6\1\1\uffff\1\131\1\uffff\1"+
+            "\131\2\1\2\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff"+
+            "\1\1\1\uffff\10\1",
+            "",
             "",
             "",
             "",
@@ -26748,7 +27248,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA70_transition;
         }
         public String getDescription() {
-            return "()* loopback of 774:18: ( ( PLUS ^| MINUS ^) modExpression )*";
+            return "()* loopback of 778:18: ( ( PLUS ^| MINUS ^) modExpression )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -26762,15 +27262,15 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (LA70_0==EOF||LA70_0==ABORT||(LA70_0 >= AND && LA70_0 <= BREAK)||(LA70_0 >= CASE && LA70_0 <= CATCH)||LA70_0==CONCAT||(LA70_0 >= CONTAIN && LA70_0 <= DEFAULT)||(LA70_0 >= DIRECTORY && LA70_0 <= DOES)||LA70_0==ELSE||(LA70_0 >= EQ && LA70_0 <= EQUALSEQUALSOP)||(LA70_0 >= EQV && LA70_0 <= EXIT)||(LA70_0 >= FILE && LA70_0 <= FOR)||LA70_0==FUNCTION||(LA70_0 >= GE && LA70_0 <= IMP)||LA70_0==IMPORT||(LA70_0 >= INCLUDE && LA70_0 <= IS)||(LA70_0 >= LE && LA70_0 <= LESS)||(LA70_0 >= LOCATION && LA70_0 <= LOCK)||(LA70_0 >= LOOP && LA70_0 <= LTE)||LA70_0==MINUSMINUS||(LA70_0 >= NEQ && LA70_0 <= PARAM)||LA70_0==PLUSPLUS||(LA70_0 >= PRIVATE && LA70_0 <= PROPERTY)||(LA70_0 >= PUBLIC && LA70_0 <= QUERY)||(LA70_0 >= REMOTE && LA70_0 <= RETHROW)||LA70_0==RETURN||(LA70_0 >= RIGHTCURLYBRACKET && LA70_0 <= SETTING)||(LA70_0 >= STRING_LITERAL && LA70_0 <= SWITCH)||(LA70_0 >= THAN && LA70_0 <= THREAD)||LA70_0==THROW||(LA70_0 >= TO && LA70_0 <= TRANSACTION)||(LA70_0 >= TRY && LA70_0 <= VAR)||LA70_0==WHILE||(LA70_0 >= XOR && LA70_0 <= 155)) ) {s = 1;}
+                        if ( (LA70_0==EOF||LA70_0==ABORT||(LA70_0 >= AND && LA70_0 <= BREAK)||(LA70_0 >= CASE && LA70_0 <= CATCH)||LA70_0==COMPONENT||LA70_0==CONCAT||(LA70_0 >= CONTAIN && LA70_0 <= DEFAULT)||(LA70_0 >= DIRECTORY && LA70_0 <= DOES)||LA70_0==ELSE||(LA70_0 >= EQ && LA70_0 <= EQUALSEQUALSOP)||(LA70_0 >= EQV && LA70_0 <= EXIT)||(LA70_0 >= FILE && LA70_0 <= FOR)||LA70_0==FUNCTION||(LA70_0 >= GE && LA70_0 <= IMP)||LA70_0==IMPORT||(LA70_0 >= INCLUDE && LA70_0 <= IS)||(LA70_0 >= LE && LA70_0 <= LESS)||(LA70_0 >= LOCATION && LA70_0 <= LOCK)||(LA70_0 >= LOOP && LA70_0 <= LTE)||LA70_0==MINUSMINUS||(LA70_0 >= NEQ && LA70_0 <= PARAM)||LA70_0==PLUSPLUS||(LA70_0 >= PRIVATE && LA70_0 <= PROPERTY)||(LA70_0 >= PUBLIC && LA70_0 <= QUERY)||(LA70_0 >= REMOTE && LA70_0 <= RETHROW)||LA70_0==RETURN||(LA70_0 >= RIGHTCURLYBRACKET && LA70_0 <= SETTING)||(LA70_0 >= STRING_LITERAL && LA70_0 <= SWITCH)||(LA70_0 >= THAN && LA70_0 <= THREAD)||LA70_0==THROW||(LA70_0 >= TO && LA70_0 <= TRANSACTION)||(LA70_0 >= TRY && LA70_0 <= VAR)||LA70_0==WHILE||(LA70_0 >= XOR && LA70_0 <= 155)) ) {s = 1;}
 
-                        else if ( (LA70_0==MINUS) ) {s = 58;}
+                        else if ( (LA70_0==MINUS) ) {s = 59;}
 
-                        else if ( (LA70_0==PLUS) ) {s = 59;}
+                        else if ( (LA70_0==PLUS) ) {s = 60;}
 
-                        else if ( (LA70_0==IN) && ((!scriptMode))) {s = 87;}
+                        else if ( (LA70_0==IN) && ((!scriptMode))) {s = 88;}
 
-                        else if ( (LA70_0==COLON||LA70_0==CONCATEQUALS||LA70_0==EQUALSOP||LA70_0==MINUSEQUALS||LA70_0==MODEQUALS||LA70_0==PLUSEQUALS||LA70_0==QUESTIONMARK||LA70_0==RIGHTBRACKET||LA70_0==SLASHEQUALS||LA70_0==STAREQUALS) ) {s = 88;}
+                        else if ( (LA70_0==COLON||LA70_0==CONCATEQUALS||LA70_0==EQUALSOP||LA70_0==MINUSEQUALS||LA70_0==MODEQUALS||LA70_0==PLUSEQUALS||LA70_0==QUESTIONMARK||LA70_0==RIGHTBRACKET||LA70_0==SLASHEQUALS||LA70_0==STAREQUALS) ) {s = 89;}
 
                          
                         input.seek(index70_0);
@@ -26779,24 +27279,6 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 1 : 
-                        int LA70_58 = input.LA(1);
-
-                         
-                        int index70_58 = input.index();
-                        input.rewind();
-
-                        s = -1;
-                        if ( (synpred140_CFScript()) ) {s = 92;}
-
-                        else if ( (true) ) {s = 88;}
-
-                         
-                        input.seek(index70_58);
-
-                        if ( s>=0 ) return s;
-                        break;
-
-                    case 2 : 
                         int LA70_59 = input.LA(1);
 
                          
@@ -26804,12 +27286,30 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred140_CFScript()) ) {s = 92;}
+                        if ( (synpred140_CFScript()) ) {s = 93;}
 
-                        else if ( (true) ) {s = 88;}
+                        else if ( (true) ) {s = 89;}
 
                          
                         input.seek(index70_59);
+
+                        if ( s>=0 ) return s;
+                        break;
+
+                    case 2 : 
+                        int LA70_60 = input.LA(1);
+
+                         
+                        int index70_60 = input.index();
+                        input.rewind();
+
+                        s = -1;
+                        if ( (synpred140_CFScript()) ) {s = 93;}
+
+                        else if ( (true) ) {s = 89;}
+
+                         
+                        input.seek(index70_60);
 
                         if ( s>=0 ) return s;
                         break;
@@ -26824,26 +27324,27 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA76_eotS =
-        "\143\uffff";
+        "\144\uffff";
     static final String DFA76_eofS =
-        "\1\1\142\uffff";
+        "\1\1\143\uffff";
     static final String DFA76_minS =
-        "\1\4\111\uffff\1\0\30\uffff";
+        "\1\4\112\uffff\1\0\30\uffff";
     static final String DFA76_maxS =
-        "\1\u009b\111\uffff\1\0\30\uffff";
+        "\1\u009b\112\uffff\1\0\30\uffff";
     static final String DFA76_acceptS =
-        "\1\uffff\1\2\132\uffff\2\2\4\uffff\1\1";
+        "\1\uffff\1\2\133\uffff\2\2\4\uffff\1\1";
     static final String DFA76_specialS =
-        "\1\0\111\uffff\1\1\30\uffff}>";
+        "\1\0\112\uffff\1\1\30\uffff}>";
     static final String[] DFA76_transitionS = {
-            "\1\1\1\uffff\7\1\1\uffff\1\135\3\uffff\1\1\1\135\4\1\1\uffff"+
-            "\3\1\1\uffff\1\135\2\uffff\1\1\1\uffff\4\1\1\135\2\1\2\uffff"+
-            "\4\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\134\3\1\2\uffff"+
-            "\3\1\1\112\1\1\2\uffff\2\1\1\uffff\4\1\1\135\1\1\1\uffff\1\1"+
-            "\1\135\12\1\2\uffff\1\1\1\135\1\1\2\uffff\3\1\1\uffff\2\1\1"+
-            "\135\3\1\1\uffff\1\1\1\135\7\1\1\135\1\1\1\135\2\1\2\uffff\2"+
-            "\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff\1\1\1\uffff\10"+
-            "\1",
+            "\1\1\1\uffff\7\1\1\uffff\1\136\1\uffff\1\1\1\uffff\1\1\1\136"+
+            "\4\1\1\uffff\3\1\1\uffff\1\136\2\uffff\1\1\1\uffff\4\1\1\136"+
+            "\2\1\2\uffff\4\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\135"+
+            "\3\1\2\uffff\3\1\1\113\1\1\2\uffff\2\1\1\uffff\4\1\1\136\1\1"+
+            "\1\uffff\1\1\1\136\12\1\2\uffff\1\1\1\136\1\1\2\uffff\3\1\1"+
+            "\uffff\2\1\1\136\3\1\1\uffff\1\1\1\136\7\1\1\136\1\1\1\136\2"+
+            "\1\2\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff\1"+
+            "\1\1\uffff\10\1",
+            "",
             "",
             "",
             "",
@@ -26974,7 +27475,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA76_transition;
         }
         public String getDescription() {
-            return "()* loopback of 798:53: ( LEFTPAREN argumentList ')' )*";
+            return "()* loopback of 802:53: ( LEFTPAREN argumentList ')' )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -26988,13 +27489,13 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (LA76_0==EOF||LA76_0==ABORT||(LA76_0 >= AND && LA76_0 <= CATCH)||LA76_0==CONCAT||(LA76_0 >= CONTAIN && LA76_0 <= DEFAULT)||(LA76_0 >= DIRECTORY && LA76_0 <= DOES)||LA76_0==ELSE||(LA76_0 >= EQ && LA76_0 <= EQUALSEQUALSOP)||(LA76_0 >= EQV && LA76_0 <= EXIT)||(LA76_0 >= FILE && LA76_0 <= FOR)||LA76_0==FUNCTION||(LA76_0 >= GE && LA76_0 <= IMP)||LA76_0==IMPORT||(LA76_0 >= INCLUDE && LA76_0 <= IS)||(LA76_0 >= LE && LA76_0 <= LEFTCURLYBRACKET)||LA76_0==LESS||(LA76_0 >= LOCATION && LA76_0 <= LOCK)||(LA76_0 >= LOOP && LA76_0 <= MINUS)||LA76_0==MINUSMINUS||LA76_0==MOD||(LA76_0 >= MODOPERATOR && LA76_0 <= PARAM)||LA76_0==PLUS||LA76_0==PLUSPLUS||(LA76_0 >= POWER && LA76_0 <= PROPERTY)||(LA76_0 >= PUBLIC && LA76_0 <= QUERY)||(LA76_0 >= REMOTE && LA76_0 <= RETHROW)||LA76_0==RETURN||(LA76_0 >= RIGHTCURLYBRACKET && LA76_0 <= SLASH)||LA76_0==STAR||(LA76_0 >= STRING_LITERAL && LA76_0 <= SWITCH)||(LA76_0 >= THAN && LA76_0 <= THREAD)||LA76_0==THROW||(LA76_0 >= TO && LA76_0 <= TRANSACTION)||(LA76_0 >= TRY && LA76_0 <= VAR)||LA76_0==WHILE||(LA76_0 >= XOR && LA76_0 <= 155)) ) {s = 1;}
+                        if ( (LA76_0==EOF||LA76_0==ABORT||(LA76_0 >= AND && LA76_0 <= CATCH)||LA76_0==COMPONENT||LA76_0==CONCAT||(LA76_0 >= CONTAIN && LA76_0 <= DEFAULT)||(LA76_0 >= DIRECTORY && LA76_0 <= DOES)||LA76_0==ELSE||(LA76_0 >= EQ && LA76_0 <= EQUALSEQUALSOP)||(LA76_0 >= EQV && LA76_0 <= EXIT)||(LA76_0 >= FILE && LA76_0 <= FOR)||LA76_0==FUNCTION||(LA76_0 >= GE && LA76_0 <= IMP)||LA76_0==IMPORT||(LA76_0 >= INCLUDE && LA76_0 <= IS)||(LA76_0 >= LE && LA76_0 <= LEFTCURLYBRACKET)||LA76_0==LESS||(LA76_0 >= LOCATION && LA76_0 <= LOCK)||(LA76_0 >= LOOP && LA76_0 <= MINUS)||LA76_0==MINUSMINUS||LA76_0==MOD||(LA76_0 >= MODOPERATOR && LA76_0 <= PARAM)||LA76_0==PLUS||LA76_0==PLUSPLUS||(LA76_0 >= POWER && LA76_0 <= PROPERTY)||(LA76_0 >= PUBLIC && LA76_0 <= QUERY)||(LA76_0 >= REMOTE && LA76_0 <= RETHROW)||LA76_0==RETURN||(LA76_0 >= RIGHTCURLYBRACKET && LA76_0 <= SLASH)||LA76_0==STAR||(LA76_0 >= STRING_LITERAL && LA76_0 <= SWITCH)||(LA76_0 >= THAN && LA76_0 <= THREAD)||LA76_0==THROW||(LA76_0 >= TO && LA76_0 <= TRANSACTION)||(LA76_0 >= TRY && LA76_0 <= VAR)||LA76_0==WHILE||(LA76_0 >= XOR && LA76_0 <= 155)) ) {s = 1;}
 
-                        else if ( (LA76_0==LEFTPAREN) ) {s = 74;}
+                        else if ( (LA76_0==LEFTPAREN) ) {s = 75;}
 
-                        else if ( (LA76_0==IN) && ((!scriptMode))) {s = 92;}
+                        else if ( (LA76_0==IN) && ((!scriptMode))) {s = 93;}
 
-                        else if ( (LA76_0==COLON||LA76_0==CONCATEQUALS||LA76_0==DOT||LA76_0==EQUALSOP||LA76_0==MINUSEQUALS||LA76_0==MODEQUALS||LA76_0==PLUSEQUALS||LA76_0==QUESTIONMARK||LA76_0==RIGHTBRACKET||LA76_0==SLASHEQUALS||LA76_0==STAREQUALS) ) {s = 93;}
+                        else if ( (LA76_0==COLON||LA76_0==CONCATEQUALS||LA76_0==DOT||LA76_0==EQUALSOP||LA76_0==MINUSEQUALS||LA76_0==MODEQUALS||LA76_0==PLUSEQUALS||LA76_0==QUESTIONMARK||LA76_0==RIGHTBRACKET||LA76_0==SLASHEQUALS||LA76_0==STAREQUALS) ) {s = 94;}
 
                          
                         input.seek(index76_0);
@@ -27003,19 +27504,19 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 1 : 
-                        int LA76_74 = input.LA(1);
+                        int LA76_75 = input.LA(1);
 
                          
-                        int index76_74 = input.index();
+                        int index76_75 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred151_CFScript()) ) {s = 98;}
+                        if ( (synpred151_CFScript()) ) {s = 99;}
 
-                        else if ( (true) ) {s = 93;}
+                        else if ( (true) ) {s = 94;}
 
                          
-                        input.seek(index76_74);
+                        input.seek(index76_75);
 
                         if ( s>=0 ) return s;
                         break;
@@ -27030,26 +27531,27 @@ public TreeAdaptor getTreeAdaptor() {
 
     }
     static final String DFA80_eotS =
-        "\146\uffff";
+        "\147\uffff";
     static final String DFA80_eofS =
-        "\1\1\145\uffff";
+        "\1\1\146\uffff";
     static final String DFA80_minS =
-        "\1\4\107\uffff\1\0\1\uffff\1\0\26\uffff\1\0\4\uffff";
+        "\1\4\110\uffff\1\0\1\uffff\1\0\26\uffff\1\0\4\uffff";
     static final String DFA80_maxS =
-        "\1\u009b\107\uffff\1\0\1\uffff\1\0\26\uffff\1\0\4\uffff";
+        "\1\u009b\110\uffff\1\0\1\uffff\1\0\26\uffff\1\0\4\uffff";
     static final String DFA80_acceptS =
-        "\1\uffff\1\5\132\uffff\2\5\4\uffff\1\3\1\2\1\1\1\4";
+        "\1\uffff\1\5\133\uffff\2\5\4\uffff\1\3\1\2\1\1\1\4";
     static final String DFA80_specialS =
-        "\1\0\107\uffff\1\1\1\uffff\1\2\26\uffff\1\3\4\uffff}>";
+        "\1\0\110\uffff\1\1\1\uffff\1\2\26\uffff\1\3\4\uffff}>";
     static final String[] DFA80_transitionS = {
-            "\1\1\1\uffff\7\1\1\uffff\1\135\3\uffff\1\1\1\135\4\1\1\uffff"+
-            "\3\1\1\uffff\1\141\2\uffff\1\1\1\uffff\4\1\1\135\2\1\2\uffff"+
-            "\4\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\134\3\1\2\uffff"+
-            "\1\1\1\110\1\1\1\112\1\1\2\uffff\2\1\1\uffff\4\1\1\135\1\1\1"+
-            "\uffff\1\1\1\135\12\1\2\uffff\1\1\1\135\1\1\2\uffff\3\1\1\uffff"+
-            "\2\1\1\135\3\1\1\uffff\1\1\1\135\7\1\1\135\1\1\1\135\2\1\2\uffff"+
-            "\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff\1\1\1\uffff"+
-            "\10\1",
+            "\1\1\1\uffff\7\1\1\uffff\1\136\1\uffff\1\1\1\uffff\1\1\1\136"+
+            "\4\1\1\uffff\3\1\1\uffff\1\142\2\uffff\1\1\1\uffff\4\1\1\136"+
+            "\2\1\2\uffff\4\1\1\uffff\1\1\6\uffff\10\1\2\uffff\1\1\1\135"+
+            "\3\1\2\uffff\1\1\1\111\1\1\1\113\1\1\2\uffff\2\1\1\uffff\4\1"+
+            "\1\136\1\1\1\uffff\1\1\1\136\12\1\2\uffff\1\1\1\136\1\1\2\uffff"+
+            "\3\1\1\uffff\2\1\1\136\3\1\1\uffff\1\1\1\136\7\1\1\136\1\1\1"+
+            "\136\2\1\2\uffff\2\1\1\uffff\1\1\1\uffff\2\1\1\uffff\2\1\1\uffff"+
+            "\1\1\1\uffff\10\1",
+            "",
             "",
             "",
             "",
@@ -27183,7 +27685,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA80_transition;
         }
         public String getDescription() {
-            return "()* loopback of 811:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*";
+            return "()* loopback of 815:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -27197,17 +27699,17 @@ public TreeAdaptor getTreeAdaptor() {
                         input.rewind();
 
                         s = -1;
-                        if ( (LA80_0==EOF||LA80_0==ABORT||(LA80_0 >= AND && LA80_0 <= CATCH)||LA80_0==CONCAT||(LA80_0 >= CONTAIN && LA80_0 <= DEFAULT)||(LA80_0 >= DIRECTORY && LA80_0 <= DOES)||LA80_0==ELSE||(LA80_0 >= EQ && LA80_0 <= EQUALSEQUALSOP)||(LA80_0 >= EQV && LA80_0 <= EXIT)||(LA80_0 >= FILE && LA80_0 <= FOR)||LA80_0==FUNCTION||(LA80_0 >= GE && LA80_0 <= IMP)||LA80_0==IMPORT||(LA80_0 >= INCLUDE && LA80_0 <= IS)||LA80_0==LE||LA80_0==LEFTCURLYBRACKET||LA80_0==LESS||(LA80_0 >= LOCATION && LA80_0 <= LOCK)||(LA80_0 >= LOOP && LA80_0 <= MINUS)||LA80_0==MINUSMINUS||LA80_0==MOD||(LA80_0 >= MODOPERATOR && LA80_0 <= PARAM)||LA80_0==PLUS||LA80_0==PLUSPLUS||(LA80_0 >= POWER && LA80_0 <= PROPERTY)||(LA80_0 >= PUBLIC && LA80_0 <= QUERY)||(LA80_0 >= REMOTE && LA80_0 <= RETHROW)||LA80_0==RETURN||(LA80_0 >= RIGHTCURLYBRACKET && LA80_0 <= SLASH)||LA80_0==STAR||(LA80_0 >= STRING_LITERAL && LA80_0 <= SWITCH)||(LA80_0 >= THAN && LA80_0 <= THREAD)||LA80_0==THROW||(LA80_0 >= TO && LA80_0 <= TRANSACTION)||(LA80_0 >= TRY && LA80_0 <= VAR)||LA80_0==WHILE||(LA80_0 >= XOR && LA80_0 <= 155)) ) {s = 1;}
+                        if ( (LA80_0==EOF||LA80_0==ABORT||(LA80_0 >= AND && LA80_0 <= CATCH)||LA80_0==COMPONENT||LA80_0==CONCAT||(LA80_0 >= CONTAIN && LA80_0 <= DEFAULT)||(LA80_0 >= DIRECTORY && LA80_0 <= DOES)||LA80_0==ELSE||(LA80_0 >= EQ && LA80_0 <= EQUALSEQUALSOP)||(LA80_0 >= EQV && LA80_0 <= EXIT)||(LA80_0 >= FILE && LA80_0 <= FOR)||LA80_0==FUNCTION||(LA80_0 >= GE && LA80_0 <= IMP)||LA80_0==IMPORT||(LA80_0 >= INCLUDE && LA80_0 <= IS)||LA80_0==LE||LA80_0==LEFTCURLYBRACKET||LA80_0==LESS||(LA80_0 >= LOCATION && LA80_0 <= LOCK)||(LA80_0 >= LOOP && LA80_0 <= MINUS)||LA80_0==MINUSMINUS||LA80_0==MOD||(LA80_0 >= MODOPERATOR && LA80_0 <= PARAM)||LA80_0==PLUS||LA80_0==PLUSPLUS||(LA80_0 >= POWER && LA80_0 <= PROPERTY)||(LA80_0 >= PUBLIC && LA80_0 <= QUERY)||(LA80_0 >= REMOTE && LA80_0 <= RETHROW)||LA80_0==RETURN||(LA80_0 >= RIGHTCURLYBRACKET && LA80_0 <= SLASH)||LA80_0==STAR||(LA80_0 >= STRING_LITERAL && LA80_0 <= SWITCH)||(LA80_0 >= THAN && LA80_0 <= THREAD)||LA80_0==THROW||(LA80_0 >= TO && LA80_0 <= TRANSACTION)||(LA80_0 >= TRY && LA80_0 <= VAR)||LA80_0==WHILE||(LA80_0 >= XOR && LA80_0 <= 155)) ) {s = 1;}
 
-                        else if ( (LA80_0==LEFTBRACKET) ) {s = 72;}
+                        else if ( (LA80_0==LEFTBRACKET) ) {s = 73;}
 
-                        else if ( (LA80_0==LEFTPAREN) ) {s = 74;}
+                        else if ( (LA80_0==LEFTPAREN) ) {s = 75;}
 
-                        else if ( (LA80_0==IN) && ((!scriptMode))) {s = 92;}
+                        else if ( (LA80_0==IN) && ((!scriptMode))) {s = 93;}
 
-                        else if ( (LA80_0==COLON||LA80_0==CONCATEQUALS||LA80_0==EQUALSOP||LA80_0==MINUSEQUALS||LA80_0==MODEQUALS||LA80_0==PLUSEQUALS||LA80_0==QUESTIONMARK||LA80_0==RIGHTBRACKET||LA80_0==SLASHEQUALS||LA80_0==STAREQUALS) ) {s = 93;}
+                        else if ( (LA80_0==COLON||LA80_0==CONCATEQUALS||LA80_0==EQUALSOP||LA80_0==MINUSEQUALS||LA80_0==MODEQUALS||LA80_0==PLUSEQUALS||LA80_0==QUESTIONMARK||LA80_0==RIGHTBRACKET||LA80_0==SLASHEQUALS||LA80_0==STAREQUALS) ) {s = 94;}
 
-                        else if ( (LA80_0==DOT) ) {s = 97;}
+                        else if ( (LA80_0==DOT) ) {s = 98;}
 
                          
                         input.seek(index80_0);
@@ -27216,55 +27718,55 @@ public TreeAdaptor getTreeAdaptor() {
                         break;
 
                     case 1 : 
-                        int LA80_72 = input.LA(1);
+                        int LA80_73 = input.LA(1);
 
                          
-                        int index80_72 = input.index();
+                        int index80_73 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred159_CFScript()) ) {s = 98;}
+                        if ( (synpred159_CFScript()) ) {s = 99;}
 
-                        else if ( (true) ) {s = 93;}
+                        else if ( (true) ) {s = 94;}
 
                          
-                        input.seek(index80_72);
+                        input.seek(index80_73);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 2 : 
-                        int LA80_74 = input.LA(1);
+                        int LA80_75 = input.LA(1);
 
                          
-                        int index80_74 = input.index();
+                        int index80_75 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred158_CFScript()) ) {s = 99;}
+                        if ( (synpred158_CFScript()) ) {s = 100;}
 
-                        else if ( (true) ) {s = 93;}
+                        else if ( (true) ) {s = 94;}
 
                          
-                        input.seek(index80_74);
+                        input.seek(index80_75);
 
                         if ( s>=0 ) return s;
                         break;
 
                     case 3 : 
-                        int LA80_97 = input.LA(1);
+                        int LA80_98 = input.LA(1);
 
                          
-                        int index80_97 = input.index();
+                        int index80_98 = input.index();
                         input.rewind();
 
                         s = -1;
-                        if ( (synpred157_CFScript()) ) {s = 100;}
+                        if ( (synpred157_CFScript()) ) {s = 101;}
 
-                        else if ( (synpred160_CFScript()) ) {s = 101;}
+                        else if ( (synpred160_CFScript()) ) {s = 102;}
 
                          
-                        input.seek(index80_97);
+                        input.seek(index80_98);
 
                         if ( s>=0 ) return s;
                         break;
@@ -27281,51 +27783,51 @@ public TreeAdaptor getTreeAdaptor() {
  
 
     public static final BitSet FOLLOW_componentDeclaration_in_scriptBlock1511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_element_in_scriptBlock1519 = new BitSet(new long[]{0x390169010ED01B10L,0x78BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_element_in_scriptBlock1519 = new BitSet(new long[]{0x390169010ED11B10L,0x78BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_endOfScriptBlock_in_scriptBlock1524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMPONENT_in_componentDeclaration1538 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_componentAttribute_in_componentDeclaration1540 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_COMPONENT_in_componentDeclaration1538 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_componentAttribute_in_componentDeclaration1540 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005940EL,0x000000000005B590L});
     public static final BitSet FOLLOW_componentGuts_in_componentDeclaration1543 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_functionDeclaration_in_element1590 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_statement_in_element1596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_functionAccessType_in_functionDeclaration1610 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_functionAccessType_in_functionDeclaration1610 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
     public static final BitSet FOLLOW_functionReturnType_in_functionDeclaration1615 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_FUNCTION_in_functionDeclaration1621 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_FUNCTION_in_functionDeclaration1621 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_identifier_in_functionDeclaration1623 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_functionDeclaration1625 = new BitSet(new long[]{0x390149010ED01A10L,0x4CBB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_functionDeclaration1625 = new BitSet(new long[]{0x390149010ED11A10L,0x4CBB20182005900EL,0x000000000005B598L});
     public static final BitSet FOLLOW_parameterList_in_functionDeclaration1628 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_functionDeclaration1632 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_functionAttribute_in_functionDeclaration1634 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_functionDeclaration1632 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_functionAttribute_in_functionDeclaration1634 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005940EL,0x000000000005B590L});
     public static final BitSet FOLLOW_compoundStatement_in_functionDeclaration1637 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_accessType_in_functionAccessType1701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeSpec_in_functionReturnType1732 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_identifier_in_typeSpec1777 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_typeSpec1781 = new BitSet(new long[]{0x7F81499D0EF01A50L,0x48BB201B721D912EL,0x000000000015B590L});
+    public static final BitSet FOLLOW_DOT_in_typeSpec1781 = new BitSet(new long[]{0x7F81499D0EF11A50L,0x48BB201B721D912EL,0x000000000015B590L});
     public static final BitSet FOLLOW_identifier_in_typeSpec1785 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_reservedWord_in_typeSpec1789 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_STRING_LITERAL_in_typeSpec1800 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parameter_in_parameterList1815 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_151_in_parameterList1819 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_151_in_parameterList1819 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
     public static final BitSet FOLLOW_parameter_in_parameterList1822 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_REQUIRED_in_parameter1846 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_parameterType_in_parameter1851 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_REQUIRED_in_parameter1846 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_parameterType_in_parameter1851 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_identifier_in_parameter1855 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_EQUALSOP_in_parameter1859 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_EQUALSOP_in_parameter1859 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_impliesExpression_in_parameter1861 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_typeSpec_in_parameterType1903 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_identifier_in_componentAttribute1926 = new BitSet(new long[]{0x0000004000004000L});
-    public static final BitSet FOLLOW_COLON_in_componentAttribute1929 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_COLON_in_componentAttribute1929 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_identifier_in_componentAttribute1931 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_EQUALSOP_in_componentAttribute1937 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_EQUALSOP_in_componentAttribute1937 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_impliesExpression_in_componentAttribute1939 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_identifier_in_functionAttribute1972 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_EQUALSOP_in_functionAttribute1976 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_EQUALSOP_in_functionAttribute1976 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_impliesExpression_in_functionAttribute1978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_compoundStatement2004 = new BitSet(new long[]{0x390169010ED01B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_statement_in_compoundStatement2009 = new BitSet(new long[]{0x390169010ED01B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_compoundStatement2004 = new BitSet(new long[]{0x390169010ED11B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_statement_in_compoundStatement2009 = new BitSet(new long[]{0x390169010ED11B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_RIGHTCURLYBRACKET_in_compoundStatement2014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_componentGuts2029 = new BitSet(new long[]{0x390169010ED01B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_element_in_componentGuts2034 = new BitSet(new long[]{0x390169010ED01B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_componentGuts2029 = new BitSet(new long[]{0x390169010ED11B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_element_in_componentGuts2034 = new BitSet(new long[]{0x390169010ED11B10L,0x6ABB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_RIGHTCURLYBRACKET_in_componentGuts2039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_tryCatchStatement_in_statement2056 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ifStatement_in_statement2064 = new BitSet(new long[]{0x0000000000000002L});
@@ -27343,63 +27845,63 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_localAssignmentExpression_in_statement2151 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
     public static final BitSet FOLLOW_SEMICOLON_in_statement2153 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SEMICOLON_in_statement2163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_condition2181 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_condition2181 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_localAssignmentExpression_in_condition2184 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
     public static final BitSet FOLLOW_RIGHTPAREN_in_condition2186 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RETURN_in_returnStatement2202 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
     public static final BitSet FOLLOW_SEMICOLON_in_returnStatement2204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETURN_in_returnStatement2211 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_RETURN_in_returnStatement2211 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_returnStatement2213 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
     public static final BitSet FOLLOW_SEMICOLON_in_returnStatement2215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IF_in_ifStatement2231 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_condition_in_ifStatement2234 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_condition_in_ifStatement2234 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_ifStatement2236 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_ELSE_in_ifStatement2240 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_ELSE_in_ifStatement2240 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_ifStatement2242 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_WHILE_in_whileStatement2258 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_condition_in_whileStatement2261 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_condition_in_whileStatement2261 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_whileStatement2263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DO_in_doWhileStatement2277 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_DO_in_doWhileStatement2277 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_doWhileStatement2280 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
     public static final BitSet FOLLOW_WHILE_in_doWhileStatement2282 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_condition_in_doWhileStatement2284 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
     public static final BitSet FOLLOW_SEMICOLON_in_doWhileStatement2286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FOR_in_forStatement2301 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_forStatement2304 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_VAR_in_forStatement2307 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_forStatement2304 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_VAR_in_forStatement2307 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_forStatement2312 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_forStatement2317 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SEMICOLON_in_forStatement2317 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_forStatement2321 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_forStatement2326 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SEMICOLON_in_forStatement2326 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_forStatement2331 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_forStatement2336 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_forStatement2336 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_forStatement2339 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FOR_in_forStatement2345 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_forStatement2348 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_forStatement2348 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_forInKey_in_forStatement2351 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_IN_in_forStatement2353 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_IN_in_forStatement2353 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_forStatement2355 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_forStatement2357 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_forStatement2357 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_forStatement2360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VAR_in_forInKey2375 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_VAR_in_forInKey2375 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_identifier_in_forInKey2378 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_forInKey2382 = new BitSet(new long[]{0x7F81499D0EF01A50L,0x48BB201B721D912EL,0x000000000015B590L});
+    public static final BitSet FOLLOW_DOT_in_forInKey2382 = new BitSet(new long[]{0x7F81499D0EF11A50L,0x48BB201B721D912EL,0x000000000015B590L});
     public static final BitSet FOLLOW_identifier_in_forInKey2386 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_reservedWord_in_forInKey2390 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_TRY_in_tryCatchStatement2408 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_TRY_in_tryCatchStatement2408 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_tryCatchStatement2411 = new BitSet(new long[]{0x0000100000001002L});
     public static final BitSet FOLLOW_catchCondition_in_tryCatchStatement2415 = new BitSet(new long[]{0x0000100000001002L});
     public static final BitSet FOLLOW_finallyStatement_in_tryCatchStatement2420 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_CATCH_in_catchCondition2436 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_catchCondition2439 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_exceptionType_in_catchCondition2442 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_catchCondition2439 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_exceptionType_in_catchCondition2442 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
     public static final BitSet FOLLOW_identifier_in_catchCondition2444 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
     public static final BitSet FOLLOW_RIGHTPAREN_in_catchCondition2446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_compoundStatement_in_catchCondition2449 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FINALLY_in_finallyStatement2462 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_compoundStatement_in_finallyStatement2465 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_identifier_in_exceptionType2478 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_exceptionType2482 = new BitSet(new long[]{0x7F81499D0EF01A50L,0x48BB201B721D912EL,0x000000000015B590L});
+    public static final BitSet FOLLOW_DOT_in_exceptionType2482 = new BitSet(new long[]{0x7F81499D0EF11A50L,0x48BB201B721D912EL,0x000000000015B590L});
     public static final BitSet FOLLOW_identifier_in_exceptionType2486 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_reservedWord_in_exceptionType2490 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_STRING_LITERAL_in_exceptionType2501 = new BitSet(new long[]{0x0000000000000002L});
@@ -27420,313 +27922,315 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_RIGHTCURLYBRACKET_in_switchStatement2625 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_CASE_in_caseStatement2640 = new BitSet(new long[]{0x0000200000000100L,0x0000000100200810L,0x0000000000000008L});
     public static final BitSet FOLLOW_constantExpression_in_caseStatement2643 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_COLON_in_caseStatement2645 = new BitSet(new long[]{0x390169010ED01B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_statement_in_caseStatement2649 = new BitSet(new long[]{0x390169010ED01B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_COLON_in_caseStatement2645 = new BitSet(new long[]{0x390169010ED11B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_statement_in_caseStatement2649 = new BitSet(new long[]{0x390169010ED11B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_DEFAULT_in_caseStatement2670 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_COLON_in_caseStatement2673 = new BitSet(new long[]{0x390169010ED01B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_statement_in_caseStatement2677 = new BitSet(new long[]{0x390169010ED01B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_COLON_in_caseStatement2673 = new BitSet(new long[]{0x390169010ED11B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_statement_in_caseStatement2677 = new BitSet(new long[]{0x390169010ED11B12L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_includeStatement_in_tagOperatorStatement2699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_tagOperatorStatement2705 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_componentPath_in_tagOperatorStatement2708 = new BitSet(new long[]{0x0000000020000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_DOT_in_tagOperatorStatement2711 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_STAR_in_tagOperatorStatement2713 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_tagOperatorStatement2717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_abortStatement_in_tagOperatorStatement2724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_throwStatement_in_tagOperatorStatement2730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETHROW_in_tagOperatorStatement2736 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_tagOperatorStatement2738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_exitStatement_in_tagOperatorStatement2750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_paramStatement_in_tagOperatorStatement2756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_propertyStatement_in_tagOperatorStatement2762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_lockStatement_in_tagOperatorStatement2768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_threadStatement_in_tagOperatorStatement2774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_transactionStatement_in_tagOperatorStatement2780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cfmlfunctionStatement_in_tagOperatorStatement2786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INCLUDE_in_includeStatement2801 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_includeStatement2803 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_SEMICOLON_in_includeStatement2806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRANSACTION_in_transactionStatement2834 = new BitSet(new long[]{0x390149010ED01A12L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_transactionStatement2837 = new BitSet(new long[]{0x390149010ED01A12L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_compoundStatement_in_transactionStatement2842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cfmlFunction_in_cfmlfunctionStatement2876 = new BitSet(new long[]{0x390149010ED01A12L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_param_in_cfmlfunctionStatement2879 = new BitSet(new long[]{0x390149010ED01A12L,0x48BB20182005940EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_compoundStatement_in_cfmlfunctionStatement2884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LOCK_in_lockStatement2981 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_lockStatement2985 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_compoundStatement_in_lockStatement2989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREAD_in_threadStatement3015 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_threadStatement3019 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-    public static final BitSet FOLLOW_compoundStatement_in_threadStatement3022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ABORT_in_abortStatement3053 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_abortStatement3055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ABORT_in_abortStatement3070 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_abortStatement3072 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_abortStatement3074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THROW_in_throwStatement3098 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_throwStatement3100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THROW_in_throwStatement3115 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_throwStatement3117 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_throwStatement3119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXIT_in_exitStatement3143 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_exitStatement3145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXIT_in_exitStatement3160 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_exitStatement3162 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_exitStatement3164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAM_in_paramStatement3188 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_paramStatement3190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROPERTY_in_propertyStatement3217 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_propertyStatement3219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_paramStatementAttributes3246 = new BitSet(new long[]{0x390149010ED01A12L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_identifier_in_param3266 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_EQUALSOP_in_param3268 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_param3273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_localAssignmentExpression_in_expression3291 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_expression3293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VAR_in_localAssignmentExpression3307 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_identifier_in_localAssignmentExpression3309 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_EQUALSOP_in_localAssignmentExpression3313 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_localAssignmentExpression3315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assignmentExpression_in_localAssignmentExpression3343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_impliesExpression_in_assignmentExpression3356 = new BitSet(new long[]{0x0000004000080002L,0x0000010004400000L,0x0000000000000005L});
-    public static final BitSet FOLLOW_set_in_assignmentExpression3360 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_assignmentExpression3391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ternary_in_impliesExpression3406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_equivalentExpression_in_impliesExpression3411 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_IMP_in_impliesExpression3415 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equivalentExpression_in_impliesExpression3418 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_equivalentExpression_in_ternary3435 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
-    public static final BitSet FOLLOW_QUESTIONMARK_in_ternary3437 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_localAssignmentExpression_in_ternary3439 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_COLON_in_ternary3441 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_localAssignmentExpression_in_ternary3443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_xorExpression_in_equivalentExpression3468 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_EQV_in_equivalentExpression3472 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_xorExpression_in_equivalentExpression3475 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_orExpression_in_xorExpression3489 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_XOR_in_xorExpression3493 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_orExpression_in_xorExpression3496 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_andExpression_in_orExpression3511 = new BitSet(new long[]{0x0000000000000002L,0x0000000600000000L});
-    public static final BitSet FOLLOW_set_in_orExpression3515 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_andExpression_in_orExpression3526 = new BitSet(new long[]{0x0000000000000002L,0x0000000600000000L});
-    public static final BitSet FOLLOW_notExpression_in_andExpression3541 = new BitSet(new long[]{0x00000000000000C2L});
-    public static final BitSet FOLLOW_set_in_andExpression3545 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_notExpression_in_andExpression3556 = new BitSet(new long[]{0x00000000000000C2L});
-    public static final BitSet FOLLOW_NOT_in_notExpression3573 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_NOTOP_in_notExpression3578 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityExpression_in_notExpression3584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_concatenationExpression_in_equalityExpression3599 = new BitSet(new long[]{0x0780003C08200002L,0x0000000050181120L,0x000000000F200000L});
-    public static final BitSet FOLLOW_equalityOperator5_in_equalityExpression3611 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator3_in_equalityExpression3616 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator2_in_equalityExpression3622 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator1_in_equalityExpression3627 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_concatenationExpression_in_equalityExpression3632 = new BitSet(new long[]{0x0780003C08200002L,0x0000000050181120L,0x000000000F200000L});
-    public static final BitSet FOLLOW_IS_in_equalityOperator13654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUALSEQUALSOP_in_equalityOperator13670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LT_in_equalityOperator13686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_equalityOperator13702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LTE_in_equalityOperator13718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_equalityOperator13734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LE_in_equalityOperator13750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GT_in_equalityOperator13766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_equalityOperator13782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GTE_in_equalityOperator13798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_equalityOperator13814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GE_in_equalityOperator13830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQ_in_equalityOperator13846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEQ_in_equalityOperator13862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_equalityOperator13878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUAL_in_equalityOperator13894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUALS_in_equalityOperator13910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONTAINS_in_equalityOperator13926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LESS_in_equalityOperator23955 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_THAN_in_equalityOperator23957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GREATER_in_equalityOperator23973 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_THAN_in_equalityOperator23975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_equalityOperator23991 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_EQUAL_in_equalityOperator23993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IS_in_equalityOperator24010 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_NOT_in_equalityOperator24012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOES_in_equalityOperator34039 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_NOT_in_equalityOperator34041 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_CONTAIN_in_equalityOperator34043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LESS_in_equalityOperator54069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_THAN_in_equalityOperator54071 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_OR_in_equalityOperator54073 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_EQUAL_in_equalityOperator54075 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_TO_in_equalityOperator54077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GREATER_in_equalityOperator54093 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_THAN_in_equalityOperator54095 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
-    public static final BitSet FOLLOW_OR_in_equalityOperator54097 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_EQUAL_in_equalityOperator54099 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_TO_in_equalityOperator54101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_additiveExpression_in_concatenationExpression4125 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_CONCAT_in_concatenationExpression4129 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_additiveExpression_in_concatenationExpression4132 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_modExpression_in_additiveExpression4147 = new BitSet(new long[]{0x0000000000000002L,0x0000008000200000L});
-    public static final BitSet FOLLOW_PLUS_in_additiveExpression4152 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_MINUS_in_additiveExpression4155 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_modExpression_in_additiveExpression4159 = new BitSet(new long[]{0x0000000000000002L,0x0000008000200000L});
-    public static final BitSet FOLLOW_intDivisionExpression_in_modExpression4173 = new BitSet(new long[]{0x0000000000000002L,0x000000000A000000L});
-    public static final BitSet FOLLOW_set_in_modExpression4178 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_intDivisionExpression_in_modExpression4185 = new BitSet(new long[]{0x0000000000000002L,0x000000000A000000L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_intDivisionExpression4201 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_BSLASH_in_intDivisionExpression4205 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_intDivisionExpression4208 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_powerOfExpression_in_multiplicativeExpression4222 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_STAR_in_multiplicativeExpression4227 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_SLASH_in_multiplicativeExpression4230 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_powerOfExpression_in_multiplicativeExpression4234 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_unaryExpression_in_powerOfExpression4249 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
-    public static final BitSet FOLLOW_POWER_in_powerOfExpression4253 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_unaryExpression_in_powerOfExpression4256 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
-    public static final BitSet FOLLOW_MINUS_in_unaryExpression4271 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLUS_in_unaryExpression4286 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MINUSMINUS_in_unaryExpression4301 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PLUSPLUS_in_unaryExpression4317 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_newComponentExpression_in_unaryExpression4332 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_unaryExpression4335 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_unaryExpression4337 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_unaryExpression4340 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_unaryExpression4342 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_unaryExpression4344 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4354 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_MINUSMINUS_in_unaryExpression4356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4370 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_PLUSPLUS_in_unaryExpression4372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_memberExpression4399 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB201920059E1EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_memberExpressionB_in_memberExpression4402 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_150_in_memberExpression4404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_memberExpressionB_in_memberExpression4410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpression_in_memberExpressionB4425 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
-    public static final BitSet FOLLOW_DOT_in_memberExpressionB4443 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_memberExpressionB4445 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_memberExpressionB4447 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_memberExpressionB4449 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_memberExpressionB4451 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_memberExpressionB4474 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_memberExpressionB4476 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_memberExpressionB4478 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
-    public static final BitSet FOLLOW_LEFTBRACKET_in_memberExpressionB4497 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_memberExpressionB4499 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_RIGHTBRACKET_in_memberExpressionB4501 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
-    public static final BitSet FOLLOW_DOT_in_memberExpressionB4520 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_memberExpressionB4522 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
-    public static final BitSet FOLLOW_indexSuffix_in_memberExpressionSuffix4555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_propertyReferenceSuffix_in_memberExpressionSuffix4561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOT_in_propertyReferenceSuffix4574 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB2018200D900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_LT_in_propertyReferenceSuffix4576 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB2018200D900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_identifier_in_propertyReferenceSuffix4580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTBRACKET_in_indexSuffix4593 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2019200D9E1EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_LT_in_indexSuffix4596 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2019200D9E1EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_primaryExpression_in_indexSuffix4600 = new BitSet(new long[]{0x0000000000000000L,0x0100000000080000L});
-    public static final BitSet FOLLOW_LT_in_indexSuffix4603 = new BitSet(new long[]{0x0000000000000000L,0x0100000000080000L});
-    public static final BitSet FOLLOW_RIGHTBRACKET_in_indexSuffix4607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpression_in_primaryExpressionIRW4624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_reservedWord_in_primaryExpressionIRW4629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONTAINS_in_reservedWord4644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IS_in_reservedWord4648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUAL_in_reservedWord4652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQ_in_reservedWord4659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEQ_in_reservedWord4663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GT_in_reservedWord4667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LT_in_reservedWord4671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GTE_in_reservedWord4675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GE_in_reservedWord4681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LTE_in_reservedWord4685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LE_in_reservedWord4689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_reservedWord4693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AND_in_reservedWord4697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OR_in_reservedWord4703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_XOR_in_reservedWord4707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQV_in_reservedWord4711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMP_in_reservedWord4715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOD_in_reservedWord4719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NULL_in_reservedWord4725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUALS_in_reservedWord4729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cfscriptKeywords_in_reservedWord4735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_argument_in_argumentList4749 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_151_in_argumentList4752 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argument_in_argumentList4755 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_identifier_in_argument4782 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_COLON_in_argument4784 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_argument4786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifier_in_argument4808 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_EQUALSOP_in_argument4810 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_argument4812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_impliesExpression_in_argument4832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_identifier4845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOES_in_identifier4851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONTAIN_in_identifier4858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GREATER_in_identifier4864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THAN_in_identifier4871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LESS_in_identifier4878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VAR_in_identifier4885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TO_in_identifier4891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_identifier4897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INCLUDE_in_identifier4904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEW_in_identifier4910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ABORT_in_identifier4916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THROW_in_identifier4922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETHROW_in_identifier4928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAM_in_identifier4934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXIT_in_identifier4940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREAD_in_identifier4946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LOCK_in_identifier4952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRANSACTION_in_identifier4958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PUBLIC_in_identifier4964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRIVATE_in_identifier4970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_REMOTE_in_identifier4976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PACKAGE_in_identifier4982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_REQUIRED_in_identifier4988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cfmlFunction_in_identifier4994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cfscriptKeywords_in_identifier5003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_primaryExpression5120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOLEAN_LITERAL_in_primaryExpression5125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOATING_POINT_LITERAL_in_primaryExpression5130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTEGER_LITERAL_in_primaryExpression5135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_implicitArray_in_primaryExpression5140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_implicitStruct_in_primaryExpression5145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NULL_in_primaryExpression5150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_primaryExpression5155 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0AD9E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_LT_in_primaryExpression5158 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0AD9E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_assignmentExpression_in_primaryExpression5162 = new BitSet(new long[]{0x0000000000000000L,0x0400000000080000L});
-    public static final BitSet FOLLOW_LT_in_primaryExpression5164 = new BitSet(new long[]{0x0000000000000000L,0x0400000000080000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_primaryExpression5168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifier_in_primaryExpression5174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTBRACKET_in_implicitArray5188 = new BitSet(new long[]{0x390169010ED01B10L,0x49BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_implicitArrayElements_in_implicitArray5190 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_RIGHTBRACKET_in_implicitArray5193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_impliesExpression_in_implicitArrayElements5219 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_151_in_implicitArrayElements5223 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_implicitArrayElements5226 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_implicitStruct5246 = new BitSet(new long[]{0x390149010ED01A10L,0x4ABB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_implicitStructElements_in_implicitStruct5248 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
-    public static final BitSet FOLLOW_RIGHTCURLYBRACKET_in_implicitStruct5251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_implicitStructExpression_in_implicitStructElements5276 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_151_in_implicitStructElements5280 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_implicitStructExpression_in_implicitStructElements5282 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_implicitStructKeyExpression_in_implicitStructExpression5298 = new BitSet(new long[]{0x0000004000004000L});
-    public static final BitSet FOLLOW_set_in_implicitStructExpression5300 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_implicitStructExpression5311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifier_in_implicitStructKeyExpression5327 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_implicitStructKeyExpression5331 = new BitSet(new long[]{0x7F81499D0EF01A50L,0x48BB201B721D912EL,0x000000000015B590L});
-    public static final BitSet FOLLOW_identifier_in_implicitStructKeyExpression5335 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_reservedWord_in_implicitStructKeyExpression5339 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_implicitStructKeyExpression5350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NEW_in_newComponentExpression5363 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B598L});
-    public static final BitSet FOLLOW_componentPath_in_newComponentExpression5366 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_newComponentExpression5368 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_newComponentExpression5370 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_newComponentExpression5372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_componentPath5388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifier_in_componentPath5394 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_componentPath5398 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_identifier_in_componentPath5400 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_importStatement_in_tagOperatorStatement2705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_abortStatement_in_tagOperatorStatement2711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_throwStatement_in_tagOperatorStatement2717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RETHROW_in_tagOperatorStatement2723 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_tagOperatorStatement2725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_exitStatement_in_tagOperatorStatement2737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_paramStatement_in_tagOperatorStatement2743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_propertyStatement_in_tagOperatorStatement2749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_lockStatement_in_tagOperatorStatement2755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_threadStatement_in_tagOperatorStatement2761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_transactionStatement_in_tagOperatorStatement2767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cfmlfunctionStatement_in_tagOperatorStatement2773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INCLUDE_in_includeStatement2788 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_includeStatement2790 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SEMICOLON_in_includeStatement2793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_importStatement2819 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_componentPath_in_importStatement2822 = new BitSet(new long[]{0x0000000020000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_DOT_in_importStatement2825 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_STAR_in_importStatement2827 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_importStatement2831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRANSACTION_in_transactionStatement2848 = new BitSet(new long[]{0x390149010ED11A12L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_transactionStatement2851 = new BitSet(new long[]{0x390149010ED11A12L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_compoundStatement_in_transactionStatement2856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cfmlFunction_in_cfmlfunctionStatement2890 = new BitSet(new long[]{0x390149010ED11A12L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_param_in_cfmlfunctionStatement2893 = new BitSet(new long[]{0x390149010ED11A12L,0x48BB20182005940EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_compoundStatement_in_cfmlfunctionStatement2898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LOCK_in_lockStatement2995 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_lockStatement2999 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_compoundStatement_in_lockStatement3003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREAD_in_threadStatement3029 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_threadStatement3033 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+    public static final BitSet FOLLOW_compoundStatement_in_threadStatement3036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ABORT_in_abortStatement3067 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_abortStatement3069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ABORT_in_abortStatement3084 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_abortStatement3086 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_abortStatement3088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THROW_in_throwStatement3112 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_throwStatement3114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THROW_in_throwStatement3129 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_throwStatement3131 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_throwStatement3133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXIT_in_exitStatement3157 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_exitStatement3159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXIT_in_exitStatement3174 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_exitStatement3176 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
+    public static final BitSet FOLLOW_SEMICOLON_in_exitStatement3178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAM_in_paramStatement3202 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_paramStatement3204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROPERTY_in_propertyStatement3231 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_propertyStatement3233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_paramStatementAttributes3260 = new BitSet(new long[]{0x390149010ED11A12L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_identifier_in_param3280 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_EQUALSOP_in_param3282 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_param3287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_localAssignmentExpression_in_expression3305 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_expression3307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VAR_in_localAssignmentExpression3321 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_identifier_in_localAssignmentExpression3323 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_EQUALSOP_in_localAssignmentExpression3327 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_localAssignmentExpression3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_assignmentExpression_in_localAssignmentExpression3357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_impliesExpression_in_assignmentExpression3370 = new BitSet(new long[]{0x0000004000080002L,0x0000010004400000L,0x0000000000000005L});
+    public static final BitSet FOLLOW_set_in_assignmentExpression3374 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_assignmentExpression3405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ternary_in_impliesExpression3420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_equivalentExpression_in_impliesExpression3425 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_IMP_in_impliesExpression3429 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equivalentExpression_in_impliesExpression3432 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_equivalentExpression_in_ternary3449 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
+    public static final BitSet FOLLOW_QUESTIONMARK_in_ternary3451 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_localAssignmentExpression_in_ternary3453 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_COLON_in_ternary3455 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_localAssignmentExpression_in_ternary3457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_xorExpression_in_equivalentExpression3482 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_EQV_in_equivalentExpression3486 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_xorExpression_in_equivalentExpression3489 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_orExpression_in_xorExpression3503 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_XOR_in_xorExpression3507 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_orExpression_in_xorExpression3510 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_andExpression_in_orExpression3525 = new BitSet(new long[]{0x0000000000000002L,0x0000000600000000L});
+    public static final BitSet FOLLOW_set_in_orExpression3529 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_andExpression_in_orExpression3540 = new BitSet(new long[]{0x0000000000000002L,0x0000000600000000L});
+    public static final BitSet FOLLOW_notExpression_in_andExpression3555 = new BitSet(new long[]{0x00000000000000C2L});
+    public static final BitSet FOLLOW_set_in_andExpression3559 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_notExpression_in_andExpression3570 = new BitSet(new long[]{0x00000000000000C2L});
+    public static final BitSet FOLLOW_NOT_in_notExpression3587 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_NOTOP_in_notExpression3592 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityExpression_in_notExpression3598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_concatenationExpression_in_equalityExpression3613 = new BitSet(new long[]{0x0780003C08200002L,0x0000000050181120L,0x000000000F200000L});
+    public static final BitSet FOLLOW_equalityOperator5_in_equalityExpression3625 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator3_in_equalityExpression3630 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator2_in_equalityExpression3636 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator1_in_equalityExpression3641 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_concatenationExpression_in_equalityExpression3646 = new BitSet(new long[]{0x0780003C08200002L,0x0000000050181120L,0x000000000F200000L});
+    public static final BitSet FOLLOW_IS_in_equalityOperator13668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALSEQUALSOP_in_equalityOperator13684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LT_in_equalityOperator13700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_equalityOperator13716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LTE_in_equalityOperator13732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_equalityOperator13748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LE_in_equalityOperator13764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GT_in_equalityOperator13780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_equalityOperator13796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GTE_in_equalityOperator13812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_equalityOperator13828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GE_in_equalityOperator13844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQ_in_equalityOperator13860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEQ_in_equalityOperator13876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_equalityOperator13892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUAL_in_equalityOperator13908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALS_in_equalityOperator13924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONTAINS_in_equalityOperator13940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LESS_in_equalityOperator23969 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_THAN_in_equalityOperator23971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GREATER_in_equalityOperator23987 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_THAN_in_equalityOperator23989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_equalityOperator24005 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_EQUAL_in_equalityOperator24007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IS_in_equalityOperator24024 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_NOT_in_equalityOperator24026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOES_in_equalityOperator34053 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_NOT_in_equalityOperator34055 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_CONTAIN_in_equalityOperator34057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LESS_in_equalityOperator54083 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_THAN_in_equalityOperator54085 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_OR_in_equalityOperator54087 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_EQUAL_in_equalityOperator54089 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_TO_in_equalityOperator54091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GREATER_in_equalityOperator54107 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_THAN_in_equalityOperator54109 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_OR_in_equalityOperator54111 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_EQUAL_in_equalityOperator54113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_TO_in_equalityOperator54115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_additiveExpression_in_concatenationExpression4139 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_CONCAT_in_concatenationExpression4143 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_additiveExpression_in_concatenationExpression4146 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_modExpression_in_additiveExpression4161 = new BitSet(new long[]{0x0000000000000002L,0x0000008000200000L});
+    public static final BitSet FOLLOW_PLUS_in_additiveExpression4166 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_MINUS_in_additiveExpression4169 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_modExpression_in_additiveExpression4173 = new BitSet(new long[]{0x0000000000000002L,0x0000008000200000L});
+    public static final BitSet FOLLOW_intDivisionExpression_in_modExpression4187 = new BitSet(new long[]{0x0000000000000002L,0x000000000A000000L});
+    public static final BitSet FOLLOW_set_in_modExpression4192 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_intDivisionExpression_in_modExpression4199 = new BitSet(new long[]{0x0000000000000002L,0x000000000A000000L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_intDivisionExpression4215 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_BSLASH_in_intDivisionExpression4219 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_intDivisionExpression4222 = new BitSet(new long[]{0x0000000000000402L});
+    public static final BitSet FOLLOW_powerOfExpression_in_multiplicativeExpression4236 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_STAR_in_multiplicativeExpression4241 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SLASH_in_multiplicativeExpression4244 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_powerOfExpression_in_multiplicativeExpression4248 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_unaryExpression_in_powerOfExpression4263 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+    public static final BitSet FOLLOW_POWER_in_powerOfExpression4267 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_unaryExpression_in_powerOfExpression4270 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+    public static final BitSet FOLLOW_MINUS_in_unaryExpression4285 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLUS_in_unaryExpression4300 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MINUSMINUS_in_unaryExpression4315 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PLUSPLUS_in_unaryExpression4331 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_newComponentExpression_in_unaryExpression4346 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_DOT_in_unaryExpression4349 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_unaryExpression4351 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_unaryExpression4354 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_unaryExpression4356 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_unaryExpression4358 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4368 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_MINUSMINUS_in_unaryExpression4370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4384 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_PLUSPLUS_in_unaryExpression4386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_memberExpression_in_unaryExpression4400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_memberExpression4413 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB201920059E1EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_memberExpressionB_in_memberExpression4416 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_150_in_memberExpression4418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_memberExpressionB_in_memberExpression4424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpression_in_memberExpressionB4439 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
+    public static final BitSet FOLLOW_DOT_in_memberExpressionB4457 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_memberExpressionB4459 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_memberExpressionB4461 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_memberExpressionB4463 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_memberExpressionB4465 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_memberExpressionB4488 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_memberExpressionB4490 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_memberExpressionB4492 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
+    public static final BitSet FOLLOW_LEFTBRACKET_in_memberExpressionB4511 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_memberExpressionB4513 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_RIGHTBRACKET_in_memberExpressionB4515 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
+    public static final BitSet FOLLOW_DOT_in_memberExpressionB4534 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_memberExpressionB4536 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000A00L});
+    public static final BitSet FOLLOW_indexSuffix_in_memberExpressionSuffix4569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_propertyReferenceSuffix_in_memberExpressionSuffix4575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOT_in_propertyReferenceSuffix4588 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB2018200D900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_LT_in_propertyReferenceSuffix4590 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB2018200D900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_identifier_in_propertyReferenceSuffix4594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTBRACKET_in_indexSuffix4607 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2019200D9E1EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_LT_in_indexSuffix4610 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2019200D9E1EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_primaryExpression_in_indexSuffix4614 = new BitSet(new long[]{0x0000000000000000L,0x0100000000080000L});
+    public static final BitSet FOLLOW_LT_in_indexSuffix4617 = new BitSet(new long[]{0x0000000000000000L,0x0100000000080000L});
+    public static final BitSet FOLLOW_RIGHTBRACKET_in_indexSuffix4621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpression_in_primaryExpressionIRW4638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_reservedWord_in_primaryExpressionIRW4643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONTAINS_in_reservedWord4658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IS_in_reservedWord4662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUAL_in_reservedWord4666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQ_in_reservedWord4673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEQ_in_reservedWord4677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GT_in_reservedWord4681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LT_in_reservedWord4685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GTE_in_reservedWord4689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GE_in_reservedWord4695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LTE_in_reservedWord4699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LE_in_reservedWord4703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_reservedWord4707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AND_in_reservedWord4711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OR_in_reservedWord4717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_XOR_in_reservedWord4721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQV_in_reservedWord4725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMP_in_reservedWord4729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOD_in_reservedWord4733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NULL_in_reservedWord4739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALS_in_reservedWord4743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cfscriptKeywords_in_reservedWord4749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_argument_in_argumentList4763 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_151_in_argumentList4766 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argument_in_argumentList4769 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_identifier_in_argument4796 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_COLON_in_argument4798 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_argument4800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifier_in_argument4822 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_EQUALSOP_in_argument4824 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_argument4826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_impliesExpression_in_argument4846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMPONENT_in_identifier4859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_identifier4864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOES_in_identifier4870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONTAIN_in_identifier4877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GREATER_in_identifier4883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THAN_in_identifier4890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LESS_in_identifier4897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VAR_in_identifier4904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TO_in_identifier4910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_identifier4916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INCLUDE_in_identifier4923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEW_in_identifier4929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ABORT_in_identifier4935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THROW_in_identifier4941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RETHROW_in_identifier4947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAM_in_identifier4953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXIT_in_identifier4959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREAD_in_identifier4965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LOCK_in_identifier4971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRANSACTION_in_identifier4977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PUBLIC_in_identifier4983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRIVATE_in_identifier4989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REMOTE_in_identifier4995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PACKAGE_in_identifier5001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REQUIRED_in_identifier5007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cfmlFunction_in_identifier5013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cfscriptKeywords_in_identifier5022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_primaryExpression5139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOLEAN_LITERAL_in_primaryExpression5144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOATING_POINT_LITERAL_in_primaryExpression5149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTEGER_LITERAL_in_primaryExpression5154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_implicitArray_in_primaryExpression5159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_implicitStruct_in_primaryExpression5164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NULL_in_primaryExpression5169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_primaryExpression5174 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0AD9E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LT_in_primaryExpression5177 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0AD9E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_assignmentExpression_in_primaryExpression5181 = new BitSet(new long[]{0x0000000000000000L,0x0400000000080000L});
+    public static final BitSet FOLLOW_LT_in_primaryExpression5183 = new BitSet(new long[]{0x0000000000000000L,0x0400000000080000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_primaryExpression5187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifier_in_primaryExpression5193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTBRACKET_in_implicitArray5207 = new BitSet(new long[]{0x390169010ED11B10L,0x49BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_implicitArrayElements_in_implicitArray5209 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_RIGHTBRACKET_in_implicitArray5212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_impliesExpression_in_implicitArrayElements5238 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_151_in_implicitArrayElements5242 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_implicitArrayElements5245 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_LEFTCURLYBRACKET_in_implicitStruct5265 = new BitSet(new long[]{0x390149010ED11A10L,0x4ABB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_implicitStructElements_in_implicitStruct5267 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
+    public static final BitSet FOLLOW_RIGHTCURLYBRACKET_in_implicitStruct5270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_implicitStructExpression_in_implicitStructElements5295 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_151_in_implicitStructElements5299 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_implicitStructExpression_in_implicitStructElements5301 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_implicitStructKeyExpression_in_implicitStructExpression5317 = new BitSet(new long[]{0x0000004000004000L});
+    public static final BitSet FOLLOW_set_in_implicitStructExpression5319 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_implicitStructExpression5330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifier_in_implicitStructKeyExpression5346 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_DOT_in_implicitStructKeyExpression5350 = new BitSet(new long[]{0x7F81499D0EF11A50L,0x48BB201B721D912EL,0x000000000015B590L});
+    public static final BitSet FOLLOW_identifier_in_implicitStructKeyExpression5354 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_reservedWord_in_implicitStructKeyExpression5358 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_implicitStructKeyExpression5369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NEW_in_newComponentExpression5382 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B598L});
+    public static final BitSet FOLLOW_componentPath_in_newComponentExpression5385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_newComponentExpression5387 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_newComponentExpression5389 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_newComponentExpression5391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_componentPath5407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifier_in_componentPath5413 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_DOT_in_componentPath5417 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_identifier_in_componentPath5419 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_functionDeclaration_in_synpred5_CFScript1590 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_functionAccessType_in_synpred6_CFScript1610 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_parameterList_in_synpred8_CFScript1628 = new BitSet(new long[]{0x0000000000000002L});
@@ -27748,18 +28252,18 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_compoundStatement_in_synpred37_CFScript2142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_localAssignmentExpression_in_synpred38_CFScript2151 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
     public static final BitSet FOLLOW_SEMICOLON_in_synpred38_CFScript2153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELSE_in_synpred40_CFScript2240 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_ELSE_in_synpred40_CFScript2240 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_synpred40_CFScript2242 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_VAR_in_synpred41_CFScript2307 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FOR_in_synpred45_CFScript2301 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_synpred45_CFScript2304 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_VAR_in_synpred45_CFScript2307 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_synpred45_CFScript2304 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_VAR_in_synpred45_CFScript2307 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_synpred45_CFScript2312 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_synpred45_CFScript2317 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SEMICOLON_in_synpred45_CFScript2317 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_synpred45_CFScript2321 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_SEMICOLON_in_synpred45_CFScript2326 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_SEMICOLON_in_synpred45_CFScript2326 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_assignmentExpression_in_synpred45_CFScript2331 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred45_CFScript2336 = new BitSet(new long[]{0x390169010ED01B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred45_CFScript2336 = new BitSet(new long[]{0x390169010ED11B10L,0x68BB6299E0A59E1EL,0x000000000045B598L});
     public static final BitSet FOLLOW_statement_in_synpred45_CFScript2339 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_VAR_in_synpred46_CFScript2375 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_identifier_in_synpred47_CFScript2386 = new BitSet(new long[]{0x0000000000000002L});
@@ -27768,56 +28272,56 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_identifier_in_synpred51_CFScript2486 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_statement_in_synpred62_CFScript2649 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_statement_in_synpred64_CFScript2677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_paramStatementAttributes_in_synpred78_CFScript2837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compoundStatement_in_synpred79_CFScript2842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_synpred80_CFScript2879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compoundStatement_in_synpred81_CFScript2884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compoundStatement_in_synpred89_CFScript3022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_synpred93_CFScript3246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUALSOP_in_synpred94_CFScript3313 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_synpred94_CFScript3315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VAR_in_synpred95_CFScript3307 = new BitSet(new long[]{0x390149010ED01A10L,0x48BB20182005900EL,0x000000000005B590L});
-    public static final BitSet FOLLOW_identifier_in_synpred95_CFScript3309 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_EQUALSOP_in_synpred95_CFScript3313 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_synpred95_CFScript3315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_synpred102_CFScript3360 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_synpred102_CFScript3391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ternary_in_synpred103_CFScript3406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_equalityOperator5_in_synpred116_CFScript3611 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator3_in_synpred116_CFScript3616 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator2_in_synpred116_CFScript3622 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_equalityOperator1_in_synpred116_CFScript3627 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_concatenationExpression_in_synpred116_CFScript3632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_synpred140_CFScript4151 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB229920A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_modExpression_in_synpred140_CFScript4159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_synpred151_CFScript4340 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_synpred151_CFScript4342 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred151_CFScript4344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_newComponentExpression_in_synpred153_CFScript4332 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_DOT_in_synpred153_CFScript4335 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred153_CFScript4337 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_synpred153_CFScript4340 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_synpred153_CFScript4342 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred153_CFScript4344 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_memberExpression_in_synpred154_CFScript4354 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_MINUSMINUS_in_synpred154_CFScript4356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_memberExpression_in_synpred155_CFScript4370 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_PLUSPLUS_in_synpred155_CFScript4372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOT_in_synpred157_CFScript4443 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred157_CFScript4445 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_synpred157_CFScript4447 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_synpred157_CFScript4449 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred157_CFScript4451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTPAREN_in_synpred158_CFScript4474 = new BitSet(new long[]{0x390169010ED01B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_argumentList_in_synpred158_CFScript4476 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred158_CFScript4478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEFTBRACKET_in_synpred159_CFScript4497 = new BitSet(new long[]{0x390169010ED01B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
-    public static final BitSet FOLLOW_impliesExpression_in_synpred159_CFScript4499 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_RIGHTBRACKET_in_synpred159_CFScript4501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOT_in_synpred160_CFScript4520 = new BitSet(new long[]{0x7F81699D0EF01B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
-    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred160_CFScript4522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpression_in_synpred165_CFScript4624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_synpred198_CFScript4897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifier_in_synpred245_CFScript5335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_paramStatementAttributes_in_synpred78_CFScript2851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compoundStatement_in_synpred79_CFScript2856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_synpred80_CFScript2893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compoundStatement_in_synpred81_CFScript2898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compoundStatement_in_synpred89_CFScript3036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_synpred93_CFScript3260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALSOP_in_synpred94_CFScript3327 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_synpred94_CFScript3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VAR_in_synpred95_CFScript3321 = new BitSet(new long[]{0x390149010ED11A10L,0x48BB20182005900EL,0x000000000005B590L});
+    public static final BitSet FOLLOW_identifier_in_synpred95_CFScript3323 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_EQUALSOP_in_synpred95_CFScript3327 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_synpred95_CFScript3329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred102_CFScript3374 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_synpred102_CFScript3405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ternary_in_synpred103_CFScript3420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_equalityOperator5_in_synpred116_CFScript3625 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator3_in_synpred116_CFScript3630 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator2_in_synpred116_CFScript3636 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_equalityOperator1_in_synpred116_CFScript3641 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_concatenationExpression_in_synpred116_CFScript3646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred140_CFScript4165 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB229920A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_modExpression_in_synpred140_CFScript4173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_synpred151_CFScript4354 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_synpred151_CFScript4356 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred151_CFScript4358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_newComponentExpression_in_synpred153_CFScript4346 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_DOT_in_synpred153_CFScript4349 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred153_CFScript4351 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_synpred153_CFScript4354 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_synpred153_CFScript4356 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred153_CFScript4358 = new BitSet(new long[]{0x0000000020000002L,0x0000000000000800L});
+    public static final BitSet FOLLOW_memberExpression_in_synpred154_CFScript4368 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_MINUSMINUS_in_synpred154_CFScript4370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_memberExpression_in_synpred155_CFScript4384 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_PLUSPLUS_in_synpred155_CFScript4386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOT_in_synpred157_CFScript4457 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred157_CFScript4459 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_synpred157_CFScript4461 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_synpred157_CFScript4463 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred157_CFScript4465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTPAREN_in_synpred158_CFScript4488 = new BitSet(new long[]{0x390169010ED11B10L,0x4CBB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_argumentList_in_synpred158_CFScript4490 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_RIGHTPAREN_in_synpred158_CFScript4492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEFTBRACKET_in_synpred159_CFScript4511 = new BitSet(new long[]{0x390169010ED11B10L,0x48BB2299E0A59E1EL,0x000000000045B598L});
+    public static final BitSet FOLLOW_impliesExpression_in_synpred159_CFScript4513 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_RIGHTBRACKET_in_synpred159_CFScript4515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOT_in_synpred160_CFScript4534 = new BitSet(new long[]{0x7F81699D0EF11B50L,0x48BB201B721D9F3EL,0x000000000015B598L});
+    public static final BitSet FOLLOW_primaryExpressionIRW_in_synpred160_CFScript4536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpression_in_synpred165_CFScript4638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_synpred199_CFScript4916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifier_in_synpred246_CFScript5354 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -452,7 +452,9 @@ identifierWithColon returns [CFIdentifier e]
   ;
 
 identifier returns [CFIdentifier e]
-  : t=IDENTIFIER  { e = new CFIdentifier( t.getToken() ); }
+  : 
+  t=COMPONENT { e = new CFIdentifier( t.getToken() ); }
+  | t=IDENTIFIER  { e = new CFIdentifier( t.getToken() ); }
   | t=DOES        { e = new CFIdentifier( t.getToken() ); }
   | t=CONTAIN     { e = new CFIdentifier( t.getToken() ); }
   | t=GREATER     { e = new CFIdentifier( t.getToken() ); }

@@ -305,6 +305,17 @@ public class TestScriptParser {
 	}
 	
 	@Test
+	public void testParseCompAsArgType() {
+		String script = "void function setChild(required component child)  { ArrayAppend(this.children,child); }";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testParseScriptTryCatch() {
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
 		CFScriptStatement scriptStatement = parseScript(script);
