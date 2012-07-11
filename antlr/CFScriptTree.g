@@ -252,7 +252,7 @@ constantExpression returns [CFExpression e]
   | t=FLOATING_POINT_LITERAL    { e = new CFLiteral( t.getToken() ); }
   | t=STRING_LITERAL            { e = new CFLiteral( t.getToken() ); }
   | t=BOOLEAN_LITERAL           { e = new CFLiteral( t.getToken() ); }
-  | t=NULL                      { e = new CFLiteral( t.getToken() ); }
+//  | t=NULL                      { e = new CFLiteral( t.getToken() ); }
   ;
   
   
@@ -438,7 +438,7 @@ primaryExpression returns [CFExpression e]
   | t=BOOLEAN_LITERAL         { e = new CFLiteral( t.getToken() ); }
   | t=FLOATING_POINT_LITERAL  { e = new CFLiteral( t.getToken() ); }
   | t=INTEGER_LITERAL         { e = new CFLiteral( t.getToken() ); }
-  | t=NULL                    { e = new CFLiteral( t.getToken() ); }
+//  | t=NULL                    { e = new CFLiteral( t.getToken() ); }
   | ie=implicitArray          { e = ie; }
   | is=implicitStruct         { e = is; }
   | i=identifier              { e = i; }
@@ -537,7 +537,7 @@ reservedWord returns [CFIdentifier e]
   | t=EQV       { e = new CFIdentifier( t.getToken() ); }
   | t=IMP       { e = new CFIdentifier( t.getToken() ); }
   | t=MOD       { e = new CFIdentifier( t.getToken() ); }
-  | t=NULL      { e = new CFIdentifier( t.getToken() ); }
+//  | t=NULL      { e = new CFIdentifier( t.getToken() ); }
   | t=TO        { e = new CFIdentifier( t.getToken() ); }
   | t=EQUALS    { e = new CFIdentifier( t.getToken() ); }
   | e1=cfscriptKeywords { e = e1; } 

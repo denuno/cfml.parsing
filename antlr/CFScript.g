@@ -287,7 +287,8 @@ fragment DIGIT
 
 // define all the operators/reserved words before the identifier
 
-NULL: 'NULL';
+// not sure why we'd need null, it is not an identifier for CFML, removing
+//NULL: 'NULL';
 
 // Operators
 CONTAINS:	'CONTAINS';
@@ -569,7 +570,7 @@ constantExpression
   | FLOATING_POINT_LITERAL
   | STRING_LITERAL
   | BOOLEAN_LITERAL
-  | NULL
+//  | NULL
   ;
   
 switchStatement
@@ -846,7 +847,8 @@ reservedWord
   | EQ | NEQ | GT | LT | GTE
   | GE | LTE | LE | NOT | AND
   | OR | XOR | EQV | IMP | MOD
-  | NULL | EQUALS
+//  | NULL 
+  | EQUALS
   | cfscriptKeywords 
   ;
 
@@ -917,7 +919,7 @@ primaryExpression
 	|	INTEGER_LITERAL
 	| implicitArray
 	| implicitStruct
-	|	NULL
+//	|	NULL
 	| '('! LT!* assignmentExpression LT!* ')'!
 	|	identifier
 	;
