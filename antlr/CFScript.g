@@ -68,6 +68,7 @@ tokens {
   FUNCTION_PARAMETER; // function parameter
   FUNCTION_RETURNTYPE; // function return type
   FUNCTION_ATTRIBUTE; // the attributes of the function 
+  PARAMETER_ATTRIBUTE; // the attributes of the parameter
   COMPONENT_ATTRIBUTE; // the attributes of the component 
   PARAMETER_TYPE; // function parameter type
 }
@@ -395,6 +396,11 @@ LOOP: 'LOOP';
 SETTING: 'SETTING';
 QUERY: 'QUERY';
 
+//types
+STRING: 'STRING';
+NUMERIC: 'NUMERIC';
+BOOLEAN: 'BOOLEAN';
+
 // function related
 PRIVATE: 'PRIVATE';
 PUBLIC: 'PUBLIC';
@@ -465,19 +471,20 @@ accessType
 	;
 
 typeSpec
-  : identifier ( DOT ( identifier | reservedWord ) )*
+  : type
+  | identifier ( DOT ( identifier | reservedWord ) )*
   | STRING_LITERAL
   ;
   
 parameterList
-  : parameter ( ','! parameter )*
-  | 
+  : parameter ( ','! parameter)*
+  |
   ;
   
 parameter
-  : (REQUIRED)? (parameterType)? identifier ( EQUALSOP impliesExpression )? -> ^(FUNCTION_PARAMETER (REQUIRED)? (parameterType)? identifier (EQUALSOP impliesExpression)? )
+  : (REQUIRED)? (parameterType)? identifier ( EQUALSOP impliesExpression )? parameterAttribute* -> ^(FUNCTION_PARAMETER (REQUIRED)? (parameterType)? identifier (EQUALSOP impliesExpression)? parameterAttribute*)
   ;
-
+  
 parameterType
   : typeSpec -> ^( PARAMETER_TYPE typeSpec )
   ;
@@ -489,6 +496,11 @@ componentAttribute
   
 functionAttribute
   : identifier op=EQUALSOP impliesExpression -> ^(FUNCTION_ATTRIBUTE[$op] identifier impliesExpression)
+  ;
+  
+parameterAttribute
+  : identifier EQUALSOP impliesExpression -> ^(PARAMETER_ATTRIBUTE identifier impliesExpression)
+  | identifier
   ;
   
 compoundStatement
@@ -893,6 +905,13 @@ identifier
   | {!scriptMode}?=> cfscriptKeywords 
 	;
 
+type
+  : NUMERIC
+  | STRING
+  | BOOLEAN
+  | COMPONENT
+  ;
+
 cfscriptKeywords
   : IF
   | ELSE
@@ -906,6 +925,7 @@ cfscriptKeywords
   | IN
   | TRY
   | CATCH
+  | FINALLY
   | SWITCH
   | CASE
   | DEFAULT

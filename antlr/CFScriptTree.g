@@ -135,6 +135,16 @@ functionAttributes returns [Map<String,CFExpression> attr]
     )*
   ;
 
+parameterAttributes returns [Map<String,CFExpression> attr]
+@init{
+  attr = new HashMap<String,CFExpression>();
+}
+  : ( ^(PARAMETER_ATTRIBUTE i=identifier e=expression){
+        attr.put( i.getToken().getText(), e );
+      }
+    )*
+  ;
+
 componentAttributes returns [Map<String,CFExpression> attr]
 @init{
   attr = new HashMap<String,CFExpression>();
@@ -153,7 +163,8 @@ typeSpec returns [String image]
 @init{
   StringBuilder sb = new StringBuilder();
 }
-  : i1=identifier { sb.append( i1.getName() ); }
+  : i1 = type { image = i1.getName(); }
+  | i1=identifier { sb.append( i1.getName() ); }
     ( DOT ( i2=identifier | i2=reservedWord ) { 
         sb.append( '.' );
         sb.append( i2.getName() ); 
@@ -285,8 +296,8 @@ parameterList returns [ArrayList<CFFunctionParameter> v]
   ; 
   
 parameter returns [CFFunctionParameter s]
-@init{ d = null; t=null; } 
-  : ^(FUNCTION_PARAMETER (r=REQUIRED)? (t=parameterType)? i=identifier (EQUALSOP d=expression)? ){ 
+@init{ d = null; t=null;} 
+  : ^(FUNCTION_PARAMETER (r=REQUIRED)? (t=parameterType)? i=identifier (EQUALSOP d=expression)? attr=parameterAttributes) { 
       return new CFFunctionParameter( (CFIdentifier) i, r!=null, t, d ); 
     }
   ;
@@ -493,7 +504,13 @@ cfmlFunction returns [CFIdentifier e]
   | t=QUERY { e = new CFIdentifier( t.getToken() ); }
   ;
 
-
+type returns [CFIdentifier e]
+  : t=NUMERIC { e = new CFIdentifier( t.getToken() ); }
+  | t=STRING { e = new CFIdentifier( t.getToken() ); } 
+  | t=BOOLEAN { e = new CFIdentifier( t.getToken() ); }
+  | t=COMPONENT { e = new CFIdentifier( t.getToken() ); }
+  ;
+  
 cfscriptKeywords returns [CFIdentifier e]
   : t=IF        { e = new CFIdentifier( t.getToken() ); }
   | t=ELSE      { e = new CFIdentifier( t.getToken() ); }
@@ -507,6 +524,7 @@ cfscriptKeywords returns [CFIdentifier e]
   | t=IN        { e = new CFIdentifier( t.getToken() ); }
   | t=TRY       { e = new CFIdentifier( t.getToken() ); }
   | t=CATCH     { e = new CFIdentifier( t.getToken() ); }
+  | t=FINALLY   { e = new CFIdentifier( t.getToken() ); }
   | t=SWITCH    { e = new CFIdentifier( t.getToken() ); }
   | t=CASE      { e = new CFIdentifier( t.getToken() ); }
   | t=DEFAULT   { e = new CFIdentifier( t.getToken() ); }

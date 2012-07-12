@@ -316,6 +316,39 @@ public class TestScriptParser {
 	}
 	
 	@Test
+	public void testFunctionWithNamedParamNamedNull() {
+		String script = "oNewStarters.addParam(name=\"pager\", null=true, cfsqltype=\"cf_sql_varchar\");";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testFunctionWithRestMetadata() {
+		String script = "remote User function getUser(numeric userid restargsource=\"Path\") httpmethod=\"GET\" restpath=\"{userid}\" {}";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testFunctionWithDefaultAndRestMetadata() {
+		String script = "remote User function getUser(numeric userid=\"default\" restargsource=\"Path\") httpmethod=\"GET\" restpath=\"{userid}\" {}";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testParseScriptTryCatch() {
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
 		CFScriptStatement scriptStatement = parseScript(script);
