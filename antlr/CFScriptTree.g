@@ -214,7 +214,7 @@ tryStatement returns [CFScriptStatement s] throws ParseException
   ;
   
 catchStatement returns [cfCatchClause c]
-  : ^(t1=CATCH e1=exceptionType e2=identifier s1=compoundStatement ){
+  : ^(t1=CATCH e1=typeSpec e2=identifier s1=compoundStatement ){
     c = new CFCatchStatement( e1, e2.getName(), s1 );;
   }
   ;
@@ -223,19 +223,6 @@ finallyStatement returns [CFScriptStatement s]
   : ^(FINALLY s1=compoundStatement ){
     s = s1;
   }
-  ;
-
-exceptionType returns [String image]
-@init{
-  StringBuilder sb = new StringBuilder();
-}
-  : i1=identifier { sb.append( i1.getName() ); }
-    ( DOT ( i2=identifier | i2=reservedWord ) { 
-        sb.append( '.' );
-        sb.append( i2.getName() ); 
-      } 
-    )* { image = sb.toString(); }
-  | t=STRING_LITERAL { image = t.getToken().getText().substring( 1, t.getToken().getText().length() - 1 ); }
   ;
   
 switchStatement returns [CFScriptStatement s ]
@@ -498,6 +485,7 @@ cfmlFunction returns [CFIdentifier e]
   | t=SAVECONTENT { e = new CFIdentifier( t.getToken() ); }
   | t=HTTP { e = new CFIdentifier( t.getToken() ); }
   | t=FILE { e = new CFIdentifier( t.getToken() ); }
+  | t=PROPERTY { e = new CFIdentifier( t.getToken() ); }
   | t=DIRECTORY { e = new CFIdentifier( t.getToken() ); }
   | t=LOOP { e = new CFIdentifier( t.getToken() ); }
   | t=SETTING { e = new CFIdentifier( t.getToken() ); }
@@ -509,6 +497,9 @@ type returns [CFIdentifier e]
   | t=STRING { e = new CFIdentifier( t.getToken() ); } 
   | t=BOOLEAN { e = new CFIdentifier( t.getToken() ); }
   | t=COMPONENT { e = new CFIdentifier( t.getToken() ); }
+  | t=ANY { e = new CFIdentifier( t.getToken() ); }
+  | t=STRUCT { e = new CFIdentifier( t.getToken() ); }
+  | t=ARRAY { e = new CFIdentifier( t.getToken() ); }
   ;
   
 cfscriptKeywords returns [CFIdentifier e]

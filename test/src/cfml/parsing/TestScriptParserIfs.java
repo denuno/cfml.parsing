@@ -51,4 +51,15 @@ public class TestScriptParserIfs {
 		assertNotNull(scriptStatement);
 	}
 	
+	@Test
+	public void testIfshortForm() {
+		String script = "if ( structKeyExists( cfc, \"get#property#\" ) ) return evaluate( 'cfc.get#property#()' );";
+		CFScriptStatement scriptStatement = null;
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
 }

@@ -401,6 +401,9 @@ QUERY: 'QUERY';
 STRING: 'STRING';
 NUMERIC: 'NUMERIC';
 BOOLEAN: 'BOOLEAN';
+ANY: 'ANY';
+ARRAY: 'ARRAY';
+STRUCT: 'STRUCT';
 
 // function related
 PRIVATE: 'PRIVATE';
@@ -564,16 +567,11 @@ tryCatchStatement
   ;
   
 catchCondition
-  : CATCH^ LEFTPAREN! exceptionType identifier RIGHTPAREN! compoundStatement
+  : CATCH^ LEFTPAREN! typeSpec identifier RIGHTPAREN! compoundStatement
   ;
 
 finallyStatement
   : FINALLY^ compoundStatement
-  ;
-
-exceptionType
-  : identifier ( DOT ( identifier | reservedWord ) )*
-  | STRING_LITERAL
   ;
   
 constantExpression
@@ -640,6 +638,7 @@ cfmlFunction
   | SAVECONTENT
   | HTTP 
   | FILE 
+  | PROPERTY
   | DIRECTORY
   | LOOP 
   | SETTING
@@ -911,6 +910,9 @@ type
   | STRING
   | BOOLEAN
   | COMPONENT
+  | ANY
+  | ARRAY
+  | STRUCT
   ;
 
 cfscriptKeywords
