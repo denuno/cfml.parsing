@@ -114,17 +114,6 @@ public class TestCFMLFunctionStatement {
 	}
 	
 	@Test
-	public void testLocationStatement() {
-		String script = "location url=\"/some/url\";";
-		CFScriptStatement scriptStatement = null;
-		scriptStatement = parseScript(script);
-		if (fCfmlParser.getMessages().size() > 0) {
-			fail("whoops! " + fCfmlParser.getMessages());
-		}
-		assertNotNull(scriptStatement);
-	}
-	
-	@Test
 	public void testIncludeWithTemplateStatementFail() {
 		/* need to check if this is valid in OBD/ACF */
 		String script = "include template=\"/ram/#randName#\";";

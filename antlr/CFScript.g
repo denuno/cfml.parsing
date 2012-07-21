@@ -388,7 +388,6 @@ THREAD: 'THREAD';
 TRANSACTION: 'TRANSACTION';
 
 // cfmlfunction (tags you can call from script)
-LOCATION: 'LOCATION';
 SAVECONTENT: 'SAVECONTENT';
 HTTP: 'HTTP';
 FILE: 'FILE';
@@ -634,8 +633,7 @@ cfmlfunctionStatement
   ;
   
 cfmlFunction
-  : LOCATION
-  | SAVECONTENT
+  : SAVECONTENT
   | HTTP 
   | FILE 
   | PROPERTY

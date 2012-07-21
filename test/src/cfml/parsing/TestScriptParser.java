@@ -1,7 +1,6 @@
 package cfml.parsing;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import java.io.File;
@@ -118,13 +117,11 @@ public class TestScriptParser {
 				+ "var toot = 'se5ee6yye67tutuityit69t9imfuihki';"
 				+ "var registry = createObject('java','org.eclipse.emf.ecore.EPackage$Registry').INSTANCE;"
 				+ "var className = listLast(class,'/');" + "var packageName = '';" + "if(isObject(class)) {"
-				+ "this._instance = class;" + "} else {" + "weee" + "}};";
+				+ "this._instance = class; } else { weee }};";
 		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() == 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
-		System.out.println(scriptStatement.toString());
-		assertNull(scriptStatement);
 	}
 	
 	@Test
@@ -227,6 +224,31 @@ public class TestScriptParser {
 	}
 	
 	@Test
+	public void testParseScriptFw1() {
+		String path = "";
+		try {
+			path = new URL("file:test/data/cfml/fw1.cfc").getPath();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		CFScriptStatement scriptStatement = null;
+		try {
+			scriptStatement = fCfmlParser.parseScriptFile(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail("whoops! " + e.getMessage());
+		}
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		System.out.println(scriptStatement.toString());
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testParseCFCWithColonMetadata() {
 		String path = "";
 		try {
@@ -289,7 +311,6 @@ public class TestScriptParser {
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());
 		}
-		
 		assertNotNull(scriptStatement);
 	}
 	
@@ -360,6 +381,17 @@ public class TestScriptParser {
 	}
 	
 	@Test
+	public void propertyKeyWordButNotProperty() {
+		String script = "public void function onPopulateError( any cfc, string property, struct rc ){}";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void structKeyHashedSideBySide() {
 		String script = "funkstruct =  { '#method##route#' : target };";
 		CFScriptStatement scriptStatement = parseScript(script);
@@ -373,6 +405,17 @@ public class TestScriptParser {
 	@Test
 	public void testParseScriptTryCatch() {
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void testVoidFunctionComplex() {
+		String script = "public void function redirect( string action, string preserve = 'none', string append = 'none', string path = variables.magicBaseURL, string queryString = '', string statusCode = '302' ) { }";
 		CFScriptStatement scriptStatement = parseScript(script);
 		if (fCfmlParser.getMessages().size() > 0) {
 			fail("whoops! " + fCfmlParser.getMessages());

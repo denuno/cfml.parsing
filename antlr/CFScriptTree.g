@@ -481,8 +481,7 @@ identifier returns [CFIdentifier e]
   ;
 
 cfmlFunction returns [CFIdentifier e]
-  : t=LOCATION { e = new CFIdentifier( t.getToken() ); }
-  | t=SAVECONTENT { e = new CFIdentifier( t.getToken() ); }
+  : t=SAVECONTENT { e = new CFIdentifier( t.getToken() ); }
   | t=HTTP { e = new CFIdentifier( t.getToken() ); }
   | t=FILE { e = new CFIdentifier( t.getToken() ); }
   | t=PROPERTY { e = new CFIdentifier( t.getToken() ); }
