@@ -50,6 +50,7 @@ tokens {
   
   IMPLICITSTRUCT; // implicit struct 
   IMPLICITARRAY; // implicit struct
+  CONCATSTRUCTKEY; // concat "#wee##hoo#" = wonk
   
   ABORTSTATEMENT; // abort statement
   EXITSTATEMENT; // exit statement
@@ -966,6 +967,7 @@ implicitStructExpression
   
 implicitStructKeyExpression
   : identifier ( DOT ( identifier | reservedWord ) )*
+  | additiveExpression ( CONCAT^ additiveExpression )*
   | STRING_LITERAL
   ;
 

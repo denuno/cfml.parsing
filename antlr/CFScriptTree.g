@@ -585,6 +585,7 @@ implicitStructKeyExpression returns [ArrayList<String> e]
 @init{ e = new ArrayList<String>(); }
   : t=identifier { e.add( t.getName() ); }
     ( DOT ( t=identifier | t=reservedWord ) { e.add( t.getName() ); } )*
+  | s=statement (CONCAT ss =statement{ e.add( s.toString() + ss.toString() ); } )*
   | e1=STRING_LITERAL { e.add( e1.getToken().getText().substring( 1, e1.getToken().getText().length() - 1 ) ); }
   ; 
 

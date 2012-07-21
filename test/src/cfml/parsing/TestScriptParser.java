@@ -349,6 +349,28 @@ public class TestScriptParser {
 	}
 	
 	@Test
+	public void functionCallHashedParamsSideBySide() {
+		String script = "arrayAppend( variables.framework.routes, { '#method##route#' : target } );";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
+	public void structKeyHashedSideBySide() {
+		String script = "funkstruct =  { '#method##route#' : target };";
+		CFScriptStatement scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testParseScriptTryCatch() {
 		String script = "try { throw('funk'); } catch (Any e) { woot(); }";
 		CFScriptStatement scriptStatement = parseScript(script);
