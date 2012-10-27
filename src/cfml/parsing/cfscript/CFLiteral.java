@@ -59,9 +59,10 @@ public class CFLiteral extends CFExpression implements java.io.Serializable {
 		case CFScriptLexer.BOOLEAN_LITERAL:
 			val = _t.getText();
 			break;
-		case CFScriptLexer.NULL:
-			val = "";
-			break;
+		// CFML doesn't do nulls, to my knowledge
+		// case CFScriptLexer.NULL:
+		// val = "";
+		// break;
 		default:
 			break;
 		}

@@ -4,6 +4,7 @@
 	<property name="build.dir" location="${basedir}"/>
 	<property name="output.dir" location="../bin"/>
 	<property name="src.tests" location="../test/src"/>
+	<property name="reports.tests" location="./testresults/"/>
 	<property name="grammar.jar" location="../cfml.parsing.jar"/>
 	<property name="grammar.dir" location="../antlr"/>
 	<property name="grammar.file" location="${grammar.dir}/CFScript.g"/>
@@ -31,7 +32,7 @@
 		<attribute name="outputdirectory" default="." />
 		<attribute name="libdirectory" default="../lib" />
 		<sequential>
-			<java classname="org.antlr.Tool" fork="true" failonerror="true" classpathref="build.lib.path" includeantruntime="false">
+			<java classname="org.antlr.Tool" fork="true" failonerror="true" classpathref="build.lib.path">
 				<jvmarg value="-Xms512M"/>
 				<jvmarg value="-Xmx1024M"/>
 				<arg value="-o" />
@@ -55,7 +56,7 @@
 
 	<target name="grammar.compile" depends="grammar.generate">
 		<mkdir dir="../bin" />
-		<javac srcdir="${src.dir}" destdir="../bin" listfiles="Yes" deprecation="Yes" classpathref="build.lib.path">
+		<javac srcdir="${src.dir}" destdir="../bin" listfiles="Yes" deprecation="Yes" classpathref="build.lib.path" includeantruntime="false">
 			<compilerarg value="-Xlint:unchecked" />
 			<classpath>
 				<pathelement path="${java.class.path}" />
@@ -91,18 +92,22 @@
 		<echo message="${last.revision.info}"/>
 	</target>
 
-	<target name="test">
-	    <junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="false">
+	<target name="test" depends="build">
+    	<mkdir dir="${reports.tests}" />
+	    <junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="false" fork="true" dir="../">
 	    	<classpath>
-	    	    <pathelement location="../lib/junit-4.10.jar"/>
+	    	    <pathelement path="${grammar.jar}"/>
 	    	    <pathelement path="${java.class.path}"/>
+	    	    <pathelement path="${toString:build.path}"/>
+	    	    <pathelement path="${toString:build.lib.path}"/>
 	    	  </classpath>
 	    	<batchtest fork="yes" todir="${reports.tests}">
 	    	    <fileset dir="${src.tests}">
 	    	      <include name="**/*Test*.java"/>
 	    	      <exclude name="**/AllTests.java"/>
 	    	    </fileset>
-	    	  	<formatter type="failure"/>
+	    	  	<formatter type="xml"/>
+	    		<formatter type="plain" usefile="false"/>
 	    	  </batchtest>
 	    </junit>
 	</target>	

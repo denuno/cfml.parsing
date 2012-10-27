@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/concept/XML2.g 2012-02-26 00:34:45
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/concept/XML2.g 2012-10-27 03:10:10
 
 package cfml.parsing.cfml.antlr;
 
