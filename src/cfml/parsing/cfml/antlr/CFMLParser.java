@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g 2012-10-27 03:09:23
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g 2012-10-27 11:24:50
  
 package cfml.parsing.cfml.antlr;
 import cfml.parsing.cfscript.CFParseException;
@@ -1642,7 +1642,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement17.getTree());
 
             // AST REWRITE
-            // elements: parameterList, functionAccessType, functionAttribute, compoundStatement, identifier, functionReturnType
+            // elements: functionAttribute, functionReturnType, identifier, parameterList, functionAccessType, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2734,7 +2734,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: impliesExpression, REQUIRED, identifier, EQUALSOP, parameterType
+            // elements: EQUALSOP, impliesExpression, identifier, REQUIRED, parameterType
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2774,7 +2774,7 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, stream_identifier.nextTree());
 
                 // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g:469:141: ( EQUALSOP impliesExpression )?
-                if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
+                if ( stream_EQUALSOP.hasNext()||stream_impliesExpression.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_EQUALSOP.nextNode()
                     );
@@ -2782,8 +2782,8 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
                 }
-                stream_impliesExpression.reset();
                 stream_EQUALSOP.reset();
+                stream_impliesExpression.reset();
 
                 adaptor.addChild(root_0, root_1);
                 }
@@ -3000,7 +3000,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression38.getTree());
 
             // AST REWRITE
-            // elements: identifier, identifier, impliesExpression, COLON
+            // elements: identifier, impliesExpression, identifier, COLON
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6756,7 +6756,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: compoundStatement, paramStatementAttributes
+            // elements: paramStatementAttributes, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6908,7 +6908,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: param, compoundStatement, cfmlFunction
+            // elements: cfmlFunction, param, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9283,7 +9283,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: identifier, EQUALSOP, impliesExpression
+                    // elements: impliesExpression, EQUALSOP, identifier
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9307,7 +9307,7 @@ public TreeAdaptor getTreeAdaptor() {
                         adaptor.addChild(root_1, stream_identifier.nextTree());
 
                         // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g:681:77: ( EQUALSOP impliesExpression )?
-                        if ( stream_EQUALSOP.hasNext()||stream_impliesExpression.hasNext() ) {
+                        if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
                             adaptor.addChild(root_1, 
                             stream_EQUALSOP.nextNode()
                             );
@@ -9315,8 +9315,8 @@ public TreeAdaptor getTreeAdaptor() {
                             adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
                         }
-                        stream_EQUALSOP.reset();
                         stream_impliesExpression.reset();
+                        stream_EQUALSOP.reset();
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -14423,7 +14423,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression281.getTree());
 
                     // AST REWRITE
-                    // elements: MINUS, memberExpression
+                    // elements: memberExpression, MINUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14472,7 +14472,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression283.getTree());
 
                     // AST REWRITE
-                    // elements: PLUS, memberExpression
+                    // elements: memberExpression, PLUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14570,7 +14570,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression287.getTree());
 
                     // AST REWRITE
-                    // elements: PLUSPLUS, memberExpression
+                    // elements: memberExpression, PLUSPLUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -15197,7 +15197,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, LEFTBRACKET, impliesExpression
+            	    // elements: impliesExpression, memberExpressionB, LEFTBRACKET
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15248,7 +15248,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW316.getTree());
 
             	    // AST REWRITE
-            	    // elements: DOT, primaryExpressionIRW, memberExpressionB
+            	    // elements: primaryExpressionIRW, DOT, memberExpressionB
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -18579,7 +18579,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression355.getTree());
 
                     // AST REWRITE
-                    // elements: impliesExpression, COLON, identifier
+                    // elements: identifier, impliesExpression, COLON
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -18643,7 +18643,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression358.getTree());
 
                     // AST REWRITE
-                    // elements: impliesExpression, identifier
+                    // elements: identifier, impliesExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
