@@ -28,6 +28,8 @@ package treetool;
 import java.io.FileReader;
 import java.io.FileWriter;
 
+import org.antlr.grammar.v3.ANTLRv3Lexer;
+import org.antlr.grammar.v3.ANTLRv3Parser;
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.TokenRewriteStream;
