@@ -14,7 +14,7 @@ public class TestGetStartTagEnd extends TestCase {
 		Source source = new Source(rawSource);
 		
 		// Retrieve all the start tags
-		List<StartTag> cftags = source.getAllStartTags(StartTagTypeCfSet.INSTANCE);
+		List<StartTag> cftags = source.getAllStartTags(startTag);
 		
 		// Return the first tag found
 		return cftags.get(0);
@@ -34,7 +34,7 @@ public class TestGetStartTagEnd extends TestCase {
 		
 		String rawSource = "<cfrandom \"custom string\" />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, CFMLStartTag.getInstance());
+		StartTag cftag = parseAndGetFirstTag(rawSource, randomTag);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -42,7 +42,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithNestedDoubleQuotes() {
 		String rawSource = "<cfreturn \"one two \"\" three\" />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -50,7 +50,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithNestedSingleQuotes() {
 		String rawSource = "<cfreturn 'one two '' three' />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -58,7 +58,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithoutAttribute() {
 		String rawSource = "<cfreturn />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -66,7 +66,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithVariable() {
 		String rawSource = "<cfreturn blah />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -74,7 +74,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithVariableAndStringConcatnation() {
 		String rawSource = "<cfreturn blah & \"foo\" />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -82,7 +82,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithVariableConcatnation() {
 		String rawSource = "<cfreturn blah & foo />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -90,7 +90,7 @@ public class TestGetStartTagEnd extends TestCase {
 	public void testAllStartTags_length_returnWithVariableInString() {
 		String rawSource = "<cfreturn \"foo#bar#\" />";
 		
-		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfSet.INSTANCE);
+		StartTag cftag = parseAndGetFirstTag(rawSource, StartTagTypeCfReturn.INSTANCE);
 		
 		assertEquals(rawSource.length(), cftag.getEnd());
 	}
@@ -173,7 +173,7 @@ public class TestGetStartTagEnd extends TestCase {
 		
 		StartTag cftag = parseAndGetFirstTag(rawSource.concat(unmatched), StartTagTypeCfSet.INSTANCE);
 		
-		assertEquals(rawSource.length() - unmatched.length(), cftag.getEnd());
+		assertEquals((rawSource + unmatched).length() - unmatched.length(), cftag.getEnd());
 	}
 	
 	public void testAllStartTags_length_setWithMultipliedVariables() {

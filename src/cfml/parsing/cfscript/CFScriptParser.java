@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g 2012-10-27 03:09:46
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g 2012-10-28 02:42:38
  package cfml.parsing.cfscript;
 
 import org.antlr.runtime.*;
@@ -277,7 +277,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "scriptBlock"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:439:1: scriptBlock : ( componentDeclaration | ( element )* endOfScriptBlock );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:443:1: scriptBlock : ( componentDeclaration | ( element )* endOfScriptBlock );
     public final CFScriptParser.scriptBlock_return scriptBlock() throws RecognitionException {
         CFScriptParser.scriptBlock_return retval = new CFScriptParser.scriptBlock_return();
         retval.start = input.LT(1);
@@ -297,7 +297,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:440:3: ( componentDeclaration | ( element )* endOfScriptBlock )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:444:3: ( componentDeclaration | ( element )* endOfScriptBlock )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -515,7 +515,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt2) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:440:5: componentDeclaration
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:444:5: componentDeclaration
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -530,12 +530,12 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:441:5: ( element )* endOfScriptBlock
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:5: ( element )* endOfScriptBlock
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:441:5: ( element )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:5: ( element )*
                     loop1:
                     do {
                         int alt1=2;
@@ -548,7 +548,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:441:7: element
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:7: element
                     	    {
                     	    pushFollow(FOLLOW_element_in_scriptBlock1559);
                     	    element2=element();
@@ -589,8 +589,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -610,7 +614,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "componentDeclaration"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:444:1: componentDeclaration : COMPONENT ( componentAttribute )* componentGuts -> ^( COMPDECL ( componentAttribute )* componentGuts ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:448:1: componentDeclaration : COMPONENT ( componentAttribute )* componentGuts -> ^( COMPDECL ( componentAttribute )* componentGuts ) ;
     public final CFScriptParser.componentDeclaration_return componentDeclaration() throws RecognitionException {
         CFScriptParser.componentDeclaration_return retval = new CFScriptParser.componentDeclaration_return();
         retval.start = input.LT(1);
@@ -632,14 +636,14 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:3: ( COMPONENT ( componentAttribute )* componentGuts -> ^( COMPDECL ( componentAttribute )* componentGuts ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:5: COMPONENT ( componentAttribute )* componentGuts
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:3: ( COMPONENT ( componentAttribute )* componentGuts -> ^( COMPDECL ( componentAttribute )* componentGuts ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:5: COMPONENT ( componentAttribute )* componentGuts
             {
             COMPONENT4=(Token)match(input,COMPONENT,FOLLOW_COMPONENT_in_componentDeclaration1578); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_COMPONENT.add(COMPONENT4);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:15: ( componentAttribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:15: ( componentAttribute )*
             loop3:
             do {
                 int alt3=2;
@@ -652,7 +656,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt3) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:15: componentAttribute
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:15: componentAttribute
             	    {
             	    pushFollow(FOLLOW_componentAttribute_in_componentDeclaration1580);
             	    componentAttribute5=componentAttribute();
@@ -678,7 +682,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_componentGuts.add(componentGuts6.getTree());
 
             // AST REWRITE
-            // elements: componentAttribute, componentGuts
+            // elements: componentGuts, componentAttribute
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -690,16 +694,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 445:49: -> ^( COMPDECL ( componentAttribute )* componentGuts )
+            // 449:49: -> ^( COMPDECL ( componentAttribute )* componentGuts )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:52: ^( COMPDECL ( componentAttribute )* componentGuts )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:52: ^( COMPDECL ( componentAttribute )* componentGuts )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(COMPDECL, "COMPDECL")
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:445:64: ( componentAttribute )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:64: ( componentAttribute )*
                 while ( stream_componentAttribute.hasNext() ) {
                     adaptor.addChild(root_1, stream_componentAttribute.nextTree());
 
@@ -731,8 +735,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -752,7 +760,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "endOfScriptBlock"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:448:1: endOfScriptBlock : ( SCRIPTCLOSE | EOF );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:452:1: endOfScriptBlock : ( SCRIPTCLOSE | EOF );
     public final CFScriptParser.endOfScriptBlock_return endOfScriptBlock() throws RecognitionException {
         CFScriptParser.endOfScriptBlock_return retval = new CFScriptParser.endOfScriptBlock_return();
         retval.start = input.LT(1);
@@ -768,7 +776,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:449:3: ( SCRIPTCLOSE | EOF )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:453:3: ( SCRIPTCLOSE | EOF )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
@@ -805,8 +813,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -826,7 +838,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "element"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:453:1: element : ( functionDeclaration | statement );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:457:1: element : ( functionDeclaration | statement );
     public final CFScriptParser.element_return element() throws RecognitionException {
         CFScriptParser.element_return retval = new CFScriptParser.element_return();
         retval.start = input.LT(1);
@@ -844,7 +856,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:454:3: ( functionDeclaration | statement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:458:3: ( functionDeclaration | statement )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1584,7 +1596,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:454:5: functionDeclaration
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:458:5: functionDeclaration
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1599,7 +1611,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:455:5: statement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:5: statement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -1627,8 +1639,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -1648,7 +1664,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "functionDeclaration"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:458:1: functionDeclaration : ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:462:1: functionDeclaration : ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement ) ;
     public final CFScriptParser.functionDeclaration_return functionDeclaration() throws RecognitionException {
         CFScriptParser.functionDeclaration_return retval = new CFScriptParser.functionDeclaration_return();
         retval.start = input.LT(1);
@@ -1688,10 +1704,10 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:3: ( ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:5: ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:3: ( ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:5: ( functionAccessType )? ( functionReturnType )? lc= FUNCTION identifier LEFTPAREN ( parameterList )? RIGHTPAREN ( functionAttribute )* compoundStatement
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:5: ( functionAccessType )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:5: ( functionAccessType )?
             int alt5=2;
             switch ( input.LA(1) ) {
                 case PUBLIC:
@@ -1734,7 +1750,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt5) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:6: functionAccessType
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:6: functionAccessType
                     {
                     pushFollow(FOLLOW_functionAccessType_in_functionDeclaration1650);
                     functionAccessType10=functionAccessType();
@@ -1749,7 +1765,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:27: ( functionReturnType )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:27: ( functionReturnType )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1772,7 +1788,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:28: functionReturnType
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:28: functionReturnType
                     {
                     pushFollow(FOLLOW_functionReturnType_in_functionDeclaration1655);
                     functionReturnType11=functionReturnType();
@@ -1802,7 +1818,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN13);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:82: ( parameterList )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:82: ( parameterList )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1818,7 +1834,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt7) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:83: parameterList
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:83: parameterList
                     {
                     pushFollow(FOLLOW_parameterList_in_functionDeclaration1668);
                     parameterList14=parameterList();
@@ -1837,7 +1853,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_RIGHTPAREN.add(RIGHTPAREN15);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:110: ( functionAttribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:110: ( functionAttribute )*
             loop8:
             do {
                 int alt8=2;
@@ -1850,7 +1866,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt8) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:110: functionAttribute
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:110: functionAttribute
             	    {
             	    pushFollow(FOLLOW_functionAttribute_in_functionDeclaration1674);
             	    functionAttribute16=functionAttribute();
@@ -1876,7 +1892,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement17.getTree());
 
             // AST REWRITE
-            // elements: parameterList, functionAccessType, functionReturnType, identifier, compoundStatement, functionAttribute
+            // elements: identifier, functionAccessType, compoundStatement, functionReturnType, functionAttribute, parameterList
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1888,30 +1904,30 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 459:147: -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement )
+            // 463:147: -> ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:150: ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:150: ^( FUNCDECL[$lc] ( functionAccessType )? ( functionReturnType )? ^( FUNCTION_NAME identifier ) ( parameterList )? ( functionAttribute )* compoundStatement )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(FUNCDECL, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:167: ( functionAccessType )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:167: ( functionAccessType )?
                 if ( stream_functionAccessType.hasNext() ) {
                     adaptor.addChild(root_1, stream_functionAccessType.nextTree());
 
                 }
                 stream_functionAccessType.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:189: ( functionReturnType )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:189: ( functionReturnType )?
                 if ( stream_functionReturnType.hasNext() ) {
                     adaptor.addChild(root_1, stream_functionReturnType.nextTree());
 
                 }
                 stream_functionReturnType.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:211: ^( FUNCTION_NAME identifier )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:211: ^( FUNCTION_NAME identifier )
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(
@@ -1923,14 +1939,14 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_1, root_2);
                 }
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:239: ( parameterList )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:239: ( parameterList )?
                 if ( stream_parameterList.hasNext() ) {
                     adaptor.addChild(root_1, stream_parameterList.nextTree());
 
                 }
                 stream_parameterList.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:256: ( functionAttribute )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:256: ( functionAttribute )*
                 while ( stream_functionAttribute.hasNext() ) {
                     adaptor.addChild(root_1, stream_functionAttribute.nextTree());
 
@@ -1962,8 +1978,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -1983,7 +2003,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "functionAccessType"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:462:1: functionAccessType : ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType -> ^( FUNCTION_ACCESS accessType ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:466:1: functionAccessType : ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType -> ^( FUNCTION_ACCESS accessType ) ;
     public final CFScriptParser.functionAccessType_return functionAccessType() throws RecognitionException {
         CFScriptParser.functionAccessType_return retval = new CFScriptParser.functionAccessType_return();
         retval.start = input.LT(1);
@@ -1999,8 +2019,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:464:3: ( ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType -> ^( FUNCTION_ACCESS accessType ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:464:5: ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:468:3: ( ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType -> ^( FUNCTION_ACCESS accessType ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:468:5: ( accessType ( functionReturnType )? FUNCTION identifier )=> accessType
             {
             pushFollow(FOLLOW_accessType_in_functionAccessType1741);
             accessType18=accessType();
@@ -2022,9 +2042,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 464:72: -> ^( FUNCTION_ACCESS accessType )
+            // 468:72: -> ^( FUNCTION_ACCESS accessType )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:464:75: ^( FUNCTION_ACCESS accessType )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:468:75: ^( FUNCTION_ACCESS accessType )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -2056,8 +2076,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -2077,7 +2101,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "functionReturnType"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:468:1: functionReturnType : ( typeSpec FUNCTION )=> typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:472:1: functionReturnType : ( typeSpec FUNCTION )=> typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec ) ;
     public final CFScriptParser.functionReturnType_return functionReturnType() throws RecognitionException {
         CFScriptParser.functionReturnType_return retval = new CFScriptParser.functionReturnType_return();
         retval.start = input.LT(1);
@@ -2093,8 +2117,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:469:3: ( ( typeSpec FUNCTION )=> typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:469:5: ( typeSpec FUNCTION )=> typeSpec
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:473:3: ( ( typeSpec FUNCTION )=> typeSpec -> ^( FUNCTION_RETURNTYPE typeSpec ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:473:5: ( typeSpec FUNCTION )=> typeSpec
             {
             pushFollow(FOLLOW_typeSpec_in_functionReturnType1772);
             typeSpec19=typeSpec();
@@ -2116,9 +2140,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 469:37: -> ^( FUNCTION_RETURNTYPE typeSpec )
+            // 473:37: -> ^( FUNCTION_RETURNTYPE typeSpec )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:469:40: ^( FUNCTION_RETURNTYPE typeSpec )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:473:40: ^( FUNCTION_RETURNTYPE typeSpec )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -2150,8 +2174,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -2171,7 +2199,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "accessType"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:472:1: accessType : ( PUBLIC | PRIVATE | REMOTE | PACKAGE );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:476:1: accessType : ( PUBLIC | PRIVATE | REMOTE | PACKAGE );
     public final CFScriptParser.accessType_return accessType() throws RecognitionException {
         CFScriptParser.accessType_return retval = new CFScriptParser.accessType_return();
         retval.start = input.LT(1);
@@ -2187,7 +2215,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:473:2: ( PUBLIC | PRIVATE | REMOTE | PACKAGE )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:2: ( PUBLIC | PRIVATE | REMOTE | PACKAGE )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
@@ -2224,8 +2252,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -2245,7 +2277,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "typeSpec"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:476:1: typeSpec : ( type | identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:480:1: typeSpec : ( type | identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL );
     public final CFScriptParser.typeSpec_return typeSpec() throws RecognitionException {
         CFScriptParser.typeSpec_return retval = new CFScriptParser.typeSpec_return();
         retval.start = input.LT(1);
@@ -2271,7 +2303,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:3: ( type | identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:481:3: ( type | identifier ( DOT ( identifier | reservedWord ) )* | STRING_LITERAL )
             int alt11=3;
             switch ( input.LA(1) ) {
             case COMPONENT:
@@ -2372,7 +2404,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt11) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:5: type
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:481:5: type
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2387,7 +2419,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:5: identifier ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:5: identifier ( DOT ( identifier | reservedWord ) )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2399,7 +2431,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier22.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:16: ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:16: ( DOT ( identifier | reservedWord ) )*
                     loop10:
                     do {
                         int alt10=2;
@@ -2412,7 +2444,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:18: DOT ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:18: DOT ( identifier | reservedWord )
                     	    {
                     	    DOT23=(Token)match(input,DOT,FOLLOW_DOT_in_typeSpec1827); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -2422,7 +2454,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	    adaptor.addChild(root_0, DOT23_tree);
                     	    }
 
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:22: ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:22: ( identifier | reservedWord )
                     	    int alt9=2;
                     	    switch ( input.LA(1) ) {
                     	    case ABORT:
@@ -2550,7 +2582,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                     	    switch (alt9) {
                     	        case 1 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:24: identifier
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:24: identifier
                     	            {
                     	            pushFollow(FOLLOW_identifier_in_typeSpec1831);
                     	            identifier24=identifier();
@@ -2562,7 +2594,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:37: reservedWord
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:37: reservedWord
                     	            {
                     	            pushFollow(FOLLOW_reservedWord_in_typeSpec1835);
                     	            reservedWord25=reservedWord();
@@ -2589,7 +2621,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:479:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:483:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2618,8 +2650,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -2639,7 +2675,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "parameterList"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:1: parameterList : ( parameter ( ',' ! parameter )* |);
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:486:1: parameterList : ( parameter ( ',' ! parameter )* |);
     public final CFScriptParser.parameterList_return parameterList() throws RecognitionException {
         CFScriptParser.parameterList_return retval = new CFScriptParser.parameterList_return();
         retval.start = input.LT(1);
@@ -2659,7 +2695,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:483:3: ( parameter ( ',' ! parameter )* |)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:487:3: ( parameter ( ',' ! parameter )* |)
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2679,7 +2715,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt13) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:483:5: parameter ( ',' ! parameter )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:487:5: parameter ( ',' ! parameter )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2691,7 +2727,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, parameter27.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:483:15: ( ',' ! parameter )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:487:15: ( ',' ! parameter )*
                     loop12:
                     do {
                         int alt12=2;
@@ -2704,7 +2740,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:483:17: ',' ! parameter
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:487:17: ',' ! parameter
                     	    {
                     	    char_literal28=(Token)match(input,157,FOLLOW_157_in_parameterList1865); if (state.failed) return retval;
 
@@ -2727,7 +2763,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:485:3: 
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:489:3: 
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -2748,8 +2784,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -2769,7 +2809,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "parameter"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:487:1: parameter : ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:491:1: parameter : ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* ) ;
     public final CFScriptParser.parameter_return parameter() throws RecognitionException {
         CFScriptParser.parameter_return retval = new CFScriptParser.parameter_return();
         retval.start = input.LT(1);
@@ -2800,10 +2840,10 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:3: ( ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:5: ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:3: ( ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:5: ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )*
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:5: ( REQUIRED )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:5: ( REQUIRED )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2816,7 +2856,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt14) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:6: REQUIRED
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:6: REQUIRED
                     {
                     REQUIRED30=(Token)match(input,REQUIRED,FOLLOW_REQUIRED_in_parameter1890); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_REQUIRED.add(REQUIRED30);
@@ -2828,12 +2868,12 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:17: ( parameterType )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:17: ( parameterType )?
             int alt15=2;
             alt15 = dfa15.predict(input);
             switch (alt15) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:18: parameterType
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:18: parameterType
                     {
                     pushFollow(FOLLOW_parameterType_in_parameter1895);
                     parameterType31=parameterType();
@@ -2855,7 +2895,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_identifier.add(identifier32.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:45: ( EQUALSOP impliesExpression )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:45: ( EQUALSOP impliesExpression )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2864,7 +2904,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt16) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:47: EQUALSOP impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:47: EQUALSOP impliesExpression
                     {
                     EQUALSOP33=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_parameter1903); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP33);
@@ -2883,7 +2923,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:77: ( parameterAttribute )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:77: ( parameterAttribute )*
             loop17:
             do {
                 int alt17=2;
@@ -2896,7 +2936,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt17) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:77: parameterAttribute
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:77: parameterAttribute
             	    {
             	    pushFollow(FOLLOW_parameterAttribute_in_parameter1910);
             	    parameterAttribute35=parameterAttribute();
@@ -2915,7 +2955,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: REQUIRED, parameterType, parameterAttribute, EQUALSOP, identifier, impliesExpression
+            // elements: REQUIRED, impliesExpression, identifier, parameterType, parameterAttribute, EQUALSOP
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2927,16 +2967,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 488:97: -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* )
+            // 492:97: -> ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:100: ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:100: ^( FUNCTION_PARAMETER ( REQUIRED )? ( parameterType )? identifier ( EQUALSOP impliesExpression )? ( parameterAttribute )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(FUNCTION_PARAMETER, "FUNCTION_PARAMETER")
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:121: ( REQUIRED )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:121: ( REQUIRED )?
                 if ( stream_REQUIRED.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_REQUIRED.nextNode()
@@ -2945,7 +2985,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 stream_REQUIRED.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:133: ( parameterType )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:133: ( parameterType )?
                 if ( stream_parameterType.hasNext() ) {
                     adaptor.addChild(root_1, stream_parameterType.nextTree());
 
@@ -2954,8 +2994,8 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_identifier.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:161: ( EQUALSOP impliesExpression )?
-                if ( stream_EQUALSOP.hasNext()||stream_impliesExpression.hasNext() ) {
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:161: ( EQUALSOP impliesExpression )?
+                if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_EQUALSOP.nextNode()
                     );
@@ -2963,10 +3003,10 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
                 }
-                stream_EQUALSOP.reset();
                 stream_impliesExpression.reset();
+                stream_EQUALSOP.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:191: ( parameterAttribute )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:191: ( parameterAttribute )*
                 while ( stream_parameterAttribute.hasNext() ) {
                     adaptor.addChild(root_1, stream_parameterAttribute.nextTree());
 
@@ -2996,8 +3036,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -3017,7 +3061,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "parameterType"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:491:1: parameterType : typeSpec -> ^( PARAMETER_TYPE typeSpec ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:495:1: parameterType : typeSpec -> ^( PARAMETER_TYPE typeSpec ) ;
     public final CFScriptParser.parameterType_return parameterType() throws RecognitionException {
         CFScriptParser.parameterType_return retval = new CFScriptParser.parameterType_return();
         retval.start = input.LT(1);
@@ -3033,8 +3077,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:3: ( typeSpec -> ^( PARAMETER_TYPE typeSpec ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:5: typeSpec
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:3: ( typeSpec -> ^( PARAMETER_TYPE typeSpec ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:5: typeSpec
             {
             pushFollow(FOLLOW_typeSpec_in_parameterType1954);
             typeSpec36=typeSpec();
@@ -3056,9 +3100,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 492:14: -> ^( PARAMETER_TYPE typeSpec )
+            // 496:14: -> ^( PARAMETER_TYPE typeSpec )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:17: ^( PARAMETER_TYPE typeSpec )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:17: ^( PARAMETER_TYPE typeSpec )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -3090,8 +3134,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -3111,7 +3159,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "componentAttribute"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:495:1: componentAttribute : identifier ( COLON identifier )? op= EQUALSOP impliesExpression -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:499:1: componentAttribute : identifier ( COLON identifier )? op= EQUALSOP impliesExpression -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression ) ;
     public final CFScriptParser.componentAttribute_return componentAttribute() throws RecognitionException {
         CFScriptParser.componentAttribute_return retval = new CFScriptParser.componentAttribute_return();
         retval.start = input.LT(1);
@@ -3138,8 +3186,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:3: ( identifier ( COLON identifier )? op= EQUALSOP impliesExpression -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:5: identifier ( COLON identifier )? op= EQUALSOP impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:3: ( identifier ( COLON identifier )? op= EQUALSOP impliesExpression -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:5: identifier ( COLON identifier )? op= EQUALSOP impliesExpression
             {
             pushFollow(FOLLOW_identifier_in_componentAttribute1977);
             identifier37=identifier();
@@ -3148,7 +3196,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_identifier.add(identifier37.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:16: ( COLON identifier )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:16: ( COLON identifier )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -3157,7 +3205,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt18) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:17: COLON identifier
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:17: COLON identifier
                     {
                     COLON38=(Token)match(input,COLON,FOLLOW_COLON_in_componentAttribute1980); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_COLON.add(COLON38);
@@ -3188,7 +3236,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression40.getTree());
 
             // AST REWRITE
-            // elements: impliesExpression, COLON, identifier, identifier
+            // elements: identifier, identifier, COLON, impliesExpression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3200,9 +3248,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 496:66: -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression )
+            // 500:66: -> ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:69: ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:69: ^( COMPONENT_ATTRIBUTE identifier ( COLON identifier )? impliesExpression )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -3211,8 +3259,8 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_identifier.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:496:102: ( COLON identifier )?
-                if ( stream_COLON.hasNext()||stream_identifier.hasNext() ) {
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:102: ( COLON identifier )?
+                if ( stream_identifier.hasNext()||stream_COLON.hasNext() ) {
                     adaptor.addChild(root_1, 
                     stream_COLON.nextNode()
                     );
@@ -3220,8 +3268,8 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_1, stream_identifier.nextTree());
 
                 }
-                stream_COLON.reset();
                 stream_identifier.reset();
+                stream_COLON.reset();
 
                 adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
@@ -3248,8 +3296,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -3269,7 +3321,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "functionAttribute"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:500:1: functionAttribute : identifier op= EQUALSOP impliesExpression -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:504:1: functionAttribute : identifier op= EQUALSOP impliesExpression -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression ) ;
     public final CFScriptParser.functionAttribute_return functionAttribute() throws RecognitionException {
         CFScriptParser.functionAttribute_return retval = new CFScriptParser.functionAttribute_return();
         retval.start = input.LT(1);
@@ -3291,8 +3343,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 14) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:501:3: ( identifier op= EQUALSOP impliesExpression -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:501:5: identifier op= EQUALSOP impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:3: ( identifier op= EQUALSOP impliesExpression -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:5: identifier op= EQUALSOP impliesExpression
             {
             pushFollow(FOLLOW_identifier_in_functionAttribute2023);
             identifier41=identifier();
@@ -3325,9 +3377,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 501:46: -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression )
+            // 505:46: -> ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:501:49: ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:49: ^( FUNCTION_ATTRIBUTE[$op] identifier impliesExpression )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -3361,8 +3413,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -3382,7 +3438,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "parameterAttribute"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:504:1: parameterAttribute : ( identifier EQUALSOP impliesExpression -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression ) | identifier );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:508:1: parameterAttribute : ( identifier EQUALSOP impliesExpression -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression ) | identifier );
     public final CFScriptParser.parameterAttribute_return parameterAttribute() throws RecognitionException {
         CFScriptParser.parameterAttribute_return retval = new CFScriptParser.parameterAttribute_return();
         retval.start = input.LT(1);
@@ -3406,7 +3462,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 15) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:3: ( identifier EQUALSOP impliesExpression -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression ) | identifier )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:509:3: ( identifier EQUALSOP impliesExpression -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression ) | identifier )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -3906,7 +3962,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt19) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:5: identifier EQUALSOP impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:509:5: identifier EQUALSOP impliesExpression
                     {
                     pushFollow(FOLLOW_identifier_in_parameterAttribute2055);
                     identifier43=identifier();
@@ -3927,7 +3983,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression45.getTree());
 
                     // AST REWRITE
-                    // elements: impliesExpression, identifier
+                    // elements: identifier, impliesExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3939,9 +3995,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 505:43: -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression )
+                    // 509:43: -> ^( PARAMETER_ATTRIBUTE identifier impliesExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:505:46: ^( PARAMETER_ATTRIBUTE identifier impliesExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:509:46: ^( PARAMETER_ATTRIBUTE identifier impliesExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -3964,7 +4020,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:506:5: identifier
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:5: identifier
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -3992,8 +4048,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4013,7 +4073,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "compoundStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:509:1: compoundStatement : LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:513:1: compoundStatement : LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET ;
     public final CFScriptParser.compoundStatement_return compoundStatement() throws RecognitionException {
         CFScriptParser.compoundStatement_return retval = new CFScriptParser.compoundStatement_return();
         retval.start = input.LT(1);
@@ -4033,8 +4093,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 16) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:3: ( LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:5: LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:3: ( LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:5: LEFTCURLYBRACKET ^ ( statement )* RIGHTCURLYBRACKET
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4047,7 +4107,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.becomeRoot(LEFTCURLYBRACKET47_tree, root_0);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:23: ( statement )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:23: ( statement )*
             loop20:
             do {
                 int alt20=2;
@@ -4060,7 +4120,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt20) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:25: statement
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:25: statement
             	    {
             	    pushFollow(FOLLOW_statement_in_compoundStatement2095);
             	    statement48=statement();
@@ -4100,8 +4160,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4121,7 +4185,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "componentGuts"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:513:1: componentGuts : LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:517:1: componentGuts : LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET ;
     public final CFScriptParser.componentGuts_return componentGuts() throws RecognitionException {
         CFScriptParser.componentGuts_return retval = new CFScriptParser.componentGuts_return();
         retval.start = input.LT(1);
@@ -4141,8 +4205,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 17) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:3: ( LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:5: LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:3: ( LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:5: LEFTCURLYBRACKET ^ ( element )* RIGHTCURLYBRACKET
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4155,7 +4219,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.becomeRoot(LEFTCURLYBRACKET50_tree, root_0);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:23: ( element )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:23: ( element )*
             loop21:
             do {
                 int alt21=2;
@@ -4168,7 +4232,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt21) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:25: element
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:25: element
             	    {
             	    pushFollow(FOLLOW_element_in_componentGuts2120);
             	    element51=element();
@@ -4208,8 +4272,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4229,7 +4297,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "statement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:517:1: statement : ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !);
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:521:1: statement : ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !);
     public final CFScriptParser.statement_return statement() throws RecognitionException {
         CFScriptParser.statement_return retval = new CFScriptParser.statement_return();
         retval.start = input.LT(1);
@@ -4275,12 +4343,12 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 18) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:3: ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:3: ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !)
             int alt22=13;
             alt22 = dfa22.predict(input);
             switch (alt22) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:7: tryCatchStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: tryCatchStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4295,7 +4363,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:519:7: ifStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: ifStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4310,7 +4378,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:520:7: whileStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: whileStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4325,7 +4393,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:521:7: doWhileStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: doWhileStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4340,7 +4408,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: forStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: forStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4355,7 +4423,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: switchStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: switchStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4370,7 +4438,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: CONTINUE SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: CONTINUE SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4388,7 +4456,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: BREAK SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: BREAK SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4406,7 +4474,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: returnStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:530:7: returnStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4421,7 +4489,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: tagOperatorStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:531:7: tagOperatorStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4436,7 +4504,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:532:7: compoundStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4451,7 +4519,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: localAssignmentExpression SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:533:7: localAssignmentExpression SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4468,7 +4536,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:531:7: SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:535:7: SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4491,8 +4559,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4512,7 +4584,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "condition"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:534:1: condition : LEFTPAREN ! localAssignmentExpression RIGHTPAREN !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:538:1: condition : LEFTPAREN ! localAssignmentExpression RIGHTPAREN !;
     public final CFScriptParser.condition_return condition() throws RecognitionException {
         CFScriptParser.condition_return retval = new CFScriptParser.condition_return();
         retval.start = input.LT(1);
@@ -4532,8 +4604,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 19) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:535:3: ( LEFTPAREN ! localAssignmentExpression RIGHTPAREN !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:535:5: LEFTPAREN ! localAssignmentExpression RIGHTPAREN !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:539:3: ( LEFTPAREN ! localAssignmentExpression RIGHTPAREN !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:539:5: LEFTPAREN ! localAssignmentExpression RIGHTPAREN !
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4563,8 +4635,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4584,7 +4660,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "returnStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:538:1: returnStatement : ( RETURN SEMICOLON !| RETURN assignmentExpression SEMICOLON !);
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:542:1: returnStatement : ( RETURN SEMICOLON !| RETURN assignmentExpression SEMICOLON !);
     public final CFScriptParser.returnStatement_return returnStatement() throws RecognitionException {
         CFScriptParser.returnStatement_return retval = new CFScriptParser.returnStatement_return();
         retval.start = input.LT(1);
@@ -4608,7 +4684,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 20) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:539:3: ( RETURN SEMICOLON !| RETURN assignmentExpression SEMICOLON !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:543:3: ( RETURN SEMICOLON !| RETURN assignmentExpression SEMICOLON !)
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -4640,7 +4716,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt23) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:539:5: RETURN SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:543:5: RETURN SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4658,7 +4734,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:540:5: RETURN assignmentExpression SEMICOLON !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:5: RETURN assignmentExpression SEMICOLON !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -4696,8 +4772,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4717,7 +4797,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "ifStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:543:1: ifStatement : IF ^ condition statement ( ELSE statement )? ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:547:1: ifStatement : IF ^ condition statement ( ELSE statement )? ;
     public final CFScriptParser.ifStatement_return ifStatement() throws RecognitionException {
         CFScriptParser.ifStatement_return retval = new CFScriptParser.ifStatement_return();
         retval.start = input.LT(1);
@@ -4741,8 +4821,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 21) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:3: ( IF ^ condition statement ( ELSE statement )? )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:5: IF ^ condition statement ( ELSE statement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:3: ( IF ^ condition statement ( ELSE statement )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:5: IF ^ condition statement ( ELSE statement )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4769,7 +4849,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, statement79.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:29: ( ELSE statement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:29: ( ELSE statement )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -4782,7 +4862,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt24) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:31: ELSE statement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:31: ELSE statement
                     {
                     ELSE80=(Token)match(input,ELSE,FOLLOW_ELSE_in_ifStatement2326); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -4819,8 +4899,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4840,7 +4924,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "whileStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:547:1: whileStatement : WHILE ^ condition statement ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:551:1: whileStatement : WHILE ^ condition statement ;
     public final CFScriptParser.whileStatement_return whileStatement() throws RecognitionException {
         CFScriptParser.whileStatement_return retval = new CFScriptParser.whileStatement_return();
         retval.start = input.LT(1);
@@ -4860,8 +4944,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 22) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:3: ( WHILE ^ condition statement )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:5: WHILE ^ condition statement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:552:3: ( WHILE ^ condition statement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:552:5: WHILE ^ condition statement
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -4902,8 +4986,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -4923,7 +5011,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "doWhileStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:551:1: doWhileStatement : DO ^ statement WHILE condition SEMICOLON ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:555:1: doWhileStatement : DO ^ statement WHILE condition SEMICOLON ;
     public final CFScriptParser.doWhileStatement_return doWhileStatement() throws RecognitionException {
         CFScriptParser.doWhileStatement_return retval = new CFScriptParser.doWhileStatement_return();
         retval.start = input.LT(1);
@@ -4947,8 +5035,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 23) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:552:3: ( DO ^ statement WHILE condition SEMICOLON )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:552:5: DO ^ statement WHILE condition SEMICOLON
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:3: ( DO ^ statement WHILE condition SEMICOLON )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:5: DO ^ statement WHILE condition SEMICOLON
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5005,8 +5093,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5026,7 +5118,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "forStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:555:1: forStatement : ( FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement | FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:559:1: forStatement : ( FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement | FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement );
     public final CFScriptParser.forStatement_return forStatement() throws RecognitionException {
         CFScriptParser.forStatement_return retval = new CFScriptParser.forStatement_return();
         retval.start = input.LT(1);
@@ -5074,7 +5166,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 24) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:3: ( FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement | FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:3: ( FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement | FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement )
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -5106,7 +5198,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt29) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:5: FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:5: FOR ^ LEFTPAREN ! ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN ! statement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -5121,7 +5213,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                     LEFTPAREN91=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_forStatement2390); if (state.failed) return retval;
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: ( VAR )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: ( VAR )?
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
@@ -5134,7 +5226,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     switch (alt25) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: VAR
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: VAR
                             {
                             VAR92=(Token)match(input,VAR,FOLLOW_VAR_in_forStatement2393); if (state.failed) return retval;
                             if ( state.backtracking==0 ) {
@@ -5150,7 +5242,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:26: ( assignmentExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:26: ( assignmentExpression )?
                     int alt26=2;
                     int LA26_0 = input.LA(1);
 
@@ -5159,7 +5251,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     switch (alt26) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:28: assignmentExpression
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:28: assignmentExpression
                             {
                             pushFollow(FOLLOW_assignmentExpression_in_forStatement2398);
                             assignmentExpression93=assignmentExpression();
@@ -5182,7 +5274,7 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_0, SEMICOLON94_tree);
                     }
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:62: ( assignmentExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:62: ( assignmentExpression )?
                     int alt27=2;
                     int LA27_0 = input.LA(1);
 
@@ -5191,7 +5283,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     switch (alt27) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:64: assignmentExpression
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:64: assignmentExpression
                             {
                             pushFollow(FOLLOW_assignmentExpression_in_forStatement2407);
                             assignmentExpression95=assignmentExpression();
@@ -5214,7 +5306,7 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_0, SEMICOLON96_tree);
                     }
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:99: ( assignmentExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:99: ( assignmentExpression )?
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
@@ -5223,7 +5315,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     switch (alt28) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:101: assignmentExpression
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:101: assignmentExpression
                             {
                             pushFollow(FOLLOW_assignmentExpression_in_forStatement2417);
                             assignmentExpression97=assignmentExpression();
@@ -5250,7 +5342,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:557:5: FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: FOR ^ LEFTPAREN ! forInKey IN assignmentExpression RIGHTPAREN ! statement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -5312,8 +5404,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5333,7 +5429,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "forInKey"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:1: forInKey : ( VAR )? identifier ( DOT ( identifier | reservedWord ) )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:564:1: forInKey : ( VAR )? identifier ( DOT ( identifier | reservedWord ) )* ;
     public final CFScriptParser.forInKey_return forInKey() throws RecognitionException {
         CFScriptParser.forInKey_return retval = new CFScriptParser.forInKey_return();
         retval.start = input.LT(1);
@@ -5357,13 +5453,13 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 25) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:3: ( ( VAR )? identifier ( DOT ( identifier | reservedWord ) )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: ( VAR )? identifier ( DOT ( identifier | reservedWord ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:3: ( ( VAR )? identifier ( DOT ( identifier | reservedWord ) )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: ( VAR )? identifier ( DOT ( identifier | reservedWord ) )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: ( VAR )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: ( VAR )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -5376,7 +5472,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt30) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: VAR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: VAR
                     {
                     VAR107=(Token)match(input,VAR,FOLLOW_VAR_in_forInKey2461); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -5399,7 +5495,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier108.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:21: ( DOT ( identifier | reservedWord ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:21: ( DOT ( identifier | reservedWord ) )*
             loop32:
             do {
                 int alt32=2;
@@ -5412,7 +5508,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt32) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:23: DOT ( identifier | reservedWord )
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:23: DOT ( identifier | reservedWord )
             	    {
             	    DOT109=(Token)match(input,DOT,FOLLOW_DOT_in_forInKey2468); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -5422,7 +5518,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    adaptor.addChild(root_0, DOT109_tree);
             	    }
 
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:27: ( identifier | reservedWord )
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:27: ( identifier | reservedWord )
             	    int alt31=2;
             	    switch ( input.LA(1) ) {
             	    case ABORT:
@@ -5550,7 +5646,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             	    switch (alt31) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:29: identifier
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:29: identifier
             	            {
             	            pushFollow(FOLLOW_identifier_in_forInKey2472);
             	            identifier110=identifier();
@@ -5562,7 +5658,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:42: reservedWord
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:42: reservedWord
             	            {
             	            pushFollow(FOLLOW_reservedWord_in_forInKey2476);
             	            reservedWord111=reservedWord();
@@ -5600,8 +5696,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5621,7 +5721,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "tryCatchStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:564:1: tryCatchStatement : TRY ^ statement ( catchCondition )* ( finallyStatement )? ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:568:1: tryCatchStatement : TRY ^ statement ( catchCondition )* ( finallyStatement )? ;
     public final CFScriptParser.tryCatchStatement_return tryCatchStatement() throws RecognitionException {
         CFScriptParser.tryCatchStatement_return retval = new CFScriptParser.tryCatchStatement_return();
         retval.start = input.LT(1);
@@ -5643,8 +5743,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 26) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:3: ( TRY ^ statement ( catchCondition )* ( finallyStatement )? )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: TRY ^ statement ( catchCondition )* ( finallyStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:3: ( TRY ^ statement ( catchCondition )* ( finallyStatement )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:5: TRY ^ statement ( catchCondition )* ( finallyStatement )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5664,7 +5764,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, statement113.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:20: ( catchCondition )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:20: ( catchCondition )*
             loop33:
             do {
                 int alt33=2;
@@ -5683,7 +5783,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt33) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:22: catchCondition
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:22: catchCondition
             	    {
             	    pushFollow(FOLLOW_catchCondition_in_tryCatchStatement2501);
             	    catchCondition114=catchCondition();
@@ -5701,7 +5801,7 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:40: ( finallyStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:40: ( finallyStatement )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -5714,7 +5814,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt34) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:40: finallyStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:40: finallyStatement
                     {
                     pushFollow(FOLLOW_finallyStatement_in_tryCatchStatement2506);
                     finallyStatement115=finallyStatement();
@@ -5743,8 +5843,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5764,7 +5868,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "catchCondition"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:568:1: catchCondition : CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:572:1: catchCondition : CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement ;
     public final CFScriptParser.catchCondition_return catchCondition() throws RecognitionException {
         CFScriptParser.catchCondition_return retval = new CFScriptParser.catchCondition_return();
         retval.start = input.LT(1);
@@ -5790,8 +5894,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 27) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:3: ( CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:5: CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:573:3: ( CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:573:5: CATCH ^ LEFTPAREN ! typeSpec identifier RIGHTPAREN ! compoundStatement
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5843,8 +5947,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5864,7 +5972,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "finallyStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:572:1: finallyStatement : FINALLY ^ compoundStatement ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:576:1: finallyStatement : FINALLY ^ compoundStatement ;
     public final CFScriptParser.finallyStatement_return finallyStatement() throws RecognitionException {
         CFScriptParser.finallyStatement_return retval = new CFScriptParser.finallyStatement_return();
         retval.start = input.LT(1);
@@ -5882,8 +5990,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 28) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:573:3: ( FINALLY ^ compoundStatement )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:573:5: FINALLY ^ compoundStatement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:577:3: ( FINALLY ^ compoundStatement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:577:5: FINALLY ^ compoundStatement
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -5917,8 +6025,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -5938,7 +6050,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "constantExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:576:1: constantExpression : ( LEFTPAREN constantExpression RIGHTPAREN | MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL ) | INTEGER_LITERAL | FLOATING_POINT_LITERAL | STRING_LITERAL | BOOLEAN_LITERAL );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:580:1: constantExpression : ( LEFTPAREN constantExpression RIGHTPAREN | MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL ) | INTEGER_LITERAL | FLOATING_POINT_LITERAL | STRING_LITERAL | BOOLEAN_LITERAL );
     public final CFScriptParser.constantExpression_return constantExpression() throws RecognitionException {
         CFScriptParser.constantExpression_return retval = new CFScriptParser.constantExpression_return();
         retval.start = input.LT(1);
@@ -5970,7 +6082,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 29) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:577:3: ( LEFTPAREN constantExpression RIGHTPAREN | MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL ) | INTEGER_LITERAL | FLOATING_POINT_LITERAL | STRING_LITERAL | BOOLEAN_LITERAL )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:581:3: ( LEFTPAREN constantExpression RIGHTPAREN | MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL ) | INTEGER_LITERAL | FLOATING_POINT_LITERAL | STRING_LITERAL | BOOLEAN_LITERAL )
             int alt35=6;
             switch ( input.LA(1) ) {
             case LEFTPAREN:
@@ -6014,7 +6126,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt35) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:577:5: LEFTPAREN constantExpression RIGHTPAREN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:581:5: LEFTPAREN constantExpression RIGHTPAREN
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6045,7 +6157,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:578:5: MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:582:5: MINUS ( INTEGER_LITERAL | FLOATING_POINT_LITERAL )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6078,7 +6190,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:579:5: INTEGER_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:583:5: INTEGER_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6094,7 +6206,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:580:5: FLOATING_POINT_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:584:5: FLOATING_POINT_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6110,7 +6222,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:581:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:585:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6126,7 +6238,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:582:5: BOOLEAN_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:586:5: BOOLEAN_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6155,8 +6267,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -6176,7 +6292,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "switchStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:586:1: switchStatement : SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:590:1: switchStatement : SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET ;
     public final CFScriptParser.switchStatement_return switchStatement() throws RecognitionException {
         CFScriptParser.switchStatement_return retval = new CFScriptParser.switchStatement_return();
         retval.start = input.LT(1);
@@ -6200,8 +6316,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 30) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:587:3: ( SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:587:5: SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:591:3: ( SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:591:5: SWITCH ^ condition LEFTCURLYBRACKET ( caseStatement )* RIGHTCURLYBRACKET
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -6229,7 +6345,7 @@ public TreeAdaptor getTreeAdaptor() {
             adaptor.addChild(root_0, LEFTCURLYBRACKET135_tree);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:588:5: ( caseStatement )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:592:5: ( caseStatement )*
             loop36:
             do {
                 int alt36=2;
@@ -6242,7 +6358,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt36) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:589:7: caseStatement
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:593:7: caseStatement
             	    {
             	    pushFollow(FOLLOW_caseStatement_in_switchStatement2647);
             	    caseStatement136=caseStatement();
@@ -6282,8 +6398,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -6303,7 +6423,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "caseStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:595:1: caseStatement : ( ( CASE ^ constantExpression COLON ( statement )* ) | ( DEFAULT ^ COLON ( statement )* ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:599:1: caseStatement : ( ( CASE ^ constantExpression COLON ( statement )* ) | ( DEFAULT ^ COLON ( statement )* ) );
     public final CFScriptParser.caseStatement_return caseStatement() throws RecognitionException {
         CFScriptParser.caseStatement_return retval = new CFScriptParser.caseStatement_return();
         retval.start = input.LT(1);
@@ -6331,7 +6451,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 31) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:3: ( ( CASE ^ constantExpression COLON ( statement )* ) | ( DEFAULT ^ COLON ( statement )* ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:3: ( ( CASE ^ constantExpression COLON ( statement )* ) | ( DEFAULT ^ COLON ( statement )* ) )
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -6351,13 +6471,13 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt39) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:5: ( CASE ^ constantExpression COLON ( statement )* )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:5: ( CASE ^ constantExpression COLON ( statement )* )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:5: ( CASE ^ constantExpression COLON ( statement )* )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:7: CASE ^ constantExpression COLON ( statement )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:5: ( CASE ^ constantExpression COLON ( statement )* )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:7: CASE ^ constantExpression COLON ( statement )*
                     {
                     CASE138=(Token)match(input,CASE,FOLLOW_CASE_in_caseStatement2685); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -6382,7 +6502,7 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_0, COLON140_tree);
                     }
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:38: ( statement )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:38: ( statement )*
                     loop37:
                     do {
                         int alt37=2;
@@ -6480,7 +6600,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt37) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:40: statement
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:40: statement
                     	    {
                     	    pushFollow(FOLLOW_statement_in_caseStatement2694);
                     	    statement141=statement();
@@ -6504,13 +6624,13 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:5: ( DEFAULT ^ COLON ( statement )* )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:5: ( DEFAULT ^ COLON ( statement )* )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:5: ( DEFAULT ^ COLON ( statement )* )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:7: DEFAULT ^ COLON ( statement )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:5: ( DEFAULT ^ COLON ( statement )* )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:7: DEFAULT ^ COLON ( statement )*
                     {
                     DEFAULT142=(Token)match(input,DEFAULT,FOLLOW_DEFAULT_in_caseStatement2715); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -6528,7 +6648,7 @@ public TreeAdaptor getTreeAdaptor() {
                     adaptor.addChild(root_0, COLON143_tree);
                     }
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:22: ( statement )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:22: ( statement )*
                     loop38:
                     do {
                         int alt38=2;
@@ -6626,7 +6746,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt38) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:24: statement
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:24: statement
                     	    {
                     	    pushFollow(FOLLOW_statement_in_caseStatement2722);
                     	    statement144=statement();
@@ -6663,8 +6783,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -6684,7 +6808,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "tagOperatorStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:601:1: tagOperatorStatement : ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:605:1: tagOperatorStatement : ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement );
     public final CFScriptParser.tagOperatorStatement_return tagOperatorStatement() throws RecognitionException {
         CFScriptParser.tagOperatorStatement_return retval = new CFScriptParser.tagOperatorStatement_return();
         retval.start = input.LT(1);
@@ -6726,7 +6850,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 32) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:603:3: ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:607:3: ( includeStatement | importStatement | abortStatement | throwStatement | RETHROW SEMICOLON -> ^( RETHROWSTATEMENT ) | exitStatement | paramStatement | propertyStatement | lockStatement | threadStatement | transactionStatement | cfmlfunctionStatement )
             int alt40=12;
             switch ( input.LA(1) ) {
             case INCLUDE:
@@ -6821,7 +6945,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt40) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:603:5: includeStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:607:5: includeStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6836,7 +6960,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:604:5: importStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:608:5: importStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6851,7 +6975,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:605:5: abortStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:5: abortStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6866,7 +6990,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:606:5: throwStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:610:5: throwStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6881,7 +7005,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:607:5: RETHROW SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:611:5: RETHROW SEMICOLON
                     {
                     RETHROW149=(Token)match(input,RETHROW,FOLLOW_RETHROW_in_tagOperatorStatement2768); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_RETHROW.add(RETHROW149);
@@ -6904,9 +7028,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 607:23: -> ^( RETHROWSTATEMENT )
+                    // 611:23: -> ^( RETHROWSTATEMENT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:607:26: ^( RETHROWSTATEMENT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:611:26: ^( RETHROWSTATEMENT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -6925,7 +7049,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:608:5: exitStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:612:5: exitStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6940,7 +7064,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:609:5: paramStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:5: paramStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6955,7 +7079,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:610:5: propertyStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:614:5: propertyStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6970,7 +7094,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:611:5: lockStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:615:5: lockStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -6985,7 +7109,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:612:5: threadStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:616:5: threadStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7000,7 +7124,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:613:5: transactionStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:617:5: transactionStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7015,7 +7139,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:614:5: cfmlfunctionStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:618:5: cfmlfunctionStatement
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -7043,8 +7167,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7064,7 +7192,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "includeStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:619:1: includeStatement : INCLUDE ( impliesExpression )* SEMICOLON -> ^( INCLUDE ( impliesExpression )* ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:623:1: includeStatement : INCLUDE ( impliesExpression )* SEMICOLON -> ^( INCLUDE ( impliesExpression )* ) ;
     public final CFScriptParser.includeStatement_return includeStatement() throws RecognitionException {
         CFScriptParser.includeStatement_return retval = new CFScriptParser.includeStatement_return();
         retval.start = input.LT(1);
@@ -7086,14 +7214,14 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 33) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:3: ( INCLUDE ( impliesExpression )* SEMICOLON -> ^( INCLUDE ( impliesExpression )* ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:5: INCLUDE ( impliesExpression )* SEMICOLON
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:3: ( INCLUDE ( impliesExpression )* SEMICOLON -> ^( INCLUDE ( impliesExpression )* ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:5: INCLUDE ( impliesExpression )* SEMICOLON
             {
             INCLUDE158=(Token)match(input,INCLUDE,FOLLOW_INCLUDE_in_includeStatement2833); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_INCLUDE.add(INCLUDE158);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:13: ( impliesExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:13: ( impliesExpression )*
             loop41:
             do {
                 int alt41=2;
@@ -7106,7 +7234,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt41) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:13: impliesExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:13: impliesExpression
             	    {
             	    pushFollow(FOLLOW_impliesExpression_in_includeStatement2835);
             	    impliesExpression159=impliesExpression();
@@ -7141,16 +7269,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 620:43: -> ^( INCLUDE ( impliesExpression )* )
+            // 624:43: -> ^( INCLUDE ( impliesExpression )* )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:46: ^( INCLUDE ( impliesExpression )* )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:46: ^( INCLUDE ( impliesExpression )* )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 stream_INCLUDE.nextNode()
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:620:57: ( impliesExpression )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:57: ( impliesExpression )*
                 while ( stream_impliesExpression.hasNext() ) {
                     adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
@@ -7180,8 +7308,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7201,7 +7333,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "importStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:623:1: importStatement : IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:627:1: importStatement : IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !;
     public final CFScriptParser.importStatement_return importStatement() throws RecognitionException {
         CFScriptParser.importStatement_return retval = new CFScriptParser.importStatement_return();
         retval.start = input.LT(1);
@@ -7225,8 +7357,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 34) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:3: ( IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:5: IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:3: ( IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:5: IMPORT ^ componentPath ( DOT '*' )? SEMICOLON !
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -7246,7 +7378,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, componentPath162.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:27: ( DOT '*' )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:27: ( DOT '*' )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -7255,7 +7387,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt42) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:624:28: DOT '*'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:28: DOT '*'
                     {
                     DOT163=(Token)match(input,DOT,FOLLOW_DOT_in_importStatement2870); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -7295,8 +7427,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7316,7 +7452,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "transactionStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:627:1: transactionStatement : lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:631:1: transactionStatement : lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) ;
     public final CFScriptParser.transactionStatement_return transactionStatement() throws RecognitionException {
         CFScriptParser.transactionStatement_return retval = new CFScriptParser.transactionStatement_return();
         retval.start = input.LT(1);
@@ -7338,21 +7474,21 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 35) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:3: (lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:5: lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:3: (lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )? -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:5: lc= TRANSACTION ( paramStatementAttributes )* ( compoundStatement )?
             {
             lc=(Token)match(input,TRANSACTION,FOLLOW_TRANSACTION_in_transactionStatement2893); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_TRANSACTION.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:20: ( paramStatementAttributes )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:20: ( paramStatementAttributes )*
             loop43:
             do {
                 int alt43=2;
                 alt43 = dfa43.predict(input);
                 switch (alt43) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:21: paramStatementAttributes
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:21: paramStatementAttributes
             	    {
             	    pushFollow(FOLLOW_paramStatementAttributes_in_transactionStatement2896);
             	    paramStatementAttributes166=paramStatementAttributes();
@@ -7370,12 +7506,12 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:48: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:48: ( compoundStatement )?
             int alt44=2;
             alt44 = dfa44.predict(input);
             switch (alt44) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:49: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:49: compoundStatement
                     {
                     pushFollow(FOLLOW_compoundStatement_in_transactionStatement2901);
                     compoundStatement167=compoundStatement();
@@ -7391,7 +7527,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: paramStatementAttributes, compoundStatement
+            // elements: compoundStatement, paramStatementAttributes
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7403,23 +7539,23 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 628:69: -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
+            // 632:69: -> ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:72: ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:72: ^( TRANSACTIONSTATEMENT[$lc] ( paramStatementAttributes )* ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(TRANSACTIONSTATEMENT, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:100: ( paramStatementAttributes )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:100: ( paramStatementAttributes )*
                 while ( stream_paramStatementAttributes.hasNext() ) {
                     adaptor.addChild(root_1, stream_paramStatementAttributes.nextTree());
 
                 }
                 stream_paramStatementAttributes.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:128: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:128: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -7449,8 +7585,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7470,7 +7610,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfmlfunctionStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:631:1: cfmlfunctionStatement : cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:635:1: cfmlfunctionStatement : cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) ;
     public final CFScriptParser.cfmlfunctionStatement_return cfmlfunctionStatement() throws RecognitionException {
         CFScriptParser.cfmlfunctionStatement_return retval = new CFScriptParser.cfmlfunctionStatement_return();
         retval.start = input.LT(1);
@@ -7492,8 +7632,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 36) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:3: ( cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:5: cfmlFunction ( param )* ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:3: ( cfmlFunction ( param )* ( compoundStatement )? -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:5: cfmlFunction ( param )* ( compoundStatement )?
             {
             pushFollow(FOLLOW_cfmlFunction_in_cfmlfunctionStatement2935);
             cfmlFunction168=cfmlFunction();
@@ -7502,14 +7642,14 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_cfmlFunction.add(cfmlFunction168.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:18: ( param )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:18: ( param )*
             loop45:
             do {
                 int alt45=2;
                 alt45 = dfa45.predict(input);
                 switch (alt45) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:19: param
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:19: param
             	    {
             	    pushFollow(FOLLOW_param_in_cfmlfunctionStatement2938);
             	    param169=param();
@@ -7527,12 +7667,12 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:27: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:27: ( compoundStatement )?
             int alt46=2;
             alt46 = dfa46.predict(input);
             switch (alt46) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:28: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:28: compoundStatement
                     {
                     pushFollow(FOLLOW_compoundStatement_in_cfmlfunctionStatement2943);
                     compoundStatement170=compoundStatement();
@@ -7548,7 +7688,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: compoundStatement, param, cfmlFunction
+            // elements: param, cfmlFunction, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7560,9 +7700,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 632:47: -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
+            // 636:47: -> ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:50: ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:50: ^( CFMLFUNCTIONSTATEMENT cfmlFunction ( param )* ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7571,14 +7711,14 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_cfmlFunction.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:87: ( param )*
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:87: ( param )*
                 while ( stream_param.hasNext() ) {
                     adaptor.addChild(root_1, stream_param.nextTree());
 
                 }
                 stream_param.reset();
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:96: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:96: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -7608,8 +7748,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7629,7 +7773,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfmlFunction"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:635:1: cfmlFunction : ( SAVECONTENT | HTTP | FILE | PROPERTY | DIRECTORY | LOOP | SETTING | QUERY );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:639:1: cfmlFunction : ( SAVECONTENT | HTTP | FILE | PROPERTY | DIRECTORY | LOOP | SETTING | QUERY );
     public final CFScriptParser.cfmlFunction_return cfmlFunction() throws RecognitionException {
         CFScriptParser.cfmlFunction_return retval = new CFScriptParser.cfmlFunction_return();
         retval.start = input.LT(1);
@@ -7645,7 +7789,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 37) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:3: ( SAVECONTENT | HTTP | FILE | PROPERTY | DIRECTORY | LOOP | SETTING | QUERY )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:640:3: ( SAVECONTENT | HTTP | FILE | PROPERTY | DIRECTORY | LOOP | SETTING | QUERY )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
@@ -7682,8 +7826,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7703,7 +7851,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "lockStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:657:1: lockStatement : lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:1: lockStatement : lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) ;
     public final CFScriptParser.lockStatement_return lockStatement() throws RecognitionException {
         CFScriptParser.lockStatement_return retval = new CFScriptParser.lockStatement_return();
         retval.start = input.LT(1);
@@ -7725,8 +7873,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 38) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:658:3: (lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:658:5: lc= LOCK p= paramStatementAttributes cs= compoundStatement
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:3: (lc= LOCK p= paramStatementAttributes cs= compoundStatement -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:5: lc= LOCK p= paramStatementAttributes cs= compoundStatement
             {
             lc=(Token)match(input,LOCK,FOLLOW_LOCK_in_lockStatement3040); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LOCK.add(lc);
@@ -7747,7 +7895,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_compoundStatement.add(cs.getTree());
 
             // AST REWRITE
-            // elements: compoundStatement, paramStatementAttributes
+            // elements: paramStatementAttributes, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7759,9 +7907,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 658:61: -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
+            // 662:61: -> ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:658:64: ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:64: ^( LOCKSTATEMENT[$lc] paramStatementAttributes compoundStatement )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7795,8 +7943,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7816,7 +7968,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "threadStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:661:1: threadStatement : lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:1: threadStatement : lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) ;
     public final CFScriptParser.threadStatement_return threadStatement() throws RecognitionException {
         CFScriptParser.threadStatement_return retval = new CFScriptParser.threadStatement_return();
         retval.start = input.LT(1);
@@ -7838,8 +7990,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 39) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:3: (lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:5: lc= THREAD p= paramStatementAttributes ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:3: (lc= THREAD p= paramStatementAttributes ( compoundStatement )? -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:5: lc= THREAD p= paramStatementAttributes ( compoundStatement )?
             {
             lc=(Token)match(input,THREAD,FOLLOW_THREAD_in_threadStatement3074); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_THREAD.add(lc);
@@ -7852,12 +8004,12 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_paramStatementAttributes.add(p.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:42: ( compoundStatement )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:42: ( compoundStatement )?
             int alt47=2;
             alt47 = dfa47.predict(input);
             switch (alt47) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:43: compoundStatement
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:43: compoundStatement
                     {
                     pushFollow(FOLLOW_compoundStatement_in_threadStatement3081);
                     compoundStatement172=compoundStatement();
@@ -7885,9 +8037,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 662:63: -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
+            // 666:63: -> ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:66: ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:66: ^( THREADSTATEMENT[$lc] paramStatementAttributes ( compoundStatement )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -7896,7 +8048,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 adaptor.addChild(root_1, stream_paramStatementAttributes.nextTree());
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:114: ( compoundStatement )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:114: ( compoundStatement )?
                 if ( stream_compoundStatement.hasNext() ) {
                     adaptor.addChild(root_1, stream_compoundStatement.nextTree());
 
@@ -7926,8 +8078,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -7947,7 +8103,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "abortStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:665:1: abortStatement : (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:669:1: abortStatement : (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.abortStatement_return abortStatement() throws RecognitionException {
         CFScriptParser.abortStatement_return retval = new CFScriptParser.abortStatement_return();
         retval.start = input.LT(1);
@@ -7971,7 +8127,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 40) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:3: (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:3: (lc= ABORT SEMICOLON -> ^( ABORTSTATEMENT[$lc] ) |lc= ABORT memberExpression SEMICOLON -> ^( ABORTSTATEMENT[$lc] memberExpression ) )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -8003,7 +8159,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt48) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:5: lc= ABORT SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:5: lc= ABORT SEMICOLON
                     {
                     lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3112); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ABORT.add(lc);
@@ -8026,9 +8182,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 666:24: -> ^( ABORTSTATEMENT[$lc] )
+                    // 670:24: -> ^( ABORTSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:27: ^( ABORTSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:27: ^( ABORTSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8047,7 +8203,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:667:5: lc= ABORT memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:671:5: lc= ABORT memberExpression SEMICOLON
                     {
                     lc=(Token)match(input,ABORT,FOLLOW_ABORT_in_abortStatement3129); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ABORT.add(lc);
@@ -8077,9 +8233,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 667:41: -> ^( ABORTSTATEMENT[$lc] memberExpression )
+                    // 671:41: -> ^( ABORTSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:667:44: ^( ABORTSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:671:44: ^( ABORTSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8113,8 +8269,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -8134,7 +8294,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "throwStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:670:1: throwStatement : (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:674:1: throwStatement : (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.throwStatement_return throwStatement() throws RecognitionException {
         CFScriptParser.throwStatement_return retval = new CFScriptParser.throwStatement_return();
         retval.start = input.LT(1);
@@ -8158,7 +8318,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 41) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:671:3: (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:675:3: (lc= THROW SEMICOLON -> ^( THROWSTATEMENT[$lc] ) |lc= THROW memberExpression SEMICOLON -> ^( THROWSTATEMENT[$lc] memberExpression ) )
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -8190,7 +8350,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt49) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:671:5: lc= THROW SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:675:5: lc= THROW SEMICOLON
                     {
                     lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3157); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THROW.add(lc);
@@ -8213,9 +8373,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 671:24: -> ^( THROWSTATEMENT[$lc] )
+                    // 675:24: -> ^( THROWSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:671:27: ^( THROWSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:675:27: ^( THROWSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8234,7 +8394,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:672:5: lc= THROW memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:676:5: lc= THROW memberExpression SEMICOLON
                     {
                     lc=(Token)match(input,THROW,FOLLOW_THROW_in_throwStatement3174); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THROW.add(lc);
@@ -8264,9 +8424,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 672:41: -> ^( THROWSTATEMENT[$lc] memberExpression )
+                    // 676:41: -> ^( THROWSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:672:44: ^( THROWSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:676:44: ^( THROWSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8300,8 +8460,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -8321,7 +8485,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "exitStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:675:1: exitStatement : (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:679:1: exitStatement : (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) );
     public final CFScriptParser.exitStatement_return exitStatement() throws RecognitionException {
         CFScriptParser.exitStatement_return retval = new CFScriptParser.exitStatement_return();
         retval.start = input.LT(1);
@@ -8345,7 +8509,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 42) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:676:3: (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:680:3: (lc= EXIT SEMICOLON -> ^( EXITSTATEMENT[$lc] ) |lc= EXIT memberExpression SEMICOLON -> ^( EXITSTATEMENT[$lc] memberExpression ) )
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -8377,7 +8541,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt50) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:676:5: lc= EXIT SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:680:5: lc= EXIT SEMICOLON
                     {
                     lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3202); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EXIT.add(lc);
@@ -8400,9 +8564,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 676:23: -> ^( EXITSTATEMENT[$lc] )
+                    // 680:23: -> ^( EXITSTATEMENT[$lc] )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:676:26: ^( EXITSTATEMENT[$lc] )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:680:26: ^( EXITSTATEMENT[$lc] )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8421,7 +8585,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:677:5: lc= EXIT memberExpression SEMICOLON
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:5: lc= EXIT memberExpression SEMICOLON
                     {
                     lc=(Token)match(input,EXIT,FOLLOW_EXIT_in_exitStatement3219); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EXIT.add(lc);
@@ -8451,9 +8615,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 677:40: -> ^( EXITSTATEMENT[$lc] memberExpression )
+                    // 681:40: -> ^( EXITSTATEMENT[$lc] memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:677:43: ^( EXITSTATEMENT[$lc] memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:43: ^( EXITSTATEMENT[$lc] memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8487,8 +8651,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -8508,7 +8676,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:680:1: paramStatement : lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:684:1: paramStatement : lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) ;
     public final CFScriptParser.paramStatement_return paramStatement() throws RecognitionException {
         CFScriptParser.paramStatement_return retval = new CFScriptParser.paramStatement_return();
         retval.start = input.LT(1);
@@ -8527,8 +8695,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 43) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:3: (lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:5: lc= PARAM paramStatementAttributes
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:3: (lc= PARAM paramStatementAttributes -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:5: lc= PARAM paramStatementAttributes
             {
             lc=(Token)match(input,PARAM,FOLLOW_PARAM_in_paramStatement3247); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_PARAM.add(lc);
@@ -8554,9 +8722,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 681:40: -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
+            // 685:40: -> ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:681:43: ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:43: ^( PARAMSTATEMENT[$lc] paramStatementAttributes )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8588,8 +8756,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -8609,7 +8781,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "propertyStatement"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:684:1: propertyStatement : lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:688:1: propertyStatement : lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) ;
     public final CFScriptParser.propertyStatement_return propertyStatement() throws RecognitionException {
         CFScriptParser.propertyStatement_return retval = new CFScriptParser.propertyStatement_return();
         retval.start = input.LT(1);
@@ -8628,8 +8800,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 44) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:3: (lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:5: lc= PROPERTY paramStatementAttributes
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:3: (lc= PROPERTY paramStatementAttributes -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:5: lc= PROPERTY paramStatementAttributes
             {
             lc=(Token)match(input,PROPERTY,FOLLOW_PROPERTY_in_propertyStatement3276); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_PROPERTY.add(lc);
@@ -8655,9 +8827,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 685:43: -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
+            // 689:43: -> ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:685:46: ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:46: ^( PROPERTYSTATEMENT[$lc] paramStatementAttributes )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -8689,8 +8861,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -8710,7 +8886,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "paramStatementAttributes"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:688:1: paramStatementAttributes : ( param )+ ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:692:1: paramStatementAttributes : ( param )+ ;
     public final CFScriptParser.paramStatementAttributes_return paramStatementAttributes() throws RecognitionException {
         CFScriptParser.paramStatementAttributes_return retval = new CFScriptParser.paramStatementAttributes_return();
         retval.start = input.LT(1);
@@ -8726,13 +8902,13 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 45) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:3: ( ( param )+ )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:5: ( param )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:3: ( ( param )+ )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:5: ( param )+
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:5: ( param )+
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:5: ( param )+
             int cnt51=0;
             loop51:
             do {
@@ -9130,7 +9306,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt51) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:7: param
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:7: param
             	    {
             	    pushFollow(FOLLOW_param_in_paramStatementAttributes3305);
             	    param184=param();
@@ -9167,8 +9343,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -9188,7 +9368,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "param"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:692:1: param : i= identifier EQUALSOP ^v= impliesExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:696:1: param : i= identifier EQUALSOP ^v= impliesExpression ;
     public final CFScriptParser.param_return param() throws RecognitionException {
         CFScriptParser.param_return retval = new CFScriptParser.param_return();
         retval.start = input.LT(1);
@@ -9208,8 +9388,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 46) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:3: (i= identifier EQUALSOP ^v= impliesExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:5: i= identifier EQUALSOP ^v= impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:697:3: (i= identifier EQUALSOP ^v= impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:697:5: i= identifier EQUALSOP ^v= impliesExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9250,8 +9430,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -9271,7 +9455,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:699:1: expression : localAssignmentExpression EOF !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:703:1: expression : localAssignmentExpression EOF !;
     public final CFScriptParser.expression_return expression() throws RecognitionException {
         CFScriptParser.expression_return retval = new CFScriptParser.expression_return();
         retval.start = input.LT(1);
@@ -9289,8 +9473,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 47) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:700:2: ( localAssignmentExpression EOF !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:700:4: localAssignmentExpression EOF !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:2: ( localAssignmentExpression EOF !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:4: localAssignmentExpression EOF !
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -9318,8 +9502,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -9339,7 +9527,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "localAssignmentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:703:1: localAssignmentExpression : ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:707:1: localAssignmentExpression : ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression );
     public final CFScriptParser.localAssignmentExpression_return localAssignmentExpression() throws RecognitionException {
         CFScriptParser.localAssignmentExpression_return retval = new CFScriptParser.localAssignmentExpression_return();
         retval.start = input.LT(1);
@@ -9366,7 +9554,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 48) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:2: ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:2: ( VAR identifier ( EQUALSOP impliesExpression )? -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? ) | assignmentExpression )
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -10337,7 +10525,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt53) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:4: VAR identifier ( EQUALSOP impliesExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:4: VAR identifier ( EQUALSOP impliesExpression )?
                     {
                     VAR188=(Token)match(input,VAR,FOLLOW_VAR_in_localAssignmentExpression3366); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_VAR.add(VAR188);
@@ -10350,12 +10538,12 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_identifier.add(identifier189.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:19: ( EQUALSOP impliesExpression )?
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:19: ( EQUALSOP impliesExpression )?
                     int alt52=2;
                     alt52 = dfa52.predict(input);
                     switch (alt52) {
                         case 1 :
-                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:21: EQUALSOP impliesExpression
+                            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:21: EQUALSOP impliesExpression
                             {
                             EQUALSOP190=(Token)match(input,EQUALSOP,FOLLOW_EQUALSOP_in_localAssignmentExpression3372); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_EQUALSOP.add(EQUALSOP190);
@@ -10387,9 +10575,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 704:51: -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
+                    // 708:51: -> ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:54: ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:54: ^( VARLOCAL identifier ( EQUALSOP impliesExpression )? )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -10398,7 +10586,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         adaptor.addChild(root_1, stream_identifier.nextTree());
 
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:77: ( EQUALSOP impliesExpression )?
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:77: ( EQUALSOP impliesExpression )?
                         if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
                             adaptor.addChild(root_1, 
                             stream_EQUALSOP.nextNode()
@@ -10422,7 +10610,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:705:4: assignmentExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:4: assignmentExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -10450,8 +10638,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -10471,7 +10663,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "assignmentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:1: assignmentExpression : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:1: assignmentExpression : impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? ;
     public final CFScriptParser.assignmentExpression_return assignmentExpression() throws RecognitionException {
         CFScriptParser.assignmentExpression_return retval = new CFScriptParser.assignmentExpression_return();
         retval.start = input.LT(1);
@@ -10491,8 +10683,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 49) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:3: ( impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:5: impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:3: ( impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )? )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:5: impliesExpression ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -10504,7 +10696,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression193.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:23: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:23: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -10517,7 +10709,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt54) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) ^ impliesExpression
                     {
                     set194=(Token)input.LT(1);
 
@@ -10565,8 +10757,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -10586,7 +10782,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "impliesExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:712:1: impliesExpression : ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:716:1: impliesExpression : ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* );
     public final CFScriptParser.impliesExpression_return impliesExpression() throws RecognitionException {
         CFScriptParser.impliesExpression_return retval = new CFScriptParser.impliesExpression_return();
         retval.start = input.LT(1);
@@ -10608,7 +10804,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 50) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:2: ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:717:2: ( ternary | equivalentExpression ( IMP ^ equivalentExpression )* )
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -11360,7 +11556,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt56) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:4: ternary
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:717:4: ternary
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -11375,7 +11571,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:714:4: equivalentExpression ( IMP ^ equivalentExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:718:4: equivalentExpression ( IMP ^ equivalentExpression )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -11387,7 +11583,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, equivalentExpression197.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:714:25: ( IMP ^ equivalentExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:718:25: ( IMP ^ equivalentExpression )*
                     loop55:
                     do {
                         int alt55=2;
@@ -11400,7 +11596,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt55) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:714:27: IMP ^ equivalentExpression
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:718:27: IMP ^ equivalentExpression
                     	    {
                     	    IMP198=(Token)match(input,IMP,FOLLOW_IMP_in_impliesExpression3474); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -11442,8 +11638,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -11463,7 +11663,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "ternary"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:717:1: ternary : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:721:1: ternary : equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) ;
     public final CFScriptParser.ternary_return ternary() throws RecognitionException {
         CFScriptParser.ternary_return retval = new CFScriptParser.ternary_return();
         retval.start = input.LT(1);
@@ -11490,8 +11690,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 51) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:719:4: ( equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:719:6: equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:4: ( equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:6: equivalentExpression QUESTIONMARK localAssignmentExpression COLON localAssignmentExpression
             {
             pushFollow(FOLLOW_equivalentExpression_in_ternary3494);
             equivalentExpression200=equivalentExpression();
@@ -11523,7 +11723,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression204.getTree());
 
             // AST REWRITE
-            // elements: localAssignmentExpression, equivalentExpression, localAssignmentExpression
+            // elements: equivalentExpression, localAssignmentExpression, localAssignmentExpression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11535,9 +11735,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 719:98: -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
+            // 723:98: -> ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:719:101: ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:101: ^( TERNARY equivalentExpression localAssignmentExpression localAssignmentExpression )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -11573,8 +11773,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -11594,7 +11798,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equivalentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:722:1: equivalentExpression : xorExpression ( EQV ^ xorExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:726:1: equivalentExpression : xorExpression ( EQV ^ xorExpression )* ;
     public final CFScriptParser.equivalentExpression_return equivalentExpression() throws RecognitionException {
         CFScriptParser.equivalentExpression_return retval = new CFScriptParser.equivalentExpression_return();
         retval.start = input.LT(1);
@@ -11614,8 +11818,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 52) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:2: ( xorExpression ( EQV ^ xorExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:4: xorExpression ( EQV ^ xorExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:2: ( xorExpression ( EQV ^ xorExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:4: xorExpression ( EQV ^ xorExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -11627,7 +11831,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, xorExpression205.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:18: ( EQV ^ xorExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:18: ( EQV ^ xorExpression )*
             loop57:
             do {
                 int alt57=2;
@@ -11640,7 +11844,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt57) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:723:20: EQV ^ xorExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:20: EQV ^ xorExpression
             	    {
             	    EQV206=(Token)match(input,EQV,FOLLOW_EQV_in_equivalentExpression3531); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -11680,8 +11884,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -11701,7 +11909,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "xorExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:726:1: xorExpression : orExpression ( XOR ^ orExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:730:1: xorExpression : orExpression ( XOR ^ orExpression )* ;
     public final CFScriptParser.xorExpression_return xorExpression() throws RecognitionException {
         CFScriptParser.xorExpression_return retval = new CFScriptParser.xorExpression_return();
         retval.start = input.LT(1);
@@ -11721,8 +11929,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 53) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:2: ( orExpression ( XOR ^ orExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:4: orExpression ( XOR ^ orExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:2: ( orExpression ( XOR ^ orExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:4: orExpression ( XOR ^ orExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -11734,7 +11942,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, orExpression208.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:17: ( XOR ^ orExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:17: ( XOR ^ orExpression )*
             loop58:
             do {
                 int alt58=2;
@@ -11747,7 +11955,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt58) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:727:19: XOR ^ orExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:19: XOR ^ orExpression
             	    {
             	    XOR209=(Token)match(input,XOR,FOLLOW_XOR_in_xorExpression3552); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -11787,8 +11995,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -11808,7 +12020,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "orExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:730:1: orExpression : andExpression ( ( OR | OROPERATOR ) ^ andExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:734:1: orExpression : andExpression ( ( OR | OROPERATOR ) ^ andExpression )* ;
     public final CFScriptParser.orExpression_return orExpression() throws RecognitionException {
         CFScriptParser.orExpression_return retval = new CFScriptParser.orExpression_return();
         retval.start = input.LT(1);
@@ -11828,8 +12040,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 54) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:2: ( andExpression ( ( OR | OROPERATOR ) ^ andExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:4: andExpression ( ( OR | OROPERATOR ) ^ andExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:2: ( andExpression ( ( OR | OROPERATOR ) ^ andExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:4: andExpression ( ( OR | OROPERATOR ) ^ andExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -11841,7 +12053,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, andExpression211.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:18: ( ( OR | OROPERATOR ) ^ andExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:18: ( ( OR | OROPERATOR ) ^ andExpression )*
             loop59:
             do {
                 int alt59=2;
@@ -11854,7 +12066,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt59) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:731:20: ( OR | OROPERATOR ) ^ andExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:20: ( OR | OROPERATOR ) ^ andExpression
             	    {
             	    set212=(Token)input.LT(1);
 
@@ -11905,8 +12117,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -11926,7 +12142,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "andExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:734:1: andExpression : notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:1: andExpression : notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* ;
     public final CFScriptParser.andExpression_return andExpression() throws RecognitionException {
         CFScriptParser.andExpression_return retval = new CFScriptParser.andExpression_return();
         retval.start = input.LT(1);
@@ -11946,8 +12162,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 55) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:2: ( notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:4: notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:2: ( notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:4: notExpression ( ( AND | ANDOPERATOR ) ^ notExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -11959,7 +12175,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, notExpression214.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:18: ( ( AND | ANDOPERATOR ) ^ notExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:18: ( ( AND | ANDOPERATOR ) ^ notExpression )*
             loop60:
             do {
                 int alt60=2;
@@ -11972,7 +12188,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt60) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:735:20: ( AND | ANDOPERATOR ) ^ notExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:20: ( AND | ANDOPERATOR ) ^ notExpression
             	    {
             	    set215=(Token)input.LT(1);
 
@@ -12023,8 +12239,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -12044,7 +12264,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "notExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:738:1: notExpression : ( NOT ^| NOTOP ^)? equalityExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:1: notExpression : ( NOT ^| NOTOP ^)? equalityExpression ;
     public final CFScriptParser.notExpression_return notExpression() throws RecognitionException {
         CFScriptParser.notExpression_return retval = new CFScriptParser.notExpression_return();
         retval.start = input.LT(1);
@@ -12064,13 +12284,13 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 56) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:2: ( ( NOT ^| NOTOP ^)? equalityExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:4: ( NOT ^| NOTOP ^)? equalityExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:2: ( ( NOT ^| NOTOP ^)? equalityExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:4: ( NOT ^| NOTOP ^)? equalityExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:4: ( NOT ^| NOTOP ^)?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:4: ( NOT ^| NOTOP ^)?
             int alt61=3;
             int LA61_0 = input.LA(1);
 
@@ -12082,7 +12302,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt61) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:6: NOT ^
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:6: NOT ^
                     {
                     NOT217=(Token)match(input,NOT,FOLLOW_NOT_in_notExpression3632); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -12095,7 +12315,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:739:13: NOTOP ^
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:13: NOTOP ^
                     {
                     NOTOP218=(Token)match(input,NOTOP,FOLLOW_NOTOP_in_notExpression3637); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
@@ -12132,8 +12352,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -12153,7 +12377,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:742:1: equalityExpression : concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:746:1: equalityExpression : concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* ;
     public final CFScriptParser.equalityExpression_return equalityExpression() throws RecognitionException {
         CFScriptParser.equalityExpression_return retval = new CFScriptParser.equalityExpression_return();
         retval.start = input.LT(1);
@@ -12179,8 +12403,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 57) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:5: ( concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:743:7: concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:5: ( concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:7: concatenationExpression ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -12192,16 +12416,16 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, concatenationExpression220.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*
             loop63:
             do {
                 int alt63=2;
                 alt63 = dfa63.predict(input);
                 switch (alt63) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^)
             	    int alt62=4;
             	    switch ( input.LA(1) ) {
             	    case LESS:
@@ -12330,7 +12554,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             	    switch (alt62) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:11: equalityOperator5 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:11: equalityOperator5 ^
             	            {
             	            pushFollow(FOLLOW_equalityOperator5_in_equalityExpression3670);
             	            equalityOperator5221=equalityOperator5();
@@ -12342,7 +12566,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:32: equalityOperator3 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:32: equalityOperator3 ^
             	            {
             	            pushFollow(FOLLOW_equalityOperator3_in_equalityExpression3675);
             	            equalityOperator3222=equalityOperator3();
@@ -12354,7 +12578,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 3 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:54: equalityOperator2 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:54: equalityOperator2 ^
             	            {
             	            pushFollow(FOLLOW_equalityOperator2_in_equalityExpression3681);
             	            equalityOperator2223=equalityOperator2();
@@ -12366,7 +12590,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 4 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:75: equalityOperator1 ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:75: equalityOperator1 ^
             	            {
             	            pushFollow(FOLLOW_equalityOperator1_in_equalityExpression3686);
             	            equalityOperator1224=equalityOperator1();
@@ -12411,8 +12635,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -12432,7 +12660,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator1"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:747:1: equalityOperator1 : ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:751:1: equalityOperator1 : ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) );
     public final CFScriptParser.equalityOperator1_return equalityOperator1() throws RecognitionException {
         CFScriptParser.equalityOperator1_return retval = new CFScriptParser.equalityOperator1_return();
         retval.start = input.LT(1);
@@ -12500,7 +12728,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 58) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:5: ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:5: ( IS -> ^( EQ ) | EQUALSEQUALSOP -> ^( EQ ) | LT -> ^( LT ) | '<' -> ^( LT ) | LTE -> ^( LTE ) | '<=' -> ^( LTE ) | LE -> ^( LTE ) | GT -> ^( GT ) | '>' -> ^( GT ) | GTE -> ^( GTE ) | '>=' -> ^( GTE ) | GE -> ^( GTE ) | EQ -> ^( EQ ) | NEQ -> ^( NEQ ) | '!=' -> ^( NEQ ) | EQUAL -> ^( EQ ) | EQUALS -> ^( EQ ) | CONTAINS -> ^( CONTAINS ) )
             int alt64=18;
             switch ( input.LA(1) ) {
             case IS:
@@ -12604,7 +12832,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt64) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:8: IS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:8: IS
                     {
                     IS226=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator13713); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IS.add(IS226);
@@ -12623,9 +12851,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 748:11: -> ^( EQ )
+                    // 752:11: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:14: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:14: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12644,7 +12872,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:9: EQUALSEQUALSOP
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:9: EQUALSEQUALSOP
                     {
                     EQUALSEQUALSOP227=(Token)match(input,EQUALSEQUALSOP,FOLLOW_EQUALSEQUALSOP_in_equalityOperator13729); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EQUALSEQUALSOP.add(EQUALSEQUALSOP227);
@@ -12663,9 +12891,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 749:24: -> ^( EQ )
+                    // 753:24: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:749:27: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:27: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12684,7 +12912,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:9: LT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:9: LT
                     {
                     LT228=(Token)match(input,LT,FOLLOW_LT_in_equalityOperator13745); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LT.add(LT228);
@@ -12703,9 +12931,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 750:12: -> ^( LT )
+                    // 754:12: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:750:15: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:15: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12724,7 +12952,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:751:9: '<'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:9: '<'
                     {
                     char_literal229=(Token)match(input,158,FOLLOW_158_in_equalityOperator13761); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_158.add(char_literal229);
@@ -12743,9 +12971,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 751:13: -> ^( LT )
+                    // 755:13: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:751:16: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:16: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12764,7 +12992,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:9: LTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:9: LTE
                     {
                     LTE230=(Token)match(input,LTE,FOLLOW_LTE_in_equalityOperator13777); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LTE.add(LTE230);
@@ -12783,9 +13011,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 752:13: -> ^( LTE )
+                    // 756:13: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:752:16: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:16: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12804,7 +13032,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:9: '<='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:9: '<='
                     {
                     string_literal231=(Token)match(input,159,FOLLOW_159_in_equalityOperator13793); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_159.add(string_literal231);
@@ -12823,9 +13051,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 753:14: -> ^( LTE )
+                    // 757:14: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:753:17: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:17: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12844,7 +13072,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:9: LE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:9: LE
                     {
                     LE232=(Token)match(input,LE,FOLLOW_LE_in_equalityOperator13809); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LE.add(LE232);
@@ -12863,9 +13091,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 754:12: -> ^( LTE )
+                    // 758:12: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:754:15: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:15: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12884,7 +13112,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:9: GT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:9: GT
                     {
                     GT233=(Token)match(input,GT,FOLLOW_GT_in_equalityOperator13825); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_GT.add(GT233);
@@ -12903,9 +13131,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 755:12: -> ^( GT )
+                    // 759:12: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:755:15: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:15: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12924,7 +13152,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:9: '>'
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:9: '>'
                     {
                     char_literal234=(Token)match(input,160,FOLLOW_160_in_equalityOperator13841); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_160.add(char_literal234);
@@ -12943,9 +13171,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 756:13: -> ^( GT )
+                    // 760:13: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:756:16: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:16: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -12964,7 +13192,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:9: GTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:9: GTE
                     {
                     GTE235=(Token)match(input,GTE,FOLLOW_GTE_in_equalityOperator13857); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_GTE.add(GTE235);
@@ -12983,9 +13211,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 757:13: -> ^( GTE )
+                    // 761:13: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:757:16: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:16: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13004,7 +13232,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:9: '>='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:762:9: '>='
                     {
                     string_literal236=(Token)match(input,161,FOLLOW_161_in_equalityOperator13873); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_161.add(string_literal236);
@@ -13023,9 +13251,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 758:14: -> ^( GTE )
+                    // 762:14: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:758:17: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:762:17: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13044,7 +13272,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:9: GE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:763:9: GE
                     {
                     GE237=(Token)match(input,GE,FOLLOW_GE_in_equalityOperator13889); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_GE.add(GE237);
@@ -13063,9 +13291,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 759:12: -> ^( GTE )
+                    // 763:12: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:759:15: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:763:15: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13084,7 +13312,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:9: EQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:9: EQ
                     {
                     EQ238=(Token)match(input,EQ,FOLLOW_EQ_in_equalityOperator13905); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EQ.add(EQ238);
@@ -13103,9 +13331,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 760:12: -> ^( EQ )
+                    // 764:12: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:760:15: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:15: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13124,7 +13352,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:9: NEQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:9: NEQ
                     {
                     NEQ239=(Token)match(input,NEQ,FOLLOW_NEQ_in_equalityOperator13921); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NEQ.add(NEQ239);
@@ -13143,9 +13371,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 761:13: -> ^( NEQ )
+                    // 765:13: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:761:16: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:16: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13164,7 +13392,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:762:9: '!='
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:766:9: '!='
                     {
                     string_literal240=(Token)match(input,155,FOLLOW_155_in_equalityOperator13937); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_155.add(string_literal240);
@@ -13183,9 +13411,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 762:14: -> ^( NEQ )
+                    // 766:14: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:762:17: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:766:17: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13204,7 +13432,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:763:9: EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:767:9: EQUAL
                     {
                     EQUAL241=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityOperator13953); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EQUAL.add(EQUAL241);
@@ -13223,9 +13451,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 763:15: -> ^( EQ )
+                    // 767:15: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:763:18: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:767:18: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13244,7 +13472,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:9: EQUALS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:768:9: EQUALS
                     {
                     EQUALS242=(Token)match(input,EQUALS,FOLLOW_EQUALS_in_equalityOperator13969); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EQUALS.add(EQUALS242);
@@ -13263,9 +13491,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 764:16: -> ^( EQ )
+                    // 768:16: -> ^( EQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:764:19: ^( EQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:768:19: ^( EQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13284,7 +13512,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:9: CONTAINS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:9: CONTAINS
                     {
                     CONTAINS243=(Token)match(input,CONTAINS,FOLLOW_CONTAINS_in_equalityOperator13985); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_CONTAINS.add(CONTAINS243);
@@ -13303,9 +13531,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 765:18: -> ^( CONTAINS )
+                    // 769:18: -> ^( CONTAINS )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:765:21: ^( CONTAINS )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:21: ^( CONTAINS )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13337,8 +13565,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -13358,7 +13590,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator2"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:768:1: equalityOperator2 : ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:772:1: equalityOperator2 : ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) );
     public final CFScriptParser.equalityOperator2_return equalityOperator2() throws RecognitionException {
         CFScriptParser.equalityOperator2_return retval = new CFScriptParser.equalityOperator2_return();
         retval.start = input.LT(1);
@@ -13394,7 +13626,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 59) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:5: ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:773:5: ( LESS THAN -> ^( LT ) | GREATER THAN -> ^( GT ) | NOT EQUAL -> ^( NEQ ) | IS NOT -> ^( NEQ ) )
             int alt65=4;
             switch ( input.LA(1) ) {
             case LESS:
@@ -13428,7 +13660,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt65) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:9: LESS THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:773:9: LESS THAN
                     {
                     LESS244=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator24014); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LESS.add(LESS244);
@@ -13451,9 +13683,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 769:19: -> ^( LT )
+                    // 773:19: -> ^( LT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:769:22: ^( LT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:773:22: ^( LT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13472,7 +13704,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:9: GREATER THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:9: GREATER THAN
                     {
                     GREATER246=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator24032); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_GREATER.add(GREATER246);
@@ -13495,9 +13727,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 770:22: -> ^( GT )
+                    // 774:22: -> ^( GT )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:770:25: ^( GT )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:774:25: ^( GT )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13516,7 +13748,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:771:9: NOT EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:775:9: NOT EQUAL
                     {
                     NOT248=(Token)match(input,NOT,FOLLOW_NOT_in_equalityOperator24050); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT248);
@@ -13539,9 +13771,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 771:20: -> ^( NEQ )
+                    // 775:20: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:771:23: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:775:23: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13560,7 +13792,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:772:9: IS NOT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:776:9: IS NOT
                     {
                     IS250=(Token)match(input,IS,FOLLOW_IS_in_equalityOperator24069); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IS.add(IS250);
@@ -13583,9 +13815,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 772:16: -> ^( NEQ )
+                    // 776:16: -> ^( NEQ )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:772:19: ^( NEQ )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:776:19: ^( NEQ )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13617,8 +13849,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -13638,7 +13874,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator3"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:775:1: equalityOperator3 : lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:779:1: equalityOperator3 : lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) ;
     public final CFScriptParser.equalityOperator3_return equalityOperator3() throws RecognitionException {
         CFScriptParser.equalityOperator3_return retval = new CFScriptParser.equalityOperator3_return();
         retval.start = input.LT(1);
@@ -13661,8 +13897,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 60) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:776:5: (lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:776:9: lc= DOES NOT CONTAIN
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:5: (lc= DOES NOT CONTAIN -> ^( DOESNOTCONTAIN[$lc] ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:9: lc= DOES NOT CONTAIN
             {
             lc=(Token)match(input,DOES,FOLLOW_DOES_in_equalityOperator34098); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_DOES.add(lc);
@@ -13689,9 +13925,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 776:29: -> ^( DOESNOTCONTAIN[$lc] )
+            // 780:29: -> ^( DOESNOTCONTAIN[$lc] )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:776:32: ^( DOESNOTCONTAIN[$lc] )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:32: ^( DOESNOTCONTAIN[$lc] )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13721,8 +13957,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -13742,7 +13982,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "equalityOperator5"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:779:1: equalityOperator5 : ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:783:1: equalityOperator5 : ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) );
     public final CFScriptParser.equalityOperator5_return equalityOperator5() throws RecognitionException {
         CFScriptParser.equalityOperator5_return retval = new CFScriptParser.equalityOperator5_return();
         retval.start = input.LT(1);
@@ -13782,7 +14022,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 61) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:5: ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:784:5: ( LESS THAN OR EQUAL TO -> ^( LTE ) | GREATER THAN OR EQUAL TO -> ^( GTE ) )
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -13802,7 +14042,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt66) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:9: LESS THAN OR EQUAL TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:784:9: LESS THAN OR EQUAL TO
                     {
                     LESS254=(Token)match(input,LESS,FOLLOW_LESS_in_equalityOperator54128); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LESS.add(LESS254);
@@ -13837,9 +14077,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 780:31: -> ^( LTE )
+                    // 784:31: -> ^( LTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:780:34: ^( LTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:784:34: ^( LTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13858,7 +14098,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:781:9: GREATER THAN OR EQUAL TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:9: GREATER THAN OR EQUAL TO
                     {
                     GREATER259=(Token)match(input,GREATER,FOLLOW_GREATER_in_equalityOperator54152); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_GREATER.add(GREATER259);
@@ -13893,9 +14133,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 781:34: -> ^( GTE )
+                    // 785:34: -> ^( GTE )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:781:37: ^( GTE )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:37: ^( GTE )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -13927,8 +14167,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -13948,7 +14192,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "concatenationExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:784:1: concatenationExpression : additiveExpression ( CONCAT ^ additiveExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:788:1: concatenationExpression : additiveExpression ( CONCAT ^ additiveExpression )* ;
     public final CFScriptParser.concatenationExpression_return concatenationExpression() throws RecognitionException {
         CFScriptParser.concatenationExpression_return retval = new CFScriptParser.concatenationExpression_return();
         retval.start = input.LT(1);
@@ -13968,8 +14212,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 62) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:2: ( additiveExpression ( CONCAT ^ additiveExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:4: additiveExpression ( CONCAT ^ additiveExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:2: ( additiveExpression ( CONCAT ^ additiveExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:4: additiveExpression ( CONCAT ^ additiveExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -13981,7 +14225,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression264.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:23: ( CONCAT ^ additiveExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:23: ( CONCAT ^ additiveExpression )*
             loop67:
             do {
                 int alt67=2;
@@ -13994,7 +14238,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt67) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:785:25: CONCAT ^ additiveExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:25: CONCAT ^ additiveExpression
             	    {
             	    CONCAT265=(Token)match(input,CONCAT,FOLLOW_CONCAT_in_concatenationExpression4188); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -14034,8 +14278,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14055,7 +14303,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "additiveExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:788:1: additiveExpression : modExpression ( ( PLUS ^| MINUS ^) modExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:792:1: additiveExpression : modExpression ( ( PLUS ^| MINUS ^) modExpression )* ;
     public final CFScriptParser.additiveExpression_return additiveExpression() throws RecognitionException {
         CFScriptParser.additiveExpression_return retval = new CFScriptParser.additiveExpression_return();
         retval.start = input.LT(1);
@@ -14077,8 +14325,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 63) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:2: ( modExpression ( ( PLUS ^| MINUS ^) modExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:4: modExpression ( ( PLUS ^| MINUS ^) modExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:2: ( modExpression ( ( PLUS ^| MINUS ^) modExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:4: modExpression ( ( PLUS ^| MINUS ^) modExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -14090,16 +14338,16 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, modExpression267.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:18: ( ( PLUS ^| MINUS ^) modExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:18: ( ( PLUS ^| MINUS ^) modExpression )*
             loop69:
             do {
                 int alt69=2;
                 alt69 = dfa69.predict(input);
                 switch (alt69) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:20: ( PLUS ^| MINUS ^) modExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:20: ( PLUS ^| MINUS ^) modExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:20: ( PLUS ^| MINUS ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:20: ( PLUS ^| MINUS ^)
             	    int alt68=2;
             	    int LA68_0 = input.LA(1);
 
@@ -14119,7 +14367,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    switch (alt68) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:21: PLUS ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:21: PLUS ^
             	            {
             	            PLUS268=(Token)match(input,PLUS,FOLLOW_PLUS_in_additiveExpression4211); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
@@ -14132,7 +14380,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:27: MINUS ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:27: MINUS ^
             	            {
             	            MINUS269=(Token)match(input,MINUS,FOLLOW_MINUS_in_additiveExpression4214); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
@@ -14178,8 +14426,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14199,7 +14451,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "modExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:792:1: modExpression : intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:796:1: modExpression : intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* ;
     public final CFScriptParser.modExpression_return modExpression() throws RecognitionException {
         CFScriptParser.modExpression_return retval = new CFScriptParser.modExpression_return();
         retval.start = input.LT(1);
@@ -14219,8 +14471,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 64) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:2: ( intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:4: intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:2: ( intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:4: intDivisionExpression ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -14232,7 +14484,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, intDivisionExpression271.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:27: ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:27: ( ( MOD | MODOPERATOR ) ^ intDivisionExpression )*
             loop70:
             do {
                 int alt70=2;
@@ -14245,7 +14497,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt70) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:29: ( MOD | MODOPERATOR ) ^ intDivisionExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:29: ( MOD | MODOPERATOR ) ^ intDivisionExpression
             	    {
             	    set272=(Token)input.LT(1);
 
@@ -14296,8 +14548,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14317,7 +14573,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "intDivisionExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:796:1: intDivisionExpression : multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:1: intDivisionExpression : multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* ;
     public final CFScriptParser.intDivisionExpression_return intDivisionExpression() throws RecognitionException {
         CFScriptParser.intDivisionExpression_return retval = new CFScriptParser.intDivisionExpression_return();
         retval.start = input.LT(1);
@@ -14337,8 +14593,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 65) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:2: ( multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:4: multiplicativeExpression ( BSLASH ^ multiplicativeExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:2: ( multiplicativeExpression ( BSLASH ^ multiplicativeExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:4: multiplicativeExpression ( BSLASH ^ multiplicativeExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -14350,7 +14606,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpression274.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:29: ( BSLASH ^ multiplicativeExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:29: ( BSLASH ^ multiplicativeExpression )*
             loop71:
             do {
                 int alt71=2;
@@ -14363,7 +14619,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt71) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:797:31: BSLASH ^ multiplicativeExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:31: BSLASH ^ multiplicativeExpression
             	    {
             	    BSLASH275=(Token)match(input,BSLASH,FOLLOW_BSLASH_in_intDivisionExpression4264); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -14403,8 +14659,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14424,7 +14684,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "multiplicativeExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:800:1: multiplicativeExpression : powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:1: multiplicativeExpression : powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* ;
     public final CFScriptParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
         CFScriptParser.multiplicativeExpression_return retval = new CFScriptParser.multiplicativeExpression_return();
         retval.start = input.LT(1);
@@ -14446,8 +14706,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 66) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:2: ( powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:4: powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:2: ( powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:4: powerOfExpression ( ( STAR ^| SLASH ^) powerOfExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -14459,7 +14719,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, powerOfExpression277.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:22: ( ( STAR ^| SLASH ^) powerOfExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:22: ( ( STAR ^| SLASH ^) powerOfExpression )*
             loop73:
             do {
                 int alt73=2;
@@ -14472,9 +14732,9 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt73) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:24: ( STAR ^| SLASH ^) powerOfExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:24: ( STAR ^| SLASH ^) powerOfExpression
             	    {
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:24: ( STAR ^| SLASH ^)
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:24: ( STAR ^| SLASH ^)
             	    int alt72=2;
             	    int LA72_0 = input.LA(1);
 
@@ -14494,7 +14754,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    switch (alt72) {
             	        case 1 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:25: STAR ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:25: STAR ^
             	            {
             	            STAR278=(Token)match(input,STAR,FOLLOW_STAR_in_multiplicativeExpression4286); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
@@ -14507,7 +14767,7 @@ public TreeAdaptor getTreeAdaptor() {
             	            }
             	            break;
             	        case 2 :
-            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:801:31: SLASH ^
+            	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:31: SLASH ^
             	            {
             	            SLASH279=(Token)match(input,SLASH,FOLLOW_SLASH_in_multiplicativeExpression4289); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
@@ -14553,8 +14813,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14574,7 +14838,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "powerOfExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:804:1: powerOfExpression : unaryExpression ( POWER ^ unaryExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:808:1: powerOfExpression : unaryExpression ( POWER ^ unaryExpression )* ;
     public final CFScriptParser.powerOfExpression_return powerOfExpression() throws RecognitionException {
         CFScriptParser.powerOfExpression_return retval = new CFScriptParser.powerOfExpression_return();
         retval.start = input.LT(1);
@@ -14594,8 +14858,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 67) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:2: ( unaryExpression ( POWER ^ unaryExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:4: unaryExpression ( POWER ^ unaryExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:2: ( unaryExpression ( POWER ^ unaryExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:4: unaryExpression ( POWER ^ unaryExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -14607,7 +14871,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, unaryExpression281.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:20: ( POWER ^ unaryExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:20: ( POWER ^ unaryExpression )*
             loop74:
             do {
                 int alt74=2;
@@ -14620,7 +14884,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt74) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:805:22: POWER ^ unaryExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:22: POWER ^ unaryExpression
             	    {
             	    POWER282=(Token)match(input,POWER,FOLLOW_POWER_in_powerOfExpression4312); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -14660,8 +14924,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -14681,7 +14949,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "unaryExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:808:1: unaryExpression : ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:1: unaryExpression : ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression );
     public final CFScriptParser.unaryExpression_return unaryExpression() throws RecognitionException {
         CFScriptParser.unaryExpression_return retval = new CFScriptParser.unaryExpression_return();
         retval.start = input.LT(1);
@@ -14737,7 +15005,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 68) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:2: ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:2: ( MINUS memberExpression -> ^( MINUS memberExpression ) | PLUS memberExpression -> ^( PLUS memberExpression ) | MINUSMINUS memberExpression -> ^( MINUSMINUS memberExpression ) | PLUSPLUS memberExpression -> ^( PLUSPLUS memberExpression ) | newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* | memberExpression MINUSMINUS -> ^( POSTMINUSMINUS memberExpression ) | memberExpression PLUSPLUS -> ^( POSTPLUSPLUS memberExpression ) | memberExpression )
             int alt77=8;
             int LA77_0 = input.LA(1);
 
@@ -15501,7 +15769,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt77) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:4: MINUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:4: MINUS memberExpression
                     {
                     MINUS284=(Token)match(input,MINUS,FOLLOW_MINUS_in_unaryExpression4330); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_MINUS.add(MINUS284);
@@ -15527,9 +15795,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 809:27: -> ^( MINUS memberExpression )
+                    // 813:27: -> ^( MINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:809:30: ^( MINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:30: ^( MINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15550,7 +15818,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:4: PLUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:4: PLUS memberExpression
                     {
                     PLUS286=(Token)match(input,PLUS,FOLLOW_PLUS_in_unaryExpression4345); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PLUS.add(PLUS286);
@@ -15576,9 +15844,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 810:26: -> ^( PLUS memberExpression )
+                    // 814:26: -> ^( PLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:810:29: ^( PLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:29: ^( PLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15599,7 +15867,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:811:4: MINUSMINUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:4: MINUSMINUS memberExpression
                     {
                     MINUSMINUS288=(Token)match(input,MINUSMINUS,FOLLOW_MINUSMINUS_in_unaryExpression4360); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_MINUSMINUS.add(MINUSMINUS288);
@@ -15613,7 +15881,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression289.getTree());
 
                     // AST REWRITE
-                    // elements: MINUSMINUS, memberExpression
+                    // elements: memberExpression, MINUSMINUS
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -15625,9 +15893,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 811:32: -> ^( MINUSMINUS memberExpression )
+                    // 815:32: -> ^( MINUSMINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:811:35: ^( MINUSMINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:35: ^( MINUSMINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15648,7 +15916,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:4: PLUSPLUS memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:4: PLUSPLUS memberExpression
                     {
                     PLUSPLUS290=(Token)match(input,PLUSPLUS,FOLLOW_PLUSPLUS_in_unaryExpression4376); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PLUSPLUS.add(PLUSPLUS290);
@@ -15674,9 +15942,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 812:30: -> ^( PLUSPLUS memberExpression )
+                    // 816:30: -> ^( PLUSPLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:812:33: ^( PLUSPLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:33: ^( PLUSPLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15697,7 +15965,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -15709,7 +15977,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, newComponentExpression292.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
                     loop76:
                     do {
                         int alt76=2;
@@ -15722,7 +15990,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt76) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
                     	    {
                     	    DOT293=(Token)match(input,DOT,FOLLOW_DOT_in_unaryExpression4394); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -15739,14 +16007,14 @@ public TreeAdaptor getTreeAdaptor() {
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpressionIRW294.getTree());
 
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:53: ( LEFTPAREN argumentList ')' )*
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:53: ( LEFTPAREN argumentList ')' )*
                     	    loop75:
                     	    do {
                     	        int alt75=2;
                     	        alt75 = dfa75.predict(input);
                     	        switch (alt75) {
                     	    	case 1 :
-                    	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:54: LEFTPAREN argumentList ')'
+                    	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:54: LEFTPAREN argumentList ')'
                     	    	    {
                     	    	    LEFTPAREN295=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_unaryExpression4399); if (state.failed) return retval;
                     	    	    if ( state.backtracking==0 ) {
@@ -15792,7 +16060,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:5: memberExpression MINUSMINUS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:5: memberExpression MINUSMINUS
                     {
                     pushFollow(FOLLOW_memberExpression_in_unaryExpression4413);
                     memberExpression298=memberExpression();
@@ -15818,9 +16086,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 814:33: -> ^( POSTMINUSMINUS memberExpression )
+                    // 818:33: -> ^( POSTMINUSMINUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:36: ^( POSTMINUSMINUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:36: ^( POSTMINUSMINUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15841,7 +16109,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:5: memberExpression PLUSPLUS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:5: memberExpression PLUSPLUS
                     {
                     pushFollow(FOLLOW_memberExpression_in_unaryExpression4429);
                     memberExpression300=memberExpression();
@@ -15867,9 +16135,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 815:31: -> ^( POSTPLUSPLUS memberExpression )
+                    // 819:31: -> ^( POSTPLUSPLUS memberExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:34: ^( POSTPLUSPLUS memberExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:34: ^( POSTPLUSPLUS memberExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -15890,7 +16158,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:816:5: memberExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:820:5: memberExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -15918,8 +16186,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -15939,7 +16211,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:1: memberExpression : ( '#' ! memberExpressionB '#' !| memberExpressionB );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:823:1: memberExpression : ( '#' ! memberExpressionB '#' !| memberExpressionB );
     public final CFScriptParser.memberExpression_return memberExpression() throws RecognitionException {
         CFScriptParser.memberExpression_return retval = new CFScriptParser.memberExpression_return();
         retval.start = input.LT(1);
@@ -15961,7 +16233,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 69) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:820:2: ( '#' ! memberExpressionB '#' !| memberExpressionB )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:824:2: ( '#' ! memberExpressionB '#' !| memberExpressionB )
             int alt78=2;
             int LA78_0 = input.LA(1);
 
@@ -15984,7 +16256,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt78) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:820:4: '#' ! memberExpressionB '#' !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:824:4: '#' ! memberExpressionB '#' !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16003,7 +16275,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:821:4: memberExpressionB
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:4: memberExpressionB
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16031,8 +16303,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16052,7 +16328,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpressionB"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:824:1: memberExpressionB : ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:828:1: memberExpressionB : ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* ;
     public final CFScriptParser.memberExpressionB_return memberExpressionB() throws RecognitionException {
         CFScriptParser.memberExpressionB_return retval = new CFScriptParser.memberExpressionB_return();
         retval.start = input.LT(1);
@@ -16102,11 +16378,11 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 70) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:3: ( ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:5: ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:3: ( ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:5: ( primaryExpression -> primaryExpression ) ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
             {
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:5: ( primaryExpression -> primaryExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:825:7: primaryExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:5: ( primaryExpression -> primaryExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:7: primaryExpression
             {
             pushFollow(FOLLOW_primaryExpression_in_memberExpressionB4484);
             primaryExpression307=primaryExpression();
@@ -16128,7 +16404,7 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 825:25: -> primaryExpression
+            // 829:25: -> primaryExpression
             {
                 adaptor.addChild(root_0, stream_primaryExpression.nextTree());
 
@@ -16141,14 +16417,14 @@ public TreeAdaptor getTreeAdaptor() {
             }
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:826:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*
             loop79:
             do {
                 int alt79=5;
                 alt79 = dfa79.predict(input);
                 switch (alt79) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
             	    {
             	    DOT308=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4502); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_DOT.add(DOT308);
@@ -16177,7 +16453,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: primaryExpressionIRW, argumentList, memberExpressionB
+            	    // elements: argumentList, primaryExpressionIRW, memberExpressionB
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -16189,9 +16465,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 827:57: -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+            	    // 831:57: -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:60: ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:60: ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -16216,7 +16492,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 2 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:828:8: LEFTPAREN argumentList RIGHTPAREN
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:832:8: LEFTPAREN argumentList RIGHTPAREN
             	    {
             	    LEFTPAREN313=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_memberExpressionB4533); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_LEFTPAREN.add(LEFTPAREN313);
@@ -16234,7 +16510,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: argumentList, memberExpressionB
+            	    // elements: memberExpressionB, argumentList
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -16246,9 +16522,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 828:42: -> ^( FUNCTIONCALL $memberExpressionB argumentList )
+            	    // 832:42: -> ^( FUNCTIONCALL $memberExpressionB argumentList )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:828:45: ^( FUNCTIONCALL $memberExpressionB argumentList )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:832:45: ^( FUNCTIONCALL $memberExpressionB argumentList )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -16271,7 +16547,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 3 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:7: LEFTBRACKET impliesExpression RIGHTBRACKET
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:833:7: LEFTBRACKET impliesExpression RIGHTBRACKET
             	    {
             	    LEFTBRACKET316=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_memberExpressionB4556); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_LEFTBRACKET.add(LEFTBRACKET316);
@@ -16289,7 +16565,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: LEFTBRACKET, impliesExpression, memberExpressionB
+            	    // elements: impliesExpression, memberExpressionB, LEFTBRACKET
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -16301,9 +16577,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 829:50: -> ^( LEFTBRACKET $memberExpressionB impliesExpression )
+            	    // 833:50: -> ^( LEFTBRACKET $memberExpressionB impliesExpression )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:53: ^( LEFTBRACKET $memberExpressionB impliesExpression )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:833:53: ^( LEFTBRACKET $memberExpressionB impliesExpression )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -16326,7 +16602,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
             	    break;
             	case 4 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:7: DOT primaryExpressionIRW
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:7: DOT primaryExpressionIRW
             	    {
             	    DOT319=(Token)match(input,DOT,FOLLOW_DOT_in_memberExpressionB4579); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_DOT.add(DOT319);
@@ -16340,7 +16616,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW320.getTree());
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, DOT, primaryExpressionIRW
+            	    // elements: DOT, memberExpressionB, primaryExpressionIRW
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -16352,9 +16628,9 @@ public TreeAdaptor getTreeAdaptor() {
             	    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             	    root_0 = (CommonTree)adaptor.nil();
-            	    // 830:32: -> ^( DOT $memberExpressionB primaryExpressionIRW )
+            	    // 834:32: -> ^( DOT $memberExpressionB primaryExpressionIRW )
             	    {
-            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:35: ^( DOT $memberExpressionB primaryExpressionIRW )
+            	        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:35: ^( DOT $memberExpressionB primaryExpressionIRW )
             	        {
             	        CommonTree root_1 = (CommonTree)adaptor.nil();
             	        root_1 = (CommonTree)adaptor.becomeRoot(
@@ -16397,8 +16673,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16418,7 +16698,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "memberExpressionSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:836:1: memberExpressionSuffix : ( indexSuffix | propertyReferenceSuffix );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:840:1: memberExpressionSuffix : ( indexSuffix | propertyReferenceSuffix );
     public final CFScriptParser.memberExpressionSuffix_return memberExpressionSuffix() throws RecognitionException {
         CFScriptParser.memberExpressionSuffix_return retval = new CFScriptParser.memberExpressionSuffix_return();
         retval.start = input.LT(1);
@@ -16436,7 +16716,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 71) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:837:3: ( indexSuffix | propertyReferenceSuffix )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:3: ( indexSuffix | propertyReferenceSuffix )
             int alt80=2;
             int LA80_0 = input.LA(1);
 
@@ -16456,7 +16736,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt80) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:837:5: indexSuffix
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:5: indexSuffix
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16471,7 +16751,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:838:5: propertyReferenceSuffix
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:5: propertyReferenceSuffix
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16499,8 +16779,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16520,7 +16804,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "propertyReferenceSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:841:1: propertyReferenceSuffix : DOT ( LT !)* identifier ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:1: propertyReferenceSuffix : DOT ( LT !)* identifier ;
     public final CFScriptParser.propertyReferenceSuffix_return propertyReferenceSuffix() throws RecognitionException {
         CFScriptParser.propertyReferenceSuffix_return retval = new CFScriptParser.propertyReferenceSuffix_return();
         retval.start = input.LT(1);
@@ -16540,8 +16824,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 72) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:3: ( DOT ( LT !)* identifier )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:5: DOT ( LT !)* identifier
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:3: ( DOT ( LT !)* identifier )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:5: DOT ( LT !)* identifier
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -16554,7 +16838,7 @@ public TreeAdaptor getTreeAdaptor() {
             adaptor.addChild(root_0, DOT323_tree);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:11: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:11: ( LT !)*
             loop81:
             do {
                 int alt81=2;
@@ -16567,7 +16851,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt81) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:842:11: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:11: LT !
             	    {
             	    LT324=(Token)match(input,LT,FOLLOW_LT_in_propertyReferenceSuffix4635); if (state.failed) return retval;
 
@@ -16601,8 +16885,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16622,7 +16910,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "indexSuffix"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:845:1: indexSuffix : LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:849:1: indexSuffix : LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !;
     public final CFScriptParser.indexSuffix_return indexSuffix() throws RecognitionException {
         CFScriptParser.indexSuffix_return retval = new CFScriptParser.indexSuffix_return();
         retval.start = input.LT(1);
@@ -16646,8 +16934,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 73) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:3: ( LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:5: LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:3: ( LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:5: LEFTBRACKET ( LT !)* primaryExpression ( LT !)* ']' !
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -16660,7 +16948,7 @@ public TreeAdaptor getTreeAdaptor() {
             adaptor.addChild(root_0, LEFTBRACKET326_tree);
             }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:20: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:20: ( LT !)*
             loop82:
             do {
                 int alt82=2;
@@ -16673,7 +16961,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt82) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:20: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:20: LT !
             	    {
             	    LT327=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4655); if (state.failed) return retval;
 
@@ -16693,7 +16981,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, primaryExpression328.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:44: ( LT !)*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:44: ( LT !)*
             loop83:
             do {
                 int alt83=2;
@@ -16706,7 +16994,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt83) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:846:44: LT !
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:44: LT !
             	    {
             	    LT329=(Token)match(input,LT,FOLLOW_LT_in_indexSuffix4662); if (state.failed) return retval;
 
@@ -16735,8 +17023,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16756,7 +17048,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "primaryExpressionIRW"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:849:1: primaryExpressionIRW : ( primaryExpression | reservedWord );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:853:1: primaryExpressionIRW : ( primaryExpression | reservedWord );
     public final CFScriptParser.primaryExpressionIRW_return primaryExpressionIRW() throws RecognitionException {
         CFScriptParser.primaryExpressionIRW_return retval = new CFScriptParser.primaryExpressionIRW_return();
         retval.start = input.LT(1);
@@ -16774,7 +17066,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 74) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:2: ( primaryExpression | reservedWord )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:2: ( primaryExpression | reservedWord )
             int alt84=2;
             switch ( input.LA(1) ) {
             case ABORT:
@@ -16909,7 +17201,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt84) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:4: primaryExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:4: primaryExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16924,7 +17216,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:851:4: reservedWord
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:4: reservedWord
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -16952,8 +17244,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -16973,7 +17269,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "reservedWord"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:855:1: reservedWord : ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | EQUALS | cfscriptKeywords );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:1: reservedWord : ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | EQUALS | cfscriptKeywords );
     public final CFScriptParser.reservedWord_return reservedWord() throws RecognitionException {
         CFScriptParser.reservedWord_return retval = new CFScriptParser.reservedWord_return();
         retval.start = input.LT(1);
@@ -17027,7 +17323,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 75) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:3: ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | EQUALS | cfscriptKeywords )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:3: ( CONTAINS | IS | EQUAL | EQ | NEQ | GT | LT | GTE | GE | LTE | LE | NOT | AND | OR | XOR | EQV | IMP | MOD | EQUALS | cfscriptKeywords )
             int alt85=20;
             switch ( input.LA(1) ) {
             case CONTAINS:
@@ -17157,7 +17453,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt85) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:5: CONTAINS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:5: CONTAINS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17173,7 +17469,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:16: IS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:16: IS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17189,7 +17485,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:856:21: EQUAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:860:21: EQUAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17205,7 +17501,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:5: EQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:5: EQ
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17221,7 +17517,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:10: NEQ
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:10: NEQ
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17237,7 +17533,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:16: GT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:16: GT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17253,7 +17549,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:21: LT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:21: LT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17269,7 +17565,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:857:26: GTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:26: GTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17285,7 +17581,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:5: GE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:5: GE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17301,7 +17597,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:10: LTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:10: LTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17317,7 +17613,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:16: LE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:16: LE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17333,7 +17629,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:21: NOT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:21: NOT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17349,7 +17645,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:858:27: AND
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:27: AND
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17365,7 +17661,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:5: OR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:5: OR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17381,7 +17677,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:10: XOR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:10: XOR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17397,7 +17693,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:16: EQV
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:16: EQV
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17413,7 +17709,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:22: IMP
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:22: IMP
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17429,7 +17725,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:859:28: MOD
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:863:28: MOD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17445,7 +17741,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 19 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:861:5: EQUALS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:865:5: EQUALS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17461,7 +17757,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 20 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:862:5: cfscriptKeywords
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:5: cfscriptKeywords
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17489,8 +17785,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -17510,7 +17810,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "argumentList"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:865:1: argumentList : ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:869:1: argumentList : ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) );
     public final CFScriptParser.argumentList_return argumentList() throws RecognitionException {
         CFScriptParser.argumentList_return retval = new CFScriptParser.argumentList_return();
         retval.start = input.LT(1);
@@ -17530,7 +17830,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 76) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:3: ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:3: ( argument ( ',' ! argument )* | -> ^( EMPTYARGS ) )
             int alt87=2;
             int LA87_0 = input.LA(1);
 
@@ -17550,7 +17850,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt87) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:5: argument ( ',' ! argument )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:5: argument ( ',' ! argument )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -17562,7 +17862,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, argument353.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:14: ( ',' ! argument )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:14: ( ',' ! argument )*
                     loop86:
                     do {
                         int alt86=2;
@@ -17575,7 +17875,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt86) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:866:15: ',' ! argument
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:15: ',' ! argument
                     	    {
                     	    char_literal354=(Token)match(input,157,FOLLOW_157_in_argumentList4808); if (state.failed) return retval;
 
@@ -17598,7 +17898,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:867:5: 
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:5: 
                     {
                     // AST REWRITE
                     // elements: 
@@ -17613,9 +17913,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 867:5: -> ^( EMPTYARGS )
+                    // 871:5: -> ^( EMPTYARGS )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:867:8: ^( EMPTYARGS )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:8: ^( EMPTYARGS )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -17647,8 +17947,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -17668,7 +17972,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "argument"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:870:1: argument : ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:874:1: argument : ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression );
     public final CFScriptParser.argument_return argument() throws RecognitionException {
         CFScriptParser.argument_return retval = new CFScriptParser.argument_return();
         retval.start = input.LT(1);
@@ -17699,7 +18003,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 77) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:3: ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:3: ( ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) ) | ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) ) | impliesExpression )
             int alt88=3;
             int LA88_0 = input.LA(1);
 
@@ -19682,10 +19986,10 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt88) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:7: identifier COLON impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:5: ( identifier COLON impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:7: identifier COLON impliesExpression
                     {
                     pushFollow(FOLLOW_identifier_in_argument4838);
                     identifier356=identifier();
@@ -19706,7 +20010,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression358.getTree());
 
                     // AST REWRITE
-                    // elements: COLON, impliesExpression, identifier
+                    // elements: identifier, impliesExpression, COLON
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -19718,9 +20022,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 871:42: -> ^( COLON identifier impliesExpression )
+                    // 875:42: -> ^( COLON identifier impliesExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:871:45: ^( COLON identifier impliesExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:875:45: ^( COLON identifier impliesExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -19746,10 +20050,10 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
                     {
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:7: identifier EQUALSOP impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:5: ( identifier EQUALSOP impliesExpression -> ^( COLON identifier impliesExpression ) )
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:7: identifier EQUALSOP impliesExpression
                     {
                     pushFollow(FOLLOW_identifier_in_argument4864);
                     identifier359=identifier();
@@ -19770,7 +20074,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression361.getTree());
 
                     // AST REWRITE
-                    // elements: impliesExpression, identifier
+                    // elements: identifier, impliesExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -19782,9 +20086,9 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 872:45: -> ^( COLON identifier impliesExpression )
+                    // 876:45: -> ^( COLON identifier impliesExpression )
                     {
-                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:872:48: ^( COLON identifier impliesExpression )
+                        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:48: ^( COLON identifier impliesExpression )
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
@@ -19810,7 +20114,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:873:5: impliesExpression
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:877:5: impliesExpression
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -19838,8 +20142,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -19859,7 +20167,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "identifier"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:876:1: identifier : ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:880:1: identifier : ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords );
     public final CFScriptParser.identifier_return identifier() throws RecognitionException {
         CFScriptParser.identifier_return retval = new CFScriptParser.identifier_return();
         retval.start = input.LT(1);
@@ -19927,7 +20235,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 78) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:877:2: ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:881:2: ( COMPONENT | IDENTIFIER | DOES | CONTAIN | GREATER | THAN | LESS | VAR | TO | DEFAULT | INCLUDE | NEW | ABORT | THROW | RETHROW | PARAM | EXIT | THREAD | LOCK | TRANSACTION | PUBLIC | PRIVATE | REMOTE | PACKAGE | REQUIRED | cfmlFunction |{...}? => cfscriptKeywords )
             int alt89=27;
             int LA89_0 = input.LA(1);
 
@@ -20037,7 +20345,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt89) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:877:4: COMPONENT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:881:4: COMPONENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20053,7 +20361,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:878:4: IDENTIFIER
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:882:4: IDENTIFIER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20069,7 +20377,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:879:5: DOES
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:883:5: DOES
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20085,7 +20393,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:880:5: CONTAIN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:884:5: CONTAIN
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20101,7 +20409,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:881:5: GREATER
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:885:5: GREATER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20117,7 +20425,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:882:5: THAN
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: THAN
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20133,7 +20441,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:883:5: LESS
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:887:5: LESS
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20149,7 +20457,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:884:5: VAR
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:888:5: VAR
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20165,7 +20473,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 9 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:885:5: TO
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:889:5: TO
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20181,7 +20489,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 10 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: DEFAULT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:5: DEFAULT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20197,7 +20505,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 11 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:887:5: INCLUDE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:891:5: INCLUDE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20213,7 +20521,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 12 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:888:5: NEW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:892:5: NEW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20229,7 +20537,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 13 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:889:5: ABORT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:893:5: ABORT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20245,7 +20553,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 14 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:5: THROW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:894:5: THROW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20261,7 +20569,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 15 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:891:5: RETHROW
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:895:5: RETHROW
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20277,7 +20585,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 16 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:892:5: PARAM
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:896:5: PARAM
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20293,7 +20601,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 17 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:893:5: EXIT
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:897:5: EXIT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20309,7 +20617,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 18 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:894:5: THREAD
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:898:5: THREAD
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20325,7 +20633,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 19 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:895:5: LOCK
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:899:5: LOCK
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20341,7 +20649,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 20 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:896:5: TRANSACTION
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:900:5: TRANSACTION
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20357,7 +20665,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 21 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:897:5: PUBLIC
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:901:5: PUBLIC
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20373,7 +20681,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 22 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:898:5: PRIVATE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:902:5: PRIVATE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20389,7 +20697,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 23 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:899:5: REMOTE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:903:5: REMOTE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20405,7 +20713,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 24 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:900:5: PACKAGE
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:904:5: PACKAGE
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20421,7 +20729,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 25 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:901:5: REQUIRED
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:905:5: REQUIRED
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20437,7 +20745,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 26 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:902:5: cfmlFunction
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:906:5: cfmlFunction
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20452,7 +20760,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 27 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:903:5: {...}? => cfscriptKeywords
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:907:5: {...}? => cfscriptKeywords
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20485,8 +20793,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -20506,7 +20818,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "type"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:906:1: type : ( NUMERIC | STRING | BOOLEAN | COMPONENT | ANY | ARRAY | STRUCT );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:910:1: type : ( NUMERIC | STRING | BOOLEAN | COMPONENT | ANY | ARRAY | STRUCT );
     public final CFScriptParser.type_return type() throws RecognitionException {
         CFScriptParser.type_return retval = new CFScriptParser.type_return();
         retval.start = input.LT(1);
@@ -20522,7 +20834,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 79) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:907:3: ( NUMERIC | STRING | BOOLEAN | COMPONENT | ANY | ARRAY | STRUCT )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:911:3: ( NUMERIC | STRING | BOOLEAN | COMPONENT | ANY | ARRAY | STRUCT )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
@@ -20559,8 +20871,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -20580,7 +20896,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "cfscriptKeywords"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:916:1: cfscriptKeywords : ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | FINALLY | SWITCH | CASE | DEFAULT | IMPORT );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:920:1: cfscriptKeywords : ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | FINALLY | SWITCH | CASE | DEFAULT | IMPORT );
     public final CFScriptParser.cfscriptKeywords_return cfscriptKeywords() throws RecognitionException {
         CFScriptParser.cfscriptKeywords_return retval = new CFScriptParser.cfscriptKeywords_return();
         retval.start = input.LT(1);
@@ -20596,7 +20912,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 80) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:917:3: ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | FINALLY | SWITCH | CASE | DEFAULT | IMPORT )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:921:3: ( IF | ELSE | BREAK | CONTINUE | FUNCTION | RETURN | WHILE | DO | FOR | IN | TRY | CATCH | FINALLY | SWITCH | CASE | DEFAULT | IMPORT )
             // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:
             {
             root_0 = (CommonTree)adaptor.nil();
@@ -20633,8 +20949,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -20654,7 +20974,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "primaryExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:936:1: primaryExpression : ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:940:1: primaryExpression : ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier );
     public final CFScriptParser.primaryExpression_return primaryExpression() throws RecognitionException {
         CFScriptParser.primaryExpression_return retval = new CFScriptParser.primaryExpression_return();
         retval.start = input.LT(1);
@@ -20692,7 +21012,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 81) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:937:2: ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:2: ( STRING_LITERAL | BOOLEAN_LITERAL | FLOATING_POINT_LITERAL | INTEGER_LITERAL | implicitArray | implicitStruct | '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !| identifier )
             int alt92=8;
             int LA92_0 = input.LA(1);
 
@@ -20733,7 +21053,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt92) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:937:4: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:4: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20749,7 +21069,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:938:4: BOOLEAN_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:942:4: BOOLEAN_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20765,7 +21085,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:939:4: FLOATING_POINT_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:943:4: FLOATING_POINT_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20781,7 +21101,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 4 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:940:4: INTEGER_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:4: INTEGER_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20797,7 +21117,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 5 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:941:4: implicitArray
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:945:4: implicitArray
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20812,7 +21132,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 6 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:942:4: implicitStruct
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:946:4: implicitStruct
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20827,14 +21147,14 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 7 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:4: '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:4: '(' ! ( LT !)* assignmentExpression ( LT !)* ')' !
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
                     char_literal398=(Token)match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_primaryExpression5267); if (state.failed) return retval;
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:11: ( LT !)*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:11: ( LT !)*
                     loop90:
                     do {
                         int alt90=2;
@@ -20847,7 +21167,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt90) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:11: LT !
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:11: LT !
                     	    {
                     	    LT399=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5270); if (state.failed) return retval;
 
@@ -20867,7 +21187,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, assignmentExpression400.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:37: ( LT !)*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:37: ( LT !)*
                     loop91:
                     do {
                         int alt91=2;
@@ -20880,7 +21200,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt91) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:944:37: LT !
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:37: LT !
                     	    {
                     	    LT401=(Token)match(input,LT,FOLLOW_LT_in_primaryExpression5276); if (state.failed) return retval;
 
@@ -20898,7 +21218,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 8 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:945:4: identifier
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:4: identifier
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -20926,8 +21246,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -20947,7 +21271,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitArray"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:948:1: implicitArray : lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:952:1: implicitArray : lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) ;
     public final CFScriptParser.implicitArray_return implicitArray() throws RecognitionException {
         CFScriptParser.implicitArray_return retval = new CFScriptParser.implicitArray_return();
         retval.start = input.LT(1);
@@ -20969,14 +21293,14 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 82) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:3: (lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:5: lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:3: (lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:5: lc= LEFTBRACKET ( implicitArrayElements )? RIGHTBRACKET
             {
             lc=(Token)match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_implicitArray5300); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LEFTBRACKET.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:20: ( implicitArrayElements )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:20: ( implicitArrayElements )?
             int alt93=2;
             int LA93_0 = input.LA(1);
 
@@ -20985,7 +21309,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt93) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:20: implicitArrayElements
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:20: implicitArrayElements
                     {
                     pushFollow(FOLLOW_implicitArrayElements_in_implicitArray5302);
                     implicitArrayElements404=implicitArrayElements();
@@ -21017,16 +21341,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 949:56: -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
+            // 953:56: -> ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:59: ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:59: ^( IMPLICITARRAY[$lc] ( implicitArrayElements )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(IMPLICITARRAY, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:949:80: ( implicitArrayElements )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:80: ( implicitArrayElements )?
                 if ( stream_implicitArrayElements.hasNext() ) {
                     adaptor.addChild(root_1, stream_implicitArrayElements.nextTree());
 
@@ -21056,8 +21380,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -21077,7 +21405,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitArrayElements"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:952:1: implicitArrayElements : impliesExpression ( ',' ! impliesExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:956:1: implicitArrayElements : impliesExpression ( ',' ! impliesExpression )* ;
     public final CFScriptParser.implicitArrayElements_return implicitArrayElements() throws RecognitionException {
         CFScriptParser.implicitArrayElements_return retval = new CFScriptParser.implicitArrayElements_return();
         retval.start = input.LT(1);
@@ -21097,8 +21425,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 83) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:3: ( impliesExpression ( ',' ! impliesExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:5: impliesExpression ( ',' ! impliesExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:3: ( impliesExpression ( ',' ! impliesExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:5: impliesExpression ( ',' ! impliesExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -21110,7 +21438,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, impliesExpression406.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:23: ( ',' ! impliesExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:23: ( ',' ! impliesExpression )*
             loop94:
             do {
                 int alt94=2;
@@ -21123,7 +21451,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt94) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:953:25: ',' ! impliesExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:25: ',' ! impliesExpression
             	    {
             	    char_literal407=(Token)match(input,157,FOLLOW_157_in_implicitArrayElements5335); if (state.failed) return retval;
 
@@ -21157,8 +21485,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -21178,7 +21510,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStruct"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:956:1: implicitStruct : lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:960:1: implicitStruct : lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) ;
     public final CFScriptParser.implicitStruct_return implicitStruct() throws RecognitionException {
         CFScriptParser.implicitStruct_return retval = new CFScriptParser.implicitStruct_return();
         retval.start = input.LT(1);
@@ -21200,14 +21532,14 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 84) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:3: (lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:5: lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:3: (lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? ) )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:5: lc= LEFTCURLYBRACKET ( implicitStructElements )? RIGHTCURLYBRACKET
             {
             lc=(Token)match(input,LEFTCURLYBRACKET,FOLLOW_LEFTCURLYBRACKET_in_implicitStruct5358); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LEFTCURLYBRACKET.add(lc);
 
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:25: ( implicitStructElements )?
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:25: ( implicitStructElements )?
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -21216,7 +21548,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt95) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:25: implicitStructElements
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:25: implicitStructElements
                     {
                     pushFollow(FOLLOW_implicitStructElements_in_implicitStruct5360);
                     implicitStructElements409=implicitStructElements();
@@ -21248,16 +21580,16 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 957:67: -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
+            // 961:67: -> ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
             {
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:70: ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:70: ^( IMPLICITSTRUCT[$lc] ( implicitStructElements )? )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(
                 (CommonTree)adaptor.create(IMPLICITSTRUCT, lc)
                 , root_1);
 
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:957:92: ( implicitStructElements )?
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:92: ( implicitStructElements )?
                 if ( stream_implicitStructElements.hasNext() ) {
                     adaptor.addChild(root_1, stream_implicitStructElements.nextTree());
 
@@ -21287,8 +21619,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -21308,7 +21644,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructElements"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:960:1: implicitStructElements : implicitStructExpression ( ',' implicitStructExpression )* ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:964:1: implicitStructElements : implicitStructExpression ( ',' implicitStructExpression )* ;
     public final CFScriptParser.implicitStructElements_return implicitStructElements() throws RecognitionException {
         CFScriptParser.implicitStructElements_return retval = new CFScriptParser.implicitStructElements_return();
         retval.start = input.LT(1);
@@ -21328,8 +21664,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 85) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:3: ( implicitStructExpression ( ',' implicitStructExpression )* )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:5: implicitStructExpression ( ',' implicitStructExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:3: ( implicitStructExpression ( ',' implicitStructExpression )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:5: implicitStructExpression ( ',' implicitStructExpression )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -21341,7 +21677,7 @@ public TreeAdaptor getTreeAdaptor() {
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, implicitStructExpression411.getTree());
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:30: ( ',' implicitStructExpression )*
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:30: ( ',' implicitStructExpression )*
             loop96:
             do {
                 int alt96=2;
@@ -21354,7 +21690,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt96) {
             	case 1 :
-            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:961:32: ',' implicitStructExpression
+            	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:32: ',' implicitStructExpression
             	    {
             	    char_literal412=(Token)match(input,157,FOLLOW_157_in_implicitStructElements5392); if (state.failed) return retval;
             	    if ( state.backtracking==0 ) {
@@ -21394,8 +21730,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -21415,7 +21755,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:964:1: implicitStructExpression : implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression ;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:968:1: implicitStructExpression : implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression ;
     public final CFScriptParser.implicitStructExpression_return implicitStructExpression() throws RecognitionException {
         CFScriptParser.implicitStructExpression_return retval = new CFScriptParser.implicitStructExpression_return();
         retval.start = input.LT(1);
@@ -21435,8 +21775,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 86) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:3: ( implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression )
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:965:5: implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:3: ( implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:5: implicitStructKeyExpression ( COLON | EQUALSOP ) ^ impliesExpression
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -21488,8 +21828,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -21509,7 +21853,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "implicitStructKeyExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:968:1: implicitStructKeyExpression : ( identifier ( DOT ( identifier | reservedWord ) )* | additiveExpression ( CONCAT ^ additiveExpression )* | STRING_LITERAL );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:972:1: implicitStructKeyExpression : ( identifier ( DOT ( identifier | reservedWord ) )* | additiveExpression ( CONCAT ^ additiveExpression )* | STRING_LITERAL );
     public final CFScriptParser.implicitStructKeyExpression_return implicitStructKeyExpression() throws RecognitionException {
         CFScriptParser.implicitStructKeyExpression_return retval = new CFScriptParser.implicitStructKeyExpression_return();
         retval.start = input.LT(1);
@@ -21539,7 +21883,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 87) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:3: ( identifier ( DOT ( identifier | reservedWord ) )* | additiveExpression ( CONCAT ^ additiveExpression )* | STRING_LITERAL )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:3: ( identifier ( DOT ( identifier | reservedWord ) )* | additiveExpression ( CONCAT ^ additiveExpression )* | STRING_LITERAL )
             int alt100=3;
             switch ( input.LA(1) ) {
             case COMPONENT:
@@ -22150,7 +22494,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt100) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:5: identifier ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:5: identifier ( DOT ( identifier | reservedWord ) )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -22162,7 +22506,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier417.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:16: ( DOT ( identifier | reservedWord ) )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:16: ( DOT ( identifier | reservedWord ) )*
                     loop98:
                     do {
                         int alt98=2;
@@ -22175,7 +22519,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt98) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:18: DOT ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:18: DOT ( identifier | reservedWord )
                     	    {
                     	    DOT418=(Token)match(input,DOT,FOLLOW_DOT_in_implicitStructKeyExpression5443); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -22185,7 +22529,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	    adaptor.addChild(root_0, DOT418_tree);
                     	    }
 
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:22: ( identifier | reservedWord )
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:22: ( identifier | reservedWord )
                     	    int alt97=2;
                     	    switch ( input.LA(1) ) {
                     	    case ABORT:
@@ -22313,7 +22657,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                     	    switch (alt97) {
                     	        case 1 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:24: identifier
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:24: identifier
                     	            {
                     	            pushFollow(FOLLOW_identifier_in_implicitStructKeyExpression5447);
                     	            identifier419=identifier();
@@ -22325,7 +22669,7 @@ public TreeAdaptor getTreeAdaptor() {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:37: reservedWord
+                    	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:37: reservedWord
                     	            {
                     	            pushFollow(FOLLOW_reservedWord_in_implicitStructKeyExpression5451);
                     	            reservedWord420=reservedWord();
@@ -22352,7 +22696,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:5: additiveExpression ( CONCAT ^ additiveExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:5: additiveExpression ( CONCAT ^ additiveExpression )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -22364,7 +22708,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, additiveExpression421.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:24: ( CONCAT ^ additiveExpression )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:24: ( CONCAT ^ additiveExpression )*
                     loop99:
                     do {
                         int alt99=2;
@@ -22377,7 +22721,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt99) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:26: CONCAT ^ additiveExpression
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:26: CONCAT ^ additiveExpression
                     	    {
                     	    CONCAT422=(Token)match(input,CONCAT,FOLLOW_CONCAT_in_implicitStructKeyExpression5466); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -22406,7 +22750,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:971:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:975:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -22435,8 +22779,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -22456,7 +22804,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "newComponentExpression"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:1: newComponentExpression : NEW ^ componentPath LEFTPAREN argumentList ')' !;
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:978:1: newComponentExpression : NEW ^ componentPath LEFTPAREN argumentList ')' !;
     public final CFScriptParser.newComponentExpression_return newComponentExpression() throws RecognitionException {
         CFScriptParser.newComponentExpression_return retval = new CFScriptParser.newComponentExpression_return();
         retval.start = input.LT(1);
@@ -22480,8 +22828,8 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 88) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:975:3: ( NEW ^ componentPath LEFTPAREN argumentList ')' !)
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:975:5: NEW ^ componentPath LEFTPAREN argumentList ')' !
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:979:3: ( NEW ^ componentPath LEFTPAREN argumentList ')' !)
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:979:5: NEW ^ componentPath LEFTPAREN argumentList ')' !
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -22532,8 +22880,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -22553,7 +22905,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "componentPath"
-    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:978:1: componentPath : ( STRING_LITERAL | identifier ( DOT identifier )* );
+    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:982:1: componentPath : ( STRING_LITERAL | identifier ( DOT identifier )* );
     public final CFScriptParser.componentPath_return componentPath() throws RecognitionException {
         CFScriptParser.componentPath_return retval = new CFScriptParser.componentPath_return();
         retval.start = input.LT(1);
@@ -22575,7 +22927,7 @@ public TreeAdaptor getTreeAdaptor() {
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 89) ) { return retval; }
 
-            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:979:3: ( STRING_LITERAL | identifier ( DOT identifier )* )
+            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:983:3: ( STRING_LITERAL | identifier ( DOT identifier )* )
             int alt102=2;
             int LA102_0 = input.LA(1);
 
@@ -22598,7 +22950,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt102) {
                 case 1 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:979:5: STRING_LITERAL
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:983:5: STRING_LITERAL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -22614,7 +22966,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:980:5: identifier ( DOT identifier )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:984:5: identifier ( DOT identifier )*
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -22626,7 +22978,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, identifier431.getTree());
 
-                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:980:16: ( DOT identifier )*
+                    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:984:16: ( DOT identifier )*
                     loop101:
                     do {
                         int alt101=2;
@@ -22645,7 +22997,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                         switch (alt101) {
                     	case 1 :
-                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:980:18: DOT identifier
+                    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:984:18: DOT identifier
                     	    {
                     	    DOT432=(Token)match(input,DOT,FOLLOW_DOT_in_componentPath5526); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
@@ -22687,8 +23039,12 @@ public TreeAdaptor getTreeAdaptor() {
 
         	catch (RecognitionException e) {
         	  //System.out.println("cfscript.g");
-        	  errorReporter.reportError(e);
-        	  recover(getTokenStream(),e);
+        	  if(e != null) {
+        		  errorReporter.reportError(e); 
+        		  recover(getTokenStream(),e);
+        	  } else {
+              System.out.println("null!");
+        	  }
         	}
 
         finally {
@@ -22702,8 +23058,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred5_CFScript
     public final void synpred5_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:454:5: ( functionDeclaration )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:454:5: functionDeclaration
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:458:5: ( functionDeclaration )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:458:5: functionDeclaration
         {
         pushFollow(FOLLOW_functionDeclaration_in_synpred5_CFScript1630);
         functionDeclaration();
@@ -22718,8 +23074,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred6_CFScript
     public final void synpred6_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:6: ( functionAccessType )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:6: functionAccessType
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:6: ( functionAccessType )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:6: functionAccessType
         {
         pushFollow(FOLLOW_functionAccessType_in_synpred6_CFScript1650);
         functionAccessType();
@@ -22734,8 +23090,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred8_CFScript
     public final void synpred8_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:83: ( parameterList )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:459:83: parameterList
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:83: ( parameterList )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:463:83: parameterList
         {
         pushFollow(FOLLOW_parameterList_in_synpred8_CFScript1668);
         parameterList();
@@ -22750,8 +23106,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred16_CFScript
     public final void synpred16_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:5: ( type )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:477:5: type
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:481:5: ( type )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:481:5: type
         {
         pushFollow(FOLLOW_type_in_synpred16_CFScript1817);
         type();
@@ -22766,8 +23122,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred17_CFScript
     public final void synpred17_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:24: ( identifier )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:24: identifier
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:24: ( identifier )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:24: identifier
         {
         pushFollow(FOLLOW_identifier_in_synpred17_CFScript1831);
         identifier();
@@ -22782,8 +23138,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred19_CFScript
     public final void synpred19_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:5: ( identifier ( DOT ( identifier | reservedWord ) )* )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:5: identifier ( DOT ( identifier | reservedWord ) )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:5: ( identifier ( DOT ( identifier | reservedWord ) )* )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:5: identifier ( DOT ( identifier | reservedWord ) )*
         {
         pushFollow(FOLLOW_identifier_in_synpred19_CFScript1823);
         identifier();
@@ -22791,7 +23147,7 @@ public TreeAdaptor getTreeAdaptor() {
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:16: ( DOT ( identifier | reservedWord ) )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:16: ( DOT ( identifier | reservedWord ) )*
         loop106:
         do {
             int alt106=2;
@@ -22804,11 +23160,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt106) {
         	case 1 :
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:18: DOT ( identifier | reservedWord )
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:18: DOT ( identifier | reservedWord )
         	    {
         	    match(input,DOT,FOLLOW_DOT_in_synpred19_CFScript1827); if (state.failed) return ;
 
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:22: ( identifier | reservedWord )
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:22: ( identifier | reservedWord )
         	    int alt105=2;
         	    switch ( input.LA(1) ) {
         	    case ABORT:
@@ -22936,7 +23292,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         	    switch (alt105) {
         	        case 1 :
-        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:24: identifier
+        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:24: identifier
         	            {
         	            pushFollow(FOLLOW_identifier_in_synpred19_CFScript1831);
         	            identifier();
@@ -22947,7 +23303,7 @@ public TreeAdaptor getTreeAdaptor() {
         	            }
         	            break;
         	        case 2 :
-        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:478:37: reservedWord
+        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:482:37: reservedWord
         	            {
         	            pushFollow(FOLLOW_reservedWord_in_synpred19_CFScript1835);
         	            reservedWord();
@@ -22977,8 +23333,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred22_CFScript
     public final void synpred22_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:6: ( REQUIRED )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:6: REQUIRED
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:6: ( REQUIRED )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:6: REQUIRED
         {
         match(input,REQUIRED,FOLLOW_REQUIRED_in_synpred22_CFScript1890); if (state.failed) return ;
 
@@ -22989,8 +23345,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred23_CFScript
     public final void synpred23_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:18: ( parameterType )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:488:18: parameterType
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:18: ( parameterType )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:492:18: parameterType
         {
         pushFollow(FOLLOW_parameterType_in_synpred23_CFScript1895);
         parameterType();
@@ -23005,8 +23361,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred28_CFScript
     public final void synpred28_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:25: ( statement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:510:25: statement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:25: ( statement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:514:25: statement
         {
         pushFollow(FOLLOW_statement_in_synpred28_CFScript2095);
         statement();
@@ -23021,8 +23377,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred30_CFScript
     public final void synpred30_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:7: ( tryCatchStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:518:7: tryCatchStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: ( tryCatchStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: tryCatchStatement
         {
         pushFollow(FOLLOW_tryCatchStatement_in_synpred30_CFScript2142);
         tryCatchStatement();
@@ -23037,8 +23393,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred31_CFScript
     public final void synpred31_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:519:7: ( ifStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:519:7: ifStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: ( ifStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: ifStatement
         {
         pushFollow(FOLLOW_ifStatement_in_synpred31_CFScript2150);
         ifStatement();
@@ -23053,8 +23409,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred32_CFScript
     public final void synpred32_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:520:7: ( whileStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:520:7: whileStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: ( whileStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: whileStatement
         {
         pushFollow(FOLLOW_whileStatement_in_synpred32_CFScript2158);
         whileStatement();
@@ -23069,8 +23425,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred33_CFScript
     public final void synpred33_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:521:7: ( doWhileStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:521:7: doWhileStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: ( doWhileStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: doWhileStatement
         {
         pushFollow(FOLLOW_doWhileStatement_in_synpred33_CFScript2166);
         doWhileStatement();
@@ -23085,8 +23441,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred34_CFScript
     public final void synpred34_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: ( forStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:522:7: forStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: ( forStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: forStatement
         {
         pushFollow(FOLLOW_forStatement_in_synpred34_CFScript2174);
         forStatement();
@@ -23101,8 +23457,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred35_CFScript
     public final void synpred35_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: ( switchStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:523:7: switchStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: ( switchStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: switchStatement
         {
         pushFollow(FOLLOW_switchStatement_in_synpred35_CFScript2182);
         switchStatement();
@@ -23117,8 +23473,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred36_CFScript
     public final void synpred36_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: ( CONTINUE SEMICOLON )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:524:7: CONTINUE SEMICOLON
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: ( CONTINUE SEMICOLON )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: CONTINUE SEMICOLON
         {
         match(input,CONTINUE,FOLLOW_CONTINUE_in_synpred36_CFScript2190); if (state.failed) return ;
 
@@ -23131,8 +23487,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred37_CFScript
     public final void synpred37_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: ( BREAK SEMICOLON )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:525:7: BREAK SEMICOLON
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: ( BREAK SEMICOLON )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: BREAK SEMICOLON
         {
         match(input,BREAK,FOLLOW_BREAK_in_synpred37_CFScript2201); if (state.failed) return ;
 
@@ -23145,8 +23501,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred38_CFScript
     public final void synpred38_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: ( returnStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:526:7: returnStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:530:7: ( returnStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:530:7: returnStatement
         {
         pushFollow(FOLLOW_returnStatement_in_synpred38_CFScript2212);
         returnStatement();
@@ -23161,8 +23517,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred39_CFScript
     public final void synpred39_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: ( tagOperatorStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:527:7: tagOperatorStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:531:7: ( tagOperatorStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:531:7: tagOperatorStatement
         {
         pushFollow(FOLLOW_tagOperatorStatement_in_synpred39_CFScript2220);
         tagOperatorStatement();
@@ -23177,8 +23533,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred40_CFScript
     public final void synpred40_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:528:7: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:532:7: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:532:7: compoundStatement
         {
         pushFollow(FOLLOW_compoundStatement_in_synpred40_CFScript2228);
         compoundStatement();
@@ -23193,8 +23549,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred41_CFScript
     public final void synpred41_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: ( localAssignmentExpression SEMICOLON )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:529:7: localAssignmentExpression SEMICOLON
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:533:7: ( localAssignmentExpression SEMICOLON )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:533:7: localAssignmentExpression SEMICOLON
         {
         pushFollow(FOLLOW_localAssignmentExpression_in_synpred41_CFScript2237);
         localAssignmentExpression();
@@ -23211,8 +23567,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred43_CFScript
     public final void synpred43_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:31: ( ELSE statement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:544:31: ELSE statement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:31: ( ELSE statement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:548:31: ELSE statement
         {
         match(input,ELSE,FOLLOW_ELSE_in_synpred43_CFScript2326); if (state.failed) return ;
 
@@ -23229,8 +23585,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred44_CFScript
     public final void synpred44_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: ( VAR )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: VAR
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: ( VAR )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: VAR
         {
         match(input,VAR,FOLLOW_VAR_in_synpred44_CFScript2393); if (state.failed) return ;
 
@@ -23241,14 +23597,14 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred48_CFScript
     public final void synpred48_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:5: ( FOR LEFTPAREN ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN statement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:5: FOR LEFTPAREN ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN statement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:5: ( FOR LEFTPAREN ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN statement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:5: FOR LEFTPAREN ( VAR )? ( assignmentExpression )? SEMICOLON ( assignmentExpression )? SEMICOLON ( assignmentExpression )? RIGHTPAREN statement
         {
         match(input,FOR,FOLLOW_FOR_in_synpred48_CFScript2387); if (state.failed) return ;
 
         match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred48_CFScript2390); if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: ( VAR )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: ( VAR )?
         int alt108=2;
         int LA108_0 = input.LA(1);
 
@@ -23261,7 +23617,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
         switch (alt108) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:21: VAR
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:21: VAR
                 {
                 match(input,VAR,FOLLOW_VAR_in_synpred48_CFScript2393); if (state.failed) return ;
 
@@ -23271,7 +23627,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
 
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:26: ( assignmentExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:26: ( assignmentExpression )?
         int alt109=2;
         int LA109_0 = input.LA(1);
 
@@ -23280,7 +23636,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
         switch (alt109) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:28: assignmentExpression
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:28: assignmentExpression
                 {
                 pushFollow(FOLLOW_assignmentExpression_in_synpred48_CFScript2398);
                 assignmentExpression();
@@ -23296,7 +23652,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         match(input,SEMICOLON,FOLLOW_SEMICOLON_in_synpred48_CFScript2403); if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:62: ( assignmentExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:62: ( assignmentExpression )?
         int alt110=2;
         int LA110_0 = input.LA(1);
 
@@ -23305,7 +23661,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
         switch (alt110) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:64: assignmentExpression
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:64: assignmentExpression
                 {
                 pushFollow(FOLLOW_assignmentExpression_in_synpred48_CFScript2407);
                 assignmentExpression();
@@ -23321,7 +23677,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         match(input,SEMICOLON,FOLLOW_SEMICOLON_in_synpred48_CFScript2412); if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:99: ( assignmentExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:99: ( assignmentExpression )?
         int alt111=2;
         int LA111_0 = input.LA(1);
 
@@ -23330,7 +23686,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
         switch (alt111) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:556:101: assignmentExpression
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:560:101: assignmentExpression
                 {
                 pushFollow(FOLLOW_assignmentExpression_in_synpred48_CFScript2417);
                 assignmentExpression();
@@ -23359,8 +23715,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred49_CFScript
     public final void synpred49_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: ( VAR )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:5: VAR
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: ( VAR )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:5: VAR
         {
         match(input,VAR,FOLLOW_VAR_in_synpred49_CFScript2461); if (state.failed) return ;
 
@@ -23371,8 +23727,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred50_CFScript
     public final void synpred50_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:29: ( identifier )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:561:29: identifier
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:29: ( identifier )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:29: identifier
         {
         pushFollow(FOLLOW_identifier_in_synpred50_CFScript2472);
         identifier();
@@ -23387,8 +23743,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred52_CFScript
     public final void synpred52_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:22: ( catchCondition )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:22: catchCondition
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:22: ( catchCondition )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:22: catchCondition
         {
         pushFollow(FOLLOW_catchCondition_in_synpred52_CFScript2501);
         catchCondition();
@@ -23403,8 +23759,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred53_CFScript
     public final void synpred53_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:40: ( finallyStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:565:40: finallyStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:40: ( finallyStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:569:40: finallyStatement
         {
         pushFollow(FOLLOW_finallyStatement_in_synpred53_CFScript2506);
         finallyStatement();
@@ -23419,8 +23775,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred61_CFScript
     public final void synpred61_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:40: ( statement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:596:40: statement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:40: ( statement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:600:40: statement
         {
         pushFollow(FOLLOW_statement_in_synpred61_CFScript2694);
         statement();
@@ -23435,8 +23791,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred63_CFScript
     public final void synpred63_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:24: ( statement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:598:24: statement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:24: ( statement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:602:24: statement
         {
         pushFollow(FOLLOW_statement_in_synpred63_CFScript2722);
         statement();
@@ -23451,8 +23807,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred71_CFScript
     public final void synpred71_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:610:5: ( propertyStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:610:5: propertyStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:614:5: ( propertyStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:614:5: propertyStatement
         {
         pushFollow(FOLLOW_propertyStatement_in_synpred71_CFScript2794);
         propertyStatement();
@@ -23467,8 +23823,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred77_CFScript
     public final void synpred77_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:21: ( paramStatementAttributes )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:21: paramStatementAttributes
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:21: ( paramStatementAttributes )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:21: paramStatementAttributes
         {
         pushFollow(FOLLOW_paramStatementAttributes_in_synpred77_CFScript2896);
         paramStatementAttributes();
@@ -23483,8 +23839,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred78_CFScript
     public final void synpred78_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:49: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:628:49: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:49: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:49: compoundStatement
         {
         pushFollow(FOLLOW_compoundStatement_in_synpred78_CFScript2901);
         compoundStatement();
@@ -23499,8 +23855,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred79_CFScript
     public final void synpred79_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:19: ( param )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:19: param
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:19: ( param )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:19: param
         {
         pushFollow(FOLLOW_param_in_synpred79_CFScript2938);
         param();
@@ -23515,8 +23871,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred80_CFScript
     public final void synpred80_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:28: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:632:28: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:28: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:636:28: compoundStatement
         {
         pushFollow(FOLLOW_compoundStatement_in_synpred80_CFScript2943);
         compoundStatement();
@@ -23531,8 +23887,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred88_CFScript
     public final void synpred88_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:43: ( compoundStatement )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:662:43: compoundStatement
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:43: ( compoundStatement )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:666:43: compoundStatement
         {
         pushFollow(FOLLOW_compoundStatement_in_synpred88_CFScript3081);
         compoundStatement();
@@ -23547,8 +23903,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred92_CFScript
     public final void synpred92_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:7: ( param )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:689:7: param
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:7: ( param )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:693:7: param
         {
         pushFollow(FOLLOW_param_in_synpred92_CFScript3305);
         param();
@@ -23563,8 +23919,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred93_CFScript
     public final void synpred93_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:21: ( EQUALSOP impliesExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:21: EQUALSOP impliesExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:21: ( EQUALSOP impliesExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:21: EQUALSOP impliesExpression
         {
         match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred93_CFScript3372); if (state.failed) return ;
 
@@ -23581,8 +23937,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred94_CFScript
     public final void synpred94_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:4: ( VAR identifier ( EQUALSOP impliesExpression )? )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:4: VAR identifier ( EQUALSOP impliesExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:4: ( VAR identifier ( EQUALSOP impliesExpression )? )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:4: VAR identifier ( EQUALSOP impliesExpression )?
         {
         match(input,VAR,FOLLOW_VAR_in_synpred94_CFScript3366); if (state.failed) return ;
 
@@ -23592,7 +23948,7 @@ public TreeAdaptor getTreeAdaptor() {
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:19: ( EQUALSOP impliesExpression )?
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:19: ( EQUALSOP impliesExpression )?
         int alt114=2;
         int LA114_0 = input.LA(1);
 
@@ -23601,7 +23957,7 @@ public TreeAdaptor getTreeAdaptor() {
         }
         switch (alt114) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:704:21: EQUALSOP impliesExpression
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:708:21: EQUALSOP impliesExpression
                 {
                 match(input,EQUALSOP,FOLLOW_EQUALSOP_in_synpred94_CFScript3372); if (state.failed) return ;
 
@@ -23624,8 +23980,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred101_CFScript
     public final void synpred101_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:25: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:709:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:25: ( ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:25: ( EQUALSOP | PLUSEQUALS | MINUSEQUALS | STAREQUALS | SLASHEQUALS | MODEQUALS | CONCATEQUALS ) impliesExpression
         {
         if ( input.LA(1)==CONCATEQUALS||input.LA(1)==EQUALSOP||input.LA(1)==MINUSEQUALS||input.LA(1)==MODEQUALS||input.LA(1)==PLUSEQUALS||input.LA(1)==SLASHEQUALS||input.LA(1)==STAREQUALS ) {
             input.consume();
@@ -23652,8 +24008,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred102_CFScript
     public final void synpred102_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:4: ( ternary )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:713:4: ternary
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:717:4: ( ternary )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:717:4: ternary
         {
         pushFollow(FOLLOW_ternary_in_synpred102_CFScript3465);
         ternary();
@@ -23668,10 +24024,10 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred115_CFScript
     public final void synpred115_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: ( ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: ( ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 ) concatenationExpression
         {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:9: ( equalityOperator5 | equalityOperator3 | equalityOperator2 | equalityOperator1 )
         int alt115=4;
         switch ( input.LA(1) ) {
         case LESS:
@@ -23800,7 +24156,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         switch (alt115) {
             case 1 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:11: equalityOperator5
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:11: equalityOperator5
                 {
                 pushFollow(FOLLOW_equalityOperator5_in_synpred115_CFScript3670);
                 equalityOperator5();
@@ -23811,7 +24167,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 2 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:32: equalityOperator3
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:32: equalityOperator3
                 {
                 pushFollow(FOLLOW_equalityOperator3_in_synpred115_CFScript3675);
                 equalityOperator3();
@@ -23822,7 +24178,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 3 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:54: equalityOperator2
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:54: equalityOperator2
                 {
                 pushFollow(FOLLOW_equalityOperator2_in_synpred115_CFScript3681);
                 equalityOperator2();
@@ -23833,7 +24189,7 @@ public TreeAdaptor getTreeAdaptor() {
                 }
                 break;
             case 4 :
-                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:744:75: equalityOperator1
+                // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:748:75: equalityOperator1
                 {
                 pushFollow(FOLLOW_equalityOperator1_in_synpred115_CFScript3686);
                 equalityOperator1();
@@ -23860,8 +24216,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred139_CFScript
     public final void synpred139_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:20: ( ( PLUS | MINUS ) modExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:789:20: ( PLUS | MINUS ) modExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:20: ( ( PLUS | MINUS ) modExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:793:20: ( PLUS | MINUS ) modExpression
         {
         if ( input.LA(1)==MINUS||input.LA(1)==PLUS ) {
             input.consume();
@@ -23888,8 +24244,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred150_CFScript
     public final void synpred150_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:54: ( LEFTPAREN argumentList ')' )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:54: LEFTPAREN argumentList ')'
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:54: ( LEFTPAREN argumentList ')' )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:54: LEFTPAREN argumentList ')'
         {
         match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred150_CFScript4399); if (state.failed) return ;
 
@@ -23908,8 +24264,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred152_CFScript
     public final void synpred152_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:4: ( newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:4: ( newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )* )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:4: newComponentExpression ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
         {
         pushFollow(FOLLOW_newComponentExpression_in_synpred152_CFScript4391);
         newComponentExpression();
@@ -23917,7 +24273,7 @@ public TreeAdaptor getTreeAdaptor() {
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:27: ( DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )* )*
         loop118:
         do {
             int alt118=2;
@@ -23930,7 +24286,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt118) {
         	case 1 :
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:28: DOT primaryExpressionIRW ( LEFTPAREN argumentList ')' )*
         	    {
         	    match(input,DOT,FOLLOW_DOT_in_synpred152_CFScript4394); if (state.failed) return ;
 
@@ -23940,7 +24296,7 @@ public TreeAdaptor getTreeAdaptor() {
         	    state._fsp--;
         	    if (state.failed) return ;
 
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:53: ( LEFTPAREN argumentList ')' )*
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:53: ( LEFTPAREN argumentList ')' )*
         	    loop117:
         	    do {
         	        int alt117=2;
@@ -23953,7 +24309,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         	        switch (alt117) {
         	    	case 1 :
-        	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:813:54: LEFTPAREN argumentList ')'
+        	    	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:817:54: LEFTPAREN argumentList ')'
         	    	    {
         	    	    match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred152_CFScript4399); if (state.failed) return ;
 
@@ -23990,8 +24346,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred153_CFScript
     public final void synpred153_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:5: ( memberExpression MINUSMINUS )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:814:5: memberExpression MINUSMINUS
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:5: ( memberExpression MINUSMINUS )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:818:5: memberExpression MINUSMINUS
         {
         pushFollow(FOLLOW_memberExpression_in_synpred153_CFScript4413);
         memberExpression();
@@ -24008,8 +24364,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred154_CFScript
     public final void synpred154_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:5: ( memberExpression PLUSPLUS )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:815:5: memberExpression PLUSPLUS
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:5: ( memberExpression PLUSPLUS )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:819:5: memberExpression PLUSPLUS
         {
         pushFollow(FOLLOW_memberExpression_in_synpred154_CFScript4429);
         memberExpression();
@@ -24026,8 +24382,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred156_CFScript
     public final void synpred156_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:5: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:827:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:5: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:831:5: DOT primaryExpressionIRW LEFTPAREN argumentList ')'
         {
         match(input,DOT,FOLLOW_DOT_in_synpred156_CFScript4502); if (state.failed) return ;
 
@@ -24054,8 +24410,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred157_CFScript
     public final void synpred157_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:828:8: ( LEFTPAREN argumentList RIGHTPAREN )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:828:8: LEFTPAREN argumentList RIGHTPAREN
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:832:8: ( LEFTPAREN argumentList RIGHTPAREN )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:832:8: LEFTPAREN argumentList RIGHTPAREN
         {
         match(input,LEFTPAREN,FOLLOW_LEFTPAREN_in_synpred157_CFScript4533); if (state.failed) return ;
 
@@ -24074,8 +24430,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred158_CFScript
     public final void synpred158_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:7: ( LEFTBRACKET impliesExpression RIGHTBRACKET )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:829:7: LEFTBRACKET impliesExpression RIGHTBRACKET
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:833:7: ( LEFTBRACKET impliesExpression RIGHTBRACKET )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:833:7: LEFTBRACKET impliesExpression RIGHTBRACKET
         {
         match(input,LEFTBRACKET,FOLLOW_LEFTBRACKET_in_synpred158_CFScript4556); if (state.failed) return ;
 
@@ -24094,8 +24450,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred159_CFScript
     public final void synpred159_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:7: ( DOT primaryExpressionIRW )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:830:7: DOT primaryExpressionIRW
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:7: ( DOT primaryExpressionIRW )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:834:7: DOT primaryExpressionIRW
         {
         match(input,DOT,FOLLOW_DOT_in_synpred159_CFScript4579); if (state.failed) return ;
 
@@ -24112,8 +24468,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred164_CFScript
     public final void synpred164_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:4: ( primaryExpression )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:850:4: primaryExpression
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:4: ( primaryExpression )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:854:4: primaryExpression
         {
         pushFollow(FOLLOW_primaryExpression_in_synpred164_CFScript4683);
         primaryExpression();
@@ -24128,8 +24484,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred197_CFScript
     public final void synpred197_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: ( DEFAULT )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:886:5: DEFAULT
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:5: ( DEFAULT )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:890:5: DEFAULT
         {
         match(input,DEFAULT,FOLLOW_DEFAULT_in_synpred197_CFScript4958); if (state.failed) return ;
 
@@ -24140,8 +24496,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred250_CFScript
     public final void synpred250_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:24: ( identifier )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:24: identifier
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:24: ( identifier )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:24: identifier
         {
         pushFollow(FOLLOW_identifier_in_synpred250_CFScript5447);
         identifier();
@@ -24156,8 +24512,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred252_CFScript
     public final void synpred252_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:5: ( identifier ( DOT ( identifier | reservedWord ) )* )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:5: identifier ( DOT ( identifier | reservedWord ) )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:5: ( identifier ( DOT ( identifier | reservedWord ) )* )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:5: identifier ( DOT ( identifier | reservedWord ) )*
         {
         pushFollow(FOLLOW_identifier_in_synpred252_CFScript5439);
         identifier();
@@ -24165,7 +24521,7 @@ public TreeAdaptor getTreeAdaptor() {
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:16: ( DOT ( identifier | reservedWord ) )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:16: ( DOT ( identifier | reservedWord ) )*
         loop124:
         do {
             int alt124=2;
@@ -24178,11 +24534,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt124) {
         	case 1 :
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:18: DOT ( identifier | reservedWord )
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:18: DOT ( identifier | reservedWord )
         	    {
         	    match(input,DOT,FOLLOW_DOT_in_synpred252_CFScript5443); if (state.failed) return ;
 
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:22: ( identifier | reservedWord )
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:22: ( identifier | reservedWord )
         	    int alt123=2;
         	    switch ( input.LA(1) ) {
         	    case ABORT:
@@ -24310,7 +24666,7 @@ public TreeAdaptor getTreeAdaptor() {
 
         	    switch (alt123) {
         	        case 1 :
-        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:24: identifier
+        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:24: identifier
         	            {
         	            pushFollow(FOLLOW_identifier_in_synpred252_CFScript5447);
         	            identifier();
@@ -24321,7 +24677,7 @@ public TreeAdaptor getTreeAdaptor() {
         	            }
         	            break;
         	        case 2 :
-        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:969:37: reservedWord
+        	            // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:973:37: reservedWord
         	            {
         	            pushFollow(FOLLOW_reservedWord_in_synpred252_CFScript5451);
         	            reservedWord();
@@ -24351,8 +24707,8 @@ public TreeAdaptor getTreeAdaptor() {
 
     // $ANTLR start synpred254_CFScript
     public final void synpred254_CFScript_fragment() throws RecognitionException {
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:5: ( additiveExpression ( CONCAT additiveExpression )* )
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:5: additiveExpression ( CONCAT additiveExpression )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:5: ( additiveExpression ( CONCAT additiveExpression )* )
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:5: additiveExpression ( CONCAT additiveExpression )*
         {
         pushFollow(FOLLOW_additiveExpression_in_synpred254_CFScript5462);
         additiveExpression();
@@ -24360,7 +24716,7 @@ public TreeAdaptor getTreeAdaptor() {
         state._fsp--;
         if (state.failed) return ;
 
-        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:24: ( CONCAT additiveExpression )*
+        // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:24: ( CONCAT additiveExpression )*
         loop125:
         do {
             int alt125=2;
@@ -24373,7 +24729,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             switch (alt125) {
         	case 1 :
-        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:970:26: CONCAT additiveExpression
+        	    // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFScript.g:974:26: CONCAT additiveExpression
         	    {
         	    match(input,CONCAT,FOLLOW_CONCAT_in_synpred254_CFScript5466); if (state.failed) return ;
 
@@ -26361,7 +26717,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "488:17: ( parameterType )?";
+            return "492:17: ( parameterType )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -39761,7 +40117,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "517:1: statement : ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !);";
+            return "521:1: statement : ( tryCatchStatement | ifStatement | whileStatement | doWhileStatement | forStatement | switchStatement | CONTINUE SEMICOLON !| BREAK SEMICOLON !| returnStatement | tagOperatorStatement | compoundStatement | localAssignmentExpression SEMICOLON !| SEMICOLON !);";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -40293,7 +40649,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA43_transition;
         }
         public String getDescription() {
-            return "()* loopback of 628:20: ( paramStatementAttributes )*";
+            return "()* loopback of 632:20: ( paramStatementAttributes )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -41300,7 +41656,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA44_transition;
         }
         public String getDescription() {
-            return "628:48: ( compoundStatement )?";
+            return "632:48: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -41474,7 +41830,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA45_transition;
         }
         public String getDescription() {
-            return "()* loopback of 632:18: ( param )*";
+            return "()* loopback of 636:18: ( param )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -42481,7 +42837,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA46_transition;
         }
         public String getDescription() {
-            return "632:27: ( compoundStatement )?";
+            return "636:27: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -42650,7 +43006,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA47_transition;
         }
         public String getDescription() {
-            return "662:42: ( compoundStatement )?";
+            return "666:42: ( compoundStatement )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -42827,7 +43183,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA52_transition;
         }
         public String getDescription() {
-            return "704:19: ( EQUALSOP impliesExpression )?";
+            return "708:19: ( EQUALSOP impliesExpression )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -43030,7 +43386,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA63_transition;
         }
         public String getDescription() {
-            return "()* loopback of 744:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*";
+            return "()* loopback of 748:7: ( ( equalityOperator5 ^| equalityOperator3 ^| equalityOperator2 ^| equalityOperator1 ^) concatenationExpression )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -43314,7 +43670,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA69_transition;
         }
         public String getDescription() {
-            return "()* loopback of 789:18: ( ( PLUS ^| MINUS ^) modExpression )*";
+            return "()* loopback of 793:18: ( ( PLUS ^| MINUS ^) modExpression )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -43542,7 +43898,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA75_transition;
         }
         public String getDescription() {
-            return "()* loopback of 813:53: ( LEFTPAREN argumentList ')' )*";
+            return "()* loopback of 817:53: ( LEFTPAREN argumentList ')' )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -43753,7 +44109,7 @@ public TreeAdaptor getTreeAdaptor() {
             this.transition = DFA79_transition;
         }
         public String getDescription() {
-            return "()* loopback of 826:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*";
+            return "()* loopback of 830:3: ( DOT primaryExpressionIRW LEFTPAREN argumentList ')' -> ^( JAVAMETHODCALL $memberExpressionB primaryExpressionIRW argumentList ) | LEFTPAREN argumentList RIGHTPAREN -> ^( FUNCTIONCALL $memberExpressionB argumentList ) | LEFTBRACKET impliesExpression RIGHTBRACKET -> ^( LEFTBRACKET $memberExpressionB impliesExpression ) | DOT primaryExpressionIRW -> ^( DOT $memberExpressionB primaryExpressionIRW ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

@@ -197,8 +197,12 @@ tokens {
 @parser::rulecatch {
 	catch (RecognitionException e) {
 	  //System.out.println("cfscript.g");
-	  errorReporter.reportError(e);
-	  recover(getTokenStream(),e);
+	  if(e != null) {
+		  errorReporter.reportError(e); 
+		  recover(getTokenStream(),e);
+	  } else {
+      System.out.println("null!");
+	  }
 	}
 }
 

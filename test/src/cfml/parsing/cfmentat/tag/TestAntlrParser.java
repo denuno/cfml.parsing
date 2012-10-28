@@ -1,7 +1,6 @@
 package cfml.parsing.cfmentat.tag;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.CharArrayReader;
@@ -18,6 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import cfml.parsing.cfscript.ANTLRNoCaseReaderStream;
+import cfml.parsing.cfscript.CFAssignmentExpression;
 import cfml.parsing.cfscript.CFExpression;
 import cfml.parsing.cfscript.CFScriptLexer;
 import cfml.parsing.cfscript.CFScriptParser;
@@ -47,31 +47,6 @@ public class TestAntlrParser {
 	@Before
 	public void setUp() throws Exception {
 		
-	}
-	
-	/**
-	 * Test method for {@link net.htmlparser.jericho.StartTagTypeCFML#getEnd(net.htmlparser.jericho.Source, int)} .
-	 */
-	@Test
-	public void testGetEndSourceInt() {
-		fail("Not yet implemented");
-	}
-	
-	/**
-	 * Test method for {@link net.htmlparser.jericho.StartTagTypeCFML#getAttributes(java.lang.String)} .
-	 */
-	@Test
-	public void testFunction() {
-		String script = "function runFunction(functionName,argCol) { runFunk = this[functionName]; results = structNew(); results.result = runFunk(argumentCollection=argCol); results.debug = getDebugMessages(); return results; }";
-		assertEquals(1, cfexpression.getCFExpression(script));
-	}
-	
-	/**
-	 * Test method for {@link net.htmlparser.jericho.StartTagTypeCFML#getAttributes(java.lang.String)} .
-	 */
-	@Test
-	public void testGetAttributes() {
-		assertEquals(1, cfexpression.getCFExpression("a=\"a\" & \"wee\""));
 	}
 	
 	@Test
@@ -113,7 +88,8 @@ public class TestAntlrParser {
 	
 	@Test
 	public void testCFExpression() {
-		assertEquals(1, cfexpression.getCFExpression("a=\"a\" & \"wee\""));
+		CFExpression expression = cfexpression.getCFExpression("a=\"a\" & \"wee\"");
+		assertTrue(expression instanceof CFAssignmentExpression);
 	}
 	
 }

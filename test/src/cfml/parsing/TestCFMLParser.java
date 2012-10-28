@@ -41,6 +41,7 @@ public class TestCFMLParser {
 	@Test
 	public void testGetCFMLTags() {
 		ArrayList<StartTag> elementList = fCfmlParser.getCFMLTags();
+		// ArrayList<StartTag> elementList = fCfmlParser.getAllTags();
 		for (StartTag element : elementList) {
 			System.out.println("-------------------------------------------------------------------------------");
 			System.out.println(element.getDebugInfo());
@@ -51,7 +52,7 @@ public class TestCFMLParser {
 			System.out.println("Source text with content:\n" + element);
 		}
 		System.out.println(fCfmlParser.printMessages());
-		assertEquals(21, elementList.size());
+		assertEquals(14, elementList.size());
 	}
 	
 	@Test
@@ -70,7 +71,8 @@ public class TestCFMLParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getTagAt(350);
+		// has to be the exact start pos of the tag
+		ParserTag parserTag = fCfmlParser.getCFMLSource(path).getTagAt(8);
 		System.out.println(fCfmlParser.printMessages());
 		assertEquals("cffunction", parserTag.getName());
 	}

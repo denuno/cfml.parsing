@@ -81,7 +81,8 @@ public class CFMLSource {
 	}
 	
 	public List<StartTag> getAllCFMLTags() {
-		return fSource.getAllStartTags("cf");
+		// return fSource.getAllStartTags("cf");
+		return getTagsByName("cf");
 	}
 	
 	public ParserTag getTagAt(int i) {
@@ -109,7 +110,8 @@ public class CFMLSource {
 	}
 	
 	public ParserTag getNextTag(int i) {
-		return makeParserTag(fSource.getNextTag(i));
+		Tag tag = fSource.getNextTag(i);
+		return makeParserTag(tag);
 	}
 	
 	public ParserTag getPreviousTag(int i) {
@@ -121,6 +123,9 @@ public class CFMLSource {
 	}
 	
 	private ParserTag makeParserTag(net.htmlparser.jericho.Tag nextTag) {
+		if (nextTag == null) {
+			return null;
+		}
 		ParserTag newTag = new ParserTag(nextTag);
 		return newTag;
 	}
