@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g 2012-10-27 11:24:50
+// $ANTLR 3.4 /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g 2012-10-27 20:33:59
  
 package cfml.parsing.cfml.antlr;
 import cfml.parsing.cfscript.CFParseException;
@@ -483,7 +483,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_componentGuts.add(componentGuts6.getTree());
 
             // AST REWRITE
-            // elements: componentAttribute, componentGuts
+            // elements: componentGuts, componentAttribute
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1642,7 +1642,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_compoundStatement.add(compoundStatement17.getTree());
 
             // AST REWRITE
-            // elements: functionAttribute, functionReturnType, identifier, parameterList, functionAccessType, compoundStatement
+            // elements: functionReturnType, functionAccessType, functionAttribute, compoundStatement, parameterList, identifier
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2734,7 +2734,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: EQUALSOP, impliesExpression, identifier, REQUIRED, parameterType
+            // elements: REQUIRED, EQUALSOP, impliesExpression, identifier, parameterType
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3000,7 +3000,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression38.getTree());
 
             // AST REWRITE
-            // elements: identifier, impliesExpression, identifier, COLON
+            // elements: impliesExpression, identifier, identifier, COLON
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3125,7 +3125,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression40.getTree());
 
             // AST REWRITE
-            // elements: identifier, impliesExpression
+            // elements: impliesExpression, identifier
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6756,7 +6756,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: paramStatementAttributes, compoundStatement
+            // elements: compoundStatement, paramStatementAttributes
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -6908,7 +6908,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: cfmlFunction, param, compoundStatement
+            // elements: param, compoundStatement, cfmlFunction
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -7233,7 +7233,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: compoundStatement, paramStatementAttributes
+            // elements: paramStatementAttributes, compoundStatement
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9283,7 +9283,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: impliesExpression, EQUALSOP, identifier
+                    // elements: EQUALSOP, identifier, impliesExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -9307,7 +9307,7 @@ public TreeAdaptor getTreeAdaptor() {
                         adaptor.addChild(root_1, stream_identifier.nextTree());
 
                         // /Users/valliant/Projects/java/CFML/cfml.parsing/antlr/CFML.g:681:77: ( EQUALSOP impliesExpression )?
-                        if ( stream_impliesExpression.hasNext()||stream_EQUALSOP.hasNext() ) {
+                        if ( stream_EQUALSOP.hasNext()||stream_impliesExpression.hasNext() ) {
                             adaptor.addChild(root_1, 
                             stream_EQUALSOP.nextNode()
                             );
@@ -9315,8 +9315,8 @@ public TreeAdaptor getTreeAdaptor() {
                             adaptor.addChild(root_1, stream_impliesExpression.nextTree());
 
                         }
-                        stream_impliesExpression.reset();
                         stream_EQUALSOP.reset();
+                        stream_impliesExpression.reset();
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -10431,7 +10431,7 @@ public TreeAdaptor getTreeAdaptor() {
             if ( state.backtracking==0 ) stream_localAssignmentExpression.add(localAssignmentExpression200.getTree());
 
             // AST REWRITE
-            // elements: equivalentExpression, localAssignmentExpression, localAssignmentExpression
+            // elements: localAssignmentExpression, equivalentExpression, localAssignmentExpression
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -14423,7 +14423,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression281.getTree());
 
                     // AST REWRITE
-                    // elements: memberExpression, MINUS
+                    // elements: MINUS, memberExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14570,7 +14570,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_memberExpression.add(memberExpression287.getTree());
 
                     // AST REWRITE
-                    // elements: memberExpression, PLUSPLUS
+                    // elements: PLUSPLUS, memberExpression
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -15085,7 +15085,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: memberExpressionB, argumentList, primaryExpressionIRW
+            	    // elements: memberExpressionB, primaryExpressionIRW, argumentList
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15197,7 +15197,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             	    // AST REWRITE
-            	    // elements: impliesExpression, memberExpressionB, LEFTBRACKET
+            	    // elements: LEFTBRACKET, memberExpressionB, impliesExpression
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -15248,7 +15248,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    if ( state.backtracking==0 ) stream_primaryExpressionIRW.add(primaryExpressionIRW316.getTree());
 
             	    // AST REWRITE
-            	    // elements: primaryExpressionIRW, DOT, memberExpressionB
+            	    // elements: DOT, primaryExpressionIRW, memberExpressionB
             	    // token labels: 
             	    // rule labels: retval
             	    // token list labels: 
@@ -18579,7 +18579,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression355.getTree());
 
                     // AST REWRITE
-                    // elements: identifier, impliesExpression, COLON
+                    // elements: impliesExpression, COLON, identifier
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -18643,7 +18643,7 @@ public TreeAdaptor getTreeAdaptor() {
                     if ( state.backtracking==0 ) stream_impliesExpression.add(impliesExpression358.getTree());
 
                     // AST REWRITE
-                    // elements: identifier, impliesExpression
+                    // elements: impliesExpression, identifier
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -22124,11 +22124,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred49_CFML() {
+    public final boolean synpred8_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred49_CFML_fragment(); // can never throw exception
+            synpred8_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22138,11 +22138,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred8_CFML() {
+    public final boolean synpred49_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred8_CFML_fragment(); // can never throw exception
+            synpred49_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22320,11 +22320,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred92_CFML() {
+    public final boolean synpred152_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred92_CFML_fragment(); // can never throw exception
+            synpred152_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22334,11 +22334,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred152_CFML() {
+    public final boolean synpred92_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred152_CFML_fragment(); // can never throw exception
+            synpred92_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22516,11 +22516,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred16_CFML() {
+    public final boolean synpred151_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred16_CFML_fragment(); // can never throw exception
+            synpred151_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22530,11 +22530,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred151_CFML() {
+    public final boolean synpred16_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred151_CFML_fragment(); // can never throw exception
+            synpred16_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22642,11 +22642,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred243_CFML() {
+    public final boolean synpred35_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred243_CFML_fragment(); // can never throw exception
+            synpred35_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22656,11 +22656,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred35_CFML() {
+    public final boolean synpred243_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred35_CFML_fragment(); // can never throw exception
+            synpred243_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22712,11 +22712,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred45_CFML() {
+    public final boolean synpred21_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred45_CFML_fragment(); // can never throw exception
+            synpred21_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -22726,11 +22726,11 @@ public TreeAdaptor getTreeAdaptor() {
         state.failed=false;
         return success;
     }
-    public final boolean synpred21_CFML() {
+    public final boolean synpred45_CFML() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred21_CFML_fragment(); // can never throw exception
+            synpred45_CFML_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

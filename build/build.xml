@@ -49,7 +49,7 @@
 
 	<target name="grammar.generate">
 		<echo message="generating ${grammar.file}" />
-		<antlr3 grammar.name="${grammar.dir}/CFML.g" outputdirectory="${src.dir}/src/cfml/parsing/cfml/antlr" />
+		<antlr3 grammar.name="${grammar.dir}/CFML.g" outputdirectory="${src.dir}/cfml/parsing/cfml/antlr" />
 		<antlr3 grammar.name="${grammar.file}" outputdirectory="${src.dir}/cfml/parsing/cfscript" />
 		<antlr3 grammar.name="${grammar.dir}/CFScriptTree.g" outputdirectory="${src.dir}/cfml/parsing/cfscript" />
 	</target>
