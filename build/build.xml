@@ -95,7 +95,16 @@
 
 	<target name="test" depends="grammar.jar">
     	<mkdir dir="${reports.tests}" />
-	    <junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="false" fork="true" dir="../">
+	    <javac srcdir="${src.tests}" destdir="${bin.dir}">
+	    	<classpath>
+	    		<pathelement path="${test.java.bin.dir}"/>
+	    	    <pathelement path="${grammar.jar}"/>
+	    	    <pathelement path="${java.class.path}"/>
+	    	    <pathelement path="${toString:build.path}"/>
+	    	    <pathelement path="${toString:build.lib.path}"/>
+    		</classpath>
+	    </javac>
+		<junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="true" fork="fa" dir="../">
 	    	<classpath>
 	    	    <pathelement path="${grammar.jar}"/>
 	    	    <pathelement path="${java.class.path}"/>
