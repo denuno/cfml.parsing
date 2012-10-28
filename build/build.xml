@@ -1,8 +1,9 @@
 <project default="build">
 
 	<property name="src.dir" location="../src"/>
+	<property name="bin.dir" location="../bin"/>
 	<property name="build.dir" location="${basedir}"/>
-	<property name="output.dir" location="../bin"/>
+	<property name="output.dir" location="${bin.dir}"/>
 	<property name="src.tests" location="../test/src"/>
 	<property name="reports.tests" location="./testresults/"/>
 	<property name="grammar.jar" location="../cfml.parsing.jar"/>
@@ -55,8 +56,8 @@
 	</target>
 
 	<target name="grammar.compile" depends="grammar.generate">
-		<mkdir dir="../bin" />
-		<javac srcdir="${src.dir}" destdir="../bin" listfiles="Yes" deprecation="Yes" classpathref="build.lib.path" includeantruntime="false">
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" listfiles="Yes" deprecation="Yes" classpathref="build.lib.path" includeantruntime="false">
 			<compilerarg value="-Xlint:unchecked" />
 			<classpath>
 				<pathelement path="${java.class.path}" />
@@ -66,7 +67,7 @@
 
 	<target name="grammar.jar" depends="grammar.compile">
 		<jar destfile="${grammar.jar}"
-         basedir="../bin" 
+         basedir="${bin.dir}" 
          includes="**/*.class"
          />
 	</target>
@@ -75,24 +76,24 @@
 	</target>
 
 	<target name="grammar.gunit">
-		<echo message="generating ${basedir}/../bin/cfml/parsing/cfml/antlr/" />
-		<java classname="org.antlr.gunit.Interp" classpath="../lib/antlr-3.4-complete.jar;../bin/"
-	        fork="true" dir="${basedir}/../bin/cfml/parsing/cfml/antlr/" outputproperty="last.revision.info">
+		<echo message="generating ${bin.dir}/cfml/parsing/cfml/antlr/" />
+		<java classname="org.antlr.gunit.Interp" classpath="../lib/antlr-3.4-complete.jar;${bin.dir}/"
+	        fork="true" dir="${bin.dir}/cfml/parsing/cfml/antlr/" outputproperty="last.revision.info">
 			<arg value="${grammar.dir}/grammar.fileunit"/>
 		</java>
 		<echo message="${last.revision.info}"/>
 	</target>
 
 	<target name="grammar.tree.gunit">
-		<echo message="generating ${basedir}/../bin/cfml/parsing/cfml/antlr/" />
-		<java classname="org.antlr.gunit.Interp" classpath="../lib/antlr-3.4-complete.jar;../bin/" 
-	        fork="true" dir="${basedir}/../bin/cfml/parsing/cfml/antlr/" outputproperty="last.revision.info">
+		<echo message="generating ${bin.dir}/cfml/parsing/cfml/antlr/" />
+		<java classname="org.antlr.gunit.Interp" classpath="../lib/antlr-3.4-complete.jar;${bin.dir}/" 
+	        fork="true" dir="${bin.dir}/cfml/parsing/cfml/antlr/" outputproperty="last.revision.info">
 			<arg value="${grammar.dir}/XMLTree.gunit"/>
 		</java>
 		<echo message="${last.revision.info}"/>
 	</target>
 
-	<target name="test" depends="build">
+	<target name="test" depends="grammar.jar">
     	<mkdir dir="${reports.tests}" />
 	    <junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="false" fork="true" dir="../">
 	    	<classpath>
