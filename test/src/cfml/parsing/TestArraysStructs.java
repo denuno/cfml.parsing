@@ -77,6 +77,17 @@ public class TestArraysStructs {
 	}
 	
 	@Test
+	public void testArrayWithFunction() {
+		String script = "arrData[ ArrayLen( arrData ) + 1 ] = { Foo = \"Bar\" };";
+		CFScriptStatement scriptStatement = null;
+		scriptStatement = parseScript(script);
+		if (fCfmlParser.getMessages().size() > 0) {
+			fail("whoops! " + fCfmlParser.getMessages());
+		}
+		assertNotNull(scriptStatement);
+	}
+	
+	@Test
 	public void testParseNestedStructsAndArrays() {
 		String path = "";
 		try {
