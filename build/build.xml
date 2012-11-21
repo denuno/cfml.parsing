@@ -2,6 +2,7 @@
 
 	<property name="src.dir" location="../src"/>
 	<property name="bin.dir" location="../bin"/>
+	<property name="tests.bin.dir" location="../bin/tests"/>
 	<property name="build.dir" location="${basedir}"/>
 	<property name="output.dir" location="${bin.dir}"/>
 	<property name="src.tests" location="../test/src"/>
@@ -96,7 +97,7 @@
 
 	<target name="test" depends="grammar.jar">
     	<mkdir dir="${reports.tests}" />
-	    <javac srcdir="${src.tests}" destdir="${bin.dir}">
+	    <javac srcdir="${src.tests}" destdir="${tests.bin.dir}">
 	    	<classpath>
 	    	    <pathelement path="${grammar.jar}"/>
 	    	    <pathelement path="${java.class.path}"/>
@@ -104,18 +105,13 @@
 	    	    <pathelement path="${toString:build.lib.path}"/>
     		</classpath>
 	    </javac>
-		<path id="tests.compiled.path">
-			<fileset dir="${bin.dir}">
-				<include name="**/*.class" />
-			</fileset>
-		</path>
 		<junit printsummary="true" haltonerror="false" haltonfailure="false" includeantruntime="true" fork="fa" dir="../">
 	    	<classpath>
 	    	    <pathelement path="${grammar.jar}"/>
 	    	    <pathelement path="${java.class.path}"/>
 	    	    <pathelement path="${toString:build.path}"/>
 	    	    <pathelement path="${toString:build.lib.path}"/>
-	    	    <pathelement path="${toString:tests.compiled.path}"/>
+	    	    <pathelement path="${tests.bin.dir}"/>
 	    	  </classpath>
 	    	<batchtest fork="yes" todir="${reports.tests}">
 	    	    <fileset dir="${src.tests}">
