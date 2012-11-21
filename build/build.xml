@@ -97,6 +97,7 @@
 
 	<target name="test" depends="grammar.jar">
     	<mkdir dir="${reports.tests}" />
+    	<mkdir dir="${tests.bin.dir}" />
 	    <javac srcdir="${src.tests}" destdir="${tests.bin.dir}">
 	    	<classpath>
 	    	    <pathelement path="${grammar.jar}"/>
